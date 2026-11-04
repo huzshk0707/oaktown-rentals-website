@@ -1,10 +1,11 @@
-# Oaktown Rentals — Cinematic Website (Version 0.2)
+# Oaktown Rentals — Cinematic Website (Version 0.3)
 
 A standalone, animated, mobile-friendly Oaktown Rentals website concept based on the *design direction* of the supplied cinematic real-estate video. Not a copy of the featured third-party website. Preserves public information from the existing Oaktown Rentals Squarespace website where practical.
 
 ## Features
 
 - Three-chapter photo story linked to native scrolling, oversized type, and a photo-filled O transition inspired by the supplied video. Uses real property photos, not construction renders from the reference.
+- Editorial photo collage, property photo counts, and a direct featured-home link retained from the main branch.
 - Perspective property strip with native touch scrolling, arrow controls, keyboard navigation and neighborhood filters.
 - Full-screen native-dialog galleries with Escape, arrow keys, touch swipes and image-load error messages.
 - Motion toggle persists locally; reduced-motion and smaller screens use an unpinned layout. No autoplay or wheel interception.
@@ -12,7 +13,7 @@ A standalone, animated, mobile-friendly Oaktown Rentals website concept based on
 - Responsive property cards with neighborhood filtering and individual, deep-linkable gallery/detail views.
 - Four properties sourced from the public Oaktown Rentals site: 115 Colonial Drive, 1106 Cherokee Rd #6, 4005 Smallboat Ct, 1106 Cherokee Rd #8.
 - FAQ, Louisville community links, Cudjoe Key / The Mint Mojo feature, contact actions, online application link.
-- English/Spanish toggle for main page content and listing summaries (full property detail bodies remain in English in v0.2).
+- English/Spanish toggle for main page content and listing summaries (full property detail bodies remain in English in v0.3).
 - No dependencies, build system, tracking scripts or backend required; accessible reduced-motion support.
 
 ## Run locally
@@ -25,19 +26,18 @@ python3 -m http.server 8787
 
 Visit `http://localhost:8787/`. Node/Python are only needed for local preview; deployment serves static files.
 
-## Cloudflare Pages — GitHub integration (preferred)
+## Current Cloudflare deployment — Workers Static Assets
 
-1. Open [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git / Import an existing Git repository** (wording varies).
-2. Authorize Cloudflare's GitHub integration to access the **private** repository `huzshk0707/oaktown-rentals-website` when prompted.
-3. Select production branch **`main`**.
-4. Configure **Framework preset: None**, **Build command: `exit 0`** (or leave blank if the form permits), **Build output directory: `.`**, **Root directory: `/`**.
-5. Deploy. Cloudflare will give you a free `*.pages.dev` address. No custom domain is required.
-6. Future commits to `main` automatically deploy. The current repository is the **pre-launch preview**, not an approved public listing site.
-> Some Cloudflare dashboard flows prioritize **Workers**, but Cloudflare Pages still supports GitHub-integrated static sites. See https://developers.cloudflare.com/pages/configuration/git-integration/ .
+- Live preview: https://oaktown-rentals-website.huzaifashaikhhp.workers.dev
+- GitHub repository: `huzshk0707/oaktown-rentals-website` (private); production branch: `main`.
+- Cloudflare project type: **Worker with Static Assets**, automatically deployed from the connected GitHub repository. No custom domain is required.
+- `wrangler.jsonc` declares the static asset directory as repository root (`.`). `.assetsignore` excludes internal files from public asset uploads.
+- Changes pushed to `main` trigger a Cloudflare deployment. Check **Workers & Pages → oaktown-rentals-website → Deployments** to verify the new version is active.
+- The preview intentionally has `noindex,nofollow` metadata and `robots.txt` disallow rules. Do not remove them until the content and launch are approved.
 
 ## Content and launch checklist — **important**
 
-- **Not yet a live website**. This is a design preview; all property availability and application policies need client confirmation before an approved public launch.
+- **Live design preview, not approved inventory**. The main branch is accessible on Cloudflare. This scroll-driven revision is in a draft pull request; listing information still needs confirmation before public launch.
 - **Colonial rent**: The public listing and preview both show **$1,799 rent and deposit**, checked November 4, 2026. Reconfirm availability with Leslie before launch.
 - **1106 Cherokee #6**: Source updated to the working `/1106-cherokee-rd-6` URL, with eight unit-specific photos. Public galleries were refreshed on November 4, 2026: Colonial 14, Cherokee #6 8, Smallboat 7, Cherokee #8 10. Photo URLs remain on Squarespace.
 - **4005 Smallboat timing**: Squarespace says showings after mid-October 2026; this is stale as of November 2026. Do not represent it as current availability.
