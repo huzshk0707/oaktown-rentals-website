@@ -61,13 +61,15 @@ Visit `http://localhost:8787/`. Node/Python are only needed for local preview; d
 
 ## Validation
 
-The production site has no dependencies. Optional browser tests use Playwright as a development dependency:
+The production site has no dependencies. Browser-test dependencies are isolated under `tests/`, avoiding automatic development-package installs in Cloudflare's static Worker deployment.
 
 ```sh
+node --check app.js && node --check data.js && node --check effects.js
+# In a separate terminal from the repo root, run: python3 -m http.server 8787
+cd tests
 npm ci
 npx playwright install chromium
 npm run check
-# In a separate terminal, run python3 -m http.server 8787
 npm run test:browser
 ```
 
