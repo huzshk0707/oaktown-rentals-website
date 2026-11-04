@@ -14,23 +14,51 @@ window.OAKTOWN_DATA = {
   mailingAddress: 'PO Box 7, Hillview, KY 40129',
   images: {
     colonial: [
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp',
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509846-SNZGCPNKYQ7QMCEXZW5C/2.webp',
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445511143-83ORN69V1QHGBSEGABKQ/4.webp',
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445513565-U6OHBZ5VT9X1IH1JAIS9/7.webp'
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509846-SNZGCPNKYQ7QMCEXZW5C/2.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445511140-T3GW4E21V9YOTWU89APR/3.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445511143-83ORN69V1QHGBSEGABKQ/4.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445512339-AOJHBEQA280HEJ3NKLPA/5.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445512483-LDQPV6Y50DUA335OU87O/6.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445513565-U6OHBZ5VT9X1IH1JAIS9/7.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445513725-EG1QG0Q20E6E5P6WMFLM/8.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445515031-SN1OHU8GVXW1KBLUPF41/9.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445515146-ZOQM0AC3V4G6VHVLLZ87/10.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445516371-UD7B70HO2LUXM516L0T4/11.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445516460-EA498EPBCL347VRQ99MV/12.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445517546-MMFNX0365U8853P7AE6X/13.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445517849-TR3NL868MNLOD5TLNEI2/14.webp"
     ],
     smallboat: [
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp',
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565117-3H2COCLMXG783O3YIX7C/2.webp',
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289566505-2UED0P9YI9M1QBLPKIA1/4.webp'
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565117-3H2COCLMXG783O3YIX7C/2.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289566418-7YNU0DWDQ777S43RYRTZ/3.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289566505-2UED0P9YI9M1QBLPKIA1/4.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289567727-GBD8N76QJ0706HHZKEHS/5.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289563526-J08TWRJGJ71S11ZAXM1T/6.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289563526-7OHF598AUE6ZCS0JWAKA/7.webp"
     ],
     cherokee6: [
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/cca85aa1-2a3e-465c-a8ea-6956d2623ab6/1d9f81e6264b12c173816b4c176c43f0-cc_ft_960.webp'
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741431957-XKJRAQOOOFS98KMX74SV/IMG_8725.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741431959-PFKIVCUZU4N4LOU711DY/IMG_8726.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741433385-ADF98P1VCDM5FVVUHU7Q/IMG_8727.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741433679-7JTCZC3BBIYZESYUJPNR/IMG_8728.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741434819-U48LWU0GUROXQC4RH2H1/IMG_8729.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741435015-4CBCEY2D4J92OS58XUJO/IMG_8722.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741436191-9HK315IKJBCNKRMQ3LGW/IMG_8723.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741436572-HX3LSVOEZQCTAA73ZDWU/IMG_8724.jpeg"
     ],
     cherokee8: [
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672017451-EYEND4KY8UQK65DQE2H7/IMG_3986.jpeg',
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672016789-CE51I5J15DO7ESFSLTB6/IMG_3985.jpeg',
-      'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672015937-H693OVW7OB1W6RCM2UWM/IMG_3984.jpeg'
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672017451-EYEND4KY8UQK65DQE2H7/IMG_3986.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672016789-CE51I5J15DO7ESFSLTB6/IMG_3985.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672015937-H693OVW7OB1W6RCM2UWM/IMG_3984.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672011073-F50RO2V54LNXJH53MTR0/IMG_3987.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672011170-VFZ1YQYRZLUKXFE9KE3S/IMG_3988.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672012419-BHHS827Y9RN6U9LZG9US/IMG_3989.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672012907-JARWS9BV5YTPGHP00QDT/IMG_3990.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672013892-AK3DDJ2L7BDB10QCYPWN/IMG_3991.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672014495-NT99GKQ6FM1K2YNA31EU/IMG_3992.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672015412-P5E4CINR1CTHE32NSLFW/IMG_3994.jpeg"
     ],
     cudejoe: [
       'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1675783417395-1GBMGQGOPJZ81AQPED2M/IMG_5886%2B%281%29.jpg',
@@ -53,7 +81,7 @@ window.OAKTOWN_DATA = {
       features: ['Original oak flooring', '3 bedrooms / 1 bathroom', 'Two-car garage', 'Laundry area', 'Unfinished basement', 'Convenient St. Matthews location'],
       terms: ['Tenants pay utilities', 'One-year lease listed', 'Pet terms and screening requirements: confirm before applying'],
       sourceUrl: 'https://tuba-parsnip-36cr.squarespace.com/115-colonial-drive',
-      editorialNote: 'Rent and deposit of $1,799 reflect a newer client confirmation; Squarespace still displays $1,850. Reconfirm before publication.'
+      editorialNote: 'Public source now shows $1,799 rent and deposit (checked 2026-11-04). Reconfirm availability before publication.'
     },
     {
       slug: '1106-cherokee-rd-unit-6', name: '1106 Cherokee Rd · #6', neighborhood: 'The Highlands', city: 'Louisville, Kentucky',
@@ -68,8 +96,8 @@ window.OAKTOWN_DATA = {
       ],
       features: ['Shaker-style cabinets', 'Granite counters and backsplash', 'Tile floors throughout', 'One bedroom / one bathroom', 'Rear and street parking', 'Highlands location'],
       terms: ['Tenants pay LG&E', 'City handles trash', 'Forced-air furnace; window A/C', 'One-year lease listed', 'Pet terms: confirm before applying'],
-      sourceUrl: 'https://tuba-parsnip-36cr.squarespace.com/1119-ireland-drive-copy-1',
-      editorialNote: 'Existing Squarespace listing link returned 404 when reviewed; this preview restores a usable details page. Needs approved full photo set.'
+      sourceUrl: 'https://tuba-parsnip-36cr.squarespace.com/1106-cherokee-rd-6',
+      editorialNote: 'Source URL and eight-photo gallery refreshed from the public listing on 2026-11-04.'
     },
     {
       slug: '4005-smallboat-ct', name: '4005 Smallboat Ct', neighborhood: 'Okolona', city: 'Louisville, Kentucky',

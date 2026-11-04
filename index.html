@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./cinematic.css" />
   <script src="./data.js" defer></script>
+  <script src="./effects.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
@@ -28,26 +29,29 @@
       <a href="#community" data-i18n="navCommunity">Community</a>
     </nav>
     <div class="header-actions">
+      <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false">Motion</button>
       <button class="language-switch" id="language-switch" type="button" aria-label="Switch language">ES</button>
-      <a class="nav-apply" href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer"><span data-i18n="navApply">Apply online</span><span aria-hidden="true"> ↗</span></a>
+      <a class="nav-apply" href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer"><span data-i18n="navApply">Apply online</span><span aria-hidden="true"> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
       <button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
     </div>
   </header>
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
     <a href="#homes" data-i18n="navHomes">Our homes</a><a href="#about" data-i18n="navStory">Our story</a><a href="#faq" data-i18n="navFaq">FAQ</a><a href="#community" data-i18n="navCommunity">Community</a><a href="#cudejoe">The Mint Mojo</a><a href="#contact" data-i18n="contact">Contact</a><a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" data-i18n="navApply">Apply online</a>
   </nav>
-  <main id="app" aria-live="off"></main>
+  <main id="app" tabindex="-1"></main>
+  <div class="mobile-actions"><a id="mobile-inquiry" href="sms:+15025001070" data-i18n="textUs">Text us</a><a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" data-i18n="navApply">Apply online</a></div>
   <footer class="footer" id="footer">
     <div class="footer-top">
       <div><span class="eyebrow">LOUISVILLE, KENTUCKY</span><h2 data-i18n="footerTitle">Your next chapter starts here.</h2></div>
-      <a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" class="circle-arrow" aria-label="Open rental application">↗</a>
+      <a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" class="circle-arrow" aria-label="Open rental application"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
     </div>
     <div class="footer-lower">
       <div class="footer-brand">OAKTOWN<span> RENTALS.</span></div>
       <div class="footer-links"><a href="#homes" data-i18n="navHomes">Our homes</a><a href="#faq" data-i18n="navFaq">FAQ</a><a href="#cudejoe">The Mint Mojo</a><a href="#contact" data-i18n="contact">Contact</a><a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" data-i18n="navApply">Apply online</a></div>
       <div class="footer-contact"><a href="tel:+15025001070">(502) 500-1070</a><a href="mailto:joejrandles@yahoo.com">joejrandles@yahoo.com</a><span data-i18n="textBest">Text is always the best & fastest.</span></div>
     </div>
-    <div class="footer-bottom"><span>© <span id="year"></span> Oaktown Rentals</span><span>Independent website concept · Listing details subject to verification</span><a href="https://tuba-parsnip-36cr.squarespace.com/" target="_blank" rel="noopener noreferrer">Original website ↗</a></div>
+    <div class="footer-signature" aria-hidden="true">OAKTOWN</div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Oaktown Rentals</span><span>Independent website concept · Listing details subject to verification</span><a href="https://tuba-parsnip-36cr.squarespace.com/" target="_blank" rel="noopener noreferrer">Original website <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
   </footer>
 </body>
 </html>
