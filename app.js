@@ -14,10 +14,14 @@
   let currentView = null;
   let currentGalleryIndex = 0;
   let observer;
+  let heroSlideIndex = 0;
+  let heroTimer = null;
+  let heroPaused = false;
+  const heroIntervalMs = 8000;
   const words = {
     en: {
       navHomes:'Our homes',navStory:'Our story',navFaq:'FAQ',navCommunity:'Community',navApply:'Apply online',contact:'Contact',textBest:'Text is always the best & fastest.',footerTitle:'Your next chapter starts here.',
-      heroKicker:'Quality rental homes in Louisville, KY',heroOne:'Find your',heroTwo:'place.',heroTagline:'Homes to make your own. Neighborhoods to fall in love with. A new chapter begins here.',explore:'Explore our homes',scroll:'Scroll to explore',
+      heroKicker:'Quality rental homes in Louisville, KY',heroChapter:'A different perspective on renting',heroFeatured:'In focus',heroPause:'Pause slideshow',heroPlay:'Play slideshow',heroPrevious:'Previous featured home',heroNext:'Next featured home',editorialEyebrow:'A HOME, NOT JUST AN ADDRESS',editorialTitle:'Made for <em>life as it happens.</em>',editorialCopy:'Quiet mornings. Familiar corners. New favorite places. Explore rental homes with character, comfort and room for what matters.',editorialTag:'LOUISVILLE LIVING / THE OAKTOWN COLLECTION',galleryOpen:'View full screen',galleryClose:'Close photo viewer',galleryOf:'of',heroOne:'Find your',heroTwo:'place.',heroTagline:'Homes to make your own. Neighborhoods to fall in love with. A new chapter begins here.',explore:'Explore our homes',scroll:'Scroll to explore',
       homesLabel:'01 / FIND A HOME',homesHeading:'Spaces to <em>call yours.</em>',homesDesc:'Thoughtfully cared-for rental homes throughout Louisville and surrounding counties. Discover the one that feels right.',
       all:'All homes',stMatthews:'St. Matthews',highlands:'Highlands',okolona:'Okolona',listings:'Homes in our collection',perMonth:'/ month',beds:'beds',baths:'bath',availability:'Ask about availability',
       cinemaLabel:'ROOM FOR WHAT MATTERS',cinemaTitle:'More than a <em>roof.</em>',cinemaDesc:'The little everyday moments deserve a great place to happen.',
@@ -37,7 +41,7 @@
     },
     es: {
       navHomes:'Viviendas',navStory:'Nuestra historia',navFaq:'Preguntas',navCommunity:'Comunidad',navApply:'Solicitar ahora',contact:'Contacto',textBest:'Los mensajes de texto son la forma más rápida de contactarnos.',footerTitle:'Tu próximo capítulo comienza aquí.',
-      heroKicker:'Viviendas de alquiler en Louisville, KY',heroOne:'Encuentra tu',heroTwo:'hogar.',heroTagline:'Hogares para hacerlos tuyos. Barrios para enamorarte. Una nueva etapa empieza aquí.',explore:'Explorar viviendas',scroll:'Desliza para explorar',
+      heroKicker:'Viviendas de alquiler en Louisville, KY',heroChapter:'Una nueva perspectiva del alquiler',heroFeatured:'Destacado',heroPause:'Pausar presentación',heroPlay:'Reanudar presentación',heroPrevious:'Vivienda anterior',heroNext:'Siguiente vivienda',editorialEyebrow:'UN HOGAR, NO SOLO UNA DIRECCIÓN',editorialTitle:'Hecho para <em>la vida real.</em>',editorialCopy:'Mañanas tranquilas. Rincones favoritos. Nuevos comienzos. Descubre viviendas con carácter, comodidad y espacio para lo importante.',editorialTag:'VIVIR EN LOUISVILLE / LA COLECCIÓN OAKTOWN',galleryOpen:'Ver en pantalla completa',galleryClose:'Cerrar visor de fotos',galleryOf:'de',heroOne:'Encuentra tu',heroTwo:'hogar.',heroTagline:'Hogares para hacerlos tuyos. Barrios para enamorarte. Una nueva etapa empieza aquí.',explore:'Explorar viviendas',scroll:'Desliza para explorar',
       homesLabel:'01 / ENCUENTRA TU HOGAR',homesHeading:'Espacios para <em>vivir.</em>',homesDesc:'Viviendas de alquiler bien cuidadas en Louisville y condados cercanos. Descubre cuál es perfecta para ti.',
       all:'Todas',stMatthews:'St. Matthews',highlands:'Highlands',okolona:'Okolona',listings:'Viviendas en nuestra colección',perMonth:'/ mes',beds:'hab.',baths:'baño',availability:'Consultar disponibilidad',
       cinemaLabel:'ESPACIO PARA LO IMPORTANTE',cinemaTitle:'Más que un <em>techo.</em>',cinemaDesc:'Los pequeños momentos de cada día merecen un gran hogar.',
@@ -61,11 +65,12 @@
   const photo = (p, idx=0) => DATA.images[p.imageKey][idx] || DATA.images[p.imageKey][0];
   const imageEl = (src, alt, className, extra='') => `<img class="${className}" src="${src}" alt="${alt}" loading="${extra==='eager'?'eager':'lazy'}" decoding="async" ${extra==='eager'?'fetchpriority="high"':''}>`;
   const sectionHeading = (label, title, desc='') => `<div class="section-heading reveal"><div><div class="eyebrow section-label">${label}</div><h2 class="display-title">${title}</h2></div>${desc?`<p class="heading-note">${desc}</p>`:''}</div>`;
-  function card(p) {
+  function card(p, index) {
     return `<article class="property-card reveal" data-neighborhood="${p.neighborhood}">
         <a class="property-image-wrap" href="#home/${p.slug}" aria-label="${t('details')}: ${p.name}">
+          <span class="card-index" aria-hidden="true">${String(index+1).padStart(2,'0')} / ${String(P.length).padStart(2,'0')}</span>
           ${imageEl(photo(p), p.name+' property photo','property-image')}
-          <span class="photo-pill">${t('photo')}</span><span class="card-arrow" aria-hidden="true">↗</span>
+          <span class="photo-pill">${t('photo')}</span><span class="card-photo-count" aria-hidden="true">${String(DATA.images[p.imageKey].length).padStart(2,'0')} PHOTOS</span><span class="card-arrow" aria-hidden="true">↗</span>
         </a>
         <div class="property-data"><div><span class="property-neighborhood">${p.neighborhood}</span><h3 class="property-name"><a href="#home/${p.slug}">${p.name}</a></h3><p class="property-summary">${language==='es'?p.summaryEs:p.summary}</p></div><div class="property-price">${money(p.rent)}<small>${t('perMonth')}</small></div></div>
         <div class="property-details-line"><span>${p.bedrooms} ${t('beds')} &nbsp; / &nbsp; ${p.bathrooms} ${t('baths')}</span><span>${t('availability')} ↗</span></div>
@@ -78,18 +83,30 @@
     return `<section id="contact" class="contact-panel"><div class="reveal"><span class="eyebrow">${t('contactLabel')}</span><h2>${t('contactHeading')}</h2><p>${t('contactDesc')}</p></div><div class="contact-actions reveal"><a href="sms:+15025001070">${t('textBest')} <span>↗</span></a><a href="tel:+15025001070">${DATA.phoneDisplay} <span>↗</span></a><a href="mailto:${DATA.email}">${DATA.email}<span>↗</span></a><p>${DATA.mailingAddress}</p></div></section>`;
   }
   function homePage() {
-    return `<section class="hero" id="top">
-      <div class="hero-photo" role="img" aria-label="115 Colonial Drive, an Oaktown Rentals home" style="background-image:url('${DATA.images.colonial[0]}')"></div><div class="hero-grain"></div>
-      <div class="hero-topline"><span class="eyebrow">OAKTOWN / EST. LOUISVILLE</span><span class="side-label">KENTUCKY · USA</span></div>
-      <div class="hero-main"><div class="hero-kicker">${t('heroKicker')}</div><h1>${t('heroOne')}<br><em>${t('heroTwo')}</em></h1>
+    const heroP = [P[0], P[2], P[3]];
+    return `<section class="hero cinematic-hero" id="top" aria-label="${t('heroKicker')}">
+      <div class="hero-scene" aria-hidden="true">${heroP.map((p,i)=>`<div class="hero-photo hero-slide ${i===heroSlideIndex?'is-active':''}" data-hero-slide="${i}" style="background-image:url('${photo(p)}')"></div>`).join('')}</div><div class="hero-grain"></div><div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-topline"><span class="eyebrow">OAKTOWN / LOUISVILLE</span><span class="side-label">KENTUCKY · USA</span></div>
+      <div class="hero-main"><div class="hero-kicker">${t('heroKicker')}</div><div class="hero-overline">${t('heroChapter')}</div><h1>${t('heroOne')}<br><em>${t('heroTwo')}</em></h1>
         <div class="hero-bottom"><p class="hero-subtitle">${t('heroTagline')}</p><div class="hero-cta"><a href="#homes">${t('explore')}</a><span class="round-icon" aria-hidden="true">↘</span></div></div>
-      </div><div class="hero-scroll">${t('scroll')} ↓</div>
+      </div>
+      <div class="hero-interface" aria-label="Featured homes">
+        <div class="hero-featured"><span class="hero-featured-label">${t('heroFeatured')} / <span id="hero-slide-number">${String(heroSlideIndex+1).padStart(2,'0')}</span> — 03</span><a id="hero-featured-link" href="#home/${heroP[heroSlideIndex].slug}"><span id="hero-featured-name">${heroP[heroSlideIndex].name}</span> <span aria-hidden="true">↗</span></a><span id="hero-featured-neighborhood">${heroP[heroSlideIndex].neighborhood}</span></div>
+        <div class="hero-slideshow-controls"><button type="button" class="hero-control" data-hero-step="-1" aria-label="${t('heroPrevious')}">←</button><button type="button" class="hero-control" data-hero-step="1" aria-label="${t('heroNext')}">→</button><button type="button" class="hero-play" data-hero-pause aria-label="${t('heroPause')}">Ⅱ</button></div>
+        <div class="hero-slide-dots" role="group" aria-label="Choose featured home">${heroP.map((p,i)=>`<button type="button" class="hero-dot ${i===heroSlideIndex?'is-active':''}" data-hero-go="${i}" aria-label="${p.name}" aria-pressed="${i===heroSlideIndex}"><span></span></button>`).join('')}</div>
+      </div>
+      <div class="hero-scroll">${t('scroll')} <span aria-hidden="true">↓</span></div>
+    </section>
+    <div class="chapter-strip" aria-hidden="true"><span>OAKTOWN RENTALS</span><span class="chapter-strip-center">SPACE TO BE YOURSELF <b>✳</b> LOUISVILLE, KENTUCKY</span><span>EST. IN THE NEIGHBORHOOD</span></div>
+    <section class="editorial-section" id="discover" aria-labelledby="editorial-title">
+      <div class="editorial-intro reveal"><span class="eyebrow section-label">${t('editorialEyebrow')}</span><h2 id="editorial-title">${t('editorialTitle')}</h2><p>${t('editorialCopy')}</p></div>
+      <div class="editorial-collage reveal"><div class="editorial-photo editorial-photo-primary">${imageEl(DATA.images.colonial[2],'A sunlit room at 115 Colonial Drive','')}<span class="editorial-photo-caption">01 / ST. MATTHEWS</span></div><div class="editorial-photo editorial-photo-secondary">${imageEl(DATA.images.cherokee8[1],'An interior at Cherokee Road','')}<span class="editorial-photo-caption">02 / HIGHLANDS</span></div><span class="editorial-collage-note">${t('editorialTag')}</span><span class="editorial-outline" aria-hidden="true">HOME.</span></div>
     </section>
     <section class="section" id="homes">${sectionHeading(t('homesLabel'),t('homesHeading'),t('homesDesc'))}
       <div class="listing-tools reveal"><span class="listing-count">${String(P.length).padStart(2,'0')} / ${t('listings')}</span><div class="filter-strip" role="group" aria-label="Filter properties"><button class="filter-chip active" data-filter="All">${t('all')}</button><button class="filter-chip" data-filter="St. Matthews">${t('stMatthews')}</button><button class="filter-chip" data-filter="The Highlands|Cherokee Triangle">${t('highlands')}</button><button class="filter-chip" data-filter="Okolona">${t('okolona')}</button></div></div>
-      <div class="property-grid" id="property-grid">${P.map(card).join('')}</div>
+      <div class="property-grid" id="property-grid">${P.map((p,i)=>card(p,i)).join('')}</div>
     </section>
-    <section class="mid-cinema"><div class="mid-photo" style="background-image:url('${DATA.images.cherokee8[0]}')"></div><div class="mid-copy reveal"><div class="eyebrow">${t('cinemaLabel')}</div><h2>${t('cinemaTitle')}</h2><p>${t('cinemaDesc')}</p></div></section>
+    <section class="mid-cinema"><div class="mid-photo" style="background-image:url('${DATA.images.cherokee8[0]}')"></div><div class="cinema-ghost" aria-hidden="true">HOME</div><div class="mid-copy reveal"><div class="eyebrow">${t('cinemaLabel')}</div><h2>${t('cinemaTitle')}</h2><p>${t('cinemaDesc')}</p></div></section>
     <section class="section about-section" id="about"><div class="reveal"><div class="eyebrow section-label">${t('aboutLabel')}</div><h2 class="display-title">${t('aboutHeading')}</h2></div><div class="about-copy reveal"><p>${t('aboutLead')}</p><p>${t('aboutText')}</p><a class="text-link" href="#contact">${t('aboutLink')} <span>↗</span></a></div></section>
     <section id="cudejoe" class="florida-panel"><div class="florida-image" role="img" aria-label="The Mint Mojo, Cudjoe Key canal" style="background-image:url('${DATA.images.cudejoe[0]}')"></div><div class="florida-copy reveal"><div class="eyebrow section-label">${t('floridaLabel')}</div><h2>${t('floridaHeading')}</h2><p>${t('floridaText')}</p><a class="text-link" href="${DATA.squarespaceUrl}contact-five" target="_blank" rel="noopener noreferrer">${t('floridaLink')} <span>↗</span></a></div></section>
     ${faqSection()}
@@ -104,8 +121,8 @@
     <div class="details-bar"><div class="detail-stats"><div class="detail-stat"><strong>${money(p.rent)}</strong><span>${t('rent')}</span></div><div class="detail-stat"><strong>${p.bedrooms}</strong><span>${t('bedrooms')}</span></div><div class="detail-stat"><strong>${p.bathrooms}</strong><span>${t('bathrooms')}</span></div></div><a class="button-solid" href="${DATA.applicationUrl}" target="_blank" rel="noopener noreferrer">${t('navApply')} ↗</a></div>
     <section class="detail-body"><div class="reveal"><div class="eyebrow section-label">${t('aboutThis')}</div><h2>${p.label.split(' ').slice(0,2).join(' ')} <em>${p.label.split(' ').slice(2).join(' ')}</em></h2></div><div class="detail-text reveal">${p.description.map(s=>`<p>${s}</p>`).join('')}</div></section>
     <section class="gallery" id="gallery"><div class="eyebrow section-label">A LOOK INSIDE / ${p.name.toUpperCase()}</div>
-      <div class="gallery-main">${imageEl(image,p.name+' gallery image 1','gallery-active')}<div class="gallery-controls"><button type="button" id="gallery-prev" aria-label="Previous photo">←</button><button type="button" id="gallery-next" aria-label="Next photo">→</button></div></div>
-      <div class="gallery-thumbs">${DATA.images[p.imageKey].map((src,i)=>`<button data-gallery-index="${i}" class="${i===0?'active':''}" aria-label="Show photo ${i+1}">${imageEl(src,p.name+' thumbnail '+(i+1),'')}</button>`).join('')}</div></section>
+      <div class="gallery-main">${imageEl(image,p.name+' gallery image 1','gallery-active')}<div class="gallery-topbar"><span id="gallery-counter">01 / ${String(DATA.images[p.imageKey].length).padStart(2,'0')}</span><button type="button" data-gallery-open>${t('galleryOpen')} ↗</button></div><div class="gallery-controls"><button type="button" id="gallery-prev" aria-label="Previous photo">←</button><button type="button" id="gallery-next" aria-label="Next photo">→</button></div></div>
+      <div class="gallery-thumbs">${DATA.images[p.imageKey].map((src,i)=>`<button data-gallery-index="${i}" class="${i===0?'active':''}" aria-pressed="${i===0}" aria-label="Show photo ${i+1}">${imageEl(src,p.name+' thumbnail '+(i+1),'')}</button>`).join('')}</div><dialog class="photo-dialog" id="photo-dialog" aria-label="${p.name} photo viewer"><button class="dialog-close" type="button" data-gallery-close aria-label="${t('galleryClose')}">✕</button><img class="dialog-image" src="${image}" alt="${p.name}, photo 1"/><div class="dialog-toolbar"><button type="button" data-dialog-step="-1" aria-label="Previous photo">←</button><span id="dialog-counter">01 ${t('galleryOf')} ${DATA.images[p.imageKey].length}</span><button type="button" data-dialog-step="1" aria-label="Next photo">→</button></div></dialog></section>
     <section class="amenities"><div class="reveal"><div class="eyebrow section-label">THE HIGHLIGHTS</div><h2 class="display-title">${t('homeHighlights')}</h2><ul class="amenity-list">${p.features.map(f=>`<li>${f}</li>`).join('')}</ul></div><div class="reveal"><div class="eyebrow section-label">${t('termsHeading')}</div><h2 class="display-title">${money(p.rent)}<br><em>/ month</em></h2><ul class="amenity-list">${[`Listed deposit: ${money(p.deposit)}`,...p.terms].map(f=>`<li>${f}</li>`).join('')}</ul><div class="terms-note">${t('termsDisclaimer')}<br><br>Source: <a href="${p.sourceUrl}" target="_blank" rel="noopener noreferrer">original listing ↗</a></div><a class="button-solid" style="margin-top:23px" href="${DATA.applicationUrl}" target="_blank" rel="noopener noreferrer">${t('navApply')} ↗</a></div></section>
     <section class="section"><div class="eyebrow section-label">EXPLORE MORE</div><h2 class="display-title" style="margin-bottom:40px">${t('moreHomes')}</h2><div class="mini-cards">${more.map(x=>`<a href="#home/${x.slug}" class="mini-card">${imageEl(photo(x),x.name,'')}<span>${x.name} ↗</span></a>`).join('')}</div></section>
     <div class="listing-context">${t('sourceInfo')}</div>${contactSection()}`;
@@ -126,7 +143,38 @@
     const p=P.find(x=>'detail:'+x.slug===currentView);if(!p)return;
     const imgs=DATA.images[p.imageKey];currentGalleryIndex=(currentGalleryIndex+step+imgs.length)%imgs.length;
     const large=app.querySelector('.gallery-active');if(large){large.src=imgs[currentGalleryIndex];large.alt=p.name+' gallery image '+(currentGalleryIndex+1);}
-    app.querySelectorAll('[data-gallery-index]').forEach(b=>b.classList.toggle('active',Number(b.dataset.galleryIndex)===currentGalleryIndex));
+    app.querySelectorAll('[data-gallery-index]').forEach(b=>{const active=Number(b.dataset.galleryIndex)===currentGalleryIndex;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+    const counter=app.querySelector('#gallery-counter');if(counter)counter.textContent=String(currentGalleryIndex+1).padStart(2,'0')+' / '+String(imgs.length).padStart(2,'0');
+    const dialogImage=app.querySelector('.dialog-image');if(dialogImage){dialogImage.src=imgs[currentGalleryIndex];dialogImage.alt=p.name+', photo '+(currentGalleryIndex+1);}
+    const dialogCounter=app.querySelector('#dialog-counter');if(dialogCounter)dialogCounter.textContent=String(currentGalleryIndex+1).padStart(2,'0')+' '+t('galleryOf')+' '+imgs.length;
+  }
+  const heroHomes = [P[0],P[2],P[3]];
+  function heroGo(index, manual=false) {
+    const scene=app.querySelector('.hero-scene');if(!scene)return;
+    heroSlideIndex=(index+heroHomes.length)%heroHomes.length;
+    scene.querySelectorAll('[data-hero-slide]').forEach((slide,i)=>slide.classList.toggle('is-active',i===heroSlideIndex));
+    const target=heroHomes[heroSlideIndex];
+    const number=app.querySelector('#hero-slide-number');if(number)number.textContent=String(heroSlideIndex+1).padStart(2,'0');
+    const name=app.querySelector('#hero-featured-name');if(name)name.textContent=target.name;
+    const hood=app.querySelector('#hero-featured-neighborhood');if(hood)hood.textContent=target.neighborhood;
+    const link=app.querySelector('#hero-featured-link');if(link)link.href='#home/'+target.slug;
+    app.querySelectorAll('[data-hero-go]').forEach(b=>{const active=Number(b.dataset.heroGo)===heroSlideIndex;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active));});
+    if(manual)restartHeroTimer();
+  }
+  function stopHeroTimer(){if(heroTimer){clearInterval(heroTimer);heroTimer=null;}}
+  function restartHeroTimer(){
+    stopHeroTimer();
+    if(!app.querySelector('.hero-scene')||heroPaused||reducedMotion.matches)return;
+    heroTimer=setInterval(()=>{
+      if(document.hidden||!app.querySelector('.hero-scene'))return;
+      heroGo(heroSlideIndex+1);
+    },heroIntervalMs);
+  }
+  function setHeroPaused(paused) {
+    heroPaused=paused;
+    const button=app.querySelector('[data-hero-pause]');
+    if(button){button.textContent=paused?'▶':'Ⅱ';button.setAttribute('aria-label',t(paused?'heroPlay':'heroPause'));button.setAttribute('aria-pressed',String(paused));}
+    restartHeroTimer();
   }
   function observeSections() {
     observer?.disconnect();
@@ -147,6 +195,7 @@
       document.title=(p?p.name+' — ':'')+'Oaktown Rentals — Find your place';
       observeSections();
       if(!p)activateFilter(selectedFilter);
+      restartHeroTimer();
     }
     if(p) {
       if(!preservePosition)window.scrollTo({top:0,behavior:'instant'});
@@ -174,11 +223,25 @@
   langButton.addEventListener('click',()=>{language=language==='en'?'es':'en';draw(true)});
   app.addEventListener('click',e=>{
     const filter=e.target.closest('[data-filter]');if(filter){activateFilter(filter.dataset.filter);return;}
+    const heroStep=e.target.closest('[data-hero-step]');if(heroStep){heroGo(heroSlideIndex+Number(heroStep.dataset.heroStep),true);return;}
+    const heroDot=e.target.closest('[data-hero-go]');if(heroDot){heroGo(Number(heroDot.dataset.heroGo),true);return;}
+    if(e.target.closest('[data-hero-pause]')){setHeroPaused(!heroPaused);return;}
+    const dialog=app.querySelector('#photo-dialog');
+    if(e.target.closest('[data-gallery-open]')&&dialog?.showModal){dialog.showModal();return;}
+    if(e.target.closest('[data-gallery-close]')){dialog?.close();return;}
+    const dialogStep=e.target.closest('[data-dialog-step]');if(dialogStep){galleryStep(Number(dialogStep.dataset.dialogStep));return;}
     const thumb=e.target.closest('[data-gallery-index]');if(thumb){const p=P.find(x=>'detail:'+x.slug===currentView);if(p)galleryStep(Number(thumb.dataset.galleryIndex)-currentGalleryIndex);return;}
     if(e.target.closest('#gallery-prev'))galleryStep(-1);
     if(e.target.closest('#gallery-next'))galleryStep(1);
   });
   window.addEventListener('hashchange',()=>draw());
+  window.addEventListener('keydown',e=>{
+    const dialog=app.querySelector('#photo-dialog');
+    if(dialog?.open){if(e.key==='ArrowLeft'){e.preventDefault();galleryStep(-1)}if(e.key==='ArrowRight'){e.preventDefault();galleryStep(1)}}
+    if(e.key==='Escape'&&!mobileNav.hidden)closeMenu();
+  });
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)restartHeroTimer();});
+  reducedMotion.addEventListener?.('change',()=>{restartHeroTimer();observeSections();});
   window.addEventListener('scroll',onScroll,{passive:true});
   document.getElementById('year').textContent=new Date().getFullYear();
   draw();

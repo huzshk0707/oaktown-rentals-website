@@ -1,6 +1,15 @@
-# Oaktown Rentals — Cinematic Website (Version 0.1)
+# Oaktown Rentals — Cinematic Website (Version 0.2)
 
 A standalone, animated, mobile-friendly Oaktown Rentals website concept based on the *design direction* of the supplied cinematic real-estate video. Not a copy of the featured third-party website. Preserves public information from the existing Oaktown Rentals Squarespace website where practical.
+
+## Version 0.2 — Cinematic visual upgrade (2026-11-04)
+
+- Three-scene featured-home hero with smooth crossfades, direct property links, accessible manual navigation, and autoplay pause.
+- Editorial photo collage and typographic chapter divider inspired by the pacing of the supplied reference video.
+- Refined property cards with gallery/photo counts, index labels and understated hover effects.
+- Full-screen property photo viewer, arrow-key navigation, image counters, accessible dialog close behavior.
+- Improved mobile layouts and a directly accessible rental application link in mobile navigation.
+- Supports `prefers-reduced-motion` without forcing autoplay; the current published website remains a *preview* until listing information is confirmed.
 
 ## Features
 
@@ -21,19 +30,18 @@ python3 -m http.server 8787
 
 Visit `http://localhost:8787/`. Node/Python are only needed for local preview; deployment serves static files.
 
-## Cloudflare Pages — GitHub integration (preferred)
+## Current Cloudflare deployment — Workers Static Assets
 
-1. Open [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git / Import an existing Git repository** (wording varies).
-2. Authorize Cloudflare's GitHub integration to access the **private** repository `huzshk0707/oaktown-rentals-website` when prompted.
-3. Select production branch **`main`**.
-4. Configure **Framework preset: None**, **Build command: `exit 0`** (or leave blank if the form permits), **Build output directory: `.`**, **Root directory: `/`**.
-5. Deploy. Cloudflare will give you a free `*.pages.dev` address. No custom domain is required.
-6. Future commits to `main` automatically deploy. The current repository is the **pre-launch preview**, not an approved public listing site.
-> Some Cloudflare dashboard flows prioritize **Workers**, but Cloudflare Pages still supports GitHub-integrated static sites. See https://developers.cloudflare.com/pages/configuration/git-integration/ .
+- Live preview: https://oaktown-rentals-website.huzaifashaikhhp.workers.dev
+- GitHub repository: `huzshk0707/oaktown-rentals-website` (private); production branch: `main`.
+- Cloudflare project type: **Worker with Static Assets**, automatically deployed from the connected GitHub repository. No custom domain is required.
+- `wrangler.jsonc` declares the static asset directory as repository root (`.`). `.assetsignore` excludes internal files from public asset uploads.
+- Changes pushed to `main` trigger a Cloudflare deployment. Check **Workers & Pages → oaktown-rentals-website → Deployments** to verify the new version is active.
+- The preview intentionally has `noindex,nofollow` metadata and `robots.txt` disallow rules. Do not remove them until the content and launch are approved.
 
 ## Content and launch checklist — **important**
 
-- **Not yet a live website**. This is a design preview; all property availability and application policies need client confirmation before an approved public launch.
+- **Live design preview, not approved inventory**. The site is accessible on Cloudflare, but all property availability and application policies need client confirmation before an approved public launch.
 - **Colonial rent discrepancy**: The existing Squarespace website currently says `$1,850`, while a more recent client confirmation specifies **$1,799**. Preview uses `$1,799`; verify deposit/current rent with Leslie.
 - **1106 Cherokee #6 Squarespace broken link**: the current navigation points to `/1119-ireland-drive-copy-1`, which returned 404. The preview restores a working dedicated detail view, but only one public image was located.
 - **4005 Smallboat timing**: Squarespace says showings after mid-October 2026; this is stale as of November 2026. Do not represent it as current availability.
