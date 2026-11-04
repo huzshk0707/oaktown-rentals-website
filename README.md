@@ -23,14 +23,12 @@ Visit `http://localhost:8787/`. Node/Python are only needed for local preview; d
 
 ## Cloudflare Pages — GitHub integration (preferred)
 
-1. Create a **separate repository** named `oaktown-rentals-website` in your GitHub account. Do **not** use the `Oaktown-ops` repository.
-2. Add all files from this folder to the repository root and commit to `main`.
-3. In Cloudflare Dashboard, go to **Workers & Pages** → **Create application** → **Pages** → **Connect to Git** (exact UI wording may differ).
-4. Select the new repository and production branch `main`.
-5. Framework preset: **None**. Build command: **leave blank**. Build output directory: **`.`** (repository root). Root directory: **`/`**.
-6. Deploy. Cloudflare assigns a free `your-project.pages.dev` address. No custom domain is required.
-7. New commits to `main` automatically rebuild/deploy.
-
+1. Open [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git / Import an existing Git repository** (wording varies).
+2. Authorize Cloudflare's GitHub integration to access the **private** repository `huzshk0707/oaktown-rentals-website` when prompted.
+3. Select production branch **`main`**.
+4. Configure **Framework preset: None**, **Build command: `exit 0`** (or leave blank if the form permits), **Build output directory: `.`**, **Root directory: `/`**.
+5. Deploy. Cloudflare will give you a free `*.pages.dev` address. No custom domain is required.
+6. Future commits to `main` automatically deploy. The current repository is the **pre-launch preview**, not an approved public listing site.
 > Some Cloudflare dashboard flows prioritize **Workers**, but Cloudflare Pages still supports GitHub-integrated static sites. See https://developers.cloudflare.com/pages/configuration/git-integration/ .
 
 ## Content and launch checklist — **important**
