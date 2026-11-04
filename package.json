@@ -1,0 +1,9 @@
+{
+  "name": "oaktown-rentals-website",
+  "private": true,
+  "scripts": {
+    "check": "node --check app.js && node --check data.js && node --check effects.js",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}
