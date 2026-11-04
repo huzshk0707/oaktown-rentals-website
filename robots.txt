@@ -1,0 +1,3 @@
+# Preview concept. Remove this Disallow and the robots meta tag for approved launch.
+User-agent: *
+Disallow: /
