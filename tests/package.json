@@ -2,8 +2,9 @@
   "name": "oaktown-rentals-website-tests",
   "private": true,
   "scripts": {
-    "check": "node --check ../app.js && node --check ../data.js && node --check ../effects.js",
-    "test:browser": "node browser.cjs"
+    "check": "node --check ../app.js && node --check ../data.js && node --check ../effects.js && node --check ../mint-mojo/mint-mojo.js",
+    "test:browser": "node browser.cjs",
+    "test:mint": "node mint-mojo.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
