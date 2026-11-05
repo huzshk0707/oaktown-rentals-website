@@ -1,8 +1,10 @@
-# Oaktown Rentals — Cinematic Website (Version 0.4)
+# Oaktown Rentals — Cinematic Website (Version 0.5 — Property Admin)
 
-A standalone, animated, mobile-friendly Oaktown Rentals website concept based on the *design direction* of the supplied cinematic real-estate video. Not a copy of the featured third-party website. Preserves public information from the existing Oaktown Rentals Squarespace website where practical.
+An animated, mobile-friendly Oaktown Rentals website with an optional private property admin, based on the *design direction* of the supplied cinematic real-estate video. Not a copy of the featured third-party website. Preserves public information from the existing Oaktown Rentals Squarespace website where practical.
 
 ## Features
+
+- Property admin at `/admin/`, with separate drafts/published snapshots, a listing editor, photo uploads/order, preview, publish/unpublish and archive. Production access stays closed until the account's D1, R2 and Cloudflare Access are configured. See [the deployment guide](docs/admin-setup.md) for the plan, current costs and one-time setup.
 
 - Three-chapter photo story with a photo-filled O integrated into one 180svh hero (previously 470svh across two sections). Native scroll controls the slow photo movement and transitions; no video or autoplay is required.
 - One combined editorial/about section with real property photos. The Florida rental is a compact secondary feature after contact.
@@ -14,24 +16,25 @@ A standalone, animated, mobile-friendly Oaktown Rentals website concept based on
 - Four properties sourced from the public Oaktown Rentals site: 115 Colonial Drive, 1106 Cherokee Rd #6, 4005 Smallboat Ct, 1106 Cherokee Rd #8.
 - FAQ, Louisville community links, Cudjoe Key / The Mint Mojo feature, contact actions, online application link.
 - Complete English/Spanish UI, property descriptions, amenities, terms and accessible labels. Language preference persists; switching preserves the selected gallery photo and reading position.
-- No dependencies, build system, tracking scripts or backend required; accessible reduced-motion support.
+- Public file mode remains available; the optional CMS backend uses Cloudflare Workers, D1, R2 and Cloudflare Access. No tracking scripts.
 
 ## Run locally
 
 From this folder:
 
 ```sh
-python3 -m http.server 8787
+npm ci
+npm run dev
 ```
 
-Visit `http://localhost:8787/`. Node/Python are only needed for local preview; deployment serves static files.
+Wrangler prints the local preview URL. Without CMS bindings, public listings come from `data.js` and admin access remains closed. A Python static server is still suitable for a file-only public preview. For authenticated local editor tests and production setup, see [the admin guide](docs/admin-setup.md).
 
 ## Current Cloudflare deployment — Workers Static Assets
 
 - Live preview: https://oaktown-rentals-website.huzaifashaikhhp.workers.dev
 - GitHub repository: `huzshk0707/oaktown-rentals-website` (private); production branch: `main`.
 - Cloudflare project type: **Worker with Static Assets**, automatically deployed from the connected GitHub repository. No custom domain is required.
-- `wrangler.jsonc` declares the static asset directory as repository root (`.`). `.assetsignore` excludes internal files from public asset uploads.
+- `wrangler.jsonc` declares `cms/worker.mjs` and static assets at the repository root. `.assetsignore` explicitly allows browser-facing files and excludes server code, tests and account setup. Requests run through the Worker before asset routing to enforce admin authorization.
 - Changes pushed to `main` trigger a Cloudflare deployment. Check **Workers & Pages → oaktown-rentals-website → Deployments** to verify the new version is active.
 - The preview intentionally has `noindex,nofollow` metadata and `robots.txt` disallow rules. Do not remove them until the content and launch are approved.
 
@@ -55,6 +58,10 @@ Visit `http://localhost:8787/`. Node/Python are only needed for local preview; d
 - `brand.css` — logo-based green and cream palette. `--logo-green: #138c47` is the most common RGB color in the supplied JPG; `--brand: #10783d` is a darker companion for accessible text/buttons. The header and footer serve the original 1200×608 JPG unchanged from `assets/oaktown-rentals-logo.jpg`.
 - `data.js` — all property records, pricing, public photos and outbound links.
 - `app.js` — routes, sections, translation copy, filters and galleries.
+- `cms-client.js` — optional published-listings API loader and safe rendering adaptation.
+- `admin/` — private editor interface.
+- `cms/` — Worker, authentication, validation and D1 migrations.
+- `scripts/seed-cms.mjs` — explicit one-time import from the public file-based listings.
 - `styles.css` — base styling and self-hosted font declarations.
 - `cinematic.css` — compact story/letter transition, comparison grid, optional carousel, gallery and responsive layouts.
 - `effects.js` — scroll-linked scenes, perspective effects, motion preferences and lifecycle cleanup.
@@ -62,10 +69,13 @@ Visit `http://localhost:8787/`. Node/Python are only needed for local preview; d
 
 ## Validation
 
-The production site has no dependencies. Browser-test dependencies are isolated under `tests/`, avoiding automatic development-package installs in Cloudflare's static Worker deployment.
+The Worker uses `jose` for signed Access tokens and Wrangler for development/deployment. Browser-only Playwright dependencies stay under `tests/`. Cloudflare installs the root lockfile for the Worker build.
 
 ```sh
-node --check app.js && node --check data.js && node --check effects.js
+npm ci
+npm run check
+npm test
+npx wrangler deploy --dry-run
 # In a separate terminal from the repo root, run: python3 -m http.server 8787
 cd tests
 npm ci

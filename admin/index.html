@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#123b25">
+  <title>Property admin — Oaktown Rentals</title>
+  <link rel="stylesheet" href="/admin/admin.css"><script type="module" src="/admin/admin.js"></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to properties</a>
+  <aside class="sidebar">
+    <a href="/" aria-label="Oaktown Rentals website"><img src="/assets/oaktown-rentals-logo.jpg" width="1200" height="608" alt="Oaktown Rentals"></a>
+    <p class="overline">PROPERTY MANAGEMENT</p><h1>Your homes.<br>Your control.</h1>
+    <p class="sidebar-copy">Keep every listing ready for its next chapter.</p>
+    <nav aria-label="Admin navigation"><a class="selected" href="/admin/">Properties</a><a href="/" target="_blank" rel="noopener">View website</a></nav>
+    <div class="account"><span id="account-email">Checking sign-in…</span><a href="/cdn-cgi/access/logout">Sign out</a></div>
+  </aside>
+  <main id="workspace">
+    <header class="workspace-header"><div><p class="overline">OAKTOWN RENTALS</p><h2>Property collection</h2><p>Add a home, refresh its details, or get it ready to publish.</p></div><button id="new-property" class="primary" disabled>+ Add property</button></header>
+    <p id="notice" class="notice" role="status" aria-live="polite">Connecting to your properties…</p>
+    <section id="collection" aria-label="Properties" hidden>
+      <div id="stats" class="stats"></div>
+      <div class="tools"><label class="search">Find a property<input id="search" type="search" placeholder="Address or neighborhood" maxlength="120"></label><label>Show<select id="state-filter"><option value="all">All properties</option><option value="published">Published</option><option value="draft">Drafts</option><option value="archived">Archived</option></select></label><button id="refresh" class="secondary">Refresh</button></div>
+      <div id="property-list" class="property-list"></div><p id="empty-list" hidden>No properties match your search.</p>
+    </section>
+    <section id="editor" aria-labelledby="editor-title" hidden>
+      <div class="editor-top"><button id="back" class="text-button">All properties</button><span id="record-state" class="badge">New draft</span></div>
+      <h2 id="editor-title">Add a property</h2><p id="editor-hint">Start with the basics. You can save a draft before adding photos.</p>
+      <form id="property-form">
+        <fieldset><legend>The essentials</legend><div class="fields">
+          <label class="wide">Property address / title<input name="name" required maxlength="160" placeholder="115 Colonial Drive"></label>
+          <label>Web address<input name="slug" required maxlength="100" pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="115-colonial-drive"><small>Permanent after the first save.</small></label>
+          <label>Neighborhood<input name="neighborhood" maxlength="160" list="neighborhoods"><datalist id="neighborhoods"><option>St. Matthews</option><option>The Highlands</option><option>Cherokee Triangle</option><option>Okolona</option></datalist></label>
+          <label>City<input name="city" maxlength="160" value="Louisville, Kentucky"></label>
+          <label>Availability<select name="availability"><option value="unknown">Confirm with us</option><option value="available">Available</option><option value="coming_soon">Coming soon</option><option value="rented">Rented</option></select></label>
+          <label>Monthly rent ($)<input name="rent" type="number" min="0" max="1000000" step="0.01" required value="0"></label>
+          <label>Security deposit ($)<input name="deposit" type="number" min="0" max="1000000" step="0.01" required value="0"></label>
+          <label>Bedrooms<input name="bedrooms" type="number" min="0" max="100" step="1" required value="0"></label>
+          <label>Bathrooms<input name="bathrooms" type="number" min="0" max="100" step="0.5" required value="1"></label>
+        </div></fieldset>
+        <fieldset><legend>Tell the story</legend><div class="fields">
+          <label class="wide">Short headline<input name="label" maxlength="160" placeholder="A place to settle in"></label>
+          <label class="wide">Listing summary<textarea name="summary" maxlength="1000" rows="2" placeholder="A short introduction for the property card"></textarea></label>
+          <label class="wide">Full description<textarea name="description" rows="6" placeholder="Separate paragraphs with a blank line"></textarea><small>Separate paragraphs with a blank line.</small></label>
+          <label>Features<textarea name="features" rows="5" placeholder="One feature per line"></textarea><small>One feature per line.</small></label>
+          <label>Lease terms<textarea name="terms" rows="5" placeholder="One term per line"></textarea><small>One term per line.</small></label>
+          <label class="wide">Original listing link (optional)<input name="sourceUrl" type="url" maxlength="2048" placeholder="https://"></label>
+        </div></fieldset>
+        <details class="translation"><summary>Spanish version</summary><p>English text is used where a Spanish field is empty.</p><div class="fields">
+          <label class="wide">Spanish headline<input name="labelEs" maxlength="160"></label>
+          <label class="wide">Spanish summary<textarea name="summaryEs" maxlength="1000" rows="2"></textarea></label>
+          <label class="wide">Spanish description<textarea name="descriptionEs" rows="6"></textarea></label>
+          <label>Spanish features<textarea name="featuresEs" rows="5"></textarea></label>
+          <label>Spanish lease terms<textarea name="termsEs" rows="5"></textarea></label>
+        </div></details>
+        <fieldset><legend>Photos</legend><p>Your first photo is the main listing image. Describe each photo, then use the arrows to choose the order.</p><label class="upload">Add JPG, PNG or WebP photos<input id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp" multiple><small>Up to 8 MB each and 40 photos per property.</small></label><div id="photo-list" class="photo-list"></div></fieldset>
+        <div class="editor-actions"><div><button id="save" class="secondary" type="submit">Save draft</button><button id="preview" class="secondary" type="button">Preview listing</button></div><div><button id="archive" class="danger" type="button" hidden>Archive</button><button id="unpublish" class="secondary" type="button" hidden>Unpublish</button><button id="publish" class="primary" type="button">Publish listing</button></div></div>
+        <p class="save-note">Save draft keeps changes private. Publish updates the website. Archiving removes a listing from the website and keeps it here.</p>
+      </form>
+    </section>
+  </main>
+  <dialog id="preview-dialog" aria-labelledby="preview-title"><div class="preview-top"><h2 id="preview-title">Listing preview</h2><button id="close-preview" class="secondary" type="button">Close</button></div><p class="save-note">Preview of your current form. Changes go live after you publish.</p><div id="preview-content"></div></dialog>
+</body></html>
