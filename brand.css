@@ -1,0 +1,85 @@
+/* Oaktown-inspired palette. Keep photography in its original colors. */
+:root {
+  --ink: #102f25;
+  --ink2: #194733;
+  --cream: #f5f3e9;
+  --cream2: #d6e0d3;
+  --muted: #b5c9ba;
+  --accent: #c8dfb5;
+  --brand: #2d6647;
+  --brand-deep: #0a2219;
+  --line: rgba(200,223,181,.22);
+}
+body { background:var(--ink);color:var(--cream); }
+::selection { background:var(--accent);color:var(--brand-deep); }
+.site-header { border-bottom-color:var(--line); }
+.site-header.is-fixed { background:rgba(10,34,25,.96);box-shadow:0 12px 40px #06191024; }
+.mobile-nav { background:var(--ink2); }
+.nav-apply,.button-solid { background:var(--accent);color:var(--brand-deep);border-color:var(--accent); }
+.nav-apply:hover,.button-solid:hover { background:var(--cream);color:var(--brand-deep); }
+.story-stage { background:var(--ink2); }
+.story-image { background:radial-gradient(ellipse at 75% 30%,#527660,#244e3a 45%,var(--brand-deep)); }
+.story-shade { background:linear-gradient(90deg,#071e15b3,transparent 85%),linear-gradient(0deg,#071e15eb,transparent 65%),linear-gradient(180deg,#071e1580,transparent 30%); }
+.story-scene .eyebrow,.story-description { color:var(--cream); }
+.scene-navigation button,.story-caption { color:var(--cream2); }
+.scene-navigation button[aria-pressed=true] { color:var(--cream); }
+.story-explore:hover .round-icon { color:var(--brand-deep); }
+.collection { background:radial-gradient(ellipse at 20% 60%,#2d664733,transparent 65%),var(--ink); }
+.heading-note,.property-summary,.collection-note { color:var(--cream2); }
+.listing-count,.property-neighborhood { color:var(--muted); }
+.property-image-wrap { background:radial-gradient(circle at 30% 20%,#527660,#234b38 75%); }
+.collection .property-image { filter:none; }
+.card-photo-count { background:#0a2219d9;color:var(--cream); }
+.filter-chip { color:var(--cream2);border-color:#c8dfb54d; }
+.filter-chip.active,.view-switch button[aria-pressed=true] { background:var(--accent);color:var(--brand-deep);border-color:var(--accent); }
+.filter-chip:hover { border-color:var(--accent); }
+.view-switch,.collection-controls button { border-color:#c8dfb54d; }
+.property-details-line { color:var(--cream2);border-color:var(--line); }
+.property-details-line a { color:var(--accent); }
+.editorial-section { background:var(--cream);color:var(--ink); }
+.editorial-intro .section-label,.editorial-intro h2 em { color:var(--brand); }
+.editorial-intro p { color:#4d6354; }
+.editorial-intro .editorial-lead,.editorial-intro .text-link { color:var(--ink); }
+.editorial-photo { background:#d0dccb;box-shadow:0 24px 80px #102f251c; }
+.editorial-photo img { filter:none; }
+.editorial-photo-secondary { border-color:var(--cream); }
+.editorial-photo-caption { background:#0a2219d9; }
+.faq-section { background:var(--brand-deep); }
+.faq-item { border-color:var(--line); }
+.faq-answer { color:var(--cream2); }
+.community-section { background:var(--ink2); }
+.community-intro,.resource-link { color:var(--cream2); }
+.resource-link { border-color:var(--line); }
+.resource-link:hover { color:var(--accent); }
+.contact-panel { background:var(--cream);color:var(--ink); }
+.contact-panel .eyebrow,.contact-panel h2 em { color:var(--brand); }
+.contact-panel p { color:#4d6354; }
+.contact-actions a { border-color:#2d664740; }
+.contact-actions a:hover { color:var(--brand); }
+.contact-actions a span { color:var(--brand); }
+.vacation-feature { background:var(--ink2);border-color:var(--line); }
+.vacation-photo { background:#365b43; }
+.vacation-card p { color:var(--cream2); }
+.footer { background:var(--brand-deep); }
+.footer-signature { color:var(--cream); }
+.footer-bottom { color:var(--muted);border-color:var(--line); }
+.footer-contact span { color:var(--muted); }
+.page-intro { background:var(--ink2); }
+.page-intro .intro-photo:after { background:linear-gradient(0deg,#0a2219eb,#0a22191a 80%),linear-gradient(90deg,#071e1580,transparent); }
+.intro-sub { color:var(--cream2); }
+.details-bar { background:var(--ink);border-color:var(--line); }
+.detail-stat span { color:var(--muted); }
+.gallery-main { background:var(--brand-deep); }
+.gallery-open>span { background:#0a2219eb;color:var(--cream); }
+.gallery-controls button { background:var(--accent);color:var(--brand-deep); }
+.detail-text p { color:var(--cream2); }
+.amenities { background:var(--ink2); }
+.amenity-list li { color:var(--cream2);border-color:var(--line); }
+.terms-note { background:var(--brand-deep);color:var(--cream2);border-color:var(--line); }
+.mini-card { background:#365b43; }
+.lightbox { background:var(--brand-deep);color:var(--cream); }
+.lightbox::backdrop { background:#0a2219f2; }
+@media(max-width:850px) {
+  .mobile-actions { background:#0a2219f5;border-color:var(--line); }
+  .mobile-actions a:last-child { color:var(--brand-deep); }
+}
