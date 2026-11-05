@@ -52,6 +52,7 @@ Visit `http://localhost:8787/`. Node/Python are only needed for local preview; d
 
 ## Editing
 
+- `brand.css` — green palette proposal: forest `#102f25`, green `#2d6647`, sage `#c8dfb5`, ivory `#f5f3e9`. These are proposed colors, not sampled official brand values. The exact original logo is awaiting a user-supplied image; the existing logo has not been replaced.
 - `data.js` — all property records, pricing, public photos and outbound links.
 - `app.js` — routes, sections, translation copy, filters and galleries.
 - `styles.css` — base styling and self-hosted font declarations.
