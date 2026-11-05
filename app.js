@@ -1,7 +1,8 @@
 /* Lightweight cinematic site: no frameworks, API keys, or build tools required. */
-(() => {
+(async () => {
   'use strict';
   const DATA = window.OAKTOWN_DATA;
+  await window.OaktownContent.load(DATA);
   const app = document.getElementById('app');
   const header = document.getElementById('site-header');
   const menu = document.getElementById('menu-button');
@@ -61,11 +62,13 @@
     }
   };
   const t = (key) => words[language][key] || words.en[key] || key;
-  const money = (n) => new Intl.NumberFormat(language==='es'?'es-US':'en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
-  const localized = (p,key) => language==='es' ? p[key+'Es'] : p[key];
+  const money = (n) => new Intl.NumberFormat(language==='es'?'es-US':'en-US',{style:'currency',currency:'USD',minimumFractionDigits:n%1?2:0,maximumFractionDigits:2}).format(n);
+  const localized = (p,key) => language==='es' && p[key+'Es']?.length ? p[key+'Es'] : p[key];
   const photo = (p, idx=0) => DATA.images[p.imageKey][idx] || DATA.images[p.imageKey][0];
   const imageUrl = (src, width=1200) => src.includes('images.squarespace-cdn.com') ? src.split('?')[0]+'?format='+width+'w' : src;
   const imageEl = (src, alt, className, extra='') => {
+    if(!src)return '';
+    if(alt && DATA.photoAlts?.[src])alt=DATA.photoAlts[src];
     const thumbnail=className==='gallery-thumbnail';
     const widths=thumbnail?[100,300,500]:[500,1000,1500,2500];
     const sizes=thumbnail?'(max-width: 600px) 95px, 140px':className==='property-image'?'(max-width: 600px) calc(100vw - 44px), (max-width: 850px) 90vw, 45vw':'100vw';
@@ -81,8 +84,8 @@
           ${imageEl(photo(p), p.name+' — '+t('photoLabel'),'property-image')}
           <span class="photo-pill">${t('photo')}</span><span class="card-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
         </a>
-        <div class="property-data"><div><span class="property-neighborhood">${p.neighborhood}</span><h3 class="property-name"><a href="#home/${p.slug}">${p.name}</a></h3><p class="property-summary">${language==='es'?p.summaryEs:p.summary}</p></div><div class="property-price">${money(p.rent)}<small>${t('perMonth')}</small></div></div>
-        <div class="property-details-line"><span>${p.bedrooms} ${language==='en'&&p.bedrooms===1?'bed':t('beds')} &nbsp; / &nbsp; ${p.bathrooms} ${t('baths')}</span><a href="${inquiryUrl(p)}">${t('availability')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
+        <div class="property-data"><div><span class="property-neighborhood">${p.neighborhood}</span><h3 class="property-name"><a href="#home/${p.slug}">${p.name}</a></h3><p class="property-summary">${localized(p,'summary')}</p></div><div class="property-price">${money(p.rent)}<small>${t('perMonth')}</small></div></div>
+        <div class="property-details-line"><span>${p.bedrooms} ${language==='en'&&p.bedrooms===1?'bed':t('beds')} &nbsp; / &nbsp; ${p.bathrooms} ${t('baths')}</span>${p.availability&&p.availability!=='unknown'?`<span class="availability-badge">${({en:{available:'Available',coming_soon:'Coming soon',rented:'Rented'},es:{available:'Disponible',coming_soon:'Próximamente',rented:'Alquilado'}})[language][p.availability]||''}</span>`:''}<a href="${inquiryUrl(p)}">${t('availability')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
       </article>`;
   }
   function faqSection() {
@@ -92,32 +95,34 @@
     return `<section id="contact" class="contact-panel"><div class="reveal"><span class="eyebrow">${t('contactLabel')}</span><h2>${t('contactHeading')}</h2><p>${t('contactDesc')}</p></div><div class="contact-actions reveal"><a href="sms:+15025001070">${t('textBest')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a href="tel:+15025001070">${DATA.phoneDisplay} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a href="mailto:${DATA.email}">${DATA.email}<span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><p>${DATA.mailingAddress}</p></div></section>`;
   }
   function storySection() {
+    const featured=P[0],images=featured?DATA.images[featured.imageKey]:[];
     const scenes=[
-      {image:DATA.images.colonial[0],title:t('heroOne')+' <em>'+t('heroTwo')+'</em>',copy:t('heroTagline')},
-      {image:DATA.images.colonial[3],title:t('sceneTwoTitle'),copy:t('sceneTwoCopy')},
-      {image:DATA.images.colonial[6],title:t('sceneThreeTitle'),copy:t('sceneThreeCopy')}
+      {image:images[0],title:t('heroOne')+' <em>'+t('heroTwo')+'</em>',copy:t('heroTagline')},
+      {image:images[3]||images[1]||images[0],title:t('sceneTwoTitle'),copy:t('sceneTwoCopy')},
+      {image:images[6]||images[2]||images[0],title:t('sceneThreeTitle'),copy:t('sceneThreeCopy')}
     ];
     return `<section class="story" id="top" aria-label="${t('heroKicker')}"><div class="story-stage">
       <div class="story-images" aria-hidden="true">${scenes.map((scene,i)=>`<div class="story-image ${i===0?'is-active':''}" data-scene-image="${i}">${imageEl(scene.image,'','',i===0?'eager':'')}</div>`).join('')}</div>
-      <div class="story-letter" aria-hidden="true" style="background-image:url('${imageUrl(scenes[2].image,1500)}')">O</div>
+      <div class="story-letter" aria-hidden="true" ${scenes[2].image?`style="background-image:url('${imageUrl(scenes[2].image,1500)}')"`:''}>O</div>
       <div class="story-shade"></div><div class="story-topline"><span>LOUISVILLE, KENTUCKY</span><a href="#homes">${t('explore')} <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div>
       <h1 class="sr-only">${t('heroKicker')} — ${t('heroOne')} ${t('heroTwo')}</h1>
       <div class="story-copy">${scenes.map((scene,i)=>`<div class="story-scene ${i===0?'is-active':''}" data-scene="${i}" ${i===0?'':'aria-hidden="true"'}><span class="eyebrow">0${i+1} / ${t(['sceneOne','sceneTwo','sceneThree'][i])}</span><p class="story-title">${scene.title}</p><p class="story-description">${scene.copy}</p></div>`).join('')}</div>
       <a class="story-explore" href="#homes" aria-label="${t('explore')}"><span>${t('explore')}</span><span class="round-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
-      <div class="story-bottom"><div class="scene-navigation" role="group" aria-label="${t('photosLabel')}">${[0,1,2].map(i=>`<button type="button" data-scene-button="${i}" aria-pressed="${i===0}"><span>0${i+1}</span><span>${t(['sceneOne','sceneTwo','sceneThree'][i])}</span><i aria-hidden="true"></i></button>`).join('')}</div><a class="story-caption" href="#home/${P[0].slug}">${t('heroCaption')}</a></div>
+      <div class="story-bottom"><div class="scene-navigation" role="group" aria-label="${t('photosLabel')}">${[0,1,2].map(i=>`<button type="button" data-scene-button="${i}" aria-pressed="${i===0}"><span>0${i+1}</span><span>${t(['sceneOne','sceneTwo','sceneThree'][i])}</span><i aria-hidden="true"></i></button>`).join('')}</div>${featured?`<a class="story-caption" href="#home/${featured.slug}">${featured.name}</a>`:''}</div>
     </div></section>`;
   }
   function homePage() {
     return `${storySection()}
     <section class="section collection" id="homes" data-layout="${collectionLayout}">${sectionHeading(t('homesLabel'),t('homesHeading'),t('homesDesc'))}
-      <div class="listing-tools reveal"><span class="listing-count" aria-live="polite">${String(P.length).padStart(2,'0')} / ${t('homeCount')}</span><div class="view-switch" role="group" aria-label="${t('layoutLabel')}"><button type="button" data-layout-button="grid" aria-pressed="${collectionLayout==='grid'}">${t('gridView')}</button><button type="button" data-layout-button="gallery" aria-pressed="${collectionLayout==='gallery'}">${t('galleryView')}</button></div><div class="filter-strip" role="group" aria-label="${t('filterLabel')}"><button class="filter-chip active" data-filter="All" aria-pressed="true">${t('all')}</button><button class="filter-chip" data-filter="St. Matthews" aria-pressed="false">${t('stMatthews')}</button><button class="filter-chip" data-filter="The Highlands|Cherokee Triangle" aria-pressed="false">${t('highlands')}</button><button class="filter-chip" data-filter="Okolona" aria-pressed="false">${t('okolona')}</button></div></div>
+      <div class="listing-tools reveal"><span class="listing-count" aria-live="polite">${String(P.length).padStart(2,'0')} / ${t('homeCount')}</span><div class="view-switch" role="group" aria-label="${t('layoutLabel')}"><button type="button" data-layout-button="grid" aria-pressed="${collectionLayout==='grid'}">${t('gridView')}</button><button type="button" data-layout-button="gallery" aria-pressed="${collectionLayout==='gallery'}">${t('galleryView')}</button></div><div class="filter-strip" role="group" aria-label="${t('filterLabel')}"><button class="filter-chip active" data-filter="All" aria-pressed="true">${t('all')}</button><button class="filter-chip" data-filter="St. Matthews" aria-pressed="false">${t('stMatthews')}</button><button class="filter-chip" data-filter="The Highlands|Cherokee Triangle" aria-pressed="false">${t('highlands')}</button><button class="filter-chip" data-filter="Okolona" aria-pressed="false">${t('okolona')}</button>${[...new Set(P.map(p=>p.neighborhood))].filter(n=>!['St. Matthews','The Highlands','Cherokee Triangle','Okolona'].includes(n)).map(n=>`<button class="filter-chip" data-filter="${n}" aria-pressed="false">${n}</button>`).join('')}</div></div>
       <p class="collection-note">${t('availabilityNote')}</p>
+      ${!P.length?`<p class="collection-empty">${language==='es'?(DATA.contentUnavailable?'No podemos cargar las viviendas en este momento. Contáctanos para consultar disponibilidad.':'No hay viviendas publicadas en este momento. Contáctanos para saber qué viene próximamente.'):(DATA.contentUnavailable?'We cannot load the homes right now. Contact us for current availability.':'There are no published homes right now. Contact us to hear what’s coming next.')}</p>`:''}
       <div class="collection-viewport" id="collection-viewport" ${collectionLayout==='gallery'?'tabindex="0"':''} role="region" aria-label="${t('listings')}"><div class="property-grid" id="property-grid">${P.map(card).join('')}</div></div>
       <div class="collection-bottom"><span>${t('browseHint')}</span><div class="collection-meter" aria-hidden="true"><span></span></div><div class="collection-controls"><button data-collection-step="-1" aria-label="${t('previousHome')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button data-collection-step="1" aria-label="${t('nextHome')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></div>
     </section>
     <section class="editorial-section" id="about" aria-labelledby="editorial-title">
       <div class="editorial-intro reveal"><span class="eyebrow section-label">${t('aboutLabel')}</span><h2 id="editorial-title">${t('aboutHeading')}</h2><p class="editorial-lead">${t('aboutLead')}</p><p>${t('aboutText')}</p><a class="text-link" href="#contact">${t('aboutLink')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
-      <div class="editorial-collage reveal"><div class="editorial-photo editorial-photo-primary">${imageEl(DATA.images.colonial[3],t('colonialInterior'),'')}<span class="editorial-photo-caption">01 / ST. MATTHEWS</span></div><div class="editorial-photo editorial-photo-secondary">${imageEl(DATA.images.cherokee8[1],t('cherokeeInterior'),'')}<span class="editorial-photo-caption">02 / HIGHLANDS</span></div></div>
+      <div class="editorial-collage reveal"><div class="editorial-photo editorial-photo-primary">${P[0]?imageEl(photo(P[0],3),P[0].name,''):''}<span class="editorial-photo-caption">01 / ${P[0]?.neighborhood||'OAKTOWN'}</span></div><div class="editorial-photo editorial-photo-secondary">${P[1]?imageEl(photo(P[1],1),P[1].name,''):''}<span class="editorial-photo-caption">02 / ${P[1]?.neighborhood||'LOUISVILLE'}</span></div></div>
     </section>
     ${faqSection()}
     <section class="section community-section" id="community"><div class="reveal"><div class="eyebrow section-label">${t('communityLabel')}</div><h2 class="display-title">${t('communityHeading')}</h2><p class="community-intro">${t('communityText')}</p></div><div class="community-resources reveal"><a class="resource-link" href="https://www.jefferson.kyschools.us/" target="_blank" rel="noopener noreferrer">${t('communityRes1')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a class="resource-link" href="https://louisvilleky.gov/" target="_blank" rel="noopener noreferrer">${t('communityRes2')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a class="resource-link" href="https://www.gotolouisville.com/" target="_blank" rel="noopener noreferrer">${t('communityRes3')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a class="resource-link" href="https://www.lfpl.org/" target="_blank" rel="noopener noreferrer">${t('communityRes4')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div></section>
@@ -128,7 +133,7 @@
     const image = photo(p);
     const more = P.filter(x=>x.slug!==p.slug).slice(0,2);
     return `<section class="page-intro has-image"><div class="intro-photo" style="background-image:url('${image}')"></div>
-      <a class="back-link" href="#homes"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg> ${t('detailBack')}</a><span class="eyebrow section-label">${p.neighborhood} / ${p.city}</span><h1>${p.name.replace(' · ', '<br>')}</h1><p class="intro-sub">${language==='es'?p.summaryEs:p.summary}</p></section>
+      <a class="back-link" href="#homes"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg> ${t('detailBack')}</a><span class="eyebrow section-label">${p.neighborhood} / ${p.city}</span><h1>${p.name.replace(' · ', '<br>')}</h1><p class="intro-sub">${localized(p,'summary')}</p></section>
     <div class="details-bar"><div class="detail-stats"><div class="detail-stat"><strong>${money(p.rent)}</strong><span>${t('rent')}</span></div><div class="detail-stat"><strong>${money(p.deposit)}</strong><span>${t('deposit')}</span></div><div class="detail-stat"><strong>${p.bedrooms}</strong><span>${t('bedrooms')}</span></div><div class="detail-stat"><strong>${p.bathrooms}</strong><span>${t('bathrooms')}</span></div></div><div class="detail-actions"><a class="button-solid" href="${showingUrl(p)}">${t('requestShowing')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a><a class="text-link" href="${DATA.applicationUrl}" target="_blank" rel="noopener noreferrer">${t('navApply')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div></div>
     <section class="gallery" id="gallery"><div class="gallery-heading"><span class="eyebrow section-label">${t('insideLabel')} / ${p.name.toUpperCase()}</span><span class="gallery-count" aria-live="polite">1 / ${DATA.images[p.imageKey].length}</span></div>
       <div class="gallery-main"><button class="gallery-open" aria-label="${t('openPhoto')}" data-open-gallery>${imageEl(image,p.name+' — '+t('photoLabel')+' 1','gallery-active')}<span>${t('openPhoto')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button><div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="${t('previousPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button type="button" data-gallery-step="1" aria-label="${t('nextPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></div>
@@ -166,7 +171,7 @@
   function galleryStep(step) {
     const p=P.find(x=>'detail:'+x.slug===currentView);if(!p)return;
     const imgs=DATA.images[p.imageKey];currentGalleryIndex=(currentGalleryIndex+step+imgs.length)%imgs.length;
-    const src=imageUrl(imgs[currentGalleryIndex],1500), alt=p.name+' — '+t('photoLabel')+' '+(currentGalleryIndex+1);
+    const src=imageUrl(imgs[currentGalleryIndex],1500), alt=DATA.photoAlts?.[imgs[currentGalleryIndex]]||p.name+' — '+t('photoLabel')+' '+(currentGalleryIndex+1);
     app.querySelectorAll('.gallery-active, .lightbox[open] .lightbox-image img').forEach(img=>{img.removeAttribute('srcset');img.src=src;img.alt=alt;});
     app.querySelectorAll('.gallery-error').forEach(el=>el.hidden=true);
     app.querySelectorAll('.gallery-count').forEach(el=>el.textContent=(currentGalleryIndex+1)+' / '+imgs.length);

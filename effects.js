@@ -32,7 +32,7 @@
         scenes.forEach((el,i) => {el.classList.toggle('is-active',i===index);el.setAttribute('aria-hidden',String(i!==index));});
         images.forEach((el,i) => {
           el.classList.toggle('is-active',i===index);
-          if (i<=index+1) el.querySelector('img').loading='eager';
+          if (i<=index+1 && el.querySelector('img')) el.querySelector('img').loading='eager';
         });
         buttons.forEach((el,i) => el.setAttribute('aria-pressed',String(i===index)));
       }

@@ -1,19 +1,16 @@
-# Only publish browser-facing files as Cloudflare Worker assets
-.git/
-.github/
-.wrangler/
-node_modules/
-.gitignore
-.assetsignore
-.dev.vars*
-wrangler.jsonc
-wrangler.json
-wrangler.toml
-README.md
-_headers
-package.json
-package-lock.json
-*.md
-*.map
-
-tests/
+# Explicitly allow only browser-facing files; server code and account setup stay private.
+*
+!index.html
+!404.html
+!robots.txt
+!data.js
+!app.js
+!effects.js
+!cms-client.js
+!styles.css
+!cinematic.css
+!brand.css
+!admin/
+!admin/**
+!assets/
+!assets/**

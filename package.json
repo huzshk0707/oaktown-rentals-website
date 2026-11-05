@@ -1,0 +1,15 @@
+{
+  "name": "oaktown-rentals-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "node --check cms/worker.mjs && node --check admin/admin.js && node --check cms-client.js && node --check app.js",
+    "test": "node --test tests/cms.test.mjs",
+    "test:admin-browser": "node tests/admin-browser.cjs",
+    "seed": "node scripts/seed-cms.mjs"
+  },
+  "dependencies": { "jose": "6.2.15" },
+  "devDependencies": { "wrangler": "4.158.0" }
+}
