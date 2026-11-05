@@ -20,10 +20,7 @@
       const scenes = [...root.querySelectorAll('[data-scene]')];
       const images = [...root.querySelectorAll('[data-scene-image]')];
       const buttons = [...root.querySelectorAll('[data-scene-button]')];
-      const portal = root.querySelector('.portal');
-      const letter = root.querySelector('.portal-letter');
-      const portalPhoto = root.querySelector('.portal-photo');
-      const portalCopy = root.querySelector('.portal-copy');
+      const letter = root.querySelector('.story-letter');
       const viewport = root.querySelector('.collection-viewport');
       const cards = [...root.querySelectorAll('.collection .property-card')];
       const meter = root.querySelector('.collection-meter span');
@@ -41,11 +38,12 @@
       }
       function measure() {
         const bounds = el => el ? {top:el.getBoundingClientRect().top+scrollY,travel:Math.max(1,el.offsetHeight-innerHeight)} : null;
-        geometry = {story:bounds(story),portal:bounds(portal)};
+        geometry = {story:bounds(story)};
         schedule();
       }
       function collectionFrame() {
         if (!viewport) return;
+        const gallery=viewport.closest('.collection').dataset.layout==='gallery';
         const max = Math.max(0,viewport.scrollWidth-viewport.clientWidth);
         if(meter)meter.style.transform='scaleX('+(max ? .15+.85*clamp(viewport.scrollLeft/max) : 1)+')';
         root.querySelectorAll('[data-collection-step]').forEach(button=>{
@@ -57,7 +55,7 @@
           const rect=card.getBoundingClientRect();
           const distance=Math.max(-1,Math.min(1,(rect.left+rect.width/2-center)/viewport.clientWidth));
           // Rotate the image, keeping text crisp and the clickable card geometry stable.
-          card.querySelector('.property-image-wrap').style.transform=enabled()&&desktop.matches ? `perspective(1400px) rotateY(${distance*-11}deg) translateY(${Math.abs(distance)*14}px)` : '';
+          card.querySelector('.property-image-wrap').style.transform=gallery&&enabled()&&desktop.matches ? `perspective(1400px) rotateY(${distance*-6}deg) translateY(${Math.abs(distance)*8}px)` : '';
         });
       }
       function render() {
@@ -69,22 +67,17 @@
           activeScene(Math.min(2,Math.floor(p*3)));
           images.forEach((el,i)=>el.style.transform=`scale(${1.055-clamp(p*3-i)*.055})`);
           buttons.forEach((button,i)=>button.style.setProperty('--chapter-progress',clamp(p*3-i)));
+          // A brief photo-filled O bridges the last two scenes within the hero.
+          const reveal=clamp((p-.47)/.3);
+          letter.style.transform=`translate(-50%,-50%) scale(${1+reveal*reveal*8})`;
+          letter.style.opacity=String(clamp(reveal*5)*(1-clamp((reveal-.5)*2))*.7);
         }
-        if(portal) {
-          const p=animate?clamp((scrollY-geometry.portal.top)/geometry.portal.travel):1;
-          letter.style.transform=`translate(-50%,-50%) scale(${1+p*p*7})`;
-          letter.style.opacity=String(1-clamp((p-.62)/.2));
-          portalPhoto.style.opacity=String(animate?clamp((p-.42)/.4):1);
-          portalPhoto.style.transform=`scale(${animate?1.08-.08*p:1})`;
-          portalCopy.style.opacity=String(animate?clamp((p-.62)/.22):1);
-          // Invisible content must not retain focusable links during the letter reveal.
-          portalCopy.inert=animate&&p<.68;
-        }
+        if(letter&&!animate)letter.style.opacity='0';
         collectionFrame();
       }
       function schedule() {if(!frame)frame=requestAnimationFrame(render);}
       function motionChanged() {
-        // Retain the reading position when the long pinned sections collapse or expand.
+        // Retain the reading position when the pinned hero collapses or expands.
         const anchor = document.elementFromPoint(innerWidth/2,Math.min(innerHeight-100,150))?.closest('section');
         const oldTop = anchor?.getBoundingClientRect().top;
         setRoot();

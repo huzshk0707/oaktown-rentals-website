@@ -1,19 +1,19 @@
-# Oaktown Rentals — Cinematic Website (Version 0.3)
+# Oaktown Rentals — Cinematic Website (Version 0.4)
 
 A standalone, animated, mobile-friendly Oaktown Rentals website concept based on the *design direction* of the supplied cinematic real-estate video. Not a copy of the featured third-party website. Preserves public information from the existing Oaktown Rentals Squarespace website where practical.
 
 ## Features
 
-- Three-chapter photo story linked to native scrolling, oversized type, and a photo-filled O transition inspired by the supplied video. Uses real property photos, not construction renders from the reference.
-- Editorial photo collage, property photo counts, and a direct featured-home link retained from the main branch.
-- Perspective property strip with native touch scrolling, arrow controls, keyboard navigation and neighborhood filters.
-- Full-screen native-dialog galleries with Escape, arrow keys, touch swipes and image-load error messages.
+- Three-chapter photo story with a photo-filled O integrated into one 180svh hero (previously 470svh across two sections). Native scroll controls the slow photo movement and transitions; no video or autoplay is required.
+- One combined editorial/about section with real property photos. The Florida rental is a compact secondary feature after contact.
+- A two-column comparison grid is the default, with an optional perspective gallery using native touch scrolling, arrow controls and keyboard navigation. Neighborhood filters work in both views.
+- Property galleries appear immediately after rent, deposit, bedroom/bathroom facts and a property-specific showing request. Full-screen native dialogs retain Escape, arrow keys, touch swipes and image-load error messages.
 - Motion toggle persists locally; reduced-motion and smaller screens use an unpinned layout. No autoplay or wheel interception.
 - Self-hosted Manrope and DM Sans variable fonts; licenses included in `assets/fonts/`.
 - Responsive property cards with neighborhood filtering and individual, deep-linkable gallery/detail views.
 - Four properties sourced from the public Oaktown Rentals site: 115 Colonial Drive, 1106 Cherokee Rd #6, 4005 Smallboat Ct, 1106 Cherokee Rd #8.
 - FAQ, Louisville community links, Cudjoe Key / The Mint Mojo feature, contact actions, online application link.
-- English/Spanish toggle for main page content and listing summaries (full property detail bodies remain in English in v0.3).
+- Complete English/Spanish UI, property descriptions, amenities, terms and accessible labels. Language preference persists; switching preserves the selected gallery photo and reading position.
 - No dependencies, build system, tracking scripts or backend required; accessible reduced-motion support.
 
 ## Run locally
@@ -37,14 +37,14 @@ Visit `http://localhost:8787/`. Node/Python are only needed for local preview; d
 
 ## Content and launch checklist — **important**
 
-- **Live design preview, not approved inventory**. The main branch is accessible on Cloudflare. This scroll-driven revision is in a draft pull request; listing information still needs confirmation before public launch.
+- **Live design preview, not approved inventory**. The main branch is accessible on Cloudflare. Listing information still needs confirmation before public launch; the preview notice and search-engine exclusions remain in place.
 - **Colonial rent**: The public listing and preview both show **$1,799 rent and deposit**, checked November 4, 2026. Reconfirm availability with Leslie before launch.
 - **1106 Cherokee #6**: Source updated to the working `/1106-cherokee-rd-6` URL, with eight unit-specific photos. Public galleries were refreshed on November 4, 2026: Colonial 14, Cherokee #6 8, Smallboat 7, Cherokee #8 10. Photo URLs remain on Squarespace.
 - **4005 Smallboat timing**: Squarespace says showings after mid-October 2026; this is stale as of November 2026. Do not represent it as current availability.
 - **1106 Cherokee #8**: Listed rent is $950 on the existing Squarespace website; verify it is actually being marketed before announcing availability.
 - **Photos depend on Squarespace CDN**: `data.js` references Oaktown's existing public Squarespace CDN images. Before cancelling Squarespace, obtain original property images and upload/compress them into a local `assets/` folder. Replace each remote URL with `/assets/<filename>`. Do not rely on Zillow embeds or third-party hotlinks for production.
 - **Metadata and search**: Preview intentionally has `robots.txt` `Disallow: /` and `<meta name="robots" content="noindex,nofollow">`. Remove these only once the website is approved for launch.
-- **Spanish**: The essential UI and summaries are translated, but full details and feature labels are not yet localized.
+- **Spanish**: UI, all four property detail bodies, feature lists, terms and accessible labels are translated. Review translations alongside any future listing updates.
 - **Policies/fees**: The site's pre-existing FAQ and listings may conflict or be outdated. Screening criteria, pet terms, deposits and fees should be verified with Leslie and reviewed for applicable fair-housing requirements before publication.
 - **Photography**: Do not substitute Unit #8 photos for Unit #6; maintain property-to-unit image mapping.
 - **Accessibility**: Verify screen-reader behavior, keyboard navigation, photo alternative text and contrast during acceptance testing.
@@ -55,7 +55,7 @@ Visit `http://localhost:8787/`. Node/Python are only needed for local preview; d
 - `data.js` — all property records, pricing, public photos and outbound links.
 - `app.js` — routes, sections, translation copy, filters and galleries.
 - `styles.css` — base styling and self-hosted font declarations.
-- `cinematic.css` — story, letter transition, carousel, gallery and responsive layouts.
+- `cinematic.css` — compact story/letter transition, comparison grid, optional carousel, gallery and responsive layouts.
 - `effects.js` — scroll-linked scenes, perspective effects, motion preferences and lifecycle cleanup.
 - `index.html` — shell and site metadata.
 
@@ -75,7 +75,7 @@ npm run test:browser
 
 Set `OAKTOWN_BASE_URL` to test another local port, or `OAKTOWN_CHROMIUM` to use an installed Chromium executable. Tests deliberately block external requests and exercise image-failure behavior; they do not validate CDN photography. Test sources and package metadata are excluded from Worker static assets.
 
-Behavior checks covered desktop chapter changes, the letter transition, collection scrolling and filters, gallery focus/keyboard behavior, malformed routes, mobile navigation, translated controls, and persisted/reduced motion. Layouts checked at 320, 390, 768, 1024, 1440 and 1920px. The review environment blocks the Squarespace CDN, so real-image crop/contrast and network performance still need visual acceptance testing with CDN access. No production deployment was performed during this source review.
+Behavior checks cover desktop chapter changes, the shorter introduction, grid/gallery switching and filters, gallery focus/keyboard behavior, showing links, malformed routes, mobile navigation, complete Spanish detail content, reading-position retention, and persisted language/reduced motion. Layouts checked at 320, 390, 768, 1024, 1440 and 1920px. The review environment blocks the Squarespace CDN, so real-image crop/contrast and network performance still need visual acceptance testing with CDN access. Checks run against a local static server; they do not establish live CDN loading or production deployment status.
 
 ## Original source
 
