@@ -71,6 +71,14 @@ window.OAKTOWN_DATA = {
       slug: '115-colonial-drive', name: '115 Colonial Drive', neighborhood: 'St. Matthews', city: 'Louisville, Kentucky',
       rent: 1799, deposit: 1799, bedrooms: 3, bathrooms: 1, imageKey: 'colonial',
       eyebrow: 'The classic, reimagined', label: 'A place to settle in',
+      labelEs: 'Un lugar para sentirte en casa',
+      descriptionEs: [
+        'Una acogedora casa en Louisville, en una calle tranquila y con poco tráfico, cerca de las tiendas de Chenoweth, la zona comercial de Vogue, supermercados y accesos a la autopista.',
+        'La cocina, el comedor y la sala de estar de concepto abierto combinan pisos originales de roble con pintura renovada. En la planta principal hay dos dormitorios y un baño completo; el tercer dormitorio está en la planta superior.',
+        'El sótano sin terminar incluye una zona de lavandería. El garaje independiente para dos autos ofrece espacio adicional para proyectos, pasatiempos y almacenamiento.'
+      ],
+      featuresEs: ['Pisos originales de roble', '3 dormitorios / 1 baño', 'Garaje para dos autos', 'Zona de lavandería', 'Sótano sin terminar', 'Ubicación práctica en St. Matthews'],
+      termsEs: ['Los inquilinos pagan los servicios públicos', 'El anuncio indica un contrato de un año', 'Confirma las condiciones para mascotas y los requisitos de evaluación antes de solicitar'],
       summary: 'Original oak hardwood floors, a light-filled living space, and a two-car garage in a quiet St. Matthews neighborhood.',
       summaryEs: 'Pisos originales de roble, espacios luminosos y garaje para dos autos en un vecindario tranquilo de St. Matthews.',
       description: [
@@ -87,6 +95,14 @@ window.OAKTOWN_DATA = {
       slug: '1106-cherokee-rd-unit-6', name: '1106 Cherokee Rd · #6', neighborhood: 'The Highlands', city: 'Louisville, Kentucky',
       rent: 1000, deposit: 1000, bedrooms: 1, bathrooms: 1, imageKey: 'cherokee6',
       eyebrow: 'In the heart of the Highlands', label: 'Thoughtfully updated',
+      labelEs: 'Renovado con atención al detalle',
+      descriptionEs: [
+        'Un apartamento renovado de un dormitorio en la zona de Highlands de Louisville, cerca de restaurantes, tiendas y parques del vecindario.',
+        'La cocina cuenta con gabinetes de estilo shaker, encimeras y salpicadero de granito. Los pisos de baldosas se extienden por todo el apartamento, que incluye una sala amplia y un comedor junto a la cocina.',
+        'El baño renovado tiene revestimiento y piso de baldosas. Hay estacionamiento detrás del edificio y en la calle de enfrente.'
+      ],
+      featuresEs: ['Gabinetes de estilo shaker', 'Encimeras y salpicadero de granito', 'Pisos de baldosas en todo el apartamento', 'Un dormitorio / un baño', 'Estacionamiento trasero y en la calle', 'Ubicación en Highlands'],
+      termsEs: ['Los inquilinos pagan LG&E', 'La ciudad recoge la basura', 'Calefacción por aire forzado; aire acondicionado de ventana', 'El anuncio indica un contrato de un año', 'Confirma las condiciones para mascotas antes de solicitar'],
       summary: 'An updated one-bedroom with shaker cabinets, granite counters, tile floors and a spacious living room.',
       summaryEs: 'Apartamento renovado de un dormitorio con gabinetes shaker, granito, pisos de baldosas y sala amplia.',
       description: [
@@ -103,6 +119,14 @@ window.OAKTOWN_DATA = {
       slug: '4005-smallboat-ct', name: '4005 Smallboat Ct', neighborhood: 'Okolona', city: 'Louisville, Kentucky',
       rent: 1525, deposit: 1525, bedrooms: 3, bathrooms: 1, imageKey: 'smallboat',
       eyebrow: 'Everyday ease', label: 'Comfort all around',
+      labelEs: 'Comodidad en cada rincón',
+      descriptionEs: [
+        'Una casa clásica de ladrillo en la zona de Okolona, en una calle tranquila y con poco tráfico, con tres dormitorios y un baño en una sola planta.',
+        'La casa incluye una sala amplia, una cocina grande con gabinetes de madera, un baño renovado y pisos más recientes. El anuncio incluye lavavajillas, microondas y lavadora.',
+        'El terreno de un cuarto de acre ofrece estacionamiento fuera de la calle y espacio para disfrutar del jardín. Las tiendas cercanas y los accesos a la autopista facilitan las tareas cotidianas.'
+      ],
+      featuresEs: ['Tres dormitorios / un baño', 'Distribución en una sola planta', 'Cocina amplia', 'Aire acondicionado central y calefacción a gas', 'Estacionamiento fuera de la calle', 'Terreno de aproximadamente 0,25 acres'],
+      termsEs: ['Los inquilinos pagan los servicios públicos', 'El anuncio indica un contrato de un año', 'Es necesario confirmar las visitas y la disponibilidad actual'],
       summary: 'A single-level classic brick home with updated flooring, a large kitchen and generous yard space.',
       summaryEs: 'Casa clásica de ladrillo de una planta, con pisos renovados, cocina amplia y un jardín espacioso.',
       description: [
@@ -119,6 +143,14 @@ window.OAKTOWN_DATA = {
       slug: '1106-cherokee-rd-unit-8', name: '1106 Cherokee Rd · #8', neighborhood: 'Cherokee Triangle', city: 'Louisville, Kentucky',
       rent: 950, deposit: 950, bedrooms: 1, bathrooms: 1, imageKey: 'cherokee8',
       eyebrow: 'Old Louisville character', label: 'A little more charm',
+      labelEs: 'Un toque más de encanto',
+      descriptionEs: [
+        'Un apartamento luminoso en Cherokee Triangle, en la zona de Highlands, cerca de Cherokee Park, Bardstown Road y las tiendas y restaurantes del vecindario.',
+        'El apartamento incluye una sala amplia con pisos de madera, ventilador de techo y espacio de armario. La cocina cuenta con gabinetes blancos, encimeras de granito, salpicadero de baldosas, estufa a gas y refrigerador.',
+        'Un baño con baldosas, aire acondicionado de ventana, ventiladores de techo y un pasillo cubierto con vistas al patio sombreado completan el espacio.'
+      ],
+      featuresEs: ['Pisos de madera', 'Encimeras de cocina de granito', 'Estufa a gas', 'Baño con baldosas', 'Aire acondicionado de ventana', 'Pasillo cubierto junto al patio'],
+      termsEs: ['Los inquilinos pagan LG&E', 'El anuncio indica un contrato de un año', 'Confirma las condiciones para mascotas antes de solicitar'],
       summary: 'Hardwood floors, a compact granite-topped kitchen and a shaded courtyard in the Cherokee Triangle.',
       summaryEs: 'Pisos de madera, cocina con encimeras de granito y patio sombreado en Cherokee Triangle.',
       description: [

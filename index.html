@@ -15,14 +15,14 @@
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#app">Skip to content</a>
+  <a class="skip-link" data-i18n="skipContent" href="#app">Skip to content</a>
   <div class="progress" id="progress" aria-hidden="true"></div>
   <header class="site-header" id="site-header">
-    <a href="#" class="wordmark" aria-label="Oaktown Rentals — home">
+    <a href="#" class="wordmark" aria-label="Oaktown Rentals — home" data-i18n-aria="homeLink">
       <span class="wordmark-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 36 36"><path d="M5 29V14L18 4l13 10v15H5Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M14 29V17h8v12" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5 14h26" stroke="currentColor" stroke-width="1.4"/></svg></span>
       <span class="wordmark-text">OAKTOWN<span>RENTALS</span></span>
     </a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
+    <nav class="desktop-nav" aria-label="Primary navigation" data-i18n-aria="primaryNav">
       <a href="#homes" data-i18n="navHomes">Our homes</a>
       <a href="#about" data-i18n="navStory">Our story</a>
       <a href="#faq" data-i18n="navFaq">FAQ</a>
@@ -30,12 +30,12 @@
     </nav>
     <div class="header-actions">
       <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false">Motion</button>
-      <button class="language-switch" id="language-switch" type="button" aria-label="Switch language">ES</button>
+      <button class="language-switch" id="language-switch" type="button" aria-label="Cambiar a español" data-i18n-aria="switchLanguage">ES</button>
       <a class="nav-apply" href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer"><span data-i18n="navApply">Apply online</span><span aria-hidden="true"> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
       <button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
     </div>
   </header>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" data-i18n-aria="mobileNav" hidden>
     <a href="#homes" data-i18n="navHomes">Our homes</a><a href="#about" data-i18n="navStory">Our story</a><a href="#faq" data-i18n="navFaq">FAQ</a><a href="#community" data-i18n="navCommunity">Community</a><a href="#cudejoe">The Mint Mojo</a><a href="#contact" data-i18n="contact">Contact</a><a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" data-i18n="navApply">Apply online</a>
   </nav>
   <main id="app" tabindex="-1"></main>
@@ -43,7 +43,7 @@
   <footer class="footer" id="footer">
     <div class="footer-top">
       <div><span class="eyebrow">LOUISVILLE, KENTUCKY</span><h2 data-i18n="footerTitle">Your next chapter starts here.</h2></div>
-      <a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" class="circle-arrow" aria-label="Open rental application"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+      <a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" class="circle-arrow" aria-label="Open rental application" data-i18n-aria="applicationLabel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
     </div>
     <div class="footer-lower">
       <div class="footer-brand">OAKTOWN<span> RENTALS.</span></div>
@@ -51,7 +51,7 @@
       <div class="footer-contact"><a href="tel:+15025001070">(502) 500-1070</a><a href="mailto:joejrandles@yahoo.com">joejrandles@yahoo.com</a><span data-i18n="textBest">Text is always the best & fastest.</span></div>
     </div>
     <div class="footer-signature" aria-hidden="true">OAKTOWN</div>
-    <div class="footer-bottom"><span>© <span id="year"></span> Oaktown Rentals</span><span>Independent website concept · Listing details subject to verification</span><a href="https://tuba-parsnip-36cr.squarespace.com/" target="_blank" rel="noopener noreferrer">Original website <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Oaktown Rentals</span><span data-i18n="previewNotice">Website preview · Confirm listing details with Oaktown Rentals</span><a href="https://tuba-parsnip-36cr.squarespace.com/" target="_blank" rel="noopener noreferrer"><span data-i18n="originalWebsite">Original website</span> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
   </footer>
 </body>
 </html>

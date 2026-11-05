@@ -17,21 +17,25 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
    await page.evaluate(p=>{const el=document.querySelector('.story');window.scrollTo({top:(el.offsetHeight-innerHeight)*p,behavior:'instant'})},progress);await page.waitForTimeout(80);
    const active=await page.locator('[data-scene].is-active').getAttribute('data-scene');check('scroll activates scene '+scene,()=>assert.equal(active,String(scene)));
  }
- await page.evaluate(()=>{const el=document.querySelector('.portal');scrollTo({top:el.offsetTop+(el.offsetHeight-innerHeight)*.9,behavior:'instant'})});await page.waitForTimeout(80);
- 
- const portal=await page.locator('.portal-copy').evaluate(el=>({inert:el.inert,opacity:Number(getComputedStyle(el).opacity)}));check('portal links become accessible',()=>{assert.equal(portal.inert,false);assert.equal(portal.opacity,1)});
+ const homesTop=await page.locator('#homes').evaluate(el=>el.getBoundingClientRect().top+scrollY);check('homes start within two desktop screens',()=>assert.ok(homesTop<=2000));
+ const grid=await page.locator('.property-grid').evaluate(el=>({display:getComputedStyle(el).display,columns:getComputedStyle(el).gridTemplateColumns.split(' ').length}));check('default property view has two comparison columns',()=>{assert.equal(grid.display,'grid');assert.equal(grid.columns,2)});
  await page.locator('#homes').scrollIntoViewIfNeeded();await page.waitForTimeout(300);
+ await page.locator('[data-layout-button="gallery"]').click();
  await page.locator('[data-collection-step="1"]').click();await page.waitForTimeout(700);
  const scroll=await page.locator('.collection-viewport').evaluate(el=>el.scrollLeft);check('carousel next advances',()=>assert.ok(scroll>100));
  await page.locator('[data-filter="The Highlands|Cherokee Triangle"]').click();
  
  const names=await page.locator('.property-card:not([hidden]) .property-name').allTextContents();check('Highlands filter contents',()=>{assert.equal(names.length,2);assert.ok(names.every(n=>n.includes('Cherokee')))});
  const pressed=await page.locator('[data-filter="The Highlands|Cherokee Triangle"]').getAttribute('aria-pressed');check('filter exposes selected state',()=>assert.equal(pressed,'true'));
+ await page.locator('[data-layout-button="grid"]').click();await page.waitForTimeout(100);
+ const layout=await page.locator('.collection-viewport').evaluate(el=>({scroll:el.scrollLeft,tabIndex:el.getAttribute('tabindex'),overflow:el.scrollWidth>el.clientWidth}));check('grid restores all columns after filtering gallery',()=>{assert.equal(layout.scroll,0);assert.equal(layout.tabIndex,null);assert.equal(layout.overflow,false)});
  await page.locator('[data-filter="All"]').click();
  await page.locator('.property-card').first().locator('.property-image-wrap').click();await page.waitForTimeout(200);
  const count=await page.locator('[data-gallery-index]').count();check('Colonial full gallery',()=>assert.equal(count,14));
  
  const inquiry=await page.locator('#mobile-inquiry').getAttribute('href');check('inquiry carries address',()=>assert.ok(decodeURIComponent(inquiry).includes('115 Colonial Drive')));
+ const showing=await page.locator('.detail-actions .button-solid').getAttribute('href');check('showing request has property and purpose',()=>assert.ok(decodeURIComponent(showing).includes('request a showing at 115 Colonial Drive')));
+ const order=await page.evaluate(()=>document.querySelector('.gallery').compareDocumentPosition(document.querySelector('.detail-body'))&Node.DOCUMENT_POSITION_FOLLOWING);check('gallery precedes description',()=>assert.ok(order));
  await page.locator('[data-open-gallery]').click();await page.keyboard.press('ArrowRight');
  const counts=await page.locator('.gallery-count').allTextContents();check('keyboard gallery advances both counters',()=>assert.ok(counts.every(x=>x==='2 / 14')));
  await page.keyboard.press('Escape');await page.waitForTimeout(50);
@@ -44,13 +48,41 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);check('no horizontal document overflow at '+width,()=>assert.equal(overflow,false));
  }
  await page.setViewportSize({width:390,height:844});await page.goto(base+'/');await page.waitForTimeout(200);
+ const cta=await page.locator('.story-explore').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "View homes"')));
+ const ctaLabel=await page.locator('.story-explore>span').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
  await page.locator('[data-scene-button="1"]').click();
  const active=await page.locator('[data-scene].is-active').getAttribute('data-scene');check('mobile second scene active',()=>assert.equal(active,'1'));
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
  await page.locator('#language-switch').click();const text=await page.locator('[data-scene-button="1"]').innerText();check('new experience translates',()=>assert.ok(text.includes('día')));
+ await page.reload();const lang=await page.locator('html').getAttribute('lang');check('Spanish preference survives reload',()=>assert.equal(lang,'es'));
+ await page.setViewportSize({width:320,height:640});await page.goto(base+'/');
+ for(const scene of [0,1,2]){
+   await page.locator('[data-scene-button="'+scene+'"]').click();await page.waitForTimeout(950);
+   const space=await page.evaluate(()=>({copy:document.querySelector('[data-scene].is-active').getBoundingClientRect().bottom,button:document.querySelector('.story-explore').getBoundingClientRect().top}));
+   check('Spanish hero copy clears its CTA at 320px, scene '+scene,()=>assert.ok(space.copy<space.button));
+ }
+ for(const [slug,heading,term] of [
+   ['115-colonial-drive','Un lugar para sentirte en casa','Los inquilinos pagan los servicios públicos'],
+   ['1106-cherokee-rd-unit-6','Renovado con atención al detalle','La ciudad recoge la basura'],
+   ['4005-smallboat-ct','Comodidad en cada rincón','Es necesario confirmar las visitas'],
+   ['1106-cherokee-rd-unit-8','Un toque más de encanto','Los inquilinos pagan LG&E']
+ ]){
+   await page.goto(base+'/#home/'+slug);
+   const content=await page.locator('.detail-body').innerText(),terms=await page.locator('.amenities').innerText();
+   check('Spanish detail and terms: '+slug,()=>{assert.ok(content.includes(heading));assert.ok(terms.includes(term));assert.ok(!content.includes('The kitchen'));});
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+   check('Spanish detail fits 320px: '+slug,()=>assert.equal(overflow,false));
+ }
+ await page.locator('[data-gallery-index="2"]').click();
+ await page.locator('.gallery').scrollIntoViewIfNeeded();
+ const before=await page.locator('.gallery').evaluate(el=>el.getBoundingClientRect().top);
+ await page.locator('#language-switch').click();
+ const after=await page.locator('.gallery').evaluate(el=>el.getBoundingClientRect().top);
+ const retained=await page.locator('.gallery > .gallery-heading .gallery-count').innerText();
+ check('language change retains gallery photo and reading position',()=>{assert.equal(retained,'3 / 10');assert.ok(Math.abs(before-after)<3);});
 
  await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'reduce'});await page.goto(base+'/');await page.waitForTimeout(150);
- const sizes=await page.evaluate(()=>({story:document.querySelector('.story').offsetHeight,stage:document.querySelector('.story-stage').offsetHeight,portal:document.querySelector('.portal').offsetHeight,portalStage:document.querySelector('.portal-stage').offsetHeight}));check('reduced motion removes scroll pinning',()=>{assert.equal(sizes.story,sizes.stage);assert.equal(sizes.portal,sizes.portalStage)});
+ const sizes=await page.evaluate(()=>({story:document.querySelector('.story').offsetHeight,stage:document.querySelector('.story-stage').offsetHeight,letter:Number(getComputedStyle(document.querySelector('.story-letter')).opacity)}));check('reduced motion removes scroll pinning and letter animation',()=>{assert.equal(sizes.story,sizes.stage);assert.equal(sizes.letter,0)});
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(base+'/');await page.locator('#motion-toggle').click();await page.reload();const motion=await page.locator('#motion-toggle').getAttribute('aria-pressed');check('motion remains disabled after reload',()=>assert.equal(motion,'false'));
  await page.locator('#motion-toggle').click();await page.waitForTimeout(250);
 console.log(JSON.stringify({passed,failures},null,2));await browser.close();if(failures.length)process.exitCode=1;
