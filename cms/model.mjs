@@ -33,7 +33,7 @@ export function validateProperty(input, publishing = false) {
   out.availability = input.availability;
   out.sourceUrl = text('sourceUrl', 2048);
   if (out.sourceUrl && !safeExternalUrl(out.sourceUrl)) fail('The listing link must use HTTPS.');
-  if (!Array.isArray(input.photos) || input.photos.length > 40) fail('Use at most 40 photos.');
+  if (!Array.isArray(input.photos) || input.photos.length > 20) fail('Use at most 20 photos.');
   out.photos = input.photos.map(photo => {
     if (!photo || typeof photo.url !== 'string' || typeof photo.alt !== 'string' || photo.alt.length > 300) fail('Check each photo and caption.');
     const url = photo.url;

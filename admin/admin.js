@@ -90,7 +90,7 @@ $('#photo-list').addEventListener('click',event=>{
 $('#photo-upload').addEventListener('change',()=>task(async()=>{
   const files=[...$('#photo-upload').files];$('#photo-upload').value='';
   if(!files.length)return;
-  if(files.length+photos.length>40)throw new Error('A property can have at most 40 photos.');
+  if(files.length+photos.length>20)throw new Error('A property can have at most 20 photos.');
   if(files.some(file=>file.size>8*1024*1024))throw new Error('Each photo must be 8 MB or smaller.');
   await save();let completed=0;
   for(const file of files){notice(`Uploading photo ${completed+1} of ${files.length}…`);const photo=await api('/properties/'+current.id+'/photos',{method:'POST',headers:{'Content-Type':file.type||'application/octet-stream'},body:file});photos.push(photo);dirty=true;completed++;renderPhotos();}

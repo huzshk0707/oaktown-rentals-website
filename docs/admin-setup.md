@@ -35,13 +35,15 @@ For an unconfigured local Worker, `npm run dev` serves file-based public content
 
 ## Daily use
 
+See the [phone and computer editing guide](admin-phone-guide.md) for the sign-in and editing steps.
+
 - Add a property, save a draft, upload photos and describe each one. The first photo is the main image. Reorder photos with Earlier/Later.
 - Edit English and optionally Spanish content. Empty Spanish fields use English content.
 - Save draft leaves a published snapshot unchanged. Preview shows the current form. Publish validates required content and replaces the public snapshot.
 - Archive removes the listing from public results and public photo access, while retaining its editable content. Edit and publish it to restore it. Unpublish keeps a private draft. There is no irreversible property-delete action in this first version.
 - A stale browser tab receives a conflict message instead of overwriting another editor's work. Reload the property before trying again.
 
-Uploads accept JPG, PNG and WebP, checked by file signatures, at most 8 MB each and 40 photos per property. SVG/HTML are rejected. Draft uploads are private; only photos referenced by currently published listings have public media URLs. Public photos may remain in browser caches for up to 60 seconds after archiving. Removing a photo from a form removes it from the next published listing; unused uploaded objects are retained privately. A future cleanup action can reclaim orphaned storage after a retention period. The current activity table records who saved, uploaded, published or archived, but the initial UI does not yet provide a history browser.
+Uploads accept JPG, PNG and WebP, checked by file signatures, at most 8 MB each and 20 photos per property. SVG/HTML are rejected. Draft uploads are private; only photos referenced by currently published listings have public media URLs. Public photos may remain in browser caches for up to 60 seconds after archiving. Removing a photo from a form removes it from the next published listing; unused uploaded objects are retained privately. A future cleanup action can reclaim orphaned storage after a retention period. The current activity table records who saved, uploaded, published or archived, but the initial UI does not yet provide a history browser.
 
 Back up D1 and R2 before bulk imports or migrations. Cloudflare D1 Time Travel can help recover database changes; it does not back up R2 photos. Monitor the private retained-upload storage when evaluating R2 usage.
 

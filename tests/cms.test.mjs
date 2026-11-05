@@ -35,6 +35,7 @@ test('draft/save/publish/archive lifecycle, stale writes, duplicate URLs, CSRF, 
     assert.equal((await (await call('/api/properties')).json()).properties[0].rent,1400,'draft edits cannot change the published snapshot');
     assert.equal((await call(`/api/admin/properties/${id}`,'PUT',{version:1,property:edited})).status,409);
     assert.equal((await call(`/api/admin/properties/${id}`,'PUT',{version:row.version,property:{...edited,rent:-1}})).status,400);
+    assert.equal((await call(`/api/admin/properties/${id}`,'PUT',{version:row.version,property:{...edited,photos:Array.from({length:21},(_,i)=>({url:`https://images.squarespace-cdn.com/content/photo-${i}.jpg`,alt:`Photo ${i+1}`}))}})).status,400);
     assert.equal((await call(`/api/admin/properties/${id}`,'PUT',{version:row.version,property:{...edited,photos:[{url:'javascript:alert(1)',alt:'bad'}]}})).status,400);
     const upload=bytes=>h.app.fetch(new Request(origin+`/api/admin/properties/${id}/photos`,{method:'POST',headers:{'X-Test-Admin':'editor@example.com','Origin':origin,'Content-Type':'image/jpeg'},body:bytes}),h.env);
     assert.equal((await upload(new TextEncoder().encode('<svg onload="alert(1)"/>'))).status,400);
