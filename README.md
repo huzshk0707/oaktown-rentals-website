@@ -4,6 +4,8 @@ A standalone, animated, mobile-friendly Oaktown Rentals website concept based on
 
 ## Features
 
+- Dedicated Mint Mojo vacation-home page at `/mint-mojo/`, with the original Drive photography hosted locally, a 19-photo gallery, coastal green/cream styling, English/Spanish copy and date inquiries by email/text. See [the media and page notes](docs/mint-mojo-media.md). No nightly rate, booking calendar or payment service is implied.
+
 - Three-chapter photo story with a photo-filled O integrated into one 180svh hero (previously 470svh across two sections). Native scroll controls the slow photo movement and transitions; no video or autoplay is required.
 - One combined editorial/about section with real property photos. The Florida rental is a compact secondary feature after contact.
 - A two-column comparison grid is the default, with an optional perspective gallery using native touch scrolling, arrow controls and keyboard navigation. Neighborhood filters work in both views.
