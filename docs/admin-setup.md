@@ -8,6 +8,12 @@ The implementation and local tests are ready. Production D1, R2 and Access have 
 
 The owner's three approved accounts are recorded in an ignored local `.dev.vars` file, not in the repository or browser assets. Add that allowlist to the Worker's `ADMIN_EMAILS` secret in Cloudflare as part of the setup below. Never paste Cloudflare API tokens into chat or commit credentials.
 
+### A saved environment credential is not reaching this task
+
+Store `CLOUDFLARE_API_TOKEN` as a secure environment credential scoped to `api.cloudflare.com`, and allow that destination in the environment's network settings. A token saved only in a vault must also be bound to the selected environment. Publishing an updated reusable environment does not necessarily update an existing task: select the published configuration when starting the continuation task. Verify that the running environment reports the credential as ready before provisioning anything. The Cloudflare account ID is already known from this website's deployment; the owner does not need to send it again.
+
+As checked November 7, 2026, the task's attached environment still reports no secret bindings and no custom allowed hosts. This is an environment attachment/configuration blocker; it is not a failed Cloudflare token validation. The token has not been sent to Cloudflare from this session.
+
 ## One-time production setup
 
 1. **Create the database and photo bucket in the website owner's Cloudflare account.** Use D1 database `oaktown-properties` and R2 bucket `oaktown-property-photos`. Keep the R2 bucket private: do not enable `r2.dev` or a public custom domain. R2 requires its own subscription checkout; included free usage is available. Do not enable a paid Workers plan merely to create the admin.
