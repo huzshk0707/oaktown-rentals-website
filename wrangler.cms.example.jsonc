@@ -1,0 +1,15 @@
+// Copy these bindings into wrangler.jsonc after creating separate production
+// resources. Keep test/preview resources separate from production resources.
+{
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "oaktown-properties",
+    "database_id": "REPLACE_WITH_CREATED_DATABASE_ID",
+    "migrations_dir": "cms/migrations"
+  }],
+  "r2_buckets": [{ "binding": "PHOTOS", "bucket_name": "oaktown-property-photos" }],
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "REPLACE.cloudflareaccess.com",
+    "ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUDIENCE"
+  }
+}
