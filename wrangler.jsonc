@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "oaktown-rentals-website",
+  "name": "oaktown",
   "main": "cms/worker.mjs",
   "compatibility_date": "2026-11-03",
   "workers_dev": true,

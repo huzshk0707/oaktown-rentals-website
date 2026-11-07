@@ -34,11 +34,11 @@ Wrangler prints the local preview URL. Wrangler uses local simulated D1 and R2 r
 
 ## Current Cloudflare deployment — Workers Static Assets
 
-- Live preview: https://oaktown-rentals-website.huzaifashaikhhp.workers.dev
+- Live preview: https://oaktown.rentals10.workers.dev
 - GitHub repository: `huzshk0707/oaktown-rentals-website` (private); production branch: `main`.
 - Cloudflare project type: **Worker with Static Assets**, automatically deployed from the connected GitHub repository. No custom domain is required.
 - `wrangler.jsonc` declares `cms/worker.mjs` and static assets at the repository root. `.assetsignore` explicitly allows browser-facing files and excludes server code, tests and account setup. Requests run through the Worker before asset routing to enforce admin authorization.
-- Changes pushed to `main` trigger a Cloudflare deployment. Check **Workers & Pages → oaktown-rentals-website → Deployments** to verify the new version is active.
+- Changes pushed to `main` trigger a Cloudflare deployment. Check **Workers & Pages → oaktown → Deployments** to verify the new version is active.
 - The preview intentionally has `noindex,nofollow` metadata and `robots.txt` disallow rules. Do not remove them until the content and launch are approved.
 
 ## Content and launch checklist — **important**

@@ -4,7 +4,7 @@ The admin works in a browser. There is no app to install and you will not need G
 
 ## Open and sign in
 
-1. Open `https://oaktown-rentals-website.huzaifashaikhhp.workers.dev/admin/` in Safari or Chrome.
+1. Open `https://oaktown.rentals10.workers.dev/admin/` in Safari or Chrome.
 2. Sign in with one of the three approved email accounts. If email-code sign-in is configured, enter the code Cloudflare sends to that email address.
 3. You will see your property collection. Bookmark this page. On iPhone, Safari's Share menu offers **Add to Home Screen**. On Android, Chrome's menu offers **Add to Home screen** or a shortcut option, depending on the version.
 
