@@ -4,21 +4,17 @@ The public website and `/admin/` are in the same repository and Cloudflare Worke
 
 ## Current state
 
-The implementation and local tests are ready. On November 7, 2026, the configured Cloudflare token was verified active and D1 database `oaktown-properties` (`de551a7d-04b1-4db8-a673-852ac4881be5`) was created in the website owner's account. Migration `0001_properties.sql` and the idempotent four-listing import were applied. This database is staged and is **not bound to the live Worker or PR previews**.
+On November 7, 2026, the owner enabled R2 and Access. Production configuration now connects D1 database `oaktown-properties` (`de551a7d-04b1-4db8-a673-852ac4881be5`) and private R2 bucket `oaktown-property-photos`. Migration `0001_properties.sql` and the idempotent four-listing import are applied. Uploaded photos are served only through the Worker's published-photo checks; the bucket's managed public domain is disabled and it has no public custom domains.
 
-Default `wrangler.jsonc` still has no database or Access identity configuration. It serves the existing file-based listings and closes all admin routes until configured. An empty configured database is authoritative: it shows no homes, rather than bringing old listings back. A database outage shows an inventory-unavailable message.
+Cloudflare Access application `44e6199e-0402-493e-9f37-6230c57ec278` protects `/admin` and `/api/admin`, including descendants, on `oaktown-rentals-website.huzaifashaikhhp.workers.dev`, using the same audience. It uses the email one-time PIN provider and a single Allow policy containing exactly the three owner-approved accounts. The matching `ADMIN_EMAILS` Worker secret is configured; addresses are not committed here. The team domain and audience in `wrangler.jsonc` are identifiers, not credentials.
 
-### Remaining activation requirements
+The `previews` block explicitly removes D1, R2 and Access variables from branch previews. Do not deploy branch previews with the production deployment command; use the connected preview workflow or `wrangler preview`. Ordinary `wrangler dev` now uses local simulated databases/storage and still requires verified Access tokens; there is no sign-in bypass.
 
-- R2's API returns code `10042`: enable R2 through the Cloudflare dashboard. No R2 bucket or paid subscription has been enabled by this change.
-- Access's API returns `access.api.error.not_enabled`: enable Access through the Cloudflare dashboard, then configure the restricted application below.
-- The earlier ignored `.dev.vars` allowlist is absent from this workspace. Confirm the three approved accounts and configure `ADMIN_EMAILS` as a Worker secret; do not commit the addresses into browser assets or the repository.
-
-The current environment reports `CLOUDFLARE_API_TOKEN` ready and allows `api.cloudflare.com`; credentials do not need to be re-entered in chat. Keep tokens in secure environment settings. Provisioning and seeding alone do not establish live admin sign-in, photo upload, or website database integration.
+Deployment configuration and resource checks are distinct from an authenticated production browser check. The current task's network policy allows the Cloudflare API but blocks the website and Access team hostnames. The owner must complete an actual email-code sign-in and live draft/upload/publish workflow, or allow those hostnames in the execution environment so browser checks can reach them. No production email-code delivery or staff session has been simulated or assumed.
 
 Continuation validation passed: syntax checks, three backend/security tests, the admin browser workflow, 43 public-site browser checks, Mint Mojo browser checks and Wrangler deployment dry-run. Local Worker checks returned 200 for the homepage and Mint Mojo, 503 for unconfigured admin routes, and 404 for private server, configuration, documentation and test files. The remote D1 query confirmed four imported listings, zero uploaded media and the applied migration. Wrangler's file-import upload could not complete through the available network route; the same idempotent SQL was applied successfully through D1's authenticated query API instead.
 
-## One-time production setup
+## Setup reference for recovery or a new installation
 
 1. **Reuse the staged database and create the photo bucket in the website owner's Cloudflare account.** D1 database `oaktown-properties` already exists with the ID above. After enabling R2, create bucket `oaktown-property-photos`. Keep the R2 bucket private: do not enable `r2.dev` or a public custom domain. R2 requires its own subscription checkout; included free usage is available. Do not enable a paid Workers plan merely to create the admin.
 2. **Create one hostname/path-based Cloudflare Access application.** In Zero Trust → Access → Applications, add a self-hosted application covering both `<website hostname>/admin` (including descendants) and `<website hostname>/api/admin` (including descendants) with the **same application audience**. Protect exact paths and their descendants according to Cloudflare's path matching rules. Include only the three approved email accounts, use Allow (never Bypass or Everyone), and use email one-time PIN or an established identity provider. Do not protect the whole public website. Record the team domain (`your-team.cloudflareaccess.com`) and application audience tag. Cover every hostname or alias that will be used for admin sign-in; requests on unprotected aliases still fail the Worker's JWT verification.
@@ -41,7 +37,7 @@ Cloudflare's current Workers configuration supports Access protection of a `work
 
 Keep preview builds unbound or attach separate test databases/buckets. Do not bind PR previews to production D1 or R2: an authenticated user could otherwise edit production content through a preview. Preview Access audience and hostnames must also be configured independently.
 
-For an unconfigured local Worker, `npm run dev` serves file-based public content and closed admin routes. `npm test` exercises real SQLite statements and JWT fixtures. `npm --prefix tests ci`, then `npm run test:admin-browser`, runs a local test-only server with sample content and an injected test identity. That fixture identity exists only in `tests/`, which is excluded from static assets and is not imported by the production Worker. No `.dev.vars` flag can turn off authentication.
+For an unconfigured Worker, public content uses file mode and admin routes stay closed. With the production configuration, `npm run dev` uses a separate local D1 database: apply migrations and seed that local database before testing inventory; remote data is not copied automatically. `npm test` exercises real SQLite statements and JWT fixtures. `npm --prefix tests ci`, then `npm run test:admin-browser`, runs a local test-only server with sample content and an injected test identity. That fixture identity exists only in `tests/`, which is excluded from static assets and is not imported by the production Worker. No `.dev.vars` flag can turn off authentication.
 
 ## Daily use
 

@@ -4,8 +4,8 @@ An animated, mobile-friendly Oaktown Rentals website with an optional private pr
 
 ## Features
 
-- Property admin at `/admin/`, with separate drafts/published snapshots, a listing editor, photo uploads/order, preview, publish/unpublish and archive. Production access stays closed until the account's D1, R2 and Cloudflare Access are configured. See [the deployment guide](docs/admin-setup.md) for the plan, current costs and one-time setup.
-- D1 is provisioned and seeded with the four source listings. Live admin activation is pending R2/Access enablement and the approved account allowlist; the default deployment continues serving file-based listings.
+- Property admin at `/admin/`, with separate drafts/published snapshots, a listing editor, photo uploads/order, preview, publish/unpublish and archive. Production sign-in uses Cloudflare Access email codes for the three approved accounts. See [the deployment guide](docs/admin-setup.md) for the plan, current costs and one-time setup.
+- D1 is provisioned and seeded with the four source listings; private R2 storage, Access and the encrypted account allowlist are configured. Branch previews have no production database/storage bindings. Actual production email-code sign-in and editing still require owner verification.
 
 - Dedicated Mint Mojo vacation-home page at `/mint-mojo/`, with the original Drive photography hosted locally, a 19-photo gallery, coastal green/cream styling, English/Spanish copy and date inquiries by email/text. See [the media and page notes](docs/mint-mojo-media.md). No nightly rate, booking calendar or payment service is implied.
 
@@ -30,7 +30,7 @@ npm ci
 npm run dev
 ```
 
-Wrangler prints the local preview URL. Without CMS bindings, public listings come from `data.js` and admin access remains closed. A Python static server is still suitable for a file-only public preview. For authenticated local editor tests and production setup, see [the admin guide](docs/admin-setup.md).
+Wrangler prints the local preview URL. Wrangler uses local simulated D1 and R2 resources; initialize the local database separately to preview CMS inventory. Without CMS bindings, public listings come from `data.js` and admin access remains closed. A Python static server is still suitable for a file-only public preview. For authenticated local editor tests and production setup, see [the admin guide](docs/admin-setup.md).
 
 ## Current Cloudflare deployment — Workers Static Assets
 
