@@ -5,6 +5,7 @@ An animated, mobile-friendly Oaktown Rentals website with an optional private pr
 ## Features
 
 - Property admin at `/admin/`, with separate drafts/published snapshots, a listing editor, photo uploads/order, preview, publish/unpublish and archive. Production access stays closed until the account's D1, R2 and Cloudflare Access are configured. See [the deployment guide](docs/admin-setup.md) for the plan, current costs and one-time setup.
+- D1 is provisioned and seeded with the four source listings. Live admin activation is pending R2/Access enablement and the approved account allowlist; the default deployment continues serving file-based listings.
 
 - Dedicated Mint Mojo vacation-home page at `/mint-mojo/`, with the original Drive photography hosted locally, a 19-photo gallery, coastal green/cream styling, English/Spanish copy and date inquiries by email/text. See [the media and page notes](docs/mint-mojo-media.md). No nightly rate, booking calendar or payment service is implied.
 
