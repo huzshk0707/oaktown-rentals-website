@@ -17,7 +17,6 @@
       const events = new AbortController();
       const on = (target, name, fn, options={}) => target?.addEventListener(name, fn, {...options, signal:events.signal});
       const story = root.querySelector('.story');
-      const scrollcraft = window.OaktownScrollcraft?.mount(root.querySelector('.scrollcraft-canvas'));
       const scenes = [...root.querySelectorAll('[data-scene]')];
       const images = [...root.querySelectorAll('[data-scene-image]')];
       const buttons = [...root.querySelectorAll('[data-scene-button]')];
@@ -63,8 +62,6 @@
         frame=0;
         if(!geometry)return;
         const animate=enabled()&&desktop.matches;
-        const progress=story ? clamp((scrollY-geometry.story.top)/geometry.story.travel) : 0;
-        scrollcraft?.render(progress,animate);
         if(story&&animate) {
           const p=clamp((scrollY-geometry.story.top)/geometry.story.travel);
           activeScene(Math.min(2,Math.floor(p*3)));
@@ -120,7 +117,7 @@
       if(viewport)sizeObserver.observe(viewport);
       on(root,'load',measure,{capture:true});
       activeScene(0);motionChanged();
-      return ()=>{events.abort();sizeObserver.disconnect();cancelAnimationFrame(frame);scrollcraft?.destroy();};
+      return ()=>{events.abort();sizeObserver.disconnect();cancelAnimationFrame(frame);};
     }
   };
 })();
