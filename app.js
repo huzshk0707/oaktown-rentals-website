@@ -102,6 +102,7 @@
       {image:images[6]||images[2]||images[0],title:t('sceneThreeTitle'),copy:t('sceneThreeCopy')}
     ];
     return `<section class="story" id="top" aria-label="${t('heroKicker')}"><div class="story-stage">
+      <canvas class="scrollcraft-canvas" aria-hidden="true"></canvas>
       <div class="story-images" aria-hidden="true">${scenes.map((scene,i)=>`<div class="story-image ${i===0?'is-active':''}" data-scene-image="${i}">${imageEl(scene.image,'','',i===0?'eager':'')}</div>`).join('')}</div>
       <div class="story-letter" aria-hidden="true" ${scenes[2].image?`style="background-image:url('${imageUrl(scenes[2].image,1500)}')"`:''}>O</div>
       <div class="story-shade"></div><div class="story-topline"><span>LOUISVILLE, KENTUCKY</span><a href="#homes">${t('explore')} <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div>

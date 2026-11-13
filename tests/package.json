@@ -4,7 +4,8 @@
   "scripts": {
     "check": "node --check ../app.js && node --check ../data.js && node --check ../effects.js && node --check ../mint-mojo/mint-mojo.js",
     "test:browser": "node browser.cjs",
-    "test:mint": "node mint-mojo.cjs"
+    "test:mint": "node mint-mojo.cjs",
+    "test:scrollcraft": "node scrollcraft.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

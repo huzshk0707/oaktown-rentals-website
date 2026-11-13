@@ -1,0 +1,13 @@
+{
+  "name": "Oaktown Rentals — Find your place",
+  "description": "Homes and apartments in Louisville, Kentucky.",
+  "canvasAlt": "Abstract forest-green light, moving with the scroll",
+  "frames": "../assets/scrollcraft/desktop",
+  "framesMobile": "../assets/scrollcraft/mobile",
+  "theme": { "scale": "editorial", "ink": "#f3f5df", "muted": "#e6edc8", "ground": "#0b2c1a", "accent": "#10783d", "accentText": "#e6edc8", "displayWeight": 500 },
+  "sections": [
+    { "kind": "statement", "layout": "left", "reveal": "fade", "eyebrow": "LOUISVILLE, KENTUCKY", "heading": "Find your place.", "body": "Rental homes with character, in the Louisville neighborhoods you love.", "scrollHeight": 1200 },
+    { "layout": "right", "reveal": "rise", "heading": "Room for your life.", "body": "A little more space. A rhythm of your own.", "scrollHeight": 1300 },
+    { "layout": "left", "reveal": "rise", "heading": "Make yourself at home.", "body": "Find your place in Louisville. Contact us for current availability.", "scrollHeight": 1000 }
+  ]
+}

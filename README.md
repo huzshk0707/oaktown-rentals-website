@@ -1,4 +1,4 @@
-# Oaktown Rentals — Cinematic Website (Version 0.5 — Property Admin)
+# Oaktown Rentals — Cinematic Website (Version 0.6 — ScrollCraft design)
 
 An animated, mobile-friendly Oaktown Rentals website with an optional private property admin, based on the *design direction* of the supplied cinematic real-estate video. Not a copy of the featured third-party website. Preserves public information from the existing Oaktown Rentals Squarespace website where practical.
 
@@ -9,7 +9,7 @@ An animated, mobile-friendly Oaktown Rentals website with an optional private pr
 
 - Dedicated Mint Mojo vacation-home page at `/mint-mojo/`, with the original Drive photography hosted locally, a 19-photo gallery, coastal green/cream styling, English/Spanish copy and date inquiries by email/text. See [the media and page notes](docs/mint-mojo-media.md). No nightly rate, booking calendar or payment service is implied.
 
-- Three-chapter photo story with a photo-filled O integrated into one 180svh hero (previously 470svh across two sections). Native scroll controls the slow photo movement and transitions; no video or autoplay is required.
+- ScrollCraft-powered three-chapter hero: green canvas frames, real property photography in an architectural frame, and a cream listing collection. The compact 180svh desktop introduction uses native scroll; mobile and reduced motion load one static poster. See [source attribution, reproduction and validation](docs/scrollcraft-design.md).
 - One combined editorial/about section with real property photos. The Florida rental is a compact secondary feature after contact.
 - A two-column comparison grid is the default, with an optional perspective gallery using native touch scrolling, arrow controls and keyboard navigation. Neighborhood filters work in both views.
 - Property galleries appear immediately after rent, deposit, bedroom/bathroom facts and a property-specific showing request. Full-screen native dialogs retain Escape, arrow keys, touch swipes and image-load error messages.
@@ -68,6 +68,7 @@ Wrangler prints the local preview URL. Wrangler uses local simulated D1 and R2 r
 - `styles.css` — base styling and self-hosted font declarations.
 - `cinematic.css` — compact story/letter transition, comparison grid, optional carousel, gallery and responsive layouts.
 - `effects.js` — scroll-linked scenes, perspective effects, motion preferences and lifecycle cleanup.
+- `scrollcraft.js`, `scrollcraft.css`, `assets/scrollcraft/` — adapted MIT-licensed frame engine, homepage design and local green frame sets.
 - `index.html` — shell and site metadata.
 
 ## Validation
@@ -85,6 +86,7 @@ npm ci
 npx playwright install chromium
 npm run check
 npm run test:browser
+npm run test:scrollcraft
 ```
 
 Set `OAKTOWN_BASE_URL` to test another local port, or `OAKTOWN_CHROMIUM` to use an installed Chromium executable. Tests deliberately block external requests and exercise image-failure behavior; they do not validate CDN photography. Test sources and package metadata are excluded from Worker static assets.
