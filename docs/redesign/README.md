@@ -1,4 +1,6 @@
-# Oaktown public redesign — review draft
+# Oaktown public redesign — PR #8 archive
+
+This document records the original PR #8 review. For the subsequent owner-requested restoration of cinematic motion and brand colors, see [Motion and brand refinement](motion-refinement.md). The statements below describe the original review phase.
 
 This branch improves the existing public site. It is **not deployed or merged**. Real property-photo review and refreshed desktop, tablet and mobile screenshots are complete. The branch is ready for owner review.
 

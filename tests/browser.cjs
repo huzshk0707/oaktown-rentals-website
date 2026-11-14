@@ -12,14 +12,17 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  const check=(name,fn)=>{try{fn();passed.push(name)}catch(e){failures.push(name+': '+e.message)}};
  await page.goto(base+'/');await page.waitForTimeout(250);
  
- const stage=await page.locator('.story-stage').boundingBox();check('desktop introduction is shorter than one screen',()=>assert.ok(stage.height<750));
+ const stage=await page.locator('.story-stage').boundingBox();check('desktop cinematic stage fills one screen',()=>assert.equal(stage.height,1000));
  for(const scene of [0,1,2]){
    await page.locator('[data-scene-button="'+scene+'"]').click();
    const active=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');check('explicit photo selection '+scene,()=>assert.equal(active,String(scene)));
  }
- await page.evaluate(()=>scrollTo(0,350));await page.waitForTimeout(80);
- const selectedPhoto=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');
- check('scrolling does not change the selected photo',()=>assert.equal(selectedPhoto,'2'));
+ for(const [progress,scene] of [[.1,0],[.5,1],[.9,2]]){
+   await page.evaluate(p=>{const story=document.querySelector('.story');scrollTo({top:(story.offsetHeight-innerHeight)*p,behavior:'instant'});},progress);
+   await page.waitForTimeout(100);
+   const selectedPhoto=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');
+   check('native scroll advances chapter '+scene,()=>assert.equal(selectedPhoto,String(scene)));
+ }
  const homesTop=await page.locator('#homes').evaluate(el=>el.getBoundingClientRect().top+scrollY);check('homes start within two desktop screens',()=>assert.ok(homesTop<=2000));
  const grid=await page.locator('.property-grid').evaluate(el=>({display:getComputedStyle(el).display,columns:getComputedStyle(el).gridTemplateColumns.split(' ').length}));check('default property view has two comparison columns',()=>{assert.equal(grid.display,'grid');assert.equal(grid.columns,2)});
  await page.locator('#homes').scrollIntoViewIfNeeded();await page.waitForTimeout(300);
@@ -56,12 +59,12 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  await page.locator('[data-scene-button="1"]').click();
  const active=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');check('mobile second scene active',()=>assert.equal(active,'1'));
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
- await page.locator('#language-switch').click();const text=await page.locator('[data-scene-button="1"]').getAttribute('aria-label');check('photo controls translate',()=>assert.equal(text,'Foto 2'));
+ await page.locator('#language-switch').click();const text=await page.locator('[data-scene-button="1"]').getAttribute('aria-label');check('photo controls translate',()=>assert.match(text,/^Foto 2:/));
  await page.reload();const lang=await page.locator('html').getAttribute('lang');check('Spanish preference survives reload',()=>assert.equal(lang,'es'));
  await page.setViewportSize({width:320,height:640});await page.goto(base+'/');
  for(const scene of [0,1,2]){
    await page.locator('[data-scene-button="'+scene+'"]').click();await page.waitForTimeout(950);
-   const space=await page.evaluate(()=>({copy:document.querySelector('.story-description').getBoundingClientRect().bottom,button:document.querySelector('.story-explore').getBoundingClientRect().top}));
+   const space=await page.evaluate(()=>({copy:document.querySelector('.story-scene.is-active .story-description').getBoundingClientRect().bottom,button:document.querySelector('.story-explore').getBoundingClientRect().top}));
    check('Spanish hero copy clears its CTA at 320px, scene '+scene,()=>assert.ok(space.copy<space.button));
  }
  for(const [slug,heading,term] of [

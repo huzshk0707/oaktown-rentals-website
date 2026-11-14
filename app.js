@@ -72,7 +72,7 @@
     const thumbnail=className==='gallery-thumbnail';
     const widths=thumbnail?[100,300,500]:[500,1000,1500,2500];
     const sizes=thumbnail?'(max-width: 600px) 95px, 140px':className==='story-photo'
-      ?'(max-width: 600px) calc(100vw - 40px), (max-width: 850px) calc((100vw - 80px) / 2), (max-width: 1200px) calc((100vw - 88px) * .6), (max-width: 1328px) calc((100vw - 112px) * .6), 730px'
+      ?'100vw'
       :className==='property-image'?'auto, (max-width: 600px) calc(100vw - 40px), (max-width: 1328px) calc((100vw - 80px) / 2), 624px':'auto, (max-width: 1328px) calc(100vw - 48px), 1280px';
     const responsive=src.includes('images.squarespace-cdn.com')?`srcset="${widths.map(w=>imageUrl(src,w)+' '+w+'w').join(', ')}" sizes="${sizes}"`:'';
     return `<img class="${className}" src="${imageUrl(src,thumbnail?300:1200)}" ${responsive} alt="${alt}" loading="${extra==='eager'?'eager':'lazy'}" decoding="async" ${extra==='eager'?'fetchpriority="high"':''}>`;
@@ -101,9 +101,16 @@
   function storySection() {
     const featured=P[0],images=featured?DATA.images[featured.imageKey]:[];
     const scenes=[images[0],images[3]||images[1],images[6]||images[2]].filter(Boolean);
-    return `<section class="story" id="top" aria-label="${t('heroKicker')}"><div class="story-stage">
-      <div class="story-copy"><p class="story-location">Louisville, Kentucky</p><h1 class="story-title">${t('heroOne')} ${t('heroTwo')}</h1><p class="story-description">${t('heroTagline')}</p><a class="story-explore button-solid" href="#homes"><span>${t('explore')}</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a><a class="story-contact text-link" href="#contact">${t('aboutLink')}</a></div>
-      ${featured?`<figure class="story-media"><div class="story-images">${scenes.map((src,i)=>`<div class="story-image ${i===0?'is-active':''}" data-scene-image="${i}" aria-hidden="${i!==0}" data-image-error="${t('photoUnavailable')}">${imageEl(src,featured.name+' — '+t('photoLabel')+' '+(i+1),'story-photo',i===0?'eager':'')}</div>`).join('')}${!scenes.length?`<p class="story-no-photo">${t('photoUnavailable')}</p>`:''}</div><figcaption class="story-bottom"><a class="story-caption" href="#home/${featured.slug}">${featured.name}<span>${featured.neighborhood}</span></a><div class="scene-navigation" role="group" aria-label="${t('photosLabel')}">${scenes.map((_,i)=>`<button type="button" data-scene-button="${i}" aria-label="${t('photoLabel')} ${i+1}" aria-pressed="${i===0}">${String(i+1).padStart(2,'0')}</button>`).join('')}</div></figcaption></figure>`:`<div class="story-empty"><p>${t('availabilityNote')}</p><a class="text-link" href="#contact">${t('contact')}</a></div>`}
+    const chapters=[
+      {label:t('sceneOne'),title:`${t('heroOne')} <em>${t('heroTwo')}</em>`,copy:t('heroTagline')},
+      {label:t('sceneTwo'),title:t('sceneTwoTitle'),copy:t('sceneTwoCopy')},
+      {label:t('sceneThree'),title:t('sceneThreeTitle'),copy:t('sceneThreeCopy')}
+    ].slice(0,Math.max(1,scenes.length));
+    return `<section class="story ${scenes.length>1?'has-chapters':''}" id="top" aria-label="${t('heroKicker')}"><div class="story-stage" data-image-error="${t('photoUnavailable')}">
+      <div class="story-images">${scenes.map((src,i)=>`<div class="story-image ${i===0?'is-active':''}" data-scene-image="${i}" aria-hidden="${i!==0}" data-image-error="${t('photoUnavailable')}">${imageEl(src,featured.name+' — '+t('photoLabel')+' '+(i+1),'story-photo',i===0?'eager':'')}</div>`).join('')}</div><div class="story-shade" aria-hidden="true"></div>
+      <div class="story-topline"><span>Louisville, Kentucky</span><a href="#homes">${t('scroll')} <span aria-hidden="true">↓</span></a></div>
+      <div class="story-copy"><div class="story-scenes">${chapters.map((chapter,i)=>`<div class="story-scene ${i===0?'is-active':''}" data-scene="${i}" aria-hidden="${i!==0}"><p class="eyebrow">${String(i+1).padStart(2,'0')} / ${chapter.label}</p><${i===0?'h1':'h2'} class="story-title">${chapter.title}</${i===0?'h1':'h2'}><p class="story-description">${chapter.copy}</p></div>`).join('')}</div><div class="story-actions"><a class="story-explore button-solid" href="#homes"><span>${t('explore')}</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a><a class="story-contact text-link" href="#contact">${t('aboutLink')}</a></div></div>
+      ${featured?`<div class="story-bottom"><div class="scene-navigation" role="group" aria-label="${t('photosLabel')}">${chapters.map((chapter,i)=>`<button type="button" data-scene-button="${i}" aria-label="${t('photoLabel')} ${i+1}: ${chapter.label}" aria-pressed="${i===0}"><span>${String(i+1).padStart(2,'0')}</span><span>${chapter.label}</span><i aria-hidden="true"></i></button>`).join('')}</div><a class="story-caption" href="#home/${featured.slug}">${featured.name}<span>${featured.neighborhood}</span></a></div>`:`<p class="story-empty">${t('availabilityNote')}</p>`}
     </div></section>`;
   }
   function homePage() {
