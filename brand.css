@@ -133,14 +133,16 @@ body.rental-site {
   & .story { height:auto; }
   & .story-stage { position:relative;top:auto;height:100svh;min-height:690px;background:var(--brand-deep); }
   & .story-images { z-index:-3; }
-  & .story-image { background:var(--ink2);transition:opacity .65s ease;will-change:transform; }
+  & .story-image { background:var(--ink2);transition:opacity .65s ease; }
+  & .story-letter { left:62%;top:50%;font-size:min(70vw,82vh);background-color:transparent;contain:paint; }
+  & .story-letter[hidden] { display:none; }
   & .story-image img { object-position:60% 48%; }
   & .story-stage:has(.story-image.is-active .image-unavailable)::after { content:attr(data-image-error);position:absolute;z-index:1;right:var(--side);bottom:112px;color:var(--cream2);font-size:12px;pointer-events:none; }
-  & .story-shade { background:linear-gradient(90deg,#071e15e6 0%,#071e158c 42%,#071e151a 75%),linear-gradient(0deg,#071e15ed,transparent 45%),linear-gradient(180deg,#071e1566,transparent 25%); }
+  & .story-shade { background:linear-gradient(90deg,#071e15b8 0%,#071e1566 42%,#071e150d 78%),linear-gradient(0deg,#071e15ed,transparent 60%),linear-gradient(180deg,#071e1573,transparent 28%); }
   & .story-topline { top:124px;font-size:11px;letter-spacing:.16em; }
   & .story-topline a { display:inline-flex;align-items:center;gap:18px;font-size:11px; }
   & .story-topline a span { font-size:22px;margin:0; }
-  & .story-copy { top:28%;width:min(67%,820px); }
+  & .story-copy { top:31%;width:min(67%,820px); }
   & .story-scenes { display:grid; }
   & .story-scene { position:relative;inset:auto;grid-area:1/1;width:100%;visibility:hidden;transition:opacity .55s ease,transform .75s cubic-bezier(.2,.7,.2,1),visibility .55s; }
   & .story-scene.is-active { visibility:visible; }
@@ -148,10 +150,13 @@ body.rental-site {
   & .story-title { font:400 clamp(72px,8.7vw,136px)/.99 var(--display);letter-spacing:-.065em;margin:0 0 24px;max-width:800px;text-wrap:balance; }
   & .story-title em { font:italic 400 1.04em/.95 var(--serif);letter-spacing:-.06em;color:var(--accent); }
   & .story-description { font-size:16px;line-height:1.75;color:var(--cream2);max-width:350px;margin:0; }
-  & .story-actions { display:flex;align-items:center;gap:28px;margin-top:32px; }
-  & .story-explore { position:static;background:var(--cream);border-color:var(--cream);color:var(--brand-deep);gap:32px; }
-  & .story-explore>span:first-child { font-size:13px;letter-spacing:.02em;text-transform:none; }
-  & .story-explore:hover { background:var(--brand);border-color:var(--brand);color:var(--cream); }
+  & .story-actions { position:absolute;right:var(--side);bottom:156px;display:flex;flex-direction:column;align-items:flex-end;gap:14px; }
+  & .story-explore { position:static;display:inline-flex;align-items:center;gap:22px;background:none;border:0;color:var(--cream);padding:0;min-height:72px; }
+  & .story-explore>span:first-child { font-size:12px;letter-spacing:.1em;text-transform:uppercase; }
+  & .story-action-orbit { display:grid;place-items:center;width:72px;height:72px;border:1px solid #f3f5df99;border-radius:50%;transition:background .25s,color .25s; }
+  & .story-action-orbit .icon { width:26px;height:26px;transition:transform .3s ease; }
+  & .story-explore:hover .story-action-orbit { background:var(--cream);color:var(--brand-deep); }
+  & .story-explore:hover .icon { transform:rotate(45deg); }
   & .story-contact { font-size:13px;letter-spacing:0;text-transform:none;padding:6px 0;border-bottom:1px solid var(--line); }
   & .story-bottom { bottom:38px;align-items:end;gap:40px; }
   & .scene-navigation { width:min(600px,64%);gap:24px; }
@@ -179,6 +184,7 @@ body.rental-site {
   & .filter-chip:hover:not(.active) { border-color:var(--cream);color:var(--cream); }
   & .collection-note { font-size:13px;color:var(--muted);margin-bottom:32px; }
   & .collection .property-grid { column-gap:36px;row-gap:64px; }
+  & .collection .property-card { display:grid;grid-template-rows:auto 1fr auto;align-content:start; }
   & .collection .property-image-wrap { aspect-ratio:1.5;border-radius:2px;background:var(--ink2); }
   & .property-image { filter:none;transition:transform .8s cubic-bezier(.2,.7,.2,1); }
   & .property-card:hover .property-image { transform:scale(1.035); }
@@ -207,6 +213,7 @@ body.rental-site {
   & .editorial-intro .text-link { color:var(--ink);font-size:13px;letter-spacing:.02em;text-transform:none; }
   & .editorial-collage { min-height:510px; }
   & .editorial-photo { box-shadow:none;background:#d0dccb; }
+  & .editorial-photo img { transform:scale(1.06) translateY(var(--photo-offset,0px));transition:transform .5s ease-out; }
   & .editorial-photo-secondary { border:8px solid var(--cream); }
   & .editorial-photo-caption { color:var(--cream);background:var(--brand-deep);text-shadow:none;font-size:11px;letter-spacing:.03em;padding:6px 10px; }
   & .faq-section { display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:8vw;background:var(--brand-deep); }
@@ -281,7 +288,8 @@ body.rental-site {
   @media(max-width:1050px) {
     & .desktop-nav { display:none; }
     & .menu-button { display:block; }
-    & .collection .property-data { gap:16px; }
+    & .collection .property-data { grid-template-columns:minmax(0,1fr);gap:14px; }
+    & .collection .property-price { padding:0;display:flex;gap:6px;align-items:baseline; }
     & .collection .property-name { font-size:24px; }
     & .collection .property-price { font-size:21px; }
   }
@@ -289,12 +297,15 @@ body.rental-site {
     --side:24px;
     & .site-header { height:80px; }
     & .mobile-nav { top:80px; }
-    & .story-stage { height:calc(100svh - 70px);min-height:700px; }
+    & .story-stage { display:grid;grid-template-rows:auto auto 1fr;align-content:start;padding:clamp(170px,23svh,240px) var(--side) 126px;height:calc(100svh - 70px);min-height:700px; }
     & .story-topline { top:110px; }
     & .story-topline a { display:none; }
-    & .story-copy { top:25%;width:calc(100% - 2*var(--side)); }
+    & .story-copy { position:static;width:100%; }
     & .story-title { font-size:clamp(64px,10vw,90px);max-width:650px; }
     & .story-description { font-size:16px;max-width:330px; }
+    & .story-actions { position:static;align-self:start;justify-self:start;flex-direction:row;align-items:center;gap:28px;margin-top:28px; }
+    & .story-action-orbit { width:56px;height:56px; }
+    & .story-explore { min-height:56px; }
     & .story-bottom { bottom:30px; }
     & .scene-navigation { width:100%; }
     & .story-caption { display:none; }
@@ -321,12 +332,15 @@ body.rental-site {
     & .header-actions .nav-apply { display:none; }
     & .story-stage { min-height:710px; }
     & .story-topline { top:105px;font-size:10px; }
-    & .story-copy { top:25%; }
+    & .story-copy { width:100%; }
     & .story-title { font-size:clamp(54px,14.5vw,80px);max-width:100%;margin-bottom:24px; }
     & .story-scene .eyebrow { font-size:10px;margin-bottom:22px; }
     & .story-description { font-size:15px;max-width:30ch; }
     & .story-actions { margin-top:28px;gap:24px; }
-    & .story-explore { padding:13px 18px;gap:24px; }
+    & .story-explore { padding:0;gap:16px; }
+    & .story-explore>span:first-child { font-size:11px;letter-spacing:.06em; }
+    & .story-action-orbit { width:48px;height:48px; }
+    & .story-explore { min-height:48px; }
     & .story-contact { font-size:12px; }
     & .scene-navigation { gap:14px; }
     & .scene-navigation button { font-size:10px;gap:8px;align-items:start; }
@@ -373,8 +387,7 @@ html[lang=es] body.rental-site .story-title { font-size:clamp(68px,8vw,120px); }
 @media(max-width:850px) { html[lang=es] body.rental-site .story-title { font-size:clamp(58px,9vw,82px); } }
 @media(max-width:600px) { html[lang=es] body.rental-site .story-title { font-size:clamp(46px,12.6vw,70px); } }
 @media(max-height:720px) and (max-width:850px) {
-  body.rental-site .story-stage { min-height:570px; }
-  body.rental-site .story-copy { top:26%; }
+  body.rental-site .story-stage { min-height:570px;padding-top:150px; }
   body.rental-site .story-scene .eyebrow { margin-bottom:16px; }
   body.rental-site .story-title,html[lang=es] body.rental-site .story-title { font-size:clamp(44px,12.6vw,62px);margin-bottom:18px; }
   body.rental-site .story-description { font-size:14px;line-height:1.75;max-width:33ch; }
@@ -393,3 +406,7 @@ html[lang=es] body.rental-site .story-title { font-size:clamp(68px,8vw,120px); }
   body.rental-site .reveal { opacity:1;transform:none; }
 }
 .motion-off body.rental-site .reveal { opacity:1;transform:none; }
+.motion-off body.rental-site .editorial-photo img { transform:none; }
+@media(prefers-reduced-motion:reduce) {
+  body.rental-site .editorial-photo img { transform:none; }
+}

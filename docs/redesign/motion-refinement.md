@@ -1,5 +1,7 @@
 # Oaktown motion and brand refinement
 
+The current owner-directed refinement, historical comparison and complete screenshot set are in [Cinematic restoration — PR #9 review](comparison/README.md). The notes below record the first PR #9 restoration pass.
+
 The follow-up to merged PR #8 restores the earlier cinematic character at the owner's request. PR #8 replaced the scroll-linked introduction with a static pale catalogue. This version brings back the original forest-green/cream palette, full-photo hero, chapter transitions and photo movement, with clearer spacing, refined display type and consistently sized controls.
 
 ## What to review
