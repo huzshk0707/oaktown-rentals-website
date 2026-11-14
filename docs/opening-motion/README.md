@@ -28,7 +28,7 @@ All new effects use native Web Animations with transform/opacity. Completion and
 
 ## Review media — explicitly fallback
 
-The current environment still blocks the original property-photo CDN. These captures show the real site's text entrance and settled layout with its photo-failure treatment. **They do not visually verify the photograph's expansion or final live photo appearance.** The photo-readiness/expansion mechanism is covered separately by isolated decoded-image tests using the original logo as a fixture, never as a published property image or review photograph.
+The original review environment blocked the property-photo CDN. These retained captures show the real site's text entrance and settled layout with its photo-failure treatment. **They do not visually verify the photograph's expansion or final live photo appearance.** The photo-readiness/expansion mechanism is covered separately by isolated decoded-image tests using the original logo as a fixture, never as a published property image or review photograph. Real-photo acceptance is recorded below.
 
 - [Short silent browser recording: text entrance, blocked-photo fallback](opening-text-fallback.mp4)
 - [Desktop first capture](desktop-entrance-fallback.png) · [Desktop settled](desktop-settled-fallback.png)
@@ -36,7 +36,22 @@ The current environment still blocks the original property-photo CDN. These capt
 - [Reduced-motion capture](reduced-motion-entrance-fallback.png)
 - [Capture observations](capture-notes.json)
 
-Screenshot timing is approximate; initial browser-navigation time is trimmed from the short recording so it focuses on the text entrance. It is not a loading-performance measurement. Actual animation observations are recorded with each capture. All six captures have no page errors or horizontal overflow, with View Homes inside the viewport. Real-photo entrance acceptance remains pending CDN access.
+Screenshot timing is approximate; initial browser-navigation time is trimmed from the short recording so it focuses on the text entrance. It is not a loading-performance measurement. Actual animation observations are recorded with each capture. All six fallback captures have no page errors or horizontal overflow, with View Homes inside the viewport.
+
+## Real-photo acceptance — November 14, 2026
+
+Network access to the live Worker and original Squarespace CDN now succeeds with normal TLS verification. The public API returned the four expected listings. All 42 original photo URLs used by the public content and file data downloaded successfully at the CDN's 1600w size.
+
+The review used PR source `673df5c58b69fc9aee2a5ff4fb3b0f1797629ed9`, the current public API snapshot and those unmodified source-photo bytes. Chromium's direct HTTPS connection could not trust the environment proxy certificate. No certificate verification was disabled or trust-store change applied. The repository's supported verified-photo-cache capture method supplied the original photos and API snapshot to the local browser instead. This establishes real-photo appearance and cached-image behavior, not direct Chromium HTTPS access or cold-network performance.
+
+- [Desktop entrance](desktop-entrance-real.png) · [Desktop settled](desktop-settled-real.png)
+- [Spanish phone entrance](mobile-es-entrance-real.png) · [Spanish phone settled](mobile-es-settled-real.png)
+- [Reduced-motion initial](reduced-motion-entrance-real.png) · [Reduced-motion settled](reduced-motion-settled-real.png)
+- [Observed animations and capture checks](real-photo-notes.json)
+
+Entrance captures explicitly pause the observed entrance animations at 25% of their duration for inspection, then resume them before settled captures. The authentic cached desktop photo uses the 900 ms framed expansion; the 320px Spanish phone uses the 420 ms opacity-only reveal; reduced motion starts no entrance animations. All six captures have decoded original photography, a visible View Homes action, no horizontal overflow and no page errors. Settlement leaves no active photo entrance. Real-photo chapter selection, the four-card catalogue and opening a listing gallery also passed in all three modes. Visual inspection confirmed the original house photography, readable settled content and available navigation/actions.
+
+The existing 149 opening/public/design/motion/cinematic browser checks, three CMS/security tests, Mint Mojo regression, syntax checks and whitespace check passed again before merge. No production code changes were needed after the original PR implementation.
 
 ## Validation
 
@@ -48,7 +63,7 @@ Screenshot timing is approximate; initial browser-navigation time is trimmed fro
 - CMS/security: 3 tests passed. Mint Mojo regression suite passed.
 - Root and browser JavaScript syntax checks and whitespace checks passed.
 
-Production changes are confined to `effects.js` and one public, scoped startup-height rule in `brand.css`. That rule keeps the footer below the initial viewport while authoritative content loads; the approved settled composition and HTML stay the same. Content, original assets, admin/CMS/authentication, Cloudflare infrastructure, Mint Mojo and publication configuration are unchanged. This is a review branch, with no merge or deployment performed.
+Production changes are confined to `effects.js` and one public, scoped startup-height rule in `brand.css`. That rule keeps the footer below the initial viewport while authoritative content loads; the approved settled composition and HTML stay the same. Content, original assets, admin/CMS/authentication, Cloudflare infrastructure, Mint Mojo and publication configuration are unchanged. Merge and deployment status is tracked in [PR #11](https://github.com/huzshk0707/oaktown-rentals-website/pull/11).
 
 To repeat the checks against a static server on 8793:
 
