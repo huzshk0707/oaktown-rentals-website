@@ -1,10 +1,10 @@
 # Oaktown public redesign — review draft
 
-This branch improves the existing public site. It is **not deployed or merged**. Actual property-photo crop/quality review and opening the GitHub pull request remain dependent on environment network access.
+This branch improves the existing public site. It is **not deployed or merged**. Real property-photo review and refreshed desktop, tablet and mobile screenshots are complete. The branch is ready for owner review.
 
 ## Current-site audit
 
-The pre-change baseline is `9af551f`, the restored production design. Local before screenshots use its unchanged code and fallback public records; they are not production screenshots.
+The before screenshots use current `main` at `d6fee49`, including its footer-wordmark removal. Both designs render the same read-only snapshot of the four currently published properties. These are local comparison captures, not screenshots of a deployed redesign.
 
 **Keep:** original logo and green identity; bilingual property descriptions; complete unit-specific galleries; grid/gallery choice and neighborhood filters; address-specific inquiry/showing links; the existing application URL; CMS-published snapshots, failure handling and private admin boundary. The buildless frontend and local fonts are a good fit for fast delivery.
 
@@ -20,7 +20,7 @@ No stock photography, testimonials, metrics, inventory claims or new property fa
 
 ## Before / after
 
-These captures deliberately block external requests so that image-failure behavior is reproducible. **Blank labelled property-photo areas are network failure states, not proposed artwork.** Local Mint Mojo photography is included. Re-capture with the real CDN before approving photography or treating these as final visual acceptance.
+These refreshed captures include the real published property photography and local Mint Mojo images. All 39 gallery photos decoded, and gallery ownership and order match the current published records. The container browser cannot trust the environment proxy certificate, so source photographs were downloaded through a TLS-verified HTTP client and the same bytes supplied to both local previews. No image edits, stand-ins or production data changes were made. This verifies visual presentation, not uncached browser/CDN performance.
 
 | View | Before | After |
 | --- | --- | --- |
@@ -30,17 +30,19 @@ These captures deliberately block external requests so that image-failure behavi
 | Mobile, full page | [Before](screenshots/before-mobile-full.png) | [After](screenshots/after-mobile-full.png) |
 | Desktop listing | [Before](screenshots/before-desktop-listing.png) | [After](screenshots/after-desktop-listing.png) |
 | Mobile listing | [Before](screenshots/before-mobile-listing.png) | [After](screenshots/after-mobile-listing.png) |
+| Tablet, 768px | — | [After](screenshots/after-tablet.png) |
+| Spanish mobile, 320px | — | [After](screenshots/after-mobile-spanish.png) |
 
 ### Desktop after
 
-![Desktop redesign with external-photo failure state](screenshots/after-desktop.png)
+![Desktop redesign with original Colonial Drive photograph](screenshots/after-desktop.png)
 
 ### Mobile after
 
-![Mobile redesign with external-photo failure state](screenshots/after-mobile.png)
+![Mobile redesign with original Colonial Drive photograph](screenshots/after-mobile.png)
 
 ## Scope and review
 
 Public edits are `index.html`, `app.js`, `effects.js` and scoped rules in the existing `brand.css`. Tests and review documents accompany them. `/admin/`, `cms/`, `cms-client.js`, `data.js`, migrations, original media, Workers bindings, Access settings, secrets and deployment configuration are unchanged. Mint Mojo retains its existing styling because the new rules require the public catalogue's body class.
 
-The intended PR targets `main` from `design/premium-oaktown`. Merging and production deployment require owner approval. If API access remains blocked, the branch comparison is a review aid, **not an opened pull request**.
+The intended PR targets `main` from `design/premium-oaktown`. Merging and production deployment require owner approval. The original network blocks are resolved. The PR includes the full audit, resource evaluation, screenshots and admin proposal.

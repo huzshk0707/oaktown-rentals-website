@@ -22,4 +22,4 @@ Photographs come from the same property's current records. Never substitute anot
 
 ## Review status
 
-This is a review branch, not an approved production release. See `docs/redesign/README.md` for tests, screenshots, reference evaluation and outstanding network-dependent checks. Real-photo composition is not signed off while the property CDN is inaccessible.
+This is a review branch, not an approved production release. See `docs/redesign/README.md` for tests, screenshots, reference evaluation and outstanding network-dependent checks. Real-photo composition has been reviewed on desktop, tablet and phone using the current published photos. Owner approval remains pending.
