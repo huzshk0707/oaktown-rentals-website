@@ -68,7 +68,6 @@ body { background:var(--ink);color:var(--cream); }
 .vacation-photo { background:#365b43; }
 .vacation-card p { color:var(--cream2); }
 .footer { background:var(--brand-deep); }
-.footer-signature { color:var(--cream); }
 .footer-bottom { color:var(--muted);border-color:var(--line); }
 .footer-contact span { color:var(--muted); }
 .page-intro { background:var(--ink2); }
