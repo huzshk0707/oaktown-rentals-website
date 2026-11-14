@@ -2,24 +2,27 @@
 
 ## Direction
 
-A Louisville property catalogue: warm paper, forest green and generous, accurately labelled photographs. The first task is to find a home and understand its rental details. Premium means clarity, proportion and reliable behavior, not a luxury claim about the properties.
+The original Oaktown forest-green and cream identity, with a cinematic photo opening and a carefully spaced rental catalogue. Full property photography, expressive Manrope headings and quiet rules provide the visual character; rent, addresses and contact actions remain easy to scan.
+
+This direction follows the owner's request after PR #8 to restore the earlier motion and brand colors with a more polished finish.
 
 ## System
 
-- Paper `#f8f7f2`, quiet alternate surface `#efeee6`, forest `#183d2e`, deep forest `#102b21`, body `#243c30`, secondary text `#536558`, borders `#cbd1c7`.
-- Georgia for complete editorial headings; existing self-hosted DM Sans for controls, body and property names. No isolated italic words, display gradients or imported font requests.
-- Maximum content width 1280px; 20–24px phone/tablet gutters. Headings use a modest 39–88px range; paragraphs generally 16–17px. Full address text can wrap.
-- Flat photographs, thin separating rules, 2px control corners, no ornamental cards or shadows. Oaktown's original JPG remains unchanged.
-- One primary button style. Neighborhood filters and layout switches expose selected state. Contact and application destinations remain the existing ones.
-- Manual hero photography. No automatic rotation, pinned hero, parallax or scroll-driven scene transitions. Photo hover and crossfade are short; existing reduced-motion and saved motion preference remain respected.
-- Desktop: introduction alongside one property photograph, followed immediately by a two-column collection. Mobile: introduction, photograph, one-column listings. Rental detail pages use a readable title/facts area and a full-image gallery with keyboard-operable lightbox.
+- Original tokens: forest `#123b25`, alternate green `#1c5030`, deep forest `#0b2c1a`, cream `#f3f5df`, secondary cream `#dce5c8`, muted `#c0d0b4`, primary brand green `#10783d`. The supplied logo remains unchanged.
+- Existing self-hosted Manrope for display headings, DM Sans for body and controls, and the original italic serif phrases in all three hero chapters. Responsive headings and full addresses can wrap.
+- Maximum content width 1280px, 22–24px phone/tablet gutters, deliberate section spacing, restrained photo zoom and thin dividing rules. Photos retain their natural colors.
+- Dark green opening and collection, cream editorial/contact sections, and deep green navigation/footer. The oversized footer wordmark stays removed.
+- Desktop with sufficient height: one 180svh opening with a sticky 100svh stage. Native scroll advances three synchronized photo/copy chapters with a 4.5% photo movement. Chapter buttons also select a chapter directly.
+- Phones, short windows, reduced motion and a saved Motion off preference use a static introduction with manually selectable chapters. Motion state persists; pausing/resuming preserves the reading position in the collection. No timer, autoplay, wheel interception or idle animation loop.
+- The photographic O bridges the last two chapters within the compact hero, behind the shade and copy. It reuses the decoded third-chapter image and is suppressed if that source is unavailable, motion is off, or the viewport is static/mobile.
+- The collection keeps two-column comparison, neighborhood filters and the optional gallery with gentle perspective. Detail pages retain clear title/rental facts and the complete, unobscured photo gallery.
 
 ## Boundaries
 
-Public changes are scoped under `body.rental-site` in the already-shipped `brand.css`, preserving Mint Mojo's separate design. The existing base styles remain for its compatibility; static style detectors may report overridden legacy declarations. No new production dependencies, assets routing changes or deployment settings.
+Public refinements are scoped under `body.rental-site` in `brand.css`. Mint Mojo retains its separate design and motion. No production dependencies or new font requests.
 
-Photographs come from the same property's current records. Never substitute another property to fill a broken image. Failed-image states use neutral surfaces and an explicit message. Empty or failed CMS responses never resurrect fallback inventory.
+Property records, source photographs, gallery ownership/order, public destinations, the CMS, admin and deployment configuration are preserved. Empty or failed CMS responses remain authoritative. Failed photographs have explicit fallback messages.
 
-## Review status
+## Review
 
-This is a review branch, not an approved production release. See `docs/redesign/README.md` for tests, screenshots, reference evaluation and outstanding network-dependent checks. Real-photo composition has been reviewed on desktop, tablet and phone using the current published photos. Owner approval remains pending.
+See [the three-version visual comparison](docs/redesign/comparison/README.md) for validation and visual limitations. This follow-up is on a separate review branch and PR. The production approval boundary in `PRODUCT.md` remains in force.

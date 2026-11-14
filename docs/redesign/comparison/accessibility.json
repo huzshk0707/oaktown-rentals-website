@@ -1,0 +1,138 @@
+[
+  {
+    "device": "desktop",
+    "language": "en",
+    "view": "home",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ]
+  },
+  {
+    "device": "desktop",
+    "language": "en",
+    "view": "detail",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ]
+  },
+  {
+    "device": "desktop",
+    "language": "es",
+    "view": "home",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ]
+  },
+  {
+    "device": "desktop",
+    "language": "es",
+    "view": "detail",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ]
+  },
+  {
+    "device": "tablet",
+    "language": "en",
+    "view": "home",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "device": "tablet",
+    "language": "en",
+    "view": "detail",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ]
+  },
+  {
+    "device": "tablet",
+    "language": "es",
+    "view": "home",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "device": "tablet",
+    "language": "es",
+    "view": "detail",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ]
+  },
+  {
+    "device": "mobile",
+    "language": "en",
+    "view": "home",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "device": "mobile",
+    "language": "en",
+    "view": "detail",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ]
+  },
+  {
+    "device": "mobile",
+    "language": "es",
+    "view": "home",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "device": "mobile",
+    "language": "es",
+    "view": "detail",
+    "mode": "blocked-photo fallback",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ]
+  }
+]

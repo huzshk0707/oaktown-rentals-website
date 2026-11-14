@@ -6,7 +6,10 @@
     "test:browser": "node browser.cjs",
     "test:mint": "node mint-mojo.cjs",
     "test:design": "node design.cjs",
-    "capture:design": "node capture-design.cjs"
+    "capture:design": "node capture-design.cjs",
+    "test:motion": "node motion.cjs",
+    "capture:comparison": "node capture-comparison.cjs",
+    "test:cinematic": "node cinematic.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
