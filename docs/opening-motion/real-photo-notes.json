@@ -1,0 +1,420 @@
+{
+  "sourceCommit": "673df5c58b69fc9aee2a5ff4fb3b0f1797629ed9",
+  "method": "Local PR code, current public API snapshot, original CDN photos downloaded with normal TLS verification at 1600w and replayed from a verified cache. Entrance frames explicitly paused at 25% for inspection; settled captures resume normally. Not a network timing measurement or direct Chromium TLS validation.",
+  "records": [
+    {
+      "file": "desktop-entrance-real.png",
+      "language": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "phase": "entrance",
+      "state": {
+        "overflow": false,
+        "ctaVisible": true,
+        "photoReady": true,
+        "photoAnimations": 1
+      },
+      "errors": [],
+      "observedEntrance": [
+        {
+          "className": "eyebrow",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(10px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 420
+          },
+          "started": 407.4000000000233
+        },
+        {
+          "className": "story-title",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(20px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 650,
+            "delay": 90
+          },
+          "started": 407.70000000001164
+        },
+        {
+          "className": "story-description",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(10px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 500,
+            "delay": 180
+          },
+          "started": 407.70000000001164
+        },
+        {
+          "className": "story-images",
+          "frames": [
+            {
+              "opacity": 0.4,
+              "transform": "scale(.9)"
+            },
+            {
+              "opacity": 1,
+              "transform": "scale(1)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 900
+          },
+          "started": 465.9000000000233
+        }
+      ]
+    },
+    {
+      "file": "desktop-settled-real.png",
+      "language": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "phase": "settled",
+      "state": {
+        "overflow": false,
+        "ctaVisible": true,
+        "photoReady": true,
+        "photoAnimations": 0
+      },
+      "errors": [],
+      "observedEntrance": [
+        {
+          "className": "eyebrow",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(10px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 420
+          },
+          "started": 407.4000000000233
+        },
+        {
+          "className": "story-title",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(20px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 650,
+            "delay": 90
+          },
+          "started": 407.70000000001164
+        },
+        {
+          "className": "story-description",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(10px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 500,
+            "delay": 180
+          },
+          "started": 407.70000000001164
+        },
+        {
+          "className": "story-images",
+          "frames": [
+            {
+              "opacity": 0.4,
+              "transform": "scale(.9)"
+            },
+            {
+              "opacity": 1,
+              "transform": "scale(1)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 900
+          },
+          "started": 465.9000000000233
+        }
+      ]
+    },
+    {
+      "file": "mobile-es-entrance-real.png",
+      "language": "es",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "phase": "entrance",
+      "state": {
+        "overflow": false,
+        "ctaVisible": true,
+        "photoReady": true,
+        "photoAnimations": 1
+      },
+      "errors": [],
+      "observedEntrance": [
+        {
+          "className": "eyebrow",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(4px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 240
+          },
+          "started": 328.80000000004657
+        },
+        {
+          "className": "story-title",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(8px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 360,
+            "delay": 30
+          },
+          "started": 329.1000000000349
+        },
+        {
+          "className": "story-description",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(4px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 300,
+            "delay": 70
+          },
+          "started": 329.1000000000349
+        },
+        {
+          "className": "story-images",
+          "frames": [
+            {
+              "opacity": 0.45
+            },
+            {
+              "opacity": 1
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 420
+          },
+          "started": 389.6000000000349
+        }
+      ]
+    },
+    {
+      "file": "mobile-es-settled-real.png",
+      "language": "es",
+      "viewport": {
+        "width": 320,
+        "height": 640
+      },
+      "phase": "settled",
+      "state": {
+        "overflow": false,
+        "ctaVisible": true,
+        "photoReady": true,
+        "photoAnimations": 0
+      },
+      "errors": [],
+      "observedEntrance": [
+        {
+          "className": "eyebrow",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(4px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 240
+          },
+          "started": 328.80000000004657
+        },
+        {
+          "className": "story-title",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(8px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 360,
+            "delay": 30
+          },
+          "started": 329.1000000000349
+        },
+        {
+          "className": "story-description",
+          "frames": [
+            {
+              "opacity": 0,
+              "transform": "translateY(4px)"
+            },
+            {
+              "opacity": 1,
+              "transform": "translateY(0)"
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 300,
+            "delay": 70
+          },
+          "started": 329.1000000000349
+        },
+        {
+          "className": "story-images",
+          "frames": [
+            {
+              "opacity": 0.45
+            },
+            {
+              "opacity": 1
+            }
+          ],
+          "options": {
+            "easing": "cubic-bezier(.16,1,.3,1)",
+            "fill": "backwards",
+            "duration": 420
+          },
+          "started": 389.6000000000349
+        }
+      ]
+    },
+    {
+      "file": "reduced-motion-entrance-real.png",
+      "language": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "phase": "entrance",
+      "state": {
+        "overflow": false,
+        "ctaVisible": true,
+        "photoReady": true,
+        "photoAnimations": 0
+      },
+      "errors": [],
+      "observedEntrance": []
+    },
+    {
+      "file": "reduced-motion-settled-real.png",
+      "language": "en",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "phase": "settled",
+      "state": {
+        "overflow": false,
+        "ctaVisible": true,
+        "photoReady": true,
+        "photoAnimations": 0
+      },
+      "errors": [],
+      "observedEntrance": []
+    }
+  ]
+}

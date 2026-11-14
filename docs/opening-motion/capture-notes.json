@@ -1,0 +1,104 @@
+[
+  {
+    "file": "desktop-entrance-fallback.png",
+    "language": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mode": "blocked-photo fallback",
+    "phase": "entrance",
+    "state": {
+      "animations": [],
+      "overflow": false,
+      "ctaVisible": true,
+      "photoReady": false
+    },
+    "errors": []
+  },
+  {
+    "file": "desktop-settled-fallback.png",
+    "language": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mode": "blocked-photo fallback",
+    "phase": "settled",
+    "state": {
+      "animations": [],
+      "overflow": false,
+      "ctaVisible": true,
+      "photoReady": false
+    },
+    "errors": []
+  },
+  {
+    "file": "mobile-es-entrance-fallback.png",
+    "language": "es",
+    "viewport": {
+      "width": 320,
+      "height": 640
+    },
+    "mode": "blocked-photo fallback",
+    "phase": "entrance",
+    "state": {
+      "animations": [],
+      "overflow": false,
+      "ctaVisible": true,
+      "photoReady": false
+    },
+    "errors": []
+  },
+  {
+    "file": "mobile-es-settled-fallback.png",
+    "language": "es",
+    "viewport": {
+      "width": 320,
+      "height": 640
+    },
+    "mode": "blocked-photo fallback",
+    "phase": "settled",
+    "state": {
+      "animations": [],
+      "overflow": false,
+      "ctaVisible": true,
+      "photoReady": false
+    },
+    "errors": []
+  },
+  {
+    "file": "reduced-motion-entrance-fallback.png",
+    "language": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mode": "blocked-photo fallback",
+    "phase": "entrance",
+    "state": {
+      "animations": [],
+      "overflow": false,
+      "ctaVisible": true,
+      "photoReady": false
+    },
+    "errors": []
+  },
+  {
+    "file": "reduced-motion-settled-fallback.png",
+    "language": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mode": "blocked-photo fallback",
+    "phase": "settled",
+    "state": {
+      "animations": [],
+      "overflow": false,
+      "ctaVisible": true,
+      "photoReady": false
+    },
+    "errors": []
+  }
+]

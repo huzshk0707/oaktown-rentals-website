@@ -7,6 +7,8 @@
   const clamp = n => Math.max(0, Math.min(1, n));
   let paused = false;
   try { paused = localStorage.getItem('oaktown-motion') === 'off'; } catch {}
+  let openingSeen = false;
+  try { openingSeen = sessionStorage.getItem('oaktown-opening-seen') === 'yes'; } catch {}
   const enabled = () => !reduce.matches && !paused;
   const setRoot = () => {
     document.documentElement.classList.toggle('motion-enabled', enabled());
@@ -22,6 +24,7 @@
       const on = (target, name, fn, options={}) => target?.addEventListener(name, fn, {...options, signal:events.signal});
       const story = root.querySelector('.story');
       const stage = root.querySelector('.story-stage');
+      const imageStage = root.querySelector('.story-images');
       const scenes = [...root.querySelectorAll('[data-scene]')];
       const images = [...root.querySelectorAll('[data-scene-image]')];
       const buttons = [...root.querySelectorAll('[data-scene-button]')];
@@ -37,6 +40,41 @@
       const motionButton = document.getElementById('motion-toggle');
       const pinned = () => enabled() && desktop.matches && images.length > 1;
       let frame = 0, currentScene = -1, geometry = null, letterReady = false;
+      const openingAnimations = new Set();
+      let openingStopped = false;
+
+      function stopOpening() {
+        openingStopped=true;
+        openingAnimations.forEach(animation=>animation.cancel());
+        openingAnimations.clear();
+      }
+      function entrance(element, keyframes, options) {
+        if(!element?.animate || openingStopped || !enabled())return;
+        const animation=element.animate(keyframes,{easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards',...options});
+        openingAnimations.add(animation);
+        animation.finished.then(()=>openingAnimations.delete(animation),()=>openingAnimations.delete(animation));
+      }
+      function playOpening() {
+        if(!story || openingSeen || scrollY>8 || (location.hash && location.hash!=='#top'))return;
+        openingSeen=true;
+        try { sessionStorage.setItem('oaktown-opening-seen','yes'); } catch {}
+        if(!enabled() || navigator.connection?.saveData || document.hidden)return;
+        const compact=!desktop.matches;
+        const firstScene=scenes[0];
+        const rise=compact?8:20;
+        entrance(firstScene?.querySelector('.eyebrow'),[{opacity:0,transform:`translateY(${rise/2}px)`},{opacity:1,transform:'translateY(0)'}],{duration:compact?240:420});
+        entrance(firstScene?.querySelector('.story-title'),[{opacity:0,transform:`translateY(${rise}px)`},{opacity:1,transform:'translateY(0)'}],{duration:compact?360:650,delay:compact?30:90});
+        entrance(firstScene?.querySelector('.story-description'),[{opacity:0,transform:`translateY(${rise/2}px)`},{opacity:1,transform:'translateY(0)'}],{duration:compact?300:500,delay:compact?70:180});
+        const photo=images[0]?.querySelector('img');
+        if(!photo)return;
+        const started=performance.now();
+        const revealPhoto=()=>{
+          if(openingStopped || performance.now()-started>700 || !photo.naturalWidth)return;
+          entrance(imageStage,compact?[{opacity:.45},{opacity:1}]:[{opacity:.4,transform:'scale(.9)'},{opacity:1,transform:'scale(1)'}],{duration:compact?420:900});
+        };
+        if(photo.complete)revealPhoto();
+        else on(photo,'load',revealPhoto,{once:true});
+      }
 
       function activeScene(index) {
         if(currentScene===index)return;
@@ -119,6 +157,7 @@
       }
       function schedule() {if(!frame)frame=requestAnimationFrame(render);}
       function motionChanged() {
+        stopOpening();
         const anchor=document.elementFromPoint(innerWidth/2,Math.min(innerHeight-100,150))?.closest('section');
         const oldTop=anchor?.getBoundingClientRect().top;
         setRoot();
@@ -132,7 +171,13 @@
       }
       on(motionButton,'click',()=>{paused=!paused;try{localStorage.setItem('oaktown-motion',paused?'off':'on');}catch{}motionChanged();});
       on(reduce,'change',motionChanged);on(desktop,'change',motionChanged);
-      on(window,'scroll',schedule,{passive:true});on(window,'resize',measure,{passive:true});
+      on(window,'scroll',()=>{if(scrollY>8)stopOpening();schedule();},{passive:true});
+      on(window,'resize',()=>{stopOpening();measure();},{passive:true});
+      on(window,'wheel',stopOpening,{passive:true});
+      on(window,'touchstart',stopOpening,{passive:true});
+      on(window,'pointerdown',stopOpening,{passive:true});
+      on(window,'keydown',stopOpening);
+      on(document,'visibilitychange',()=>{if(document.hidden)stopOpening();});
       on(viewport,'scroll',schedule,{passive:true});
       on(root,'click',e=>{
         const chapter=e.target.closest('[data-scene-button]');
@@ -164,8 +209,8 @@
       const layoutObserver=new MutationObserver(measure);
       if(collection)layoutObserver.observe(collection,{attributes:true,subtree:true,attributeFilter:['data-layout','hidden']});
       on(root,'load',measure,{capture:true});on(root,'error',measure,{capture:true});
-      activeScene(0);motionChanged();
-      return ()=>{events.abort();sizeObserver.disconnect();layoutObserver.disconnect();cancelAnimationFrame(frame);};
+      activeScene(0);motionChanged();openingStopped=false;playOpening();
+      return ()=>{stopOpening();events.abort();sizeObserver.disconnect();layoutObserver.disconnect();cancelAnimationFrame(frame);};
     }
   };
 })();

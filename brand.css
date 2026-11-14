@@ -108,6 +108,8 @@ body.rental-site {
   background:var(--brand-deep);
   color:var(--cream);
 
+  /* Reserve the first viewport while the authoritative content request runs. */
+  & #app:has(> noscript) { min-height:100svh; }
   & :focus-visible { outline:2px solid var(--cream);outline-offset:5px; }
   & a,& button { touch-action:manipulation; }
   & h1,& h2,& h3 { min-width:0;overflow-wrap:break-word;text-wrap:balance; }
