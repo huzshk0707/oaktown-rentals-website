@@ -3,7 +3,8 @@
 (() => {
   'use strict';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  const desktop = matchMedia('(min-width: 851px) and (min-height: 700px)');
+  const desktop = matchMedia('(min-width: 851px)');
+  const cinematic = matchMedia('(min-height: 560px)');
   const clamp = n => Math.max(0, Math.min(1, n));
   let paused = false;
   try { paused = localStorage.getItem('oaktown-motion') === 'off'; } catch {}
@@ -38,7 +39,7 @@
       const steps = [...root.querySelectorAll('[data-collection-step]')];
       const meter = root.querySelector('.collection-meter span');
       const motionButton = document.getElementById('motion-toggle');
-      const pinned = () => enabled() && desktop.matches && images.length > 1;
+      const pinned = () => enabled() && cinematic.matches && images.length > 1;
       let frame = 0, currentScene = -1, geometry = null, letterReady = false;
       const openingAnimations = new Set();
       let openingStopped = false;
@@ -123,9 +124,12 @@
         if(geometry.story && animate) {
           const progress=clamp((scroll-geometry.story.top)/geometry.story.travel);
           activeScene(Math.min(images.length-1,Math.floor(progress*images.length)));
-          images.forEach((image,i) => style(image,'transform',`scale(${(1.045-clamp(progress*images.length-i)*.045).toFixed(5)})`));
+          images.forEach((image,i) => {
+            const local=clamp(progress*images.length-i);
+            style(image,'transform',`translateY(${(1.2-local*2.4).toFixed(3)}%) scale(${(1.12-local*.08).toFixed(5)})`);
+          });
           buttons.forEach((button,i) => button.style.setProperty('--chapter-progress',clamp(progress*images.length-i)));
-          if(letter) {
+          if(letter && desktop.matches) {
             // Keep PR #2's photographic O inside the compact hero. It bridges
             // the last two chapters behind the shade and all readable copy.
             const reveal=clamp((progress-.46)/.34);
@@ -133,7 +137,7 @@
             letter.hidden=!letterReady || opacity===0;
             style(letter,'opacity',letterReady?opacity.toFixed(3):'0');
             style(letter,'transform',`translate(-50%,-50%) scale(${(.7+reveal*reveal*6).toFixed(4)})`);
-          }
+          } else if(letter){letter.hidden=true;style(letter,'opacity','0');}
         } else {
           images.forEach(image=>style(image,'transform',''));
           buttons.forEach((button,i)=>button.style.setProperty('--chapter-progress',i===currentScene?1:0));
@@ -150,9 +154,9 @@
         style(meter,'transform','scaleX('+(geometry.max ? .15+.85*clamp(left/geometry.max) : 1)+')');
         steps.forEach(button=>{button.disabled=Number(button.dataset.collectionStep)<0?left<=2:left>=geometry.max-2;});
         geometry.cards.forEach(({card,image,center})=>{
-          if(!gallery || !enabled() || !desktop.matches || card.hidden){style(image,'transform','');return;}
+          if(!gallery || !enabled() || card.hidden){style(image,'transform','');return;}
           const distance=Math.max(-1,Math.min(1,(center-left-geometry.width/2)/geometry.width));
-          style(image,'transform',`perspective(1600px) rotateY(${(distance*-4).toFixed(3)}deg) translateY(${(Math.abs(distance)*5).toFixed(2)}px)`);
+          style(image,'transform',`perspective(1600px) rotateY(${(distance*(desktop.matches?-4:-2.5)).toFixed(3)}deg) translateY(${(Math.abs(distance)*(desktop.matches?5:3)).toFixed(2)}px)`);
         });
       }
       function schedule() {if(!frame)frame=requestAnimationFrame(render);}
@@ -170,7 +174,7 @@
         measure();
       }
       on(motionButton,'click',()=>{paused=!paused;try{localStorage.setItem('oaktown-motion',paused?'off':'on');}catch{}motionChanged();});
-      on(reduce,'change',motionChanged);on(desktop,'change',motionChanged);
+      on(reduce,'change',motionChanged);on(desktop,'change',motionChanged);on(cinematic,'change',motionChanged);
       on(window,'scroll',()=>{if(scrollY>8)stopOpening();schedule();},{passive:true});
       on(window,'resize',()=>{stopOpening();measure();},{passive:true});
       on(window,'wheel',stopOpening,{passive:true});

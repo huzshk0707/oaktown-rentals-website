@@ -10,7 +10,8 @@
     "test:motion": "node motion.cjs",
     "capture:comparison": "node capture-comparison.cjs",
     "test:cinematic": "node cinematic.cjs",
-    "test:opening": "node opening.cjs"
+    "test:opening": "node opening.cjs",
+    "test:scroll-photos": "node scroll-photos.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
