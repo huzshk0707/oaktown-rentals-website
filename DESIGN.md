@@ -17,6 +17,13 @@ This direction follows the owner's request after PR #8 to restore the earlier mo
 - The photographic O bridges the last two chapters within the compact hero, behind the shade and copy. It reuses the decoded third-chapter image and is suppressed if that source is unavailable, motion is off, or the viewport is static/mobile.
 - The collection keeps two-column comparison, neighborhood filters and the optional gallery with gentle perspective on desktop and phone gallery layouts. Detail pages retain clear title/rental facts and the complete, unobscured photo gallery.
 
+## Property browsing
+
+- Cards offer an on-demand additional photo from their own property. Fine-pointer hover and keyboard focus preview it; the explicit toggle also works on touch. A failed extra image leaves the main photo intact.
+- Normal card navigation shares the chosen photo into a cover on the detail page using the native View Transitions API. Unsupported browsers, Motion off and reduced motion retain immediate navigation. Canceled transitions cannot write images into newer routes.
+- The detail cover stays synchronized with the full gallery. Clicking it enlarges the image it displays.
+- A compact rental bar appears once the full rental facts scroll behind the header. Desktop retains showing/application links; phones use the existing fixed bottom actions. It hides at the title, contact section and in very short windows, while keeping keyboard-focused actions available.
+
 ## Boundaries
 
 Public refinements are scoped under `body.rental-site` in `brand.css`. Mint Mojo retains its separate design and motion. No production dependencies or new font requests.
