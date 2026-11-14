@@ -72,7 +72,6 @@ body { overflow-x:clip; }
 .about-section .display-title { max-width:600px; }
 .florida-panel { min-height:720px; }
 .florida-image { overflow:hidden; }
-.footer-signature { font:800 16.7vw/.85 'Manrope',Arial,sans-serif;letter-spacing:-.08em;margin:0 0 50px -.02em;overflow:hidden;color:#ede9df; }
 .footer-lower { padding-bottom:90px; }
 .mobile-actions { display:none; }
 .gallery-heading { display:flex;justify-content:space-between;gap:20px;align-items:start; }
@@ -129,7 +128,6 @@ body { overflow-x:clip; }
   .mobile-actions a { display:grid;place-items:center;min-height:44px;border:1px solid var(--accent);font-size:11px;letter-spacing:.07em;text-transform:uppercase; }
   .mobile-actions a:last-child { background:var(--accent);color:var(--ink); }
   .footer { padding-bottom:calc(100px + env(safe-area-inset-bottom)); }
-  .footer-signature { font-size:16.1vw; }
 }
 @media(max-width:600px) {
   .site-header { gap:8px; }
@@ -165,7 +163,6 @@ body { overflow-x:clip; }
   .gallery-open>span { top:12px;left:12px;bottom:auto; }
   .gallery-controls { bottom:12px;right:12px; }
   .lightbox { padding:12px 16px calc(16px + env(safe-area-inset-bottom)); }
-  .footer-signature { margin-bottom:35px; }
 }
 @media(max-height:599px) and (min-width:601px) {
   .story-stage { min-height:650px; }
