@@ -1,0 +1,18 @@
+{
+  "property": "115 Colonial Drive",
+  "location": "St. Matthews · Louisville, KY",
+  "format": "vertical",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "brand": "OAKTOWN RENTALS",
+  "contact": "Text (502) 500-1070",
+  "scenes": [
+    {"image": null, "seconds": 6, "shot": "Front exterior", "headline": "Find your place.", "detail": "115 Colonial Drive"},
+    {"image": null, "seconds": 6, "shot": "Living room showing original oak flooring", "headline": "Character starts here.", "detail": "Original oak floors"},
+    {"image": null, "seconds": 6, "shot": "Kitchen and dining area", "headline": "Room for everyday life.", "detail": "Open kitchen, dining and living layout"},
+    {"image": null, "seconds": 6, "shot": "Bedroom", "headline": "Space for your next chapter.", "detail": "3 bedrooms · 1 bathroom"},
+    {"image": null, "seconds": 6, "shot": "Detached garage", "headline": "A little extra room.", "detail": "Detached two-car garage"},
+    {"image": null, "seconds": 6, "shot": "Best exterior or interior closing photo", "headline": "Could this be your next home?", "detail": "Text us to ask about availability"}
+  ]
+}
