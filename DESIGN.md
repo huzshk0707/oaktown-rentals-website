@@ -12,10 +12,10 @@ This direction follows the owner's request after PR #8 to restore the earlier mo
 - Existing self-hosted Manrope for display headings, DM Sans for body and controls, and the original italic serif phrases in all three hero chapters. Responsive headings and full addresses can wrap.
 - Maximum content width 1280px, 22–24px phone/tablet gutters, deliberate section spacing, restrained photo zoom and thin dividing rules. Photos retain their natural colors.
 - Dark green opening and collection, cream editorial/contact sections, and deep green navigation/footer. The oversized footer wordmark stays removed.
-- Desktop with sufficient height: one 180svh opening with a sticky 100svh stage. Native scroll advances three synchronized photo/copy chapters with a 4.5% photo movement. Chapter buttons also select a chapter directly.
-- Phones, short windows, reduced motion and a saved Motion off preference use a static introduction with manually selectable chapters. Motion state persists; pausing/resuming preserves the reading position in the collection. No timer, autoplay, wheel interception or idle animation loop.
+- With motion enabled and at least 560px of window height: one 180svh opening with a sticky photo stage on phones, tablets and desktops. Native scroll advances three synchronized photo/copy chapters with continuous zoom/pan (scale 1.12 to 1.04; vertical drift 1.2% to -1.2%). Phone stages leave room for the fixed actions. Chapter buttons also select a chapter directly.
+- Very short windows (under 560px high), reduced motion and a saved Motion off preference use a static introduction with manually selectable chapters. Motion state persists; pausing/resuming preserves the reading position in the collection. No timer, autoplay, wheel interception or idle animation loop.
 - The photographic O bridges the last two chapters within the compact hero, behind the shade and copy. It reuses the decoded third-chapter image and is suppressed if that source is unavailable, motion is off, or the viewport is static/mobile.
-- The collection keeps two-column comparison, neighborhood filters and the optional gallery with gentle perspective. Detail pages retain clear title/rental facts and the complete, unobscured photo gallery.
+- The collection keeps two-column comparison, neighborhood filters and the optional gallery with gentle perspective on desktop and phone gallery layouts. Detail pages retain clear title/rental facts and the complete, unobscured photo gallery.
 
 ## Boundaries
 

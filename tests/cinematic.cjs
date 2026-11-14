@@ -58,7 +58,7 @@ const decodedFixture=fs.readFileSync(require.resolve('../assets/oaktown-rentals-
   await page.emulateMedia({reducedMotion:'reduce'});await page.waitForTimeout(100);
   assert.equal(await page.locator('.story-letter').evaluate(el=>el.hidden),true,'reduced motion disables the O');checks++;
   await page.emulateMedia({reducedMotion:'no-preference'});await page.setViewportSize({width:390,height:844});await page.waitForTimeout(100);
-  assert.equal(await page.locator('.story-letter').evaluate(el=>el.hidden),true,'phones use manual chapters without O scaling');checks++;
+  assert.equal(await page.locator('.story-letter').evaluate(el=>el.hidden),true,'phones keep photo chapters without O scaling');checks++;
 
   await page.setViewportSize({width:1440,height:1000});await page.goto(base+'/');
   await page.locator('#homes').scrollIntoViewIfNeeded();await page.locator('[data-layout-button="gallery"]').click();await page.waitForTimeout(150);

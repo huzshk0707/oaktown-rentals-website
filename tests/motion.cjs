@@ -38,8 +38,8 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8787').replace(/\/$/
   await page.locator('[data-scene-button="1"]').click();
   await page.evaluate(()=>scrollTo({top:180,behavior:'instant'}));
   await page.waitForTimeout(100);
-  assert.equal(await page.locator('[data-scene].is-active').getAttribute('data-scene'),'1','mobile scrolling retains the manually chosen chapter');checks++;
-  assert.equal(await page.locator('.story-stage').evaluate(el=>getComputedStyle(el).position),'relative');checks++;
+  assert.equal(await page.locator('[data-scene].is-active').getAttribute('data-scene'),'0','mobile scrolling drives the selected chapter');checks++;
+  assert.equal(await page.locator('.story-stage').evaluate(el=>getComputedStyle(el).position),'sticky');checks++;
   for(const language of ['en','es'])for(const width of [320,390,768]) {
    const height=width<=390?640:844;
    await page.setViewportSize({width,height});
@@ -75,6 +75,6 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8787').replace(/\/$/
   assert.equal(await page.locator('.story').count(),0);
   assert.deepEqual(errors,[],'chapter listeners clean up when leaving the homepage');checks++;
   assert.equal(await page.locator('.footer-signature').count(),0);checks++;
-  console.log(`${checks} motion checks passed: synchronized chapters, pause/resume reading position, static mobile/reduced motion, bilingual clearances and route cleanup.`);
+  console.log(`${checks} motion checks passed: synchronized chapters, pause/resume reading position, mobile scrolling/static reduced motion, bilingual clearances and route cleanup.`);
  }finally{await browser.close();}
 })().catch(error=>{console.error(error);process.exitCode=1;});

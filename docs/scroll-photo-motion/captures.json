@@ -1,0 +1,137 @@
+[
+  {
+    "file": "phone-chapter-1-fallback.png",
+    "locale": "en",
+    "width": 390,
+    "height": 844,
+    "progress": 0.1,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "0",
+      "image": "0",
+      "photoTransform": "translateY(0.475%) scale(1.09584)",
+      "overflow": false
+    }
+  },
+  {
+    "file": "phone-chapter-2-fallback.png",
+    "locale": "en",
+    "width": 390,
+    "height": 844,
+    "progress": 0.45,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "1",
+      "image": "1",
+      "photoTransform": "translateY(0.362%) scale(1.09208)",
+      "overflow": false
+    }
+  },
+  {
+    "file": "phone-chapter-3-fallback.png",
+    "locale": "en",
+    "width": 390,
+    "height": 844,
+    "progress": 0.85,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "2",
+      "image": "2",
+      "photoTransform": "translateY(-0.118%) scale(1.07608)",
+      "overflow": false
+    }
+  },
+  {
+    "file": "short-phone-chapter-1-fallback.png",
+    "locale": "es",
+    "width": 320,
+    "height": 560,
+    "progress": 0.1,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "0",
+      "image": "0",
+      "photoTransform": "translateY(0.477%) scale(1.09591)",
+      "overflow": false
+    }
+  },
+  {
+    "file": "short-phone-chapter-2-fallback.png",
+    "locale": "es",
+    "width": 320,
+    "height": 560,
+    "progress": 0.45,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "1",
+      "image": "1",
+      "photoTransform": "translateY(0.361%) scale(1.09205)",
+      "overflow": false
+    }
+  },
+  {
+    "file": "short-phone-chapter-3-fallback.png",
+    "locale": "es",
+    "width": 320,
+    "height": 560,
+    "progress": 0.85,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "2",
+      "image": "2",
+      "photoTransform": "translateY(-0.116%) scale(1.07614)",
+      "overflow": false
+    }
+  },
+  {
+    "file": "laptop-chapter-1-fallback.png",
+    "locale": "en",
+    "width": 1024,
+    "height": 650,
+    "progress": 0.1,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "0",
+      "image": "0",
+      "photoTransform": "translateY(0.48%) scale(1.096)",
+      "overflow": false
+    }
+  },
+  {
+    "file": "laptop-chapter-2-fallback.png",
+    "locale": "en",
+    "width": 1024,
+    "height": 650,
+    "progress": 0.45,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "1",
+      "image": "1",
+      "photoTransform": "translateY(0.36%) scale(1.092)",
+      "overflow": false
+    }
+  },
+  {
+    "file": "laptop-chapter-3-fallback.png",
+    "locale": "en",
+    "width": 1024,
+    "height": 650,
+    "progress": 0.85,
+    "mode": "blocked-photo fallback",
+    "state": {
+      "stage": "sticky",
+      "chapter": "2",
+      "image": "2",
+      "photoTransform": "translateY(-0.12%) scale(1.076)",
+      "overflow": false
+    }
+  }
+]

@@ -19,7 +19,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  }
  for(const [progress,scene] of [[.1,0],[.5,1],[.9,2]]){
    await page.evaluate(p=>{const story=document.querySelector('.story');scrollTo({top:(story.offsetHeight-innerHeight)*p,behavior:'instant'});},progress);
-   await page.waitForTimeout(100);
+   await page.waitForFunction(expected=>document.querySelector('[data-scene-image].is-active')?.dataset.sceneImage===String(expected),scene,{timeout:1500});
    const selectedPhoto=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');
    check('native scroll advances chapter '+scene,()=>assert.equal(selectedPhoto,String(scene)));
  }
