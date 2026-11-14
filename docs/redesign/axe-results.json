@@ -1,0 +1,60 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "lang": "en",
+    "violations": [],
+    "incomplete": [],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "lang": "en",
+    "violations": [],
+    "incomplete": [],
+    "overflow": false
+  },
+  {
+    "route": "/#home/115-colonial-drive",
+    "width": 1440,
+    "lang": "en",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/#home/115-colonial-drive",
+    "width": 390,
+    "lang": "en",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 320,
+    "lang": "es",
+    "violations": [],
+    "incomplete": [],
+    "overflow": false
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "lang": "en",
+    "violations": [],
+    "incomplete": [],
+    "overflow": false
+  }
+]
