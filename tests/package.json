@@ -4,7 +4,9 @@
   "scripts": {
     "check": "node --check ../app.js && node --check ../data.js && node --check ../effects.js && node --check ../mint-mojo/mint-mojo.js",
     "test:browser": "node browser.cjs",
-    "test:mint": "node mint-mojo.cjs"
+    "test:mint": "node mint-mojo.cjs",
+    "test:design": "node design.cjs",
+    "capture:design": "node capture-design.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

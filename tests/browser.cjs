@@ -12,11 +12,14 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  const check=(name,fn)=>{try{fn();passed.push(name)}catch(e){failures.push(name+': '+e.message)}};
  await page.goto(base+'/');await page.waitForTimeout(250);
  
- const stage=await page.locator('.story-stage').boundingBox();check('desktop hero height',()=>assert.equal(stage.height,1000));
- for(const [progress,scene] of [[.1,0],[.5,1],[.9,2]]){
-   await page.evaluate(p=>{const el=document.querySelector('.story');window.scrollTo({top:(el.offsetHeight-innerHeight)*p,behavior:'instant'})},progress);await page.waitForTimeout(80);
-   const active=await page.locator('[data-scene].is-active').getAttribute('data-scene');check('scroll activates scene '+scene,()=>assert.equal(active,String(scene)));
+ const stage=await page.locator('.story-stage').boundingBox();check('desktop introduction is shorter than one screen',()=>assert.ok(stage.height<750));
+ for(const scene of [0,1,2]){
+   await page.locator('[data-scene-button="'+scene+'"]').click();
+   const active=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');check('explicit photo selection '+scene,()=>assert.equal(active,String(scene)));
  }
+ await page.evaluate(()=>scrollTo(0,350));await page.waitForTimeout(80);
+ const selectedPhoto=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');
+ check('scrolling does not change the selected photo',()=>assert.equal(selectedPhoto,'2'));
  const homesTop=await page.locator('#homes').evaluate(el=>el.getBoundingClientRect().top+scrollY);check('homes start within two desktop screens',()=>assert.ok(homesTop<=2000));
  const grid=await page.locator('.property-grid').evaluate(el=>({display:getComputedStyle(el).display,columns:getComputedStyle(el).gridTemplateColumns.split(' ').length}));check('default property view has two comparison columns',()=>{assert.equal(grid.display,'grid');assert.equal(grid.columns,2)});
  await page.locator('#homes').scrollIntoViewIfNeeded();await page.waitForTimeout(300);
@@ -51,14 +54,14 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  const cta=await page.locator('.story-explore').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "View homes"')));
  const ctaLabel=await page.locator('.story-explore>span').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
  await page.locator('[data-scene-button="1"]').click();
- const active=await page.locator('[data-scene].is-active').getAttribute('data-scene');check('mobile second scene active',()=>assert.equal(active,'1'));
+ const active=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');check('mobile second scene active',()=>assert.equal(active,'1'));
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
- await page.locator('#language-switch').click();const text=await page.locator('[data-scene-button="1"]').innerText();check('new experience translates',()=>assert.ok(text.includes('día')));
+ await page.locator('#language-switch').click();const text=await page.locator('[data-scene-button="1"]').getAttribute('aria-label');check('photo controls translate',()=>assert.equal(text,'Foto 2'));
  await page.reload();const lang=await page.locator('html').getAttribute('lang');check('Spanish preference survives reload',()=>assert.equal(lang,'es'));
  await page.setViewportSize({width:320,height:640});await page.goto(base+'/');
  for(const scene of [0,1,2]){
    await page.locator('[data-scene-button="'+scene+'"]').click();await page.waitForTimeout(950);
-   const space=await page.evaluate(()=>({copy:document.querySelector('[data-scene].is-active').getBoundingClientRect().bottom,button:document.querySelector('.story-explore').getBoundingClientRect().top}));
+   const space=await page.evaluate(()=>({copy:document.querySelector('.story-description').getBoundingClientRect().bottom,button:document.querySelector('.story-explore').getBoundingClientRect().top}));
    check('Spanish hero copy clears its CTA at 320px, scene '+scene,()=>assert.ok(space.copy<space.button));
  }
  for(const [slug,heading,term] of [
@@ -76,13 +79,16 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  await page.locator('[data-gallery-index="2"]').click();
  await page.locator('.gallery').scrollIntoViewIfNeeded();
  const before=await page.locator('.gallery').evaluate(el=>el.getBoundingClientRect().top);
- await page.locator('#language-switch').click();
+ // Click the visible sticky control directly. Locator auto-scrolling can move
+ // the document before the click, invalidating this reading-position assertion.
+ const languageControl=await page.locator('#language-switch').boundingBox();
+ await page.mouse.click(languageControl.x+languageControl.width/2,languageControl.y+languageControl.height/2);
  const after=await page.locator('.gallery').evaluate(el=>el.getBoundingClientRect().top);
  const retained=await page.locator('.gallery > .gallery-heading .gallery-count').innerText();
  check('language change retains gallery photo and reading position',()=>{assert.equal(retained,'3 / 10');assert.ok(Math.abs(before-after)<3);});
 
  await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'reduce'});await page.goto(base+'/');await page.waitForTimeout(150);
- const sizes=await page.evaluate(()=>({story:document.querySelector('.story').offsetHeight,stage:document.querySelector('.story-stage').offsetHeight,letter:Number(getComputedStyle(document.querySelector('.story-letter')).opacity)}));check('reduced motion removes scroll pinning and letter animation',()=>{assert.equal(sizes.story,sizes.stage);assert.equal(sizes.letter,0)});
+ const sizes=await page.evaluate(()=>({position:getComputedStyle(document.querySelector('.story-stage')).position,transition:getComputedStyle(document.querySelector('.story-image')).transitionDuration,disabled:document.querySelector('#motion-toggle').disabled}));check('reduced motion keeps a static hero and disables transitions',()=>{assert.notEqual(sizes.position,'sticky');assert.ok(['0s','1e-05s'].includes(sizes.transition));assert.equal(sizes.disabled,true)});
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(base+'/');await page.locator('#motion-toggle').click();await page.reload();const motion=await page.locator('#motion-toggle').getAttribute('aria-pressed');check('motion remains disabled after reload',()=>assert.equal(motion,'false'));
  await page.locator('#motion-toggle').click();await page.waitForTimeout(250);
 console.log(JSON.stringify({passed,failures},null,2));await browser.close();if(failures.length)process.exitCode=1;
