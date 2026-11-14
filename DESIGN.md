@@ -11,7 +11,7 @@ A Louisville property catalogue: warm paper, forest green and generous, accurate
 - Maximum content width 1280px; 20–24px phone/tablet gutters. Headings use a modest 39–88px range; paragraphs generally 16–17px. Full address text can wrap.
 - Flat photographs, thin separating rules, 2px control corners, no ornamental cards or shadows. Oaktown's original JPG remains unchanged.
 - One primary button style. Neighborhood filters and layout switches expose selected state. Contact and application destinations remain the existing ones.
-- Manual hero photography. No automatic rotation, pinned hero, parallax or scroll-driven scene transitions. Photo hover and crossfade are short; existing reduced-motion and saved motion preference remain respected.
+- Manual hero photography with a short directional photo wipe. Desktop fine pointers add bounded photo depth; gallery photos have a restrained perspective while rental facts stay flat. The paired story photographs reveal once on entry. No automatic rotation, pinned hero or scroll-driven scene changes. Motion Off and system reduced motion cancel active effects while retaining selection and reading position.
 - Desktop: introduction alongside one property photograph, followed immediately by a two-column collection. Mobile: introduction, photograph, one-column listings. Rental detail pages use a readable title/facts area and a full-image gallery with keyboard-operable lightbox.
 
 ## Boundaries
@@ -22,4 +22,4 @@ Photographs come from the same property's current records. Never substitute anot
 
 ## Review status
 
-This is a review branch, not an approved production release. See `docs/redesign/README.md` for tests, screenshots, reference evaluation and outstanding network-dependent checks. Real-photo composition has been reviewed on desktop, tablet and phone using the current published photos. Owner approval remains pending.
+The catalogue layout was approved and merged in PR #8. The subsequent photo-motion extension is a separate review; see `docs/motion/README.md`. The original audit and real-photo comparisons remain in `docs/redesign/README.md`.
