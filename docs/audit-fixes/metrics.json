@@ -1,0 +1,68 @@
+[
+  {
+    "version": "before",
+    "view": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "homesTop": 1800,
+    "firstCardTop": 2187,
+    "clearPhotoBand": 222,
+    "overflow": false,
+    "photoLoaded": true
+  },
+  {
+    "version": "before",
+    "view": "phone",
+    "width": 390,
+    "height": 844,
+    "homesTop": 1519,
+    "firstCardTop": 2034,
+    "clearPhotoBand": 118,
+    "overflow": false,
+    "photoLoaded": true
+  },
+  {
+    "version": "before",
+    "view": "small-phone-es",
+    "width": 320,
+    "height": 640,
+    "homesTop": 1152,
+    "firstCardTop": 1760,
+    "clearPhotoBand": 74,
+    "overflow": false,
+    "photoLoaded": true
+  },
+  {
+    "version": "after",
+    "view": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "homesTop": 1600,
+    "firstCardTop": 1987,
+    "clearPhotoBand": 222,
+    "overflow": false,
+    "photoLoaded": true
+  },
+  {
+    "version": "after",
+    "view": "phone",
+    "width": 390,
+    "height": 844,
+    "homesTop": 1182,
+    "firstCardTop": 1598,
+    "clearPhotoBand": 186,
+    "overflow": false,
+    "photoLoaded": true
+  },
+  {
+    "version": "after",
+    "view": "small-phone-es",
+    "width": 320,
+    "height": 640,
+    "homesTop": 896,
+    "firstCardTop": 1376,
+    "clearPhotoBand": 88,
+    "overflow": false,
+    "photoLoaded": true
+  }
+]

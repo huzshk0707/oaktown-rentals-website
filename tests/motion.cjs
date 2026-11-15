@@ -36,7 +36,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8787').replace(/\/$/
   await page.setViewportSize({width:390,height:844});
   await page.goto(base+'/');
   await page.locator('[data-scene-button="1"]').click();
-  await page.evaluate(()=>scrollTo({top:180,behavior:'instant'}));
+  await page.evaluate(()=>{const story=document.querySelector('.story'),stage=document.querySelector('.story-stage');scrollTo({top:story.offsetTop+(story.offsetHeight-stage.offsetHeight)*.1,behavior:'instant'})});
   await page.waitForTimeout(100);
   assert.equal(await page.locator('[data-scene].is-active').getAttribute('data-scene'),'0','mobile scrolling drives the selected chapter');checks++;
   assert.equal(await page.locator('.story-stage').evaluate(el=>getComputedStyle(el).position),'sticky');checks++;

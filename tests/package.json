@@ -13,7 +13,9 @@
     "test:opening": "node opening.cjs",
     "test:scroll-photos": "node scroll-photos.cjs",
     "test:browsing": "node browsing.cjs",
-    "capture:browsing": "node capture-browsing.cjs"
+    "capture:browsing": "node capture-browsing.cjs",
+    "test:audit": "node audit.cjs",
+    "capture:audit": "node capture-audit.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

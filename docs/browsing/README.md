@@ -37,7 +37,7 @@ These use a read-only public API snapshot of four published properties and the o
 - Four settled real-photo listing scans (desktop, tablet, English phone and Spanish 320px phone) recorded **zero confirmed WCAG A/AA violations**. Two image-backed gallery contrast nodes per view remain flagged for manual review; their solid controls were visually checked. See [accessibility results](accessibility.json).
 - Independent review reproduced and verified fixes for stale transition callbacks and cover/enlargement consistency. No unresolved material findings remained.
 
-No native Safari/Firefox device tests or LCP/CLS benchmark are claimed. The feature-detection fallback was tested in Chromium with the transition API unavailable. This PR is for owner review; merging and production deployment require approval.
+No native Safari/Firefox device tests or LCP/CLS benchmark are claimed. The feature-detection fallback was tested in Chromium with the transition API unavailable. The owner subsequently approved the audit follow-up and merge in chat. See [the follow-up review](../audit-fixes/README.md) for the final layout, history-restoration and rental-clarity changes; the captures on this page show the earlier browsing implementation.
 
 ```sh
 OAKTOWN_BASE_URL=http://127.0.0.1:8810 npm --prefix tests run test:browsing
