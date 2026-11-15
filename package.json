@@ -8,6 +8,7 @@
     "check": "node --check cms/worker.mjs && node --check admin/admin.js && node --check cms-client.js && node --check app.js && node --check mint-mojo/mint-mojo.js",
     "test": "node --test tests/cms.test.mjs",
     "test:admin-browser": "node tests/admin-browser.cjs",
+    "test:photo-order": "node tests/admin-photo-order.cjs",
     "seed": "node scripts/seed-cms.mjs"
   },
   "dependencies": { "jose": "6.2.15" },

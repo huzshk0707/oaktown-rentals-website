@@ -1,11 +1,57 @@
+import './vendor/sortable-1.15.7.min.js';
+
 const $ = selector => document.querySelector(selector);
 const form = $('#property-form');
+const photoList = $('#photo-list');
 const textFields = ['name','slug','neighborhood','city','availability','label','labelEs','summary','summaryEs','sourceUrl'];
 const arrays = ['description','descriptionEs','features','featuresEs','terms','termsEs'];
 let records = [], current = null, photos = [], dirty = false, busy = false, photosEnabled = false;
 const money = n => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:n%1?2:0,maximumFractionDigits:2}).format(n);
 const escape = text => String(text ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const photoSource = url => url.startsWith('/media/') ? '/api/admin'+url : url;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const photoSort = new window.Sortable(photoList,{
+  draggable:'.photo-card',handle:'.photo-drag-handle',
+  animation:reducedMotion.matches?0:150,
+  ghostClass:'photo-drop-target',chosenClass:'photo-chosen',dragClass:'photo-dragging',fallbackClass:'photo-dragging',
+  forceFallback:true,fallbackOnBody:true,fallbackTolerance:5,delay:150,delayOnTouchOnly:true,touchStartThreshold:4,
+  scrollSensitivity:70,scrollSpeed:12,
+  onChoose(event){
+    // Leave the edited field before dragging so mobile selection changes do not scroll back to it.
+    event.item.querySelector('.photo-drag-handle').focus({preventScroll:true});
+  },
+  onStart(event){
+    photoList.classList.add('is-sorting');
+    photoStatus(`Moving photo ${event.oldDraggableIndex+1}. Drop it in its new position.`);
+  },
+  onEnd(event){
+    photoList.classList.remove('is-sorting');
+    movePhoto(event.oldDraggableIndex,event.newDraggableIndex,'handle');
+  }
+});
+reducedMotion.addEventListener('change',()=>photoSort.option('animation',reducedMotion.matches?0:150));
+function photoStatus(message=''){ $('#photo-status').textContent=message; }
+function syncPhotoControls(){
+  photoSort.option('disabled',busy||photos.length<2);
+  for(const button of photoList.querySelectorAll('[data-move]')){
+    const destination=Number(button.dataset.move)+Number(button.dataset.direction);
+    button.disabled=busy||destination<0||destination>=photos.length;
+  }
+  for(const handle of photoList.querySelectorAll('.photo-drag-handle'))handle.disabled=busy||photos.length<2;
+}
+function focusPhoto(index,control){
+  const card=photoList.children[index];
+  const selector=control==='handle'?'.photo-drag-handle':`[data-direction="${control}"]`;
+  const button=card?.querySelector(selector);
+  (button?.disabled?card.querySelector('[data-move]:not(:disabled)'):button)?.focus({preventScroll:true});
+}
+function movePhoto(from,to,control){
+  if(busy||!Number.isInteger(from)||!Number.isInteger(to)||from<0||to<0||from>=photos.length||to>=photos.length)return;
+  if(from===to){photoStatus('Photo order unchanged.');focusPhoto(to,control);return;}
+  const [photo]=photos.splice(from,1);photos.splice(to,0,photo);
+  dirty=true;renderPhotos();focusPhoto(to,control);
+  photoStatus(`Moved photo ${from+1} to position ${to+1} of ${photos.length}.${to===0?' This is now the main listing photo.':''} Save your draft to keep this order.`);
+}
 function notice(message='',error=false) { $('#notice').textContent=message; $('#notice').classList.toggle('error',error); }
 async function api(path,options={}) {
   const response = await fetch('/api/admin'+path,{credentials:'same-origin',...options});
@@ -21,7 +67,7 @@ function lock(value) {
   for(const control of form.querySelectorAll('input,textarea,select'))control.disabled=value;
   for(const button of document.querySelectorAll('#property-form button,#back,#new-property,#refresh')) button.disabled=value;
   $('#photo-upload').disabled=value||!photosEnabled;
-  if(!value){for(const button of document.querySelectorAll('[data-move]')){const i=Number(button.dataset.move),j=i+Number(button.dataset.direction);button.disabled=j<0||j>=photos.length;}}
+  syncPhotoControls();
 }
 async function task(fn) { if(busy)return; lock(true);try{await fn();}catch(error){notice(error.message,true);}finally{lock(false);} }
 function renderList() {
@@ -48,17 +94,18 @@ function openEditor(record) {
   $('#record-state').textContent=record?(record.unpublishedChanges?'Unpublished edits':record.state):'New draft';
   $('#archive').hidden=!record||record.state==='archived';$('#unpublish').hidden=!record||record.state!=='published';
   $('#collection').hidden=true;$('#editor').hidden=false;$('#new-property').hidden=true;
-  dirty=false;renderPhotos();notice();window.scrollTo({top:0,behavior:'instant'});form.elements.name.focus();
+  dirty=false;renderPhotos();photoStatus();notice();window.scrollTo({top:0,behavior:'instant'});form.elements.name.focus();
 }
 function renderPhotos() {
-  $('#photo-list').innerHTML=photos.map((p,i)=>`<article class="photo-card"><img src="${escape(photoSource(p.url))}" alt="${escape(p.alt)}"><span class="badge">${i===0?'Main photo':'Photo '+(i+1)}</span><label>Photo description<input data-caption="${i}" value="${escape(p.alt)}" maxlength="300" placeholder="Describe the room or exterior"></label><div class="photo-actions"><button type="button" data-move="${i}" data-direction="-1" aria-label="Move photo ${i+1} earlier" ${i===0?'disabled':''}>Earlier</button><button type="button" data-move="${i}" data-direction="1" aria-label="Move photo ${i+1} later" ${i===photos.length-1?'disabled':''}>Later</button><button class="secondary" type="button" data-remove="${i}">Remove</button></div></article>`).join('');
+  photoList.innerHTML=photos.map((p,i)=>`<article class="photo-card" role="listitem" aria-label="Photo ${i+1}${i===0?', main listing photo':''}"><div class="photo-card-top"><span class="badge">${i===0?'Main photo':'Photo '+(i+1)}</span><button class="photo-drag-handle" type="button" data-drag="${i}" aria-label="Reorder photo ${i+1}" aria-describedby="photo-reorder-help"><svg viewBox="0 0 16 24" width="16" height="24" aria-hidden="true"><g fill="currentColor"><circle cx="4" cy="5" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="12" cy="19" r="2"/></g></svg><span>Drag</span></button></div><img src="${escape(photoSource(p.url))}" alt="${escape(p.alt)}" draggable="false"><label>Photo description<input data-caption="${i}" value="${escape(p.alt)}" maxlength="300" placeholder="Describe the room or exterior" ${busy?'disabled':''}></label><div class="photo-actions"><button type="button" data-move="${i}" data-direction="-1" aria-label="Move photo ${i+1} earlier">Earlier</button><button type="button" data-move="${i}" data-direction="1" aria-label="Move photo ${i+1} later">Later</button><button class="secondary" type="button" data-remove="${i}" aria-label="Remove photo ${i+1}" ${busy?'disabled':''}>Remove</button></div></article>`).join('');
   $('#photo-upload').disabled=!photosEnabled||busy;
+  syncPhotoControls();
 }
 async function save() {
   if(!form.reportValidity())throw new Error('Please check the highlighted fields.');
   const property=snapshot();
   current=current?await send('/properties/'+current.id,'PUT',{version:current.version,property}):await send('/properties','POST',property);
-  dirty=false;form.elements.slug.readOnly=true;$('#editor-title').textContent=current.property.name;$('#record-state').textContent=current.unpublishedChanges?'Unpublished edits':current.state;$('#archive').hidden=current.state==='archived';
+  dirty=false;photoStatus();form.elements.slug.readOnly=true;$('#editor-title').textContent=current.property.name;$('#record-state').textContent=current.unpublishedChanges?'Unpublished edits':current.state;$('#archive').hidden=current.state==='archived';
   await refresh();return current;
 }
 function mayLeave(){return !dirty||window.confirm('Leave this property without saving your changes?');}
@@ -82,10 +129,19 @@ for(const action of ['archive','unpublish'])$('#'+action).addEventListener('clic
   if(!current||!window.confirm(`${action==='archive'?'Archive':'Unpublish'} ${current.property.name}? This removes it from the public website.${dirty?' Unsaved form edits will be discarded.':''}`))return;
   current=await send('/properties/'+current.id+'/'+action,'POST',{version:current.version});dirty=false;await refresh();showCollection();notice(action==='archive'?'Property archived. You can edit and republish it later.':'Listing unpublished and kept as a draft.');
 }));
-$('#photo-list').addEventListener('click',event=>{
+photoList.addEventListener('keydown',event=>{
+  const handle=event.target.closest('[data-drag]');
+  if(!handle||busy)return;
+  const from=Number(handle.dataset.drag);
+  const destinations={ArrowLeft:from-1,ArrowUp:from-1,ArrowRight:from+1,ArrowDown:from+1,Home:0,End:photos.length-1};
+  if(!(event.key in destinations))return;
+  event.preventDefault();movePhoto(from,Math.max(0,Math.min(photos.length-1,destinations[event.key])),'handle');
+});
+photoList.addEventListener('click',event=>{
+  if(busy)return;
   const move=event.target.closest('[data-move]'),remove=event.target.closest('[data-remove]');
-  if(move){const i=Number(move.dataset.move),j=i+Number(move.dataset.direction);if(j>=0&&j<photos.length){[photos[i],photos[j]]=[photos[j],photos[i]];dirty=true;renderPhotos();}}
-  if(remove){photos.splice(Number(remove.dataset.remove),1);dirty=true;renderPhotos();}
+  if(move){const i=Number(move.dataset.move),direction=Number(move.dataset.direction);movePhoto(i,i+direction,String(direction));}
+  if(remove){const i=Number(remove.dataset.remove);photos.splice(i,1);dirty=true;renderPhotos();photoStatus(`Photo ${i+1} removed. Save your draft to keep this change.`);const next=photoList.children[Math.min(i,photos.length-1)];(next?.querySelector('[data-remove]')||$('#photo-upload')).focus();}
 });
 $('#photo-upload').addEventListener('change',()=>task(async()=>{
   const files=[...$('#photo-upload').files];$('#photo-upload').value='';
