@@ -4,7 +4,7 @@ An animated, mobile-friendly Oaktown Rentals website with an optional private pr
 
 ## Features
 
-- Property admin at `/admin/`, with separate drafts/published snapshots, a listing editor, photo uploads/order, preview, publish/unpublish and archive. Production sign-in uses Cloudflare Access email codes for the three approved accounts. See [the deployment guide](docs/admin-setup.md) for the plan, current costs and one-time setup.
+- Property admin at `/admin/`, with separate drafts/published snapshots, a listing editor, photo uploads with drag-and-drop ordering on desktop and touch screens, preview, publish/unpublish and archive. Earlier/Later buttons and keyboard controls remain available. Production sign-in uses Cloudflare Access email codes for the three approved accounts. See [the deployment guide](docs/admin-setup.md) for the plan, current costs and one-time setup.
 - D1 is provisioned and seeded with the four source listings; private R2 storage, Access and the encrypted account allowlist are configured. Branch previews have no production database/storage bindings. Actual production email-code sign-in and editing still require owner verification.
 
 - Dedicated Mint Mojo vacation-home page at `/mint-mojo/`, with the original Drive photography hosted locally, a 19-photo gallery, coastal green/cream styling, English/Spanish copy and date inquiries by email/text. See [the media and page notes](docs/mint-mojo-media.md). No nightly rate, booking calendar or payment service is implied.
@@ -88,6 +88,8 @@ npm run test:browser
 ```
 
 Set `OAKTOWN_BASE_URL` to test another local port, or `OAKTOWN_CHROMIUM` to use an installed Chromium executable. Tests deliberately block external requests and exercise image-failure behavior; they do not validate CDN photography. Test sources and package metadata are excluded from Worker static assets.
+
+After installing the dependencies in `tests/`, run `npm run test:admin-browser` and `npm run test:photo-order` from the repository root for the local admin workflows. Photo-ordering checks cover mouse and touch dragging, moves across rows, captions, main-photo previews, keyboard focus, saving and reopening, published/draft isolation, controls during uploads, unchanged drops, mobile auto-scroll and responsive layouts. They use an in-memory database and local test uploads, without production data or storage access.
 
 Behavior checks cover desktop chapter changes, the shorter introduction, grid/gallery switching and filters, gallery focus/keyboard behavior, showing links, malformed routes, mobile navigation, complete Spanish detail content, reading-position retention, and persisted language/reduced motion. Layouts checked at 320, 390, 768, 1024, 1440 and 1920px. The review environment blocks the Squarespace CDN, so real-image crop/contrast and network performance still need visual acceptance testing with CDN access. Checks run against a local static server; they do not establish live CDN loading or production deployment status.
 

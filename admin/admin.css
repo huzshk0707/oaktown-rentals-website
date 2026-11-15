@@ -7,3 +7,19 @@
 .usage-guide summary { cursor:pointer;min-height:44px;padding:10px 0;font-weight:600; }
 .usage-guide ol { padding-left:22px; }
 .usage-guide li { margin:8px 0; }
+
+/* Photo ordering: dedicated handles leave captions and page scrolling usable. */
+.photo-card { background:#fffef8; }
+.photo-card-top { display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px; }
+.photo-drag-handle { display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:80px;min-height:44px;padding:8px 12px;color:var(--green);background:#edf3e6;border-color:#c4d6b6;font-size:13px;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none; }
+.photo-drag-handle:not(:disabled):hover { background:#e0ecd5;border-color:var(--green); }
+.photo-drag-handle:disabled { cursor:default; }
+.photo-drag-handle:active,.photo-chosen .photo-drag-handle,.is-sorting { cursor:grabbing; }
+.photo-card img { display:block;margin-bottom:0;user-select:none;-webkit-user-drag:none; }
+.photo-chosen { border-color:var(--green); }
+.photo-drop-target { background:#e0ecd5;border:2px dashed var(--green);padding:11px; }
+.photo-drop-target>* { opacity:.3; }
+.photo-dragging { box-shadow:0 12px 28px #123b2533;opacity:.95;pointer-events:none; }
+.photo-status { color:var(--green); }
+.photo-status:empty { display:none; }
+@media(max-width:650px) { .photo-card input { font-size:16px; } }

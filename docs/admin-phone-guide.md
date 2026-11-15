@@ -20,7 +20,7 @@ The English content is the default. The **Spanish version** section lets you add
 
 ## Add photos
 
-Save a new property's address and basics first. Tap **Add JPG, PNG or WebP photos**, then choose photos from your phone or computer. You can use up to **20 photos per property**, at most **8 MB each**. Add a short description such as “Kitchen facing the dining room.” Use **Earlier** and **Later** to change the order. The first photo is the main listing image.
+Save a new property's address and basics first. Tap **Add JPG, PNG or WebP photos**, then choose photos from your phone or computer. You can use up to **20 photos per property**, at most **8 MB each**. Add a short description such as “Kitchen facing the dining room.” Hold a photo’s **Drag** handle and move it to a new position, including across rows. On a phone, hold the handle briefly before dragging; hold near the top or bottom of the screen to scroll through a long gallery. You can also use **Earlier** and **Later**, or focus a handle and use the arrow keys, **Home** or **End**. The first photo is the main listing image.
 
 Uploads stay private until the listing is published. Save your draft after adding or reordering photos, then preview and publish when ready. If your phone provides an unsupported file type, export or save the photo as a JPG first.
 
