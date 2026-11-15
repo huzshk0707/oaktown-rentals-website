@@ -1,0 +1,35 @@
+[
+  {
+    "name": "desktop",
+    "photoCount": 1,
+    "photoWidth": 1920,
+    "logo": "./assets/oaktown-rentals-logo.jpg",
+    "footerLogo": "./assets/oaktown-rentals-logo.jpg",
+    "overflow": false,
+    "alt": "Aerial view of downtown Louisville and the Ohio River",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "phone",
+    "photoCount": 1,
+    "photoWidth": 1920,
+    "logo": "./assets/oaktown-rentals-logo.jpg",
+    "footerLogo": "./assets/oaktown-rentals-logo.jpg",
+    "overflow": false,
+    "alt": "Aerial view of downtown Louisville and the Ohio River",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "phone-es",
+    "photoCount": 1,
+    "photoWidth": 1920,
+    "logo": "./assets/oaktown-rentals-logo.jpg",
+    "footerLogo": "./assets/oaktown-rentals-logo.jpg",
+    "overflow": false,
+    "alt": "Vista aérea del centro de Louisville y el río Ohio",
+    "violations": [],
+    "incomplete": []
+  }
+]
