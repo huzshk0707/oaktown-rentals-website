@@ -1,5 +1,7 @@
 # More immersive property browsing
 
+This page records the original PR #13 behavior and captures. The subsequent [desktop slideshow update](../desktop-slideshow/README.md) replaces the single-photo preview/toggle: desktop hover cycles every photo, leaving restores the main image, and mobile cards stay static. The capture helper now follows that current interaction and accepts `OAKTOWN_BROWSING_OUT_DIR` for a separate output folder.
+
 This extends `main` at `9690315`, preserving the cinematic entrance, green/cream identity and scroll-photo chapters already merged through PR #12. It does not apply the older PR #10 theme/motion branch.
 
 The supplied reference clip shows camera movement through a 3D interior. This change borrows its visual continuity using Oaktown’s real photographs. It does not represent a navigable 3D or 360° tour; that would require a suitable capture or model of each property.
