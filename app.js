@@ -31,10 +31,11 @@
   let positionGeneration = 0;
   let viewSaveTimer = 0;
   try { history.scrollRestoration='manual'; } catch {}
-  const pointerPreview = matchMedia('(hover: hover) and (pointer: fine)');
+  const pointerPreview = matchMedia('(min-width: 851px) and (hover: hover) and (pointer: fine)');
+  let cardSlideshow = null;
   const words = {
     en: {
-      cardFeatures:'Home features',beforeApplying:'Ask our team about availability and any application, pet or other charges before applying.',previewPhoto:'Preview photo',loadingPhoto:'Loading photo…',rentalDetails:'Rental details',homeCount:'homes',gridView:'Grid',galleryView:'Gallery',layoutLabel:'Property view',requestShowing:'Request a showing',availabilityNote:'Find a place you like? Text us with the address to ask about availability or a showing.',photoUnavailable:'Photos temporarily unavailable',skipContent:'Skip to content',primaryNav:'Primary navigation',mobileNav:'Mobile navigation',openMenu:'Open menu',closeMenu:'Close menu',switchLanguage:'Cambiar a español',homeLink:'Oaktown Rentals — home',applicationLabel:'Open rental application',footerNote:'Rental homes in Louisville, Kentucky',colonialInterior:'Interior at 115 Colonial Drive',cherokeeInterior:'Interior at 1106 Cherokee Road, unit 8',floridaAlt:'The Mint Mojo in Cudjoe Key',floridaShort:'A waterfront escape in the Florida Keys.',
+      cardFeatures:'Home features',beforeApplying:'Ask our team about availability and any application, pet or other charges before applying.',rentalDetails:'Rental details',homeCount:'homes',gridView:'Grid',galleryView:'Gallery',layoutLabel:'Property view',requestShowing:'Request a showing',availabilityNote:'Find a place you like? Text us with the address to ask about availability or a showing.',photoUnavailable:'Photos temporarily unavailable',skipContent:'Skip to content',primaryNav:'Primary navigation',mobileNav:'Mobile navigation',openMenu:'Open menu',closeMenu:'Close menu',switchLanguage:'Cambiar a español',homeLink:'Oaktown Rentals — home',applicationLabel:'Open rental application',footerNote:'Rental homes in Louisville, Kentucky',colonialInterior:'Interior at 115 Colonial Drive',cherokeeInterior:'Interior at 1106 Cherokee Road, unit 8',floridaAlt:'The Mint Mojo in Cudjoe Key',floridaShort:'A waterfront escape in the Florida Keys.',
       textUs:'Text us',motionOn:'Motion on',motionOff:'Motion off',motionLabel:'Enable visual motion',sceneOne:'The beginning',sceneTwo:'The everyday',sceneThree:'The next chapter',sceneTwoTitle:'Room for <em>your life.</em>',sceneThreeTitle:'Make yourself <em>at home.</em>',sceneTwoCopy:'A little more space. A rhythm of your own.',sceneThreeCopy:'Find your place in Louisville. We’ll help with the next step.',heroCaption:'A closer look at 115 Colonial Drive',browseHint:'Explore the collection',previousHome:'Previous home',nextHome:'Next home',filterLabel:'Filter homes by neighborhood',openPhoto:'Enlarge photo',closePhoto:'Close gallery',previousPhoto:'Previous photo',nextPhoto:'Next photo',photoLabel:'Photo',photosLabel:'Photos',insideLabel:'A LOOK INSIDE',highlightsLabel:'THE HIGHLIGHTS',moreLabel:'EXPLORE MORE',sourceLabel:'Full listing details',galleryError:'This photo could not load. Try another photo or contact us for the full gallery.',
       navHomes:'Our homes',navStory:'Our story',navFaq:'FAQ',navCommunity:'Community',navApply:'Apply online',contact:'Contact',textBest:'Text us for availability and showings.',footerTitle:'Your next chapter starts here.',
       heroKicker:'Quality rental homes in Louisville, KY',heroOne:'Find your',heroTwo:'place.',heroTagline:'Homes with character. A local team to help you find yours.',explore:'View homes',scroll:'Scroll to explore',
@@ -54,7 +55,7 @@
       communityRes1:'Jefferson County Public Schools',communityRes2:'City of Louisville',communityRes3:'Louisville Visitor Guide',communityRes4:'Louisville Public Library'
     },
     es: {
-      cardFeatures:'Características de la vivienda',beforeApplying:'Antes de solicitar, consulta al equipo sobre disponibilidad y cargos de solicitud, mascotas u otros conceptos.',previewPhoto:'Vista previa',loadingPhoto:'Cargando foto…',rentalDetails:'Detalles del alquiler',homeCount:'viviendas',gridView:'Cuadrícula',galleryView:'Galería',layoutLabel:'Vista de viviendas',requestShowing:'Solicitar una visita',availabilityNote:'¿Te interesa una vivienda? Escríbenos con la dirección para consultar disponibilidad o programar una visita.',photoUnavailable:'Fotos temporalmente no disponibles',skipContent:'Saltar al contenido',primaryNav:'Navegación principal',mobileNav:'Navegación móvil',openMenu:'Abrir menú',closeMenu:'Cerrar menú',switchLanguage:'Switch to English',homeLink:'Oaktown Rentals — inicio',applicationLabel:'Abrir solicitud de alquiler',footerNote:'Viviendas de alquiler en Louisville, Kentucky',colonialInterior:'Interior de 115 Colonial Drive',cherokeeInterior:'Interior de 1106 Cherokee Road, unidad 8',floridaAlt:'The Mint Mojo en Cudjoe Key',floridaShort:'Una escapada junto al agua en los Cayos de Florida.',
+      cardFeatures:'Características de la vivienda',beforeApplying:'Antes de solicitar, consulta al equipo sobre disponibilidad y cargos de solicitud, mascotas u otros conceptos.',rentalDetails:'Detalles del alquiler',homeCount:'viviendas',gridView:'Cuadrícula',galleryView:'Galería',layoutLabel:'Vista de viviendas',requestShowing:'Solicitar una visita',availabilityNote:'¿Te interesa una vivienda? Escríbenos con la dirección para consultar disponibilidad o programar una visita.',photoUnavailable:'Fotos temporalmente no disponibles',skipContent:'Saltar al contenido',primaryNav:'Navegación principal',mobileNav:'Navegación móvil',openMenu:'Abrir menú',closeMenu:'Cerrar menú',switchLanguage:'Switch to English',homeLink:'Oaktown Rentals — inicio',applicationLabel:'Abrir solicitud de alquiler',footerNote:'Viviendas de alquiler en Louisville, Kentucky',colonialInterior:'Interior de 115 Colonial Drive',cherokeeInterior:'Interior de 1106 Cherokee Road, unidad 8',floridaAlt:'The Mint Mojo en Cudjoe Key',floridaShort:'Una escapada junto al agua en los Cayos de Florida.',
       textUs:'Escríbenos',motionOn:'Animación sí',motionOff:'Animación no',motionLabel:'Activar animaciones',sceneOne:'El comienzo',sceneTwo:'El día a día',sceneThree:'La nueva etapa',sceneTwoTitle:'Espacio para <em>tu vida.</em>',sceneThreeTitle:'Siéntete <em>en casa.</em>',sceneTwoCopy:'Un poco más de espacio. Tu propio ritmo.',sceneThreeCopy:'Encuentra tu hogar en Louisville. Te ayudamos a dar el siguiente paso.',heroCaption:'Descubre 115 Colonial Drive',browseHint:'Explora las viviendas',previousHome:'Vivienda anterior',nextHome:'Siguiente vivienda',filterLabel:'Filtrar viviendas por vecindario',openPhoto:'Ampliar foto',closePhoto:'Cerrar galería',previousPhoto:'Foto anterior',nextPhoto:'Siguiente foto',photoLabel:'Foto',photosLabel:'Fotos',insideLabel:'UNA MIRADA AL INTERIOR',highlightsLabel:'LOS DETALLES',moreLabel:'EXPLORA MÁS',sourceLabel:'Detalles completos del anuncio',galleryError:'No se pudo cargar esta foto. Prueba otra o contáctanos para ver la galería completa.',
       navHomes:'Viviendas',navStory:'Nuestra historia',navFaq:'Preguntas',navCommunity:'Comunidad',navApply:'Solicitar ahora',contact:'Contacto',textBest:'Escríbenos para consultar disponibilidad o programar una visita.',footerTitle:'Tu próximo capítulo comienza aquí.',
       heroKicker:'Viviendas de alquiler en Louisville, KY',heroOne:'Encuentra tu',heroTwo:'hogar.',heroTagline:'Viviendas con carácter. Un equipo local para ayudarte a encontrar la tuya.',explore:'Ver viviendas',scroll:'Desliza para explorar',
@@ -111,7 +112,7 @@
           <span class="card-index" aria-hidden="true">${String(index+1).padStart(2,'0')} / ${String(P.length).padStart(2,'0')}</span><span class="card-photo-count">${DATA.images[p.imageKey].length} ${t('photosLabel')}</span>
           ${imageEl(photo(p), p.name+' — '+t('photoLabel'),'property-image')}
           <span class="photo-pill">${t('photo')}</span><span class="card-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
-        </a>${DATA.images[p.imageKey].length>1?`<button class="card-preview" type="button" data-card-preview aria-pressed="false" aria-label="${t('previewPhoto')}: ${p.name}"><span>${t('previewPhoto')}</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>`:''}</div>
+        </a></div>
         <div class="property-data"><div><span class="property-neighborhood">${p.neighborhood}</span><h3 class="property-name"><a href="#home/${p.slug}">${p.name}</a></h3><p class="property-summary">${localized(p,'summary')}</p></div><div class="property-price">${money(p.rent)}<small>${t('perMonth')}</small><span class="property-deposit">${t('deposit')}: ${money(p.deposit)}</span></div></div>
         ${cardAmenities(p)}
         <div class="property-details-line"><span>${p.bedrooms} ${language==='en'&&p.bedrooms===1?'bed':t('beds')} &nbsp; / &nbsp; ${p.bathrooms} ${t('baths')}</span>${availabilityBadge(p)}<a href="${inquiryUrl(p)}" aria-label="${t('availability')}: ${p.name}">${t('availability')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
@@ -173,38 +174,68 @@
     <section class="section"><div class="eyebrow section-label">${t('moreLabel')}</div><h2 class="display-title" style="margin-bottom:40px">${t('moreHomes')}</h2><div class="mini-cards">${more.map(x=>`<a href="#home/${x.slug}" class="mini-card">${imageEl(photo(x),x.name,'')}<span>${x.name} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>`).join('')}</div></section>
     ${contactSection()}`;
   }
-  function previewCard(card,show) {
-    const property=P.find(p=>p.slug===card?.dataset.propertySlug);
-    if(!property||DATA.images[property.imageKey].length<2)return;
-    const button=card.querySelector('[data-card-preview]');
-    const reset=()=>{
-      card.classList.remove('is-previewing');card.dataset.selectedPhoto='0';
-      button?.setAttribute('aria-pressed','false');
-      button?.removeAttribute('aria-busy');
-      if(button){button.querySelector('span').textContent=t('previewPhoto');button.setAttribute('aria-label',t('previewPhoto')+': '+property.name);}
-    };
-    card.dataset.previewRequested=String(show);
-    if(!show){reset();return;}
-    const index=DATA.images[property.imageKey].length>3?3:1;
-    let img=card.querySelector('.property-preview');
-    if(!img){
-      img=document.createElement('img');img.className='property-image property-preview';
-      img.alt=DATA.photoAlts?.[photo(property,index)]||property.name+' — '+t('photoLabel')+' '+(index+1);
-      img.decoding='async';img.src=imageUrl(photo(property,index),1500);
-      card.querySelector('.property-image-wrap').append(img);
+  function cardSlideshowEnabled() {
+    return pointerPreview.matches&&!reducedMotion.matches&&!document.documentElement.classList.contains('motion-off')&&!document.hidden;
+  }
+  function stopCardSlideshow(reset=true) {
+    const state=cardSlideshow;if(!state)return;
+    cardSlideshow=null;
+    clearTimeout(state.timer);clearTimeout(state.deadline);
+    state.cleanup.forEach(clearTimeout);
+    state.pending?.removeAttribute('src');
+    if(reset){
+      state.card.classList.remove('is-previewing');state.card.dataset.selectedPhoto='0';
+      state.card.querySelectorAll('.property-preview').forEach(img=>img.remove());
     }
-    button?.setAttribute('aria-busy','true');
-    if(button)button.querySelector('span').textContent=t('loadingPhoto');
-    img.decode().then(()=>{
-      if(!card.isConnected||card.dataset.previewRequested!=='true')return;
+  }
+  function startCardSlideshow(card) {
+    if(!cardSlideshowEnabled()||cardSlideshow?.card===card)return;
+    stopCardSlideshow();
+    const property=P.find(p=>p.slug===card?.dataset.propertySlug);
+    const images=property?DATA.images[property.imageKey]:[];
+    if(!card||card.hidden||images.length<2)return;
+    const state={card,cursor:0,timer:0,deadline:0,pending:null,cleanup:new Set(),failed:new Set()};
+    cardSlideshow=state;
+    const current=()=>cardSlideshow===state&&card.isConnected&&!card.hidden&&cardSlideshowEnabled();
+    const schedule=delay=>{state.timer=setTimeout(advance,delay);};
+    const retireOld=()=>{
+      const old=[...card.querySelectorAll('.property-preview:not(.is-current)')];
+      if(!old.length)return;
+      const timer=setTimeout(()=>{old.forEach(img=>img.remove());state.cleanup.delete(timer);},350);
+      state.cleanup.add(timer);
+    };
+    async function advance() {
+      if(!current()){if(cardSlideshow===state)stopCardSlideshow();return;}
+      let index=(state.cursor+1)%images.length;
+      while(state.failed.has(index))index=(index+1)%images.length;
+      state.cursor=index;
+      if(index===0){
+        card.querySelectorAll('.property-preview').forEach(img=>img.classList.remove('is-current'));
+        card.classList.remove('is-previewing');card.dataset.selectedPhoto='0';
+        retireOld();schedule(1500);return;
+      }
+      const img=new Image();state.pending=img;
+      img.className='property-image property-preview';img.alt='';img.setAttribute('aria-hidden','true');img.decoding='async';
+      img.src=imageUrl(images[index],1200);
+      const loaded=await Promise.race([
+        img.decode().then(()=>true,()=>false),
+        new Promise(resolve=>{state.deadline=setTimeout(()=>resolve(false),5000);})
+      ]);
+      clearTimeout(state.deadline);
+      if(!current()){img.remove();return;}
+      state.pending=null;
+      if(!loaded){
+        img.removeAttribute('src');state.failed.add(index);
+        if(state.failed.size===images.length-1){stopCardSlideshow();return;}
+        schedule(1500);return;
+      }
+      card.querySelectorAll('.property-preview').forEach(previous=>previous.classList.remove('is-current'));
+      img.classList.add('is-current');card.querySelector('.property-image-wrap').append(img);
       card.classList.add('is-previewing');card.dataset.selectedPhoto=String(index);
-      button?.setAttribute('aria-pressed','true');button?.removeAttribute('aria-busy');
-      if(button){button.querySelector('span').textContent=t('previewPhoto');button.setAttribute('aria-label',t('previewPhoto')+': '+property.name);}
-    }).catch(()=>{
-      if(!card.isConnected||card.dataset.previewRequested!=='true')return;
-      img.remove();card.dataset.previewPinned='false';reset();
-      if(button){button.querySelector('span').textContent=t('photoUnavailable');button.setAttribute('aria-label',t('photoUnavailable')+': '+property.name);}
-    });
+      img.animate?.([{opacity:0},{opacity:1}],{duration:300,easing:'ease-out'});
+      retireOld();schedule(1500);
+    }
+    schedule(650);
   }
   function savedView() {
     const value=history.state?.oaktownView;
@@ -258,6 +289,7 @@
     transitionSource=null;
   }
   function routedDraw() {
+    stopCardSlideshow();
     positionGeneration++;restoringPosition=false;
     const generation=++routeGeneration;
     const route=location.hash;
@@ -289,6 +321,7 @@
   }
   const closeMenu=()=>{mobileNav.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label',t('openMenu'));};
   function activateLayout(layout) {
+    stopCardSlideshow();
     collectionLayout=layout;
     const collection=app.querySelector('.collection');if(!collection)return;
     collection.dataset.layout=layout;
@@ -299,6 +332,7 @@
     rememberView();
   }
   function activateFilter(filter) {
+    stopCardSlideshow();
     selectedFilter=filter;
     const cards=app.querySelectorAll('.property-card');
     cards.forEach(card => {
@@ -333,6 +367,7 @@
     app.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   }
   function draw(preservePosition=false) {
+    stopCardSlideshow();
     positionGeneration++;restoringPosition=false;
     const saved=savedView();
     let hash;try{hash=decodeURIComponent(location.hash.slice(1));}catch{hash='';}
@@ -401,19 +436,15 @@
   langButton.addEventListener('click',()=>{routeGeneration++;activeTransition?.skipTransition();clearTransitionNames();language=language==='en'?'es':'en';try{localStorage.setItem('oaktown-language',language);}catch{}draw(true)});
   app.addEventListener('click',e=>{
     if(e.target.closest('.back-link')&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey)pendingHomeRestore=lastHomeSnapshot;
-    const preview=e.target.closest('[data-card-preview]');
-    if(preview){
-      const card=preview.closest('.property-card');
-      const show=!card.classList.contains('is-previewing')&&card.dataset.previewPinned!=='true';card.dataset.previewPinned=String(show);
-      previewCard(card,show);return;
-    }
     const listing=e.target.closest('.property-card a[href^="#home/"]');
     if(listing&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey&&e.button===0){
       const card=listing.closest('.property-card');
       pendingPhoto={slug:card.dataset.propertySlug,index:Number(card.dataset.selectedPhoto)||0};
+      stopCardSlideshow(false);
       activeTransition?.skipTransition();clearTransitionNames();
-      const source=card.querySelector(card.classList.contains('is-previewing')?'.property-preview':'.property-image:not(.property-preview)');
+      const source=card.querySelector('.property-preview.is-current')||card.querySelector('.property-image:not(.property-preview)');
       if(source?.naturalWidth&&!reducedMotion.matches&&!document.documentElement.classList.contains('motion-off')&&document.startViewTransition){
+        source.getAnimations().forEach(animation=>animation.cancel());
         source.style.transition='none';source.style.opacity='1';
         source.style.viewTransitionName='rental-photo';transitionSource=source;
       }
@@ -441,23 +472,20 @@
   app.addEventListener('touchstart',e=>{if(e.target.closest('.gallery-main,.lightbox-image'))touchStart={x:e.touches[0].clientX,y:e.touches[0].clientY};},{passive:true});
   app.addEventListener('touchend',e=>{if(!touchStart)return;const dx=e.changedTouches[0].clientX-touchStart.x,dy=e.changedTouches[0].clientY-touchStart.y;touchStart=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5)galleryStep(dx>0?-1:1);},{passive:true});
   app.addEventListener('pointerover',e=>{
-    const media=e.target.closest('.card-media');
-    if(media&&!media.contains(e.relatedTarget)&&pointerPreview.matches)previewCard(media.closest('.property-card'),true);
+    const card=e.target.closest('.property-card');
+    if(card&&!card.contains(e.relatedTarget)&&e.pointerType!=='touch')startCardSlideshow(card);
   });
   app.addEventListener('pointerout',e=>{
-    const media=e.target.closest('.card-media');const card=media?.closest('.property-card');
-    if(card&&!media.contains(e.relatedTarget)&&card.dataset.previewPinned!=='true'&&!media.contains(document.activeElement))previewCard(card,false);
+    const card=e.target.closest('.property-card');
+    if(card===cardSlideshow?.card&&!card.contains(e.relatedTarget))stopCardSlideshow();
   });
-  app.addEventListener('focusin',e=>{
-    const media=e.target.closest('.card-media');
-    if(media&&!media.contains(e.relatedTarget)&&!e.target.closest('[data-card-preview]'))previewCard(media.closest('.property-card'),true);
-  });
-  app.addEventListener('focusout',e=>{
-    const media=e.target.closest('.card-media');const card=media?.closest('.property-card');
-    if(card&&!media.contains(e.relatedTarget)&&card.dataset.previewPinned!=='true'&&!media.matches(':hover'))previewCard(card,false);
-  });
-  document.getElementById('motion-toggle').addEventListener('click',()=>queueMicrotask(()=>{if(document.documentElement.classList.contains('motion-off'))activeTransition?.skipTransition();}));
-  reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)activeTransition?.skipTransition();});
+  document.getElementById('motion-toggle').addEventListener('click',()=>queueMicrotask(()=>{
+    if(document.documentElement.classList.contains('motion-off')){stopCardSlideshow();activeTransition?.skipTransition();}
+  }));
+  reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches){stopCardSlideshow();activeTransition?.skipTransition();}});
+  pointerPreview.addEventListener('change',()=>{if(!pointerPreview.matches)stopCardSlideshow();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopCardSlideshow();});
+  window.addEventListener('blur',()=>stopCardSlideshow());
   document.addEventListener('click',e=>{
     const link=e.target.closest('a[href^="#"]');
     if(!link||e.defaultPrevented||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;
@@ -466,7 +494,7 @@
   });
   app.addEventListener('scroll',e=>{if(e.target.matches('.collection-viewport'))scheduleViewSave();},true);
   ['wheel','touchstart','pointerdown','keydown'].forEach(name=>window.addEventListener(name,()=>{positionGeneration++;restoringPosition=false;},{passive:true}));
-  window.addEventListener('pagehide',()=>{clearTimeout(viewSaveTimer);rememberView();});
+  window.addEventListener('pagehide',()=>{stopCardSlideshow();clearTimeout(viewSaveTimer);rememberView();});
   window.addEventListener('popstate',()=>{if(location.hash===renderedHash)routedDraw();});
   window.addEventListener('hashchange',routedDraw);
   window.addEventListener('scroll',onScroll,{passive:true});
