@@ -1,0 +1,77 @@
+[
+  {
+    "view": "desktop-home",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "view": "desktop-collection",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "view": "desktop-listing",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "view": "phone-home",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-collection",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "view": "phone-listing",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "view": "small-phone-es-home",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "small-phone-es-collection",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "small-phone-es-listing",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  }
+]

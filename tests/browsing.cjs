@@ -1,0 +1,48 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const base=(process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8787').replace(/\/$/,'');
+const fixture='<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480"><rect width="640" height="480" fill="#1c5030"/><path d="M0 480 640 0v480" fill="#c0d0b4"/></svg>';
+async function setup(page,{lang='en',motion='on',unsupported=false,delayTransition=0}={}){
+ await page.addInitScript(({lang,motion,unsupported,delayTransition})=>{
+  localStorage.setItem('oaktown-language',lang);localStorage.setItem('oaktown-motion',motion);sessionStorage.setItem('oaktown-opening-seen','yes');
+  window.transitionCalls=0;window.transitionReady=null;
+  if(unsupported)document.startViewTransition=undefined;
+  else if(document.startViewTransition){const start=document.startViewTransition.bind(document);document.startViewTransition=fn=>{window.transitionCalls++;const t=start(async()=>{if(delayTransition)await new Promise(resolve=>setTimeout(resolve,delayTransition));return fn();});window.lastTransition=t;t.ready.then(()=>window.transitionReady=true,()=>window.transitionReady=false);return t;};}
+ },{lang,motion,unsupported,delayTransition});
+ await page.route('**/*',r=>r.request().url().startsWith(base+'/')?r.continue():r.fulfill({status:200,contentType:'image/svg+xml',body:fixture}));
+}
+async function selected(card,index){await card.page().waitForFunction(({slug,index})=>document.querySelector(`[data-property-slug="${slug}"]`)?.dataset.selectedPhoto===String(index),{slug:await card.getAttribute('data-property-slug'),index});}
+(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});const passed=[],errors=[];
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});page.on('pageerror',e=>errors.push(e.message));await setup(page);await page.goto(base+'/#homes');const card=page.locator('.property-card').first();await card.scrollIntoViewIfNeeded();
+ assert.equal(await page.locator('.property-preview').count(),0);passed.push('extra card photographs load only on interaction');
+ const toggle=card.locator('[data-card-preview]');await toggle.focus();await page.keyboard.press('Space');await selected(card,3);assert.equal(await toggle.getAttribute('aria-pressed'),'true');assert.equal(new URL(page.url()).hash,'#homes');passed.push('keyboard photo preview changes the image without opening the listing');
+ const expected=await page.evaluate(()=>{const d=window.OAKTOWN_DATA,p=d.properties[0];return d.images[p.imageKey][3].split('?')[0]});assert.equal((await card.locator('.property-preview').getAttribute('src')).split('?')[0],expected);passed.push('preview belongs to the same property');
+ await page.mouse.move(10,100);await page.locator('#language-switch').focus();assert.equal(await card.getAttribute('data-selected-photo'),'3');passed.push('explicitly chosen preview persists when focus leaves');
+ await toggle.focus();await page.keyboard.press('Space');await selected(card,0);passed.push('preview control restores the main photograph');
+ await page.locator('#language-switch').focus();await card.locator('.property-image-wrap').hover();await selected(card,3);passed.push('fine-pointer hover reveals the additional photograph');
+ await page.evaluate(()=>{
+  document.addEventListener('click',event=>{window.modifiedClickPrevented=event.defaultPrevented;event.preventDefault();},{once:true});
+  document.querySelector('.property-image-wrap').dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,ctrlKey:true,button:0}));
+ });assert.equal(await page.evaluate(()=>window.modifiedClickPrevented),false);assert.equal(await page.evaluate(()=>window.transitionCalls),0);assert.equal(new URL(page.url()).hash,'#homes');passed.push('modified links are not intercepted by the app');
+ await card.locator('.property-image-wrap').click();await page.waitForSelector('.detail-cover');await page.evaluate(()=>window.lastTransition?.finished.catch(()=>{}));
+ assert.equal(await page.evaluate(()=>window.transitionReady),true);assert.equal(await page.evaluate(()=>window.transitionCalls),1);assert.equal((await page.locator('.detail-cover-photo').getAttribute('src')).split('?')[0],expected);assert.equal(await page.locator('.gallery-heading .gallery-count').innerText(),'4 / 14');assert.equal(await page.locator('[style*="view-transition-name"]').count(),0);passed.push('shared-photo transition succeeds and carries the selected photograph into the listing');
+ await page.locator('[data-gallery-index="2"]').click();const displayedCover=await page.locator('.detail-cover-photo').getAttribute('src');
+ await page.locator('[data-cover-gallery]').click();assert.equal(await page.locator('.lightbox-image img').getAttribute('src'),displayedCover);assert.equal(await page.locator('.lightbox').evaluate(e=>e.open),true);await page.keyboard.press('Escape');assert.equal(await page.locator('[data-cover-gallery]').evaluate(e=>e===document.activeElement),true);passed.push('cover stays synchronized with gallery selection, enlarges that photo and restores focus');
+ await page.goBack();await page.waitForSelector('.collection');assert.equal(await page.locator('.listing-dock').count(),0);assert.equal(await page.locator('.property-card').count(),4);passed.push('browser Back restores the collection without stale listing UI');await page.close();
+ for(const mode of ['unsupported','off','reduce']){
+  const p=await browser.newPage({viewport:{width:1280,height:900}});p.on('pageerror',e=>errors.push(e.message));await setup(p,{unsupported:mode==='unsupported',motion:mode==='off'?'off':'on'});if(mode==='reduce')await p.emulateMedia({reducedMotion:'reduce'});await p.goto(base+'/#homes');await p.locator('.property-name a').first().click();await p.waitForSelector('.detail-cover');assert.equal(await p.evaluate(()=>window.transitionCalls),0);assert.equal(await p.locator('[data-gallery-index]').count(),14);await p.close();passed.push(mode+' navigation fallback preserves full property details');
+ }
+ const rapid=await browser.newPage();rapid.on('pageerror',e=>errors.push(e.message));await setup(rapid,{delayTransition:200});await rapid.goto(base+'/#homes');await rapid.locator('.property-image-wrap').first().click();await rapid.waitForFunction(()=>window.transitionCalls===1);await rapid.evaluate(()=>{location.hash='#home/1106-cherokee-rd-unit-6'});await rapid.waitForFunction(()=>document.querySelector('.page-intro h1')?.textContent.includes('#6'));await rapid.waitForTimeout(350);
+ const correctPhoto=await rapid.evaluate(()=>{const d=window.OAKTOWN_DATA,p=d.properties.find(p=>p.slug==='1106-cherokee-rd-unit-6');return d.images[p.imageKey][0].split('?')[0]});assert.equal((await rapid.locator('.detail-cover-photo').getAttribute('src')).split('?')[0],correctPhoto);assert.equal((await rapid.locator('.gallery-active').getAttribute('src')).split('?')[0],correctPhoto);await rapid.close();passed.push('canceled delayed transition cannot overwrite the newer property with another home’s photo');
+ const failed=await browser.newPage();await setup(failed);await failed.route('**/*',r=>r.request().url().split('?')[0]===expected?r.abort():r.fallback());await failed.goto(base+'/#homes');await failed.locator('.property-card').first().scrollIntoViewIfNeeded();const fcard=failed.locator('.property-card').first();await fcard.locator('[data-card-preview]').focus();await failed.keyboard.press('Space');await failed.waitForFunction(()=>!document.querySelector('[data-card-preview]').hasAttribute('aria-busy'));assert.equal(await fcard.getAttribute('data-selected-photo'),'0');assert.equal(await fcard.locator('.property-preview').count(),0);assert.ok(await fcard.locator('.property-image').evaluate(e=>e.naturalWidth>0));await failed.close();passed.push('failed preview retains the decoded main photograph');
+ for(const [width,lang] of [[1440,'en'],[768,'en'],[390,'en'],[320,'es']]){
+  const p=await browser.newPage({viewport:{width,height:900}});await setup(p,{lang});await p.goto(base+'/#home/115-colonial-drive');await p.waitForSelector('.details-bar');assert.equal(await p.locator('.listing-dock').isHidden(),true);
+  await p.evaluate(()=>{const bar=document.querySelector('.details-bar'),header=document.querySelector('#site-header');scrollTo({top:bar.getBoundingClientRect().bottom+scrollY-header.offsetHeight+30,behavior:'instant'})});await p.waitForFunction(()=>!document.querySelector('.listing-dock').hidden);
+  const dock=await p.locator('.listing-dock').boundingBox();const header=await p.locator('#site-header').boundingBox();assert.ok(dock.y>=header.y+header.height-1);assert.ok(dock.height<=80);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.ok((await p.locator('.listing-dock').innerText()).includes('1,799'));
+  await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await p.waitForFunction(()=>document.querySelector('.listing-dock').hidden);await p.close();passed.push(`rental dock is readable, clears the header and hides at the title: ${width}px ${lang}`);
+ }
+ const touch=await browser.newPage({viewport:{width:390,height:844},hasTouch:true,isMobile:true});await setup(touch);await touch.goto(base+'/#homes');const tc=touch.locator('.property-card').first();await tc.locator('[data-card-preview]').tap();await selected(tc,3);assert.equal(new URL(touch.url()).hash,'#homes');await tc.locator('[data-card-preview]').tap();await selected(tc,0);await touch.close();passed.push('touch preview toggles independently of the property link');
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({passed,failures:[]},null,2));
+}finally{await browser.close()}
+})().catch(e=>{console.error(e);process.exit(1)});
