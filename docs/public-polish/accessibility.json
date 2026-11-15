@@ -1,0 +1,155 @@
+[
+  {
+    "view": "desktop-home",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "desktop-collection",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            ".skip-link"
+          ],
+          [
+            ".property-image-wrap[href$=\"#home/115-colonial-drive\"][data-image-error=\"Photos temporarily unavailable\"] > .card-photo-count"
+          ],
+          [
+            ".property-image-wrap[href=\"#home/1106-cherokee-rd-unit-6\"][data-image-error=\"Photos temporarily unavailable\"] > .card-photo-count"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "view": "desktop-listing",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            ".skip-link"
+          ],
+          [
+            "a[href=\"#home/1106-cherokee-rd-unit-6\"] > span"
+          ],
+          [
+            "a[href$=\"#home/4005-smallboat-ct\"] > span"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "view": "phone-home",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-collection",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            ".skip-link"
+          ],
+          [
+            ".property-image-wrap[href$=\"#home/115-colonial-drive\"][data-image-error=\"Photos temporarily unavailable\"] > .card-photo-count"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "view": "phone-listing",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            ".skip-link"
+          ],
+          [
+            ".brand-wordmark > span:nth-child(1)"
+          ],
+          [
+            "#language-switch"
+          ],
+          [
+            "a[href=\"#home/1106-cherokee-rd-unit-6\"] > span"
+          ],
+          [
+            "a[href$=\"#home/4005-smallboat-ct\"] > span"
+          ],
+          [
+            "#mobile-inquiry"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "view": "phone-es-home",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-es-collection",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            ".skip-link"
+          ],
+          [
+            ".property-image-wrap[href$=\"#home/115-colonial-drive\"] > .card-photo-count"
+          ],
+          [
+            ".property-image-wrap[href$=\"#home/4005-smallboat-ct\"] > .card-photo-count"
+          ],
+          [
+            ".property-image-wrap[href=\"#home/1106-cherokee-rd-unit-8\"] > .card-photo-count"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "view": "phone-es-listing",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "targets": [
+          [
+            ".skip-link"
+          ],
+          [
+            ".brand-wordmark > span:nth-child(1)"
+          ],
+          [
+            "#language-switch"
+          ],
+          [
+            "a[href=\"#home/1106-cherokee-rd-unit-6\"] > span"
+          ],
+          [
+            "a[href$=\"#home/4005-smallboat-ct\"] > span"
+          ],
+          [
+            "#mobile-inquiry"
+          ]
+        ]
+      }
+    ]
+  }
+]

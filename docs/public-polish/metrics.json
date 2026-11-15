@@ -1,0 +1,62 @@
+[
+  {
+    "version": "before",
+    "view": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "homesTop": 1600,
+    "firstCardTop": 1987,
+    "heroPhotoLoaded": true,
+    "overflow": false
+  },
+  {
+    "version": "before",
+    "view": "phone",
+    "width": 390,
+    "height": 844,
+    "homesTop": 1182,
+    "firstCardTop": 1598,
+    "heroPhotoLoaded": true,
+    "overflow": false
+  },
+  {
+    "version": "before",
+    "view": "phone-es",
+    "width": 320,
+    "height": 640,
+    "homesTop": 896,
+    "firstCardTop": 1376,
+    "heroPhotoLoaded": true,
+    "overflow": false
+  },
+  {
+    "version": "after",
+    "view": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "homesTop": 1600,
+    "firstCardTop": 1934,
+    "heroPhotoLoaded": true,
+    "overflow": false
+  },
+  {
+    "version": "after",
+    "view": "phone",
+    "width": 390,
+    "height": 844,
+    "homesTop": 1182,
+    "firstCardTop": 1557,
+    "heroPhotoLoaded": true,
+    "overflow": false
+  },
+  {
+    "version": "after",
+    "view": "phone-es",
+    "width": 320,
+    "height": 640,
+    "homesTop": 896,
+    "firstCardTop": 1364,
+    "heroPhotoLoaded": true,
+    "overflow": false
+  }
+]

@@ -15,7 +15,8 @@
     "test:browsing": "node browsing.cjs",
     "capture:browsing": "node capture-browsing.cjs",
     "test:audit": "node audit.cjs",
-    "capture:audit": "node capture-audit.cjs"
+    "capture:audit": "node capture-audit.cjs",
+    "capture:polish": "node capture-polish.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
