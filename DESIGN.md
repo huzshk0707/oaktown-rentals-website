@@ -12,10 +12,19 @@ This direction follows the owner's request to lighten the main website while ret
 - Existing self-hosted Manrope for display headings, DM Sans for body and controls, and the original italic serif phrases in all three hero chapters. Responsive headings and full addresses can wrap.
 - Maximum content width 1280px, 22–24px phone/tablet gutters, deliberate section spacing, restrained photo zoom and thin dividing rules. Photos retain their natural colors.
 - White navigation, collection, FAQ, contact and property details; warm cream editorial, community, vacation feature and footer. The photo opening uses a light wash with green text, stronger beneath copy on phones. Apply, availability and showing actions use solid dark green; the mobile action bar is light. The oversized footer wordmark stays removed.
-- With motion enabled and at least 560px of window height: one 180svh opening with a sticky photo stage on phones, tablets and desktops. Native scroll advances three synchronized photo/copy chapters with continuous zoom/pan (scale 1.12 to 1.04; vertical drift 1.2% to -1.2%). Phone stages leave room for the fixed actions. Chapter buttons also select a chapter directly.
+- With motion enabled and at least 560px of window height: one 160svh opening on desktop, or 140svh at widths up to 850px, with a sticky photo stage. Native scroll advances three synchronized photo/copy chapters with continuous zoom/pan (scale 1.12 to 1.04; vertical drift 1.2% to -1.2%). Phone stages leave room for the fixed actions and a clearer band of photography above the copy. Chapter buttons also select a chapter directly.
 - Very short windows (under 560px high), reduced motion and a saved Motion off preference use a static introduction with manually selectable chapters. Motion state persists; pausing/resuming preserves the reading position in the collection. No timer, autoplay, wheel interception or idle animation loop.
 - The photographic O bridges the last two chapters within the compact hero, behind the shade and copy. It expands from the exact center of the photo using PR #1's quadratic zoom, with eased entry/exit and short settling transitions for wheel/trackpad steps. Reverse scrolling contracts it along the same path. It reuses the decoded third-chapter image and is suppressed if that source is unavailable, motion is off, or the viewport is static/mobile.
 - The collection keeps two-column comparison, neighborhood filters and the optional gallery with gentle perspective on desktop and phone gallery layouts. Detail pages retain clear title/rental facts and the complete, unobscured photo gallery.
+
+## Property browsing
+
+- Cards offer an on-demand additional photo from their own property. Fine-pointer hover and keyboard focus preview it; the explicit toggle also works on touch. A failed extra image leaves the main photo intact.
+- Normal card navigation shares the chosen photo into a cover on the detail page using the native View Transitions API. Unsupported browsers, Motion off and reduced motion retain immediate navigation. Canceled transitions cannot write images into newer routes.
+- The detail cover stays synchronized with the full gallery. Clicking it enlarges the image it displays.
+- A compact rental bar appears once the full rental facts scroll behind the header. Desktop retains showing/application links; phones use the existing fixed bottom actions. It hides at the title, contact section and in very short windows, while keeping keyboard-focused actions available.
+- Browser Back, Forward, reload and the listing's All rental homes link restore the relevant browsing state: neighborhood filter, grid/gallery layout, horizontal position, reading position and card focus. Gallery selection is retained on Forward. Entry-specific history state stores interface state only; returning does not replay reveal animations.
+- Cards show the published deposit and availability status. Missing availability is explicitly unconfirmed. Listing facts explain that current availability and additional application, pet or other charges must be confirmed before applying. Existing application and showing destinations are preserved.
 
 ## Boundaries
 
@@ -25,4 +34,4 @@ Property records, source photographs, gallery ownership/order, public destinatio
 
 ## Review
 
-See [the three-version visual comparison](docs/redesign/comparison/README.md) for validation and visual limitations. This follow-up is on a separate review branch and PR. The production approval boundary in `PRODUCT.md` remains in force.
+See [the three-version visual comparison](docs/redesign/comparison/README.md), [photo-browsing review](docs/browsing/README.md) and [audit follow-up comparison](docs/audit-fixes/README.md) for validation and visual limitations. The owner approved merging this public-site follow-up in chat. Future production changes retain the approval boundary in `PRODUCT.md`.

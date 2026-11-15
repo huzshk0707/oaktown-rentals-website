@@ -40,6 +40,9 @@
       const steps = [...root.querySelectorAll('[data-collection-step]')];
       const meter = root.querySelector('.collection-meter span');
       const motionButton = document.getElementById('motion-toggle');
+      const detailsBar = root.querySelector('.details-bar');
+      const dock = root.querySelector('.listing-dock');
+      const contact = root.querySelector('.contact-panel');
       const pinned = () => enabled() && cinematic.matches && images.length > 1;
       let frame = 0, currentScene = -1, geometry = null, letterReady = false;
       const openingAnimations = new Set();
@@ -104,7 +107,10 @@
         const editorialRect=editorial?.getBoundingClientRect();
         const viewportRect=viewport?.getBoundingClientRect();
         const left=viewport?.scrollLeft||0;
+        const detailsRect=detailsBar?.getBoundingClientRect();
+        const contactRect=contact?.getBoundingClientRect();
         geometry={
+          details:detailsBar?{bottom:detailsRect.bottom+scroll,contactTop:contactRect?contactRect.top+scroll:Infinity,headerHeight:document.getElementById('site-header').offsetHeight}:null,
           story:story?{top:storyRect.top+scroll,travel:Math.max(1,story.offsetHeight-stage.offsetHeight)}:null,
           editorial:editorial?{top:editorialRect.top+scroll,height:editorial.offsetHeight}:null,
           height:innerHeight,
@@ -149,6 +155,11 @@
           const offset=enabled()&&desktop.matches?`${((progress-.5)*4).toFixed(2)}%`:'0%';
           editorialPhotos.forEach(photo=>photo.style.setProperty('--photo-offset',offset));
         }
+        if(dock&&geometry.details){
+          const {bottom,contactTop,headerHeight}=geometry.details;
+          const visible=innerHeight>=480&&scroll+headerHeight>=bottom&&scroll+headerHeight+80<contactTop;
+          dock.hidden=!visible&&!dock.contains(document.activeElement);
+        }
         if(!viewport)return;
         const left=viewport.scrollLeft;
         const gallery=collection.dataset.layout==='gallery';
@@ -184,6 +195,7 @@
       on(window,'keydown',stopOpening);
       on(document,'visibilitychange',()=>{if(document.hidden)stopOpening();});
       on(viewport,'scroll',schedule,{passive:true});
+      on(dock,'focusout',schedule);
       on(root,'click',e=>{
         const chapter=e.target.closest('[data-scene-button]');
         if(chapter) {
