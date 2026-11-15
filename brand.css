@@ -564,8 +564,8 @@ body.rental-site {
   & .story-stage { background:var(--surface); }
   & .story-image { background:var(--photo-ground); }
   & .story-shade {
-    background:linear-gradient(90deg,#fffefbf5 0%,#fffefbde 42%,#fffefb66 100%),
-      linear-gradient(0deg,#fffefbe6,transparent 45%);
+    background:linear-gradient(90deg,#fffefbde 0%,#fffefbb3 42%,#fffefb1f 100%),
+      linear-gradient(0deg,#fffefbb3,transparent 35%);
   }
   & .story-title,& .story-topline,& .story-explore,& .story-contact { color:var(--ink); }
   & .story-title em { color:var(--brand); }
@@ -615,7 +615,7 @@ body.rental-site {
   & .listing-dock { background:var(--paper);color:var(--ink); }
 
   @media(max-width:850px) {
-    & .story-shade { background:linear-gradient(90deg,#fffefbf5,#fffefbde),linear-gradient(0deg,#fffefbf5,transparent); }
+    & .story-shade { background:linear-gradient(90deg,#fffefbd9,#fffefba6),linear-gradient(0deg,#fffefbc7,transparent 55%); }
     & .mobile-actions { background:#fffefbf5;border-color:var(--line); }
     & .mobile-actions a { color:var(--brand-deep);border-color:var(--brand-deep); }
     & .mobile-actions a:last-child { background:var(--brand-deep);color:var(--paper);border-color:var(--brand-deep); }
