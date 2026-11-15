@@ -38,6 +38,14 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  await page.locator('[data-filter="All"]').click();
  await page.locator('.property-card').first().locator('.property-image-wrap').click();await page.waitForTimeout(200);
  const count=await page.locator('[data-gallery-index]').count();check('Colonial full gallery',()=>assert.equal(count,14));
+ const introContrast=await page.locator('.page-intro').evaluate(section=>{
+   const channels=color=>color.match(/[\d.]+/g).slice(0,3).map(Number).map(c=>{c/=255;return c<=.04045?c/12.92:((c+.055)/1.055)**2.4});
+   const luminance=color=>channels(color).reduce((sum,c,i)=>sum+c*[.2126,.7152,.0722][i],0);
+   const background=luminance(getComputedStyle(section).backgroundColor);
+   return ['h1','.intro-sub'].map(selector=>{const foreground=luminance(getComputedStyle(section.querySelector(selector)).color);return (Math.max(foreground,background)+.05)/(Math.min(foreground,background)+.05)});
+ });
+ check('listing address meets large-text contrast',()=>assert.ok(introContrast[0]>=3,JSON.stringify(introContrast)));
+ check('listing summary meets body-text contrast',()=>assert.ok(introContrast[1]>=4.5,JSON.stringify(introContrast)));
  
  const inquiry=await page.locator('#mobile-inquiry').getAttribute('href');check('inquiry carries address',()=>assert.ok(decodeURIComponent(inquiry).includes('115 Colonial Drive')));
  const showing=await page.locator('.detail-actions .button-solid').getAttribute('href');check('showing request has property and purpose',()=>assert.ok(decodeURIComponent(showing).includes('request a showing at 115 Colonial Drive')));
