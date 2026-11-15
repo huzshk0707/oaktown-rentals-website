@@ -135,8 +135,12 @@ body.rental-site {
   & .story { height:auto; }
   & .story-stage { position:relative;top:auto;height:100svh;min-height:690px;background:var(--brand-deep); }
   & .story-images { z-index:-3; }
-  & .story-image { background:var(--ink2);transition:opacity .65s ease; }
-  & .story-letter { left:62%;top:50%;font-size:min(70vw,82vh);background-color:transparent;contain:paint; }
+  & .story-image { background:var(--ink2);transition:opacity .8s ease,transform .18s ease-out; }
+  & .story-letter {
+    left:50%;top:50%;font-size:min(70vw,82vh);letter-spacing:0;padding:0;
+    background-color:transparent;contain:paint;transform-origin:center;
+    transition:transform .18s ease-out,opacity .18s ease-out;
+  }
   & .story-letter[hidden] { display:none; }
   & .story-image img { object-position:60% 48%; }
   & .story-stage:has(.story-image.is-active .image-unavailable)::after { content:attr(data-image-error);position:absolute;z-index:1;right:var(--side);bottom:112px;color:var(--cream2);font-size:12px;pointer-events:none; }
@@ -422,6 +426,10 @@ html[lang=es] body.rental-site .story-title { font-size:clamp(68px,8vw,120px); }
 .motion-off body.rental-site .editorial-photo img { transform:none; }
 @media(prefers-reduced-motion:reduce) {
   body.rental-site .editorial-photo img { transform:none; }
+}
+.motion-off body.rental-site .story-image { transition:none; }
+@media(prefers-reduced-motion:reduce) {
+  body.rental-site .story-image { transition:none; }
 }
 
 /* Light Oaktown palette, inspired by Mint Mojo. Keep photographic motion and

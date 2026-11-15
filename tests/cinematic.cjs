@@ -49,6 +49,27 @@ const decodedFixture=fs.readFileSync(require.resolve('../assets/oaktown-rentals-
   assert.ok(portal.opacity>.1&&portal.opacity<=.8);checks++;
   assert.ok(portal.source.includes(source),'O reuses the chapter’s existing responsive URL');checks++;
   assert.match(portal.transform,/scale\(/);checks++;
+  const scrub=async progress=>{
+   await page.evaluate(p=>{const story=document.querySelector('.story'),stage=document.querySelector('.story-stage');scrollTo({top:story.offsetTop+(story.offsetHeight-stage.offsetHeight)*p,behavior:'instant'});},progress);
+   await page.waitForTimeout(250);
+   return page.locator('.story-letter').evaluate(el=>{
+    const rect=el.getBoundingClientRect(),stage=el.closest('.story-stage').getBoundingClientRect();
+    return {centerX:rect.left+rect.width/2,centerY:rect.top+rect.height/2,stageX:stage.left+stage.width/2,stageY:stage.top+stage.height/2,width:rect.width,opacity:Number(el.style.opacity)};
+   });
+  };
+  let previousWidth=0;
+  for(const progress of [.44,.52,.60,.70,.80,.87]){
+   const state=await scrub(progress);
+   assert.ok(Math.abs(state.centerX-state.stageX)<1,'O expands from the photo’s horizontal center');
+   assert.ok(Math.abs(state.centerY-state.stageY)<1,'O stays vertically centered while growing');
+   assert.ok(state.width>previousWidth,'O grows continuously across the chapter transition');
+   previousWidth=state.width;checks++;
+  }
+  const forward=await scrub(.60),back=await scrub(.52),again=await scrub(.60);
+  assert.ok(back.width<forward.width,'reverse scrolling contracts the O');
+  assert.ok(Math.abs(again.width-forward.width)<2,'returning to a scroll position restores the same O scale');checks++;
+  const fadeStart=await scrub(.88),fadeEnd=await scrub(.90);
+  assert.ok(fadeEnd.opacity<fadeStart.opacity&&fadeEnd.opacity>0,'O fades gradually before leaving the opening');checks++;
   await page.evaluate(()=>{const story=document.querySelector('.story'),stage=document.querySelector('.story-stage');scrollTo({top:(story.offsetHeight-stage.offsetHeight)*.95,behavior:'instant'});});
   await page.waitForTimeout(100);
   assert.equal(await page.locator('.story-letter').evaluate(el=>el.hidden),true,'O clears before browsing');checks++;
