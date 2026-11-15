@@ -135,8 +135,12 @@ body.rental-site {
   & .story { height:auto; }
   & .story-stage { position:relative;top:auto;height:100svh;min-height:690px;background:var(--brand-deep); }
   & .story-images { z-index:-3; }
-  & .story-image { background:var(--ink2);transition:opacity .65s ease; }
-  & .story-letter { left:62%;top:50%;font-size:min(70vw,82vh);background-color:transparent;contain:paint; }
+  & .story-image { background:var(--ink2);transition:opacity .8s ease,transform .18s ease-out; }
+  & .story-letter {
+    left:50%;top:50%;font-size:min(70vw,82vh);letter-spacing:0;padding:0;
+    background-color:transparent;contain:paint;transform-origin:center;
+    transition:transform .18s ease-out,opacity .18s ease-out;
+  }
   & .story-letter[hidden] { display:none; }
   & .story-image img { object-position:60% 48%; }
   & .story-stage:has(.story-image.is-active .image-unavailable)::after { content:attr(data-image-error);position:absolute;z-index:1;right:var(--side);bottom:112px;color:var(--cream2);font-size:12px;pointer-events:none; }
@@ -520,4 +524,101 @@ body.rental-site .details-bar .detail-actions { grid-column:2;grid-row:1 / span 
   body.rental-site .collection .section-label { display:none; }
   body.rental-site .collection .listing-tools { display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center; }
   body.rental-site .collection .filter-strip { grid-column:1 / -1; }
+}
+.motion-off body.rental-site .story-image { transition:none; }
+@media(prefers-reduced-motion:reduce) {
+  body.rental-site .story-image { transition:none; }
+}
+
+/* Light Oaktown palette, inspired by Mint Mojo. Keep photographic motion and
+   layout intact; reserve solid forest green for actions rather than sections. */
+html:has(body.rental-site) { color-scheme:light;background:#fffefb; }
+body.rental-site {
+  --paper:#fffefb;
+  --surface:#f3f3e8;
+  --photo-ground:#e1e9dd;
+  --cream:#123b25;
+  --cream2:#4b6255;
+  --muted:#4b6255;
+  --accent:#10783d;
+  --line:#163b2d26;
+  color-scheme:light;
+  background:var(--paper);
+  color:var(--ink);
+
+  & ::selection { background:#cce5d0;color:var(--brand-deep); }
+  & :focus-visible { outline-color:var(--brand); }
+  & .progress { background:var(--brand); }
+  & .site-header,& .site-header:has(~ #app .story) { background:var(--paper); }
+  & .site-header.is-fixed { background:#fffefbf5; }
+  & .desktop-nav a:hover,& .footer-links a:hover { color:var(--brand); }
+  & .menu-button span { background:var(--ink); }
+  & .mobile-nav { background:var(--paper); }
+
+  & .nav-apply,& .button-solid {
+    background:var(--brand-deep);border-color:var(--brand-deep);color:var(--paper);
+  }
+  & .nav-apply:hover,& .button-solid:hover {
+    background:var(--brand);border-color:var(--brand);color:var(--paper);
+  }
+  & .story-stage { background:var(--surface); }
+  & .story-image { background:var(--photo-ground); }
+  & .story-shade {
+    background:linear-gradient(90deg,#fffefbf5 0%,#fffefbde 42%,#fffefb66 100%),
+      linear-gradient(0deg,#fffefbe6,transparent 45%);
+  }
+  & .story-title,& .story-topline,& .story-explore,& .story-contact { color:var(--ink); }
+  & .story-title em { color:var(--brand); }
+  & .story-action-orbit { background:var(--brand-deep);border-color:var(--brand-deep);color:var(--paper); }
+  & .story-explore:hover .story-action-orbit { background:var(--brand);border-color:var(--brand);color:var(--paper); }
+  & .scene-navigation button { border-color:var(--line);color:var(--muted); }
+  & .scene-navigation button[aria-pressed=true] { color:var(--brand-deep); }
+
+  & .collection,& .faq-section,& .contact-panel,& .page-intro,& .details-bar,
+  & .detail-body,& .lightbox { background:var(--paper); }
+  & .editorial-section,& .community-section,& .vacation-feature,& .footer,
+  & .amenities { background:var(--surface); }
+  & .editorial-photo-secondary { border-color:var(--surface); }
+  & .editorial-photo,& .vacation-photo,& .gallery-main,& .mini-card { background:var(--photo-ground); }
+  & .editorial-photo-caption { background:var(--paper);color:var(--ink); }
+  & .collection .property-image-wrap { background:var(--photo-ground); }
+  & .filter-chip { color:var(--ink); }
+  & .filter-chip:hover { background:#e1e9dd;color:var(--ink);border-color:var(--brand); }
+  & .filter-chip.active,& .view-switch button[aria-pressed=true] {
+    background:var(--brand-deep);border-color:var(--brand-deep);color:var(--paper);
+  }
+  & .card-arrow { background:var(--paper);color:var(--brand-deep); }
+  & .card-photo-count { background:var(--paper);color:var(--ink); }
+  & .collection-meter { background:var(--line); }
+  & .collection-controls button:not(:disabled):hover { background:var(--brand-deep);color:var(--paper); }
+  & .availability-badge { color:var(--brand-deep); }
+  & .property-details-line { align-items:center;flex-wrap:wrap;gap:12px; }
+  & .property-details-line a {
+    display:inline-flex;align-items:center;justify-content:center;gap:12px;
+    min-height:44px;padding:10px 14px;border-radius:2px;
+    background:var(--brand-deep);color:var(--paper);text-decoration:none;
+  }
+  & .property-details-line a:hover { background:var(--brand); }
+  & .vacation-card:hover .text-link { color:var(--brand); }
+  & .circle-arrow { border-color:var(--line); }
+  & .circle-arrow:hover { background:var(--brand-deep);color:var(--paper); }
+  & .gallery-open>span,& .gallery-controls button {
+    background:var(--brand-deep);color:var(--paper);
+  }
+  & .mini-card span { background:var(--paper);color:var(--ink); }
+  & .lightbox::backdrop { background:#fffefbf2; }
+  & .lightbox button { color:var(--ink);border-color:var(--line); }
+  & .card-preview { background:var(--brand-deep);color:var(--paper); }
+  & .card-preview:hover,& .card-preview[aria-pressed=true] { background:var(--paper);color:var(--brand-deep); }
+  & .detail-cover { background:var(--photo-ground);color:var(--ink); }
+  & .detail-cover>span { background:var(--brand-deep);color:var(--paper); }
+  & .listing-dock { background:var(--paper);color:var(--ink); }
+
+  @media(max-width:850px) {
+    & .story-shade { background:linear-gradient(90deg,#fffefbf5,#fffefbde),linear-gradient(0deg,#fffefbf5,transparent); }
+    & .mobile-actions { background:#fffefbf5;border-color:var(--line); }
+    & .mobile-actions a { color:var(--brand-deep);border-color:var(--brand-deep); }
+    & .mobile-actions a:last-child { background:var(--brand-deep);color:var(--paper);border-color:var(--brand-deep); }
+    & .mobile-actions a:hover { background:var(--brand);color:var(--paper);border-color:var(--brand); }
+  }
 }

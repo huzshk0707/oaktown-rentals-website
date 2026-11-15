@@ -6,6 +6,7 @@
   const desktop = matchMedia('(min-width: 851px)');
   const cinematic = matchMedia('(min-height: 560px)');
   const clamp = n => Math.max(0, Math.min(1, n));
+  const smooth = n => { const p=clamp(n);return p*p*(3-2*p); };
   let paused = false;
   try { paused = localStorage.getItem('oaktown-motion') === 'off'; } catch {}
   let openingSeen = false;
@@ -136,13 +137,13 @@
           });
           buttons.forEach((button,i) => button.style.setProperty('--chapter-progress',clamp(progress*images.length-i)));
           if(letter && desktop.matches) {
-            // Keep PR #2's photographic O inside the compact hero. It bridges
-            // the last two chapters behind the shade and all readable copy.
-            const reveal=clamp((progress-.46)/.34);
-            const opacity=clamp(reveal*5)*(1-clamp((reveal-.5)*2))*.8;
+            // PR #1's centered, quadratic photo zoom, contained in the compact
+            // opening. Ease both ends so reverse scrolling has no hard fade.
+            const reveal=clamp((progress-.36)/.56);
+            const opacity=smooth(reveal/.14)*(1-smooth((reveal-.68)/.32))*.8;
             letter.hidden=!letterReady || opacity===0;
             style(letter,'opacity',letterReady?opacity.toFixed(3):'0');
-            style(letter,'transform',`translate(-50%,-50%) scale(${(.7+reveal*reveal*6).toFixed(4)})`);
+            style(letter,'transform',`translate(-50%,-50%) scale(${(1+reveal*reveal*7).toFixed(4)})`);
           } else if(letter){letter.hidden=true;style(letter,'opacity','0');}
         } else {
           images.forEach(image=>style(image,'transform',''));
