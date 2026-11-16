@@ -6,9 +6,17 @@ provisional; do not guess facts or treat this list as publication permission.
 
 ## P0 — reliable shared continuation
 
-- [ ] **WEB-HANDOFF:** Install shared protocol, account prompts and PR template;
-  run checks, publish documentation to main, verify remote refs and release
-  ravi's claim. Current branch `ravi/shared-handoff`; [setup PR #21](https://github.com/huzshk0707/oaktown-rentals-website/pull/21).
+- [x] **WEB-HANDOFF:** Shared protocol, account starts and PR template completed;
+  links and existing syntax/CMS checks validated. This completed checkpoint
+  installs them on main and releases ravi's claim. Branch `ravi/shared-handoff`;
+  [setup PR #21](https://github.com/huzshk0707/oaktown-rentals-website/pull/21).
+
+## Team priority confirmed by the owner
+
+Review Ops Focus Board #70–#73 first; use
+[Ops TASKS](https://github.com/huzshk0707/Oaktown-ops/blob/main/TASKS.md) to claim
+one small review step. This is review priority, not feature merge/deploy approval.
+Website tasks below remain available for separately assigned parallel work.
 
 ## P1 — verified content and access before launch
 

@@ -1,15 +1,23 @@
 # Handoff
 
-- Last updated: 2026-11-16 00:49 UTC by ravi
-- Current task / branch / PR: WEB-HANDOFF — shared AI continuation setup / `ravi/shared-handoff` / [PR #21](https://github.com/huzshk0707/oaktown-rentals-website/pull/21) (draft).
-- Active owner: ravi; claim valid until 2026-11-16 01:19 UTC. Renew at each checkpoint; 30-minute cooperative lease.
+- Last updated: 2026-11-16 00:55 UTC by ravi
+- Current task / branch / PR: WEB-HANDOFF — shared continuation setup complete / `ravi/shared-handoff` / [PR #21](https://github.com/huzshk0707/oaktown-rentals-website/pull/21). This final checkpoint is published to main and the task branch together; verify live refs/PR rather than a local-only hash.
+- Active owner: none. ravi releases the completed setup claim with this checkpoint; future work needs its own branch claim.
 - Last verified pushed checkpoint before this update: `c6c1f1c48eb40310f464e3362e02d9712fa4e682`; live branch/PR identifies newer checkpoints.
-- Done so far: inspected latest main `bb5d9ce69bf26c33290c14158a6473f9b9806c2c`, `git log -15`, README/source, all open PRs/issues and remote branches; added permanent rules, repo-specific backlog, account starts and PR template. No existing feature branch changed.
-- In progress (files being edited): `AGENTS.md`, `HANDOFF.md`, `TASKS.md`, `docs/ai-accounts/hp.md`, `docs/ai-accounts/felix.md`, `.github/PULL_REQUEST_TEMPLATE.md`, README links. Tests and main publication are not finished.
-- NEXT STEP (exact and specific): run the existing check commands below and relative Markdown-link validation; record results, finish this documentation-only PR and verify the normal main push if unprotected.
+- Done so far: inspected current main/log/branches and live PRs/issues; pushed two WIP checkpoints and opened the setup PR; completed permanent rules, HANDOFF, prioritized TASKS, identical hp/felix starts, PR running-log template and README links; verified relative links and Markdown-only scope; existing relevant tests pass.
+- In progress (files being edited): none. Seven Markdown files only; no runtime, database, auth, operational data or existing feature PR changes.
+- NEXT STEP (exact and specific): the owner chose Ops Focus Board #70–#73 review first. Open `https://github.com/huzshk0707/Oaktown-ops/blob/main/HANDOFF.md` and its TASKS; claim one unowned OPS-FOCUS-REVIEW substep before editing. If separately assigned website work, claim the relevant WEB task above, use current main and preserve draft #7/#10; do not invent listing facts or publish them.
 - Known bugs / blockers: no setup blocker. Never-pushed edits cannot be recovered by another account. Checkpoint every 15–20 minutes and after meaningful steps. This protocol does not supply missing GitHub/provider permissions.
-- How to run and test: see commands below. No product runtime change is part of this task; use local/disposable test data only.
+- How to run and test: Node 24; `npm ci`, `npm run check` and `npm test` passed (3/3 CMS/security tests). Relative Markdown links, identical account prompts, seven-file Markdown-only scope and diff checks passed. No browser/runtime changes were made; full UI commands below remain available for future UI work.
 - Decisions made and why: use Git commits plus branch handoffs and live PR logs as portable shared memory; preserve existing project rules; keep account identity separate from actual staff attribution. Main landing notes index parallel PRs instead of pretending all accounts share one checkout.
+
+## Publication and next ownership
+
+This commit contains the completed setup state and is normal-pushed atomically to
+main and `ravi/shared-handoff`; a rejected transaction publishes neither ref.
+Read the current PR/main refs to confirm installation. No unpushed work is part
+of the shared handoff. The owner confirmed Ops Focus Board #70–#73 review first;
+that choice does not authorize merging/deploying the existing draft stack.
 
 ## Repository state to preserve
 
