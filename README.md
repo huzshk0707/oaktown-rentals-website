@@ -1,5 +1,7 @@
 # Oaktown Rentals — Cinematic Website (Version 0.5 — Property Admin)
 
+[AI handoff](HANDOFF.md) · [Task priorities](TASKS.md) · [Permanent AI rules](AGENTS.md) · [hp start](docs/ai-accounts/hp.md) · [felix start](docs/ai-accounts/felix.md)
+
 An animated, mobile-friendly Oaktown Rentals website with an optional private property admin, based on the *design direction* of the supplied cinematic real-estate video. Not a copy of the featured third-party website. Preserves public information from the existing Oaktown Rentals Squarespace website where practical.
 
 ## Features
