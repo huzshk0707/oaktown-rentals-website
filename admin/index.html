@@ -10,55 +10,79 @@
   <a class="skip" href="#workspace">Skip to properties</a>
   <aside class="sidebar">
     <a href="/" aria-label="Oaktown Rentals website"><img src="/assets/oaktown-rentals-logo.jpg" width="1200" height="608" alt="Oaktown Rentals"></a>
-    <p class="overline">PROPERTY MANAGEMENT</p><h1>Your homes.<br>Your control.</h1>
-    <p class="sidebar-copy">Keep every listing ready for its next chapter.</p>
-    <nav aria-label="Admin navigation"><a class="selected" href="/admin/">Properties</a><a href="/" target="_blank" rel="noopener">View website</a></nav>
+    <h1>Property admin</h1><p class="sidebar-copy">Your homes, photos and listing details in one place.</p>
+    <nav aria-label="Admin navigation"><a class="selected" href="/admin/" aria-current="page">Properties</a><a href="/" target="_blank" rel="noopener">View website <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></nav>
     <div class="account"><span id="account-email">Checking sign-in…</span><a href="/cdn-cgi/access/logout">Sign out</a></div>
   </aside>
   <main id="workspace">
-    <header class="workspace-header"><div><p class="overline">OAKTOWN RENTALS</p><h2>Property collection</h2><p>Add a home, refresh its details, or get it ready to publish.</p></div><button id="new-property" class="primary" disabled>+ Add property</button></header>
+    <header class="workspace-header"><div><h2>Your properties</h2><p>Make a change, check the preview, then publish when you’re ready.</p></div><button id="new-property" class="primary" disabled>+ Add property</button></header>
     <p id="notice" class="notice" role="status" aria-live="polite">Connecting to your properties…</p>
-    <details class="usage-guide"><summary>How to edit a listing</summary><ol><li>Choose <strong>Edit listing</strong>, or <strong>Add property</strong> for a new home.</li><li>Update the details and photos. The first photo is the main image. You can add up to 20 JPG, PNG or WebP photos, 8 MB each.</li><li>Choose <strong>Save draft</strong> to keep your work private.</li><li>Choose <strong>Preview listing</strong> to check the current form.</li><li>Choose <strong>Publish listing</strong> when the home is ready for the website.</li></ol><p>To remove a home from the website, choose <strong>Archive</strong>. The property stays in your admin so you can edit and republish it later. You can use all these controls from your phone.</p></details>
+    <details class="usage-guide"><summary>A quick guide to editing</summary><ol><li>Open a property and choose the section you want to change.</li><li><strong>Save draft</strong> keeps your work private. It does not update the website.</li><li><strong>Preview listing</strong> lets you check the result before publishing.</li><li><strong>Publish listing</strong> reviews your changes before updating the website.</li></ol><p>Use <strong>Listing actions</strong> to unpublish or archive a property. Your property stays here for later.</p></details>
     <section id="collection" aria-label="Properties" hidden>
       <div id="stats" class="stats"></div>
-      <div class="tools"><label class="search">Find a property<input id="search" type="search" placeholder="Address or neighborhood" maxlength="120"></label><label>Show<select id="state-filter"><option value="all">All properties</option><option value="published">Published</option><option value="draft">Drafts</option><option value="archived">Archived</option></select></label><button id="refresh" class="secondary">Refresh</button></div>
-      <div id="property-list" class="property-list"></div><p id="empty-list" hidden>No properties match your search.</p>
+      <div class="tools"><label class="search">Find a property<input id="search" type="search" placeholder="Address or neighborhood" maxlength="120"></label><label>Show<select id="state-filter"><option value="all">All properties</option><option value="published">On website</option><option value="changes">Needs publishing</option><option value="draft">Drafts</option><option value="archived">Archived</option></select></label><button id="refresh" class="secondary">Refresh</button></div>
+      <div id="property-list" class="property-list"></div><p id="empty-list" class="empty-state" hidden>No properties match your search.</p>
     </section>
     <section id="editor" aria-labelledby="editor-title" hidden>
       <div class="editor-top"><button id="back" class="text-button">All properties</button><span id="record-state" class="badge">New draft</span></div>
-      <h2 id="editor-title">Add a property</h2><p id="editor-hint">Start with the basics. You can save a draft before adding photos.</p>
+      <h2 id="editor-title">Add a property</h2><p id="editor-hint">Start with the basics. You can save a draft at any time.</p>
       <form id="property-form">
-        <fieldset><legend>The essentials</legend><div class="fields">
-          <label class="wide">Property address / title<input name="name" required maxlength="160" placeholder="115 Colonial Drive"></label>
-          <label>Web address<input name="slug" required maxlength="100" pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="115-colonial-drive"><small>Permanent after the first save.</small></label>
-          <label>Neighborhood<input name="neighborhood" maxlength="160" list="neighborhoods"><datalist id="neighborhoods"><option>St. Matthews</option><option>The Highlands</option><option>Cherokee Triangle</option><option>Okolona</option></datalist></label>
-          <label>City<input name="city" maxlength="160" value="Louisville, Kentucky"></label>
-          <label>Availability<select name="availability"><option value="unknown">Confirm with us</option><option value="available">Available</option><option value="coming_soon">Coming soon</option><option value="rented">Rented</option></select></label>
-          <label>Monthly rent ($)<input name="rent" type="number" min="0" max="1000000" step="0.01" required value="0"></label>
-          <label>Security deposit ($)<input name="deposit" type="number" min="0" max="1000000" step="0.01" required value="0"></label>
-          <label>Bedrooms<input name="bedrooms" type="number" min="0" max="100" step="1" required value="0"></label>
-          <label>Bathrooms<input name="bathrooms" type="number" min="0" max="100" step="0.5" required value="1"></label>
-        </div></fieldset>
-        <fieldset><legend>Tell the story</legend><div class="fields">
-          <label class="wide">Short headline<input name="label" maxlength="160" placeholder="A place to settle in"></label>
-          <label class="wide">Listing summary<textarea name="summary" maxlength="1000" rows="2" placeholder="A short introduction for the property card"></textarea></label>
-          <label class="wide">Full description<textarea name="description" rows="6" placeholder="Separate paragraphs with a blank line"></textarea><small>Separate paragraphs with a blank line.</small></label>
-          <label>Features<textarea name="features" rows="5" placeholder="One feature per line"></textarea><small>One feature per line.</small></label>
-          <label>Lease terms<textarea name="terms" rows="5" placeholder="One term per line"></textarea><small>One term per line.</small></label>
-          <label class="wide">Original listing link (optional)<input name="sourceUrl" type="url" maxlength="2048" placeholder="https://"></label>
-        </div></fieldset>
-        <details class="translation"><summary>Spanish version</summary><p>English text is used where a Spanish field is empty.</p><div class="fields">
-          <label class="wide">Spanish headline<input name="labelEs" maxlength="160"></label>
-          <label class="wide">Spanish summary<textarea name="summaryEs" maxlength="1000" rows="2"></textarea></label>
-          <label class="wide">Spanish description<textarea name="descriptionEs" rows="6"></textarea></label>
-          <label>Spanish features<textarea name="featuresEs" rows="5"></textarea></label>
-          <label>Spanish lease terms<textarea name="termsEs" rows="5"></textarea></label>
-        </div></details>
-        <fieldset><legend>Photos</legend><p>Your first photo is the main listing image. Drag photos into the order you want, then save your draft.</p><label class="upload">Add JPG, PNG or WebP photos<input id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp" multiple><small>Up to 8 MB each and 20 photos per property.</small></label><p id="photo-reorder-help">Hold a photo’s Drag handle and move it to a new position. You can also use Earlier / Later, or focus a handle and use the arrow keys, Home or End.</p><div id="photo-list" class="photo-list" role="list" aria-label="Property photos" aria-describedby="photo-reorder-help"></div><p id="photo-status" class="photo-status" role="status" aria-live="polite" aria-atomic="true"></p></fieldset>
-        <div class="editor-actions"><div><button id="save" class="secondary" type="submit">Save draft</button><button id="preview" class="secondary" type="button">Preview listing</button></div><div><button id="archive" class="danger" type="button" hidden>Archive</button><button id="unpublish" class="secondary" type="button" hidden>Unpublish</button><button id="publish" class="primary" type="button">Publish listing</button></div></div>
-        <p class="save-note">Save draft keeps changes private. Publish updates the website. Archiving removes a listing from the website and keeps it here.</p>
+        <div id="editor-nav" class="editor-nav" role="tablist" aria-label="Listing sections">
+          <button id="tab-details" type="button" role="tab" data-editor-tab="details" aria-controls="panel-details" aria-selected="true">Details</button>
+          <button id="tab-photos" type="button" role="tab" data-editor-tab="photos" aria-controls="panel-photos" aria-selected="false" tabindex="-1">Photos</button>
+          <button id="tab-description" type="button" role="tab" data-editor-tab="description" aria-controls="panel-description" aria-selected="false" tabindex="-1">Description</button>
+          <button id="tab-terms" type="button" role="tab" data-editor-tab="terms" aria-controls="panel-terms" aria-selected="false" tabindex="-1">Rental terms</button>
+          <button id="tab-review" type="button" role="tab" data-editor-tab="review" aria-controls="panel-review" aria-selected="false" tabindex="-1">Review &amp; publish</button>
+        </div>
+        <section id="panel-details" class="editor-panel" data-editor-panel="details" role="tabpanel" aria-labelledby="tab-details" tabindex="0">
+          <fieldset><legend>Property details</legend><p>The details renters compare first.</p><div class="fields">
+            <label class="wide">Property address / title<input name="name" required maxlength="160" placeholder="115 Colonial Drive" autocomplete="off"></label>
+            <label>Neighborhood<input name="neighborhood" maxlength="160" list="neighborhoods"><datalist id="neighborhoods"><option>St. Matthews</option><option>The Highlands</option><option>Cherokee Triangle</option><option>Okolona</option></datalist></label>
+            <label>City<input name="city" maxlength="160" value="Louisville, Kentucky"></label>
+            <label>Availability<select name="availability"><option value="unknown">Contact for availability</option><option value="available">Available</option><option value="coming_soon">Coming soon</option><option value="rented">Rented</option></select><small>This is separate from whether the listing is on the website.</small></label>
+            <label>Monthly rent ($)<input name="rent" type="number" min="0" max="1000000" step="0.01" required value="0" inputmode="decimal"></label>
+            <label>Security deposit ($)<input name="deposit" type="number" min="0" max="1000000" step="0.01" required value="0" inputmode="decimal"></label>
+            <label>Bedrooms<input name="bedrooms" type="number" min="0" max="100" step="1" required value="0" inputmode="numeric"></label>
+            <label>Bathrooms<input name="bathrooms" type="number" min="0" max="100" step="0.5" required value="1" inputmode="decimal"></label>
+          </div></fieldset>
+          <details id="advanced-settings" class="advanced-settings"><summary>Advanced settings</summary><p>These settings rarely need to change.</p><div class="fields">
+            <label>Web address<input name="slug" maxlength="100" pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="115-colonial-drive" autocomplete="off"><small>Created from the address. Permanent after the first save.</small></label>
+            <label>Original listing link (optional)<input name="sourceUrl" type="url" maxlength="2048" placeholder="https://" inputmode="url"></label>
+          </div></details>
+        </section>
+        <section id="panel-photos" class="editor-panel" data-editor-panel="photos" role="tabpanel" aria-labelledby="tab-photos" tabindex="0" hidden>
+          <fieldset><legend>Property photos</legend><p>Choose a main photo, then arrange the rest in the order you want renters to see them.</p><label class="upload">Add photos<input id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp" multiple><small>JPG, PNG or WebP · up to 8 MB each · 20 photos per property.</small></label><div id="upload-queue" class="upload-queue" role="list" aria-label="Photo uploads"></div><p id="photo-reorder-help">Drag a photo’s handle to reorder it. Earlier / Later buttons and the handle’s arrow keys, Home and End also work.</p><div id="photo-list" class="photo-list" role="list" aria-label="Property photos" aria-describedby="photo-reorder-help"></div><p id="photo-status" class="photo-status" role="status" aria-live="polite" aria-atomic="true"></p></fieldset>
+        </section>
+        <section id="panel-description" class="editor-panel" data-editor-panel="description" role="tabpanel" aria-labelledby="tab-description" tabindex="0" hidden>
+          <fieldset><legend>Describe this home</legend><p>Keep the introduction short. Use the full description for the details that make the home stand out.</p><div class="fields">
+            <label class="wide">Short headline<input name="label" maxlength="160" placeholder="A place to settle in"></label>
+            <label class="wide">Listing summary<textarea name="summary" maxlength="1000" rows="3" placeholder="A short introduction for the property card"></textarea></label>
+            <label class="wide">Full description<textarea name="description" rows="7" placeholder="Separate paragraphs with a blank line"></textarea><small>Separate paragraphs with a blank line.</small></label>
+            <label class="wide">Features<textarea name="features" rows="5" placeholder="One feature per line"></textarea><small>One feature per line, such as Hardwood floors or Two-car garage.</small></label>
+          </div></fieldset>
+          <details class="translation"><summary>Spanish description</summary><p>English text is used where a Spanish field is empty.</p><div class="fields">
+            <label class="wide">Spanish headline<input name="labelEs" maxlength="160"></label>
+            <label class="wide">Spanish summary<textarea name="summaryEs" maxlength="1000" rows="3"></textarea></label>
+            <label class="wide">Spanish description<textarea name="descriptionEs" rows="7"></textarea></label>
+            <label class="wide">Spanish features<textarea name="featuresEs" rows="5"></textarea></label>
+          </div></details>
+        </section>
+        <section id="panel-terms" class="editor-panel" data-editor-panel="terms" role="tabpanel" aria-labelledby="tab-terms" tabindex="0" hidden>
+          <fieldset><legend>Rental terms</legend><p>Include the lease length, utilities and any other terms applicants need to know.</p><div class="fields"><label class="wide">Lease terms<textarea name="terms" rows="7" placeholder="One term per line"></textarea><small>One term per line.</small></label></div></fieldset>
+          <details class="translation"><summary>Spanish rental terms</summary><p>English terms are used when this field is empty.</p><label>Spanish lease terms<textarea name="termsEs" rows="7"></textarea></label></details>
+        </section>
+        <section id="panel-review" class="editor-panel" data-editor-panel="review" role="tabpanel" aria-labelledby="tab-review" tabindex="0" hidden>
+          <div class="review-heading"><h3>Ready for the website?</h3><p id="publication-summary">Your draft stays private until you publish.</p><a id="view-live" class="view-live" href="#" target="_blank" rel="noopener" hidden>View live listing <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
+          <section class="review-section" aria-labelledby="readiness-title"><h4 id="readiness-title">Listing readiness</h4><ul id="readiness-list" class="readiness-list"></ul></section>
+          <section class="review-section" aria-labelledby="changes-title"><h4 id="changes-title">What will change</h4><div id="change-summary" class="change-summary"></div></section>
+          <p class="save-note">Preview the listing to check its photos and layout. Publishing updates what visitors see on the website.</p>
+        </section>
+        <details class="more-actions"><summary>Listing actions</summary><p>Unpublish keeps the property as a draft. Archive removes it from the website and keeps it in your collection.</p><div class="record-actions"><button id="unpublish" class="secondary" type="button" hidden>Unpublish</button><button id="archive" class="danger" type="button" hidden>Archive</button></div></details>
+        <div class="editor-actions"><p id="editor-status" class="editor-status" role="status" aria-live="polite">New draft · Not on website</p><div class="draft-actions"><button id="save" class="secondary" type="submit">Save draft</button><button id="preview" class="secondary" type="button">Preview listing</button></div><div class="publish-actions"><button id="publish" class="primary" type="button">Publish listing</button></div></div>
       </form>
     </section>
   </main>
-  <dialog id="preview-dialog" aria-labelledby="preview-title"><div class="preview-top"><h2 id="preview-title">Listing preview</h2><button id="close-preview" class="secondary" type="button">Close</button></div><p class="save-note">Preview of your current form. Changes go live after you publish.</p><div id="preview-content"></div></dialog>
-</body></html>
+  <dialog id="preview-dialog" aria-labelledby="preview-title"><div class="preview-top"><div><h2 id="preview-title">Listing preview</h2><p class="save-note">Only you can see this preview. Your changes are not live.</p></div><button id="close-preview" class="secondary" type="button">Close</button></div><div class="preview-controls"><label>Device<select id="preview-viewport"><option value="desktop">Desktop</option><option value="mobile">Mobile</option></select></label><label>Language<select id="preview-language"><option value="en">English</option><option value="es">Español</option></select></label></div><div id="preview-content" aria-live="polite"></div><div class="preview-browser"><iframe id="preview-frame" title="Private website preview" src="about:blank"></iframe></div></dialog>
+  <dialog id="publish-dialog" aria-labelledby="publish-title"><h2 id="publish-title">Publish these changes?</h2><p>The version below will replace what visitors see on the website.</p><p id="publish-error" class="notice error" role="alert"></p><div id="publish-summary" class="change-summary"></div><div class="dialog-actions"><button id="cancel-publish" class="secondary" type="button">Keep editing</button><button id="confirm-publish" class="primary" type="button">Publish changes</button></div></dialog>
+</body>
+</html>

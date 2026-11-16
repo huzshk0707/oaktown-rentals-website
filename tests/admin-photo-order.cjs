@@ -5,8 +5,13 @@ const path=require('node:path');
 
 const captions=page=>page.locator('[data-caption]').evaluateAll(inputs=>inputs.map(input=>input.value));
 const sources=page=>page.locator('.photo-card img').evaluateAll(images=>images.map(image=>image.getAttribute('src')));
+async function panel(page,name){
+  const tab=page.locator(`[data-editor-tab="${name}"]`);
+  if(await tab.getAttribute('aria-selected')!=='true')await tab.click();
+}
 async function scrollToPhotos(page){
-  await page.locator('#photo-list').evaluate(list=>window.scrollTo(0,list.getBoundingClientRect().top+scrollY-50));
+  await panel(page,'photos');
+  await page.locator('#photo-list').evaluate(list=>window.scrollTo(0,list.getBoundingClientRect().top+scrollY-100));
 }
 async function dragPhoto(page,from,to){
   await scrollToPhotos(page);
@@ -52,6 +57,7 @@ async function checkOrder(page,expected){
     await page.locator('[name=name]').fill('Photo ordering test');
     await page.locator('[name=neighborhood]').fill('Test neighborhood');
     await page.locator('[name=rent]').fill('1200');
+    await panel(page,'photos');
     const file={mimeType:'image/jpeg',buffer:fs.readFileSync(path.join(__dirname,'../assets/oaktown-rentals-logo.jpg'))};
     await page.locator('#photo-upload').setInputFiles(['front','kitchen','bedroom','garden'].map(name=>({...file,name:name+'.jpg'})));
     await page.locator('#notice').filter({hasText:'Photos uploaded privately'}).waitFor();
@@ -70,20 +76,23 @@ async function checkOrder(page,expected){
     await dragPhoto(page,3,0);
     await checkOrder(page,['Back garden','Front','Kitchen','Bedroom']);
     await page.getByRole('button',{name:'Preview listing',exact:true}).click();
-    assert.equal(await page.locator('.preview-cover').getAttribute('src'),originalSources[3]);
+    await page.frameLocator('#preview-frame').locator('.detail-cover-photo').waitFor();
+    assert.equal(await page.frameLocator('#preview-frame').locator('.detail-cover-photo').getAttribute('src'),originalSources[3]);
     await page.getByRole('button',{name:'Close',exact:true}).click();
     await save(page);
     console.log('Mouse dragging, captions and preview passed.');
 
     // Saved order survives a fresh load and is still private until published.
-    await page.reload();await open(page,'Photo ordering test');
+    await page.reload();await open(page,'Photo ordering test');await panel(page,'photos');
     await checkOrder(page,['Back garden','Front','Kitchen','Bedroom']);
     const publicBefore=await (await fetch(server.base+'/api/properties')).json();
     assert.equal(publicBefore.properties.some(p=>p.slug==='photo-ordering-test'),false);
+    await panel(page,'description');
     await page.locator('[name=summary]').fill('Photo-order test listing.');
     await page.locator('[name=description]').fill('A local browser test property.');
     await page.getByRole('button',{name:'Publish listing',exact:true}).click();
-    await page.locator('#notice').filter({hasText:'Listing published'}).waitFor();
+    await page.locator('#publish-dialog').waitFor({state:'visible'});await page.locator('#confirm-publish').click();
+    await page.locator('#notice').filter({hasText:'Listing published'}).waitFor();await panel(page,'photos');
     const publicPhotoOrder=(await (await fetch(server.base+'/api/properties')).json()).properties.find(p=>p.slug==='photo-ordering-test').photos;
     assert.deepEqual(publicPhotoOrder.map(p=>p.alt),['Back garden','Front','Kitchen','Bedroom']);
     console.log('Saved and published photo order passed.');
@@ -110,7 +119,7 @@ async function checkOrder(page,expected){
     page.on('dialog',unexpectedDialog);
     await page.getByRole('button',{name:'All properties',exact:true}).click();
     assert.equal(await page.locator('#collection').isVisible(),true);
-    page.off('dialog',unexpectedDialog);await open(page,'Photo ordering test');
+    page.off('dialog',unexpectedDialog);await open(page,'Photo ordering test');await panel(page,'photos');
 
     // Keep every newly rendered card locked while a later upload is pending.
     let uploadCount=0;

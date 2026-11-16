@@ -1,3 +1,19 @@
+# Active task: WEB-ADMIN-EDITOR
+
+- Account / heartbeat: Codex / 2026-11-16 06:15 UTC. Implementation complete; claim released with this final checkpoint. Root will perform the owner-authorized merge and read-only deployment verification next.
+- Branch / base / PR: `feat/leslie-admin-editor` / `152691e` / [PR #22](https://github.com/huzshk0707/oaktown-rentals-website/pull/22). Read live PR state before resuming; do not replay a merged change.
+- Scope and authorization: the owner explicitly requested implementation and merge of the admin improvement review. This supersedes the original proposal-only admin scope. Unrelated drafts #7 and #10 are untouched.
+- Last verified pushed checkpoint: `8cc4ccb4dab36dd2b68258b6b60dac8e06a99242`; this final evidence/refinement commit follows it. The live branch/PR identifies the exact newer head.
+- Done: truthful live/draft dashboard, five editor sections, private unsaved real-page EN/ES previews, retryable upload queue, main-photo choice, readiness links and reviewed publishing. Compact editor header, keyboard tabs and expired/empty preview checks completed.
+- Tests: syntax; CMS/security 3/3; admin workflow; improvement suite 6/6 groups; mouse/touch photo-order suite; public browser 48/48 and browsing 24/24. Ten axe scans found zero confirmed violations, with contrast incompletes retained. See [durable evidence](docs/admin-improvements/README.md) and [implementation/results](docs/admin-improvements.md).
+- In progress / unfinished files: none after this checkpoint; final merge/check status is tracked by PR #22. Source, tests and screenshot evidence are complete.
+- NEXT STEP: run `gh pr view 22 --json state,headRefOid,mergeCommit,statusCheckRollup`. If still open, ensure the final head's Cloudflare check passes, mark ready and merge under the existing owner authorization. If merged, verify its main deployment and do not reapply. Then leave real production sign-in/Leslie acceptance as the bounded follow-up.
+- Limits: all mutation tests use disposable local data. No production property records, auth settings, secrets, migrations or deployment configuration were changed. Native Safari/Firefox, screen readers and production email-code sign-in are not proven by local Chromium tests. Main merge triggers the existing Cloudflare deployment.
+
+---
+
+## Previous repository landing context
+
 # Handoff
 
 - Last updated: 2026-11-16 00:55 UTC by ravi
