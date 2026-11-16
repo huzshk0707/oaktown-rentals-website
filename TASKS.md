@@ -8,7 +8,7 @@ provisional; do not guess facts or treat this list as publication permission.
 
 - [ ] **WEB-HANDOFF:** Install shared protocol, account prompts and PR template;
   run checks, publish documentation to main, verify remote refs and release
-  ravi's claim. Current branch `ravi/shared-handoff`.
+  ravi's claim. Current branch `ravi/shared-handoff`; [setup PR #21](https://github.com/huzshk0707/oaktown-rentals-website/pull/21).
 
 ## P1 — verified content and access before launch
 
