@@ -1,0 +1,183 @@
+[
+  {
+    "screen": "before-desktop",
+    "overflow": false
+  },
+  {
+    "screen": "before-mobile",
+    "overflow": false
+  },
+  {
+    "screen": "after-desktop-dashboard",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "screen": "after-desktop-details",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1,
+        "nodes": [
+          {
+            "target": [
+              "#panel-details > fieldset > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "screen": "after-desktop-photos",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1,
+        "nodes": [
+          {
+            "target": [
+              "#panel-photos > fieldset > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "screen": "after-desktop-preview",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1,
+        "nodes": [
+          {
+            "target": [
+              "#panel-photos > fieldset > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "screen": "after-desktop-review",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "screen": "after-desktop",
+    "overflow": false
+  },
+  {
+    "screen": "after-mobile-dashboard",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "screen": "after-mobile-details",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 2,
+        "nodes": [
+          {
+            "target": [
+              "#tab-review"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "target": [
+              "#panel-details > fieldset > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "screen": "after-mobile-photos",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 2,
+        "nodes": [
+          {
+            "target": [
+              "#tab-review"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "target": [
+              "#panel-photos > fieldset > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "screen": "after-mobile-preview",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 3,
+        "nodes": [
+          {
+            "target": [
+              "#tab-review"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "target": [
+              "#panel-photos > fieldset > legend"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          },
+          {
+            "target": [
+              "div > .save-note"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "screen": "after-mobile-review",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1,
+        "nodes": [
+          {
+            "target": [
+              "#tab-photos"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "screen": "after-mobile",
+    "overflow": false
+  }
+]

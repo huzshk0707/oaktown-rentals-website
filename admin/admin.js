@@ -103,7 +103,7 @@ function renderList() {
     const live=r.state==='published'?r.publishedProperty:null,p=live||r.property;
     const label=r.state==='published'?'On website':r.state==='archived'?'Archived':'Draft only';
     const changes=r.unpublishedChanges?propertyChanges(r.property,live):[];
-    return `<article class="listing"><div class="listing-photo">${p.photos[0]?`<img src="${escape(photoSource(p.photos[0].url))}" alt="${escape(p.photos[0].alt)}" loading="lazy">`:''}<span class="badge">${label}</span></div><div class="listing-body"><div class="listing-statuses"><span class="badge">${escape(availability(p.availability))}</span>${r.unpublishedChanges?'<span class="badge draft-badge">Draft changes</span>':''}</div><p>${escape(p.neighborhood||'Neighborhood to be added')}</p><h3>${escape(p.name)}</h3><p>${p.bedrooms} beds · ${p.bathrooms} baths</p>${r.unpublishedChanges?`<div class="draft-delta"><strong>Saved draft · not on the website</strong>${changeMarkup(changes)}</div>`:''}<div class="listing-bottom"><strong data-live-rent>${money(p.rent)} <small>/ month${live?' · Live':' · Draft'}</small></strong><button class="secondary" data-edit="${escape(r.id)}">Edit listing</button></div><div class="listing-shortcuts"><button class="text-button" data-quick="${escape(r.id)}">Quick edit</button><button class="text-button" data-photos="${escape(r.id)}">Photos</button><button class="text-button" data-preview-record="${escape(r.id)}">Preview draft</button></div></div></article>`;
+    return `<article class="listing"><div class="listing-photo">${p.photos[0]?`<img src="${escape(photoSource(p.photos[0].url))}" alt="${escape(p.photos[0].alt)}" loading="lazy">`:''}<span class="badge">${label}</span></div><div class="listing-body"><div class="listing-statuses"><span class="badge">${escape(availability(p.availability))}</span>${r.unpublishedChanges?'<span class="badge draft-badge">Draft changes</span>':''}</div><p>${escape(p.neighborhood||'Neighborhood to be added')}</p><h3>${escape(p.name)}</h3><p>${p.bedrooms} ${p.bedrooms===1?'bed':'beds'} · ${p.bathrooms} ${p.bathrooms===1?'bath':'baths'}</p>${r.unpublishedChanges?`<div class="draft-delta"><strong>Saved draft · not on the website</strong>${changeMarkup(changes)}</div>`:''}<div class="listing-bottom"><strong data-live-rent>${money(p.rent)} <small>/ month${live?' · Live':' · Draft'}</small></strong><button class="secondary" data-edit="${escape(r.id)}">Edit listing</button></div><div class="listing-shortcuts"><button class="text-button" data-quick="${escape(r.id)}">Quick edit</button><button class="text-button" data-photos="${escape(r.id)}">Photos</button><button class="text-button" data-preview-record="${escape(r.id)}">Preview draft</button></div></div></article>`;
   }).join('');
 }
 async function refresh(){const data=await api('/properties');records=data.properties;renderList();}
@@ -152,7 +152,7 @@ function openEditor(record,panel='details'){
   $('#editor-title').textContent=record?record.property.name:'Add a property';
   $('#editor-hint').textContent=record?.state==='published'?'You are editing a private draft. The website changes only when you publish.':'Start with the details, then add photos and a description. Save your draft at any time.';
   $('#archive').hidden=!record||record.state==='archived';$('#unpublish').hidden=!record||record.state!=='published';
-  $('#collection').hidden=true;$('#editor').hidden=false;$('#new-property').hidden=true;
+  $('#collection').hidden=true;$('#editor').hidden=false;$('#new-property').hidden=true;document.body.classList.add('is-editing');
   dirty=false;renderPhotos();renderQueue();photoStatus();notice();selectPanel(panel);updateEditorState();window.scrollTo({top:0,behavior:'instant'});
   if(panel==='details')form.elements.name.focus({preventScroll:true});
 }
@@ -175,7 +175,7 @@ async function save(property=snapshot()){
   $('#editor-title').textContent=saved.property.name;$('#archive').hidden=saved.state==='archived';$('#unpublish').hidden=saved.state!=='published';renderPhotos();await refresh();return saved;
 }
 function mayLeave(){return (!dirty&&!uploadQueue.some(item=>item.status!=='complete'))||window.confirm('Leave this property without saving your changes?');}
-function showCollection(){current=null;dirty=false;uploadQueue=[];$('#editor').hidden=true;$('#collection').hidden=false;$('#new-property').hidden=false;notice();}
+function showCollection(){current=null;dirty=false;uploadQueue=[];$('#editor').hidden=true;$('#collection').hidden=false;$('#new-property').hidden=false;document.body.classList.remove('is-editing');notice();}
 async function uploadItems(items){
   if(!validateDraft())return;
   await task(async()=>{

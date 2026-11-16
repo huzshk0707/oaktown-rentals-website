@@ -41,6 +41,10 @@ async function confirmPublish(page){
 
     await row.locator('[data-quick]').click();assert.equal(await page.locator('[name=rent]').inputValue(),'1999');
     assert.equal(await page.locator('[name=availability]').inputValue(),'available');
+    await page.locator('#tab-details').focus();await page.keyboard.press('ArrowRight');
+    assert.equal(await page.locator('#tab-photos').getAttribute('aria-selected'),'true');
+    await page.keyboard.press('End');assert.equal(await page.locator('#tab-review').getAttribute('aria-selected'),'true');
+    await page.keyboard.press('Home');assert.equal(await page.locator('#tab-details').getAttribute('aria-selected'),'true');
     await panel(page,'description');assert.equal(await page.locator('[name=description]').inputValue(),original.description.join('\n\n'));
     const privateSummary='Private unsaved summary for the real website preview';
     const privateDescription='Private draft description. <script>window.privateInjected=1</script>';
@@ -65,6 +69,12 @@ async function confirmPublish(page){
     await preview.locator('.detail-text').filter({hasText:'Descripción privada'}).waitFor();
     assert.equal(await preview.locator('html').getAttribute('lang'),'es');
     await page.locator('#close-preview').click();
+    await page.route('**/api/admin/session',route=>route.fulfill({status:401,contentType:'application/json',body:JSON.stringify({error:'Sign in required.'})}));
+    await page.locator('#preview').click();
+    await page.locator('#preview-content').filter({hasText:'Sign in again'}).waitFor();
+    assert.equal(await preview.locator('.detail-text').count(),0,'an expired preview session never falls back to public or private listing content');
+    assert.equal((await record(context,server,original.slug)).version,storedBeforePreview.version);
+    await page.locator('#close-preview').click();await page.unroute('**/api/admin/session');
     passed.push('quick edit retains the full draft; real-page preview safely shows unsaved English/Spanish content without saving or exposing it');
 
     const beforeCancel=await record(context,server,original.slug);
@@ -83,6 +93,10 @@ async function confirmPublish(page){
 
     await page.locator('#back').click();await page.locator('#state-filter').selectOption('all');
     await page.locator('#new-property').click();
+    await page.locator('#preview').click();
+    await preview.locator('body[data-preview-ready="true"]').waitFor();
+    assert.equal(await preview.locator('.gallery-count').first().innerText(),'0 / 0');
+    await page.locator('#close-preview').click();
     await page.locator('[name=name]').fill('Admin improvements test');await page.locator('[name=neighborhood]').fill('Test neighborhood');
     await page.locator('[name=rent]').fill('1450');await page.locator('[name=deposit]').fill('1450');
     await panel(page,'photos');

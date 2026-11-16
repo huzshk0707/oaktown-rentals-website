@@ -1,14 +1,14 @@
 # Active task: WEB-ADMIN-EDITOR
 
-- Account / heartbeat: Codex / 2026-11-16 06:11 UTC. Claim valid until 06:41 UTC.
-- Branch: `feat/leslie-admin-editor`; base: `152691e` on `origin/main` (shared handoff documentation only since the prior UI base).
-- Scope and authorization: implement the owner-approved admin improvement review, test and merge. This explicitly supersedes the original proposal-only admin scope. Do not merge unrelated drafts #7 or #10.
-- Existing work: this continuation preserves the in-progress admin source, preview bridge, API snapshot comparison, browser tests and editing documentation. No production mutation or provider change has been performed.
-- Done: new editor sections, truthful live/draft dashboard, upload retries, cover selection, private real-page preview and reviewed publishing implemented. CMS/security 3/3, new admin-improvement suite and mouse/touch photo-order suite pass locally.
-- In progress: desktop/mobile screenshot and accessibility review; final documentation/results. Existing admin browser workflow, public browser and browsing/slideshow regressions also pass.
-- Latest pushed checkpoint: `602b493` (ownership claim). This checkpoint preserves the complete implementation; source and regression suites pass, visual review remains in progress.
-- NEXT STEP: create/update the draft PR, inspect desktop/mobile captures in `docs/admin-improvements/`, fix confirmed visual/a11y issues and record final results in `docs/admin-improvements.md`.
-- Limits: tests use disposable local data; production email-code sign-in and Leslie's hands-on acceptance are not proven by these tests. Keep auth, version checks, private media, production data, migrations and deployment config unchanged. Main merge triggers the existing Cloudflare deployment.
+- Account / heartbeat: Codex / 2026-11-16 06:15 UTC. Implementation complete; claim released with this final checkpoint. Root will perform the owner-authorized merge and read-only deployment verification next.
+- Branch / base / PR: `feat/leslie-admin-editor` / `152691e` / [PR #22](https://github.com/huzshk0707/oaktown-rentals-website/pull/22). Read live PR state before resuming; do not replay a merged change.
+- Scope and authorization: the owner explicitly requested implementation and merge of the admin improvement review. This supersedes the original proposal-only admin scope. Unrelated drafts #7 and #10 are untouched.
+- Last verified pushed checkpoint: `8cc4ccb4dab36dd2b68258b6b60dac8e06a99242`; this final evidence/refinement commit follows it. The live branch/PR identifies the exact newer head.
+- Done: truthful live/draft dashboard, five editor sections, private unsaved real-page EN/ES previews, retryable upload queue, main-photo choice, readiness links and reviewed publishing. Compact editor header, keyboard tabs and expired/empty preview checks completed.
+- Tests: syntax; CMS/security 3/3; admin workflow; improvement suite 6/6 groups; mouse/touch photo-order suite; public browser 48/48 and browsing 24/24. Ten axe scans found zero confirmed violations, with contrast incompletes retained. See [durable evidence](docs/admin-improvements/README.md) and [implementation/results](docs/admin-improvements.md).
+- In progress / unfinished files: none after this checkpoint; final merge/check status is tracked by PR #22. Source, tests and screenshot evidence are complete.
+- NEXT STEP: run `gh pr view 22 --json state,headRefOid,mergeCommit,statusCheckRollup`. If still open, ensure the final head's Cloudflare check passes, mark ready and merge under the existing owner authorization. If merged, verify its main deployment and do not reapply. Then leave real production sign-in/Leslie acceptance as the bounded follow-up.
+- Limits: all mutation tests use disposable local data. No production property records, auth settings, secrets, migrations or deployment configuration were changed. Native Safari/Firefox, screen readers and production email-code sign-in are not proven by local Chromium tests. Main merge triggers the existing Cloudflare deployment.
 
 ---
 

@@ -14,9 +14,24 @@ The only admin-response addition is `publishedProperty`, which lets the editor c
 
 ## Verification
 
-The final review should run syntax and CMS/security checks, the existing admin browser and photo-order suites, the new admin-improvement suite, and public-site regression checks. The new suite exercises live/draft separation, private unsaved bilingual previews, canceled and confirmed publication, per-file upload failure/retry, cover selection, readiness links and narrow mobile controls. All mutation tests must use the disposable local harness; do not run them against production.
+Validation on Node 24 and Chromium passed:
 
-Before merging, inspect desktop and mobile captures for card clarity, section navigation, sticky control clearance, photo management and preview usability. Record actual results in the pull request; these intended checks are not a claim that they have passed. Native phone/browser testing and a hands-on session with Leslie remain useful follow-up validation.
+| Check | Result |
+| --- | --- |
+| `npm run check` | Passed, including private-preview bridge syntax |
+| `npm test` | 3 CMS/security tests passed |
+| `npm run test:admin-browser` | Existing full admin workflow passed |
+| `npm run test:admin-improvements` | 6 groups passed: live/draft isolation; keyboard tabs; unsaved bilingual preview and expired-session recovery; canceled/confirmed publishing; upload retry/cover choice; readiness/mobile actions |
+| `npm run test:photo-order` | Mouse/touch cross-row drag, keyboard ordering, busy-upload locking, captions and draft isolation passed |
+| Public `test:browser` | 48 checks passed |
+| Public `test:browsing` | 24 checks passed, including desktop hover slideshows, mobile gallery behavior, history and rental dock |
+| axe WCAG A/AA | 10 desktop/mobile scans, 0 confirmed violations; incomplete contrast checks retained for manual review |
+
+All writing tests used disposable SQLite/R2 fixtures. No production property writes were used for verification. An independent review found no blocking draft-privacy, authorization or publication defects.
+
+[Before/after screenshots and accessibility findings](admin-improvements/README.md) cover collection cards, details, photo management, private preview and publication review at 1440px and 390px. The editor hides the collection heading while editing so the first field appears higher on mobile. Narrow controls were also exercised at 320px; photo ordering was checked at 320, 390, 768 and 1440px.
+
+Native Safari/Firefox, screen-reader and phone-keyboard acceptance, actual production email-code sign-in, and a hands-on session with Leslie remain follow-up checks. Local fixtures do not prove those results.
 
 ## Deferred
 
