@@ -1,0 +1,96 @@
+[
+  {
+    "view": "desktop-hero-1",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "desktop-hero-2",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "view": "desktop-hero-3",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "view": "desktop-about",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 9
+      }
+    ],
+    "imageCount": 1,
+    "fullBackground": true,
+    "overflow": false
+  },
+  {
+    "view": "phone-hero-1",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-hero-2",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-hero-3",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-about",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 9
+      }
+    ],
+    "imageCount": 1,
+    "fullBackground": true,
+    "overflow": false
+  },
+  {
+    "view": "phone-es-hero-1",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-es-hero-2",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-es-hero-3",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "view": "phone-es-about",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 9
+      }
+    ],
+    "imageCount": 1,
+    "fullBackground": true,
+    "overflow": false
+  }
+]
