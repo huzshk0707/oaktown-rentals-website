@@ -18,6 +18,14 @@ Review Ops Focus Board #70–#73 first; use
 one small review step. This is review priority, not feature merge/deploy approval.
 Website tasks below remain available for separately assigned parallel work.
 
+## Current owner-authorized website task
+
+- [ ] **WEB-ADMIN-EDITOR:** Implement and merge the approved admin improvement review on `feat/leslie-admin-editor`; owner Codex, heartbeat 2026-11-16 06:11 UTC, claim expires 06:41 UTC. See branch HANDOFF and task PR for the current checkpoint.
+  - [x] 1. Live/draft display, five editor sections, private public-page preview.
+  - [x] 2. Per-file retries, main-photo choice, readiness and publishing review.
+  - [ ] 3. Complete regression tests and desktop/mobile visual/accessibility review.
+  - [ ] 4. Commit evidence, mark PR ready, merge this task and verify the existing deployment.
+
 ## P1 — verified content and access before launch
 
 - [ ] **WEB-CONTENT:** Obtain current rent/availability and approved deposit,

@@ -1,3 +1,19 @@
+# Active task: WEB-ADMIN-EDITOR
+
+- Account / heartbeat: Codex / 2026-11-16 06:11 UTC. Claim valid until 06:41 UTC.
+- Branch: `feat/leslie-admin-editor`; base: `152691e` on `origin/main` (shared handoff documentation only since the prior UI base).
+- Scope and authorization: implement the owner-approved admin improvement review, test and merge. This explicitly supersedes the original proposal-only admin scope. Do not merge unrelated drafts #7 or #10.
+- Existing work: this continuation preserves the in-progress admin source, preview bridge, API snapshot comparison, browser tests and editing documentation. No production mutation or provider change has been performed.
+- Done: new editor sections, truthful live/draft dashboard, upload retries, cover selection, private real-page preview and reviewed publishing implemented. CMS/security 3/3, new admin-improvement suite and mouse/touch photo-order suite pass locally.
+- In progress: existing admin/public regression suites; desktop/mobile screenshot and accessibility review; final documentation/results.
+- Latest pushed checkpoint: none for this task yet; this is the ownership-only checkpoint. Immediately checkpoint the existing implementation and open a draft PR.
+- NEXT STEP: commit and normal-push the current task files, create the draft PR from `.github/PULL_REQUEST_TEMPLATE.md`, then inspect `/tmp/oaktown-admin-public.txt`, `/tmp/oaktown-admin-browsing.txt` and `/tmp/oaktown-admin-regression.txt`.
+- Limits: tests use disposable local data; production email-code sign-in and Leslie's hands-on acceptance are not proven by these tests. Keep auth, version checks, private media, production data, migrations and deployment config unchanged. Main merge triggers the existing Cloudflare deployment.
+
+---
+
+## Previous repository landing context
+
 # Handoff
 
 - Last updated: 2026-11-16 00:55 UTC by ravi
