@@ -2,7 +2,9 @@
 (async () => {
   'use strict';
   const DATA = window.OAKTOWN_DATA;
-  await window.OaktownContent.load(DATA);
+  const privatePreview = window.OaktownAdminPreview;
+  if(privatePreview){if(!await privatePreview.load(DATA))return;}
+  else await window.OaktownContent.load(DATA);
   const app = document.getElementById('app');
   const header = document.getElementById('site-header');
   const menu = document.getElementById('menu-button');
@@ -11,8 +13,8 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const navigationMotion = () => reducedMotion.matches || document.documentElement.classList.contains('motion-off') ? 'instant' : 'smooth';
   const P = DATA.properties;
-  let language = 'en';
-  try { if(localStorage.getItem('oaktown-language')==='es')language='es'; } catch {}
+  let language = privatePreview?.language==='es'?'es':'en';
+  if(!privatePreview)try { if(localStorage.getItem('oaktown-language')==='es')language='es'; } catch {}
   let selectedFilter = 'All';
   let collectionLayout = 'grid';
   let currentView = null;
@@ -163,7 +165,7 @@
       <a class="back-link" href="#homes"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg> ${t('detailBack')}</a><span class="eyebrow section-label">${p.neighborhood} / ${p.city}</span><h1>${p.name.replace(' · ', '<br>')}</h1><p class="intro-sub">${localized(p,'summary')}</p><p class="listing-availability">${availabilityBadge(p)}<a href="${inquiryUrl(p)}" aria-label="${t('availability')}: ${p.name}">${t('availability')}</a></p></div><button type="button" class="detail-cover" data-cover-gallery ${image?'':'disabled'} data-photo-error="${t('photoUnavailable')}" aria-label="${image?t('openPhoto'):t('photoUnavailable')}: ${p.name}">${imageEl(image,p.name+' — '+t('photoLabel')+' '+(startPhoto+1),'detail-cover-photo','eager')}<span>${DATA.images[p.imageKey].length} ${t('photosLabel')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5m6 0h5v5M4 15v5h5m6 0h5v-5"/></svg></span></button></section>
     <div class="listing-dock" hidden role="region" aria-label="${t('rentalDetails')}: ${p.name}"><div class="dock-property"><span class="dock-address" title="${p.name}">${p.name}</span><span><strong>${money(p.rent)}</strong> ${t('perMonth')} <span class="dock-specs"> / ${p.bedrooms} ${language==='en'&&p.bedrooms===1?'bed':t('beds')} / ${p.bathrooms} ${t('baths')}</span></span></div><div class="dock-actions"><a class="button-solid" href="${showingUrl(p)}">${t('requestShowing')}</a><a class="text-link" href="${DATA.applicationUrl}" target="_blank" rel="noopener noreferrer">${t('navApply')}</a></div></div>
     <div class="details-bar"><div class="detail-stats"><div class="detail-stat"><strong>${money(p.rent)}</strong><span>${t('rent')}</span></div><div class="detail-stat"><strong>${money(p.deposit)}</strong><span>${t('deposit')}</span></div><div class="detail-stat"><strong>${p.bedrooms}</strong><span>${t('bedrooms')}</span></div><div class="detail-stat"><strong>${p.bathrooms}</strong><span>${t('bathrooms')}</span></div></div><p class="application-guidance">${t('beforeApplying')}</p><div class="detail-actions"><a class="button-solid" href="${showingUrl(p)}">${t('requestShowing')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a><a class="text-link" href="${DATA.applicationUrl}" target="_blank" rel="noopener noreferrer">${t('navApply')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div></div>
-    <section class="gallery" id="gallery"><div class="gallery-heading"><span class="eyebrow section-label">${t('insideLabel')} / ${p.name.toUpperCase()}</span><span class="gallery-count" aria-live="polite">1 / ${DATA.images[p.imageKey].length}</span></div>
+    <section class="gallery" id="gallery"><div class="gallery-heading"><span class="eyebrow section-label">${t('insideLabel')} / ${p.name.toUpperCase()}</span><span class="gallery-count" aria-live="polite">${DATA.images[p.imageKey].length?1:0} / ${DATA.images[p.imageKey].length}</span></div>
       <div class="gallery-main"><button class="gallery-open" aria-label="${t('openPhoto')}" data-open-gallery>${imageEl(image,p.name+' — '+t('photoLabel')+' 1','gallery-active')}<span>${t('openPhoto')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button><div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="${t('previousPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button type="button" data-gallery-step="1" aria-label="${t('nextPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></div>
       <p class="gallery-error" role="status" hidden>${t('galleryError')}</p>
       <div class="gallery-thumbs">${DATA.images[p.imageKey].map((src,i)=>`<button data-gallery-index="${i}" class="${i===0?'active':''}" aria-pressed="${i===0}" aria-label="${t('photoLabel')} ${i+1}">${imageEl(src,p.name+' — '+t('photoLabel')+' '+(i+1),'gallery-thumbnail')}</button>`).join('')}</div>
@@ -423,6 +425,7 @@
     closeMenu();
     onScroll();
     if(!restore)rememberView();
+    privatePreview?.rendered();
   }
   function onScroll() {
     const scroll=document.documentElement.scrollTop;
@@ -433,7 +436,7 @@
   }
   menu.addEventListener('click',()=>{const isOpening=mobileNav.hidden;mobileNav.hidden=!isOpening;menu.setAttribute('aria-expanded',String(isOpening));menu.setAttribute('aria-label',t(isOpening?'closeMenu':'openMenu'));});
   mobileNav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
-  langButton.addEventListener('click',()=>{routeGeneration++;activeTransition?.skipTransition();clearTransitionNames();language=language==='en'?'es':'en';try{localStorage.setItem('oaktown-language',language);}catch{}draw(true)});
+  langButton.addEventListener('click',()=>{routeGeneration++;activeTransition?.skipTransition();clearTransitionNames();language=language==='en'?'es':'en';if(privatePreview)privatePreview.language=language;else try{localStorage.setItem('oaktown-language',language);}catch{}draw(true)});
   app.addEventListener('click',e=>{
     if(e.target.closest('.back-link')&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey)pendingHomeRestore=lastHomeSnapshot;
     const listing=e.target.closest('.property-card a[href^="#home/"]');
@@ -499,5 +502,6 @@
   window.addEventListener('hashchange',routedDraw);
   window.addEventListener('scroll',onScroll,{passive:true});
   document.getElementById('year').textContent=new Date().getFullYear();
+  privatePreview?.onUpdate(()=>{routeGeneration++;activeTransition?.skipTransition();clearTransitionNames();language=privatePreview.language;draw(true);});
   draw();
 })();

@@ -9,6 +9,7 @@
     "test": "node --test tests/cms.test.mjs",
     "test:admin-browser": "node tests/admin-browser.cjs",
     "test:photo-order": "node tests/admin-photo-order.cjs",
+    "test:admin-improvements": "node tests/admin-improvements.cjs",
     "seed": "node scripts/seed-cms.mjs"
   },
   "dependencies": { "jose": "6.2.15" },

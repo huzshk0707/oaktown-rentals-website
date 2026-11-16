@@ -34,7 +34,7 @@ This direction follows the owner's request to lighten the main website while ret
 
 Public refinements are scoped under `body.rental-site` in `brand.css`. Mint Mojo retains its separate design and motion. No production dependencies or new font requests.
 
-Property records, source photographs, gallery ownership/order, public destinations, the CMS, admin and deployment configuration are preserved. Empty or failed CMS responses remain authoritative. Failed photographs have explicit fallback messages.
+Property records, source photographs, gallery ownership/order, public destinations, the CMS architecture and deployment configuration are preserved. Empty or failed CMS responses remain authoritative. Failed photographs have explicit fallback messages. The subsequent owner-approved [admin improvements](docs/admin-improvements.md) refine the private editor while retaining its existing authentication, APIs and draft/publication workflow.
 
 ## Review
 

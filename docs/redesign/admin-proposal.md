@@ -1,5 +1,7 @@
 # Leslie’s property editor — proposal only
 
+Historical proposal from the public-site redesign. The owner subsequently approved implementation; see the [admin improvements](../admin-improvements.md) for the current scope and the [editing guide](../admin-phone-guide.md) for usage.
+
 No admin code, API, schema, storage, or authentication changes are included in this phase.
 
 ## What already works

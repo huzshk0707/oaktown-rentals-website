@@ -23,7 +23,7 @@ async function readLimited(request, max) {
   for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
   return bytes;
 }
-const serialize = row => ({ id:row.id, slug:row.slug, property:JSON.parse(row.draft_json), state:row.state, version:row.version, updatedAt:row.updated_at, publishedAt:row.published_at, unpublishedChanges:row.state==='published' && row.draft_json!==row.published_json });
+const serialize = row => ({ id:row.id, slug:row.slug, property:JSON.parse(row.draft_json), publishedProperty:row.state==='published' && row.published_json?JSON.parse(row.published_json):null, state:row.state, version:row.version, updatedAt:row.updated_at, publishedAt:row.published_at, unpublishedChanges:row.state==='published' && row.draft_json!==row.published_json });
 async function getProperty(db, id) {
   if (!idPattern.test(id)) fail('Property not found.',404);
   const row = await db.prepare('SELECT * FROM properties WHERE id = ?').bind(id).first();

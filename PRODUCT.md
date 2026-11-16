@@ -8,6 +8,6 @@ Facts and constraints confirmed by the redesign brief and existing public reposi
 - Existing Workers, D1, R2 and Cloudflare Access infrastructure; private property administration at `/admin/`. A published property snapshot is authoritative, including an empty collection.
 - Display the original supplied Oaktown logo in both the header and footer. Do not replace it with a text wordmark or redraw it without the owner's explicit instruction. Keep the green brand identity, property descriptions and unit-specific photographs. No invented availability, rent, deposits, amenities, testimonials or trust metrics.
 - The Rooted in Louisville section uses one authentic Louisville city photograph as its full-section background, with text over a localized light tint and visible source/license attribution, rather than a collage of rental-property photographs.
-- This phase redesigns public presentation only. Admin work is a proposal. No production data, authentication, secrets, migrations or deployment configuration changes.
+- The owner approved implementing the admin usability review: clearer live/draft information, a shorter editor, easier photo management, private previews and reviewed publishing. Preserve the existing CMS architecture and public behavior. No production data, authentication, secrets, migrations or deployment configuration changes.
 - Review on a separate branch and pull request. Production deployment and merging require the owner's approval.
 - The existing preview is noindex/nofollow. Launch indexing is a separate decision.
