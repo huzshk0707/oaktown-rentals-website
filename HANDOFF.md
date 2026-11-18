@@ -1,3 +1,5 @@
+WEB-HERO gallery follow-up on PR #23. Codex claims the existing branch at 23:58 UTC until 00:28 UTC. NEXT STEP: wire thumbnail playback to both property viewers and test.
+
 # WEB-HERO — premium public hero and buttons
 
 [Draft PR #23](https://github.com/huzshk0707/oaktown-rentals-website/pull/23) on `codex/oaktown-hero`, base c348396. Codex releases the implementation claim. The centered three-scene hero, public action buttons and green/ivory palette are ready for visual review. Desktop, mobile and narrow Spanish captures are in docs/hero-refresh. Syntax, CMS, public browser, opening, audit and design checks passed. NEXT STEP: review the screenshots and draft PR with the owner.
