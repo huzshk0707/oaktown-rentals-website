@@ -1,6 +1,6 @@
 # WEB-HERO — premium public hero and buttons
 
-Codex owns `codex/oaktown-hero` from 2026-11-18 23:47 UTC to 00:17 UTC. Base c348396. NEXT STEP: inspect Bethune Lofts, adapt the three existing hero scenes and buttons in brand.css, then verify responsive bilingual layouts. Draft for review.
+[Draft PR #23](https://github.com/huzshk0707/oaktown-rentals-website/pull/23) on `codex/oaktown-hero`, base c348396. Codex releases the implementation claim. The centered three-scene hero, public action buttons and green/ivory palette are ready for visual review. Desktop, mobile and narrow Spanish captures are in docs/hero-refresh. Syntax, CMS, public browser, opening, audit and design checks passed. NEXT STEP: review the screenshots and draft PR with the owner.
 
 # Active task: WEB-ADMIN-EDITOR
 
