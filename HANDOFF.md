@@ -1,3 +1,7 @@
+# WEB-HERO — premium public hero and buttons
+
+Codex owns `codex/oaktown-hero` from 2026-11-18 23:47 UTC to 00:17 UTC. Base c348396. NEXT STEP: inspect Bethune Lofts, adapt the three existing hero scenes and buttons in brand.css, then verify responsive bilingual layouts. Draft for review.
+
 # Active task: WEB-ADMIN-EDITOR
 
 - Account / heartbeat: Codex / 2026-11-16 06:15 UTC. Implementation complete; claim released with this final checkpoint. Root will perform the owner-authorized merge and read-only deployment verification next.
