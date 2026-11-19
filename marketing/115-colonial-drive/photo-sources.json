@@ -1,0 +1,91 @@
+{
+  "source": "data.js",
+  "property": "115-colonial-drive",
+  "note": "Source URLs only. Photos must be downloaded and visually reviewed before assigning scenes.",
+  "photos": [
+    {
+      "id": 1,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 2,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509846-SNZGCPNKYQ7QMCEXZW5C/2.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 3,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445511140-T3GW4E21V9YOTWU89APR/3.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 4,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445511143-83ORN69V1QHGBSEGABKQ/4.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 5,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445512339-AOJHBEQA280HEJ3NKLPA/5.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 6,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445512483-LDQPV6Y50DUA335OU87O/6.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 7,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445513565-U6OHBZ5VT9X1IH1JAIS9/7.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 8,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445513725-EG1QG0Q20E6E5P6WMFLM/8.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 9,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445515031-SN1OHU8GVXW1KBLUPF41/9.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 10,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445515146-ZOQM0AC3V4G6VHVLLZ87/10.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 11,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445516371-UD7B70HO2LUXM516L0T4/11.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 12,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445516460-EA498EPBCL347VRQ99MV/12.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 13,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445517546-MMFNX0365U8853P7AE6X/13.webp",
+      "localFile": null,
+      "reviewed": false
+    },
+    {
+      "id": 14,
+      "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445517849-TR3NL868MNLOD5TLNEI2/14.webp",
+      "localFile": null,
+      "reviewed": false
+    }
+  ]
+}
