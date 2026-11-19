@@ -1,4 +1,4 @@
-WEB-HERO gallery follow-up on PR #23. Codex claims the existing branch at 23:58 UTC until 00:28 UTC. NEXT STEP: wire thumbnail playback to both property viewers and test.
+WEB-HERO gallery follow-up complete on draft PR #23. Codex releases the branch claim. Scoped thumbnail timers are shared by the listing and vacation galleries. Playback, browsing, public, vacation, admin browser and CMS checks passed. NEXT STEP: review the property-slideshow screenshot and preview.
 
 # WEB-HERO — premium public hero and buttons
 

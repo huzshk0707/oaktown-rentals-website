@@ -745,3 +745,60 @@ body.rental-site {
   body.rental-site .story-topline { top: 86px; }
 }
 body.rental-site .story-empty { color: var(--paper); }
+
+/* One filmstrip follows the photograph into the expanded viewer. */
+.photo-playback {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 12px;
+  padding-block: 10px;
+}
+.photo-playback .gallery-thumbs {
+  flex: 1;
+  min-width: 0;
+  padding: 2px;
+}
+.photo-playback .gallery-thumbs button {
+  position: relative;
+  overflow: hidden;
+  width: clamp(76px, 8vw, 112px);
+  height: auto;
+  aspect-ratio: 3 / 2;
+  border: 2px solid transparent;
+}
+.photo-playback .gallery-thumbs button.active { border-color: currentColor; }
+.photo-track {
+  position: absolute;
+  inset: auto 5px 5px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #14231cc9;
+  display: none;
+}
+.active > .photo-track { display: block; }
+.photo-fill {
+  display: block;
+  height: 100%;
+  background: white;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.photo-playback button[data-playback] {
+  width: auto;
+  height: auto;
+  min-height: 44px;
+  min-width: 64px;
+  padding: 6px 12px;
+  border: 1px solid currentColor;
+  border-radius: 24px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+body.rental-site .lightbox[open] { grid-template-rows: auto minmax(0, 1fr) auto auto; }
+.mint-lightbox .photo-playback { flex-shrink: 0; }
+.motion-off .photo-track, .photo-playback:has(.gallery-thumbs button:only-child) .photo-track { display: none; }

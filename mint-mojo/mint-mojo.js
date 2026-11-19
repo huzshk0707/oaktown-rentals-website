@@ -52,6 +52,7 @@
   ];
   let language = 'en';
   try { if (localStorage.getItem('oaktown-language') === 'es') language = 'es'; } catch {}
+  let galleryPlayback;
   let photoIndex = 0, sceneIndex = 0, cleanupEffects = () => {}, inquiryObserver;
   const c = key => copy[language][key];
   const caption = p => p[language === 'es' ? 2 : 1];
@@ -70,6 +71,7 @@
     const oldSection = [...main.children].find(el => el.getBoundingClientRect().bottom > 110);
     const oldTop = oldSection?.getBoundingClientRect().top;
     const oldId = oldSection?.id;
+    galleryPlayback?.destroy();
     cleanupEffects(); inquiryObserver?.disconnect();
     main.querySelector('dialog[open]')?.close();
     document.documentElement.lang = language;
@@ -91,10 +93,16 @@
       <section class="mint-section mint-island" id="island"><figure>${image('canal-dock',caption(photos[3]),1440,939,'class="mint-island-main"')}${image('snorkeling',language==='en'?'Snorkelers in the clear water of the Keys':'Personas haciendo esnórquel en los Cayos',480,640,'class="mint-island-small"')}<figcaption>${c('islandCaption')}</figcaption></figure><div><span class="mint-eyebrow">${c('islandLabel')}</span><h2>${c('islandTitle')}</h2><p>${c('islandCopy')}</p><p class="mint-activity-note">${c('activityNote')}</p></div></section>
       <section class="mint-section mint-inquiry" id="inquire"><div class="mint-inquiry-copy"><span class="mint-eyebrow">${c('inquiryLabel')}</span><h2>${c('inquiryTitle')}</h2><p>${c('inquiryCopy')}</p><div class="mint-contact-links"><a href="sms:+15025001070?body=${encodeURIComponent(language==='en'?'Hi, I’d like to ask about a stay at The Mint Mojo in Cudjoe Key.':'Hola, quisiera consultar una estancia en The Mint Mojo, Cudjoe Key.')}">${c('textUs')} ${arrow}</a><a href="tel:+15025001070">(502) 500-1070 ${arrow}</a><a href="mailto:joejrandles@yahoo.com">joejrandles@yahoo.com ${arrow}</a></div></div><form class="mint-date-form"><h3>${c('formTitle')}</h3><div class="mint-date-fields"><label for="mint-arrival">${c('arrival')}<input id="mint-arrival" name="arrival" type="date" required></label><label for="mint-departure">${c('departure')}<input id="mint-departure" name="departure" type="date" required></label></div><button class="mint-button" type="submit">${c('prepareEmail')} ${arrow}</button><p class="mint-form-note">${c('formNote')}</p><p class="mint-inquiry-ready" hidden role="status">${c('ready')}<br><a data-inquiry-email href="mailto:joejrandles@yahoo.com">${c('emailInquiry')}</a> · <a data-inquiry-text href="sms:+15025001070">${c('textInquiry')}</a></p></form></section>
       <section class="mint-section mint-faq" id="questions"><div><span class="mint-eyebrow">${c('faqLabel')}</span><h2>${c('faqTitle')}</h2></div><div>${c('faq').map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></section>
-      <dialog class="mint-lightbox" aria-label="${c('galleryName')}"><div class="mint-lightbox-top"><strong>The Mint Mojo</strong><button type="button" class="mint-lightbox-close" data-close-photo>${c('closeGallery')} <span aria-hidden="true">×</span></button></div><div class="mint-lightbox-visual"><img alt=""><p class="mint-gallery-error" hidden>${c('photoError')}</p></div><div class="mint-lightbox-bottom"><button type="button" data-photo-step="-1" aria-label="${c('previousPhoto')}">←</button><p class="mint-gallery-caption" aria-live="polite" aria-atomic="true"></p><button type="button" data-photo-step="1" aria-label="${c('nextPhoto')}">→</button></div></dialog>`;
+      <dialog class="mint-lightbox" aria-label="${c('galleryName')}"><div class="mint-lightbox-top"><strong>The Mint Mojo</strong><button type="button" class="mint-lightbox-close" data-close-photo>${c('closeGallery')} <span aria-hidden="true">×</span></button></div><div class="mint-lightbox-visual"><img alt=""><p class="mint-gallery-error" hidden>${c('photoError')}</p></div><div class="photo-playback"><button type="button" data-playback hidden></button><div class="gallery-thumbs">${photos.map((photo,i) => `<button type="button" data-mint-thumb="${i}" aria-label="${escape(caption(photo))}">${image(photo[0],'',photo[3],photo[4])}<span class="photo-track" aria-hidden="true"><i class="photo-fill"></i></span></button>`).join('')}</div></div><div class="mint-lightbox-bottom"><button type="button" data-photo-step="-1" aria-label="${c('previousPhoto')}">←</button><p class="mint-gallery-caption" aria-live="polite" aria-atomic="true"></p><button type="button" data-photo-step="1" aria-label="${c('nextPhoto')}">→</button></div></dialog>`;
     main.querySelector('[name=arrival]').value = arrival;
     main.querySelector('[name=departure]').value = departure;
     syncDates(); setScene(sceneIndex);
+    const dialog = main.querySelector('dialog');
+    galleryPlayback = window.OaktownEffects.mountSlideshow({
+      strip: dialog.querySelector('.gallery-thumbs'), surface: dialog.querySelector('.mint-lightbox-visual'), dialog, language,
+      currentImage: () => dialog.querySelector('.mint-lightbox-visual img'),
+      advance: () => showPhoto(photoIndex + 1)
+    });
     cleanupEffects = window.OaktownEffects.mount(main,{t:c});
     inquiryObserver = new IntersectionObserver(entries => {
       for (const entry of entries) document.body.classList.toggle(entry.target.id==='stay'?'mint-hero-visible':'mint-inquiry-visible',entry.isIntersecting);
@@ -118,9 +126,10 @@
   function showPhoto(index) {
     photoIndex = (index + photos.length) % photos.length;
     const p = photos[photoIndex], dialog = main.querySelector('dialog');
-    const img = dialog.querySelector('img');
+    const img = dialog.querySelector('.mint-lightbox-visual img');
     dialog.querySelector('.mint-gallery-error').hidden = true;
     img.src = asset(p[0]); img.alt = caption(p);
+    galleryPlayback.select(photoIndex);
     dialog.querySelector('.mint-gallery-caption').textContent = `${photoIndex+1} ${c('photosOf')} ${photos.length} — ${caption(p)}`;
   }
   function tomorrowAfter(value) {
@@ -159,14 +168,16 @@
     if (scene) setScene(Number(scene.dataset.mintScene));
     const opener = event.target.closest('[data-open-photo]');
     if (opener) {
-      showPhoto(Number(opener.dataset.openPhoto));
       main.querySelector('dialog').showModal();
+      showPhoto(Number(opener.dataset.openPhoto));
     }
+    const thumb = event.target.closest('[data-mint-thumb]');
+    if (thumb) showPhoto(Number(thumb.dataset.mintThumb));
     const step = event.target.closest('[data-photo-step]');
     if (step) showPhoto(photoIndex+Number(step.dataset.photoStep));
     if (event.target.closest('[data-close-photo]')) main.querySelector('dialog').close();
   });
-  main.addEventListener('error',event => {if (event.target.matches('.mint-lightbox img')) main.querySelector('.mint-gallery-error').hidden=false;},true);
+  main.addEventListener('error',event => {if (event.target.matches('.mint-lightbox-visual img')) main.querySelector('.mint-gallery-error').hidden=false;},true);
   let touchStart;
   main.addEventListener('touchstart',event => {
     if (event.target.closest('.mint-lightbox-visual')) touchStart={x:event.touches[0].clientX,y:event.touches[0].clientY};

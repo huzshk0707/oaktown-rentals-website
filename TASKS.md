@@ -6,7 +6,7 @@ provisional; do not guess facts or treat this list as publication permission.
 
 ### Public design draft
 
-- [x] WEB-HERO: Implement and test the Bethune-inspired hero and buttons. [PR #23](https://github.com/huzshk0707/oaktown-rentals-website/pull/23) awaits visual review.
+- [x] WEB-HERO: Implement and test the Bethune-inspired hero, buttons and timed property galleries. [PR #23](https://github.com/huzshk0707/oaktown-rentals-website/pull/23) awaits visual review.
 
 ## P0 — reliable shared continuation
 
