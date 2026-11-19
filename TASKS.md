@@ -4,6 +4,10 @@ Prioritized from main code, README launch checklist and current PRs on 2026-11-1
 No open GitHub issues were returned at this inspection. Product priorities are
 provisional; do not guess facts or treat this list as publication permission.
 
+### Public design draft
+
+- [x] WEB-HERO: Implement and test the Bethune-inspired hero, buttons and timed property galleries. [PR #23](https://github.com/huzshk0707/oaktown-rentals-website/pull/23) awaits visual review.
+
 ## P0 — reliable shared continuation
 
 - [x] **WEB-HANDOFF:** Shared protocol, account starts and PR template completed;

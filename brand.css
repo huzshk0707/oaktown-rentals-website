@@ -671,3 +671,134 @@ body.rental-site {
     & .story-shade { background:linear-gradient(180deg,transparent 0%,#fffefb0a 14%,#fffefbcc 26%,#fffefbdb 58%,#fffefbc7 100%); }
   }
 }
+
+/* Photo-led opening. The lower shade anchors the type across all three scenes. */
+body.rental-site {
+  --paper: #faf7ef;
+  --surface: #ece8dd;
+  --brand-deep: #102f23;
+  --hero-accent: #e7edce;
+
+  & .story-image img { scale: 1.035; }
+  & .story-shade {
+    background: linear-gradient(to bottom, transparent 12%, rgb(10 32 23 / .12) 30%,
+      rgb(10 32 23 / .70) 56%, rgb(10 32 23 / .84) 100%);
+  }
+  & .story-copy {
+    position: absolute;
+    inset: auto var(--side) clamp(108px, 14svh, 160px);
+    width: auto;
+    text-align: center;
+  }
+  & .story-title {
+    max-width: none;
+    color: var(--paper);
+    margin: 0 auto 14px;
+    line-height: .97;
+  }
+  & .story-title em { color: var(--hero-accent); }
+  & .story-description { margin-inline: auto; color: var(--paper); max-width: 46ch; }
+  & .story-actions { justify-content: center; margin-top: 20px; }
+  & .story-scene .eyebrow { display: none; }
+  & .story-caption, & .story-caption span, & .scene-navigation button,
+  & .scene-navigation button[aria-pressed=true] { color: var(--paper); }
+  & .scene-navigation button { border-color: #faf7ef70; }
+  & .scene-navigation button span:first-child { color: var(--hero-accent); }
+  & .scene-navigation button i { background: var(--hero-accent); }
+  & .story-topline > span { background: var(--paper); padding: 5px 10px; }
+  & :is(.nav-apply, .button-solid, .story-explore, .property-details-line a, .mobile-actions a) {
+    border-radius: 999px;
+  }
+  & .story-explore {
+    gap: 18px;
+    padding: 4px 5px 4px 22px;
+    border: 1px solid var(--paper);
+    background: var(--paper);
+    color: var(--brand-deep);
+    min-height: 48px;
+  }
+  & .story-explore > span:first-child { font-size: 14px; text-transform: none; letter-spacing: .01em; }
+  & .story-action-orbit { width: 36px; height: 36px; }
+  & .story-action-orbit .icon { width: 18px; height: 18px; }
+  & .story :focus-visible { outline: 3px solid var(--paper); outline-offset: 4px; }
+}
+
+@media (min-width: 851px) {
+  html[lang] body.rental-site .story-title { font-size: clamp(76px, min(9.6vw, 15svh), 158px); }
+  body.rental-site .story-title em { display: inline; }
+}
+
+@media (max-width: 850px) {
+  html[lang] body.rental-site .story-title { font-size: clamp(52px, 15vw, 100px); }
+  body.rental-site .story-copy { bottom: clamp(98px, 15svh, 140px); }
+  body.rental-site .story-description { max-width: 33ch; text-wrap: balance; }
+  body.rental-site .story-shade {
+    background: linear-gradient(to bottom, transparent 12%, rgb(10 32 23 / .32) 36%,
+      rgb(10 32 23 / .79) 60%, rgb(10 32 23 / .87));
+  }
+}
+
+@media (max-width: 850px) and (max-height: 640px) {
+  html[lang] body.rental-site .story-title { font-size: clamp(40px, 11vw, 58px); }
+  body.rental-site .story-actions { margin-top: 12px; }
+  body.rental-site .story-copy { bottom: 88px; }
+  body.rental-site .story-topline { top: 86px; }
+}
+body.rental-site .story-empty { color: var(--paper); }
+
+/* One filmstrip follows the photograph into the expanded viewer. */
+.photo-playback {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 12px;
+  padding-block: 10px;
+}
+.photo-playback .gallery-thumbs {
+  flex: 1;
+  min-width: 0;
+  padding: 2px;
+}
+.photo-playback .gallery-thumbs button {
+  position: relative;
+  overflow: hidden;
+  width: clamp(76px, 8vw, 112px);
+  height: auto;
+  aspect-ratio: 3 / 2;
+  border: 2px solid transparent;
+}
+.photo-playback .gallery-thumbs button.active { border-color: currentColor; }
+.photo-track {
+  position: absolute;
+  inset: auto 5px 5px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #14231cc9;
+  display: none;
+}
+.active > .photo-track { display: block; }
+.photo-fill {
+  display: block;
+  height: 100%;
+  background: white;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.photo-playback button[data-playback] {
+  width: auto;
+  height: auto;
+  min-height: 44px;
+  min-width: 64px;
+  padding: 6px 12px;
+  border: 1px solid currentColor;
+  border-radius: 24px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+body.rental-site .lightbox[open] { grid-template-rows: auto minmax(0, 1fr) auto auto; }
+.mint-lightbox .photo-playback { flex-shrink: 0; }
+.motion-off .photo-track, .photo-playback:has(.gallery-thumbs button:only-child) .photo-track { display: none; }

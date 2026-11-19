@@ -20,6 +20,7 @@
   let currentView = null;
   let currentGalleryIndex = 0;
   let observer;
+  let galleryPlayback;
   let cleanupEffects = () => {};
   let touchStart = null;
   let pendingPhoto = null;
@@ -168,7 +169,7 @@
     <section class="gallery" id="gallery"><div class="gallery-heading"><span class="eyebrow section-label">${t('insideLabel')} / ${p.name.toUpperCase()}</span><span class="gallery-count" aria-live="polite">${DATA.images[p.imageKey].length?1:0} / ${DATA.images[p.imageKey].length}</span></div>
       <div class="gallery-main"><button class="gallery-open" aria-label="${t('openPhoto')}" data-open-gallery>${imageEl(image,p.name+' — '+t('photoLabel')+' 1','gallery-active')}<span>${t('openPhoto')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button><div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="${t('previousPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button type="button" data-gallery-step="1" aria-label="${t('nextPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></div>
       <p class="gallery-error" role="status" hidden>${t('galleryError')}</p>
-      <div class="gallery-thumbs">${DATA.images[p.imageKey].map((src,i)=>`<button data-gallery-index="${i}" class="${i===0?'active':''}" aria-pressed="${i===0}" aria-label="${t('photoLabel')} ${i+1}">${imageEl(src,p.name+' — '+t('photoLabel')+' '+(i+1),'gallery-thumbnail')}</button>`).join('')}</div>
+      <div class="photo-playback"><button type="button" data-playback hidden></button><div class="gallery-thumbs">${DATA.images[p.imageKey].map((src,i)=>`<button data-gallery-index="${i}" class="${i===0?'active':''}" aria-pressed="${i===0}" aria-label="${t('photoLabel')} ${i+1}">${imageEl(src,p.name+' — '+t('photoLabel')+' '+(i+1),'gallery-thumbnail')}<span class="photo-track" aria-hidden="true"><i class="photo-fill"></i></span></button>`).join('')}</div></div>
       <dialog class="lightbox" aria-label="${p.name} — ${t('photosLabel')}"><div class="lightbox-top"><span>${p.name}</span><button data-close-gallery autofocus aria-label="${t('closePhoto')}">×</button></div><div class="lightbox-image"><img alt=""><p class="gallery-error" hidden>${t('galleryError')}</p></div><div class="lightbox-bottom"><button data-gallery-step="-1" aria-label="${t('previousPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><span class="gallery-count" aria-live="polite"></span><button data-gallery-step="1" aria-label="${t('nextPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></dialog>
     </section>
     <section class="detail-body"><div class="reveal"><div class="eyebrow section-label">${t('aboutThis')}</div><h2>${localized(p,'label')}</h2></div><div class="detail-text reveal">${localized(p,'description').map(s=>`<p>${s}</p>`).join('')}</div></section>
@@ -351,12 +352,10 @@
     const p=P.find(x=>'detail:'+x.slug===currentView);if(!p)return;
     const imgs=DATA.images[p.imageKey];if(!imgs.length)return;currentGalleryIndex=(currentGalleryIndex+step+imgs.length)%imgs.length;
     const src=imageUrl(imgs[currentGalleryIndex],1500), alt=DATA.photoAlts?.[imgs[currentGalleryIndex]]||p.name+' — '+t('photoLabel')+' '+(currentGalleryIndex+1);
-    app.querySelectorAll('.gallery-active, .detail-cover-photo, .lightbox[open] .lightbox-image img').forEach(img=>{img.removeAttribute('srcset');img.src=src;img.alt=alt;});
+    app.querySelectorAll('.gallery-active, .detail-cover-photo, .lightbox[open] .lightbox-image img').forEach(img=>{img.classList.remove('image-unavailable');img.removeAttribute('srcset');img.src=src;img.alt=alt;});
     app.querySelectorAll('.gallery-error').forEach(el=>el.hidden=true);
     app.querySelectorAll('.gallery-count').forEach(el=>el.textContent=(currentGalleryIndex+1)+' / '+imgs.length);
-    app.querySelectorAll('[data-gallery-index]').forEach(b=>{const active=Number(b.dataset.galleryIndex)===currentGalleryIndex;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
-    const active=app.querySelector('[data-gallery-index="'+currentGalleryIndex+'"]');
-    if(active)active.parentElement.scrollTo({left:active.offsetLeft-active.parentElement.offsetLeft,behavior:'instant'});
+    galleryPlayback?.select(currentGalleryIndex);
     rememberView();
   }
   function closeGallery() {
@@ -389,6 +388,8 @@
     const readingIndex=readingSection?[...app.children].indexOf(readingSection):-1;
     const readingTop=readingSection?.getBoundingClientRect().top;
     if(shouldRender){
+      galleryPlayback?.destroy();
+      galleryPlayback = null;
       cleanupEffects();closeGallery();
       currentView=view;if(!preservePosition)currentGalleryIndex=restore&&p?Math.min(Math.max(0,Number(restore.galleryIndex)||0),Math.max(0,DATA.images[p.imageKey].length-1)):p&&pendingPhoto?.slug===p.slug?pendingPhoto.index:0;
       pendingPhoto=null;
@@ -397,6 +398,15 @@
       if(restore){observer?.disconnect();app.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'));}
       else observeSections();
       if(!p)activateFilter(selectedFilter);
+      if (p) {
+        const dialog = app.querySelector('.lightbox');
+        galleryPlayback = window.OaktownEffects.mountSlideshow({
+          strip: app.querySelector('.gallery-thumbs'), surface: app.querySelector('.gallery-main'), dialog, language,
+          currentImage: () => dialog.open ? dialog.querySelector('.lightbox-image img') : app.querySelector('.gallery-active'),
+          advance: () => galleryStep(1)
+        });
+        galleryPlayback.select(currentGalleryIndex);
+      }
       if(p&&(preservePosition||currentGalleryIndex))galleryStep(0);
       cleanupEffects=window.OaktownEffects.mount(app,{t});
       if(p&&!preservePosition){const heading=app.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}
@@ -469,7 +479,7 @@
     if(!e.target.matches('img'))return;
     e.target.classList.add('image-unavailable');
     if(e.target.matches('.gallery-active'))app.querySelector('.gallery > .gallery-error').hidden=false;
-    if(e.target.closest('.lightbox'))app.querySelector('.lightbox .gallery-error').hidden=false;
+    if(e.target.matches('.lightbox-image img'))app.querySelector('.lightbox .gallery-error').hidden=false;
   },true);
   app.addEventListener('load',e=>{if(e.target.matches('img'))e.target.classList.remove('image-unavailable');},true);
   app.addEventListener('touchstart',e=>{if(e.target.closest('.gallery-main,.lightbox-image'))touchStart={x:e.touches[0].clientX,y:e.touches[0].clientY};},{passive:true});

@@ -1,3 +1,9 @@
+WEB-HERO gallery follow-up complete on draft PR #23. Codex releases the branch claim. Scoped thumbnail timers are shared by the listing and vacation galleries. Playback, browsing, public, vacation, admin browser and CMS checks passed. NEXT STEP: review the property-slideshow screenshot and preview.
+
+# WEB-HERO — premium public hero and buttons
+
+[Draft PR #23](https://github.com/huzshk0707/oaktown-rentals-website/pull/23) on `codex/oaktown-hero`, base c348396. Codex releases the implementation claim. The centered three-scene hero, public action buttons and green/ivory palette are ready for visual review. Desktop, mobile and narrow Spanish captures are in docs/hero-refresh. Syntax, CMS, public browser, opening, audit and design checks passed. NEXT STEP: review the screenshots and draft PR with the owner.
+
 # Active task: WEB-ADMIN-EDITOR
 
 - Account / heartbeat: Codex / 2026-11-16 06:15 UTC. Implementation complete; claim released with this final checkpoint. Root will perform the owner-authorized merge and read-only deployment verification next.

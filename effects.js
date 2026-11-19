@@ -21,6 +21,71 @@
   };
   setRoot();
   window.OaktownEffects = {
+    // Use one animation as both the visible progress bar and the advance clock.
+    mountSlideshow({strip, surface, dialog, currentImage, advance, language}) {
+      const holder = strip.parentElement;
+      const inlineParent = holder.parentElement;
+      const toggle = holder.querySelector('[data-playback]');
+      const events = new AbortController();
+      const options = {signal: events.signal};
+      let animation;
+      let inView = false;
+      let userPaused = false;
+
+      function sync() {
+        const motion = enabled();
+        toggle.hidden = !motion || strip.children.length < 2;
+        const labels = language === 'es' ? ['Pausar', 'Reproducir'] : ['Pause', 'Play'];
+        toggle.textContent = labels[Number(userPaused)];
+        toggle.setAttribute('aria-label', toggle.textContent + (language === 'es' ? ' presentación' : ' slideshow'));
+        if (!animation) return;
+        const img = currentImage();
+        const ready = img?.complete && img.naturalWidth > 0;
+        const visible = dialog.open || (inlineParent !== dialog && inView);
+        if (motion && ready && visible && !document.hidden && !userPaused) animation.play();
+        else animation.pause();
+      }
+
+      function select(index) {
+        animation?.cancel();
+        animation = null;
+        if (inlineParent !== dialog) {
+          const parent = dialog.open ? dialog : inlineParent;
+          if (holder.parentElement !== parent) parent.insertBefore(holder, dialog.open ? dialog.lastElementChild : dialog);
+        }
+        const active = strip.children[index];
+        if (!active) return;
+        for (const button of strip.children) {
+          button.classList.toggle('active', button === active);
+          button.setAttribute('aria-pressed', String(button === active));
+        }
+        // Scroll the filmstrip only. Moving the page would interrupt reading.
+        strip.scrollLeft += active.getBoundingClientRect().left - strip.getBoundingClientRect().left
+          - (strip.clientWidth - active.offsetWidth) / 2;
+        if (strip.children.length > 1) {
+          animation = active.querySelector('.photo-fill').animate(
+            [{transform:'scaleX(0)'}, {transform:'scaleX(1)'}], {duration:6000, fill:'both'}
+          );
+          animation.pause();
+          animation.onfinish = advance;
+        }
+        sync();
+      }
+      const observer = new IntersectionObserver(([entry]) => {
+        inView = entry.intersectionRatio >= 0.25;
+        sync();
+      }, {threshold:0.25});
+      observer.observe(surface);
+      const prefs = new MutationObserver(sync);
+      prefs.observe(document.documentElement, {attributes:true, attributeFilter:['class']});
+      document.addEventListener('visibilitychange', sync, options);
+      document.addEventListener('load', event => { if (event.target === currentImage()) sync(); }, {...options, capture:true});
+      toggle.addEventListener('click', () => { userPaused = !userPaused; sync(); }, options);
+      dialog.addEventListener('close', () => select([...strip.children].findIndex(button => button.classList.contains('active'))), options);
+      return {select, destroy() {
+        events.abort(); observer.disconnect(); prefs.disconnect(); animation?.cancel();
+      }};
+    },
     mount(root, {t}) {
       const events = new AbortController();
       const on = (target, name, fn, options={}) => target?.addEventListener(name, fn, {...options, signal:events.signal});
