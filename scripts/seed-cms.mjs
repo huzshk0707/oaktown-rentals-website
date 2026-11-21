@@ -9,7 +9,7 @@ let order=Date.now();
 const statements=['-- Explicit one-time import. Existing IDs are preserved; existing rows are never overwritten.'];
 for(const record of data.properties){
   const now=new Date(order++).toISOString();
-  const property=validateProperty({...record,availability:'unknown',photos:data.images[record.imageKey].map((url,i)=>({url,alt:record.name+' — photo '+(i+1)}))},true);
+  const property=validateProperty({...record,availability:record.availability || 'unknown',photos:data.images[record.imageKey].map((url,i)=>({url,alt:record.name+' — photo '+(i+1)}))},true);
   const value=JSON.stringify(property);
   statements.push(`INSERT OR IGNORE INTO properties (id,slug,draft_json,published_json,state,version,created_at,updated_at,published_at) VALUES (${[record.slug,record.slug,value,value,'published'].map(quote).join(',')},1,${[now,now,now].map(quote).join(',')});`);
 }

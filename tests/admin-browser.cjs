@@ -18,7 +18,7 @@ async function publish(page){
     await page.goto(server.base+'/admin/');await page.locator('.listing').first().waitFor();assert.equal(await page.locator('.listing').count(),4);
     await page.locator('.listing').filter({hasText:'115 Colonial Drive'}).getByRole('button',{name:'Edit listing'}).click();
     await page.locator('[name=rent]').fill('1899');await page.getByRole('button',{name:'Save draft',exact:true}).click();await page.locator('#notice').filter({hasText:'Draft saved'}).waitFor();
-    let publicData=await (await fetch(server.base+'/api/properties')).json();assert.equal(publicData.properties.find(p=>p.slug==='115-colonial-drive').rent,1799);
+    let publicData=await (await fetch(server.base+'/api/properties')).json();assert.equal(publicData.properties.find(p=>p.slug==='115-colonial-drive').rent,1699);
     await publish(page);
     publicData=await (await fetch(server.base+'/api/properties')).json();assert.equal(publicData.properties.find(p=>p.slug==='115-colonial-drive').rent,1899);
     await page.goto(server.base+'/#home/115-colonial-drive');await page.locator('.detail-stat').first().waitFor();assert.match(await page.locator('.detail-stat').first().innerText(),/1,899/);

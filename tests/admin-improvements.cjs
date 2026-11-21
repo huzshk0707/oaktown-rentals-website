@@ -29,12 +29,12 @@ async function confirmPublish(page){
     await getRow('115 Colonial Drive').getByRole('button',{name:'Edit listing',exact:true}).click();
     await page.locator('[name=rent]').fill('1999');await page.locator('[name=availability]').selectOption('available');
     await page.locator('#save').click();await notice(page,'Draft saved');
-    assert.equal((await publicProperties(server)).find(p=>p.slug===original.slug).rent,1799);
+    assert.equal((await publicProperties(server)).find(p=>p.slug===original.slug).rent,1699);
     await page.locator('#back').click();
     const row=getRow('115 Colonial Drive');
-    assert.match(await row.locator('.listing-bottom strong').innerText(),/1,799/,'the dashboard primary rent represents the actual live snapshot');
+    assert.match(await row.locator('.listing-bottom strong').innerText(),/1,699/,'the dashboard primary rent represents the actual live snapshot');
     assert.ok(await row.locator('.draft-delta').isVisible(),'saved private edits are clearly marked');
-    assert.equal((await record(context,server,original.slug)).publishedProperty.rent,1799);
+    assert.equal((await record(context,server,original.slug)).publishedProperty.rent,1699);
     await page.locator('#state-filter').selectOption('changes');assert.equal(await page.locator('.listing').count(),1);
     await page.screenshot({path:'/tmp/admin-improvements-dashboard.png'});
     passed.push('dashboard separates live values from saved draft changes and filters needs-publishing records');
@@ -79,10 +79,10 @@ async function confirmPublish(page){
 
     const beforeCancel=await record(context,server,original.slug);
     await page.locator('#publish').click();await page.locator('#publish-dialog').waitFor({state:'visible'});
-    const summary=await page.locator('#publish-summary').innerText();assert.ok(summary.includes('1,799'));assert.ok(summary.includes('1,999'));
+    const summary=await page.locator('#publish-summary').innerText();assert.ok(summary.includes('1,699'));assert.ok(summary.includes('1,999'));
     await page.locator('#cancel-publish').click();
     assert.equal((await record(context,server,original.slug)).version,beforeCancel.version,'cancel review performs no write');
-    assert.equal((await publicProperties(server)).find(p=>p.slug===original.slug).rent,1799);
+    assert.equal((await publicProperties(server)).find(p=>p.slug===original.slug).rent,1699);
     await confirmPublish(page);
     const live=(await publicProperties(server)).find(p=>p.slug===original.slug);
     assert.equal(live.rent,1999);assert.equal(live.availability,'available');assert.equal(live.summary,privateSummary);

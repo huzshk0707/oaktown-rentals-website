@@ -16,46 +16,67 @@ window.OAKTOWN_DATA = {
     colonial: [
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509846-SNZGCPNKYQ7QMCEXZW5C/2.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445511140-T3GW4E21V9YOTWU89APR/3.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445511143-83ORN69V1QHGBSEGABKQ/4.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445512339-AOJHBEQA280HEJ3NKLPA/5.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445512483-LDQPV6Y50DUA335OU87O/6.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445513565-U6OHBZ5VT9X1IH1JAIS9/7.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445513725-EG1QG0Q20E6E5P6WMFLM/8.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445515031-SN1OHU8GVXW1KBLUPF41/9.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445515146-ZOQM0AC3V4G6VHVLLZ87/10.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445516371-UD7B70HO2LUXM516L0T4/11.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445516460-EA498EPBCL347VRQ99MV/12.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445517546-MMFNX0365U8853P7AE6X/13.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445517849-TR3NL868MNLOD5TLNEI2/14.webp"
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341986530-AQOKM6HXQ4ECYFVYPCA3/03_Kitchen_Main_View.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341986617-OX95NWU220305IOO0VV0/04_Kitchen_Alternate_View.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341988144-5LPWKOEPRJ2R2TV6U8NQ/05_Bedroom_One_Main_View.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341989178-XLDAI4VGYKNRTGRM9ZBG/06_Bedroom_One_Alternate_View.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341989685-GD4TOAOCI8MXW67RV35M/07_Bedroom_Two.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341990711-C9NWJ885GDRW2VP4O5LQ/08_Bedroom_Three.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341991144-YE8M2472Z14VBEURX5WY/09_Bedroom_Feature_Wall.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341992138-63ZR44QN1WCL33Z69WP8/10_Full_Bathroom.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341997056-9JLPG06729QZEHM11RDS/01_Living_Dining_Main_View.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341998108-26Z6VB9PZ26Y4XGQ74TB/02_Living_Dining_Alternate_View.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341994937-ZSBXO25MS6EDYY1947FI/14_Basement_Utility_Area.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341994087-EEDTF9CK2CXRNHQ1B2H3/13_Basement_Laundry_Area.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341992674-ZW01X9I29S55Z59OG9CW/11_Upstairs_Bonus_Room_Main.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341993502-A9856JJK28DUOJDT6PV8/12_Upstairs_Bonus_Room_Alternate.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341995642-HWMEJQOVCFFUT348LEI6/15_Garage_Exterior.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445517849-TR3NL868MNLOD5TLNEI2/14.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341996634-MJYTJNWXXRCZGJETZ678/16_Backyard.jpeg"
     ],
     smallboat: [
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854702495-U2O2SY7S265BS71XVD31/IMG_4325.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854700996-VFQ1CXEE1ZWV3AO6J1NN/IMG_4324.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854705538-MAKBVEN98DRUQVD98WUW/IMG_4329.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565117-3H2COCLMXG783O3YIX7C/2.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289566418-7YNU0DWDQ777S43RYRTZ/3.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854704161-Y3DG0ZODH8Z4BVQA4SMN/IMG_4328.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289566505-2UED0P9YI9M1QBLPKIA1/4.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289567727-GBD8N76QJ0706HHZKEHS/5.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289563526-J08TWRJGJ71S11ZAXM1T/6.webp",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289563526-7OHF598AUE6ZCS0JWAKA/7.webp"
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854704186-A4BWNMN9ESTB2LHJ1GTN/IMG_4327.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854700991-JXLY4IIE0C7ZBUEWB9HP/IMG_4323.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854702752-S6P7DOY4SHEY70O95Y1X/IMG_4326.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289563526-7OHF598AUE6ZCS0JWAKA/7.webp",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854707133-ING1VM7LO60CUL4WEX6E/IMG_4319.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854708364-5ZT7KSE7E1YAJFAFEDIE/IMG_4320.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854709800-FK82ZRVQ1K8AOJQMNQIS/IMG_4322.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854708528-GMKE8EKRZ8G1FHK939AM/IMG_4321.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854705644-OWVO0O5XT0RBT8I8RY3X/IMG_4330.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854707006-SPO4H7MLGABXOKTW2R7B/IMG_4331.jpeg"
     ],
-    cherokee6: [
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741431957-XKJRAQOOOFS98KMX74SV/IMG_8725.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741431959-PFKIVCUZU4N4LOU711DY/IMG_8726.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741433385-ADF98P1VCDM5FVVUHU7Q/IMG_8727.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741433679-7JTCZC3BBIYZESYUJPNR/IMG_8728.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741434819-U48LWU0GUROXQC4RH2H1/IMG_8729.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741435015-4CBCEY2D4J92OS58XUJO/IMG_8722.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741436191-9HK315IKJBCNKRMQ3LGW/IMG_8723.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1772741436572-HX3LSVOEZQCTAA73ZDWU/IMG_8724.jpeg"
+    madison: [
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190287597-78OXRVB7GTG6LEP9JGLA/02%2B-%2BPristine%2Bhardwood%2Bentryway%2Band%2Bwhite%2Bdoor.png",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190289505-RORZB3JUCT7KR2T79929/03%2B-%2BColonial%2BDrive%2B-%2BDining%2BArea%2Band%2BKitchen.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190269681-Q78A7KSS6DPWXY3Q78DK/04%2B-%2BColonial%2BDrive%2B-%2BDining%2BArea%2BWindow.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190270710-IHM8QMJD1OSTA7RK6KB4/05%2B-%2BKitchen%2Baisle%2Bwith%2Bseamless%2Btiles.png",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190271423-WFLQA0YW279GADBPW5IH/06%2B-%2BColonial%2BDrive%2B-%2BBedroom%2Bwith%2BWindow.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190272559-DSRY5JC3WRT7PXUDI4JF/07%2B-%2BColonial%2BDrive%2B-%2BBedroom%2BCloset%2BView.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190273363-KYPJ0L57HNM0XAJ5D6GI/08%2B-%2BColonial%2BDrive%2B-%2BBedroom%2Bwith%2BCeiling%2BFan.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190276134-W7M6NZ913K5W1IWQJYVU/09%2B-%2BClosed%2Bcloset%2Bdoor%2C%2Bopen%2Bhallway%2Bview.png",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190600135-1690QM517RA5AWM3Y7AJ/Cleared%2Bvanity%2Bwith%2Bpreserved%2Bfixtures.png",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190279306-YYXBEHUBIS01JARLGSAD/11%2B-%2BColonial%2BDrive%2B-%2BMain%2BHallway.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190279100-HBJ1PYGHRLKFGGN49031/12%2B-%2BColonial%2BDrive%2B-%2BLower%2BLevel.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190280839-DDP1VARXC5LE6A9QEPS2/13%2B-%2BColonial%2BDrive%2B-%2BLower%2BLevel%2BReverse%2BView.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190281361-VK2QCRQ3S91T3CGKCZPS/14%2B-%2BColonial%2BDrive%2B-%2BLower%2BLevel%2BSide%2BRoom.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190282755-JNAICWKW4YP1EI9EPF98/15%2B-%2BColonial%2BDrive%2B-%2BUtility%2BArea%2Band%2BShelving.jpeg"
     ],
     cherokee8: [
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672017451-EYEND4KY8UQK65DQE2H7/IMG_3986.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672016789-CE51I5J15DO7ESFSLTB6/IMG_3985.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672015937-H693OVW7OB1W6RCM2UWM/IMG_3984.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672011073-F50RO2V54LNXJH53MTR0/IMG_3987.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672011170-VFZ1YQYRZLUKXFE9KE3S/IMG_3988.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672012419-BHHS827Y9RN6U9LZG9US/IMG_3989.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672012907-JARWS9BV5YTPGHP00QDT/IMG_3990.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151481-GVVXO12TU0Q3NM07XA1U/02_Main_Living_Alternate_View.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342153150-LK33HZW5BQCOW2AXESCV/04_Room_With_French_Doors.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342154451-W1HREY6ZPSBCCZERREBI/05_Additional_Room.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342153032-UG6CTID4MS541MNNXMRG/03_Kitchen.jpeg",
+      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342154663-JCXS5OHAL8R45800UA1R/06_Full_Bathroom.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672013892-AK3DDJ2L7BDB10QCYPWN/IMG_3991.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672014495-NT99GKQ6FM1K2YNA31EU/IMG_3992.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672015412-P5E4CINR1CTHE32NSLFW/IMG_3994.jpeg"
@@ -69,7 +90,7 @@ window.OAKTOWN_DATA = {
   properties: [
     {
       slug: '115-colonial-drive', name: '115 Colonial Drive', neighborhood: 'St. Matthews', city: 'Louisville, Kentucky',
-      rent: 1799, deposit: 1799, bedrooms: 3, bathrooms: 1, imageKey: 'colonial',
+      rent: 1699, deposit: 1699, bedrooms: 3, bathrooms: 1, imageKey: 'colonial',
       eyebrow: 'The classic, reimagined', label: 'A place to settle in',
       labelEs: 'Un lugar para sentirte en casa',
       descriptionEs: [
@@ -89,31 +110,7 @@ window.OAKTOWN_DATA = {
       features: ['Original oak flooring', '3 bedrooms / 1 bathroom', 'Two-car garage', 'Laundry area', 'Unfinished basement', 'Convenient St. Matthews location'],
       terms: ['Tenants pay utilities', 'One-year lease listed', 'Pet terms and screening requirements: confirm before applying'],
       sourceUrl: 'https://tuba-parsnip-36cr.squarespace.com/115-colonial-drive',
-      editorialNote: 'Public source now shows $1,799 rent and deposit (checked 2026-11-04). Reconfirm availability before publication.'
-    },
-    {
-      slug: '1106-cherokee-rd-unit-6', name: '1106 Cherokee Rd · #6', neighborhood: 'The Highlands', city: 'Louisville, Kentucky',
-      rent: 1000, deposit: 1000, bedrooms: 1, bathrooms: 1, imageKey: 'cherokee6',
-      eyebrow: 'In the heart of the Highlands', label: 'Thoughtfully updated',
-      labelEs: 'Renovado con atención al detalle',
-      descriptionEs: [
-        'Un apartamento renovado de un dormitorio en la zona de Highlands de Louisville, cerca de restaurantes, tiendas y parques del vecindario.',
-        'La cocina cuenta con gabinetes de estilo shaker, encimeras y salpicadero de granito. Los pisos de baldosas se extienden por todo el apartamento, que incluye una sala amplia y un comedor junto a la cocina.',
-        'El baño renovado tiene revestimiento y piso de baldosas. Hay estacionamiento detrás del edificio y en la calle de enfrente.'
-      ],
-      featuresEs: ['Gabinetes de estilo shaker', 'Encimeras y salpicadero de granito', 'Pisos de baldosas en todo el apartamento', 'Un dormitorio / un baño', 'Estacionamiento trasero y en la calle', 'Ubicación en Highlands'],
-      termsEs: ['Los inquilinos pagan LG&E', 'La ciudad recoge la basura', 'Calefacción por aire forzado; aire acondicionado de ventana', 'El anuncio indica un contrato de un año', 'Confirma las condiciones para mascotas antes de solicitar'],
-      summary: 'An updated one-bedroom with shaker cabinets, granite counters, tile floors and a spacious living room.',
-      summaryEs: 'Apartamento renovado de un dormitorio con gabinetes shaker, granito, pisos de baldosas y sala amplia.',
-      description: [
-        'A fresh one-bedroom apartment in Louisville’s Highlands, with neighborhood restaurants, shops and parks nearby.',
-        'The kitchen features shaker cabinets, granite counters and backsplash. Tile flooring runs throughout the unit, with a large living room and a dining area off the kitchen.',
-        'The updated bathroom has tile surround and flooring. Parking is available behind the building and on the street in front.'
-      ],
-      features: ['Shaker-style cabinets', 'Granite counters and backsplash', 'Tile floors throughout', 'One bedroom / one bathroom', 'Rear and street parking', 'Highlands location'],
-      terms: ['Tenants pay LG&E', 'City handles trash', 'Forced-air furnace; window A/C', 'One-year lease listed', 'Pet terms: confirm before applying'],
-      sourceUrl: 'https://tuba-parsnip-36cr.squarespace.com/1106-cherokee-rd-6',
-      editorialNote: 'Source URL and eight-photo gallery refreshed from the public listing on 2026-11-04.'
+      editorialNote: 'Rent and deposit from the current Colonial Drive listing.'
     },
     {
       slug: '4005-smallboat-ct', name: '4005 Smallboat Ct', neighborhood: 'Okolona', city: 'Louisville, Kentucky',
@@ -162,6 +159,20 @@ window.OAKTOWN_DATA = {
       terms: ['Tenants pay LG&E', 'One-year lease listed', 'Pet terms: confirm before applying'],
       sourceUrl: 'https://tuba-parsnip-36cr.squarespace.com/1106-cherokee-rd-8',
       editorialNote: 'Rent/deposit from current Squarespace details. Confirm current availability before publishing this listing as available.'
+    },
+    {
+      slug: '1824-w-madison', name: '1824 W Madison', neighborhood: 'Russell', city: 'Louisville, Kentucky',
+      rent: 1100, deposit: 1100, bedrooms: 3, bathrooms: 1, imageKey: 'madison', availability: 'coming_soon',
+      label: 'A house with room downstairs', labelEs: 'Una casa con espacio en el sótano',
+      summary: 'Three bedrooms, a second living area downstairs, and a deck overlooking a fenced yard.',
+      summaryEs: 'Tres dormitorios, una segunda sala en el sótano y una terraza con vistas al patio cercado.',
+      description: ['Two bedrooms and the full bath share the main floor with the kitchen, dining room and living room. Downstairs are the third bedroom, a second living area, laundry and storage.'],
+      descriptionEs: ['La planta principal tiene dos dormitorios, un baño completo, cocina, comedor y sala. En el sótano hay un tercer dormitorio, otra sala, lavandería y espacio de almacenamiento.'],
+      features: ['Hard-surface floors', 'Fenced backyard', 'Deck', 'Dishwasher'],
+      featuresEs: ['Pisos de superficie dura', 'Patio cercado', 'Terraza', 'Lavavajillas'],
+      terms: ['One-year lease', 'Tenants pay utilities and supply the stove and refrigerator', '$60 application fee', 'Approved pets require a photo, $25 monthly per pet and a $150 nonrefundable deposit per pet'],
+      termsEs: ['Contrato de un año', 'El inquilino paga los servicios y aporta la estufa y el refrigerador', 'Solicitud: $60', 'Para cada mascota aprobada se requiere foto, $25 al mes y un depósito no reembolsable de $150'],
+      sourceUrl: 'https://tuba-parsnip-36cr.squarespace.com/1824-w-madison'
     }
   ]
 };
