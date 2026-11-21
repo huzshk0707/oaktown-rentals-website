@@ -9,7 +9,7 @@ An animated, mobile-friendly Oaktown Rentals website with an optional private pr
 - Property admin at `/admin/`, with separate drafts/published snapshots, a listing editor, photo uploads with drag-and-drop ordering on desktop and touch screens, preview, publish/unpublish and archive. Earlier/Later buttons and keyboard controls remain available. Production sign-in uses Cloudflare Access email codes for the three approved accounts. See [the deployment guide](docs/admin-setup.md) for the plan, current costs and one-time setup.
 - D1 is provisioned and seeded with the four source listings; private R2 storage, Access and the encrypted account allowlist are configured. Branch previews have no production database/storage bindings. Actual production email-code sign-in and editing still require owner verification.
 
-- Dedicated Mint Mojo vacation-home page at `/mint-mojo/`, with the original Drive photography hosted locally, a 19-photo gallery, coastal green/cream styling, English/Spanish copy and date inquiries by email/text. See [the media and page notes](docs/mint-mojo-media.md). No nightly rate, booking calendar or payment service is implied.
+- Dedicated Lobster Nirvana vacation-home page at `/mint-mojo/`, with the original Drive photography hosted locally, a 19-photo gallery, coastal green/cream styling, English/Spanish copy and date inquiries by email/text. See [the media and page notes](docs/mint-mojo-media.md). No nightly rate, booking calendar or payment service is implied.
 
 - Three-chapter photo story with a photo-filled O integrated into one 180svh hero (previously 470svh across two sections). Native scroll controls the slow photo movement and transitions; no video or autoplay is required.
 - One combined editorial/about section with real property photos. The Florida rental is a compact secondary feature after contact.
@@ -18,8 +18,8 @@ An animated, mobile-friendly Oaktown Rentals website with an optional private pr
 - Motion toggle persists locally; reduced-motion and smaller screens use an unpinned layout. No autoplay or wheel interception.
 - Self-hosted Manrope and DM Sans variable fonts; licenses included in `assets/fonts/`.
 - Responsive property cards with neighborhood filtering and individual, deep-linkable gallery/detail views.
-- Four properties sourced from the public Oaktown Rentals site: 115 Colonial Drive, 1106 Cherokee Rd #6, 4005 Smallboat Ct, 1106 Cherokee Rd #8.
-- FAQ, Louisville community links, Cudjoe Key / The Mint Mojo feature, contact actions, online application link.
+- Four properties sourced from the public Oaktown Rentals site: 115 Colonial Drive, 4005 Smallboat Ct, 1106 Cherokee Rd #8, 1824 W Madison.
+- FAQ, Louisville community links, Lobster Nirvana vacation-home feature, contact actions, online application link.
 - Complete English/Spanish UI, property descriptions, amenities, terms and accessible labels. Language preference persists; switching preserves the selected gallery photo and reading position.
 - Public file mode remains available; the optional CMS backend uses Cloudflare Workers, D1, R2 and Cloudflare Access. No tracking scripts.
 
@@ -46,10 +46,11 @@ Wrangler prints the local preview URL. Wrangler uses local simulated D1 and R2 r
 ## Content and launch checklist — **important**
 
 - **Live design preview, not approved inventory**. The main branch is accessible on Cloudflare. Listing information still needs confirmation before public launch; the preview notice and search-engine exclusions remain in place.
-- **Colonial rent**: The public listing and preview both show **$1,799 rent and deposit**, checked November 4, 2026. Reconfirm availability with Leslie before launch.
-- **1106 Cherokee #6**: Source updated to the working `/1106-cherokee-rd-6` URL, with eight unit-specific photos. Public galleries were refreshed on November 4, 2026: Colonial 14, Cherokee #6 8, Smallboat 7, Cherokee #8 10. Photo URLs remain on Squarespace.
+- **Colonial rent**: The original site lists **$1,699 rent and deposit**. Reconfirm availability with Leslie before launch.
+- **Current gallery order**: Colonial (19 photos), Smallboat (17), Cherokee #8 (9), and 1824 W Madison (15). Madison replaces Cherokee #6. Its source listing shows three bedrooms, one bath, $1,100 rent and a $1,100 deposit in Russell.
 - **4005 Smallboat timing**: Squarespace says showings after mid-October 2026; this is stale as of November 2026. Do not represent it as current availability.
 - **1106 Cherokee #8**: Listed rent is $950 on the existing Squarespace website; verify it is actually being marketed before announcing availability.
+- **Production CMS refresh**: With an authorized operator session supplied privately in `OAKTOWN_ACCESS_COOKIE`, run `node scripts/refresh-november-listings.mjs` to inspect the plan. Passing `--apply` publishes those updates through the existing CMS API and archives Cherokee #6. Merging the site changes only updates the file catalogue.
 - **Photos depend on Squarespace CDN**: `data.js` references Oaktown's existing public Squarespace CDN images. Before cancelling Squarespace, obtain original property images and upload/compress them into a local `assets/` folder. Replace each remote URL with `/assets/<filename>`. Do not rely on Zillow embeds or third-party hotlinks for production.
 - **Metadata and search**: Preview intentionally has `robots.txt` `Disallow: /` and `<meta name="robots" content="noindex,nofollow">`. Remove these only once the website is approved for launch.
 - **Spanish**: UI, all four property detail bodies, feature lists, terms and accessible labels are translated. Review translations alongside any future listing updates.

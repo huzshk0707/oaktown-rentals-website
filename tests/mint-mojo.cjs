@@ -11,6 +11,8 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
   await page.locator('.desktop-nav a[href="./mint-mojo/"]').click();
   assert.equal(new URL(page.url()).pathname,'/mint-mojo/');
   await page.locator('.mint-hero h1').waitFor();
+  assert.match(await page.title(), /Lobster Nirvana/);
+  assert.equal(await page.getByRole('link',{name:'View on Airbnb'}).getAttribute('href'),'https://www.airbnb.co.in/rooms/679772407380305795');
   assert.equal(await page.locator('.mint-hero-image').evaluate(img=>img.complete&&img.naturalWidth>0),true);
   for(const index of [1,2,0]){
     await page.locator('[data-mint-scene="'+index+'"]').click();
@@ -45,6 +47,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
   assert.equal(await page.locator('.mint-inquiry-ready').isVisible(),true);
   await page.locator('#mint-language').click();
   assert.equal(await page.locator('html').getAttribute('lang'),'es');
+  assert.equal(await page.getByRole('link',{name:'Ver en Airbnb'}).getAttribute('href'),'https://www.airbnb.co.in/rooms/679772407380305795');
   assert.equal(await page.locator('[name=arrival]').inputValue(),'2027-05-05');
   assert.equal(await page.locator('[name=departure]').inputValue(),'2027-05-12');
   await page.locator('.mint-date-form button').click();

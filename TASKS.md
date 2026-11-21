@@ -8,6 +8,11 @@ provisional; do not guess facts or treat this list as publication permission.
 
 - [x] WEB-HERO: Implement and test the Bethune-inspired hero, buttons and timed property galleries. [PR #23](https://github.com/huzshk0707/oaktown-rentals-website/pull/23) awaits visual review.
 
+## Current listing refresh
+
+- [x] Verify the four Squarespace galleries, replace #6 with Madison, rename the vacation property and check its Airbnb destination in EN/ES. See [PR #24](https://github.com/huzshk0707/oaktown-rentals-website/pull/24).
+- [ ] Following review, publish the site update and apply the rehearsed CMS content changes with an authorized session.
+
 ## P0 — reliable shared continuation
 
 - [x] **WEB-HANDOFF:** Shared protocol, account starts and PR template completed;
