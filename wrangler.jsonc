@@ -33,6 +33,7 @@
     }
   ],
   "vars": {
+    "PUBLIC_CATALOGUE_SOURCE": "file",
     "ACCESS_TEAM_DOMAIN": "shiny-tooth-131b.cloudflareaccess.com",
     "ACCESS_AUD": "719406d32732fb7e54c59538686044bc38f2c2e320e8b79354d08e0c685ff17c"
   }

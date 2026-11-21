@@ -137,7 +137,7 @@ export function createApp({ authorize = authenticate } = {}) {
           return adminHeaders(await env.ASSETS.fetch(request));
         }
         if (path==='/api/properties' && request.method==='GET') {
-          if (!env.DB) return json({mode:'file'});
+          if (!env.DB || env.PUBLIC_CATALOGUE_SOURCE === 'file') return json({mode:'file'});
           const rows = await env.DB.prepare("SELECT published_json FROM properties WHERE state='published' ORDER BY created_at,id").all();
           return json({mode:'database',properties:rows.results.map(row=>JSON.parse(row.published_json))});
         }
