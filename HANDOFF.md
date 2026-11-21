@@ -1,3 +1,7 @@
+# Listing and vacation-home refresh
+
+Codex owns the content refresh on `content/refresh-rentals-lobster-nirvana`. Source: current Squarespace property pages and the owner-supplied Airbnb listing. Next: reconcile each gallery, validate the bilingual catalogue and prepare the CMS content update.
+
 WEB-HERO gallery follow-up complete on draft PR #23. Codex releases the branch claim. Scoped thumbnail timers are shared by the listing and vacation galleries. Playback, browsing, public, vacation, admin browser and CMS checks passed. NEXT STEP: review the property-slideshow screenshot and preview.
 
 # WEB-HERO — premium public hero and buttons
