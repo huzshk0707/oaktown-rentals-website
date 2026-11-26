@@ -1,7 +1,8 @@
 ## WEB-LOBSTER-BOOKING — instant reservations and payments
 
 - [x] Confirm vacation-home scope and instant-booking preference.
-- [ ] Confirm existing booking/payment provider or select an integration.
+- [x] Inspect public Airbnb listing and research no-subscription options; interactive checkout remains unverified.
+- [ ] Choose Airbnb checkout handoff or custom direct Stripe checkout with an inventory-management plan.
 - [ ] Implement booking UI, authoritative availability/pricing and checkout integration.
 - [ ] Verify EN/ES, mobile, calendar conflicts, payment failures and confirmation before review.
 - [ ] Owner reviews configured rates, fees, taxes, cancellation/payment terms and live setup before launch.

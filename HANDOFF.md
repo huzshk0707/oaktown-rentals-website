@@ -1,11 +1,12 @@
 # Active task: WEB-LOBSTER-BOOKING
 
-- Owner: Codex. UTC heartbeat: 2026-11-26T17:38:49+00:00; claim expires 2026-11-26T18:08:49+00:00.
-- Branch/base: `codex/lobster-booking` / `be37dba`.
-- Confirmed scope: owner wants Lobster Nirvana instant booking and online payment, not showing appointments or approval-first requests.
-- Current evidence: `/mint-mojo/` only creates email/SMS inquiries; no reservation engine, rate source, payment provider or calendar integration exists in this repository. Owner is checking existing provider accounts.
-- Work: integration discovery and implementation plan. No live transactions, account creation, paid subscriptions, migration, merge or deployment authorized by this task.
-- NEXT STEP: document the provider integration boundary and acceptance checks in `docs/lobster-booking.md`; await booking-service selection before provider-specific implementation.
+- Owner: Codex; discovery checkpoint complete, claim released 2026-11-26 17:41 UTC.
+- Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25.
+- Scope: instant vacation booking and payments; owner now requires an alternative without a paid booking-service subscription and requested Airbnb flow inspection.
+- Done: source/admin review, provider research, Airbnb public listing and official flow/calendar documentation review. Evidence and limits in `docs/lobster-booking.md`.
+- Verification: documentation only; no runtime tests required. Interactive Airbnb browser failed, date-specific checkout not verified. No implementation, production changes or deployment.
+- Latest prior pushed checkpoint: `23cacce`; this discovery commit follows it.
+- NEXT STEP: owner chooses Airbnb checkout handoff or custom direct checkout with Stripe and an inventory-management plan. Resume PR #25, read `docs/lobster-booking.md`, and claim the branch before implementing the selected approach.
 
 ---
 
