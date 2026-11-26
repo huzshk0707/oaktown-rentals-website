@@ -1,12 +1,11 @@
 # Active task: WEB-LOBSTER-BOOKING
 
-- Owner: Codex; discovery checkpoint complete, claim released 2026-11-26 17:41 UTC.
+- Owner: Codex; heartbeat 2026-11-26T17:43:00+00:00; claim expires 2026-11-26T18:13:00+00:00.
 - Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25.
-- Scope: instant vacation booking and payments; owner now requires an alternative without a paid booking-service subscription and requested Airbnb flow inspection.
-- Done: source/admin review, provider research, Airbnb public listing and official flow/calendar documentation review. Evidence and limits in `docs/lobster-booking.md`.
-- Verification: documentation only; no runtime tests required. Interactive Airbnb browser failed, date-specific checkout not verified. No implementation, production changes or deployment.
-- Latest prior pushed checkpoint: `23cacce`; this discovery commit follows it.
-- NEXT STEP: owner chooses Airbnb checkout handoff or custom direct checkout with Stripe and an inventory-management plan. Resume PR #25, read `docs/lobster-booking.md`, and claim the branch before implementing the selected approach.
+- Owner selected direct Stripe checkout. No paid booking-platform subscription.
+- Implementing server-calculated quotes, exclusive date inventory, atomic holds, hosted Stripe Checkout, signed payment reconciliation and protected booking administration. Public EN/ES flow preserves the vacation page.
+- Live activation blocked pending rates/fees/tax/terms, Stripe account and approved dates blocked on Airbnb. No production migration, secrets, merge or deployment in this task.
+- NEXT STEP: implement isolated booking schema/model and Worker endpoints with disposable SQLite and Stripe fixtures, then public/admin interfaces and browser checks.
 
 ---
 
