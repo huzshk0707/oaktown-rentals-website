@@ -1,0 +1,159 @@
+/* Oaktown Signature — public presentation only. The catalogue and CMS remain separate. */
+body.rental-site{--signature-green:#082e22;--signature-ivory:#f6f3e9;--signature-sage:#a6b397;--signature-text:#213b30;--side:max(28px,calc((100% - 1400px)/2));--cream:#f6f3e9;--cream2:#e1e7d7;--brand-deep:#082e22;--serif:Georgia,'Times New Roman',serif;background:var(--signature-green)}
+body.rental-site :focus-visible{outline:2px solid currentColor;outline-offset:4px}
+body.rental-site .site-header{position:absolute;height:88px;background:var(--signature-green);padding:0 var(--side);gap:24px;border-bottom:1px solid #c8d3b82b}
+body.rental-site .site-header.is-fixed{position:fixed;background:#082e22fa;backdrop-filter:none}
+body.rental-site .wordmark .brand-logo{width:112px}
+body.rental-site .desktop-nav{gap:clamp(20px,2.7vw,44px);margin-left:auto}
+body.rental-site .desktop-nav a,body.rental-site .resources-menu summary{font:400 15px/1.4 var(--serif);text-transform:none;letter-spacing:0}
+body.rental-site .header-actions{gap:12px}
+body.rental-site .nav-apply{background:var(--signature-ivory);border-color:var(--signature-ivory);color:var(--signature-green);font:400 15px/1.4 var(--serif);min-height:44px;padding:11px 19px;gap:12px}
+body.rental-site .nav-apply:hover{background:#dfe4ce;border-color:#dfe4ce}
+body.rental-site .language-switch{white-space:nowrap;min-width:60px;font-size:11px;letter-spacing:.04em}
+.resources-menu{position:relative}
+.resources-menu summary{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;list-style:none}
+.resources-menu summary::-webkit-details-marker{display:none}
+.resources-menu summary .icon{width:14px;height:14px}
+.resources-menu[open] summary .icon{transform:rotate(180deg)}
+.resources-menu>div{position:absolute;top:calc(100% + 12px);right:0;min-width:190px;padding:12px;background:var(--signature-ivory);color:var(--signature-green);box-shadow:0 12px 30px #00170e33;border:1px solid #123c2524}
+.resources-menu>div a{display:block;padding:12px 14px}
+body.rental-site .resources-menu>div a:hover{color:var(--signature-green);background:#e9ebde}
+body.rental-site .mobile-nav{background:var(--signature-green);top:88px}
+.signature-home{background:var(--signature-ivory);color:var(--signature-text)}
+.signature-hero{position:relative;isolation:isolate;overflow:hidden;min-height:610px;padding:172px var(--side) 112px;display:flex;align-items:center;color:var(--signature-ivory);background:#204b35}
+.signature-images,.signature-slide,.signature-shade{position:absolute;inset:0;pointer-events:none}
+.signature-images{top:88px;bottom:-35px;z-index:-3;transform-origin:center}
+.signature-slide{opacity:0;transition:opacity 1s ease}
+.signature-slide.is-active{opacity:1}
+.signature-slide img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.signature-slide[data-hero-slide="1"] img{object-position:50% 58%}
+.signature-shade{z-index:-2;background:linear-gradient(90deg,#032417ed 0%,#052b1dbe 25%,#0a2e2057 47%,#06281a05 70%),linear-gradient(0deg,#06291c85,transparent 40%)}
+.signature-copy{max-width:550px}
+body.rental-site .signature-kicker{display:flex;align-items:center;gap:20px;font-size:10px;letter-spacing:.3em;margin:0 0 20px;color:var(--signature-ivory)}
+.signature-kicker span{width:64px;height:1px;background:#dfdec49c}
+body.rental-site .signature-copy h1{font:400 clamp(52px,5.4vw,88px)/.97 var(--serif);letter-spacing:-.035em;text-wrap:initial;margin:0 0 22px;max-width:600px}
+.signature-copy h1 em{font-weight:400;color:#e8ddbd}
+.signature-description{font:400 17px/1.55 var(--serif);max-width:380px;margin:0 0 26px;color:var(--signature-ivory)}
+.signature-button{display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:13px 20px;min-height:46px;background:var(--signature-green);border:1px solid var(--signature-green);border-radius:3px;color:var(--signature-ivory);font:400 15px/1.4 var(--serif);cursor:pointer;transition:background .2s,transform .2s}
+.signature-button .icon{width:21px;height:21px;flex-shrink:0;transition:transform .2s}
+.signature-button.ivory{background:var(--signature-ivory);border-color:var(--signature-ivory);color:var(--signature-green)}
+.signature-button:hover{background:#234b39;color:var(--signature-ivory)}
+.signature-button.ivory:hover{background:#e4e5d4;color:var(--signature-green)}
+.signature-button:hover .icon{transform:translateX(3px)}
+.hero-caption{position:absolute;right:var(--side);bottom:60px;display:flex;align-items:center;gap:28px;font-size:11px;letter-spacing:.1em}
+.hero-photo-controls{display:flex;gap:5px}
+.hero-photo-controls button{color:var(--signature-ivory);background:#082e2266;border:1px solid #f6f3e950;min-width:44px;min-height:44px;font-size:12px;cursor:pointer}
+.hero-photo-controls button[aria-pressed=true]{background:var(--signature-ivory);color:var(--signature-green);border-color:var(--signature-ivory)}
+.signature-search{position:relative;z-index:2;display:flex;align-items:center;gap:30px;max-width:1120px;width:calc(100% - 112px);margin:-42px auto 0;padding:18px 24px;background:var(--signature-ivory);color:var(--signature-text);border:1px solid #d6d8c9;border-radius:9px;box-shadow:0 6px 16px #17382114}
+.search-fields{display:grid;grid-template-columns:1.4fr 1fr 1fr;flex:1;min-width:0}
+.search-fields label{padding:0 24px;border-right:1px solid #d6d8c9;min-width:0}
+.search-fields label:first-child{padding-left:4px}
+.search-fields label>span{display:block;font-size:11px;font-weight:500;line-height:1.5;color:#526052;margin-bottom:3px}
+.search-fields select{width:100%;max-width:100%;border:0;border-radius:0;background:transparent;color:var(--signature-green);font:400 15px/1.6 var(--serif);min-height:34px;padding:2px 16px 2px 0;cursor:pointer;color-scheme:light}
+.search-actions{display:flex;flex-direction:column;gap:5px;align-items:center;flex-shrink:0}
+.search-actions .signature-button{min-height:43px;padding:10px 25px;gap:12px}
+.reset-filters{padding:3px 8px;font-size:10px;line-height:1.6;background:transparent;border:0;color:#4c6053;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+body.rental-site .signature-collection{display:grid;grid-template-columns:minmax(210px,.9fr) minmax(0,3.5fr);gap:38px;padding:55px var(--side) 54px;background:var(--signature-ivory);color:var(--signature-text);border:0}
+.collection-intro>.eyebrow{color:#526052;font-size:9px;letter-spacing:.22em}
+body.rental-site .collection-intro h2{font:400 clamp(32px,2.6vw,44px)/1.05 var(--serif);letter-spacing:-.03em;margin:10px 0 18px}
+.collection-intro>p{font:400 15px/1.6 var(--serif);margin:0 0 22px;max-width:270px}
+.collection-intro .signature-button{font-size:14px;gap:16px;padding:11px 17px;min-height:42px}
+.collection-intro p.collection-availability{font:400 11px/1.65 'DM Sans',sans-serif;color:#596759;margin:20px 0 0;max-width:260px}
+body.rental-site .signature-collection .listing-tools{margin:0 0 12px;padding:0;border:0;gap:12px}
+body.rental-site .signature-collection .listing-count{color:#566853;font-size:10px;letter-spacing:.1em}
+body.rental-site .signature-collection .view-switch{border-color:#cbd1c2;gap:0}
+body.rental-site .signature-collection .view-switch button{color:#526052;font-size:10px;min-height:28px;padding:4px 10px}
+body.rental-site .signature-collection .view-switch button[aria-pressed=true]{background:var(--signature-green);color:var(--signature-ivory)}
+body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+body.rental-site .signature-collection .property-card{border:1px solid #dbddd0;background:#faf8f1;border-radius:5px;overflow:hidden;box-shadow:0 3px 8px #17382104;align-self:start}
+body.rental-site .signature-collection .property-image-wrap{aspect-ratio:1.42;border-radius:0}
+body.rental-site .signature-collection .property-image{filter:none;object-position:center;transition:transform .8s}
+body.rental-site .signature-collection .card-index,body.rental-site .signature-collection .photo-pill{display:none}
+body.rental-site .signature-collection .card-photo-count{font-size:9px;top:8px;right:8px;left:auto;padding:3px 6px}
+body.rental-site .signature-collection .card-arrow{width:27px;height:27px;bottom:10px;right:10px;background:var(--signature-ivory);color:var(--signature-green);border:0}
+body.rental-site .signature-collection .card-arrow .icon{width:15px;height:15px}
+body.rental-site .signature-collection .property-data{display:flex;flex-direction:column;gap:8px;padding:12px 12px 0;margin:0}
+body.rental-site .signature-collection .property-data>div:first-child{display:flex;flex-direction:column;width:auto}
+body.rental-site .signature-collection .property-name{order:-1;font:400 17px/1.2 var(--serif);letter-spacing:-.015em;margin:0 0 4px;color:var(--signature-green);text-wrap:initial}
+body.rental-site .signature-collection .property-neighborhood{font-size:10px;letter-spacing:0;text-transform:none;color:#5a695b;line-height:1.6}
+body.rental-site .signature-collection .property-summary,body.rental-site .signature-collection .card-amenities{display:none}
+body.rental-site .signature-collection .property-price{font:600 18px/1.3 var(--serif);color:var(--signature-green);text-align:left;white-space:normal;padding:0}
+body.rental-site .signature-collection .property-price small{display:inline;font:400 10px/1.5 'DM Sans',sans-serif;margin-left:4px;color:#526052}
+body.rental-site .signature-collection .property-deposit{display:block;font:400 9px/1.6 'DM Sans',sans-serif;color:#5a695b;margin:3px 0 0}
+body.rental-site .signature-collection .property-details-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:9px 12px 0;padding:9px 0 12px;border-top:1px solid #dbddd0;font-size:10px;line-height:1.4;color:var(--signature-green)}
+body.rental-site .signature-collection .property-details-line>a{font-size:10px;color:#345d44;text-decoration:underline;text-underline-offset:3px;width:100%;margin-top:3px}
+body.rental-site .signature-collection .property-details-line>a .icon{width:12px;height:12px}
+body.rental-site .signature-collection .availability-badge{font-size:9px;color:#294d38;border:1px solid #c6cfba;background:#e9ecde;padding:3px 5px}
+body.rental-site .signature-collection .collection-bottom{color:var(--signature-green);padding-top:20px}
+body.rental-site .signature-collection .collection-controls button{border-color:#8f9f8c;color:var(--signature-green)}
+body.rental-site .signature-collection .collection-controls button:first-child .icon{transform:rotate(180deg)}
+body.rental-site .signature-collection[data-layout=gallery] .collection-viewport{margin:0;padding:0 0 12px;overflow-x:auto}
+body.rental-site .signature-collection[data-layout=gallery] .property-grid{gap:22px}
+body.rental-site .signature-collection[data-layout=gallery] .property-card{flex:0 0 43%;width:auto}
+.search-empty{padding:25px;border:1px solid #cad2c0;color:var(--signature-green)}
+.signature-story,.signature-vacation{position:relative;isolation:isolate;overflow:hidden;min-height:330px;padding:45px var(--side);display:flex;align-items:center}
+.signature-story{background:#edece0;color:var(--signature-green)}
+.signature-panorama{position:absolute;inset:0;z-index:-3;object-fit:cover;width:100%;height:100%;object-position:60% 45%}
+.signature-story .signature-panorama{left:27%;width:73%;object-position:50% 47%}
+.panorama-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#f6f3e9 0%,#f6f3e9 24%,#f6f3e9e6 34%,#f6f3e926 60%,transparent 80%)}
+.panorama-copy{max-width:450px}
+.panorama-copy>.eyebrow{font-size:9px;letter-spacing:.26em}
+body.rental-site .panorama-copy h2{font:400 clamp(34px,3vw,48px)/1.1 var(--serif);letter-spacing:-.035em;margin:8px 0 15px}
+.panorama-copy>p{font:400 15px/1.6 var(--serif);max-width:355px;margin:0 0 20px}
+.story-more{max-width:370px;font-size:13px}
+.story-more summary{cursor:pointer;list-style:none;display:inline-flex;gap:28px;align-items:center;background:var(--signature-green);color:var(--signature-ivory);padding:10px 17px;border-radius:3px;font:400 14px/1.5 var(--serif)}
+.story-more summary::-webkit-details-marker{display:none}
+.story-more summary span{font:400 20px/1 sans-serif}
+.story-more[open] summary span{transform:rotate(45deg)}
+.story-more>p{line-height:1.7;background:#f6f3e9e8;padding:12px;margin:12px 0}
+.signature-credit{position:absolute;bottom:8px;right:var(--side);font-size:9px;background:#082e22d9;color:var(--signature-ivory);padding:3px 6px}
+.signature-credit a{text-decoration:underline;text-underline-offset:2px}
+.signature-vacation{color:var(--signature-ivory);background:var(--signature-green);min-height:340px}
+.signature-vacation .signature-panorama{left:28%;width:72%;object-position:50% 52%}
+.signature-vacation .panorama-shade{background:linear-gradient(90deg,#082e22 0%,#082e22 25%,#082e22c7 40%,#082e2240 60%,transparent 85%)}
+.vacation-place{font:italic 15px/1.5 var(--serif);color:#d9dfc9;display:block;margin:-5px 0 12px}
+.signature-journey{padding:42px var(--side);display:grid;grid-template-columns:1fr 3fr;gap:40px;align-items:center;background:var(--signature-ivory);color:var(--signature-green)}
+.signature-journey .eyebrow{font-size:9px;letter-spacing:.23em}
+body.rental-site .signature-journey h2{font:400 31px/1.13 var(--serif);letter-spacing:-.025em;margin:9px 0 0}
+.signature-journey ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;padding:0;margin:0}
+.signature-journey li{display:flex;gap:17px;padding:0 24px;border-left:1px solid #cbd1c2}
+.journey-number{font:italic 400 23px/1.3 var(--serif);color:#6c7c60;flex-shrink:0}
+body.rental-site .signature-journey h3{font:400 17px/1.3 var(--serif);margin:0 0 8px;letter-spacing:0;text-wrap:initial}
+.signature-journey p{font:400 11px/1.65 'DM Sans',sans-serif;margin:0;color:#53624f}
+body.rental-site .signature-footer{position:relative;isolation:isolate;padding:38px var(--side) 0;background:var(--signature-green);overflow:hidden}
+.signature-footer-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr 1.1fr;gap:45px;position:relative;z-index:1}
+body.rental-site .signature-footer .footer-brand{width:140px}
+.signature-footer-grid p{font-size:11px;color:#cbd6bc;max-width:200px;margin:14px 0 0}
+.signature-footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:6px;font-size:12px;line-height:1.6}
+body.rental-site .signature-footer-links h2{font:400 18px/1.4 var(--serif);margin:0 0 6px;letter-spacing:0}
+.signature-footer-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.footer-motion{font:inherit;color:inherit;padding:0;background:transparent;border:0;cursor:pointer;text-align:left}
+.footer-motion:hover{text-decoration:underline}
+.footer-skyline{display:block;width:min(600px,50%);height:auto;margin:12px 0 -1px auto;opacity:.48;max-height:90px}
+body.rental-site .signature-footer .footer-bottom{font-size:10px;padding:15px 0;margin:0;border-top:1px solid #d1dbba38;gap:20px;color:#c6d0b9}
+.resource-intro{padding:150px var(--side) 35px;background:var(--signature-ivory);color:var(--signature-green)}
+body.rental-site .resource-intro h1{font:400 50px/1.1 var(--serif);margin:25px 0 0;letter-spacing:-.03em}
+.resource-intro .back-link .icon{transform:rotate(180deg)}
+@media(min-width:1700px){.signature-hero{min-height:690px}.signature-images{max-height:none}.signature-copy{padding-left:20px}}
+@media(max-width:1180px){body.rental-site .desktop-nav{gap:18px}body.rental-site .header-actions{gap:8px}body.rental-site .site-header{gap:18px}body.rental-site .motion-toggle{font-size:0;min-width:30px;padding:0}.signature-hero{min-height:600px}.signature-search{width:calc(100% - 64px);gap:18px}.search-fields label{padding:0 16px}body.rental-site .signature-collection{grid-template-columns:1fr;gap:24px}.collection-intro{display:grid;grid-template-columns:1fr 1.7fr auto;gap:6px 26px;align-items:center}.collection-intro>.eyebrow{grid-column:1/-1}body.rental-site .collection-intro h2{margin:0}.collection-intro>p{margin:0;max-width:none}.collection-intro p.collection-availability{grid-column:2/4;margin:0;max-width:none}.signature-journey{grid-template-columns:1fr;gap:24px}.signature-journey li:first-child{padding-left:0;border-left:0}.signature-footer-grid{gap:28px}.panorama-copy{max-width:42%}}
+@media(max-width:960px){body.rental-site .desktop-nav{display:none}body.rental-site .menu-button{display:block}body.rental-site .header-actions{margin-left:auto;gap:15px}.signature-copy{max-width:58%}.signature-hero{min-height:580px}.signature-slide img{object-position:58% 60%}.signature-search{width:calc(100% - 48px);padding:16px;gap:16px}.search-fields label{padding:0 12px}.search-fields select{font-size:13px}.search-actions .signature-button{padding:11px 14px;font-size:14px}.signature-story,.signature-vacation{min-height:340px}.panorama-copy{max-width:46%}.signature-story .signature-panorama{left:20%;width:80%}.signature-vacation .signature-panorama{left:25%;width:75%}.signature-credit{font-size:8px}.signature-footer-grid{grid-template-columns:repeat(2,1fr);gap:30px}.signature-footer-grid>div:nth-child(2n){border-left:1px solid #cbd6bc33;padding-left:28px}}
+@media(max-width:760px){body.rental-site{--side:24px}.signature-hero{min-height:610px;padding-top:152px;padding-bottom:140px;align-items:flex-start}.signature-copy{max-width:85%}.signature-slide img{object-position:58% 50%}.signature-shade{background:linear-gradient(90deg,#032417de 0%,#052b1d9c 46%,#06281a26 100%),linear-gradient(0deg,#06291cab,transparent 60%)}.signature-description{max-width:290px;font-size:16px}.hero-caption{bottom:65px;right:24px;left:24px;justify-content:space-between}.signature-search{display:block;width:calc(100% - 32px);margin-top:-35px;padding:20px}.search-fields{grid-template-columns:1fr 1fr;gap:15px 0}.search-fields label:first-child{grid-column:1/-1;padding:0 0 12px;border:0;border-bottom:1px solid #d6d8c9}.search-fields label:nth-child(2){padding-left:0}.search-fields label:last-child{border:0;padding-right:0}.search-fields select{font-size:16px}.search-actions{margin-top:18px;flex-direction:row;justify-content:space-between;gap:12px}.search-actions .signature-button{flex:1}.reset-filters{min-height:44px;font-size:11px;max-width:110px}body.rental-site .signature-collection{padding:42px var(--side);gap:24px}.collection-intro{display:block}.collection-intro>.eyebrow{display:block;margin-bottom:9px}body.rental-site .collection-intro h2{font-size:36px;margin:0 0 15px}.collection-intro>p{max-width:400px;margin-bottom:18px}.collection-intro p.collection-availability{margin-top:16px;max-width:400px}body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}body.rental-site .signature-collection[data-layout=gallery] .property-card{flex-basis:80%}.signature-story,.signature-vacation{padding:34px var(--side) 245px;display:block;min-height:0}.panorama-copy{max-width:none}.panorama-copy>p{max-width:390px}.signature-story .signature-panorama,.signature-vacation .signature-panorama{inset:auto 0 0;width:100%;height:300px;object-position:50% 50%}.panorama-shade{background:linear-gradient(180deg,#f6f3e9 0%,#f6f3e9 44%,#f6f3e9e6 51%,#f6f3e900 75%)}.signature-vacation .panorama-shade{background:linear-gradient(180deg,#082e22 0%,#082e22 42%,#082e22e6 51%,#082e2200 78%)}.signature-credit{right:12px;bottom:6px}.signature-journey{padding:34px var(--side);gap:28px}.signature-journey ol{grid-template-columns:1fr;gap:23px}.signature-journey li,.signature-journey li:first-child{padding:0 0 22px;border-left:0;border-bottom:1px solid #cbd1c2;gap:22px}.signature-journey li:last-child{border:0;padding-bottom:0}.signature-journey p{font-size:13px;max-width:400px}.signature-footer-links{font-size:12px}.footer-skyline{width:100%;max-height:none;margin-top:30px}.signature-footer-grid{gap:28px 20px}.signature-footer-grid>div:nth-child(2n){padding-left:18px}body.rental-site .signature-footer .footer-bottom{font-size:9px;flex-wrap:wrap;gap:6px}.resource-intro{padding-top:130px}}
+@media(max-width:480px){body.rental-site{--side:20px}body.rental-site .site-header{height:76px;gap:10px}body.rental-site .wordmark .brand-logo{width:90px}body.rental-site .header-actions{gap:9px}body.rental-site .header-actions .nav-apply{display:none}body.rental-site .mobile-nav{top:76px}body.rental-site .language-switch{font-size:10px;min-width:52px}body.rental-site .header-actions .motion-toggle{width:28px;min-width:28px}.signature-images{top:76px}.signature-hero{padding-top:136px;min-height:610px}.signature-copy{max-width:100%}body.rental-site .signature-copy h1{font-size:54px;line-height:1.02;margin-bottom:18px}.signature-description{max-width:285px}.signature-kicker{margin-bottom:20px}.signature-slide img{object-position:61% 55%}.signature-shade{background:linear-gradient(90deg,#032417e6,#052b1d96 66%,#06281a47),linear-gradient(0deg,#06291ca1,transparent 65%)}.hero-caption{left:20px;right:20px;font-size:9px}.signature-search{width:calc(100% - 24px)}body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:1fr;gap:22px}body.rental-site .signature-collection .property-image-wrap{aspect-ratio:1.65}body.rental-site .signature-collection .property-data{padding:16px 16px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px}body.rental-site .signature-collection .property-name{font-size:20px}body.rental-site .signature-collection .property-price{font-size:20px;text-align:right}body.rental-site .signature-collection .property-price small{display:block;margin:0;font-size:10px}body.rental-site .signature-collection .property-deposit{font-size:9px}body.rental-site .signature-collection .property-details-line{margin:12px 16px 0;font-size:12px;padding:12px 0 16px}body.rental-site .signature-collection .property-details-line>a{font-size:12px;width:auto;margin:0 0 0 auto}body.rental-site .signature-collection .card-photo-count{font-size:10px}.signature-footer-grid{grid-template-columns:1fr 1fr}.signature-footer-grid>div:first-child,.signature-footer-grid>div:last-child{grid-column:1/-1}.signature-footer-grid>div:nth-child(2n){border-left:0;padding-left:0}.signature-footer-grid>div:nth-child(3){padding-left:14px;border-left:1px solid #cbd6bc33}.signature-footer-grid>div:first-child{display:flex;align-items:center;gap:24px}.signature-footer-grid>div:first-child p{margin:0;font-size:11px;max-width:150px}body.rental-site .signature-footer .footer-brand{width:116px;flex-shrink:0}body.rental-site .signature-footer{padding-bottom:70px}}
+@media(max-width:350px){body.rental-site .signature-copy h1{font-size:47px}.signature-hero{min-height:640px}.signature-search{padding:16px}.search-actions{gap:8px}.search-actions .signature-button{gap:7px;font-size:13px;padding:10px}.signature-footer-grid>div:first-child{gap:16px}.signature-footer-grid>div:first-child p{font-size:10px}body.rental-site .signature-collection .property-data{grid-template-columns:1fr}body.rental-site .signature-collection .property-price{text-align:left}body.rental-site .signature-collection .property-price small{display:inline;margin-left:4px}}
+html.motion-off .signature-slide,html.motion-off .signature-button,html.motion-off .signature-button .icon{transition:none!important}
+html.motion-off .signature-images{transform:none!important}
+@media(prefers-reduced-motion:reduce){.signature-slide,.signature-button,.signature-button .icon{transition:none!important}.signature-images{transform:none!important}}
+/* Explicit surfaces prevent inherited catalogue colors from leaking into the new shell. */
+body.rental-site{--cream:#123b25;--cream2:#4b6255}
+body.rental-site .site-header,body.rental-site .mobile-nav,body.rental-site .signature-footer{color:var(--signature-ivory)}
+body.rental-site .desktop-nav>a:hover,body.rental-site .resources-menu summary:hover{color:#d8dfc7}
+body.rental-site .motion-toggle,body.rental-site .language-switch{color:var(--signature-ivory)}
+body.rental-site .menu-button span{background:var(--signature-ivory)}
+body.rental-site .nav-apply{border-radius:3px}
+body.rental-site .signature-collection .card-photo-count{bottom:auto;background:#f6f3e9ed;color:var(--signature-green);height:auto}
+body.rental-site .signature-collection .property-details-line>a{background:transparent;border-radius:0;min-height:28px;padding:3px 0;justify-content:flex-start}
+body.rental-site .signature-collection .property-details-line>a:hover{background:transparent;color:#082e22}
+body.rental-site .signature-collection .property-image-wrap:has(.image-unavailable)::after{color:#3e5546;background:#e1e9dd;font-size:11px}
+body.rental-site .signature-collection .property-image-wrap:has(.image-unavailable) .card-photo-count{z-index:3}
+body.rental-site .signature-collection .property-image-wrap:has(.image-unavailable) .card-arrow{z-index:3}
+body.rental-site .signature-footer .footer-motion{color:var(--signature-ivory)}

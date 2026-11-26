@@ -1,10 +1,13 @@
 # WEB-SIGNATURE — Oaktown Signature homepage
 
-- Owner: Codex, taking over under the user's explicit continuation instruction. Heartbeat 2026-11-26T23:20:59+00:00; claim expires 2026-11-26T23:50:59+00:00.
-- Existing branch/PR/base: `felix/oaktown-signature` / draft #26 / `be37dba`. Previous pushed checkpoint `ca9bb82` only changes handoff/task documents. Existing booking worktree and PR #25 are preserved.
-- Scope: approved mockup, authentic Afterglow/Colonial heroes, combined structured filters, Louisville story, Lobster Nirvana, rental journey and skyline footer. EN/ES and public/admin workflows remain compatible; current file catalogue stays authoritative.
-- Retrieved Drive metadata and raw references for all three approved images; also found newer `04-approved-hero-exact-reference.png`. NEXT STEP: inspect all four images, capture baseline, then implement design in bounded checkpoints.
-- No production merge/deployment, inventory migration/schema change, payment activation or invented listing facts. Afterglow rights/ownership remain a public-deployment gate, not a blocker to this authorized design review.
+- Owner: Codex. Heartbeat 2026-11-26T23:48:07+00:00; claim expires 2026-11-27T00:18:07+00:00.
+- Existing branch/PR/base: `felix/oaktown-signature` / draft #26 / `be37dba`. Last pushed checkpoint before this WIP: `53fbb00`. Booking branch and PR #25 remain untouched.
+- Done: inspected all approved images and the newer exact hero reference; built forest/ivory public shell, authentic two-photo hero, combined structured filters, compact property collection, Louisville/vacation features, journey and skyline footer. FAQ/community/contact retain verified content as routes. User confirmed no Resident Portal: omitted.
+- Assets: only non-generative correction/downsampling of approved Afterglow and Colonial originals. See assets/signature. Baseline screenshots are missing-photo fallbacks, not final verification.
+- Checks so far: app.js and signature.js syntax pass. Initial Chromium screenshots found inherited contrast issues; corrected. Final browser/regression review is still in progress. No implementation tests yet.
+- Network limitation: Squarespace photo CDN returns proxy 403. Requested single-host grant via environment tool; confirmation did not complete, no settings changed. Local hero/story/vacation assets load. No missing-photo screenshot is final visual acceptance.
+- NEXT STEP: finish responsive/EN-ES/filter/gallery tests and review real browser captures; verify no inherited contrast or navigation regressions. Then push comparison evidence and retrieve an existing Cloudflare branch preview URL if available.
+- No merge, production deployment, live inventory/schema changes or payment activation. Afterglow reuse/ownership confirmation remains a production-deployment gate.
 
 ---
 

@@ -1,10 +1,10 @@
 # WEB-SIGNATURE — approved homepage redesign
 
-- [ ] 1. Audit, inspect approved assets, capture baseline and define design system.
-- [ ] 2. Build navigation and authentic Afterglow hero with Colonial secondary image.
-- [ ] 3. Implement combined neighborhood, bedroom and bathroom search and property collection.
-- [ ] 4. Build Louisville story and Lobster Nirvana features.
-- [ ] 5. Build rental journey and footer with verified links.
+- [x] 1. Audit, inspect approved assets, capture baseline and define design system.
+- [x] 2. Build navigation and authentic Afterglow hero with Colonial secondary image.
+- [x] 3. Implement combined neighborhood, bedroom and bathroom search and property collection.
+- [x] 4. Build Louisville story and Lobster Nirvana features.
+- [x] 5. Build rental journey and footer with verified links.
 - [ ] 6. Refine mobile, tablet, EN/ES and reduced-motion interactions.
 - [ ] 7. Run regressions, compare browser captures with mockup and publish draft preview evidence.
 - [ ] Follow-up after separate approval is migration from file catalogue to verified published CMS inventory.
