@@ -54,6 +54,7 @@ export async function ensureSession(env,row,transport) {
   const claim=await env.DB.prepare(`
     UPDATE booking_reservations SET stripe_create_attempts=stripe_create_attempts+1
     WHERE id=? AND state='holding' AND stripe_session IS NULL AND expires_at>?
+      AND EXISTS (SELECT 1 FROM booking_settings WHERE id=1 AND json_extract(config_json,'$.enabled')=1)
     RETURNING stripe_create_attempts
   `).bind(row.id,cutoff).first();
   if (!claim) return rowById(env.DB,row.id);
@@ -155,7 +156,7 @@ export async function reconcile(env,row,transport,{notify=false}={}) {
         || intent.metadata?.reservation_id!==row.id) fail('payment_mismatch',409);
       refund=await refundStatus(env,paymentIntent,session.amount_total,transport);
       state=refund==='full'?'refunded':'confirmed';
-    } else if (session.status==='expired' && row.state==='holding') {
+    } else if (session.status==='expired' && session.payment_status==='unpaid' && row.state==='holding') {
       state='expired';
     }
     if (state!==row.state || refund!==row.refund_status || paymentIntent!==row.payment_intent) {

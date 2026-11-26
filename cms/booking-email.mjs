@@ -58,6 +58,8 @@ export async function sendBookingNotifications(env, row, guestEmail, transport) 
         AND EXISTS (SELECT 1 FROM booking_reservations WHERE id=? AND state='confirmed' AND refund_status<>'pending')
     `).bind(time+retryDelay,time,row.id,item.recipient,time,row.id).run();
     if (claim.meta.changes!==1) continue;
+    const content=message(row,item.recipient);
+    if (env.BOOKING_MODE==='test') content.subject='[TEST] '+content.subject;
     let response;
     try {
       response=await transport('https://api.resend.com/emails',{
@@ -68,7 +70,7 @@ export async function sendBookingNotifications(env, row, guestEmail, transport) 
           'Idempotency-Key':'lobster-booking-'+row.id+'-'+item.recipient
         },
         body:JSON.stringify({from:'Oaktown Rentals <'+env.BOOKING_EMAIL_FROM+'>',to:[to],
-          reply_to:env.BOOKING_OPERATOR_EMAIL,...message(row,item.recipient)}),
+          reply_to:env.BOOKING_OPERATOR_EMAIL,...content}),
         signal:AbortSignal.timeout(8000),redirect:'error'
       });
     } catch { continue; }

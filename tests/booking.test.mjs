@@ -18,6 +18,12 @@ test('closed configuration, live gate, canonical origin, strict quote and unavai
     assert.equal((await h.call('/api/booking/quote','POST',{arrival:start,departure:end,guests:2},{Origin:'https://evil.example'})).status,403);
     h.DB.sqlite.prepare("UPDATE booking_inventory SET open=0 WHERE day='2027-06-02'").run();assert.equal((await h.quote()).error,'unavailable');
     h.env.BOOKING_MODE='live';h.env.STRIPE_SECRET_KEY='sk_live_fixture';assert.deepEqual(await (await h.call('/api/booking/config')).json(),{enabled:false});
+    h.env.BOOKING_LIVE_ENABLED='true';
+    assert.deepEqual(await (await h.call('/api/booking/config')).json(),{enabled:false});
+    Object.assign(h.env,{RESEND_API_KEY:'fixture',BOOKING_EMAIL_FROM:'bookings@example.com',BOOKING_OPERATOR_EMAIL:'host@example.com'});
+    assert.equal((await (await h.call('/api/booking/config')).json()).enabled,true);
+    h.DB.sqlite.exec('DROP TABLE booking_notifications');
+    assert.deepEqual(await (await h.call('/api/booking/config')).json(),{enabled:false});
     delete h.env.DB;assert.deepEqual(await (await h.call('/api/booking/config')).json(),{enabled:false});
   }finally{h.close();}
 });
@@ -164,7 +170,10 @@ test('refund-before-completion webhook converges after a stale concurrent write 
   const h=await bookingFixture();
   try {
     const q=await h.quote();
-    const reservation=await (await h.checkout(q)).json();
+    h.loseCreateResponse();
+    assert.equal((await h.checkout(q)).status,503);
+    const reservation=h.DB.sqlite.prepare('SELECT * FROM booking_reservations').get();
+    assert.equal(reservation.stripe_session,null);
     const version=(await (await h.call('/api/admin/bookings','GET',undefined,admin)).json()).version;
     h.pay('cs_test_1');
     const paymentIntent=h.sessions.get('cs_test_1').payment_intent;

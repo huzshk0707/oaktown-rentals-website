@@ -76,7 +76,12 @@ const path=require('node:path');
     const row=server.DB.sqlite.prepare("SELECT * FROM booking_reservations WHERE state='holding'").get();
     assert.notEqual(row.id,first.id);
     assert.equal(server.sessions.size,2);
+    Object.assign(server.env,{
+      RESEND_API_KEY:'fixture',BOOKING_EMAIL_FROM:'bookings@example.com',BOOKING_OPERATOR_EMAIL:'host@example.com'
+    });
     server.pay(row.stripe_session);
+    assert.equal((await server.webhook(row.stripe_session)).status,200);
+    assert.equal(server.emails.length,2);
     await page.goto(server.base+'/booking/?reservation='+row.id);
     await page.waitForFunction(()=>document.querySelector('#reservation-title').textContent.includes('booked'));
     assert.equal(await page.locator('#resume').isHidden(),true);await page.screenshot({path:path.join(folder,'en-confirmed.png'),fullPage:true});
@@ -96,6 +101,7 @@ const path=require('node:path');
     const closedInventory=server.DB.sqlite.prepare("SELECT rate_cents,open FROM booking_inventory WHERE day='2027-07-01'").get();
     assert.equal(closedInventory.rate_cents,42500);
     assert.equal(closedInventory.open,0);
+    await editor.evaluate(()=>window.scrollTo(0,0));
     await editor.screenshot({path:path.join(folder,'admin-mobile.png'),fullPage:true});await admin.close();
     server.env.BOOKING_MODE='off';const closed=await browser.newPage({viewport:{width:390,height:844}});
     await closed.goto(server.base+'/mint-mojo/');

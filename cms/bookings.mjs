@@ -7,7 +7,12 @@ const json=(value,status=200)=>new Response(JSON.stringify(value),{status,header
 const now=()=>new Date().toISOString();
 async function configRow(db) {
   if (!db) return null;
-  try { return await db.prepare('SELECT * FROM booking_settings WHERE id=1').first(); }
+  try {
+    return await db.prepare(`
+      SELECT * FROM booking_settings WHERE id=1
+      AND EXISTS (SELECT 1 FROM sqlite_schema WHERE type='table' AND name='booking_notifications')
+    `).first();
+  }
   catch (error) { if (/no such table.*booking_settings/.test(String(error))) return null; throw error; }
 }
 const audit=(db,actor,action,subject)=>db.prepare('INSERT INTO booking_activity VALUES (?,?,?,?,?)').bind(crypto.randomUUID(),actor,action,subject,now());
@@ -23,12 +28,15 @@ async function quote(env,input) {
   return makeQuote(input,config,version,rows.results);
 }
 function paramsFor(id,q,origin,expires,language) {
+  const spanish=language==='es';
+  const guests=spanish?(q.guests===1?'huésped':'huéspedes'):(q.guests===1?'guest':'guests');
+  const fees=spanish?'Incluye limpieza e impuestos':'Includes cleaning and tax';
   return {
     mode:'payment','payment_method_types[0]':'card',client_reference_id:id,'metadata[reservation_id]':id,
     'payment_intent_data[metadata][reservation_id]':id,locale:language==='es'?'es':'en',
     'line_items[0][price_data][currency]':'usd','line_items[0][price_data][unit_amount]':String(q.totalCents),
     'line_items[0][price_data][product_data][name]':'Lobster Nirvana',
-    'line_items[0][price_data][product_data][description]':`${q.arrival} – ${q.departure} · ${q.guests} guests · Includes cleaning and tax`,
+    'line_items[0][price_data][product_data][description]':q.arrival+' – '+q.departure+' · '+q.guests+' '+guests+' · '+fees,
     'line_items[0][quantity]':'1',expires_at:String(expires),
     success_url:`${origin}/booking/?reservation=${id}&lang=${language==='es'?'es':'en'}`,
     cancel_url:`${origin}/booking/?reservation=${id}&cancelled=1&lang=${language==='es'?'es':'en'}`
@@ -43,7 +51,7 @@ export async function bookingAPI(request,env,{readJSON,readLimited,transport=fet
   if (path==='/api/booking/config' && request.method==='GET') {
     const row=await configRow(db), config=row?JSON.parse(row.config_json):{};
     const enabled=!!(config.enabled && paymentReady(env));
-    return json(enabled?{enabled:true,mode:env.BOOKING_MODE,minNights:config.minNights,maxNights:config.maxNights,maxGuests:config.maxGuests,today:today(),siteKey:env.TURNSTILE_SITE_KEY}:{enabled:false});
+    return json(enabled?{enabled:true,mode:env.BOOKING_MODE,minNights:config.minNights,maxNights:config.maxNights,maxGuests:config.maxGuests,today:today(),siteKey:env.TURNSTILE_SITE_KEY,notifications:emailReady(env)}:{enabled:false});
   }
   if (path==='/api/booking/stripe-webhook' && request.method==='POST') {
     const raw=await readLimited(request,128*1024);
@@ -110,7 +118,7 @@ async function retryCheckout(env,row,quoteKey,transport) {
 }
 export async function bookingAdmin(request,env,actor,{readJSON,transport=fetch}) {
   const db=env.DB,path=new URL(request.url).pathname;
-  const current=await configRow(db);if(!current) fail('Apply the booking migration before configuring reservations.',503);
+  const current=await configRow(db);if(!current) fail('Apply the booking migrations before configuring reservations.',503);
   if (path==='/api/admin/bookings' && request.method==='GET') {
     const [inventory,reservations,notifications]=await Promise.all([
       db.prepare('SELECT i.*,n.reservation_id FROM booking_inventory i LEFT JOIN booking_nights n ON n.day=i.day WHERE i.day>=? ORDER BY i.day').bind(today()).all(),

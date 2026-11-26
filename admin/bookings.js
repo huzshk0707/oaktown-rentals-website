@@ -44,7 +44,7 @@
     const r=reservation;
     const card=el('article','','reservation-card');
     card.append(el('strong',r.arrival+' – '+r.departure),
-      el('p',r.guests+' guests · '+money(r.totalCents)+' · '+r.state),
+      el('p',r.guests+(r.guests===1?' guest':' guests')+' · '+money(r.totalCents)+' · '+r.state),
       el('small','Reference: '+r.id));
     if (r.refundStatus!=='none') card.append(el('p','Stripe refund: '+r.refundStatus));
     for (const notice of r.notifications) {
