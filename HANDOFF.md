@@ -1,11 +1,10 @@
 # Active task: WEB-LOBSTER-BOOKING
 
-- Owner: Codex; heartbeat 2026-11-26T17:53:55+00:00; claim expires 2026-11-26T18:23:55+00:00.
-- Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25. Prior pushed claim: `21485c0`.
-- Implemented: additive booking migration, server-calculated quotes, atomic exclusive-date holds, Stripe idempotent checkout, raw-body signed webhooks and current Stripe-state reconciliation, full-refund closure, Turnstile and checkout attempt limits. EN/ES booking page and Access-protected booking admin. Live setup remains disabled.
-- Tests so far: syntax, CMS/security 3/3, booking backend 9/9, booking browser EN/ES 8 layouts plus local checkout/return/admin/closed states, existing admin workflow and improvements 6/6, vacation suite and public browser 48/48 passed. Browsing regression and refreshed screenshot run pending.
-- Test limitations: Stripe/Turnstile use disposable fixtures, not real provider accounts; all review prices/terms are clearly test fixtures. No production secrets, records, migration, merge or deployment changed.
-- NEXT STEP: complete regression checks, inspect updated screenshots, review payment-state edge cases, write `docs/lobster-booking.md` setup/recovery instructions and release a reviewable implementation checkpoint. Owner rates/terms, Stripe setup and dates blocked on other channels remain required for live launch.
+- Owner: FELIX; heartbeat 2026-11-26T21:16:17+00:00; claim expires 2026-11-26T21:46:17+00:00.
+- Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25. Previous verified checkpoint: `750ee13`.
+- Scope: owner approved the audit follow-up on this draft. Production launch, deployment and live payment activation require separate approval.
+- Audit at `750ee13`: Cloudflare closed preview, D1 local migration, booking backend 9/9, eight bilingual Chromium layouts, public 48/48, browsing 24/24 and existing admin/gallery regressions passed. Reproduced stranded holds, same-quote expired retries, a dropped refund transition and stale inventory reopening.
+- NEXT STEP: fix and test hold recovery, same-stay retries and refund reconciliation in `cms/bookings.mjs` and `tests/booking.test.mjs`, then complete public/admin entry points and the provider runbook.
 
 ---
 
