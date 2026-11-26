@@ -1,11 +1,10 @@
 # WEB-SIGNATURE — Oaktown Signature homepage
 
-- Owner FELIX. Heartbeat 2026-11-26T22:54:22.273915+00:00. Claim expires 2026-11-26T23:24:22.273915+00:00.
-- Branch `felix/oaktown-signature`, base `be37dba`. Dedicated draft PR follows this ownership checkpoint.
-- Approved scope is the homepage redesign from the supplied Afterglow mockup, responsive EN/ES, structured neighborhood/bedroom/bathroom filters, existing file catalogue and CMS compatibility.
-- Downloaded and visually inspected all three owner-supplied Drive images. Original Afterglow is 1000×753 and Colonial is 960×677. Preserve actual architecture and use non-generative processing.
-- Public deployment requires confirmation of Afterglow ownership/management and photo reuse rights. Production rollout and payments require separate approval.
-- NEXT STEP is capture the current homepage, document asset sources and implement navigation/hero on this branch. Keep PR #25 separate.
+- Owner: Codex, taking over under the user's explicit continuation instruction. Heartbeat 2026-11-26T23:20:59+00:00; claim expires 2026-11-26T23:50:59+00:00.
+- Existing branch/PR/base: `felix/oaktown-signature` / draft #26 / `be37dba`. Previous pushed checkpoint `ca9bb82` only changes handoff/task documents. Existing booking worktree and PR #25 are preserved.
+- Scope: approved mockup, authentic Afterglow/Colonial heroes, combined structured filters, Louisville story, Lobster Nirvana, rental journey and skyline footer. EN/ES and public/admin workflows remain compatible; current file catalogue stays authoritative.
+- Retrieved Drive metadata and raw references for all three approved images; also found newer `04-approved-hero-exact-reference.png`. NEXT STEP: inspect all four images, capture baseline, then implement design in bounded checkpoints.
+- No production merge/deployment, inventory migration/schema change, payment activation or invented listing facts. Afterglow rights/ownership remain a public-deployment gate, not a blocker to this authorized design review.
 
 ---
 
