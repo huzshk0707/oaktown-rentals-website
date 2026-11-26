@@ -1,3 +1,14 @@
+# WEB-SIGNATURE — Oaktown Signature homepage
+
+- Owner FELIX. Heartbeat 2026-11-26T22:54:22.273915+00:00. Claim expires 2026-11-26T23:24:22.273915+00:00.
+- Branch `felix/oaktown-signature`, base `be37dba`. Dedicated draft PR follows this ownership checkpoint.
+- Approved scope is the homepage redesign from the supplied Afterglow mockup, responsive EN/ES, structured neighborhood/bedroom/bathroom filters, existing file catalogue and CMS compatibility.
+- Downloaded and visually inspected all three owner-supplied Drive images. Original Afterglow is 1000×753 and Colonial is 960×677. Preserve actual architecture and use non-generative processing.
+- Public deployment requires confirmation of Afterglow ownership/management and photo reuse rights. Production rollout and payments require separate approval.
+- NEXT STEP is capture the current homepage, document asset sources and implement navigation/hero on this branch. Keep PR #25 separate.
+
+---
+
 # Listing and vacation-home refresh
 
 Codex releases the completed implementation claim on `content/refresh-rentals-lobster-nirvana`. Source: current Squarespace property pages and the owner-supplied Airbnb listing. Public browsing, rental and vacation galleries, mobile navigation and admin checks passed. The 60 image URLs match the current property pages in order. The production CMS update was rehearsed against the prior records in disposable SQLite. Next: review PR #24, then apply the scoped CMS refresh through an authorized operator session when approved.

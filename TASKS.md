@@ -1,3 +1,15 @@
+# WEB-SIGNATURE — approved homepage redesign
+
+- [ ] 1. Audit, inspect approved assets, capture baseline and define design system.
+- [ ] 2. Build navigation and authentic Afterglow hero with Colonial secondary image.
+- [ ] 3. Implement combined neighborhood, bedroom and bathroom search and property collection.
+- [ ] 4. Build Louisville story and Lobster Nirvana features.
+- [ ] 5. Build rental journey and footer with verified links.
+- [ ] 6. Refine mobile, tablet, EN/ES and reduced-motion interactions.
+- [ ] 7. Run regressions, compare browser captures with mockup and publish draft preview evidence.
+- [ ] Follow-up after separate approval is migration from file catalogue to verified published CMS inventory.
+- [ ] Before public deployment confirm Afterglow ownership/management and photograph reuse authorization.
+
 # Tasks — Oaktown Rentals Website
 
 Prioritized from main code, README launch checklist and current PRs on 2026-11-16.
