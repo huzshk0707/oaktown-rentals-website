@@ -63,8 +63,11 @@ test('expiry requires Stripe confirmation; full refunds close inventory; partial
     h.DB.sqlite.prepare('UPDATE booking_reservations SET expires_at=0').run();assert.equal((await (await status(h,r.id)).json()).state,'holding');
     h.sessions.get('cs_test_1').status='expired';await h.webhook('cs_test_1','checkout.session.expired');assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_nights').get().n,0);
     const q2=await h.quote(),r2=await (await h.checkout(q2,'b'.repeat(64))).json();h.pay('cs_test_2');await h.webhook('cs_test_2');
-    const intent=h.intents.get(h.sessions.get('cs_test_2').payment_intent);intent.latest_charge.amount_refunded=100;assert.equal((await (await status(h,r2.id,'b'.repeat(64))).json()).state,'confirmed');
-    intent.latest_charge={refunded:true,amount_refunded:q2.totalCents};assert.equal((await (await status(h,r2.id,'b'.repeat(64))).json()).state,'refunded');assert.equal((await h.quote()).error,'unavailable');assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_nights').get().n,0);
+    const id=h.sessions.get('cs_test_2').payment_intent;
+    h.refunds.set(id,[{id:'re_1',payment_intent:id,currency:'usd',status:'succeeded',amount:100}]);
+    assert.equal((await (await status(h,r2.id,'b'.repeat(64))).json()).state,'confirmed');
+    h.refunds.get(id).push({id:'re_2',payment_intent:id,currency:'usd',status:'succeeded',amount:q2.totalCents-100});
+    assert.equal((await (await status(h,r2.id,'b'.repeat(64))).json()).state,'refunded');assert.equal((await h.quote()).error,'unavailable');assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_nights').get().n,0);
   }finally{h.close();}
 });
 test('signed webhook rejects forgery, stale timestamps, wrong amounts and modes',async()=>{
@@ -93,4 +96,142 @@ test('booking admin retains Access, CSRF, stale-write checks and explicit cross-
     assert.equal(h.DB.sqlite.prepare("SELECT open FROM booking_inventory WHERE day='2027-07-01'").get().open,1);
     const response=await h.call('/admin/bookings.html','GET',undefined,admin);assert.equal(response.status,200);assert.match(response.headers.get('Cache-Control'),/no-store/);
   }finally{h.close();}
+});
+
+test('only a definitive first Stripe rejection releases the hold, and the same quote can start a fresh attempt',async()=>{
+  const h=await bookingFixture();
+  try {
+    const q=await h.quote();
+    h.rejectCreate();
+    const rejected=await h.checkout(q);
+    assert.equal(rejected.status,503);
+    assert.equal((await rejected.json()).error,'checkout_rejected');
+    assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_nights').get().n,0);
+    const fresh=await (await h.checkout(q,'b'.repeat(64))).json();
+    assert.equal(fresh.state,'holding');
+    h.sessions.get('cs_test_1').status='expired';
+    await h.webhook('cs_test_1','checkout.session.expired');
+    assert.equal((await (await h.checkout(q,'b'.repeat(64))).json()).state,'expired');
+    assert.equal((await (await h.checkout(q,'c'.repeat(64))).json()).state,'holding');
+  } finally {h.close();}
+});
+
+test('an ambiguous create stays held, survives a later rejection and supports verified operator recovery',async()=>{
+  const h=await bookingFixture();
+  try {
+    const q=await h.quote();
+    h.unknownCreate();
+    assert.equal((await h.checkout(q)).status,503);
+    h.rejectCreate();
+    assert.equal((await (await h.checkout(q)).json()).error,'payment_unavailable');
+    const recovered=await (await h.call('/api/booking/status','POST',{token:'a'.repeat(64)})).json();
+    assert.equal(recovered.state,'holding');
+    assert.equal(recovered.checkoutUrl,null);
+    const endpoint='/api/admin/bookings/'+recovered.id+'/review-checkout';
+    assert.equal((await h.call(endpoint,'POST',{confirmNoSession:true},admin)).status,409);
+    h.DB.sqlite.prepare('UPDATE booking_reservations SET expires_at=?').run(Math.floor(Date.now()/1000)-360);
+    assert.equal((await h.call(endpoint,'POST',{},admin)).status,409);
+    const released=await (await h.call(endpoint,'POST',{confirmNoSession:true},admin)).json();
+    assert.equal(released.state,'expired');
+    assert.equal((await h.quote()).key,q.key);
+    const entry=h.DB.sqlite.prepare("SELECT actor FROM booking_activity WHERE action='checkout_released_after_stripe_review'").get();
+    assert.equal(entry.actor,'editor@example.com');
+  } finally {h.close();}
+});
+
+test('operator review attaches an existing Stripe session and expiry recovery releases only eligible holds',async()=>{
+  const h=await bookingFixture();
+  try {
+    const q=await h.quote();
+    h.loseCreateResponse();
+    await h.checkout(q);
+    const row=h.DB.sqlite.prepare('SELECT * FROM booking_reservations').get();
+    const recovered=await (await h.call('/api/admin/bookings/'+row.id+'/review-checkout','POST',{},admin)).json();
+    assert.equal(recovered.state,'holding');
+    assert.match(recovered.checkoutUrl,/cs_test_1/);
+    assert.equal(h.sessions.size,1);
+    h.DB.sqlite.prepare('UPDATE booking_reservations SET expires_at=0').run();
+    await h.app.scheduled(null,h.env);
+    assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_nights').get().n,3);
+    h.sessions.get('cs_test_1').status='expired';
+    h.DB.sqlite.prepare('UPDATE booking_reservations SET recovery_checked_at=0').run();
+    await h.app.scheduled(null,h.env);
+    assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_nights').get().n,0);
+  } finally {h.close();}
+});
+
+test('refund-before-completion webhook converges after a stale concurrent write and invalidates admin edits',async()=>{
+  const h=await bookingFixture();
+  try {
+    const q=await h.quote();
+    const reservation=await (await h.checkout(q)).json();
+    const version=(await (await h.call('/api/admin/bookings','GET',undefined,admin)).json()).version;
+    h.pay('cs_test_1');
+    const paymentIntent=h.sessions.get('cs_test_1').payment_intent;
+    const refund={id:'re_1',payment_intent:paymentIntent,currency:'usd',status:'succeeded',amount:q.totalCents};
+    let releaseRefund, readRefund;
+    const refundPaused=new Promise(resolve=>{readRefund=resolve;});
+    const resumeRefund=new Promise(resolve=>{releaseRefund=resolve;});
+    let reads=0;
+    h.intercept(async url=>{
+      if (!url.includes('/refunds?')) return;
+      reads++;
+      if (reads===1) {
+        readRefund();
+        await resumeRefund;
+      }
+      return Response.json({data:reads===2?[]:[refund],has_more:false});
+    });
+    const incoming=h.webhook('cs_test_1','refund.created',{data:{object:refund}});
+    await refundPaused;
+    try {
+      assert.equal((await h.webhook('cs_test_1')).status,200);
+      assert.equal(h.DB.sqlite.prepare('SELECT state FROM booking_reservations').get().state,'confirmed');
+    } finally {releaseRefund();}
+    assert.equal((await incoming).status,200);
+    assert.equal((await (await status(h,reservation.id)).json()).state,'refunded');
+    assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_nights').get().n,0);
+    const stale={version,arrival:start,departure:end,rateCents:30000,open:true,blockedElsewhere:true};
+    assert.equal((await h.call('/api/admin/bookings/inventory','PUT',stale,admin)).status,409);
+    assert.equal((await h.quote()).error,'unavailable');
+  } finally {h.close();}
+});
+
+test('confirmation email is queued with payment, retries a transient failure, and a pending refund stays held',async()=>{
+  const h=await bookingFixture();
+  try {
+    Object.assign(h.env,{RESEND_API_KEY:'fixture',BOOKING_EMAIL_FROM:'bookings@example.com',BOOKING_OPERATOR_EMAIL:'host@example.com'});
+    const q=await h.quote();
+    const r=await (await h.checkout(q,undefined,{language:'es'})).json();
+    h.pay('cs_test_1');
+    const id=h.sessions.get('cs_test_1').payment_intent;
+    const refund={id:'re_1',payment_intent:id,currency:'usd',status:'pending',amount:q.totalCents};
+    h.refunds.set(id,[refund]);
+    assert.equal((await h.webhook('cs_test_1','refund.created',{data:{object:refund}})).status,200);
+    assert.equal(h.DB.sqlite.prepare('SELECT refund_status FROM booking_reservations').get().refund_status,'pending');
+    assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_nights').get().n,3);
+    assert.equal(h.emails.length,0);
+    refund.status='failed';
+    h.intercept((url,options)=>{
+      if (url==='https://api.resend.com/emails' && JSON.parse(options.body).to[0]==='guest@example.com') {
+        return Response.json({error:'temporary'},{status:503});
+      }
+    });
+    assert.equal((await h.webhook('cs_test_1','refund.failed',{data:{object:refund}})).status,200);
+    assert.equal(h.DB.sqlite.prepare('SELECT refund_status FROM booking_reservations').get().refund_status,'failed');
+    assert.equal(h.emails.length,1);
+    assert.deepEqual(h.emails[0].to,['host@example.com']);
+    h.intercept(undefined);
+    h.DB.sqlite.prepare('UPDATE booking_notifications SET next_attempt_at=0').run();
+    await h.app.scheduled(null,h.env);
+    assert.equal(h.emails.length,2);
+    const guest=h.emails[1];
+    assert.deepEqual(guest.to,['guest@example.com']);
+    assert.match(guest.subject,/reserva.*confirmada/);
+    assert.ok(guest.text.includes(r.id));
+    assert.equal(guest.key,'lobster-booking-'+r.id+'-guest');
+    assert.equal((await h.webhook('cs_test_1')).status,200);
+    assert.equal(h.emails.length,2);
+    assert.equal(h.DB.sqlite.prepare('SELECT count(*) n FROM booking_notifications WHERE sent_at IS NOT NULL').get().n,2);
+  } finally {h.close();}
 });

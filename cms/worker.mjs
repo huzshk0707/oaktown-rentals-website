@@ -1,4 +1,5 @@
 import { bookingAPI, bookingAdmin } from './bookings.mjs';
+import { recoverBookings } from './booking-payments.mjs';
 import { authenticate } from './auth.mjs';
 import { validateProperty, imageType, fail, MAX_JSON_BYTES, MAX_PHOTO_BYTES } from './model.mjs';
 
@@ -121,6 +122,7 @@ function adminHeaders(response) {
 }
 export function createApp({ authorize = authenticate, bookingTransport = fetch } = {}) {
   return {
+    async scheduled(_controller, env) { await recoverBookings(env,bookingTransport); },
     async fetch(request, env) {
       const url = new URL(request.url), path = url.pathname;
       // All current asset/API paths use plain ASCII names. Reject encoded aliases

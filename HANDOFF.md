@@ -1,10 +1,10 @@
 # Active task: WEB-LOBSTER-BOOKING
 
-- Owner: FELIX; heartbeat 2026-11-26T21:16:17+00:00; claim expires 2026-11-26T21:46:17+00:00.
-- Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25. Previous verified checkpoint: `750ee13`.
-- Scope: owner approved the audit follow-up on this draft. Production launch, deployment and live payment activation require separate approval.
-- Audit at `750ee13`: Cloudflare closed preview, D1 local migration, booking backend 9/9, eight bilingual Chromium layouts, public 48/48, browsing 24/24 and existing admin/gallery regressions passed. Reproduced stranded holds, same-quote expired retries, a dropped refund transition and stale inventory reopening.
-- NEXT STEP: fix and test hold recovery, same-stay retries and refund reconciliation in `cms/bookings.mjs` and `tests/booking.test.mjs`, then complete public/admin entry points and the provider runbook.
+- Owner: FELIX; heartbeat 2026-11-26T21:27:31+00:00; claim expires 2026-11-26T21:57:31+00:00.
+- Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25. Prior pushed claim: `fd23062`.
+- Implemented: recoverable Stripe creation with conservative hold release, guest recovery after reload and fresh attempts after expiry, refund-aware reconciliation and stale-inventory guards, a guest/operator email outbox, gated vacation-page booking link, responsive Turnstile, mobile admin navigation and safer date closure. Staging config example and provider/recovery runbook supplied.
+- Verified: syntax, CMS/security 3/3, booking backend 14/14, booking browser including 8 bilingual layouts, narrower challenge sizing, lost-create recovery and mobile admin, vacation gallery, and local D1 migrations 0001–0003.
+- NEXT STEP: finish existing browser regressions, validate the isolated staging config against local D1 and inspect final screenshots. Record and push final review evidence on PR #25. Hosted staging still needs authorized Cloudflare and provider account access. Production launch requires separate approval.
 
 ---
 

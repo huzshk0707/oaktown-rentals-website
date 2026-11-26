@@ -12,22 +12,45 @@ export async function signature(raw,secret='whsec_fixture',timestamp=Math.floor(
   return `t=${timestamp},v1=${[...bytes].map(b=>b.toString(16).padStart(2,'0')).join('')}`;
 }
 export async function bookingFixture({configure=true}={}) {
-  const DB=await database();DB.sqlite.exec(await fs.readFile(new URL('../cms/migrations/0002_bookings.sql',import.meta.url),'utf8'));
-  const sessions=new Map(),keys=new Map(),intents=new Map(),calls=[];
-  let failCreate=false;
+  const DB=await database();
+  for (const file of ['0002_bookings.sql','0003_booking_recovery.sql']) {
+    DB.sqlite.exec(await fs.readFile(new URL('../cms/migrations/'+file,import.meta.url),'utf8'));
+  }
+  const sessions=new Map(),keys=new Map(),intents=new Map(),refunds=new Map(),calls=[],emails=[];
+  let createFailure;
+  let intercept;
   const transport=async(url,options={})=>{
     calls.push({url,method:options.method||'GET'});
+    const mocked=await intercept?.(url,options);
+    if(mocked)return mocked;
+    if(url==='https://api.resend.com/emails'){
+      emails.push({key:options.headers['Idempotency-Key'],...JSON.parse(options.body)});
+      return Response.json({id:'email_fixture'});
+    }
     if(url.includes('turnstile')){const good=options.body.get('response')==='valid';return Response.json({success:good,hostname:'booking.example',action:'booking'});}
     if(options.method==='POST'){
       const key=options.headers['Idempotency-Key'];
       if(keys.has(key))return Response.json(sessions.get(keys.get(key)));
+      if(createFailure==='rejected' || createFailure==='unknown'){
+        const rejected=createFailure==='rejected';
+        createFailure=undefined;
+        return Response.json({error:{type:rejected?'invalid_request_error':'api_error'}},{status:rejected?400:500});
+      }
       const p=new URLSearchParams(options.body),id='cs_test_'+(sessions.size+1);
       const session={id,url:'https://checkout.stripe.com/c/pay/'+id,status:'open',payment_status:'unpaid',currency:'usd',mode:'payment',livemode:false,amount_total:Number(p.get('line_items[0][price_data][unit_amount]')),client_reference_id:p.get('client_reference_id'),metadata:{reservation_id:p.get('metadata[reservation_id]')},expires_at:Number(p.get('expires_at')),payment_intent:null};
       sessions.set(id,session);keys.set(key,id);
-      if(failCreate){failCreate=false;throw Error('Lost network response after Stripe created session');}
+      if(createFailure==='lost'){createFailure=undefined;throw Error('Lost network response after Stripe created session');}
       return Response.json(session);
     }
     if(url.includes('payment_intents/'))return Response.json(intents.get(url.split('payment_intents/')[1].split('?')[0]));
+    if(url.includes('/refunds?')){
+      const paymentIntent=new URL(url).searchParams.get('payment_intent');
+      return Response.json({data:refunds.get(paymentIntent)||[],has_more:false});
+    }
+    if(url.includes('/checkout/sessions?')){
+      const paymentIntent=new URL(url).searchParams.get('payment_intent');
+      return Response.json({data:[...sessions.values()].filter(item=>!paymentIntent||item.payment_intent===paymentIntent),has_more:false});
+    }
     const id=url.split('/').pop();return sessions.has(id)?Response.json(sessions.get(id)):Response.json({error:'missing'}, {status:404});
   };
   const root=path.resolve(new URL('..',import.meta.url).pathname);
@@ -38,9 +61,15 @@ export async function bookingFixture({configure=true}={}) {
   if(configure){DB.sqlite.prepare('UPDATE booking_settings SET config_json=?').run(JSON.stringify(rules));for(let day=1;day<=30;day++)DB.sqlite.prepare('INSERT INTO booking_inventory VALUES (?,?,1)').run('2027-06-'+String(day).padStart(2,'0'),30000);}
   const quote=async(input={})=>{const response=await call('/api/booking/quote','POST',{arrival:start,departure:end,guests:2,...input});return response.json();};
   const checkout=async(q,token='a'.repeat(64),extra={})=>call('/api/booking/checkout','POST',{arrival:q.arrival,departure:q.departure,guests:q.guests,quoteKey:q.key,token,verification:'valid',acceptedTerms:true,...extra});
-  function pay(id){const s=sessions.get(id);s.status='complete';s.payment_status='paid';s.payment_intent='pi_'+id.slice(8);intents.set(s.payment_intent,{id:s.payment_intent,currency:'usd',amount:s.amount_total,metadata:s.metadata,latest_charge:{refunded:false,amount_refunded:0}});}
+  function pay(id){const s=sessions.get(id);s.status='complete';s.payment_status='paid';s.payment_intent='pi_'+id.slice(8);s.customer_details={email:'guest@example.com'};intents.set(s.payment_intent,{id:s.payment_intent,currency:'usd',amount:s.amount_total,amount_received:s.amount_total,status:'succeeded',metadata:s.metadata,latest_charge:{refunded:false,amount_refunded:0}});}
   async function webhook(id,type='checkout.session.completed',extra={}){const object=sessions.get(id);const raw=JSON.stringify({id:'evt_fixture',type,livemode:false,data:{object},...extra});return call('/api/booking/stripe-webhook','POST',raw,{'Stripe-Signature':await signature(raw)});}
-  return {DB,env,app,call,quote,checkout,sessions,intents,calls,pay,webhook,loseCreateResponse(){failCreate=true;},close(){DB.sqlite.close();}};
+  return {DB,env,app,call,quote,checkout,sessions,intents,refunds,calls,emails,pay,webhook,
+    loseCreateResponse(){createFailure='lost';},
+    rejectCreate(){createFailure='rejected';},
+    unknownCreate(){createFailure='unknown';},
+    intercept(fn){intercept=fn;},
+    close(){DB.sqlite.close();}
+  };
 }
 export async function bookingServer(){
   const h=await bookingFixture();
