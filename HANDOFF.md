@@ -1,3 +1,14 @@
+# Active task: WEB-LOBSTER-BOOKING
+
+- Owner: Codex. UTC heartbeat: 2026-11-26T17:38:49+00:00; claim expires 2026-11-26T18:08:49+00:00.
+- Branch/base: `codex/lobster-booking` / `be37dba`.
+- Confirmed scope: owner wants Lobster Nirvana instant booking and online payment, not showing appointments or approval-first requests.
+- Current evidence: `/mint-mojo/` only creates email/SMS inquiries; no reservation engine, rate source, payment provider or calendar integration exists in this repository. Owner is checking existing provider accounts.
+- Work: integration discovery and implementation plan. No live transactions, account creation, paid subscriptions, migration, merge or deployment authorized by this task.
+- NEXT STEP: document the provider integration boundary and acceptance checks in `docs/lobster-booking.md`; await booking-service selection before provider-specific implementation.
+
+---
+
 # Listing and vacation-home refresh
 
 Codex releases the completed implementation claim on `content/refresh-rentals-lobster-nirvana`. Source: current Squarespace property pages and the owner-supplied Airbnb listing. Public browsing, rental and vacation galleries, mobile navigation and admin checks passed. The 60 image URLs match the current property pages in order. The production CMS update was rehearsed against the prior records in disposable SQLite. Next: review PR #24, then apply the scoped CMS refresh through an authorized operator session when approved.
