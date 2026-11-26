@@ -1,11 +1,11 @@
 # Active task: WEB-LOBSTER-BOOKING
 
-- Owner: Codex; heartbeat 2026-11-26T17:43:00+00:00; claim expires 2026-11-26T18:13:00+00:00.
-- Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25.
-- Owner selected direct Stripe checkout. No paid booking-platform subscription.
-- Implementing server-calculated quotes, exclusive date inventory, atomic holds, hosted Stripe Checkout, signed payment reconciliation and protected booking administration. Public EN/ES flow preserves the vacation page.
-- Live activation blocked pending rates/fees/tax/terms, Stripe account and approved dates blocked on Airbnb. No production migration, secrets, merge or deployment in this task.
-- NEXT STEP: implement isolated booking schema/model and Worker endpoints with disposable SQLite and Stripe fixtures, then public/admin interfaces and browser checks.
+- Owner: Codex; heartbeat 2026-11-26T17:53:55+00:00; claim expires 2026-11-26T18:23:55+00:00.
+- Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25. Prior pushed claim: `21485c0`.
+- Implemented: additive booking migration, server-calculated quotes, atomic exclusive-date holds, Stripe idempotent checkout, raw-body signed webhooks and current Stripe-state reconciliation, full-refund closure, Turnstile and checkout attempt limits. EN/ES booking page and Access-protected booking admin. Live setup remains disabled.
+- Tests so far: syntax, CMS/security 3/3, booking backend 9/9, booking browser EN/ES 8 layouts plus local checkout/return/admin/closed states, existing admin workflow and improvements 6/6, vacation suite and public browser 48/48 passed. Browsing regression and refreshed screenshot run pending.
+- Test limitations: Stripe/Turnstile use disposable fixtures, not real provider accounts; all review prices/terms are clearly test fixtures. No production secrets, records, migration, merge or deployment changed.
+- NEXT STEP: complete regression checks, inspect updated screenshots, review payment-state edge cases, write `docs/lobster-booking.md` setup/recovery instructions and release a reviewable implementation checkpoint. Owner rates/terms, Stripe setup and dates blocked on other channels remain required for live launch.
 
 ---
 
