@@ -1,3 +1,14 @@
+# WEB-SIGNATURE — Phase 2C Boutique Luxury / Ravi
+
+- Owner Ravi; heartbeat 2026-11-27T20:12:42+00:00; claim expires 2026-11-27T20:42:42+00:00.
+- Continue draft PR #26 / `felix/oaktown-signature` from verified remote `7ff126e0e8685764d6da49e173551f74ae55fd0d`. Felix released ownership. Existing tracked worktree clean; only dependency symlinks untracked. No unfinished edits recovered; all other worktrees/branches preserved.
+- Owner approved Option B — Boutique Luxury, Drive file `1V7gfl1owIOQzIOOUFNxc0E95iJHGyhH9`. Downloaded and visually inspected the exact reference. Styling only: preserve genuine photos, exact catalogue facts and original logo; omit favorite hearts/sample facts.
+- Scope: 38vw desktop cards (from 44vw), Option B ivory/champagne/serif/circular detail arrow treatment, functioning photo indicators and restrained interaction conventions; preserve single-row gallery/search/fit/edge/touch/history. Hero only changes scene-two EN/ES copy; preserve motion/photography/composition.
+- NEXT STEP: save approved reference/provenance and implement scoped Boutique card styling through property-cards.js and collection.css; build on existing shared-image transition and gallery lifecycle, then capture and regress.
+- Keep draft. No merge, production deploy, live inventory/schema/CMS migration, authentication/storage changes or payments. Enhanced Afterglow architectural acceptance remains separate.
+
+---
+
 # WEB-SIGNATURE — FELIX photo verification and editorial proposal complete
 
 - Owner FELIX under explicit reassignment. Work complete and claim released at 2026-11-27T11:29:39+00:00. Keep PR #26 DRAFT.
