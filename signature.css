@@ -199,3 +199,61 @@ html:has(body.rental-site){--listing-header-height:88px}
 /* Preserve the existing light detail-page surfaces under the new green shell. */
 body.rental-site #app:not(.signature-home){background:var(--paper)}
 .signature-journey .journey-number{color:#596b4f}
+
+/* Phase 1B — one continuous photograph, three scroll-linked text scenes. */
+body.rental-site .cinematic-hero{display:block;position:relative;height:auto;min-height:0;padding:0;overflow:visible;background:#102f23}
+body.rental-site .cinematic-hero.is-cinematic{height:220svh}
+.cinematic-stage{height:100svh;min-height:620px;position:relative;isolation:isolate;overflow:hidden;background:#102f23}
+.is-cinematic .cinematic-stage{position:sticky;top:0;min-height:0}
+body.rental-site .cinematic-hero .signature-images{inset:0;z-index:-3;max-height:none;transform-origin:63% 54%;will-change:auto}
+.is-cinematic .signature-images{will-change:transform}
+.cinematic-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:63% 50%}
+body.rental-site .cinematic-hero .signature-shade{z-index:-2;background:linear-gradient(90deg,#082e22d9 0%,#082e229c 24%,#082e2245 45%,#082e2205 72%),linear-gradient(0deg,#071f1a99,transparent 30%)}
+.cinematic-copy{position:absolute;inset:88px auto 110px max(6.5vw,28px);width:min(510px,43vw);display:grid;align-items:center}
+body.rental-site .cinematic-hero .signature-copy{grid-area:1/1;align-self:center;max-width:100%;padding:0;margin:0;pointer-events:none}
+.cinematic-scene{opacity:0}
+.cinematic-scene.is-active{opacity:1}
+.cinematic-scene.is-active a{pointer-events:auto}
+body.rental-site .cinematic-copy h1{font:400 clamp(64px,6.4vw,106px)/1.03 var(--serif);letter-spacing:-.04em;margin:0;color:#faf7ef}
+body.rental-site .cinematic-copy h1 em{color:#faf7ef}
+body.rental-site .cinematic-copy h2{font:400 clamp(36px,3.7vw,62px)/1.13 var(--serif);letter-spacing:-.035em;margin:0;text-wrap:initial;color:#faf7ef}
+body.rental-site .cinematic-scene[data-hero-scene="2"] h2{font-size:clamp(52px,5.3vw,88px);line-height:1.05}
+.cinematic-underline{display:block;width:65px;height:2px;background:#d4c4a4;margin:25px 0 28px}
+.cinematic-actions{display:flex;gap:14px;flex-wrap:wrap}
+body.rental-site .cinematic-secondary{background:#082e2266;border:1px solid #faf7efbb;color:#faf7ef}
+body.rental-site .cinematic-secondary:hover{background:#082e22}
+.cinematic-progress{position:absolute;right:3.5%;top:50%;transform:translateY(-50%);display:grid;gap:4px}
+.cinematic-progress button{display:grid;place-items:center;width:44px;height:44px;border:0;background:transparent;color:#faf7ef;cursor:pointer}
+.cinematic-progress button span{width:12px;height:12px;border:1px solid currentColor;border-radius:50%;background:#102f2333}
+.cinematic-progress button[aria-pressed="true"] span{background:#f3e7c4;border-color:#f3e7c4}
+.cinematic-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;align-items:center;flex-direction:column;gap:12px;color:#faf7ef;min-height:44px;text-decoration:none}
+.cinematic-scroll span{font:500 10px/1.4 'DM Sans',sans-serif;letter-spacing:.25em;text-transform:uppercase;white-space:nowrap}
+.cinematic-scroll .icon{width:24px;height:24px}
+.cinematic-exit{position:absolute;bottom:-1px;inset-inline:0;height:90px;background:linear-gradient(transparent,var(--signature-ivory));pointer-events:none;opacity:0}
+.cinematic-mobile-description{display:none}
+.cinematic-hero:not(.is-cinematic) .cinematic-progress,.cinematic-hero:not(.is-cinematic) .cinematic-scroll{display:none}
+.cinematic-hero:not(.is-cinematic) [data-hero-scene="1"],.cinematic-hero:not(.is-cinematic) [data-hero-scene="2"]{display:none}
+.cinematic-hero:not(.is-cinematic) .cinematic-mobile-description{display:block;font:400 18px/1.5 var(--serif);max-width:420px;margin:0 0 24px;color:#faf7ef}
+body.rental-site #home-search{scroll-margin-top:108px}
+@media(max-width:850px),(max-height:559px){
+  .cinematic-stage{height:100svh;min-height:680px}
+  .cinematic-copy{inset:110px auto 55px 6%;width:78%;align-items:end}
+  body.rental-site .cinematic-copy h1{font-size:clamp(49px,8vw,76px);line-height:1.04}
+  body.rental-site .cinematic-hero .signature-shade{background:linear-gradient(0deg,#082e22f5 0%,#082e22b3 42%,#082e221a 78%)}
+  .cinematic-photo{object-position:66% 50%}
+  .cinematic-underline{margin:20px 0}
+}
+@media(max-width:450px){
+  .cinematic-stage{min-height:640px}
+  .cinematic-copy{inset:105px 6% 48px;width:auto}
+  body.rental-site .cinematic-copy h1{font-size:clamp(45px,12vw,57px)}
+  .cinematic-hero:not(.is-cinematic) .cinematic-mobile-description{font-size:17px;max-width:330px}
+}
+@media(max-height:559px) and (min-width:851px){.cinematic-stage{min-height:620px}.cinematic-copy{width:48%}}
+@media(prefers-reduced-motion:reduce){
+  .cinematic-hero *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+body.rental-site .cinematic-copy h1 em{font-style:italic}
+body.rental-site .cinematic-copy .signature-button{font:400 18px/1.3 var(--serif);min-height:50px;padding:13px 22px;border-radius:5px;gap:18px}
+body.rental-site .cinematic-copy .signature-button .icon{width:21px;height:21px}
+@media(max-width:450px){body.rental-site .cinematic-copy .signature-button{font-size:17px;min-height:48px;padding:12px 18px}}

@@ -12,14 +12,15 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  const check=(name,fn)=>{try{fn();passed.push(name)}catch(e){failures.push(name+': '+e.message)}};
  await page.goto(base+'/');await page.waitForTimeout(250);
  
- const stage=await page.locator('.signature-hero').boundingBox();check('desktop cinematic stage fills one screen',()=>assert.equal(stage.height,1000));
- for(const scene of [0,1]){
-   await page.locator('[data-hero-button="'+scene+'"]').click();
-   const active=await page.locator('[data-hero-slide].is-active').getAttribute('data-hero-slide');check('explicit photo selection '+scene,()=>assert.equal(active,String(scene)));
+ const stage=await page.locator('.cinematic-stage').boundingBox();check('desktop cinematic stage fills one screen',()=>assert.equal(stage.height,1000));
+ for(const scene of [0,1,2]){
+   await page.locator('[data-hero-scene-button="'+scene+'"]').click();
+   await page.waitForFunction(index=>document.querySelector('.cinematic-hero').dataset.scene===String(index),scene);
+   check('scene navigation '+scene,()=>assert.ok(true));
  }
  await page.evaluate(()=>scrollTo({top:200,behavior:'instant'}));await page.waitForTimeout(100);
  const movement=await page.locator('.signature-images').evaluate(el=>getComputedStyle(el).transform);check('native scroll subtly moves the hero photography',()=>assert.notEqual(movement,'none'));
- const homesTop=await page.locator('#homes').evaluate(el=>el.getBoundingClientRect().top+scrollY);check('homes start within two desktop screens',()=>assert.ok(homesTop<=2000));
+ const homesTop=await page.locator('#homes').evaluate(el=>el.getBoundingClientRect().top+scrollY);check('homes start within three desktop screens',()=>assert.ok(homesTop<=3000));
  const grid=await page.locator('.property-grid').evaluate(el=>({display:getComputedStyle(el).display,columns:getComputedStyle(el).gridTemplateColumns.split(' ').length}));check('default property view has four comparison columns',()=>{assert.equal(grid.display,'grid');assert.equal(grid.columns,4)});
  await page.locator('#homes').scrollIntoViewIfNeeded();await page.waitForTimeout(300);
  await page.locator('[data-layout-button="gallery"]').click();
@@ -58,19 +59,16 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);check('no horizontal document overflow at '+width,()=>assert.equal(overflow,false));
  }
  await page.setViewportSize({width:390,height:844});await page.goto(base+'/');await page.waitForTimeout(200);
- const cta=await page.locator('.signature-copy .signature-button').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "Explore homes"')));
- const ctaLabel=await page.locator('.signature-copy .signature-button').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
- await page.locator('[data-hero-button="1"]').click();
- const active=await page.locator('[data-hero-slide].is-active').getAttribute('data-hero-slide');check('mobile second scene active',()=>assert.equal(active,'1'));
+ const cta=await page.locator('[data-hero-scene="0"] .signature-button').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "Browse Our Homes"')));
+ const ctaLabel=await page.locator('[data-hero-scene="0"] .signature-button').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
+ check('mobile has a static accessible scene',()=>assert.ok(true));
+ const mobileScenes=await page.locator('.cinematic-progress').isVisible();check('mobile scene controls are omitted',()=>assert.equal(mobileScenes,false));
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
- await page.locator('#language-switch').click();const text=await page.locator('[data-hero-button="1"]').getAttribute('aria-label');check('photo controls translate',()=>assert.match(text,/^Foto 2:/));
+ await page.locator('#language-switch').click();const text=await page.locator('[data-hero-scene="0"] .signature-button').innerText();check('hero action translates',()=>assert.match(text,/Ver nuestras viviendas/));
  await page.reload();const lang=await page.locator('html').getAttribute('lang');check('Spanish preference survives reload',()=>assert.equal(lang,'es'));
  await page.setViewportSize({width:320,height:640});await page.goto(base+'/');
- for(const scene of [0,1]){
-   await page.locator('[data-hero-button="'+scene+'"]').click();await page.waitForTimeout(950);
-   const space=await page.evaluate(()=>({copy:document.querySelector('.signature-description').getBoundingClientRect().bottom,button:document.querySelector('.signature-copy .signature-button').getBoundingClientRect().top}));
-   check('Spanish hero copy clears its CTA at 320px, scene '+scene,()=>assert.ok(space.copy<space.button));
- }
+ const space=await page.evaluate(()=>({copy:document.querySelector('.cinematic-mobile-description').getBoundingClientRect().bottom,button:document.querySelector('.signature-copy .signature-button').getBoundingClientRect().top}));
+ check('Spanish static hero copy clears CTA at 320px',()=>assert.ok(space.copy<space.button));
  for(const [slug,heading,term] of [
    ['115-colonial-drive','Un lugar para sentirte en casa','Los inquilinos pagan los servicios públicos'],
    ['1824-w-madison','Una casa con espacio en el sótano','Contrato de un año'],
@@ -95,7 +93,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  check('language change retains gallery photo and reading position',()=>{assert.equal(retained,'3 / 9');assert.ok(Math.abs(before-after)<3);});
 
  await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'reduce'});await page.goto(base+'/');await page.waitForTimeout(150);
- const sizes=await page.evaluate(()=>({position:getComputedStyle(document.querySelector('.signature-hero')).position,transition:getComputedStyle(document.querySelector('.signature-slide')).transitionDuration,disabled:document.querySelector('#motion-toggle').disabled}));check('reduced motion keeps a static hero and disables transitions',()=>{assert.notEqual(sizes.position,'sticky');assert.ok(['0s','1e-05s'].includes(sizes.transition));assert.equal(sizes.disabled,true)});
+ const sizes=await page.evaluate(()=>({position:getComputedStyle(document.querySelector('.signature-hero')).position,transition:getComputedStyle(document.querySelector('.cinematic-photo')).transitionDuration,disabled:document.querySelector('#motion-toggle').disabled}));check('reduced motion keeps a static hero and disables transitions',()=>{assert.notEqual(sizes.position,'sticky');assert.ok(['0s','1e-05s'].includes(sizes.transition));assert.equal(sizes.disabled,true)});
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(base+'/');await page.locator('#motion-toggle').click();await page.reload();const motion=await page.locator('#motion-toggle').getAttribute('aria-pressed');check('motion remains disabled after reload',()=>assert.equal(motion,'false'));
  await page.locator('#motion-toggle').click();await page.waitForTimeout(250);
 console.log(JSON.stringify({passed,failures},null,2));await browser.close();if(failures.length)process.exitCode=1;

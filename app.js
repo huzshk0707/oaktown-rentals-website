@@ -82,6 +82,20 @@
       communityRes1:'Escuelas públicas de Jefferson County',communityRes2:'Ciudad de Louisville',communityRes3:'Guía turística de Louisville',communityRes4:'Biblioteca pública de Louisville'
     }
   };
+  Object.assign(words.en, {
+    cinematicConnection:'Well-cared-for rental homes in Louisville and the surrounding communities.',
+    cinematicDiscovery:'Explore our homes.', browseHomes:'Browse Our Homes', howToApply:'How to Apply',
+    scrollExplore:'Scroll to explore', heroScenes:'Explore the three scenes',
+    sceneWelcome:'Welcome', sceneConnection:'Connection', sceneDiscovery:'Discovery',
+    afterglowReview:'AI-assisted design preview of 8216 Afterglow Drive'
+  });
+  Object.assign(words.es, {
+    cinematicConnection:'Viviendas bien cuidadas en Louisville y las comunidades cercanas.',
+    cinematicDiscovery:'Explora nuestras viviendas.', browseHomes:'Ver nuestras viviendas', howToApply:'Cómo solicitar',
+    scrollExplore:'Desliza para explorar', heroScenes:'Explora las tres escenas',
+    sceneWelcome:'Bienvenida', sceneConnection:'Conexión', sceneDiscovery:'Descubre',
+    afterglowReview:'Vista previa de diseño de 8216 Afterglow Drive con asistencia de IA'
+  });
   const t = (key) => words[language][key] || words.en[key] || key;
   const money = (n) => new Intl.NumberFormat(language==='es'?'es-US':'en-US',{style:'currency',currency:'USD',minimumFractionDigits:n%1?2:0,maximumFractionDigits:2}).format(n);
   const localized = (p,key) => language==='es' && p[key+'Es']?.length ? p[key+'Es'] : p[key];
@@ -132,16 +146,29 @@
     return `<section id="contact" class="contact-panel"><div class="reveal"><span class="eyebrow section-label">${t('contactLabel')}</span><h2>${t('contactHeading')}</h2><p>${t('contactDesc')}</p></div><div class="contact-actions reveal"><a href="sms:+15025001070">${t('textBest')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a href="tel:+15025001070">${DATA.phoneDisplay} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a href="mailto:${DATA.email}">${DATA.email}<span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><p>${DATA.mailingAddress}</p></div></section>`;
   }
   const arrow = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>';
-  function heroImage(name,width,alt,eager=false) {
-    const widths=name==='afterglow'?[480,768,1000]:[480,768,960];
-    return `<img src="/assets/signature/${name}-${width}.webp" srcset="${widths.map(w=>`/assets/signature/${name}-${w}.webp ${w}w`).join(', ')}" sizes="100vw" width="${width}" height="${name==='afterglow'?753:677}" alt="${alt}" loading="${eager?'eager':'lazy'}" decoding="async" ${eager?'fetchpriority="high"':''}>`;
-  }
   function storySection() {
-    return `<section class="signature-hero" id="top" aria-labelledby="signature-title">
-      <div class="signature-images" aria-live="off"><div class="signature-slide is-active" data-hero-slide="0">${heroImage('afterglow',1000,t('afterglowPhoto'),true)}</div><div class="signature-slide" data-hero-slide="1" aria-hidden="true">${heroImage('colonial',960,t('colonialPhoto'))}</div></div>
-      <div class="signature-shade" aria-hidden="true"></div>
-      <div class="signature-copy"><p class="eyebrow signature-kicker">Oaktown Rentals <span aria-hidden="true"></span></p><h1 id="signature-title">${t('signatureTitle')}</h1><p class="signature-description">${t('signatureCopy')}</p><a class="signature-button ivory" href="#homes">${t('explore')}${arrow}</a></div>
-      <div class="hero-caption"><span>${t('brandPhoto')}</span><div class="hero-photo-controls" role="group" aria-label="${t('heroPhotos')}"><button type="button" data-hero-button="0" aria-pressed="true" aria-label="${t('photoLabel')} 1: 8216 Afterglow Drive">01</button><button type="button" data-hero-button="1" aria-pressed="false" aria-label="${t('photoLabel')} 2: 115 Colonial Drive">02</button></div></div>
+    return `<section class="signature-hero cinematic-hero" id="top" aria-labelledby="signature-title">
+      <div class="cinematic-stage">
+        <div class="signature-images"><img class="cinematic-photo" src="/assets/signature/afterglow-review-1672.webp" srcset="/assets/signature/afterglow-review-480.webp 480w, /assets/signature/afterglow-review-768.webp 768w, /assets/signature/afterglow-review-1200.webp 1200w, /assets/signature/afterglow-review-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="${t('afterglowReview')}" fetchpriority="high" decoding="async"></div>
+        <div class="signature-shade" aria-hidden="true"></div>
+        <div class="cinematic-copy">
+          <div class="signature-copy cinematic-scene is-active" data-hero-scene="0">
+            <h1 id="signature-title">${t('signatureTitle')}</h1><span class="cinematic-underline" aria-hidden="true"></span>
+            <p class="cinematic-mobile-description">${t('cinematicConnection')}</p>
+            <a class="signature-button ivory" href="#homes">${t('browseHomes')}${arrow}</a>
+          </div>
+          <div class="signature-copy cinematic-scene" data-hero-scene="1" aria-hidden="true" inert>
+            <h2>${t('cinematicConnection')}</h2><span class="cinematic-underline" aria-hidden="true"></span>
+          </div>
+          <div class="signature-copy cinematic-scene" data-hero-scene="2" aria-hidden="true" inert>
+            <h2>${t('cinematicDiscovery')}</h2><span class="cinematic-underline" aria-hidden="true"></span>
+            <div class="cinematic-actions"><a class="signature-button ivory" href="#homes">${t('browseHomes')}${arrow}</a><a class="signature-button cinematic-secondary" href="#faq">${t('howToApply')}</a></div>
+          </div>
+        </div>
+        <div class="cinematic-progress" role="group" aria-label="${t('heroScenes')}">${['sceneWelcome','sceneConnection','sceneDiscovery'].map((key,index)=>`<button type="button" data-hero-scene-button="${index}" aria-label="${t(key)}" aria-pressed="${index===0}"><span></span></button>`).join('')}</div>
+        <a class="cinematic-scroll" href="#home-search"><span>${t('scrollExplore')}</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></a>
+        <div class="cinematic-exit" aria-hidden="true"></div>
+      </div>
     </section>`;
   }
   function searchPanel() {
