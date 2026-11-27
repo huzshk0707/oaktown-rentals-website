@@ -1,3 +1,7 @@
+# Current priority — Ravi / Phase 1 visual acceptance
+
+Owner explicitly reassigned continuation to Ravi. Preserve the existing implementation below; the exact hero reference supersedes prior opening mockups. Document the 12-phase master roadmap, refine only navigation/full-screen hero, then complete affected regressions and durable screenshot review. PR #26 stays draft; future phases require separate authorization.
+
 # WEB-SIGNATURE — approved homepage redesign
 
 - [x] 1. Audit, inspect approved assets, capture baseline and define design system.

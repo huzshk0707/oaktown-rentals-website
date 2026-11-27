@@ -1,14 +1,13 @@
-# WEB-SIGNATURE — Oaktown Signature homepage
+# WEB-SIGNATURE — Ravi Phase 1 continuation
 
-- Owner: Codex. Heartbeat 2026-11-26T23:48:07+00:00; claim expires 2026-11-27T00:18:07+00:00.
-- Existing branch/PR/base: `felix/oaktown-signature` / draft #26 / `be37dba`. Last pushed checkpoint before this WIP: `53fbb00`. Booking branch and PR #25 remain untouched.
-- Done: inspected all approved images and the newer exact hero reference; built forest/ivory public shell, authentic two-photo hero, combined structured filters, compact property collection, Louisville/vacation features, journey and skyline footer. FAQ/community/contact retain verified content as routes. User confirmed no Resident Portal: omitted.
-- Assets: only non-generative correction/downsampling of approved Afterglow and Colonial originals. See assets/signature. Baseline screenshots are missing-photo fallbacks, not final verification.
-- Recovery checkpoint before Ravi takeover: preserve the six uncommitted responsive CSS refinements and `tests/signature.cjs`. The test passed 19 groups locally; CMS/security 3/3, admin improvements 6/6 and Mint Mojo suite also passed. Existing full-screen Phase 1 refinement has not started.
-- Checks so far: app.js and signature.js syntax pass. Initial Chromium screenshots found inherited contrast issues; corrected. Final browser/regression review is still in progress. No implementation tests yet.
-- Network limitation: Squarespace photo CDN returns proxy 403. Requested single-host grant via environment tool; confirmation did not complete, no settings changed. Local hero/story/vacation assets load. No missing-photo screenshot is final visual acceptance.
-- NEXT STEP: finish responsive/EN-ES/filter/gallery tests and review real browser captures; verify no inherited contrast or navigation regressions. Then push comparison evidence and retrieve an existing Cloudflare branch preview URL if available.
-- No merge, production deployment, live inventory/schema changes or payment activation. Afterglow reuse/ownership confirmation remains a production-deployment gate.
+- Owner: Ravi, explicitly reassigned by the owner. Heartbeat 2026-11-27T04:26:17+00:00; claim expires 2026-11-27T04:56:17+00:00.
+- Existing branch / draft PR / base: `felix/oaktown-signature` / #26 / `be37dba`. Latest verified implementation `19642db`; recovery checkpoint `b8af217` preserves all unfinished CSS/tests. Existing booking worktree/PR #25 untouched.
+- Recovered: Signature shell, genuine Afterglow/Colonial photos, combined search, cards, story/vacation/journey/footer, bilingual resources. No Resident Portal (owner confirmed).
+- Current approved scope: document all 12 roadmap phases, then perfect Phase 1 navigation/hero against `04-approved-hero-exact-reference.png`. Exact hero reference supersedes prior opening mockups. Full-screen opening; search below viewport. Preserve other implemented sections, do not independently redesign future phases.
+- Previous checks: syntax pass; Signature behavior 19 groups; CMS/security 3/3; admin improvements 6/6; Mint Mojo suite passed. Re-run affected checks after Phase 1 change. Legacy cinematic tests require updated selectors/expectations for the approved new opening.
+- Known limitation: Squarespace CDN proxy CONNECT 403, current allowed hosts exclude it. Single-host environment request did not complete; no settings changed. Approved local hero/story/vacation photos load. Do not present missing-photo collection captures as final visual acceptance.
+- NEXT STEP: create `docs/oaktown-signature/ROADMAP.md`, link from TASKS.md, then refine only Phase 1 proportions in signature.css/app.js/index.html and capture the exact 1672×941 comparison.
+- No production merge/deploy, live inventory/schema/auth changes or payments. Keep PR #26 draft. Afterglow ownership/reuse confirmation remains a production gate. Original logo remains unchanged; exact reference is for composition/tone, not a substitute house photo.
 
 ---
 
