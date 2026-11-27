@@ -5,7 +5,9 @@
 - [x] Extract reusable card rendering/formatting; five component tests and four actual before/after copy/geometry comparisons passed.
 - [x] Implement approved single-row gallery: full-width introduction, no View All Homes or grid toggle, fixed generous gallery proportions, conditional arrows, edge movement, keyboard/touch/manual scroll, filter reset and reduced-motion behavior. Final card styling awaits approved mockup.
 - [x] Verify search, bilingual, galleries, accessibility, Phase 1B motion and admin/CMS compatibility. [Phase 2A evidence](docs/oaktown-signature/phase2a/README.md). Twelve axe scans have no confirmed violations; CDN photo acceptance remains open.
-- [ ] Publish reports, tests, checkpoints and bounded NEXT STEP. Phase 2 visual approval remains with owner/ChatGPT.
+- [x] Publish reports, tests, checkpoints and bounded NEXT STEP. Ravi released Phase 2A ownership; [evidence and blockers](docs/oaktown-signature/phase2a/README.md).
+- [ ] From a CDN-enabled browser, verify the latest PR preview and all 60 exact photos; save loaded-photo evidence.
+- [ ] Owner/ChatGPT Phase 2B Editorial Collection mockup approval; Phase 2C styling follows explicit direction.
 
 # Phase 1B — approved continuous scroll hero
 

@@ -1,6 +1,6 @@
 # Phase 2A — property collection engineering and horizontal gallery
 
-Continues draft [PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) from Felix's `262f153`. Ravi's ownership checkpoint is `69d20fd`; the audit/card extraction milestone is `1ba68e8`. Read the current PR head for the final evidence checkpoint. **No merge or production deployment.**
+Continues draft [PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) from Felix's `262f153`. Ravi's ownership checkpoint is `69d20fd`; the audit/card extraction milestone is `1ba68e8`. Gallery engineering checkpoint `b788bb4` is verified on the remote branch/PR. Read the current PR head for the final handoff checkpoint. **No merge or production deployment.**
 
 The owner's subsequent gallery instruction is implemented: the existing introduction is a full-width row above one horizontal row of homes. The redundant View All Homes action and grid/gallery toggle are removed. All four catalogue homes remain reachable; final premium editorial styling awaits the owner/ChatGPT mockup.
 
@@ -72,6 +72,10 @@ Run the static site on port 8930; browser commands below use `OAKTOWN_BASE_URL=h
 Exact outputs are adjacent `*-tests.txt` files. Existing grid-toggle assertions were replaced with the newly approved single-row behavior; filtered and unfiltered history coverage remains. The motion test now waits for the expected scene rather than assuming an arbitrary 100ms is enough under concurrent Chromium load. No hero code change was required.
 
 To reproduce captures, use `tests/capture-collection.cjs` for the current gallery. `tests/capture-phase2a.cjs` is the historical extraction comparison: serve `262f153` at `OAKTOWN_BEFORE_URL` and `1ba68e8` at `OAKTOWN_BASE_URL`; it intentionally asserts pre-gallery geometry equality. `scripts/audit-property-catalogue.mjs` regenerates the read-only catalogue manifest.
+
+## Preview status
+
+The existing review alias is https://felix-oaktown-signature-oaktown.rentals10.workers.dev/ . The latest engineering SHA is verified on GitHub, but at the final inspection its combined status was `pending` with no reported status/check runs. This environment cannot open the host through its proxy, so the latest hosted build and photos are **not independently verified**. A prior successful Phase 1B preview is not proof of this new checkpoint.
 
 ## Remaining acceptance and exact next step
 
