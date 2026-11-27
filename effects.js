@@ -231,7 +231,7 @@
         style(meter,'transform','scaleX('+(geometry.max ? .15+.85*clamp(left/geometry.max) : 1)+')');
         steps.forEach(button=>{button.disabled=Number(button.dataset.collectionStep)<0?left<=2:left>=geometry.max-2;});
         geometry.cards.forEach(({card,image,center})=>{
-          if(!gallery || !enabled() || card.hidden){style(image,'transform','');return;}
+          if(!gallery || geometry.max<=2 || !enabled() || card.hidden){style(image,'transform','');return;}
           const distance=Math.max(-1,Math.min(1,(center-left-geometry.width/2)/geometry.width));
           style(image,'transform',`perspective(1600px) rotateY(${(distance*(desktop.matches?-4:-2.5)).toFixed(3)}deg) translateY(${(Math.abs(distance)*(desktop.matches?5:3)).toFixed(2)}px)`);
         });

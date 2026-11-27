@@ -19,7 +19,7 @@ const base = (process.env.OAKTOWN_BASE_URL || 'http://127.0.0.1:8931').replace(/
           const stage = hero.querySelector('.cinematic-stage');
           scrollTo({top: hero.offsetTop + (hero.offsetHeight - stage.offsetHeight) * p, behavior: 'instant'});
         }, progress);
-        await page.waitForTimeout(100);
+        await page.waitForFunction(expected=>document.querySelector('.cinematic-hero').dataset.scene===expected,String(Math.round(progress*2)));
         observed.push(await page.evaluate(() => ({
           scene: document.querySelector('.cinematic-hero').dataset.scene,
           transform: document.querySelector('.signature-images').style.transform,

@@ -1,0 +1,15 @@
+
+> test
+> node --test tests/cms.test.mjs
+
+✔ Access requires a signed, unexpired app token for the right issuer, audience and approved account (447.677158ms)
+✔ draft/save/publish/archive lifecycle, stale writes, duplicate URLs, CSRF, audit trail and private photos (145.215225ms)
+✔ empty database is authoritative and file fallback is explicit only when unconfigured (46.175587ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1425.151552

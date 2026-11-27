@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "check": "node --check cms/worker.mjs && node --check admin/admin.js && node --check admin/preview.js && node --check cms-client.js && node --check app.js && node --check property-cards.js && node --check signature.js && node --check mint-mojo/mint-mojo.js",
-    "test": "node --test tests/cms.test.mjs",
+    "check": "node --check cms/worker.mjs && node --check admin/admin.js && node --check admin/preview.js && node --check cms-client.js && node --check app.js && node --check property-cards.js && node --check collection.js && node --check signature.js && node --check mint-mojo/mint-mojo.js",
+    "test": "node --test tests/cms.test.mjs tests/property-cards.test.mjs",
+    "test:collection": "node tests/collection.cjs",
     "test:admin-browser": "node tests/admin-browser.cjs",
     "test:photo-order": "node tests/admin-photo-order.cjs",
     "test:admin-improvements": "node tests/admin-improvements.cjs",

@@ -3,8 +3,8 @@
 - [x] Audit every current file-catalogue property and CMS-supported fields: [field report](docs/oaktown-signature/phase2a/FIELDS.md).
 - [x] Audit exact photo/unit mapping and migration prerequisites: [photo report](docs/oaktown-signature/phase2a/PHOTOGRAPHY.md). Hosted photo loading remains blocked/unverified.
 - [x] Extract reusable card rendering/formatting; five component tests and four actual before/after copy/geometry comparisons passed.
-- [ ] Implement approved single-row gallery: full-width introduction, no View All Homes or grid toggle, fixed generous gallery proportions, conditional arrows, edge movement, keyboard/touch/manual scroll, filter reset and reduced-motion behavior. Final card styling awaits approved mockup.
-- [ ] Verify search, bilingual, galleries, accessibility, Phase 1B motion and admin/CMS compatibility.
+- [x] Implement approved single-row gallery: full-width introduction, no View All Homes or grid toggle, fixed generous gallery proportions, conditional arrows, edge movement, keyboard/touch/manual scroll, filter reset and reduced-motion behavior. Final card styling awaits approved mockup.
+- [x] Verify search, bilingual, galleries, accessibility, Phase 1B motion and admin/CMS compatibility. [Phase 2A evidence](docs/oaktown-signature/phase2a/README.md). Twelve axe scans have no confirmed violations; CDN photo acceptance remains open.
 - [ ] Publish reports, tests, checkpoints and bounded NEXT STEP. Phase 2 visual approval remains with owner/ChatGPT.
 
 # Phase 1B — approved continuous scroll hero

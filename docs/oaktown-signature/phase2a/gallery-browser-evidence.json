@@ -1,0 +1,234 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "lang": "en",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1000w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=1000w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=1000w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=1000w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 634,
+        "height": 606,
+        "top": 1421
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 634,
+        "height": 606,
+        "top": 1421
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 634,
+        "height": 606,
+        "top": 1421
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 634,
+        "height": 614,
+        "top": 1421
+      }
+    ]
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "height": 444,
+        "top": 1394
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "height": 444,
+        "top": 1394
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "height": 420,
+        "top": 1394
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "height": 420,
+        "top": 1394
+      }
+    ]
+  },
+  {
+    "name": "mobile-es",
+    "width": 390,
+    "height": 844,
+    "lang": "es",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "height": 444,
+        "top": 1394
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "height": 444,
+        "top": 1394
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "height": 444,
+        "top": 1394
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "height": 447,
+        "top": 1394
+      }
+    ]
+  },
+  {
+    "name": "tablet",
+    "width": 768,
+    "height": 1024,
+    "lang": "es",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1000w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=1000w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=1000w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=1000w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 538,
+        "height": 548,
+        "top": 1394
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 538,
+        "height": 548,
+        "top": 1394
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 538,
+        "height": 548,
+        "top": 1394
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 538,
+        "height": 556,
+        "top": 1394
+      }
+    ]
+  }
+]

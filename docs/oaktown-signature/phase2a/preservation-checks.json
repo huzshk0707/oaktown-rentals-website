@@ -1,0 +1,20 @@
+{
+  "desktop": {
+    "sameSize": true,
+    "pixelIdentical": true
+  },
+  "mobile": {
+    "sameSize": true,
+    "pixelIdentical": true
+  },
+  "mobile-es": {
+    "sameSize": true,
+    "pixelIdentical": true
+  },
+  "tablet": {
+    "sameSize": true,
+    "pixelIdentical": true
+  },
+  "heroMarkupUnchanged": true,
+  "protectedFilesUnchanged": true
+}

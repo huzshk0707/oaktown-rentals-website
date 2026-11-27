@@ -33,7 +33,7 @@ await test('search persists through language changes, listing details and back n
  await page.locator('.property-card:visible .property-name a').click();await page.locator('.page-intro h1').waitFor();assert.match(await page.locator('h1').innerText(),/Madison/);
  assert.equal(await page.locator('[data-gallery-index]').count(),15);
  await page.locator('.back-link').click();await page.locator('#home-search').waitFor();assert.equal(await page.locator('[name=neighborhood]').inputValue(),'Russell');assert.equal(await page.locator('[name=bedrooms]').inputValue(),'3');
- await page.locator('[data-view-all]').click();assert.equal(await page.locator('.property-card:visible').count(),4);
+ await page.locator('#home-search [type=reset]').click();assert.equal(await page.locator('.property-card:visible').count(),4);
  await page.locator('#language-switch').click();
 });
 await test('Resources keyboard navigation, verified links and no portal',async()=>{
@@ -44,10 +44,10 @@ await test('Resources keyboard navigation, verified links and no portal',async()
  await page.locator('.faq-item summary').first().click();assert.ok(await page.locator('.faq-answer').first().isVisible());
  await page.goto(base+'/#community');assert.equal(await page.locator('.resource-link').count(),4);await page.goto(base+'/');
 });
-await test('collection gallery keeps previous/next controls and returns to grid',async()=>{
- await page.locator('[data-layout-button=gallery]').click();await page.locator('[data-collection-step="1"]').click();await page.waitForTimeout(600);
+await test('single-row collection keeps previous/next and keyboard access',async()=>{
+ await page.locator('[data-collection-step="1"]').click();await page.waitForTimeout(600);
  assert.ok(await page.locator('.collection-viewport').evaluate(e=>e.scrollLeft)>50);
- await page.locator('[data-layout-button=grid]').click();assert.equal(await page.locator('.collection-viewport').getAttribute('tabindex'),null);
+ assert.equal(await page.locator('.collection-viewport').getAttribute('tabindex'),'0');assert.equal(await page.locator('[data-layout-button]').count(),0);
 });
 for(const language of ['en','es'])for(const width of [320,390,768,1024,1440,1920]){
  await test(`${language} ${width}px: no overflow, hero action and header controls fit`,async()=>{

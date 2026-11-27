@@ -10,7 +10,7 @@ test('money never invents a zero or emits NaN for missing/invalid data',()=>{
  assert.equal(cards.formatMoney(0),'$0');assert.equal(cards.formatMoney(1699),'$1,699');assert.equal(cards.formatMoney(950.5),'$950.50');
 });
 test('only explicit supported availability yields a badge label',()=>{
- for(const availability of [undefined,'unknown','Ready Now',''])assert.equal(cards.availabilityLabel({availability}),'');
+ for(const availability of [undefined,'unknown','Ready Now','','toString','constructor'])assert.equal(cards.availabilityLabel({availability}),'');
  assert.equal(cards.availabilityLabel({availability:'coming_soon'},'es'),'Próximamente');
  assert.equal(cards.availabilityLabel({availability:'rented'}),'Rented');
 });

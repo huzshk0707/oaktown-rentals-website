@@ -22,17 +22,16 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  await page.evaluate(()=>scrollTo({top:200,behavior:'instant'}));await page.waitForTimeout(100);
  const movement=await page.locator('.signature-images').evaluate(el=>getComputedStyle(el).transform);check('native scroll subtly moves the hero photography',()=>assert.notEqual(movement,'none'));
  const homesTop=await page.locator('#homes').evaluate(el=>el.getBoundingClientRect().top+scrollY);check('homes start within three desktop screens',()=>assert.ok(homesTop<=3000));
- const grid=await page.locator('.property-grid').evaluate(el=>({display:getComputedStyle(el).display,columns:getComputedStyle(el).gridTemplateColumns.split(' ').length}));check('default property view has four comparison columns',()=>{assert.equal(grid.display,'grid');assert.equal(grid.columns,4)});
+ const grid=await page.locator('.property-grid').evaluate(el=>({display:getComputedStyle(el).display,wrap:getComputedStyle(el).flexWrap}));check('default property view is a single horizontal row',()=>{assert.equal(grid.display,'flex');assert.equal(grid.wrap,'nowrap')});
  await page.locator('#homes').scrollIntoViewIfNeeded();await page.waitForTimeout(300);
- await page.locator('[data-layout-button="gallery"]').click();
  await page.locator('[data-collection-step="1"]').click();await page.waitForTimeout(700);
  const scroll=await page.locator('.collection-viewport').evaluate(el=>el.scrollLeft);check('carousel next advances',()=>assert.ok(scroll>100));
  await page.locator('[name=neighborhood]').selectOption('Cherokee Triangle');await page.locator('#home-search [type=submit]').click();
  
  const names=await page.locator('.property-card:not([hidden]) .property-name').allTextContents();check('Highlands filter contents',()=>{assert.equal(names.length,1);assert.ok(names.every(n=>n.includes('Cherokee')))});
  const selected=await page.locator('[name=neighborhood]').inputValue();check('filter exposes selected state',()=>assert.equal(selected,'Cherokee Triangle'));
- await page.locator('[data-layout-button="grid"]').click();await page.waitForTimeout(100);
- const layout=await page.locator('.collection-viewport').evaluate(el=>({scroll:el.scrollLeft,tabIndex:el.getAttribute('tabindex'),overflow:el.scrollWidth>el.clientWidth}));check('grid restores all columns after filtering gallery',()=>{assert.equal(layout.scroll,0);assert.equal(layout.tabIndex,null);assert.equal(layout.overflow,false)});
+ await page.waitForTimeout(100);
+ const layout=await page.locator('.collection-viewport').evaluate(el=>({scroll:el.scrollLeft,tabIndex:el.getAttribute('tabindex'),overflow:el.scrollWidth>el.clientWidth}));check('single filtered home resets the strip and retains keyboard access',()=>{assert.equal(layout.scroll,0);assert.equal(layout.tabIndex,'0');assert.equal(layout.overflow,false)});
  await page.locator('#home-search [type=reset]').click();
  await page.locator('.property-card').first().locator('.property-image-wrap').click();await page.waitForTimeout(200);
  const count=await page.locator('[data-gallery-index]').count();check('Colonial full gallery',()=>assert.equal(count,19));

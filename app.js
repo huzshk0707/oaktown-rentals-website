@@ -18,7 +18,7 @@
   let selectedFilter = 'All';
   let selectedBedrooms = '';
   let selectedBathrooms = '';
-  let collectionLayout = 'grid';
+  const collectionLayout = 'gallery';
   let currentView = null;
   let currentGalleryIndex = 0;
   let observer;
@@ -109,7 +109,7 @@
     const sizes=thumbnail?'(max-width: 600px) 95px, 140px':className==='story-photo'
       ?'100vw'
       :className==='detail-cover-photo'?'(max-width: 850px) calc(100vw - 44px), (max-width: 1328px) calc((100vw - 96px) * .45), 554px'
-      :className==='property-image'?'auto, (max-width: 600px) calc(100vw - 40px), (max-width: 1328px) calc((100vw - 80px) / 2), 624px':'auto, (max-width: 1328px) calc(100vw - 48px), 1280px';
+      :className==='property-image'?'auto, (max-width: 600px) calc(100vw - 44px), (max-width: 850px) 70vw, 44vw':'auto, (max-width: 1328px) calc(100vw - 48px), 1280px';
     const responsive=window.OaktownCards.isSquarespacePhoto(src)?`srcset="${widths.map(w=>imageUrl(src,w)+' '+w+'w').join(', ')}" sizes="${sizes}"`:'';
     return `<img class="${className}" src="${imageUrl(src,thumbnail?300:1200)}" ${responsive} alt="${alt}" loading="${extra==='eager'?'eager':'lazy'}" decoding="async" ${extra==='eager'?'fetchpriority="high"':''}>`;
 
@@ -166,8 +166,8 @@
   function homePage() {
     return `${storySection()}${searchPanel()}
     <section class="section collection signature-collection" id="homes" data-layout="${collectionLayout}" aria-labelledby="homes-title">
-      <div class="collection-intro reveal"><span class="eyebrow">Oaktown Rentals</span><h2 id="homes-title">${t('ourHomesTitle')}</h2><p>${t('ourHomesCopy')}</p><a href="#homes" class="signature-button" data-view-all>${t('viewAllHomes')}${arrow}</a><p class="collection-availability">${t('availabilityNote')}</p></div>
-      <div class="collection-results"><div class="listing-tools"><span class="listing-count" role="status" aria-live="polite">${P.length} ${t('homeCount')}</span><div class="view-switch" role="group" aria-label="${t('layoutLabel')}"><button type="button" data-layout-button="grid" aria-pressed="${collectionLayout==='grid'}">${t('gridView')}</button><button type="button" data-layout-button="gallery" aria-pressed="${collectionLayout==='gallery'}">${t('galleryView')}</button></div></div>
+      <div class="collection-intro reveal"><span class="eyebrow">Oaktown Rentals</span><h2 id="homes-title">${t('ourHomesTitle')}</h2><p>${t('ourHomesCopy')}</p><p class="collection-availability">${t('availabilityNote')}</p></div>
+      <div class="collection-results"><div class="listing-tools"><span class="listing-count" role="status" aria-live="polite">${P.length} ${t('homeCount')}</span></div>
       ${!P.length?`<p class="collection-empty">${language==='es'?(DATA.contentUnavailable?'No podemos cargar las viviendas en este momento. Contáctanos para consultar disponibilidad.':'No hay viviendas publicadas en este momento. Contáctanos para consultar disponibilidad.'):(DATA.contentUnavailable?'We cannot load the homes right now. Contact us for current availability.':'There are no published homes right now. Contact us for current availability.')}</p>`:''}
       <p class="search-empty" role="status" hidden>${t('noMatches')}</p>
       <div class="collection-viewport" id="collection-viewport" ${collectionLayout==='gallery'?'tabindex="0"':''} role="region" aria-label="${t('listings')}"><div class="property-grid" id="property-grid">${P.map(card).join('')}</div></div>
@@ -288,7 +288,7 @@
       if(generation!==positionGeneration)return;
       const viewport=app.querySelector('.collection-viewport');
       if(viewport&&Number.isFinite(snapshot.x)){
-        viewport.scrollLeft=snapshot.x;viewport.dispatchEvent(new Event('scroll'));
+        viewport.scrollTo({left:snapshot.x,behavior:'instant'});viewport.dispatchEvent(new Event('scroll'));
       }
       const card=snapshot.anchorSlug?[...app.querySelectorAll('.property-card:not([hidden])')].find(el=>el.dataset.propertySlug===snapshot.anchorSlug):null;
       const section=snapshot.sectionId?document.getElementById(snapshot.sectionId):null;
@@ -341,17 +341,6 @@
     });
   }
   const closeMenu=()=>{mobileNav.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label',t('openMenu'));};
-  function activateLayout(layout) {
-    stopCardSlideshow();
-    collectionLayout=layout;
-    const collection=app.querySelector('.collection');if(!collection)return;
-    collection.dataset.layout=layout;
-    collection.querySelectorAll('[data-layout-button]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.layoutButton===layout)));
-    const viewport=collection.querySelector('.collection-viewport');
-    if(layout==='gallery')viewport.tabIndex=0;else viewport.removeAttribute('tabindex');
-    viewport.scrollLeft=0;viewport.dispatchEvent(new Event('scroll'));
-    rememberView();
-  }
   function activateFilter(filter) {
     stopCardSlideshow();
     selectedFilter=filter;
@@ -362,7 +351,7 @@
       card.style.display=card.hidden?'none':'';
     });
     app.querySelectorAll('[data-filter]').forEach(button=>{const active=button.dataset.filter===filter;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
-    const viewport=app.querySelector('.collection-viewport');if(viewport){viewport.scrollLeft=0;viewport.dispatchEvent(new Event('scroll'));}
+    const viewport=app.querySelector('.collection-viewport');if(viewport){viewport.scrollTo({left:0,behavior:'instant'});viewport.dispatchEvent(new Event('scroll'));viewport.closest('.collection').dispatchEvent(new Event('oaktown:collection-filter'));}
     const shown=[...cards].filter(card=>!card.hidden).length;
     const count=app.querySelector('.listing-count');if(count)count.textContent=shown+' '+t('homeCount');
     const empty=app.querySelector('.search-empty');if(empty)empty.hidden=shown>0||P.length===0;
@@ -402,7 +391,6 @@
     if(restore?.home?.view==='home')lastHomeSnapshot=restore.home;
     if(restore&&view==='home'){
       selectedFilter=restore.filter==='All'||typeof restore.filter==='string'&&P.some(home=>restore.filter.split('|').includes(home.neighborhood))?restore.filter:'All';
-      collectionLayout=restore.layout==='gallery'?'gallery':'grid';
       selectedBedrooms=String(restore.bedrooms||'');selectedBathrooms=String(restore.bathrooms||'');
     }
     const shouldRender=(view!==currentView)||app.children.length===0||preservePosition||!!restore;
@@ -434,7 +422,8 @@
       if(p&&(preservePosition||currentGalleryIndex))galleryStep(0);
       const stopEffects=window.OaktownEffects.mount(app,{t});
       const stopSignature=window.OaktownSignature?.mount(app)||(()=>{});
-      cleanupEffects=()=>{stopEffects();stopSignature();};
+      const stopCollection=window.OaktownCollection?.mount(app)||(()=>{});
+      cleanupEffects=()=>{stopCollection();stopEffects();stopSignature();};
       if(p&&!preservePosition){const heading=app.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}
     }
     renderedHash=location.hash;
@@ -489,7 +478,6 @@
     document.addEventListener('click',e=>{if(!details.contains(e.target)||e.target.closest('a'))details.open=false;});
   });
   app.addEventListener('click',e=>{
-    if(e.target.closest('[data-view-all]')){selectedBedrooms='';selectedBathrooms='';activateFilter('All');}
 
     if(e.target.closest('.back-link')&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey)pendingHomeRestore=lastHomeSnapshot;
     const listing=e.target.closest('.property-card a[href^="#home/"]');
@@ -506,7 +494,6 @@
       }
     }
 
-    const layout=e.target.closest('[data-layout-button]');if(layout){activateLayout(layout.dataset.layoutButton);return;}
     const filter=e.target.closest('[data-filter]');if(filter){activateFilter(filter.dataset.filter);return;}
     const thumb=e.target.closest('[data-gallery-index]');if(thumb){const p=P.find(x=>'detail:'+x.slug===currentView);if(p)galleryStep(Number(thumb.dataset.galleryIndex)-currentGalleryIndex);return;}
     const step=e.target.closest('[data-gallery-step]');if(step)galleryStep(Number(step.dataset.galleryStep));

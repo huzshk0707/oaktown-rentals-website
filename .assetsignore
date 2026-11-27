@@ -6,6 +6,8 @@
 !data.js
 !app.js
 !property-cards.js
+!collection.js
+!collection.css
 !effects.js
 !cms-client.js
 !styles.css
