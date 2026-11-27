@@ -36,3 +36,9 @@ Owner authorized a separate draft PR. Based on PR #26 checkpoint dd40325f9f2c824
 | 06.jpeg | `625a0e7af1fd33b93f1ea5c758f847557c48655e1afc72505e968a8da9d77de1` |
 | 07.jpeg | `e1bc52fae1cdf866bf376ac30d089a0fb03ce3acdef3f06a130b5d35f48bfc31` |
 | 08.jpeg | `789ffe06056b1e4bc4e66b64fc822803a6298167668a0c64c75ad73e66825131` |
+
+## Colonial Drive approved photography checkpoint
+
+- Owner approved the 19 numbered images in [Drive](https://drive.google.com/drive/folders/1gw823lsLxikaPsLcs6VwRYvhclW1LXSI). Imported the approved JPEG bytes unmodified in commit `404a433ec02e05d73c8a3068ce48fbf6ff0bbe66` to `assets/properties/115-colonial-drive/01.jpg` through `19.jpg` (3,351,928 bytes total).
+- Updated only the Colonial image array in `data.js`, using the approved numbered sequence with the front exterior first. All six property records, other galleries, hero code, hero assets and original Signature assets remain unchanged. Prior URLs are preserved in Git history.
+- Verification: all 19 JPEGs decoded locally and Git blob hashes matched the original Drive bytes and remote asset metadata; all 19 paths resolve to committed files. EN/ES card and detail template checks passed (19 photos and 19 thumbnails); syntax passed; `/assets/**` is already included by deployment allowlist. Full browser/hosted preview testing is still pending; no CMS or production changes. Original source resolution preserved, including 480x640 portrait interiors.
