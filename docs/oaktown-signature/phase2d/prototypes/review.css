@@ -30,3 +30,8 @@ body.rental-site .review-panels .property-image-wrap{height:100%;aspect-ratio:au
 @media(max-width:700px){body[data-review-mode] .review-panels{padding:105px 20px 35px}.review-panel-row{flex-direction:column;min-height:0}.review-panel{flex:none!important}.review-panel:not(.is-active) .property-card{display:none!important}.review-panel-toggle{min-height:60px;font-size:13px}.review-panel.is-active .card-media{height:270px;flex:none}.review-panel.is-active .property-image-wrap{height:270px}.review-city-portrait{min-height:620px}.review-city h1{font-size:52px}.review-city-copy p{font-size:17px}.review-map-panel{padding:35px 20px}.review-map{height:340px}.review-map-action{align-items:stretch;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.review-panel{transition:none!important}}
 html.motion-off .review-panel{transition:none!important}
+
+/* FELIX JUNIOR: preserve the original vacation palette in the cloned review section. */
+.review-surface.signature-vacation{background:var(--signature-green);color:var(--signature-ivory)}
+/* Match desktop-rule specificity so the mobile active card cannot stretch its photo. */
+@media(max-width:700px){body.rental-site .review-panels .review-panel.is-active .card-media{height:270px;min-height:270px;flex:none}body.rental-site .review-panels .review-panel.is-active .property-image-wrap{height:270px;aspect-ratio:auto}}
