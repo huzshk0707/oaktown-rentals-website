@@ -1,3 +1,14 @@
+# WEB-SIGNATURE — Phase 2A Engineering Foundation
+
+- Owner Ravi, explicitly reassigned by the owner. Heartbeat 2026-11-27T10:50:39+00:00; claim expires 2026-11-27T11:20:39+00:00.
+- Existing branch `felix/oaktown-signature`, draft PR #26, latest verified remote checkpoint `262f1537db20ee382178d26c2a73fec76f80612a`. Fast-forwarded existing clean tracked worktree; local dependency symlinks excluded. No unfinished implementation files recovered. Other worktrees/booking PR #25 preserved.
+- Scope: per-property field availability report, photography engineering audit and safe migration plan, reusable card preparation preserving current appearance, search/CMS/gallery/motion regressions. The Editorial Collection mockup is pending; do not implement a final visual redesign or reduce the collection to three cards yet.
+- Preserve Felix's Phase 1B hero motion, typography, composition and enhanced photograph. Owner visual/architectural acceptance remains pending, not part of this engineering approval.
+- NEXT STEP: audit data.js, cms/model.mjs, CMS adapters and current card() rendering; record field and photo evidence in docs/oaktown-signature/phase2a before bounded refactoring.
+- No merge, production deploy, live inventory/schema/auth changes, asset migration or payments. Keep PR #26 draft.
+
+---
+
 # WEB-SIGNATURE — Phase 1B ready for visual review
 
 - Owner FELIX under explicit user reassignment. Implementation complete, claim released at 2026-11-27T05:27:48+00:00. PR #26 remains DRAFT.

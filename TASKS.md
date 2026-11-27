@@ -1,3 +1,11 @@
+# Phase 2A — Property Collection Engineering Foundation
+
+- [ ] Audit every current file-catalogue property and CMS-supported fields.
+- [ ] Audit exact photo/unit mapping, URL loading, responsive behavior and migration prerequisites.
+- [ ] Prepare reusable card rendering/formatting with missing-data handling; preserve appearance.
+- [ ] Verify search, bilingual, galleries, accessibility, Phase 1B motion and admin/CMS compatibility.
+- [ ] Publish reports, tests, checkpoints and bounded NEXT STEP. Phase 2 visual approval remains with owner/ChatGPT.
+
 # Phase 1B — approved continuous scroll hero
 
 - [x] Verify remote checkpoint, preserve older local work and claim as FELIX.
