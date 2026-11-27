@@ -1,3 +1,13 @@
+# WEB-SIGNATURE — FELIX photography verification and editorial preparation
+
+- Owner FELIX under explicit user reassignment from Ravi. Heartbeat 2026-11-27T11:15:59+00:00. Claim expires 2026-11-27T11:45:59+00:00.
+- Branch `felix/oaktown-signature`, draft PR #26, base `be37dba`. Latest verified remote checkpoint `877d196faaaca0aa364e7bd0e0c63f97bb75f2f7`; its Cloudflare build passed. Clean existing worktree fast-forwarded without rewriting other work.
+- Scope is hosted preview/all-60-photo verification, gallery evidence and a separate reversible editorial proposal. Preserve horizontal-gallery behavior, generous card dimensions and Phase 1B cinematic hero. Final card styling requires owner/ChatGPT approval.
+- NEXT STEP is request the current preview and original Squarespace photo through the normal network, then verify all 60 exact catalogue URLs and gallery order if accessible. If blocked, record precise client/network evidence once and continue independent visual preparation and regressions.
+- No production deploy, merge, live inventory/schema/media migration, authentication change or payments. Keep PR #26 draft and booking PR #25 untouched.
+
+---
+
 # WEB-SIGNATURE — Phase 2A Engineering Foundation
 
 - Owner Ravi. Phase 2A implementation/evidence complete; claim released at 2026-11-27T11:10:30+00:00 for bounded photo verification and creative review. PR #26 remains DRAFT.
