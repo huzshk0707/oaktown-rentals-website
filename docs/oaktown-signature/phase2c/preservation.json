@@ -62,5 +62,17 @@
       "sha256": "eb90d533b7b64d7f69fd4f6d340c8dd4a5029664ba2a7170cfcab292cc759123"
     }
   ],
-  "noAssetCMSAdminMintMigrationChanges": true
+  "noAssetCMSAdminMintMigrationChanges": true,
+  "unchangedRenderingFunctions": [
+    {
+      "function": "homePage",
+      "unchanged": true,
+      "sha256": "35449eae4b5e480ff819d0d042cef912ed864e39ad6daf900191576cc2b061d4"
+    },
+    {
+      "function": "detailPage",
+      "unchanged": true,
+      "sha256": "42c6983b9e15ca1c4d5dadca44b41e4723f71d3704eef8d5b72b4a57b39de7b0"
+    }
+  ]
 }

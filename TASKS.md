@@ -5,7 +5,7 @@
 - [x] Refine scoped feedback/photo controls/shared-image transitions with accessible reduced-motion fallbacks.
 - [x] Capture desktop/tablet/mobile EN/ES, all/one/two results, scene two and short interaction recording.
 - [x] Run regressions and save [actual Boutique screenshots/recording/comparison](docs/oaktown-signature/phase2c/README.md).
-- [ ] Complete final hosted crossfade verification and release review handoff.
+- [x] Complete final hosted crossfade verification (60 photos/ordered detail selections, 4 catalogue mappings, 7 asset hashes); release review handoff.
 - [ ] Owner/ChatGPT visual acceptance of Phase 2C; keep PR #26 draft.
 
 # Phase 2B preparation — photography verified / editorial review pending

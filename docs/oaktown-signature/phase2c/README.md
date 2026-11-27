@@ -2,6 +2,8 @@
 
 Ravi continued Felix's `7ff126e` on existing draft [PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26). Option B is implemented: generous **38vw desktop cards**, ivory surfaces, champagne pricing rail, serif addresses, verified facts, minimal icons and a functional green detail arrow. The full-width introduction and single horizontal gallery remain. The cinematic hero only changes its approved scene-two sentence in English and Spanish.
 
+Runtime checkpoint **`9e387896233eb26d240801fb70bce1cf628e0172`** passed the Cloudflare preview build and final hosted verification. The final handoff commit changes documentation only. See [build result](preview-build.json).
+
 **[Open the preview](https://felix-oaktown-signature-oaktown.rentals10.workers.dev/#homes)** · [Exact approved reference](approved-option-b.png) · [Reference provenance](REFERENCE.md) · [Interaction recording](boutique-interactions.webm).
 
 ## Reference and before/after comparison
@@ -32,7 +34,7 @@ These are real browser screenshots of the branch runtime served locally at `http
 
 **Two-result disclosure:** the existing public filter combinations cannot produce exactly two homes. The test browser temporarily adds a combined St. Matthews/Okolona option and invokes the existing pipe-separated filter path. The homes and photos are genuine; no catalogue records or shipped filter options were changed. Both cards remain fixed-width and left-aligned; desktop controls disappear when they fit. At tablet/mobile widths, natural overflow remains scrollable, without edge-driven drift for this small result set.
 
-**[Watch the interaction recording](boutique-interactions.webm)**: actual 1440×1200 browser video shows card hover, manual photo selection, selected-photo expansion to the existing detail page, Back navigation, intentional edge movement and bounded arrows. Decoded with ffmpeg, sampled visually and played in a browser video element; see [playback verification](video-playback.json).
+**[Watch the interaction recording](boutique-interactions.webm)**: actual 8.84-second 1440×1200 browser video shows card hover, manual photo selection, selected-photo expansion to the existing detail page, Back navigation, intentional edge movement and bounded arrows. Decoded with ffmpeg, sampled visually and played in a browser video element; see [playback verification](video-playback.json).
 
 ## Interaction conventions
 
