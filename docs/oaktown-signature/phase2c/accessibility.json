@@ -1,0 +1,162 @@
+[
+  {
+    "name": "desktop-all",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "desktop-one",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "desktop-es-all",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "desktop-es-one",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "tablet-all",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "tablet-one",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "tablet-es-all",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "tablet-es-one",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "mobile-all",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "mobile-one",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "mobile-es-all",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "mobile-es-one",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "narrow-es-all",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "narrow-es-one",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "hero-scene-2-en",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "hero-scene-2-es",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 1
+      }
+    ]
+  }
+]

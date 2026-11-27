@@ -1,9 +1,9 @@
 # Phase 2C — approved Option B Boutique Luxury
 
 - [x] Record exact approved Option B reference and design decisions; retain prior phase evidence.
-- [ ] Implement 38vw Boutique cards and scene-two bilingual copy; preserve gallery and hero behavior.
-- [ ] Refine scoped feedback/photo controls/shared-image transitions with accessible reduced-motion fallbacks.
-- [ ] Capture desktop/tablet/mobile EN/ES, all/one/two results, scene two and short interaction recording.
+- [x] Implement 38vw Boutique cards and scene-two bilingual copy; preserve gallery and hero behavior.
+- [x] Refine scoped feedback/photo controls/shared-image transitions with accessible reduced-motion fallbacks.
+- [x] Capture desktop/tablet/mobile EN/ES, all/one/two results, scene two and short interaction recording.
 - [ ] Run regressions; publish checkpoints, PR log and bounded review handoff.
 
 # Phase 2B preparation — photography verified / editorial review pending

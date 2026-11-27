@@ -67,7 +67,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
  await page.locator('#language-switch').click();const text=await page.locator('[data-hero-scene="0"] .signature-button').innerText();check('hero action translates',()=>assert.match(text,/Ver nuestras viviendas/));
  await page.reload();const lang=await page.locator('html').getAttribute('lang');check('Spanish preference survives reload',()=>assert.equal(lang,'es'));
- await page.setViewportSize({width:320,height:640});await page.goto(base+'/');
+ await page.setViewportSize({width:320,height:640});await page.goto(base+'/');await page.locator('.cinematic-mobile-description').waitFor();
  const space=await page.evaluate(()=>({copy:document.querySelector('.cinematic-mobile-description').getBoundingClientRect().bottom,button:document.querySelector('.signature-copy .signature-button').getBoundingClientRect().top}));
  check('Spanish static hero copy clears CTA at 320px',()=>assert.ok(space.copy<space.button));
  for(const [slug,heading,term] of [

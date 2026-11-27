@@ -94,3 +94,6 @@ html.motion-enabled .collection-meter.is-boundary{animation:ux-boundary 180ms ea
 html.motion-enabled .rental-site .lightbox[open]{animation:ux-reveal 200ms ease-out}
 html.motion-off .rental-site .signature-collection *,html.motion-off .rental-site .lightbox{animation:none!important;transition:none!important}
 @media(prefers-reduced-motion:reduce){body.rental-site .signature-collection *,body.rental-site .lightbox{animation:none!important;transition:none!important}}
+
+body.rental-site .signature-collection .card-detail-link:focus-visible{outline:2px solid #082e22;outline-offset:4px}
+.card-photo-controls button:focus-visible{box-shadow:0 0 0 4px #082e22}

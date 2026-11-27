@@ -2,7 +2,7 @@
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const base=process.env.OAKTOWN_BASE_URL||'https://felix-oaktown-signature-oaktown.rentals10.workers.dev';
-const output=path.resolve(__dirname,'../docs/oaktown-signature/phase2b');
+const output=process.env.OAKTOWN_EVIDENCE_DIR?path.resolve(process.env.OAKTOWN_EVIDENCE_DIR):path.resolve(__dirname,'../docs/oaktown-signature/phase2b');
 const originalDir=process.env.OAKTOWN_ORIGINAL_DIR||'/tmp/phase2b-originals';
 (async()=>{
  const audit=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../docs/oaktown-signature/phase2a/catalogue-audit.json')));

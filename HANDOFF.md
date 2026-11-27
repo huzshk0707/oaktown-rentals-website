@@ -1,12 +1,12 @@
 # WEB-SIGNATURE — Phase 2C Boutique Luxury / Ravi
 
-- Owner Ravi; heartbeat 2026-11-27T20:21:15+00:00; claim expires 2026-11-27T20:51:15+00:00. Latest verified pushed ownership checkpoint `f45f158`.
+- Owner Ravi; heartbeat 2026-11-27T20:35:53+00:00; claim expires 2026-11-27T21:05:53+00:00. Latest verified pushed implementation checkpoint `30d128f`.
 - Continue draft PR #26 / `felix/oaktown-signature` from verified remote `7ff126e0e8685764d6da49e173551f74ae55fd0d`. Felix released ownership. Existing tracked worktree clean; only dependency symlinks untracked. No unfinished edits recovered; all other worktrees/branches preserved.
 - Owner approved Option B — Boutique Luxury, Drive file `1V7gfl1owIOQzIOOUFNxc0E95iJHGyhH9`. Downloaded and visually inspected the exact reference. Styling only: preserve genuine photos, exact catalogue facts and original logo; omit favorite hearts/sample facts.
 - Scope: 38vw desktop cards (from 44vw), Option B ivory/champagne/serif/circular detail arrow treatment, functioning photo indicators and restrained interaction conventions; preserve single-row gallery/search/fit/edge/touch/history. Hero only changes scene-two EN/ES copy; preserve motion/photography/composition.
 - Done: exact reference/provenance saved; 38vw Boutique card treatment, unchanged genuine data, functional bounded photo controls, manual selection/error feedback, accessible detail arrow and selected-photo shared-element transition/focus restoration. Approved hero EN/ES sentence updated. Scoped timings/reveals/confirmation/boundary feedback added.
-- Current verification: syntax and CMS/component 8 pass; browsing 24 and Signature 19 pass. New Boutique/collection tests are being finalized; full regression/captures remain. Actual four lead photos load after approved narrow environment grant; normal TLS, no image substitutions.
-- NEXT STEP: finish new Boutique/collection assertions, capture and inspect real-photo desktop/tablet/mobile/EN/ES/all/one/two states and recording, then complete regressions. Runtime files are complete; visual review and test evidence are unfinished.
+- Current verification: all relevant suites pass (CMS/component 8, Boutique 7, collection 8, browsing 24, Signature 19, browser 45, design 33, audit 15, motion 9, admin workflow/photo-order/improvements 6 and Mint). Real-photo desktop/tablet/mobile EN/ES/all/one/two screenshots and ten-second recording saved in phase2c; 16 axe scans have zero confirmed violations. Normal TLS, no image substitutions. Focus contrast tightened; browser test waits for asynchronous hero rendering.
+- NEXT STEP: verify hosted preview bytes against this checkpoint using OAKTOWN_EVIDENCE_DIR=docs/oaktown-signature/phase2c node tests/verify-collection-photos.cjs; finish visual evidence README/recording review and release the claim. Runtime and regression checks complete; final hosted verification/report pending.
 - Keep draft. No merge, production deploy, live inventory/schema/CMS migration, authentication/storage changes or payments. Enhanced Afterglow architectural acceptance remains separate.
 
 ---

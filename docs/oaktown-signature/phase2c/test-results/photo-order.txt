@@ -1,0 +1,9 @@
+
+> test:photo-order
+> node tests/admin-photo-order.cjs
+
+Created local listing with four uploaded photos.
+Mouse dragging, captions and preview passed.
+Saved and published photo order passed.
+Keyboard, no-op drops, upload locking and removal passed.
+Photo ordering passed: mouse and touch drag, cross-row moves, captions, main photo/preview, keyboard focus, saved order, draft isolation, busy uploads, no-op drops, mobile scrolling and responsive layouts.
