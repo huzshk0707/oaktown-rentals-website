@@ -1,0 +1,1 @@
+PASS: actual loaded-photo gallery/proposal states, 8 detail captures, 16 axe scans, interaction recording.

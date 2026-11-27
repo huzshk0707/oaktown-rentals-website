@@ -1,3 +1,5 @@
+> Current continuation: [Phase 2B photography verification and editorial proposal](../phase2b/README.md). The 60-photo loading blocker described below is resolved. This file retains Ravi’s engineering checkpoint and historical fallback evidence.
+
 # Phase 2A — property collection engineering and horizontal gallery
 
 Continues draft [PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) from Felix's `262f153`. Ravi's ownership checkpoint is `69d20fd`; the audit/card extraction milestone is `1ba68e8`. Gallery engineering checkpoint `b788bb4` is verified on the remote branch/PR. Read the current PR head for the final handoff checkpoint. **No merge or production deployment.**

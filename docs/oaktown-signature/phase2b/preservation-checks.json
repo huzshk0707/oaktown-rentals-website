@@ -1,0 +1,72 @@
+[
+  {
+    "file": "app.js",
+    "sha256": "3263b64909d02d7506b8d756c8c8745e091bd524f3ddfd932c4a6e35dcbdeb01",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "data.js",
+    "sha256": "c2edc5cafda5cee6cc15938daf65c574789bee5f78ec07f15dee22b26715e9ff",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "property-cards.js",
+    "sha256": "b2aa85ead9075486b8f89e044d6adb221e65618ccd6fbf1e8855f40de3defa47",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "collection.js",
+    "sha256": "716e913d514f6d6ab8a57849d85ee173cec4154f4d771e0a5ef803bdb2580946",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "collection.css",
+    "sha256": "059708e043e0fb67319fd9dbf6e7813cbb57b8c1583f1f688f4f13603f777ff7",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "signature.js",
+    "sha256": "530ce5f31bc308c615375ecf1829d54bab6e3ad83b72123b63fe1c89e4585c85",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "signature.css",
+    "sha256": "2e0a870df973eb660f873769688557d23b8fd78e4dd24a8fb5be84e54c4aafbf",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "effects.js",
+    "sha256": "4218554446d4d338c21f059a5d13f22cc3baea73d1cdde58fbdc256b6f43c9ce",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "cms-client.js",
+    "sha256": "f540d3bfe36fa72d7781884751c09ebcbf9687e1c8a09a360218cbcdf20e62e7",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "cms/worker.mjs",
+    "sha256": "30aa512471181fec340802dc72189c669cad26a0a96abdf5346eeb6bc75a1493",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "cms/auth.mjs",
+    "sha256": "bdf1ebd4cedcbca077ce21bc87ec47824b7c7034edb9071fc77b089758b7304f",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "wrangler.jsonc",
+    "sha256": "f49d457218202ce60f08c64e1c0bec2b49baaae4f8c7f6f297ad8df79f7300f9",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "admin/admin.js",
+    "sha256": "2a50e29eb554295ed2577134508991caab96b9b28284b8a92231585252eba223",
+    "unchangedFromRavi": true
+  },
+  {
+    "file": "mint-mojo/mint-mojo.js",
+    "sha256": "47ebde78d3995564bd5c438b3ef381456ebe3fc3874019a73812b6a7cd7dfa8e",
+    "unchangedFromRavi": true
+  }
+]

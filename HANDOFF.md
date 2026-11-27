@@ -1,10 +1,16 @@
-# WEB-SIGNATURE — FELIX photography verification and editorial preparation
+# WEB-SIGNATURE — FELIX photo verification and editorial proposal complete
 
-- Owner FELIX under explicit user reassignment from Ravi. Heartbeat 2026-11-27T11:15:59+00:00. Claim expires 2026-11-27T11:45:59+00:00.
-- Branch `felix/oaktown-signature`, draft PR #26, base `be37dba`. Latest verified remote checkpoint `877d196faaaca0aa364e7bd0e0c63f97bb75f2f7`; its Cloudflare build passed. Clean existing worktree fast-forwarded without rewriting other work.
-- Scope is hosted preview/all-60-photo verification, gallery evidence and a separate reversible editorial proposal. Preserve horizontal-gallery behavior, generous card dimensions and Phase 1B cinematic hero. Final card styling requires owner/ChatGPT approval.
-- NEXT STEP is request the current preview and original Squarespace photo through the normal network, then verify all 60 exact catalogue URLs and gallery order if accessible. If blocked, record precise client/network evidence once and continue independent visual preparation and regressions.
-- No production deploy, merge, live inventory/schema/media migration, authentication change or payments. Keep PR #26 draft and booking PR #25 untouched.
+- Owner FELIX under explicit reassignment. Work complete and claim released at 2026-11-27T11:29:39+00:00. Keep PR #26 DRAFT.
+- Branch `felix/oaktown-signature`, base `be37dba`. Recovered Ravi `877d196`, ownership checkpoint `8e11623d167459f20e642ffca44ef4f7c5194909`. This final evidence checkpoint follows it; read live PR head for its SHA.
+- Hosted preview https://felix-oaktown-signature-oaktown.rentals10.workers.dev/#homes returned 200. Ravi's latest Cloudflare build passed. Seven served runtime hashes match the branch.
+- Photography blocker resolved: all 60 original images loaded with normal TLS and no interception/substitution. Exact catalogue mapping, 60 ordered detail selections, source-page URL/order matches, dimensions/bytes/hashes and four visually reviewed contact sheets are in `docs/oaktown-signature/phase2b/PHOTOGRAPHY.md` and adjacent JSON. Cherokee #8 and Madison assignments confirmed against their respective source pages.
+- Prior network tunnel failures were environment-specific. Initial browser certificate error was resolved using the existing environment CA and approved browser trust-store access. No TLS-check bypass, network-policy or website infrastructure change.
+- 32 actual hosted screenshots include full gallery, both boundaries, one result, explicitly labelled browser-only two-result fixture, EN/ES/mobile, all four detail galleries and the separate editorial prototype. A 12.88-second recording demonstrates edge movement, bounded arrows, filter and reset. Evidence is in `docs/oaktown-signature/phase2b/README.md`.
+- Editorial proposal is reversible capture-only CSS/DOM, excluded from deployment. It improves serif titles, readable monthly pricing, spacing, icons and detail action while preserving fixed gallery widths, ratios and photo identities. Public styling and all Phase 1B hero code remain byte-identical to Ravi. No unfinished runtime files.
+- Checks passed: syntax; CMS/component 8; collection 8; Signature 19; browser 45; design 33; browsing 24; audit 15; motion 9; Mint; admin workflow/photo order/improvement 6. Sixteen axe scans have zero confirmed violations, photo contrast incompletes retained. Exact commands/outputs are in the review README and test-results directory.
+- Limits: 43/60 originals are only 480–640px wide; Cherokee portrait lead crops vertically in wide cards. These are source-quality/creative acceptance items, not loading failures. Original property rights are confirmed; enhanced Afterglow architectural approval remains separate. Native Safari/Firefox, assistive technologies and real admin sign-in not tested.
+- NEXT STEP is owner/ChatGPT review of `docs/oaktown-signature/phase2b/EDITORIAL-PROPOSAL.md`, `editorial-comparison.jpg` and mobile proposal captures, then explicit approval/revision before implementing public card styling. Do not restart completed engineering/audits.
+- No merge, production deployment, inventory/schema/media migration, authentication or payment change. Other branches/worktrees and booking PR #25 preserved.
 
 ---
 

@@ -1,0 +1,1183 @@
+[
+  {
+    "name": "current-desktop-left",
+    "width": 1440,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1000w",
+        "naturalWidth": 606,
+        "naturalHeight": 427,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=1000w",
+        "naturalWidth": 404,
+        "naturalHeight": 303,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=1000w",
+        "naturalWidth": 303,
+        "naturalHeight": 404,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=1000w",
+        "naturalWidth": 632,
+        "naturalHeight": 343,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-desktop-right",
+    "width": 1440,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 1338,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1000w",
+        "naturalWidth": 606,
+        "naturalHeight": 427,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=1000w",
+        "naturalWidth": 404,
+        "naturalHeight": 303,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=1000w",
+        "naturalWidth": 303,
+        "naturalHeight": 404,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=1000w",
+        "naturalWidth": 632,
+        "naturalHeight": 343,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-desktop-one",
+    "width": 1440,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=1000w",
+        "naturalWidth": 303,
+        "naturalHeight": 404,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-desktop-two-review-fixture",
+    "width": 1440,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1500w",
+        "naturalWidth": 404,
+        "naturalHeight": 285,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=1500w",
+        "naturalWidth": 269,
+        "naturalHeight": 202,
+        "displayWidth": 653.699462890625,
+        "displayHeight": 435.7996826171875,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "proposal-desktop-left",
+    "width": 1440,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 0,
+    "prototype": true,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1500w",
+        "naturalWidth": 404,
+        "naturalHeight": 285,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=1500w",
+        "naturalWidth": 269,
+        "naturalHeight": 202,
+        "displayWidth": 653.699462890625,
+        "displayHeight": 435.7996826171875,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=1500w",
+        "naturalWidth": 202,
+        "naturalHeight": 269,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=1500w",
+        "naturalWidth": 632,
+        "naturalHeight": 343,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "proposal-desktop-right",
+    "width": 1440,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 1338,
+    "prototype": true,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1500w",
+        "naturalWidth": 404,
+        "naturalHeight": 285,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=1500w",
+        "naturalWidth": 269,
+        "naturalHeight": 202,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=1500w",
+        "naturalWidth": 202,
+        "naturalHeight": 269,
+        "displayWidth": 631.59375,
+        "displayHeight": 421.0625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 634,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=1500w",
+        "naturalWidth": 632,
+        "naturalHeight": 343,
+        "displayWidth": 653.699462890625,
+        "displayHeight": 435.7996826171875,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-mobile-left",
+    "width": 390,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 187,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-mobile-right",
+    "width": 390,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 1094,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 187,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-mobile-one",
+    "width": 390,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 356.03997802734375,
+        "displayHeight": 273.8707275390625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-mobile-two-review-fixture",
+    "width": 390,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 356.03997802734375,
+        "displayHeight": 273.8707275390625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "proposal-mobile-left",
+    "width": 390,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 0,
+    "prototype": true,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 356.03997802734375,
+        "displayHeight": 273.8707275390625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 187,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "proposal-mobile-right",
+    "width": 390,
+    "height": 1280,
+    "lang": "en",
+    "overflow": false,
+    "x": 1094,
+    "prototype": true,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 187,
+        "displayWidth": 356.03997802734375,
+        "displayHeight": 273.8707275390625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-mobile-es-left",
+    "width": 390,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 187,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-mobile-es-right",
+    "width": 390,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 1094,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 187,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-mobile-es-one",
+    "width": 390,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 356.03997802734375,
+        "displayHeight": 273.8707275390625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-mobile-es-two-review-fixture",
+    "width": 390,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 356.03997802734375,
+        "displayHeight": 273.8707275390625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "proposal-mobile-es-left",
+    "width": 390,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 0,
+    "prototype": true,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 356.03997802734375,
+        "displayHeight": 273.8707275390625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 187,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "proposal-mobile-es-right",
+    "width": 390,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 1094,
+    "prototype": true,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 242,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 258,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 330,
+        "naturalHeight": 440,
+        "displayWidth": 344,
+        "displayHeight": 264.609375,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 346,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 344,
+        "naturalHeight": 187,
+        "displayWidth": 356.03997802734375,
+        "displayHeight": 273.8707275390625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-narrow-es-left",
+    "width": 320,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 193,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 205,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 263,
+        "naturalHeight": 350,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 149,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-narrow-es-right",
+    "width": 320,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 884,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 193,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 205,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 263,
+        "naturalHeight": 350,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 149,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-narrow-es-one",
+    "width": 320,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 263,
+        "naturalHeight": 350,
+        "displayWidth": 283.5899658203125,
+        "displayHeight": 218.14236450195312,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "current-narrow-es-two-review-fixture",
+    "width": 320,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 0,
+    "prototype": false,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 193,
+        "displayWidth": 283.5899658203125,
+        "displayHeight": 218.14236450195312,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 205,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "proposal-narrow-es-left",
+    "width": 320,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 0,
+    "prototype": true,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 193,
+        "displayWidth": 283.5899658203125,
+        "displayHeight": 218.14236450195312,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 205,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 263,
+        "naturalHeight": 350,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 149,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "name": "proposal-narrow-es-right",
+    "width": 320,
+    "height": 1280,
+    "lang": "es",
+    "overflow": false,
+    "x": 884,
+    "prototype": true,
+    "cards": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 193,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 205,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "naturalWidth": 263,
+        "naturalHeight": 350,
+        "displayWidth": 274,
+        "displayHeight": 210.765625,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 276,
+        "loaded": true,
+        "currentSrc": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "naturalWidth": 274,
+        "naturalHeight": 149,
+        "displayWidth": 283.5899658203125,
+        "displayHeight": 218.14236450195312,
+        "objectFit": "cover",
+        "objectPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "recording": "horizontal-gallery-review.webm",
+    "edgeOffset": 276,
+    "arrowsAndFiltering": true
+  }
+]

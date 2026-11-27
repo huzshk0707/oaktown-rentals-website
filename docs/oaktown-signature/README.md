@@ -1,3 +1,5 @@
+> Latest collection review is [Phase 2B — hosted photography and editorial proposal](phase2b/README.md). All 60 originals are verified; the proposed card treatment awaits approval.
+
 > Current review is [Phase 1B — continuous cinematic hero](phase1b/README.md). The following Phase 1 record is retained as the before-state and historical evidence.
 
 # Oaktown Signature — Phase 1 visual review

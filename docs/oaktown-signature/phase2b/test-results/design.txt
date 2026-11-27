@@ -1,0 +1,1 @@
+33 supplemental checks passed: bilingual CTA/navigation/keyboard at six widths, authoritative empty/outage, no-JS contact.

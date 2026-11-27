@@ -4,7 +4,7 @@ Approved by the owner on 27 November 2026. Creative direction and visual accepta
 
 ## Current delivery
 
-Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) on `felix/oaktown-signature`. The existing homepage, search controls, cards and supporting sections are a first implementation, not visual acceptance. Preserve that work. Phase 1B engineering and regression verification are complete. Phase 1B visual and enhanced-photo architectural review remain pending. Ravi is explicitly authorized for Phase 2A engineering, including the subsequent single-row gallery update; final card styling remains gated.
+Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) on `felix/oaktown-signature`. The existing homepage, search controls, cards and supporting sections are a first implementation, not visual acceptance. Preserve that work. Phase 1B engineering and regression verification are complete. Phase 1B visual and enhanced-photo architectural review remain pending. Ravi completed Phase 2A engineering. FELIX verified all 60 hosted photos and prepared the separate [Phase 2B editorial proposal](phase2b/README.md). Detailed owner/ChatGPT approval remains required before Phase 2C styling.
 
 | Phase | Approved direction | Status / prerequisites |
 | --- | --- | --- |
@@ -50,3 +50,9 @@ Follow [AGENTS.md](../../AGENTS.md). Continue the existing branch/PR, preserve a
 ## Phase 1B approval
 
 The three-scene reference supplied on 27 November supersedes static hero behavior. FELIX owns implementation under explicit reassignment. The owner approved the existing public Workers preview for the AI-assisted enhanced asset. Compare it with the retained genuine original and obtain architectural accuracy approval before production. Capture all three scenes, search transition and forward/reverse recording.
+
+## Phase 2B verification and preparation checkpoint
+
+Hosted photography is verified against all 60 manifest URLs, all four original source pages and every detail selection. Current browser evidence resolves the earlier environment-specific CDN blocker. Read [PHOTOGRAPHY.md](phase2b/PHOTOGRAPHY.md) for genuine-source resolution/crop limitations.
+
+[Editorial treatment](phase2b/EDITORIAL-PROPOSAL.md) is a reversible browser-only prototype, with actual loaded-photo comparison and EN/ES mobile evidence. It preserves the approved horizontal layout and fixed widths. Public card styling and the Phase 1B hero are unchanged. NEXT STEP is owner/ChatGPT detailed treatment approval; no implementation of Phase 2C or later phases is implied.

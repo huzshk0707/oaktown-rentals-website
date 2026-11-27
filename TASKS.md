@@ -1,3 +1,13 @@
+# Phase 2B preparation — photography verified / editorial review pending
+
+- [x] Recover Ravi 877d196 and claim continuation as FELIX.
+- [x] Resolve environment/browser access and verify hosted deployment/runtime hashes.
+- [x] Verify 60 original photos, source-page assignments/order, natural dimensions, gallery selections and visual quality.
+- [x] Capture desktop/mobile/EN/ES boundaries, one/two-result states, four detail galleries and interaction recording.
+- [x] Prepare [reversible editorial proposal](docs/oaktown-signature/phase2b/EDITORIAL-PROPOSAL.md) without changing deployed card styling or cinematic hero.
+- [x] Run gallery/filter/browsing/language/motion/accessibility/CMS/admin regressions and publish durable handoff.
+- [ ] Owner/ChatGPT detailed styling approval before Phase 2C implementation. Source-resolution/crop acceptance remains a visual follow-up.
+
 # Phase 2A — Property Collection Engineering Foundation
 
 - [x] Audit every current file-catalogue property and CMS-supported fields: [field report](docs/oaktown-signature/phase2a/FIELDS.md).
@@ -6,7 +16,7 @@
 - [x] Implement approved single-row gallery: full-width introduction, no View All Homes or grid toggle, fixed generous gallery proportions, conditional arrows, edge movement, keyboard/touch/manual scroll, filter reset and reduced-motion behavior. Final card styling awaits approved mockup.
 - [x] Verify search, bilingual, galleries, accessibility, Phase 1B motion and admin/CMS compatibility. [Phase 2A evidence](docs/oaktown-signature/phase2a/README.md). Twelve axe scans have no confirmed violations; CDN photo acceptance remains open.
 - [x] Publish reports, tests, checkpoints and bounded NEXT STEP. Ravi released Phase 2A ownership; [evidence and blockers](docs/oaktown-signature/phase2a/README.md).
-- [ ] From a CDN-enabled browser, verify the latest PR preview and all 60 exact photos; save loaded-photo evidence.
+- [x] FELIX verified the hosted preview, all 60 originals, source mapping/order and loaded-photo evidence. See [Phase 2B review](docs/oaktown-signature/phase2b/README.md).
 - [ ] Owner/ChatGPT Phase 2B Editorial Collection mockup approval; Phase 2C styling follows explicit direction.
 
 # Phase 1B — approved continuous scroll hero

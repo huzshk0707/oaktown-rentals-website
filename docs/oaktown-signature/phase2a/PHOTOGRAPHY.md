@@ -1,3 +1,5 @@
+> Updated verification: FELIX subsequently loaded and checked all 60 originals in the hosted browser. See [current photo report](../phase2b/PHOTOGRAPHY.md). The network findings below are retained as historical Phase 2A evidence.
+
 # Photography audit — Phase 2A
 
 ## Identity and coverage
