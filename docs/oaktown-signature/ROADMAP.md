@@ -9,6 +9,7 @@ Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pu
 | Phase | Approved direction | Status / prerequisites |
 | --- | --- | --- |
 | 1 | Signature hero and navigation | **Active.** Perfect the full-screen Afterglow opening against the exact hero reference. Keep search below the opening viewport; verify desktop/mobile, EN/ES and motion preferences. |
+| 1B | Continuous three-scene cinematic hero | **Active, explicitly approved.** Same enhanced Afterglow image, native sticky scroll, mobile and static reduced-motion fallback. Remaining sections retain current design. |
 | 2 | Premium property cards | Initial homepage cards exist. Further creative work awaits Phase 1 acceptance and specific direction. Preserve genuine pricing, addresses, unit photos and unknown availability. |
 | 3 | Dedicated property search page | Planned. Existing homepage filters remain operational; a dedicated page is not yet authorized. Use supported neighborhood, bedroom and bathroom fields, not invented property types. |
 | 4 | Individual property detail pages | Existing detail routes, gallery, rental facts and showing links remain functional. Redesign awaits direction. |
@@ -42,3 +43,7 @@ Use “Our Homes” where availability is unverified. Do not copy sample pricing
 ## Delivery and recovery protocol
 
 Follow [AGENTS.md](../../AGENTS.md). Continue the existing branch/PR, preserve all other worktrees, normal-push small checkpoints at least every 15–20 minutes and after meaningful milestones. Refresh owner heartbeat/claim, update [HANDOFF.md](../../HANDOFF.md), [TASKS.md](../../TASKS.md) and the PR running log. Verify the pushed SHA. Keep one precise NEXT STEP and all browser evidence in the repository. Keep PR #26 draft for visual acceptance.
+
+## Phase 1B approval
+
+The three-scene reference supplied on 27 November supersedes static hero behavior. FELIX owns implementation under explicit reassignment. The owner approved the existing public Workers preview for the AI-assisted enhanced asset. Compare it with the retained genuine original and obtain architectural accuracy approval before production. Capture all three scenes, search transition and forward/reverse recording.

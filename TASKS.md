@@ -1,3 +1,12 @@
+# Phase 1B — approved continuous scroll hero
+
+- [x] Verify remote checkpoint, preserve older local work and claim as FELIX.
+- [x] Inspect enhanced Afterglow, genuine original and approved three-scene reference.
+- [ ] Implement one-image camera movement, three text scenes and immediate navigation shortcuts.
+- [ ] Verify desktop/mobile/Spanish/reduced motion and existing regression suites.
+- [ ] Capture each scene, search transition and forward/reverse recording.
+- [ ] Publish review checkpoint, preview evidence and release claim for approval.
+
 # Current priority — Ravi / Phase 1 visual acceptance
 
 See the [approved 12-phase Oaktown Signature roadmap](docs/oaktown-signature/ROADMAP.md). Only Phase 1 refinement and outstanding verification are active; future phases await specific approval.

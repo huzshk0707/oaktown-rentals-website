@@ -1,3 +1,15 @@
+# WEB-SIGNATURE — Phase 1B cinematic refinement
+
+- Owner FELIX under explicit user reassignment. Heartbeat 2026-11-27T05:15:56.511977+00:00. Claim expires 2026-11-27T05:45:56.511977+00:00.
+- Branch `felix/oaktown-signature`, draft PR #26. Latest verified prior checkpoint `0fd52b2`.
+- Scope is the approved continuous three-scene hero using one enhanced Afterglow image, short native sticky scroll, mobile/static fallbacks, EN/ES and review evidence. Remaining homepage sections retain current design.
+- User approved the existing publicly reachable Workers preview for enhanced-photo review. Production architectural accuracy and rollout approval remain pending.
+- Original photograph ownership/management and reuse permission were confirmed by the owner in this thread. The AI-assisted enhancement still needs separate accuracy approval.
+- Earlier local work was preserved on recovery branch `felix/signature-local-recovery` at `4084a29`. Continue from Ravi's newer remote checkpoint.
+- NEXT STEP is implement Phase 1B in app.js, signature.js and signature.css. Record provenance, tests, screenshots and forward/reverse recording.
+
+---
+
 # WEB-SIGNATURE — Ravi Phase 1 review checkpoint
 
 - Owner: Ravi. Implementation and local verification complete; claim released at 2026-11-27T04:36:34+00:00 for owner/ChatGPT visual acceptance. PR #26 remains DRAFT.
