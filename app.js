@@ -83,14 +83,14 @@
     }
   };
   Object.assign(words.en, {
-    cinematicConnection:'Well-cared-for rental homes in Louisville and the surrounding communities.',
+    cinematicConnection:'Well-cared-for homes across Greater Louisville.',
     cinematicDiscovery:'Explore our homes.', browseHomes:'Browse Our Homes', howToApply:'How to Apply',
     scrollExplore:'Scroll to explore', heroScenes:'Explore the three scenes',
     sceneWelcome:'Welcome', sceneConnection:'Connection', sceneDiscovery:'Discovery',
     afterglowReview:'AI-assisted design preview of 8216 Afterglow Drive'
   });
   Object.assign(words.es, {
-    cinematicConnection:'Viviendas bien cuidadas en Louisville y las comunidades cercanas.',
+    cinematicConnection:'Viviendas bien cuidadas en el área metropolitana de Louisville.',
     cinematicDiscovery:'Explora nuestras viviendas.', browseHomes:'Ver nuestras viviendas', howToApply:'Cómo solicitar',
     scrollExplore:'Desliza para explorar', heroScenes:'Explora las tres escenas',
     sceneWelcome:'Bienvenida', sceneConnection:'Conexión', sceneDiscovery:'Descubre',
@@ -109,7 +109,7 @@
     const sizes=thumbnail?'(max-width: 600px) 95px, 140px':className==='story-photo'
       ?'100vw'
       :className==='detail-cover-photo'?'(max-width: 850px) calc(100vw - 44px), (max-width: 1328px) calc((100vw - 96px) * .45), 554px'
-      :className==='property-image'?'auto, (max-width: 600px) calc(100vw - 44px), (max-width: 850px) 70vw, 44vw':'auto, (max-width: 1328px) calc(100vw - 48px), 1280px';
+      :className==='property-image'?'auto, (max-width: 600px) calc(100vw - 44px), (max-width: 850px) 70vw, 38vw':'auto, (max-width: 1328px) calc(100vw - 48px), 1280px';
     const responsive=window.OaktownCards.isSquarespacePhoto(src)?`srcset="${widths.map(w=>imageUrl(src,w)+' '+w+'w').join(', ')}" sizes="${sizes}"`:'';
     return `<img class="${className}" src="${imageUrl(src,thumbnail?300:1200)}" ${responsive} alt="${alt}" loading="${extra==='eager'?'eager':'lazy'}" decoding="async" ${extra==='eager'?'fetchpriority="high"':''}>`;
 
@@ -195,6 +195,41 @@
     <section class="section"><div class="eyebrow section-label">${t('moreLabel')}</div><h2 class="display-title" style="margin-bottom:40px">${t('moreHomes')}</h2><div class="mini-cards">${more.map(x=>`<a href="#home/${x.slug}" class="mini-card">${imageEl(photo(x),x.name,'')}<span>${x.name} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>`).join('')}</div></section>
     ${contactSection()}`;
   }
+  function syncCardPhotoControls(card,index) {
+    const p=P.find(p=>p.slug===card.dataset.propertySlug),count=window.OaktownCards.gallery(DATA,p||{}).length;
+    const dots=[...card.querySelectorAll('[data-card-photo-index]')];
+    const focused=dots.includes(document.activeElement);
+    const start=Math.max(0,Math.min(index-2,count-dots.length));
+    dots.forEach((button,i)=>{button.dataset.cardPhotoIndex=String(start+i);button.setAttribute('aria-label',t('photoLabel')+' '+(start+i+1));button.setAttribute('aria-pressed',String(start+i===index));});
+    if(focused)dots.find(button=>Number(button.dataset.cardPhotoIndex)===index)?.focus({preventScroll:true});
+  }
+  function confirmAction(element) {
+    if(!element||reducedMotion.matches||document.documentElement.classList.contains('motion-off'))return;
+    element.classList.remove('ux-confirm');void element.offsetWidth;element.classList.add('ux-confirm');
+    element.addEventListener('animationend',()=>element.classList.remove('ux-confirm'),{once:true});
+  }
+  async function selectCardPhoto(card,index) {
+    const p=P.find(p=>p.slug===card.dataset.propertySlug),images=window.OaktownCards.gallery(DATA,p||{});
+    if(!images.length)return;
+    index=(index+images.length)%images.length;
+    stopCardSlideshow(false);card.dataset.manualPhoto='true';
+    const generation=(Number(card.dataset.photoRequest)||0)+1;card.dataset.photoRequest=String(generation);card.dataset.pendingPhotoIndex=String(index);
+    const media=card.querySelector('.card-media'),status=card.querySelector('[data-card-photo-status]');
+    media.setAttribute('aria-busy','true');
+    const img=new Image();img.className='property-image property-preview';img.alt='';img.setAttribute('aria-hidden','true');img.decoding='async';img.src=imageUrl(images[index],1200);
+    let deadline;
+    const loaded=await Promise.race([img.decode().then(()=>true,()=>false),new Promise(resolve=>{deadline=setTimeout(()=>resolve(false),5000);})]);
+    clearTimeout(deadline);
+    if(!card.isConnected||Number(card.dataset.photoRequest)!==generation){img.removeAttribute('src');return;}
+    media.removeAttribute('aria-busy');delete card.dataset.pendingPhotoIndex;
+    if(!loaded){img.removeAttribute('src');status.textContent=t('galleryError');return;}
+    card.querySelectorAll('.property-preview').forEach(previous=>previous.remove());
+    img.classList.add('is-current');card.querySelector('.property-image-wrap').append(img);
+    card.dataset.selectedPhoto=String(index);card.classList.toggle('is-previewing',index!==0);
+    if(!reducedMotion.matches&&!document.documentElement.classList.contains('motion-off'))img.animate?.([{opacity:0},{opacity:1}],{duration:280,easing:'ease-out'});
+    syncCardPhotoControls(card,index);status.textContent=t('photoLabel')+' '+(index+1)+' / '+images.length;
+    confirmAction(card.querySelector(`[data-card-photo-index="${index}"]`));
+  }
   function cardSlideshowEnabled() {
     return pointerPreview.matches&&!reducedMotion.matches&&!document.documentElement.classList.contains('motion-off')&&!document.hidden;
   }
@@ -206,11 +241,11 @@
     state.pending?.removeAttribute('src');
     if(reset){
       state.card.classList.remove('is-previewing');state.card.dataset.selectedPhoto='0';
-      state.card.querySelectorAll('.property-preview').forEach(img=>img.remove());
+      state.card.querySelectorAll('.property-preview').forEach(img=>img.remove());syncCardPhotoControls(state.card,0);
     }
   }
   function startCardSlideshow(card) {
-    if(!cardSlideshowEnabled()||cardSlideshow?.card===card)return;
+    if(!cardSlideshowEnabled()||cardSlideshow?.card===card||card?.dataset.manualPhoto)return;
     stopCardSlideshow();
     const property=P.find(p=>p.slug===card?.dataset.propertySlug);
     const images=property?DATA.images[property.imageKey]:[];
@@ -233,7 +268,7 @@
       if(index===0){
         card.querySelectorAll('.property-preview').forEach(img=>img.classList.remove('is-current'));
         card.classList.remove('is-previewing');card.dataset.selectedPhoto='0';
-        retireOld();schedule(1500);return;
+        syncCardPhotoControls(card,0);retireOld();schedule(1500);return;
       }
       const img=new Image();state.pending=img;
       img.className='property-image property-preview';img.alt='';img.setAttribute('aria-hidden','true');img.decoding='async';
@@ -252,7 +287,7 @@
       }
       card.querySelectorAll('.property-preview').forEach(previous=>previous.classList.remove('is-current'));
       img.classList.add('is-current');card.querySelector('.property-image-wrap').append(img);
-      card.classList.add('is-previewing');card.dataset.selectedPhoto=String(index);
+      card.classList.add('is-previewing');card.dataset.selectedPhoto=String(index);syncCardPhotoControls(card,index);
       img.animate?.([{opacity:0},{opacity:1}],{duration:300,easing:'ease-out'});
       retireOld();schedule(1500);
     }
@@ -300,7 +335,7 @@
     apply();
     if(snapshot.focus&&currentView==='home'){
       const card=[...app.querySelectorAll('.property-card:not([hidden])')].find(el=>el.dataset.propertySlug===snapshot.focus.slug);
-      card?.querySelector(snapshot.focus.kind==='name'?'.property-name a':'.property-image-wrap')?.focus({preventScroll:true});
+      card?.querySelector(snapshot.focus.kind==='name'?'.property-name a':snapshot.focus.kind==='detail'?'.card-detail-link':'.property-image-wrap')?.focus({preventScroll:true});
     }
     requestAnimationFrame(()=>{if(generation!==positionGeneration)return;apply();restoringPosition=false;rememberView();});
     document.fonts.ready.then(()=>{if(generation===positionGeneration){apply();rememberView();}});
@@ -466,18 +501,20 @@
     if(e.target.id!=='home-search')return;
     e.preventDefault();const values=new FormData(e.target);
     selectedBedrooms=values.get('bedrooms')||'';selectedBathrooms=values.get('bathrooms')||'';
-    activateFilter(values.get('neighborhood')||'All');
+    activateFilter(values.get('neighborhood')||'All');confirmAction(e.submitter);
     document.getElementById('homes')?.scrollIntoView({behavior:navigationMotion()});
   });
   app.addEventListener('reset',e=>{
     if(e.target.id!=='home-search')return;
-    e.preventDefault();selectedBedrooms='';selectedBathrooms='';activateFilter('All');
+    e.preventDefault();selectedBedrooms='';selectedBathrooms='';activateFilter('All');confirmAction(e.target.querySelector('[type=reset]'));
   });
   document.querySelectorAll('.resources-menu').forEach(details=>{
     details.addEventListener('keydown',e=>{if(e.key==='Escape'){details.open=false;details.querySelector('summary').focus();}});
     document.addEventListener('click',e=>{if(!details.contains(e.target)||e.target.closest('a'))details.open=false;});
   });
   app.addEventListener('click',e=>{
+    const photoControl=e.target.closest('[data-card-photo-index],[data-card-photo-step]');
+    if(photoControl){const card=photoControl.closest('.property-card');const index=photoControl.hasAttribute('data-card-photo-index')?Number(photoControl.dataset.cardPhotoIndex):Number(card.dataset.pendingPhotoIndex??card.dataset.selectedPhoto??0)+Number(photoControl.dataset.cardPhotoStep);selectCardPhoto(card,index);return;}
 
     if(e.target.closest('.back-link')&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey)pendingHomeRestore=lastHomeSnapshot;
     const listing=e.target.closest('.property-card a[href^="#home/"]');
@@ -533,7 +570,7 @@
     const link=e.target.closest('a[href^="#"]');
     if(!link||e.defaultPrevented||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;
     const card=link.closest('.property-card');
-    rememberView(card?{slug:card.dataset.propertySlug,kind:link.closest('.property-name')?'name':'photo'}:null);
+    rememberView(card?{slug:card.dataset.propertySlug,kind:link.closest('.property-name')?'name':link.matches('.card-detail-link')?'detail':'photo'}:null);
   });
   app.addEventListener('scroll',e=>{if(e.target.matches('.collection-viewport'))scheduleViewSave();},true);
   ['wheel','touchstart','pointerdown','keydown'].forEach(name=>window.addEventListener(name,()=>{positionGeneration++;restoringPosition=false;},{passive:true}));

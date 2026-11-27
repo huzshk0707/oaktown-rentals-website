@@ -15,7 +15,7 @@ const base=process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8930';
  await test('single row, full-width introduction, generous fixed widths and no redundant controls',async()=>{
   assert.equal(await page.locator('[data-view-all],[data-layout-button]').count(),0);
   const bounds=await page.locator('.property-card').evaluateAll(els=>els.map(el=>({top:el.offsetTop,width:el.offsetWidth})));
-  assert.equal(new Set(bounds.map(b=>b.top)).size,1);assert.ok(Math.abs(bounds[0].width-1440*.44)<2);
+  assert.equal(new Set(bounds.map(b=>b.top)).size,1);assert.ok(Math.abs(bounds[0].width-1440*.38)<2);
   const intro=await page.locator('.collection-intro').boundingBox(),gallery=await viewport.boundingBox();assert.ok(intro.y+intro.height<=gallery.y);assert.ok(Math.abs(intro.width-gallery.width)<2);
   assert.equal(await controls.isVisible(),true);assert.equal(await viewport.getAttribute('tabindex'),'0');
  });
@@ -26,7 +26,7 @@ const base=process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8930';
  });
  await test('arrows and keyboard navigation stop at collection bounds without looping',async()=>{
   await reset();await page.locator('[data-collection-step="1"]').click();await page.waitForTimeout(650);assert.ok(await x()>500);
-  await viewport.focus();await page.keyboard.press('End');await page.waitForTimeout(50);const end=await x();assert.ok(end>1000);assert.equal(await page.locator('[data-collection-step="1"]').isDisabled(),true);
+  await viewport.focus();await page.keyboard.press('End');await page.waitForTimeout(50);const end=await x();assert.ok(end>0);assert.ok(Math.abs(end-await viewport.evaluate(el=>el.scrollWidth-el.clientWidth))<2);assert.equal(await page.locator('[data-collection-step="1"]').isDisabled(),true);
   await page.keyboard.press('ArrowRight');await page.waitForTimeout(300);assert.ok(Math.abs(await x()-end)<2);
   await page.keyboard.press('Home');assert.equal(await x(),0);
  });
@@ -44,7 +44,7 @@ const base=process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8930';
   // pair exercises fit handling without changing production inventory.
   await page.locator('.property-card').evaluateAll(els=>els.forEach((el,i)=>el.hidden=i>1));await page.waitForTimeout(80);
   assert.equal(await controls.isVisible(),false);const cards=await page.locator('.property-card:not([hidden])').evaluateAll(els=>els.map(e=>({w:e.offsetWidth,left:e.offsetLeft})));
-  assert.ok(Math.abs(cards[0].w-1200*.44)<2);assert.equal(cards[0].w,cards[1].w);
+  assert.ok(Math.abs(cards[0].w-1200*.38)<2);assert.equal(cards[0].w,cards[1].w);
   await page.setViewportSize({width:1440,height:1000});await viewport.scrollIntoViewIfNeeded();await page.waitForTimeout(150);await edge();await page.waitForTimeout(250);assert.equal(await x(),0);await page.mouse.move(0,0); // Two homes never edge-drift, even if their fixed widths overflow.
   await page.locator('[name=neighborhood]').selectOption('Cherokee Triangle');await page.locator('[name=bedrooms]').selectOption('3');await page.locator('#home-search [type=submit]').click();
   assert.equal(await page.locator('.search-empty').isVisible(),true);assert.equal(await controls.isVisible(),false);

@@ -12,7 +12,7 @@
       const pointer=matchMedia('(min-width: 851px) and (hover: hover) and (pointer: fine)');
       const events=new AbortController();
       const on=(target,type,fn,options={})=>target.addEventListener(type,fn,{...options,signal:events.signal});
-      let frame=0,last=0,velocity=0,overflow=false,visibleCount=0;
+      let frame=0,last=0,velocity=0,overflow=false,visibleCount=0,lastBoundary='';
       const allowed=()=>overflow&&visibleCount>2&&pointer.matches&&!reduce.matches&&!document.hidden&&!document.documentElement.classList.contains('motion-off');
       function stop(){cancelAnimationFrame(frame);frame=0;last=0;velocity=0;}
       function tick(now){
@@ -37,7 +37,7 @@
         collection.dataset.overflow=String(overflow);
       }
       on(viewport,'pointermove',event=>{
-        if(event.pointerType!=='mouse'||event.buttons||!allowed()){stop();return;}
+        if(event.pointerType!=='mouse'||event.buttons||event.target.closest('.card-photo-controls')||!allowed()){stop();return;}
         const rect=viewport.getBoundingClientRect(),x=event.clientX-rect.left;
         const edge=Math.min(80,rect.width*.1);
         velocity=x<edge?-160*(1-x/edge):x>rect.width-edge?160*(1-(rect.width-x)/edge):0;
@@ -46,6 +46,14 @@
       });
       for(const type of ['pointerleave','pointercancel','pointerdown','touchstart','wheel','keydown'])on(viewport,type,stop,{passive:type==='wheel'||type==='touchstart'});
       on(collection,'oaktown:collection-filter',()=>{stop();measure();});
+      on(viewport,'scroll',()=>{
+        const max=viewport.scrollWidth-viewport.clientWidth;
+        const boundary=max>2?(viewport.scrollLeft<=2?'start':viewport.scrollLeft>=max-2?'end':''):'';
+        if(boundary&&boundary!==lastBoundary&&!reduce.matches&&!document.documentElement.classList.contains('motion-off')){
+          const meter=collection.querySelector('.collection-meter');meter.classList.remove('is-boundary');void meter.offsetWidth;meter.classList.add('is-boundary');
+        }
+        lastBoundary=boundary;
+      },{passive:true});
       on(window,'blur',stop);on(document,'visibilitychange',stop);
       on(window,'scroll',stop,{passive:true});
       on(reduce,'change',stop);on(pointer,'change',stop);

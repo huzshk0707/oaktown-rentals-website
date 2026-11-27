@@ -1,6 +1,6 @@
 # Phase 2C — approved Option B Boutique Luxury
 
-- [ ] Record exact approved reference and design decisions; retain prior phase evidence.
+- [x] Record exact approved Option B reference and design decisions; retain prior phase evidence.
 - [ ] Implement 38vw Boutique cards and scene-two bilingual copy; preserve gallery and hero behavior.
 - [ ] Refine scoped feedback/photo controls/shared-image transitions with accessible reduced-motion fallbacks.
 - [ ] Capture desktop/tablet/mobile EN/ES, all/one/two results, scene two and short interaction recording.
@@ -14,7 +14,7 @@
 - [x] Capture desktop/mobile/EN/ES boundaries, one/two-result states, four detail galleries and interaction recording.
 - [x] Prepare [reversible editorial proposal](docs/oaktown-signature/phase2b/EDITORIAL-PROPOSAL.md) without changing deployed card styling or cinematic hero.
 - [x] Run gallery/filter/browsing/language/motion/accessibility/CMS/admin regressions and publish durable handoff.
-- [ ] Owner/ChatGPT detailed styling approval before Phase 2C implementation. Source-resolution/crop acceptance remains a visual follow-up.
+- [x] Owner approved Option B — Boutique Luxury for Phase 2C. Source-resolution/crop acceptance remains a visual follow-up.
 
 # Phase 2A — Property Collection Engineering Foundation
 
@@ -25,7 +25,7 @@
 - [x] Verify search, bilingual, galleries, accessibility, Phase 1B motion and admin/CMS compatibility. [Phase 2A evidence](docs/oaktown-signature/phase2a/README.md). Twelve axe scans have no confirmed violations; CDN photo acceptance remains open.
 - [x] Publish reports, tests, checkpoints and bounded NEXT STEP. Ravi released Phase 2A ownership; [evidence and blockers](docs/oaktown-signature/phase2a/README.md).
 - [x] FELIX verified the hosted preview, all 60 originals, source mapping/order and loaded-photo evidence. See [Phase 2B review](docs/oaktown-signature/phase2b/README.md).
-- [ ] Owner/ChatGPT Phase 2B Editorial Collection mockup approval; Phase 2C styling follows explicit direction.
+- [x] Owner/ChatGPT approved Option B; Phase 2C implementation explicitly authorized.
 
 # Phase 1B — approved continuous scroll hero
 
