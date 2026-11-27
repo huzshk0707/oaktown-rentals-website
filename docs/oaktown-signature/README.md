@@ -1,3 +1,5 @@
+> Current review is [Phase 1B — continuous cinematic hero](phase1b/README.md). The following Phase 1 record is retained as the before-state and historical evidence.
+
 # Oaktown Signature — Phase 1 visual review
 
 Ravi continued the existing implementation on draft [PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26). The [12-phase roadmap](ROADMAP.md) records future direction without authorizing future phases. This delivery refines the opening and verifies the existing site; it does not independently redesign the remaining sections.

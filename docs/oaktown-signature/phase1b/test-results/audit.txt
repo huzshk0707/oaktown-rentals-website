@@ -1,0 +1,20 @@
+{
+  "passed": [
+    "grid: Back restores exact card, page position, layout, filter, strip position and keyboard focus",
+    "grid: reload retains browsing state",
+    "grid: All rental homes returns to the previous browsing position",
+    "gallery: Back restores exact card, page position, layout, filter, strip position and keyboard focus",
+    "gallery: reload retains browsing state",
+    "gallery: All rental homes returns to the previous browsing position",
+    "same-home anchor Back restores rendered filters and visible cards",
+    "Back across identical hash URLs restores the correct history entry",
+    "320px es: photo is present immediately, copy clears navigation and search follows the full-screen opening",
+    "320px es: deposits and property-specific amenities are accurate, unknown availability invites inquiry, and fees have guidance",
+    "390px en: photo is present immediately, copy clears navigation and search follows the full-screen opening",
+    "390px en: deposits and property-specific amenities are accurate, unknown availability invites inquiry, and fees have guidance",
+    "768px en: photo is present immediately, copy clears navigation and search follows the full-screen opening",
+    "768px en: deposits and property-specific amenities are accurate, unknown availability invites inquiry, and fees have guidance",
+    "Forward restores the listing’s selected photo and reading position"
+  ],
+  "failures": []
+}

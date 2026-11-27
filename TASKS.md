@@ -2,14 +2,14 @@
 
 - [x] Verify remote checkpoint, preserve older local work and claim as FELIX.
 - [x] Inspect enhanced Afterglow, genuine original and approved three-scene reference.
-- [ ] Implement one-image camera movement, three text scenes and immediate navigation shortcuts.
-- [ ] Verify desktop/mobile/Spanish/reduced motion and existing regression suites.
-- [ ] Capture each scene, search transition and forward/reverse recording.
-- [ ] Publish review checkpoint, preview evidence and release claim for approval.
+- [x] Implement one-image camera movement, three text scenes and immediate navigation shortcuts.
+- [x] Verify desktop/mobile/Spanish/reduced motion and existing regression suites.
+- [x] Capture each scene, search transition and forward/reverse recording.
+- [x] Publish review checkpoint, preview evidence and release claim for approval.
 
-# Current priority — Ravi / Phase 1 visual acceptance
+# Previous checkpoint — Ravi / Phase 1 visual acceptance
 
-See the [approved 12-phase Oaktown Signature roadmap](docs/oaktown-signature/ROADMAP.md). Only Phase 1 refinement and outstanding verification are active; future phases await specific approval.
+See the [approved 12-phase Oaktown Signature roadmap](docs/oaktown-signature/ROADMAP.md). Phase 1B supersedes the static hero behavior. Engineering and evidence are complete; visual and enhanced-photo architectural acceptance remain pending. Future phases await specific approval.
 
 Owner explicitly reassigned continuation to Ravi. Preserve the existing implementation below; the exact hero reference supersedes prior opening mockups. Document the 12-phase master roadmap, refine only navigation/full-screen hero, then complete affected regressions and durable screenshot review. PR #26 stays draft; future phases require separate authorization.
 
@@ -23,7 +23,8 @@ Owner explicitly reassigned continuation to Ravi. Preserve the existing implemen
 - [x] 6. Refine mobile, tablet, EN/ES and reduced-motion interactions. Ravi Phase 1 regression checks passed.
 - [ ] 7. Visual acceptance: local regressions and exact-reference browser comparisons completed in [review evidence](docs/oaktown-signature/README.md). Owner acceptance and real CDN collection/gallery verification remain pending; keep PR #26 draft.
 - [ ] Follow-up after separate approval is migration from file catalogue to verified published CMS inventory.
-- [ ] Before public deployment confirm Afterglow ownership/management and photograph reuse authorization.
+- [x] Owner confirmed Afterglow ownership/management and original photograph reuse authorization.
+- [ ] Approve enhanced-photo architectural accuracy and Phase 1B visual acceptance before separate production authorization.
 
 # Tasks — Oaktown Rentals Website
 

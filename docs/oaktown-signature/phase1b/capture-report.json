@@ -1,0 +1,112 @@
+[
+  {
+    "name": "scene-1",
+    "width": 1672,
+    "height": 941,
+    "scroll": 0,
+    "scene": "0",
+    "camera": "scale(1)",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-1672.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "scene-2",
+    "width": 1672,
+    "height": 941,
+    "scroll": 565,
+    "scene": "1",
+    "camera": "scale(1.41036)",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-1672.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "scene-3",
+    "width": 1672,
+    "height": 941,
+    "scroll": 1129,
+    "scene": "2",
+    "camera": "scale(1.82)",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-1672.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "search-transition",
+    "width": 1672,
+    "height": 941,
+    "scroll": 1468,
+    "scene": "2",
+    "camera": "scale(1.82)",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-1672.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "scroll": 0,
+    "scene": "0",
+    "camera": "none",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-480.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "mobile-es",
+    "width": 390,
+    "height": 844,
+    "scroll": 0,
+    "scene": "0",
+    "camera": "none",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-480.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "narrow-es",
+    "width": 320,
+    "height": 640,
+    "scroll": 0,
+    "scene": "0",
+    "camera": "none",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-480.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "tablet",
+    "width": 768,
+    "height": 1024,
+    "scroll": 0,
+    "scene": "0",
+    "camera": "none",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-768.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "reduced-motion",
+    "width": 1440,
+    "height": 1000,
+    "scroll": 0,
+    "scene": "0",
+    "camera": "none",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-1672.webp",
+    "loaded": true,
+    "overflow": false
+  },
+  {
+    "name": "desktop-es",
+    "width": 1440,
+    "height": 1000,
+    "scroll": 0,
+    "scene": "0",
+    "camera": "scale(1)",
+    "image": "http://127.0.0.1:8931/assets/signature/afterglow-review-1672.webp",
+    "loaded": true,
+    "overflow": false
+  }
+]

@@ -1,12 +1,16 @@
-# WEB-SIGNATURE — Phase 1B cinematic refinement
+# WEB-SIGNATURE — Phase 1B ready for visual review
 
-- Owner FELIX under explicit user reassignment. Heartbeat 2026-11-27T05:20:52.551142+00:00. Claim expires 2026-11-27T05:50:52.551142+00:00.
-- Branch `felix/oaktown-signature`, draft PR #26. Latest verified prior checkpoint `0fd52b2`.
-- Scope is the approved continuous three-scene hero using one enhanced Afterglow image, short native sticky scroll, mobile/static fallbacks, EN/ES and review evidence. Remaining homepage sections retain current design.
-- User approved the existing publicly reachable Workers preview for enhanced-photo review. Production architectural accuracy and rollout approval remain pending.
-- Original photograph ownership/management and reuse permission were confirmed by the owner in this thread. The AI-assisted enhancement still needs separate accuracy approval.
-- Earlier local work was preserved on recovery branch `felix/signature-local-recovery` at `4084a29`. Continue from Ravi's newer remote checkpoint.
-- NEXT STEP is finish motion and existing browser regressions, capture all scenes and record forward/reverse scrolling. Source implementation is complete; visual acceptance remains pending.
+- Owner FELIX under explicit user reassignment. Implementation complete, claim released at 2026-11-27T05:27:48+00:00. PR #26 remains DRAFT.
+- Branch `felix/oaktown-signature`, base `be37dba`. Latest verified pushed implementation checkpoint `d14efce3c3753944d54c1436bf7b6571e99881ee`. This evidence checkpoint follows it. Read the live PR head for its final SHA.
+- Done is the approved continuous three-scene hero with one enhanced Afterglow image, native sticky/reversible camera, keyboard scene controls, immediate homes/apply shortcuts and static mobile/reduced-motion fallbacks. Subsequent homepage sections retain their design.
+- All affected public, motion, bilingual, gallery and disposable admin tests passed. Exact commands/counts and limitations are in `docs/oaktown-signature/phase1b/README.md`. Seven hero axe scans have zero confirmed violations, with image contrast incompletes retained.
+- Actual screenshots of all three scenes/search, mobile/Spanish/tablet/reduced motion, 15.56-second forward/reverse recording and reference/before/after comparison are in `docs/oaktown-signature/phase1b/`. No unfinished implementation files remain.
+- Public preview https://felix-oaktown-signature-oaktown.rentals10.workers.dev/ returned 200 and its four key runtime/image assets matched local SHA-256. Cloudflare passed for `d14efce`. Actual remote browser screenshot required a test-context TLS exception for environment certificate trust. No site TLS settings changed.
+- Original property ownership/management and photo reuse were confirmed in the user thread. Public enhanced-photo review is explicitly authorized. Retained original/enhancement/reference and SHA-256 provenance document apparent architectural differences. Enhanced-photo architectural approval remains required before production.
+- Unresolved acceptance items are owner visual review, enhanced-photo architectural accuracy and real external catalogue/gallery photo loading. Native Safari/Firefox, screen readers and real production sign-in remain untested.
+- Earlier local work is safely preserved on `felix/signature-local-recovery` at `4084a29`. Do not replay it over Ravi's newer work.
+- NEXT STEP is review `docs/oaktown-signature/phase1b/comparison.jpg` and `forward-reverse.webm` with the owner, then compare `enhanced-afterglow.png` against `genuine-afterglow.png` for explicit architectural approval. Read live ownership/PR state before any follow-up edit.
+- No merge, production deployment, live inventory/schema change, Access change or payment activation. Keep PR #26 draft and await specific direction before another phase.
 
 ---
 

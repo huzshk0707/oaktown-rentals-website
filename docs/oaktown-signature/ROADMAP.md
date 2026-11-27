@@ -1,15 +1,15 @@
 # Oaktown Signature — approved master roadmap
 
-Approved by the owner on 27 November 2026. Creative direction and visual acceptance belong to the owner and ChatGPT. Ravi handles engineering, implementation and verification. This roadmap records the direction; **it does not authorize implementation of every phase**.
+Approved by the owner on 27 November 2026. Creative direction and visual acceptance belong to the owner and ChatGPT. FELIX continued Phase 1B engineering, implementation and verification under explicit reassignment. This roadmap records the direction; **it does not authorize implementation of every phase**.
 
 ## Current delivery
 
-Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) on `felix/oaktown-signature`. The existing homepage, search controls, cards and supporting sections are a first implementation, not visual acceptance. Preserve that work. Immediate priority is Phase 1, plus outstanding regression checks for existing functionality.
+Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) on `felix/oaktown-signature`. The existing homepage, search controls, cards and supporting sections are a first implementation, not visual acceptance. Preserve that work. Phase 1B engineering and regression verification are complete. Immediate priority is owner visual and enhanced-photo architectural review.
 
 | Phase | Approved direction | Status / prerequisites |
 | --- | --- | --- |
-| 1 | Signature hero and navigation | **Active.** Perfect the full-screen Afterglow opening against the exact hero reference. Keep search below the opening viewport; verify desktop/mobile, EN/ES and motion preferences. |
-| 1B | Continuous three-scene cinematic hero | **Active, explicitly approved.** Same enhanced Afterglow image, native sticky scroll, mobile and static reduced-motion fallback. Remaining sections retain current design. |
+| 1 | Signature hero and navigation | **Superseded by approved Phase 1B motion.** Retain the full-screen Afterglow identity from the exact hero reference. Keep search below the opening viewport; verify desktop/mobile, EN/ES and motion preferences. |
+| 1B | Continuous three-scene cinematic hero | **Implemented, awaiting visual/architectural acceptance.** Same enhanced Afterglow image, native sticky scroll, mobile and static reduced-motion fallback. Evidence and exact tests are in [Phase 1B review](phase1b/README.md). Remaining sections retain current design. |
 | 2 | Premium property cards | Initial homepage cards exist. Further creative work awaits Phase 1 acceptance and specific direction. Preserve genuine pricing, addresses, unit photos and unknown availability. |
 | 3 | Dedicated property search page | Planned. Existing homepage filters remain operational; a dedicated page is not yet authorized. Use supported neighborhood, bedroom and bathroom fields, not invented property types. |
 | 4 | Individual property detail pages | Existing detail routes, gallery, rental facts and showing links remain functional. Redesign awaits direction. |

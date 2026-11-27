@@ -1,3 +1,5 @@
+> Phase 1B adds the owner-supplied AI-assisted enhanced Afterglow for the explicitly approved public review. [Source files, hashes, comparison and approval limits](phase1b/README.md#asset-provenance-and-approval). Original property/photo rights are confirmed. Enhanced architectural accuracy and production rollout still require approval. Earlier entries below describe Phase 1.
+
 # Approved asset provenance
 
 Source: owner-supplied [Drive folder](https://drive.google.com/drive/folders/1GRRZgQN61mry20YFAut2ixFmSU9xAsSJ). All originals and the exact reference were visually inspected before implementation.

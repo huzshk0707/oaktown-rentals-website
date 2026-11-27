@@ -1,0 +1,24 @@
+{
+  "passed": [
+    "approved local photos load and Afterglow is not added to rental inventory",
+    "combined minimum bedroom/bathroom filters, empty result and reset",
+    "search persists through language changes, listing details and back navigation",
+    "Resources keyboard navigation, verified links and no portal",
+    "collection gallery keeps previous/next controls and returns to grid",
+    "en 320px: no overflow, hero action and header controls fit",
+    "en 390px: no overflow, hero action and header controls fit",
+    "en 768px: no overflow, hero action and header controls fit",
+    "en 1024px: no overflow, hero action and header controls fit",
+    "en 1440px: no overflow, hero action and header controls fit",
+    "en 1920px: no overflow, hero action and header controls fit",
+    "es 320px: no overflow, hero action and header controls fit",
+    "es 390px: no overflow, hero action and header controls fit",
+    "es 768px: no overflow, hero action and header controls fit",
+    "es 1024px: no overflow, hero action and header controls fit",
+    "es 1440px: no overflow, hero action and header controls fit",
+    "es 1920px: no overflow, hero action and header controls fit",
+    "motion toggle and reduced-motion provide a static opening and working search",
+    "all real rental detail routes, galleries, showing/application links and Escape focus"
+  ],
+  "failures": []
+}

@@ -16,7 +16,8 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  for(const scene of [0,1,2]){
    await page.locator('[data-hero-scene-button="'+scene+'"]').click();
    await page.waitForFunction(index=>document.querySelector('.cinematic-hero').dataset.scene===String(index),scene);
-   check('scene navigation '+scene,()=>assert.ok(true));
+   const currentScene=await page.locator('.cinematic-hero').getAttribute('data-scene');
+   check('scene navigation '+scene,()=>assert.equal(currentScene,String(scene)));
  }
  await page.evaluate(()=>scrollTo({top:200,behavior:'instant'}));await page.waitForTimeout(100);
  const movement=await page.locator('.signature-images').evaluate(el=>getComputedStyle(el).transform);check('native scroll subtly moves the hero photography',()=>assert.notEqual(movement,'none'));
@@ -61,7 +62,8 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  await page.setViewportSize({width:390,height:844});await page.goto(base+'/');await page.waitForTimeout(200);
  const cta=await page.locator('[data-hero-scene="0"] .signature-button').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "Browse Our Homes"')));
  const ctaLabel=await page.locator('[data-hero-scene="0"] .signature-button').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
- check('mobile has a static accessible scene',()=>assert.ok(true));
+ const mobileState=await page.locator('.cinematic-hero').evaluate(el=>({scene:el.dataset.scene,animated:el.classList.contains('is-cinematic'),hidden:el.querySelector('[data-hero-scene="0"]').getAttribute('aria-hidden')}));
+ check('mobile has a static accessible scene',()=>assert.deepEqual(mobileState,{scene:'0',animated:false,hidden:'false'}));
  const mobileScenes=await page.locator('.cinematic-progress').isVisible();check('mobile scene controls are omitted',()=>assert.equal(mobileScenes,false));
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
  await page.locator('#language-switch').click();const text=await page.locator('[data-hero-scene="0"] .signature-button').innerText();check('hero action translates',()=>assert.match(text,/Ver nuestras viviendas/));
