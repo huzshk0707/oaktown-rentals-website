@@ -1,3 +1,14 @@
+# WEB-SIGNATURE — Phase 2D / FELIX active
+
+- Explicit user takeover from Ravi. Owner FELIX; heartbeat 2026-11-27T21:24:06+00:00; claim expires 2026-11-27T21:54:06+00:00.
+- Branch `felix/oaktown-signature`, draft PR #26, base `be37dba`. Recovered clean latest remote `149217ea0942d70682e48bf13686a3ea61285a1f` via fast-forward; preserve all other worktrees and booking PR #25.
+- Approved work: Tasks 1–4 root/history verification, secondary card readability, verified Zillow tour links with SMS fallback, restored Gallery/Grid modes. Preserve hero and Boutique identity, 38vw gallery cards/title/rent sizes and five-dot controls.
+- Tasks 5–6 are rendered Bethune research and separate reversible expanding-panel/Louisville map prototypes, not production section replacement.
+- NEXT STEP: inspect current navigation/card/layout code, reproduce root/deep-link/history behavior, inspect Bethune in the browser and investigate public Zillow mappings. No actual tour submissions.
+- Keep draft; no merge, production deploy, live inventory/schema/auth change or payments. Checkpoint at most every 20 minutes.
+
+---
+
 # WEB-SIGNATURE — Phase 2C Boutique Luxury / Ravi
 
 - Owner Ravi; implementation and review evidence complete. Claim released at 2026-11-27T20:42:24+00:00. Latest verified pushed runtime checkpoint `9e387896233eb26d240801fb70bce1cf628e0172`; final documentation checkpoint follows it (read live PR head for SHA). Previous evidence `5b90d1b`, implementation `30d128f`, ownership `f45f158`, recovered Felix `7ff126e`.
