@@ -9,6 +9,8 @@
     ? new Intl.NumberFormat(language==='es'?'es-US':'en-US',{style:'currency',currency:'USD',minimumFractionDigits:value%1?2:0,maximumFractionDigits:2}).format(value)
     : language==='es'?'Consultar precio':'Ask for pricing';
   const availabilityLabel = (p,language='en') => {
+    const custom=language==='es'?p.availabilityTextEs:p.availabilityText;
+    if(p.availability==='coming_soon'&&custom)return custom;
     const labels=({en:{available:'Available',coming_soon:'Coming soon',rented:'Rented'},es:{available:'Disponible',coming_soon:'Próximamente',rented:'Alquilado'}})[language==='es'?'es':'en'];
     return Object.hasOwn(labels,p.availability)?labels[p.availability]:'';
   };
@@ -38,12 +40,13 @@
     function render(p,index=0,total=1) {
       const language=getLanguage(),images=gallery(data,p);
       const specs=specifications(p,language,t);
+      const action=p.contactOnly?(language==='es'?'Consultar novedades':'Ask for updates'):t('availability');
       const icons=[isNumber(p.bedrooms)?bed:'',isNumber(p.bathrooms)?bath:''].filter(Boolean);
       return `<article class="property-card reveal" data-neighborhood="${p.neighborhood||''}" data-property-slug="${p.slug}" data-selected-photo="0">
         <div class="card-media"><a class="property-image-wrap" href="#home/${p.slug}" aria-label="${t('details')}: ${p.name}" data-image-error="${t('photoUnavailable')}">
           <span class="card-index" aria-hidden="true">${String(index+1).padStart(2,'0')} / ${String(total).padStart(2,'0')}</span>
-          ${images.length?imageEl(images[0],p.name+' — '+t('photoLabel'),'property-image'):'<span class="image-unavailable" aria-hidden="true"></span>'}
-        </a>${availabilityBadge(p)}<span class="card-photo-count">${images.length} ${t('photosLabel')}</span>
+          ${images.length?imageEl(images[0],p.name+' — '+t('photoLabel'),'property-image'):'<span class="image-unavailable" aria-hidden="true"></span><span class="sr-only">'+t('photoUnavailable')+'</span>'}
+        </a>${availabilityBadge(p)}${images.length?'<span class="card-photo-count">'+images.length+' '+t('photosLabel')+'</span>':''}
         ${images.length>1?`<div class="card-photo-controls" role="group" aria-label="${t('photosLabel')}: ${p.name}">
           <button type="button" class="card-photo-previous" data-card-photo-step="-1" aria-label="${t('previousPhoto')}">${arrow}</button>
           <div class="card-photo-dots">${images.slice(0,5).map((_,i)=>`<button type="button" data-card-photo-index="${i}" aria-label="${t('photoLabel')} ${i+1}" aria-pressed="${i===0}"><span></span></button>`).join('')}</div>
@@ -51,9 +54,9 @@
         <span class="sr-only" data-card-photo-status role="status" aria-live="polite"></span></div>
         <div class="boutique-card-body">
           <div class="property-data"><div><h3 class="property-name"><a href="#home/${p.slug}">${p.name}</a></h3><span class="property-neighborhood">${p.neighborhood||''}</span>${p.city?`<span class="property-location">${pin}${p.city}</span>`:''}<p class="property-summary">${localized(p,'summary')||''}</p></div>
-            <div class="property-price">${money(p.rent)}${isNumber(p.rent)?`<small>${t('perMonth')}</small>`:''}${isNumber(p.deposit)?`<span class="property-deposit">${t('deposit')}: ${money(p.deposit)}</span>`:''}</div></div>
+            <div class="property-price">${p.hideRent?'':money(p.rent)}${!p.hideRent&&isNumber(p.rent)?`<small>${t('perMonth')}</small>`:''}${!p.hideRent&&isNumber(p.deposit)?`<span class="property-deposit">${t('deposit')}: ${money(p.deposit)}</span>`:''}</div></div>
           ${cardAmenities(p)}
-          <div class="property-details-line"><span class="card-specs">${specs.map((text,i)=>`<span class="card-spec">${icons[i]}${text}</span>`).join('')}</span><a href="${inquiryUrl(p)}" aria-label="${t('availability')}: ${p.name}">${t('availability')}</a></div>
+          <div class="property-details-line"><span class="card-specs">${specs.map((text,i)=>`<span class="card-spec">${icons[i]}${text}</span>`).join('')}</span><a href="${inquiryUrl(p)}" aria-label="${action}: ${p.name}">${action}</a></div>
           <a class="card-detail-link" href="#home/${p.slug}" aria-label="${t('details')}: ${p.name}">${arrow}</a>
         </div></article>`;
     }
