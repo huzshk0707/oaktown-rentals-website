@@ -223,10 +223,17 @@
     if(!card.isConnected||Number(card.dataset.photoRequest)!==generation){img.removeAttribute('src');return;}
     media.removeAttribute('aria-busy');delete card.dataset.pendingPhotoIndex;
     if(!loaded){img.removeAttribute('src');status.textContent=t('galleryError');return;}
-    card.querySelectorAll('.property-preview').forEach(previous=>previous.remove());
-    img.classList.add('is-current');card.querySelector('.property-image-wrap').append(img);
+    const previousPhotos=[...card.querySelectorAll('.property-preview')];
+    // Keep the last visible photo underneath until the new one has faded in.
+    // Only the selected image carries is-current, including during rapid clicks.
+    previousPhotos.forEach(previous=>{previous.style.opacity='1';previous.classList.remove('is-current');});
+    card.querySelector('.property-image-wrap').append(img);
+    const animate=!reducedMotion.matches&&!document.documentElement.classList.contains('motion-off');
+    if(animate)void img.offsetWidth;
+    img.classList.add('is-current');
     card.dataset.selectedPhoto=String(index);card.classList.toggle('is-previewing',index!==0);
-    if(!reducedMotion.matches&&!document.documentElement.classList.contains('motion-off'))img.animate?.([{opacity:0},{opacity:1}],{duration:280,easing:'ease-out'});
+    const retire=()=>previousPhotos.forEach(previous=>previous.remove());
+    if(animate)setTimeout(retire,320);else retire();
     syncCardPhotoControls(card,index);status.textContent=t('photoLabel')+' '+(index+1)+' / '+images.length;
     confirmAction(card.querySelector(`[data-card-photo-index="${index}"]`));
   }

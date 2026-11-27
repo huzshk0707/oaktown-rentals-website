@@ -4,7 +4,9 @@
 - [x] Implement 38vw Boutique cards and scene-two bilingual copy; preserve gallery and hero behavior.
 - [x] Refine scoped feedback/photo controls/shared-image transitions with accessible reduced-motion fallbacks.
 - [x] Capture desktop/tablet/mobile EN/ES, all/one/two results, scene two and short interaction recording.
-- [ ] Run regressions; publish checkpoints, PR log and bounded review handoff.
+- [x] Run regressions and save [actual Boutique screenshots/recording/comparison](docs/oaktown-signature/phase2c/README.md).
+- [ ] Complete final hosted crossfade verification and release review handoff.
+- [ ] Owner/ChatGPT visual acceptance of Phase 2C; keep PR #26 draft.
 
 # Phase 2B preparation — photography verified / editorial review pending
 

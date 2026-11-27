@@ -18,7 +18,11 @@ const fixture='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
  await test('manual photo controls update actual photo, dots/status, and stay on the collection',async()=>{
   await card.locator('[data-card-photo-step="1"]').click();await p.waitForFunction(()=>document.querySelector('.property-card').dataset.selectedPhoto==='1');
   assert.equal(await card.locator('[data-card-photo-index="1"]').getAttribute('aria-pressed'),'true');assert.match(await card.locator('[data-card-photo-status]').innerText(),/2 \/ 19/);assert.equal(new URL(p.url()).hash,'#homes');
+  const previous=await card.locator('.property-preview.is-current').getAttribute('src');
   await card.locator('[data-card-photo-index="4"]').click();await p.waitForFunction(()=>document.querySelector('.property-card').dataset.selectedPhoto==='4');
+  assert.equal(await card.locator('.property-preview.is-current').count(),1);
+  assert.ok(await card.locator('.property-preview:not(.is-current)').evaluateAll((images,src)=>images.some(i=>i.getAttribute('src')===src&&i.style.opacity==='1'),previous));
+  await p.waitForTimeout(350);assert.equal(await card.locator('.property-preview').count(),1);
   await card.locator('[data-card-photo-step="1"]').click();await p.waitForFunction(()=>document.querySelector('.property-card').dataset.selectedPhoto==='5');
   assert.equal(await card.locator('[data-card-photo-index="5"]').getAttribute('aria-pressed'),'true');
  });
