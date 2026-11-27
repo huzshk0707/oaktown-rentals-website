@@ -81,6 +81,8 @@ window.OAKTOWN_DATA = {
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672014495-NT99GKQ6FM1K2YNA31EU/IMG_3992.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672015412-P5E4CINR1CTHE32NSLFW/IMG_3994.jpeg"
     ],
+    sloemer: [], // Authenticated owner originals in Drive; local asset import pending.
+    troutwood: [], // Verified front exterior pending; never substitute another home.
     cudejoe: [
       'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1675783417395-1GBMGQGOPJZ81AQPED2M/IMG_5886%2B%281%29.jpg',
       'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1675783422929-VKF8DRW9WNTRI8S9B22U/IMG_5875.jpg',
@@ -173,6 +175,35 @@ window.OAKTOWN_DATA = {
       terms: ['One-year lease', 'Tenants pay utilities and supply the stove and refrigerator', '$60 application fee', 'Approved pets require a photo, $25 monthly per pet and a $150 nonrefundable deposit per pet'],
       termsEs: ['Contrato de un año', 'El inquilino paga los servicios y aporta la estufa y el refrigerador', 'Solicitud: $60', 'Para cada mascota aprobada se requiere foto, $25 al mes y un depósito no reembolsable de $150'],
       sourceUrl: 'https://tuba-parsnip-36cr.squarespace.com/1824-w-madison'
+    },
+    {
+      slug: '208-sloemer-ave', name: '208 Sloemer Ave', neighborhood: 'New Albany', city: 'New Albany, IN 47150',
+      rent: null, deposit: null, bedrooms: 3, bathrooms: 2, squareFootage: 1400, imageKey: 'sloemer',
+      label: 'Thoughtfully remodeled', labelEs: 'Renovada con esmero',
+      summary: 'A fully remodeled three-bedroom home with new kitchen and bathrooms, an unfinished basement and detached one-car garage.',
+      summaryEs: 'Casa de tres dormitorios completamente renovada, con cocina y baños nuevos, sótano sin terminar y garaje independiente para un auto.',
+      description: ['This remodeled New Albany home features luxury vinyl plank flooring throughout, new plumbing and electrical systems, and a new kitchen and bathrooms.', 'A full unfinished basement and detached one-car garage provide additional space. The home measures approximately 1,400 square feet.'],
+      descriptionEs: ['Esta casa renovada en New Albany cuenta con pisos de vinilo de lujo, instalaciones nuevas de plomería y electricidad, y cocina y baños nuevos.', 'El sótano completo sin terminar y el garaje independiente para un auto aportan espacio adicional. La casa tiene aproximadamente 1.400 pies cuadrados.'],
+      features: ['Luxury vinyl plank flooring', 'New kitchen and bathrooms', 'New plumbing and electrical', 'Full unfinished basement', 'Detached one-car garage', 'Approx. 1,400 sq ft'],
+      featuresEs: ['Pisos de vinilo de lujo', 'Cocina y baños nuevos', 'Plomería y electricidad nuevas', 'Sótano completo sin terminar', 'Garaje independiente para un auto', 'Aprox. 1.400 pies cuadrados'],
+      terms: ['Contact Oaktown for current rent, deposit and availability.'],
+      termsEs: ['Consulta con Oaktown el alquiler, el depósito y la disponibilidad actuales.'],
+      sourceUrl: 'https://www.zillow.com/homedetails/208-Sloemer-Ave-New-Albany-IN-47150/99120033_zpid/'
+    },
+    {
+      slug: '8008-troutwood-ct', name: '8008 Troutwood Ct', neighborhood: 'Fern Creek', city: 'Louisville, KY 40291',
+      rent: null, deposit: null, bedrooms: null, bathrooms: null, imageKey: 'troutwood', availability: 'coming_soon',
+      availabilityText: 'Coming January 2027', availabilityTextEs: 'Próximamente en enero de 2027',
+      hideRent: true, contactOnly: true,
+      label: 'A new addition to the collection', labelEs: 'Una nueva incorporación a la colección',
+      summary: 'Renovations underway. Planned for January 2027; details and availability to be confirmed.',
+      summaryEs: 'Renovaciones en curso. Prevista para enero de 2027; detalles y disponibilidad por confirmar.',
+      description: ['This Louisville home is undergoing renovations in preparation for its next residents. Contact Oaktown for updates as the work progresses.'],
+      descriptionEs: ['Esta casa en Louisville está en proceso de renovación para sus próximos residentes. Contacta con Oaktown para conocer las novedades.'],
+      features: ['Renovations underway'], featuresEs: ['Renovaciones en curso'],
+      terms: ['Contact Oaktown for updates. Rental terms and final configuration are not yet confirmed.'],
+      termsEs: ['Contacta con Oaktown para conocer las novedades. Las condiciones y la distribución final aún no están confirmadas.'],
+      sourceUrl: 'https://www.zillow.com/homedetails/8008-Troutwood-Ct-Louisville-KY-40291/73650528_zpid/'
     }
   ]
 };
