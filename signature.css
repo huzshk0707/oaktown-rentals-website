@@ -157,3 +157,9 @@ body.rental-site .signature-collection .property-image-wrap:has(.image-unavailab
 body.rental-site .signature-collection .property-image-wrap:has(.image-unavailable) .card-photo-count{z-index:3}
 body.rental-site .signature-collection .property-image-wrap:has(.image-unavailable) .card-arrow{z-index:3}
 body.rental-site .signature-footer .footer-motion{color:var(--signature-ivory)}
+body.rental-site{--side:max(28px,calc((100% - 1280px)/2))}
+body.rental-site .site-header .nav-apply{border-radius:3px}
+body.rental-site:has(.signature-home) .mobile-actions{display:none}
+@media(max-width:960px){body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){body.rental-site{--side:24px}}
+@media(max-width:480px){body.rental-site{--side:20px}body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:1fr}body.rental-site:has(.signature-home) .signature-footer{padding-bottom:0}}
