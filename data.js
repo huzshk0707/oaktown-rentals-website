@@ -81,7 +81,16 @@ window.OAKTOWN_DATA = {
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672014495-NT99GKQ6FM1K2YNA31EU/IMG_3992.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1792672015412-P5E4CINR1CTHE32NSLFW/IMG_3994.jpeg"
     ],
-    sloemer: [], // Authenticated owner originals in Drive; local asset import pending.
+    sloemer: [
+      '/assets/properties/208-sloemer-ave/01.jpeg',
+      '/assets/properties/208-sloemer-ave/02.jpeg',
+      '/assets/properties/208-sloemer-ave/03.jpeg',
+      '/assets/properties/208-sloemer-ave/04.jpeg',
+      '/assets/properties/208-sloemer-ave/05.jpeg',
+      '/assets/properties/208-sloemer-ave/06.jpeg',
+      '/assets/properties/208-sloemer-ave/07.jpeg',
+      '/assets/properties/208-sloemer-ave/08.jpeg'
+    ],
     troutwood: [], // Verified front exterior pending; never substitute another home.
     cudejoe: [
       'https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1675783417395-1GBMGQGOPJZ81AQPED2M/IMG_5886%2B%281%29.jpg',
