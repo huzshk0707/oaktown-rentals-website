@@ -53,7 +53,7 @@ for(const language of ['en','es'])for(const width of [320,390,768,1024,1440,1920
   const p=await browser.newPage({viewport:{width,height:width===320?640:900}});p.on('pageerror',e=>errors.push(e.message));await p.addInitScript(lang=>localStorage.setItem('oaktown-language',lang),language);await p.route('https://**',r=>r.abort());
   await p.goto(base+'/');await p.locator('.signature-hero').waitFor();
   const metrics=await p.evaluate(()=>{const action=document.querySelector('.signature-copy .signature-button').getBoundingClientRect(),header=document.querySelector('header').getBoundingClientRect();return {overflow:document.documentElement.scrollWidth>innerWidth,actionBottom:action.bottom,actionTop:action.top,headerBottom:header.bottom,heroBottom:document.querySelector('.signature-hero').getBoundingClientRect().bottom};});
-  assert.equal(metrics.overflow,false);assert.ok(metrics.actionTop>metrics.headerBottom);assert.ok(metrics.actionBottom<metrics.heroBottom-60);
+  assert.equal(metrics.overflow,false);assert.ok(await p.locator('#home-search').evaluate(e=>e.getBoundingClientRect().top)>=await p.evaluate(()=>innerHeight),'search stays below the opening viewport');assert.ok(metrics.actionTop>metrics.headerBottom);assert.ok(metrics.actionBottom<metrics.heroBottom-60);
   if(width<=960){await p.locator('#menu-button').click();assert.ok(await p.locator('#mobile-nav').isVisible());await p.keyboard.press('Escape');assert.ok(await p.locator('#mobile-nav').isHidden());}
   if(width===320){assert.ok(metrics.actionBottom<640);await p.screenshot({path:`/tmp/signature-test-${language}-320.png`});}
   await p.close();

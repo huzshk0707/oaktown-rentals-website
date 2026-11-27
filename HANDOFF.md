@@ -1,13 +1,16 @@
-# WEB-SIGNATURE — Ravi Phase 1 continuation
+# WEB-SIGNATURE — Ravi Phase 1 review checkpoint
 
-- Owner: Ravi, explicitly reassigned by the owner. Heartbeat 2026-11-27T04:26:17+00:00; claim expires 2026-11-27T04:56:17+00:00.
-- Existing branch / draft PR / base: `felix/oaktown-signature` / #26 / `be37dba`. Latest verified implementation `19642db`; recovery checkpoint `b8af217` preserves all unfinished CSS/tests. Existing booking worktree/PR #25 untouched.
-- Recovered: Signature shell, genuine Afterglow/Colonial photos, combined search, cards, story/vacation/journey/footer, bilingual resources. No Resident Portal (owner confirmed).
-- Current approved scope: document all 12 roadmap phases, then perfect Phase 1 navigation/hero against `04-approved-hero-exact-reference.png`. Exact hero reference supersedes prior opening mockups. Full-screen opening; search below viewport. Preserve other implemented sections, do not independently redesign future phases.
-- Previous checks: syntax pass; Signature behavior 19 groups; CMS/security 3/3; admin improvements 6/6; Mint Mojo suite passed. Re-run affected checks after Phase 1 change. Legacy cinematic tests require updated selectors/expectations for the approved new opening.
-- Known limitation: Squarespace CDN proxy CONNECT 403, current allowed hosts exclude it. Single-host environment request did not complete; no settings changed. Approved local hero/story/vacation photos load. Do not present missing-photo collection captures as final visual acceptance.
-- NEXT STEP: create `docs/oaktown-signature/ROADMAP.md`, link from TASKS.md, then refine only Phase 1 proportions in signature.css/app.js/index.html and capture the exact 1672×941 comparison.
-- No production merge/deploy, live inventory/schema/auth changes or payments. Keep PR #26 draft. Afterglow ownership/reuse confirmation remains a production gate. Original logo remains unchanged; exact reference is for composition/tone, not a substitute house photo.
+- Owner: Ravi. Implementation and local verification complete; claim released at 2026-11-27T04:36:34+00:00 for owner/ChatGPT visual acceptance. PR #26 remains DRAFT.
+- Branch / PR / base: `felix/oaktown-signature` / https://github.com/huzshk0707/oaktown-rentals-website/pull/26 / `be37dba`. Previous verified pushed checkpoint `48943ec`; this final review checkpoint follows it. Use live PR head for the exact latest SHA. Recovery `b8af217` preserved unfinished CSS/tests before Ravi claimed ownership.
+- Done: durable 12-phase `docs/oaktown-signature/ROADMAP.md` linked from TASKS.md; exact-reference full-screen hero, editorial serif hierarchy, left alignment, forest gradient and ivory CTA. Search is below the first viewport. Original genuine photos/logo and existing implementation preserved. No Resident Portal.
+- Files: Phase 1 changes in signature.css/app.js; new-script syntax check in package.json; search/hero selectors updated in existing browser/design/audit/browsing/admin tests; motion suite reflects new approved opening; CMS test harness serves new public CSS/JS. New screenshot/accessibility capture scripts, source manifest, comparison and evidence in docs/oaktown-signature.
+- Fixed regressions: sticky detail dock now clears the new 88px/76px header; detail light surfaces preserved; decorative journey-number contrast corrected. No future section redesign.
+- Tests passed: syntax; CMS/security 3 groups; Signature 19 groups; public browser 44 checks; design 32; browsing 24; audit 15; motion 4 viewport groups; admin browser; mouse/touch/keyboard photo ordering; admin improvements 6 groups; Mint Mojo regression. Eight axe scans have zero confirmed violations; image/gradient contrast incompletes remain documented.
+- Evidence: `docs/oaktown-signature/README.md`, `comparison.png`, exact reference and actual 1672×941/1440×1000/768×1024/390×844/320×640 EN/ES captures. The 1000×753 genuine Afterglow source is softer than the reference rendering; do not substitute altered architecture.
+- Blocker: Squarespace CDN still fails at workspace proxy CONNECT 403; approved local photos load. Full-page collection/detail images are clearly labeled CDN-unavailable fallbacks, not final photo acceptance. No production/network changes or bypass. Cloudflare preview alias from PR integration: https://felix-oaktown-signature-oaktown.rentals10.workers.dev ; latest build status is on the PR. Local/web tools cannot independently open that host.
+- Unfinished implementation files: none after this checkpoint. Local node_modules symlinks are environment tooling, deliberately untracked. All other branches/worktrees and separate booking PR #25 preserved.
+- NEXT STEP: open `docs/oaktown-signature/comparison.png` and the linked desktop/mobile captures with the owner for Phase 1 visual acceptance. Before advancing phases, verify real catalogue/gallery photos from a CDN-enabled browser; obtain explicit next-phase direction. Do not restart completed work.
+- Boundaries: no merge/production deploy, live inventory/schema/auth changes or payments. Keep PR #26 draft. Afterglow ownership/management and photo reuse confirmation remain production gates.
 
 ---
 
