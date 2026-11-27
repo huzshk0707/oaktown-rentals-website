@@ -14,7 +14,7 @@ window.OAKTOWN_DATA = {
   mailingAddress: 'PO Box 7, Hillview, KY 40129',
   images: {
     colonial: [
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp",
+      "./assets/signature/115-colonial-drive-cover.webp",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509846-SNZGCPNKYQ7QMCEXZW5C/2.webp",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341986530-AQOKM6HXQ4ECYFVYPCA3/03_Kitchen_Main_View.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341986617-OX95NWU220305IOO0VV0/04_Kitchen_Alternate_View.jpeg",
@@ -35,7 +35,7 @@ window.OAKTOWN_DATA = {
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341996634-MJYTJNWXXRCZGJETZ678/16_Backyard.jpeg"
     ],
     smallboat: [
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp",
+      "./assets/signature/4005-smallboat-ct-cover.webp",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854702495-U2O2SY7S265BS71XVD31/IMG_4325.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854700996-VFQ1CXEE1ZWV3AO6J1NN/IMG_4324.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854705538-MAKBVEN98DRUQVD98WUW/IMG_4329.jpeg",
@@ -54,7 +54,7 @@ window.OAKTOWN_DATA = {
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854707006-SPO4H7MLGABXOKTW2R7B/IMG_4331.jpeg"
     ],
     madison: [
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png",
+      "./assets/signature/1824-w-madison-cover.webp",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190287597-78OXRVB7GTG6LEP9JGLA/02%2B-%2BPristine%2Bhardwood%2Bentryway%2Band%2Bwhite%2Bdoor.png",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190289505-RORZB3JUCT7KR2T79929/03%2B-%2BColonial%2BDrive%2B-%2BDining%2BArea%2Band%2BKitchen.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190269681-Q78A7KSS6DPWXY3Q78DK/04%2B-%2BColonial%2BDrive%2B-%2BDining%2BArea%2BWindow.jpeg",
@@ -71,7 +71,7 @@ window.OAKTOWN_DATA = {
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190282755-JNAICWKW4YP1EI9EPF98/15%2B-%2BColonial%2BDrive%2B-%2BUtility%2BArea%2Band%2BShelving.jpeg"
     ],
     cherokee8: [
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg",
+      "./assets/signature/1106-cherokee-rd-unit-8-cover.webp",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151481-GVVXO12TU0Q3NM07XA1U/02_Main_Living_Alternate_View.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342153150-LK33HZW5BQCOW2AXESCV/04_Room_With_French_Doors.jpeg",
       "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342154451-W1HREY6ZPSBCCZERREBI/05_Additional_Room.jpeg",

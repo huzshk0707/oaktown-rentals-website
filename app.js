@@ -16,6 +16,8 @@
   let language = privatePreview?.language==='es'?'es':'en';
   if(!privatePreview)try { if(localStorage.getItem('oaktown-language')==='es')language='es'; } catch {}
   let selectedFilter = 'All';
+  let selectedBedrooms = '';
+  let selectedBathrooms = '';
   let collectionLayout = 'grid';
   let currentView = null;
   let currentGalleryIndex = 0;
@@ -78,6 +80,44 @@
       communityRes1:'Escuelas públicas de Jefferson County',communityRes2:'Ciudad de Louisville',communityRes3:'Guía turística de Louisville',communityRes4:'Biblioteca pública de Louisville'
     }
   };
+  Object.assign(words.en, {
+    heroKicker:'Rental homes in Louisville', signatureTitle:'A place to<br>call <em>home.</em>',
+    heroTagline:'Well-cared-for rental homes in Louisville and the surrounding communities, with a local team that cares.',
+    explore:'Explore our homes', homesLabel:'RENTAL HOMES', homesHeading:'Our Homes',
+    homesDesc:'Explore our homes across Louisville and nearby communities. Find the right fit for your life.',
+    aboutLabel:'OUR STORY', aboutText:'Oaktown Rentals provides quality rental housing in Louisville, Kentucky and nearby counties. A local perspective, and a personal approach to finding your next home.',
+    floridaLabel:'VACATION RENTAL', floridaShort:'A waterfront getaway in the Florida Keys. Discover the pool, tiki hut and room to unwind.',
+    resources:'Resources', location:'Neighborhood', anyNeighborhood:'All neighborhoods', any:'Any',
+    searchHomes:'Search Homes', resetFilters:'Reset Filters', viewAll:'View All Homes',
+    noMatches:'No homes match these filters. Try a different neighborhood or fewer requirements.',
+    minimum:'or more', journeyLabel:'RENTING MADE SIMPLE', journeyHeading:'Your Rental Journey',
+    findHome:'Find a Home', findCopy:'Explore our homes and ask about availability.',
+    applyCopy:'Complete our online rental application, on any device.',
+    moveIn:'Move In', moveCopy:'Once approved, arrange your lease and move-in with our team.',
+    heroPhotos:'Featured property photographs', afterglowAlt:'Brick exterior of 8216 Afterglow Drive, framed by mature trees',
+    colonialAlt:'White exterior and front lawn of 115 Colonial Drive', footerLinks:'Quick links',
+    footerResources:'Resident resources', contact:'Contact', brandPhoto:'Featured property',
+    faqLabel:'RENTAL QUESTIONS', communityLabel:'LOCAL RESOURCES', contactLabel:'GET IN TOUCH'
+  });
+  Object.assign(words.es, {
+    heroKicker:'Viviendas de alquiler en Louisville', signatureTitle:'Un lugar para<br>llamar <em>hogar.</em>',
+    heroTagline:'Viviendas bien cuidadas en Louisville y las comunidades cercanas, con un equipo local que se preocupa por ti.',
+    explore:'Explora nuestras viviendas', homesLabel:'VIVIENDAS DE ALQUILER', homesHeading:'Nuestras viviendas',
+    homesDesc:'Explora nuestras viviendas en Louisville y sus alrededores. Encuentra la que se adapte a tu vida.',
+    aboutLabel:'NUESTRA HISTORIA', aboutText:'Oaktown Rentals ofrece viviendas de alquiler de calidad en Louisville, Kentucky y los condados cercanos. Una perspectiva local y un trato personal para encontrar tu próximo hogar.',
+    floridaLabel:'ALQUILER VACACIONAL', floridaShort:'Una escapada junto al agua en los Cayos de Florida. Descubre la piscina, la palapa y un lugar para relajarte.',
+    resources:'Recursos', location:'Vecindario', anyNeighborhood:'Todos los vecindarios', any:'Cualquiera',
+    searchHomes:'Buscar viviendas', resetFilters:'Restablecer filtros', viewAll:'Ver todas las viviendas',
+    noMatches:'Ninguna vivienda coincide con estos filtros. Prueba otro vecindario o menos requisitos.',
+    minimum:'o más', journeyLabel:'ALQUILAR ES SENCILLO', journeyHeading:'El camino a tu hogar',
+    findHome:'Encuentra una vivienda', findCopy:'Explora nuestras viviendas y consulta disponibilidad.',
+    applyCopy:'Completa nuestra solicitud de alquiler en línea desde cualquier dispositivo.',
+    moveIn:'Múdate', moveCopy:'Tras la aprobación, coordina el contrato y la mudanza con nuestro equipo.',
+    heroPhotos:'Fotografías de propiedades destacadas', afterglowAlt:'Fachada de ladrillo de 8216 Afterglow Drive, entre árboles maduros',
+    colonialAlt:'Fachada blanca y jardín de 115 Colonial Drive', footerLinks:'Enlaces',
+    footerResources:'Recursos para residentes', contact:'Contacto', brandPhoto:'Propiedad destacada',
+    faqLabel:'PREGUNTAS SOBRE EL ALQUILER', communityLabel:'RECURSOS LOCALES', contactLabel:'CONTÁCTANOS'
+  });
   const t = (key) => words[language][key] || words.en[key] || key;
   const money = (n) => new Intl.NumberFormat(language==='es'?'es-US':'en-US',{style:'currency',currency:'USD',minimumFractionDigits:n%1?2:0,maximumFractionDigits:2}).format(n);
   const localized = (p,key) => language==='es' && p[key+'Es']?.length ? p[key+'Es'] : p[key];
@@ -127,37 +167,49 @@
   function contactSection() {
     return `<section id="contact" class="contact-panel"><div class="reveal"><span class="eyebrow section-label">${t('contactLabel')}</span><h2>${t('contactHeading')}</h2><p>${t('contactDesc')}</p></div><div class="contact-actions reveal"><a href="sms:+15025001070">${t('textBest')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a href="tel:+15025001070">${DATA.phoneDisplay} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a href="mailto:${DATA.email}">${DATA.email}<span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><p>${DATA.mailingAddress}</p></div></section>`;
   }
-  function storySection() {
-    const featured=P[0],images=featured?DATA.images[featured.imageKey]:[];
-    const scenes=[images[0],images[3]||images[1],images[6]||images[2]].filter(Boolean);
-    const chapters=[
-      {label:t('sceneOne'),title:`${t('heroOne')} <em>${t('heroTwo')}</em>`,copy:t('heroTagline')},
-      {label:t('sceneTwo'),title:t('sceneTwoTitle'),copy:t('sceneTwoCopy')},
-      {label:t('sceneThree'),title:t('sceneThreeTitle'),copy:t('sceneThreeCopy')}
-    ].slice(0,Math.max(1,scenes.length));
-    return `<section class="story ${scenes.length>1?'has-chapters':''}" id="top" aria-label="${t('heroKicker')}"><div class="story-stage" data-image-error="${t('photoUnavailable')}">
-      <div class="story-images">${scenes.map((src,i)=>`<div class="story-image ${i===0?'is-active':''}" data-scene-image="${i}" aria-hidden="${i!==0}" data-image-error="${t('photoUnavailable')}">${imageEl(src,featured.name+' — '+t('photoLabel')+' '+(i+1),'story-photo',i===0?'eager':'')}</div>`).join('')}</div>${scenes.length>2?'<div class="story-letter" aria-hidden="true" hidden>O</div>':''}<div class="story-shade" aria-hidden="true"></div>
-      <div class="story-topline"><span>Louisville, Kentucky</span></div>
-      <div class="story-copy"><div class="story-scenes">${chapters.map((chapter,i)=>`<div class="story-scene ${i===0?'is-active':''}" data-scene="${i}" aria-hidden="${i!==0}"><p class="eyebrow">${chapter.label}</p><${i===0?'h1':'h2'} class="story-title">${chapter.title}</${i===0?'h1':'h2'}><p class="story-description">${chapter.copy}</p></div>`).join('')}</div><div class="story-actions"><a class="story-explore" href="#homes"><span>${t('explore')}</span><span class="story-action-orbit" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div></div>
-      ${featured?`<div class="story-bottom"><div class="scene-navigation" role="group" aria-label="${t('photosLabel')}">${chapters.map((chapter,i)=>`<button type="button" data-scene-button="${i}" aria-label="${t('photoLabel')} ${i+1}: ${chapter.label}" aria-pressed="${i===0}"><span>${String(i+1).padStart(2,'0')}</span><span>${chapter.label}</span><i aria-hidden="true"></i></button>`).join('')}</div><a class="story-caption" href="#home/${featured.slug}">${featured.name}<span>${featured.neighborhood}</span></a></div>`:`<p class="story-empty">${t('availabilityNote')}</p>`}
-    </div></section>`;
+  const arrow = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>';
+  function signatureHero() {
+    return `<section class="signature-hero" id="top" aria-label="${t('heroKicker')}">
+      <div class="signature-photographs">
+        <img class="signature-photo is-active" data-hero-image="0" src="./assets/signature/afterglow-1000.webp" srcset="./assets/signature/afterglow-480.webp 480w, ./assets/signature/afterglow-1000.webp 1000w" sizes="(max-width: 700px) 100vw, 74vw" width="1000" height="753" alt="${t('afterglowAlt')}" fetchpriority="high">
+        <img class="signature-photo" data-hero-image="1" src="./assets/signature/colonial-960.webp" srcset="./assets/signature/colonial-480.webp 480w, ./assets/signature/colonial-960.webp 960w" sizes="(max-width: 700px) 100vw, 74vw" width="960" height="677" alt="${t('colonialAlt')}" loading="lazy" aria-hidden="true">
+      </div>
+      <div class="signature-hero-copy"><p class="eyebrow">OAKTOWN RENTALS <span></span></p><h1>${t('signatureTitle')}</h1><p class="hero-description">${t('heroTagline')}</p><a class="signature-button ivory" href="#homes">${t('explore')}${arrow}</a></div>
+      <div class="hero-photo-controls" role="group" aria-label="${t('heroPhotos')}"><button type="button" data-hero-photo="0" aria-pressed="true">Afterglow Drive</button><button type="button" data-hero-photo="1" aria-pressed="false">115 Colonial Drive</button></div>
+    </section>`;
+  }
+  function searchPanel() {
+    const neighborhoods=[...new Set(P.map(p=>p.neighborhood))].sort();
+    return `<form class="signature-search" id="home-search" aria-label="${t('searchHomes')}">
+      <label><span>${t('location')}</span><select name="neighborhood"><option value="All">${t('anyNeighborhood')}</option>${neighborhoods.map(n=>`<option value="${n}" ${selectedFilter===n?'selected':''}>${n}</option>`).join('')}</select></label>
+      <label><span>${t('bedrooms')}</span><select name="bedrooms"><option value="">${t('any')}</option>${[...new Set(P.map(p=>p.bedrooms))].sort((a,b)=>a-b).map(n=>`<option value="${n}" ${selectedBedrooms===String(n)?'selected':''}>${n}+ ${t('beds')}</option>`).join('')}</select></label>
+      <label><span>${t('bathrooms')}</span><select name="bathrooms"><option value="">${t('any')}</option>${[...new Set(P.map(p=>p.bathrooms))].sort((a,b)=>a-b).map(n=>`<option value="${n}" ${selectedBathrooms===String(n)?'selected':''}>${n}+ ${t('baths')}</option>`).join('')}</select></label>
+      <div class="search-actions"><button class="signature-button" type="submit"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg>${t('searchHomes')}</button><button class="reset-filters" type="reset">${t('resetFilters')}</button></div>
+    </form>`;
   }
   function homePage() {
-    return `${storySection()}
-    <section class="section collection" id="homes" data-layout="${collectionLayout}">${sectionHeading(t('homesLabel'),t('homesHeading'),t('homesDesc'))}
-      <div class="listing-tools reveal"><span class="listing-count" aria-live="polite">${P.length} ${t('homeCount')}</span><div class="view-switch" role="group" aria-label="${t('layoutLabel')}"><button type="button" data-layout-button="grid" aria-pressed="${collectionLayout==='grid'}">${t('gridView')}</button><button type="button" data-layout-button="gallery" aria-pressed="${collectionLayout==='gallery'}">${t('galleryView')}</button></div><div class="filter-strip" role="group" aria-label="${t('filterLabel')}"><button class="filter-chip active" data-filter="All" aria-pressed="true">${t('all')}</button><button class="filter-chip" data-filter="St. Matthews" aria-pressed="false">${t('stMatthews')}</button><button class="filter-chip" data-filter="The Highlands|Cherokee Triangle" aria-pressed="false">${t('highlands')}</button><button class="filter-chip" data-filter="Okolona" aria-pressed="false">${t('okolona')}</button>${[...new Set(P.map(p=>p.neighborhood))].filter(n=>!['St. Matthews','The Highlands','Cherokee Triangle','Okolona'].includes(n)).map(n=>`<button class="filter-chip" data-filter="${n}" aria-pressed="false">${n}</button>`).join('')}</div></div>
-      ${!P.length?`<p class="collection-empty">${language==='es'?(DATA.contentUnavailable?'No podemos cargar las viviendas en este momento. Contáctanos para consultar disponibilidad.':'No hay viviendas publicadas en este momento. Contáctanos para saber qué viene próximamente.'):(DATA.contentUnavailable?'We cannot load the homes right now. Contact us for current availability.':'There are no published homes right now. Contact us to hear what’s coming next.')}</p>`:''}
-      <div class="collection-viewport" id="collection-viewport" ${collectionLayout==='gallery'?'tabindex="0"':''} role="region" aria-label="${t('listings')}"><div class="property-grid" id="property-grid">${P.map(card).join('')}</div></div>
-      <div class="collection-bottom"><span>${t('browseHint')}</span><div class="collection-meter" aria-hidden="true"><span></span></div><div class="collection-controls"><button data-collection-step="-1" aria-label="${t('previousHome')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button data-collection-step="1" aria-label="${t('nextHome')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></div>
+    return `${signatureHero()}${searchPanel()}
+    <section class="signature-collection collection" id="homes" data-layout="grid" aria-labelledby="homes-heading">
+      <div class="collection-intro"><p class="eyebrow">${t('homesLabel')}</p><h2 id="homes-heading" tabindex="-1">${t('homesHeading')}</h2><p>${t('homesDesc')}</p><a class="signature-button" href="#homes" data-view-all>${t('viewAll')}${arrow}</a><span class="listing-count" role="status" aria-live="polite">${P.length} ${t('homeCount')}</span></div>
+      <div class="collection-viewport" id="collection-viewport" role="region" aria-label="${t('listings')}"><div class="property-grid" id="property-grid">${P.map(card).join('')}</div>
+      <p class="collection-empty" ${P.length?'hidden':''}>${P.length?t('noMatches'):language==='es'?(DATA.contentUnavailable?'No podemos cargar las viviendas en este momento. Contáctanos para consultar disponibilidad.':'No hay viviendas publicadas en este momento. Contáctanos para saber qué viene próximamente.'):(DATA.contentUnavailable?'We cannot load the homes right now. Contact us for current availability.':'There are no published homes right now. Contact us to hear what’s coming next.')}</p></div>
     </section>
-    <section class="editorial-section photo-editorial" id="about" aria-labelledby="editorial-title">
-      <div class="editorial-intro reveal"><span class="eyebrow section-label">${t('aboutLabel')}</span><h2 id="editorial-title">${t('aboutHeading')}</h2><p class="editorial-lead">${t('aboutLead')}</p><p>${t('aboutText')}</p><a class="text-link" href="#contact">${t('aboutLink')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
-      <figure class="louisville-photo"><img src="./assets/louisville/louisville-ohio-river.jpg" width="1920" height="1080" alt="${t('cityPhotoAlt')}" loading="lazy" decoding="async"><figcaption><span>${t('cityPhotoCaption')}</span><small>${t('photoCredit')} <a href="https://commons.wikimedia.org/wiki/File:Louisville_from_Ohio_River_September_2026_002.jpg" target="_blank" rel="noopener noreferrer">King of Hearts / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></small></figcaption></figure>
+    <section class="signature-story" id="about" aria-labelledby="editorial-title">
+      <figure class="signature-city"><img src="./assets/louisville/louisville-ohio-river.jpg" width="1920" height="1080" alt="${t('cityPhotoAlt')}" loading="lazy"><figcaption>${t('photoCredit')} <a href="https://commons.wikimedia.org/wiki/File:Louisville_from_Ohio_River_September_2026_002.jpg" target="_blank" rel="noopener noreferrer">King of Hearts / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></figcaption></figure>
+      <div class="signature-story-copy reveal"><p class="eyebrow">${t('aboutLabel')}</p><h2 id="editorial-title">${t('aboutHeading')}</h2><p>${t('aboutText')}</p><a class="signature-button" href="#contact">${t('aboutLink')}${arrow}</a></div>
     </section>
-    ${faqSection()}
+    <aside id="cudejoe" class="signature-vacation" aria-labelledby="vacation-title">
+      <img class="signature-vacation-photo" src="./assets/mint-mojo/house-pool.jpg" width="1600" height="1067" alt="${t('floridaAlt')}" loading="lazy">
+      <div class="signature-vacation-copy reveal"><p class="eyebrow">${t('floridaLabel')}</p><h2 id="vacation-title">Lobster Nirvana</h2><p class="vacation-location">Cudjoe Key, Florida</p><p>${t('floridaShort')}</p><a class="signature-button ivory" href="./mint-mojo/">${t('floridaLink')}${arrow}</a></div>
+    </aside>
+    <section class="signature-journey" aria-labelledby="journey-title"><div><p class="eyebrow">${t('journeyLabel')}</p><h2 id="journey-title">${t('journeyHeading')}</h2></div>
+      <ol><li><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="13" cy="12" r="8"/><path d="m19 18 10 10M8 12l5-4 5 4v6H8z"/></svg><div><h3><a href="#homes">1. ${t('findHome')}</a></h3><p>${t('findCopy')}</p></div></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 3h13l6 6v20H7zM20 3v7h6M12 15h9m-9 5h9m-9 5h5"/></svg><div><h3><a href="${DATA.applicationUrl}" target="_blank" rel="noopener noreferrer">2. ${t('navApply')}</a></h3><p>${t('applyCopy')}</p></div></li>
+      <li><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 17a8 8 0 1 0-3-3L3 24v5h6v-4h4v-4z"/><circle cx="23" cy="8" r="1"/></svg><div><h3>3. ${t('moveIn')}</h3><p>${t('moveCopy')}</p></div></li></ol>
+    </section>
+    <div id="signature-resources" hidden>${faqSection()}
     <section class="section community-section" id="community"><div class="reveal"><div class="eyebrow section-label">${t('communityLabel')}</div><h2 class="display-title">${t('communityHeading')}</h2><p class="community-intro">${t('communityText')}</p></div><div class="community-resources reveal"><a class="resource-link" href="https://www.jefferson.kyschools.us/" target="_blank" rel="noopener noreferrer">${t('communityRes1')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a class="resource-link" href="https://louisvilleky.gov/" target="_blank" rel="noopener noreferrer">${t('communityRes2')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a class="resource-link" href="https://www.gotolouisville.com/" target="_blank" rel="noopener noreferrer">${t('communityRes3')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a class="resource-link" href="https://www.lfpl.org/" target="_blank" rel="noopener noreferrer">${t('communityRes4')} <span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div></section>
-    ${contactSection()}
-    <aside id="cudejoe" class="vacation-feature" aria-labelledby="vacation-title"><a href="./mint-mojo/" class="vacation-card">${imageEl('./assets/mint-mojo/house-pool.jpg',t('floridaAlt'),'vacation-photo')}<div><h2 id="vacation-title">Lobster Nirvana</h2><p class="vacation-location">${t('floridaLabel')} · ${language==='es'?'Cayos de Florida':'Florida Keys'}</p><p class="vacation-description">${t('floridaShort')}</p><span class="text-link">${t('floridaLink')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></div></a></aside>`;
+    ${contactSection()}</div>`;
   }
   function detailPage(p, startPhoto=0) {
     const image = photo(p,startPhoto);
@@ -252,7 +304,7 @@
       const r=el.getBoundingClientRect();return r.bottom>headerBottom&&r.top<innerHeight-80&&r.right>24&&r.left<innerWidth-24;
     }):null;
     const section=[...app.querySelectorAll(':scope > section[id]')].find(el=>el.getBoundingClientRect().bottom>headerBottom+20);
-    const value={version:1,route:location.hash,view:currentView,y:scrollY,filter:selectedFilter,layout:collectionLayout,x:viewport?.scrollLeft||0,galleryIndex:currentGalleryIndex,
+    const value={version:1,route:location.hash,view:currentView,y:scrollY,filter:selectedFilter,bedrooms:selectedBedrooms,bathrooms:selectedBathrooms,layout:collectionLayout,x:viewport?.scrollLeft||0,galleryIndex:currentGalleryIndex,
       anchorSlug:card?.dataset.propertySlug||null,anchorTop:card?.getBoundingClientRect().top??null,sectionId:section?.id||null,sectionTop:section?.getBoundingClientRect().top??null,
       focus:focus||(currentView==='home'?history.state?.oaktownView?.focus:null)||null};
     if(currentView==='home')lastHomeSnapshot=value;
@@ -339,13 +391,23 @@
     selectedFilter=filter;
     const cards=app.querySelectorAll('.property-card');
     cards.forEach(card => {
-      card.hidden = !(filter==='All'||filter.split('|').includes(card.dataset.neighborhood));
+      const property=P.find(p=>p.slug===card.dataset.propertySlug);
+      card.hidden = !((filter==='All'||filter.split('|').includes(property.neighborhood))
+        && (!selectedBedrooms || property.bedrooms>=Number(selectedBedrooms))
+        && (!selectedBathrooms || property.bathrooms>=Number(selectedBathrooms)));
       card.style.display=card.hidden?'none':'';
     });
     app.querySelectorAll('[data-filter]').forEach(button=>{const active=button.dataset.filter===filter;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
     const viewport=app.querySelector('.collection-viewport');if(viewport){viewport.scrollLeft=0;viewport.dispatchEvent(new Event('scroll'));}
     const shown=[...cards].filter(card=>!card.hidden).length;
     const count=app.querySelector('.listing-count');if(count)count.textContent=shown+' '+t('homeCount');
+    const empty=app.querySelector('.collection-empty');if(empty)empty.hidden=shown>0;
+    const form=app.querySelector('#home-search');
+    if(form){
+      form.elements.neighborhood.value=selectedFilter;
+      form.elements.bedrooms.value=selectedBedrooms;
+      form.elements.bathrooms.value=selectedBathrooms;
+    }
     rememberView();
   }
   function galleryStep(step) {
@@ -380,7 +442,9 @@
     if(restore?.home?.view==='home')lastHomeSnapshot=restore.home;
     if(restore&&view==='home'){
       selectedFilter=restore.filter==='All'||typeof restore.filter==='string'&&P.some(home=>restore.filter.split('|').includes(home.neighborhood))?restore.filter:'All';
-      collectionLayout=restore.layout==='gallery'?'gallery':'grid';
+      collectionLayout='grid';
+      selectedBedrooms=typeof restore.bedrooms==='string'?restore.bedrooms:'';
+      selectedBathrooms=typeof restore.bathrooms==='string'?restore.bathrooms:'';
     }
     const shouldRender=(view!==currentView)||app.children.length===0||preservePosition||!!restore;
     const oldScroll=window.scrollY;
@@ -393,6 +457,7 @@
       cleanupEffects();closeGallery();
       currentView=view;if(!preservePosition)currentGalleryIndex=restore&&p?Math.min(Math.max(0,Number(restore.galleryIndex)||0),Math.max(0,DATA.images[p.imageKey].length-1)):p&&pendingPhoto?.slug===p.slug?pendingPhoto.index:0;
       pendingPhoto=null;
+      document.body.classList.toggle('signature-home',!p);
       app.innerHTML=p?detailPage(p,currentGalleryIndex):homePage();
       document.title=(p?p.name+' — ':'')+'Oaktown Rentals — '+t('heroKicker');
       if(restore){observer?.disconnect();app.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'));}
@@ -411,6 +476,8 @@
       cleanupEffects=window.OaktownEffects.mount(app,{t});
       if(p&&!preservePosition){const heading=app.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});}
     }
+    const resources=app.querySelector('#signature-resources');
+    if(resources && ['faq','community','contact'].includes(hash))resources.hidden=false;
     renderedHash=location.hash;
     if(restore){restoreViewPosition(restore);}
     else if(preservePosition) {
@@ -447,7 +514,34 @@
   menu.addEventListener('click',()=>{const isOpening=mobileNav.hidden;mobileNav.hidden=!isOpening;menu.setAttribute('aria-expanded',String(isOpening));menu.setAttribute('aria-label',t(isOpening?'closeMenu':'openMenu'));});
   mobileNav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
   langButton.addEventListener('click',()=>{routeGeneration++;activeTransition?.skipTransition();clearTransitionNames();language=language==='en'?'es':'en';if(privatePreview)privatePreview.language=language;else try{localStorage.setItem('oaktown-language',language);}catch{}draw(true)});
+  app.addEventListener('submit',e=>{
+    if(e.target.id!=='home-search')return;
+    e.preventDefault();
+    selectedBedrooms=e.target.elements.bedrooms.value;
+    selectedBathrooms=e.target.elements.bathrooms.value;
+    activateFilter(e.target.elements.neighborhood.value);
+    document.getElementById('homes-heading').focus({preventScroll:true});
+    document.getElementById('homes').scrollIntoView({behavior:navigationMotion()});
+    rememberView();
+  });
+  function resetSearch(){
+    selectedBedrooms='';selectedBathrooms='';
+    activateFilter('All');
+  }
+  app.addEventListener('reset',e=>{
+    if(e.target.id==='home-search'){e.preventDefault();resetSearch();}
+  });
   app.addEventListener('click',e=>{
+    if(e.target.closest('[data-view-all]'))resetSearch();
+    const heroButton=e.target.closest('[data-hero-photo]');
+    if(heroButton){
+      app.querySelectorAll('[data-hero-photo]').forEach(button=>button.setAttribute('aria-pressed',String(button===heroButton)));
+      app.querySelectorAll('[data-hero-image]').forEach(image=>{
+        const active=image.dataset.heroImage===heroButton.dataset.heroPhoto;
+        image.classList.toggle('is-active',active);image.setAttribute('aria-hidden',String(!active));
+        if(active)image.loading='eager';
+      });
+    }
     if(e.target.closest('.back-link')&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey)pendingHomeRestore=lastHomeSnapshot;
     const listing=e.target.closest('.property-card a[href^="#home/"]');
     if(listing&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey&&e.button===0){
@@ -470,7 +564,13 @@
     if(e.target.closest('[data-open-gallery],[data-cover-gallery]')){app.querySelector('.lightbox').showModal();document.body.classList.add('gallery-is-open');galleryStep(0);}
     if(e.target.closest('[data-close-gallery]'))closeGallery();
   });
+  document.addEventListener('click',e=>{
+    document.querySelectorAll('.resources-menu[open]').forEach(menu=>{
+      if(!menu.contains(e.target)||e.target.closest('a'))menu.open=false;
+    });
+  });
   document.addEventListener('keydown',e=>{
+    if(e.key==='Escape')document.querySelectorAll('.resources-menu[open]').forEach(menu=>{menu.open=false;menu.querySelector('summary').focus();});
     if(e.key==='Escape'&&!mobileNav.hidden){closeMenu();menu.focus();}
     if(app.querySelector('.lightbox[open]')&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();galleryStep(e.key==='ArrowLeft'?-1:1);}
   });

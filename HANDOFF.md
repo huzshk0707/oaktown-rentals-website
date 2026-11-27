@@ -1,3 +1,7 @@
+# Local recovery of superseded Signature work
+
+Preserved unfinished local edits based on ca9bb82 before taking over remote checkpoint 0fd52b2. CSS and browser verification were incomplete. This recovery branch is historical and must not replace the current task branch. Continue Phase 1B from the current remote branch in a separate worktree.
+
 # WEB-SIGNATURE — Oaktown Signature homepage
 
 - Owner FELIX. Heartbeat 2026-11-26T22:54:22.273915+00:00. Claim expires 2026-11-26T23:24:22.273915+00:00.
