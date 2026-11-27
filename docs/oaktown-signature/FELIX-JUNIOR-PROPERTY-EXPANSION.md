@@ -4,9 +4,9 @@ Owner authorized a separate draft PR. Based on PR #26 checkpoint dd40325f9f2c824
 
 ## Source and publication gates
 - [Owner's existing listing reference](https://docs.google.com/document/d/1vRuJlc1eZd5QmhqLnTXm2Tp1vHQ7zqdMwfdlylDJjIE/edit)
-- Sloemer: owner-supplied remodeled 3-bedroom/2-bath, approximately 1,400 sq ft, LVP, plumbing/electrical, kitchen/bathrooms, unfinished basement, detached one-car garage. [Trulia](https://www.trulia.com/es/home/208-sloemer-ave-new-albany-in-47150-99120033) advertises $1,850 rent/deposit; confirm with owner before adoption. File draft leaves both null, current availability unconfirmed. Eight genuine [Drive originals](https://drive.google.com/drive/folders/1JCxQPAmmVr4V1cfdpH5ZBd3n4y8LR4gK) await transfer to local assets. Do not make Drive photos publicly shared or substitute stock imagery.
+- Sloemer: owner-supplied remodeled 3-bedroom/2-bath, approximately 1,400 sq ft, LVP, plumbing/electrical, kitchen/bathrooms, unfinished basement, detached one-car garage. [Trulia](https://www.trulia.com/es/home/208-sloemer-ave-new-albany-in-47150-99120033) advertises $1,850 rent/deposit; confirm with owner before adoption. File draft leaves both null, current availability unconfirmed. Eight genuine [Drive originals](https://drive.google.com/drive/folders/1JCxQPAmmVr4V1cfdpH5ZBd3n4y8LR4gK) are imported as local assets (see media checkpoint below). Do not make Drive photos publicly shared or substitute stock imagery.
 - Troutwood: [Zillow historical profile](https://www.zillow.com/homedetails/8008-Troutwood-Ct-Louisville-KY-40291/73650528_zpid/) is off market. January 2027 is inferred from November source instructions. Do not publish estimated rent or historical bedroom/bath counts as remodeled facts. Contact for updates rather than apply or request an immediate tour. Authentic owner-approved exterior still required.
-- Both new cards intentionally have no property image until the approved files are transferred. Empty image arrays, noninteractive detail photo placeholder, hidden empty galleries. Exact property-specific SMS; historical Troutwood source labeled accordingly.
+- Troutwood intentionally has no property image until the approved exterior is transferred. Empty image arrays, noninteractive detail photo placeholder, hidden empty galleries. Exact property-specific SMS; historical Troutwood source labeled accordingly.
 - File-mode catalogue only. If preview uses database mode, the CMS adapter replaces file data, so the two records will not appear there until a separate staging-safe import is authorized.
 
 ## Verification
@@ -16,6 +16,23 @@ Owner authorized a separate draft PR. Based on PR #26 checkpoint dd40325f9f2c824
 - Original approved hero imagery and hero markup are not altered. No live inventory, payment, auth or production configuration change.
 
 ## Next
-1. Import eight genuine Sloemer images from Drive, review order and rights.
+1. Sloemer eight-photo import completed; verify in hosted preview and confirm publication rights.
 2. Obtain approved Troutwood exterior and confirm January timeline; confirm Sloemer rental terms.
 3. Verify six cards, filters, detail routes, keyboard/history, EN/ES and mobile with actual preview. Review all existing test assumptions and run the full regression suite. Keep draft until owner approval.
+
+## Sloemer media checkpoint
+
+- Commit `1e7b070353594033679cfe6fa3c6aa3777c175ff` imports all eight original JPEGs from the Drive Originals folder under `assets/properties/208-sloemer-ave/01.jpeg` through `08.jpeg` and wires them into `DATA.images.sloemer` in source order. Front exterior is lead; seven interior photos are orientation-6 EXIF portrait files (raw 640x480, displayed 480x640). Exterior is 1320x896. No enhancement, re-encoding, substitution or Drive sharing change.
+- Verified all eight JPEG decodes and Git blob hashes locally against the actual remote file metadata; each source byte length and asset path matches. PR head readback confirmed the commit. Full browser/hosted testing is still pending.
+- Troutwood Zillow historical profile is off market; no approved current exterior was available. Leave that placeholder until the authentic photo is supplied.
+
+| Asset | Original SHA-256 |
+|---|---|
+| 01.jpeg | `f321f2eee58ab524ad9fe52866d1527ab35f2d5017305f52aab499a7334a1826` |
+| 02.jpeg | `cc1d762af9446dd4aaf3aa13d7b3937e744088e81b946db1e570beae75aa729d` |
+| 03.jpeg | `9cf51bcdd38979e6fb34455fd7b04fb385ebf629a9490c7649516b961bc8c56f` |
+| 04.jpeg | `41bbc5566c69ad1c4d59629f6cecbda7ba809414684721d2e9d5a5f5776a232a` |
+| 05.jpeg | `b70a7894924dffc51c656de2f669787a69cf9f9fc98320f682b83d274691fc41` |
+| 06.jpeg | `625a0e7af1fd33b93f1ea5c758f847557c48655e1afc72505e968a8da9d77de1` |
+| 07.jpeg | `e1bc52fae1cdf866bf376ac30d089a0fb03ce3acdef3f06a130b5d35f48bfc31` |
+| 08.jpeg | `789ffe06056b1e4bc4e66b64fc822803a6298167668a0c64c75ad73e66825131` |
