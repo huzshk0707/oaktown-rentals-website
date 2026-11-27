@@ -1,0 +1,166 @@
+{
+  "url": "https://bethuneloftsdetroit.com/",
+  "states": [
+    {
+      "name": "initial",
+      "panels": [
+        {
+          "text": "Amenities\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/about",
+          "width": 429.328125,
+          "height": 600,
+          "variant": "Card Default"
+        },
+        {
+          "text": "Available Units\n\nVIEW",
+          "href": "https://designbuilddetroit.managebuilding.com/Resident/rental-application/new",
+          "width": 429.34375,
+          "height": 600,
+          "variant": "Card Default"
+        },
+        {
+          "text": "Schedule A Tour\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/contact",
+          "width": 429.328125,
+          "height": 600,
+          "variant": "Card Default"
+        }
+      ]
+    },
+    {
+      "name": "hover 0",
+      "panels": [
+        {
+          "text": "Amenities\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/about",
+          "width": 646.8192138671875,
+          "height": 600,
+          "variant": "Card Default"
+        },
+        {
+          "text": "Available Units\n\nVIEW",
+          "href": "https://designbuilddetroit.managebuilding.com/Resident/rental-application/new",
+          "width": 320.59033203125,
+          "height": 600,
+          "variant": "Card Hidden Text"
+        },
+        {
+          "text": "Schedule A Tour\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/contact",
+          "width": 320.590576171875,
+          "height": 600,
+          "variant": "Card Hidden Text"
+        }
+      ]
+    },
+    {
+      "name": "hover 1",
+      "panels": [
+        {
+          "text": "Amenities\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/about",
+          "width": 322,
+          "height": 600,
+          "variant": "Card Hidden Text"
+        },
+        {
+          "text": "Available Units\n\nVIEW",
+          "href": "https://designbuilddetroit.managebuilding.com/Resident/rental-application/new",
+          "width": 644,
+          "height": 600,
+          "variant": "Card Default"
+        },
+        {
+          "text": "Schedule A Tour\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/contact",
+          "width": 322,
+          "height": 600,
+          "variant": "Card Hidden Text"
+        }
+      ]
+    },
+    {
+      "name": "hover 2",
+      "panels": [
+        {
+          "text": "Amenities\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/about",
+          "width": 322,
+          "height": 600,
+          "variant": "Card Hidden Text"
+        },
+        {
+          "text": "Available Units\n\nVIEW",
+          "href": "https://designbuilddetroit.managebuilding.com/Resident/rental-application/new",
+          "width": 322,
+          "height": 600,
+          "variant": "Card Hidden Text"
+        },
+        {
+          "text": "Schedule A Tour\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/contact",
+          "width": 644,
+          "height": 600,
+          "variant": "Card Default"
+        }
+      ]
+    },
+    {
+      "name": "keyboard focus first",
+      "panels": [
+        {
+          "text": "Amenities\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/about",
+          "width": 429.328125,
+          "height": 600,
+          "variant": "Card Default"
+        },
+        {
+          "text": "Available Units\n\nVIEW",
+          "href": "https://designbuilddetroit.managebuilding.com/Resident/rental-application/new",
+          "width": 429.34375,
+          "height": 600,
+          "variant": "Card Default"
+        },
+        {
+          "text": "Schedule A Tour\n\nVIEW",
+          "href": "https://bethuneloftsdetroit.com/contact",
+          "width": 429.328125,
+          "height": 600,
+          "variant": "Card Default"
+        }
+      ]
+    }
+  ],
+  "failed": [],
+  "tourClick": {
+    "url": "https://bethuneloftsdetroit.com/contact",
+    "headings": [
+      "Bethune Lofts",
+      "Where Detroit's History Meets Modern Living",
+      "Explore Your Options",
+      "Frequently Asked Questions",
+      "Located in the Heart of Detroit",
+      "Lease With Us Today"
+    ]
+  },
+  "map": {
+    "src": "https://maps.google.com/maps?q=1800%20W%20Bethune%20St%2C%20Detroit%2C%20MI%2048206&z=18&output=embed",
+    "width": 1440,
+    "height": 1000
+  },
+  "frames": [
+    {
+      "url": "https://bethuneloftsdetroit.com/"
+    },
+    {
+      "url": "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s1800+W+Bethune+St,+Detroit,+MI+48206!6i18"
+    },
+    {
+      "url": "https://framer.com/edit?framerSiteId=7c5549c90e245661b5e6adf13d4ec39bb6a4f531237280006d9fcc690b8bf2f7&source=bethuneloftsdetroit.com&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%2C%22onPageLocalizationSupport%22%3Atrue%2C%22onPageMoveTool%22%3Atrue%2C%22onPageRichTextBlockSelection%22%3Atrue%7D&loadStart=1795814994949"
+    },
+    {
+      "url": "about:blank"
+    }
+  ]
+}

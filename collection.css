@@ -97,3 +97,33 @@ html.motion-off .rental-site .signature-collection *,html.motion-off .rental-sit
 
 body.rental-site .signature-collection .card-detail-link:focus-visible{outline:2px solid #082e22;outline-offset:4px}
 .card-photo-controls button:focus-visible{box-shadow:0 0 0 4px #082e22}
+
+/* Phase 2D readability and optional grid. Gallery geometry/title/rent stay approved. */
+body.rental-site .signature-collection .property-deposit{font-size:13px;line-height:1.5}
+body.rental-site .signature-collection .property-neighborhood{font-size:14px}
+body.rental-site .signature-collection .property-location{font-size:13px}
+body.rental-site .signature-collection .card-specs{font-size:15px;line-height:1.5}
+body.rental-site .signature-collection .property-details-line>a{font-size:13px;min-height:36px;line-height:1.5}
+body.rental-site .signature-collection .listing-tools{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.collection-view-switch{display:inline-flex;padding:4px;border:1px solid #d4c4a4;background:#faf7ef;border-radius:30px;gap:2px}
+.collection-view-switch button{border:0;border-radius:24px;background:transparent;color:#102f23;padding:8px 17px;min-height:40px;font:500 13px/1.4 'DM Sans',sans-serif;cursor:pointer}
+.collection-view-switch button[aria-pressed=true]{background:#102f23;color:#faf7ef}
+.collection-view-switch button:focus-visible{outline:2px solid #102f23;outline-offset:3px}
+body.rental-site .signature-collection[data-layout=grid] .collection-viewport{overflow:visible;padding:10px 0 14px;scroll-behavior:auto}
+body.rental-site .signature-collection[data-layout=grid] .property-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+body.rental-site .signature-collection[data-layout=grid] .property-card{width:100%;min-width:0;max-width:none}
+body.rental-site .signature-collection[data-layout=grid] .collection-bottom{display:none}
+@media(min-width:1800px){body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:850px){
+ body.rental-site .signature-collection .property-deposit{font-size:12px}
+ body.rental-site .signature-collection .property-neighborhood{font-size:13px}
+ body.rental-site .signature-collection .property-location{font-size:12px}
+ body.rental-site .signature-collection .card-specs{font-size:14px}
+}
+@media(max-width:700px){body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:1fr;gap:24px}}
+@media(max-width:600px){
+ body.rental-site .signature-collection .property-neighborhood{font-size:12px}
+ body.rental-site .signature-collection .card-specs{font-size:13px}
+ body.rental-site .signature-collection .property-details-line>a{font-size:12px}
+ .collection-view-switch button{padding:8px 13px}
+}

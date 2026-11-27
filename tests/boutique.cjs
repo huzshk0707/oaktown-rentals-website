@@ -12,7 +12,7 @@ const fixture='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
   assert.ok(Math.abs(await card.evaluate(e=>e.offsetWidth)-1440*.38)<2);
   assert.match(await card.locator('.property-price').innerText(),/1,699/);assert.equal(await p.locator('.property-card').count(),4);
   assert.equal(await card.locator('.card-spec svg').count(),2);assert.equal(await p.locator('.property-card .availability-badge').count(),1);
-  assert.equal(await p.locator('[data-view-all],[data-layout-button],[data-favorite]').count(),0);
+  assert.equal(await p.locator('[data-view-all],[data-favorite]').count(),0);assert.equal(await p.locator('[data-layout-button]').count(),2);
   assert.match(await card.locator('.property-price').evaluate(e=>getComputedStyle(e).backgroundImage),/linear-gradient/);
  });
  await test('manual photo controls update actual photo, dots/status, and stay on the collection',async()=>{

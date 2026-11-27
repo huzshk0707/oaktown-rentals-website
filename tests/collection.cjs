@@ -13,7 +13,7 @@ const base=process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8930';
  const edge=async()=>{const b=await viewport.boundingBox();await page.mouse.move(b.x+b.width-5,b.y+Math.min(100,b.height/2));};
  const reset=async()=>{await page.mouse.move(0,0);await viewport.scrollIntoViewIfNeeded();await page.waitForTimeout(150);await viewport.evaluate(el=>el.scrollTo({left:0,behavior:'instant'}));};
  await test('single row, full-width introduction, generous fixed widths and no redundant controls',async()=>{
-  assert.equal(await page.locator('[data-view-all],[data-layout-button]').count(),0);
+  assert.equal(await page.locator('[data-view-all]').count(),0);assert.equal(await page.locator('[data-layout-button]').count(),2);
   const bounds=await page.locator('.property-card').evaluateAll(els=>els.map(el=>({top:el.offsetTop,width:el.offsetWidth})));
   assert.equal(new Set(bounds.map(b=>b.top)).size,1);assert.ok(Math.abs(bounds[0].width-1440*.38)<2);
   const intro=await page.locator('.collection-intro').boundingBox(),gallery=await viewport.boundingBox();assert.ok(intro.y+intro.height<=gallery.y);assert.ok(Math.abs(intro.width-gallery.width)<2);

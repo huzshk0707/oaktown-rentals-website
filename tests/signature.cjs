@@ -47,7 +47,7 @@ await test('Resources keyboard navigation, verified links and no portal',async()
 await test('single-row collection keeps previous/next and keyboard access',async()=>{
  await page.locator('[data-collection-step="1"]').click();await page.waitForTimeout(600);
  assert.ok(await page.locator('.collection-viewport').evaluate(e=>e.scrollLeft)>50);
- assert.equal(await page.locator('.collection-viewport').getAttribute('tabindex'),'0');assert.equal(await page.locator('[data-layout-button]').count(),0);
+ assert.equal(await page.locator('.collection-viewport').getAttribute('tabindex'),'0');assert.equal(await page.locator('[data-layout-button]').count(),2);
 });
 for(const language of ['en','es'])for(const width of [320,390,768,1024,1440,1920]){
  await test(`${language} ${width}px: no overflow, hero action and header controls fit`,async()=>{

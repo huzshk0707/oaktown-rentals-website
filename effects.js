@@ -277,7 +277,7 @@
         }
       });
       on(viewport,'keydown',e=>{
-        if(e.target!==viewport)return;
+        if(e.target!==viewport||collection.dataset.layout!=='gallery')return;
         if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)) {
           e.preventDefault();
           if(e.key==='Home'||e.key==='End')viewport.scrollTo({left:e.key==='Home'?0:viewport.scrollWidth,behavior:'instant'});

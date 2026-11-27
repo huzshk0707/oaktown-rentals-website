@@ -13,7 +13,7 @@
       const events=new AbortController();
       const on=(target,type,fn,options={})=>target.addEventListener(type,fn,{...options,signal:events.signal});
       let frame=0,last=0,velocity=0,overflow=false,visibleCount=0,lastBoundary='';
-      const allowed=()=>overflow&&visibleCount>2&&pointer.matches&&!reduce.matches&&!document.hidden&&!document.documentElement.classList.contains('motion-off');
+      const allowed=()=>collection.dataset.layout==='gallery'&&overflow&&visibleCount>2&&pointer.matches&&!reduce.matches&&!document.hidden&&!document.documentElement.classList.contains('motion-off');
       function stop(){cancelAnimationFrame(frame);frame=0;last=0;velocity=0;}
       function tick(now){
         frame=0;
@@ -26,7 +26,7 @@
         frame=requestAnimationFrame(tick);
       }
       function measure(){
-        overflow=viewport.scrollWidth-viewport.clientWidth>2;
+        overflow=collection.dataset.layout==='gallery'&&viewport.scrollWidth-viewport.clientWidth>2;
         visibleCount=collection.querySelectorAll('.property-card:not([hidden])').length;
         if(visibleCount<=2)stop();
         if(!overflow){
@@ -46,6 +46,7 @@
       });
       for(const type of ['pointerleave','pointercancel','pointerdown','touchstart','wheel','keydown'])on(viewport,type,stop,{passive:type==='wheel'||type==='touchstart'});
       on(collection,'oaktown:collection-filter',()=>{stop();measure();});
+      on(collection,'oaktown:collection-layout',()=>{stop();measure();});
       on(viewport,'scroll',()=>{
         const max=viewport.scrollWidth-viewport.clientWidth;
         const boundary=max>2?(viewport.scrollLeft<=2?'start':viewport.scrollLeft>=max-2?'end':''):'';

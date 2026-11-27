@@ -18,7 +18,8 @@
   let selectedFilter = 'All';
   let selectedBedrooms = '';
   let selectedBathrooms = '';
-  const collectionLayout = 'gallery';
+  let collectionLayout = 'gallery';
+  try {if(localStorage.getItem('oaktown-layout')==='grid')collectionLayout='grid';} catch {}
   let currentView = null;
   let currentGalleryIndex = 0;
   let observer;
@@ -46,7 +47,7 @@
       navHomes:'Our homes',navStory:'Our story',navFaq:'FAQ',navCommunity:'Community',navApply:'Apply online',contact:'Contact',textBest:'Text us for availability and showings.',footerTitle:'Your next chapter starts here.',
       heroKicker:'Quality rental homes in Louisville, KY',heroOne:'Find your',heroTwo:'place.',heroTagline:'Homes with character. A local team to help you find yours.',explore:'Explore homes',scroll:'Scroll to explore',
       homesLabel:'01 / FIND A HOME',homesHeading:'Find a home that fits.',homesDesc:'Compare homes, neighborhoods and rental details.',
-      all:'All',stMatthews:'St. Matthews',highlands:'Highlands & Cherokee Triangle',okolona:'Okolona',listings:'Homes in our collection',perMonth:'/ month',beds:'beds',baths:'bath',availability:'Check availability',
+      all:'All',stMatthews:'St. Matthews',highlands:'Highlands & Cherokee Triangle',okolona:'Okolona',listings:'Homes in our collection',perMonth:'/ month',beds:'beds',baths:'bath',availability:'Request a Tour',
       cityPhotoAlt:'Aerial view of downtown Louisville and the Ohio River',cityPhotoCaption:'Louisville, Kentucky · On the Ohio River',photoCredit:'Photo:',aboutLabel:'02 / WHO WE ARE',aboutHeading:'Rooted in Louisville.',aboutLead:'A local perspective. A love for our city. Homes that feel like home.',aboutText:'Oaktown Rentals provides quality rental housing in Louisville, Kentucky and nearby counties. We manage homes across the city, with a particular focus on Southern and Southeastern Jefferson County. We believe finding a home should feel personal, not complicated.',aboutLink:'Get in touch',
       floridaLabel:'Our sister vacation property',floridaLink:'Visit Lobster Nirvana',
       faqLabel:'03 / GOOD TO KNOW',faqHeading:'Before you move.',faqDesc:'A little guidance on applications, pets and arranging a visit.',
@@ -67,7 +68,7 @@
       navHomes:'Viviendas',navStory:'Nuestra historia',navFaq:'Preguntas',navCommunity:'Comunidad',navApply:'Solicitar ahora',contact:'Contacto',textBest:'Escríbenos para consultar disponibilidad o programar una visita.',footerTitle:'Tu próximo capítulo comienza aquí.',
       heroKicker:'Viviendas de alquiler en Louisville, KY',heroOne:'Encuentra tu',heroTwo:'hogar.',heroTagline:'Viviendas con carácter. Un equipo local para ayudarte a encontrar la tuya.',explore:'Explorar viviendas',scroll:'Desliza para explorar',
       homesLabel:'01 / ENCUENTRA TU HOGAR',homesHeading:'Un hogar a tu medida.',homesDesc:'Compara viviendas, vecindarios y condiciones de alquiler.',
-      all:'Todas',stMatthews:'St. Matthews',highlands:'Highlands y Cherokee Triangle',okolona:'Okolona',listings:'Viviendas en nuestra colección',perMonth:'/ mes',beds:'hab.',baths:'baño',availability:'Consultar disponibilidad',
+      all:'Todas',stMatthews:'St. Matthews',highlands:'Highlands y Cherokee Triangle',okolona:'Okolona',listings:'Viviendas en nuestra colección',perMonth:'/ mes',beds:'hab.',baths:'baño',availability:'Solicitar una visita',
       cityPhotoAlt:'Vista aérea del centro de Louisville y el río Ohio',cityPhotoCaption:'Louisville, Kentucky · Junto al río Ohio',photoCredit:'Foto:',aboutLabel:'02 / QUIÉNES SOMOS',aboutHeading:'Arraigados en Louisville.',aboutLead:'Perspectiva local. Amor por nuestra ciudad. Hogares acogedores.',aboutText:'Oaktown Rentals ofrece viviendas de alquiler de calidad en Louisville, Kentucky y los condados cercanos. Gestionamos hogares por toda la ciudad, especialmente en el sur y sureste del condado de Jefferson.',aboutLink:'Contáctanos',
       floridaLabel:'Nuestra propiedad vacacional hermana',floridaLink:'Visita Lobster Nirvana',
       faqLabel:'03 / INFORMACIÓN ÚTIL',faqHeading:'Antes de mudarte.',faqDesc:'Información sobre solicitudes, mascotas y cómo programar una visita.',
@@ -114,7 +115,8 @@
     return `<img class="${className}" src="${imageUrl(src,thumbnail?300:1200)}" ${responsive} alt="${alt}" loading="${extra==='eager'?'eager':'lazy'}" decoding="async" ${extra==='eager'?'fetchpriority="high"':''}>`;
 
   };
-  const inquiryUrl = p => 'sms:+15025001070?body='+encodeURIComponent((language==='es'?'Hola, quisiera consultar la disponibilidad de ':'Hi, I’d like to ask about availability for ')+p.name+'.');
+  // Use the verified property-specific showing fallback until a public Zillow rental is confirmed.
+  const inquiryUrl = p => showingUrl(p);
   const showingUrl = p => 'sms:+15025001070?body='+encodeURIComponent((language==='es'?'Hola, quisiera programar una visita a ':'Hi, I’d like to request a showing at ')+p.name+'.');
   const sectionHeading = (label, title, desc='') => `<div class="section-heading reveal"><div><div class="eyebrow section-label">${label}</div><h2 class="display-title">${title}</h2></div>${desc?`<p class="heading-note">${desc}</p>`:''}</div>`;
   function availabilityLabel(p) {
@@ -167,7 +169,7 @@
     return `${storySection()}${searchPanel()}
     <section class="section collection signature-collection" id="homes" data-layout="${collectionLayout}" aria-labelledby="homes-title">
       <div class="collection-intro reveal"><span class="eyebrow">Oaktown Rentals</span><h2 id="homes-title">${t('ourHomesTitle')}</h2><p>${t('ourHomesCopy')}</p><p class="collection-availability">${t('availabilityNote')}</p></div>
-      <div class="collection-results"><div class="listing-tools"><span class="listing-count" role="status" aria-live="polite">${P.length} ${t('homeCount')}</span></div>
+      <div class="collection-results"><div class="listing-tools"><span class="listing-count" role="status" aria-live="polite">${P.length} ${t('homeCount')}</span><div class="collection-view-switch" role="group" aria-label="${t('layoutLabel')}">${['gallery','grid'].map(layout=>`<button type="button" data-layout-button="${layout}" aria-pressed="${collectionLayout===layout}">${t(layout==='grid'?'gridView':'galleryView')}</button>`).join('')}</div></div>
       ${!P.length?`<p class="collection-empty">${language==='es'?(DATA.contentUnavailable?'No podemos cargar las viviendas en este momento. Contáctanos para consultar disponibilidad.':'No hay viviendas publicadas en este momento. Contáctanos para consultar disponibilidad.'):(DATA.contentUnavailable?'We cannot load the homes right now. Contact us for current availability.':'There are no published homes right now. Contact us for current availability.')}</p>`:''}
       <p class="search-empty" role="status" hidden>${t('noMatches')}</p>
       <div class="collection-viewport" id="collection-viewport" ${collectionLayout==='gallery'?'tabindex="0"':''} role="region" aria-label="${t('listings')}"><div class="property-grid" id="property-grid">${P.map(card).join('')}</div></div>
@@ -400,6 +402,21 @@
     const form=app.querySelector('#home-search');if(form){form.elements.neighborhood.value=selectedFilter;form.elements.bedrooms.value=selectedBedrooms;form.elements.bathrooms.value=selectedBathrooms;}
     rememberView();
   }
+  function selectCollectionLayout(layout) {
+    if(!['gallery','grid'].includes(layout))return;
+    stopCardSlideshow(false);
+    collectionLayout=layout;
+    try{localStorage.setItem('oaktown-layout',layout);}catch{}
+    const collection=app.querySelector('.signature-collection');
+    if(!collection)return;
+    collection.dataset.layout=layout;
+    collection.querySelectorAll('[data-layout-button]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.layoutButton===layout)));
+    const viewport=collection.querySelector('.collection-viewport');
+    if(layout==='gallery')viewport.setAttribute('tabindex','0');else viewport.removeAttribute('tabindex');
+    viewport.scrollTo({left:0,behavior:'instant'});
+    collection.dispatchEvent(new Event('oaktown:collection-layout'));
+    rememberView();
+  }
   function galleryStep(step) {
     const p=P.find(x=>'detail:'+x.slug===currentView);if(!p)return;
     const imgs=DATA.images[p.imageKey];if(!imgs.length)return;currentGalleryIndex=(currentGalleryIndex+step+imgs.length)%imgs.length;
@@ -434,6 +451,7 @@
     if(restore&&view==='home'){
       selectedFilter=restore.filter==='All'||typeof restore.filter==='string'&&P.some(home=>restore.filter.split('|').includes(home.neighborhood))?restore.filter:'All';
       selectedBedrooms=String(restore.bedrooms||'');selectedBathrooms=String(restore.bathrooms||'');
+      collectionLayout=restore.layout==='grid'?'grid':'gallery';
     }
     const shouldRender=(view!==currentView)||app.children.length===0||preservePosition||!!restore;
     const oldScroll=window.scrollY;
@@ -520,6 +538,7 @@
     document.addEventListener('click',e=>{if(!details.contains(e.target)||e.target.closest('a'))details.open=false;});
   });
   app.addEventListener('click',e=>{
+    const layout=e.target.closest('[data-layout-button]');if(layout){selectCollectionLayout(layout.dataset.layoutButton);return;}
     const photoControl=e.target.closest('[data-card-photo-index],[data-card-photo-step]');
     if(photoControl){const card=photoControl.closest('.property-card');const index=photoControl.hasAttribute('data-card-photo-index')?Number(photoControl.dataset.cardPhotoIndex):Number(card.dataset.pendingPhotoIndex??card.dataset.selectedPhoto??0)+Number(photoControl.dataset.cardPhotoStep);selectCardPhoto(card,index);return;}
 
@@ -545,6 +564,11 @@
     if(e.target.closest('[data-close-gallery]'))closeGallery();
   });
   document.addEventListener('keydown',e=>{
+    const layout=e.target.closest?.('[data-layout-button]');
+    if(layout&&['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){
+      e.preventDefault();const next=e.key==='Home'?'gallery':e.key==='End'?'grid':layout.dataset.layoutButton==='gallery'?'grid':'gallery';
+      selectCollectionLayout(next);app.querySelector('[data-layout-button="'+next+'"]').focus();
+    }
     if(e.key==='Escape'&&!mobileNav.hidden){closeMenu();menu.focus();}
     if(app.querySelector('.lightbox[open]')&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();galleryStep(e.key==='ArrowLeft'?-1:1);}
   });

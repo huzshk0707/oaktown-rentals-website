@@ -1,11 +1,13 @@
-# WEB-SIGNATURE — Phase 2D / FELIX active
+# WEB-SIGNATURE — Phase 2D / FELIX checkpoint
 
-- Explicit user takeover from Ravi. Owner FELIX; heartbeat 2026-11-27T21:24:06+00:00; claim expires 2026-11-27T21:54:06+00:00.
-- Branch `felix/oaktown-signature`, draft PR #26, base `be37dba`. Recovered clean latest remote `149217ea0942d70682e48bf13686a3ea61285a1f` via fast-forward; preserve all other worktrees and booking PR #25.
-- Approved work: Tasks 1–4 root/history verification, secondary card readability, verified Zillow tour links with SMS fallback, restored Gallery/Grid modes. Preserve hero and Boutique identity, 38vw gallery cards/title/rent sizes and five-dot controls.
-- Tasks 5–6 are rendered Bethune research and separate reversible expanding-panel/Louisville map prototypes, not production section replacement.
-- NEXT STEP: inspect current navigation/card/layout code, reproduce root/deep-link/history behavior, inspect Bethune in the browser and investigate public Zillow mappings. No actual tour submissions.
-- Keep draft; no merge, production deploy, live inventory/schema/auth change or payments. Checkpoint at most every 20 minutes.
+- Owner FELIX; heartbeat 2026-11-27T21:37:50+00:00; claim expires 2026-11-27T22:07:50+00:00.
+- Branch `felix/oaktown-signature`, draft PR #26, base `be37dba`; prior pushed ownership `97eb09a`. Explicit takeover from Ravi `149217e`; other worktrees and PR #25 preserved.
+- Tasks 1–4 complete: root/history verified without unnecessary positioning changes; supporting type increased; Request a Tour / Solicitar una visita uses verified exact-property SMS showing fallback; Gallery-default persisted Grid/Gallery uses identical cards/filters/photos/history.
+- All regression suites passed; new refinement suite 12 groups. Actual desktop/mobile EN/ES captures, two recordings and 12 zero-violation axe scans saved in `docs/oaktown-signature/phase2d/`.
+- Rendered Bethune research and isolated expanding-panel/Louisville map prototypes are checkpointed under excluded docs. Louisville transition capture and final proposal checks remain in progress. No public section replacement.
+- Zillow public destinations could not be verified; owner will share them later. No guessed links, fact changes or inquiries. Exact Cherokee #8 SMS retained.
+- NEXT STEP: verify Louisville-to-vacation prototype transition and reduced-motion/Spanish interactions, write Phase 2D review reports, verify hosted preview hashes, update roadmap/tasks and release review handoff.
+- No expected broken runtime checks; prototype last transition addition awaits capture. Keep draft; no merge, production deploy, live inventory/schema/auth/payments.
 
 ---
 
