@@ -1,0 +1,626 @@
+[
+  {
+    "version": "before",
+    "size": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "lang": "en",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 234,
+        "height": 349,
+        "text": "19 Photos\nSt. Matthews\n115 Colonial Drive\n$1,699/ month\nSecurity deposit: $1,699\n3 beds   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 234,
+        "height": 349,
+        "text": "17 Photos\nOkolona\n4005 Smallboat Ct\n$1,525/ month\nSecurity deposit: $1,525\n3 beds   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 234,
+        "height": 349,
+        "text": "9 Photos\nCherokee Triangle\n1106 Cherokee Rd · #8\n$950/ month\nSecurity deposit: $950\n1 bed   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 234,
+        "height": 356,
+        "text": "15 Photos\nRussell\n1824 W Madison\n$1,100/ month\nSecurity deposit: $1,100\n3 beds   /   1 bath\nComing soon\nCheck availability"
+      }
+    ],
+    "overflow": false,
+    "failures": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ]
+  },
+  {
+    "version": "before",
+    "size": "mobile",
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 350,
+        "height": 366,
+        "text": "19 Photos\nSt. Matthews\n115 Colonial Drive\n$1,699\n/ month\nSecurity deposit: $1,699\n3 beds   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 350,
+        "height": 366,
+        "text": "17 Photos\nOkolona\n4005 Smallboat Ct\n$1,525\n/ month\nSecurity deposit: $1,525\n3 beds   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 350,
+        "height": 366,
+        "text": "9 Photos\nCherokee Triangle\n1106 Cherokee Rd · #8\n$950\n/ month\nSecurity deposit: $950\n1 bed   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 350,
+        "height": 366,
+        "text": "15 Photos\nRussell\n1824 W Madison\n$1,100\n/ month\nSecurity deposit: $1,100\n3 beds   /   1 bath\nComing soon\nCheck availability"
+      }
+    ],
+    "overflow": false,
+    "failures": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ]
+  },
+  {
+    "version": "before",
+    "size": "mobile-es",
+    "width": 390,
+    "height": 844,
+    "lang": "es",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 350,
+        "height": 390,
+        "text": "19 Fotos\nSt. Matthews\n115 Colonial Drive\n$1,699\n/ mes\nDepósito de seguridad: $1,699\n3 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 350,
+        "height": 390,
+        "text": "17 Fotos\nOkolona\n4005 Smallboat Ct\n$1,525\n/ mes\nDepósito de seguridad: $1,525\n3 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 350,
+        "height": 390,
+        "text": "9 Fotos\nCherokee Triangle\n1106 Cherokee Rd · #8\n$950\n/ mes\nDepósito de seguridad: $950\n1 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 350,
+        "height": 393,
+        "text": "15 Fotos\nRussell\n1824 W Madison\n$1,100\n/ mes\nDepósito de seguridad: $1,100\n3 hab.   /   1 baño\nPróximamente\nConsultar disponibilidad"
+      }
+    ],
+    "overflow": false,
+    "failures": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ]
+  },
+  {
+    "version": "before",
+    "size": "tablet",
+    "width": 768,
+    "height": 1024,
+    "lang": "es",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 348,
+        "height": 434,
+        "text": "19 Fotos\nSt. Matthews\n115 Colonial Drive\n$1,699\n/ mes\nDepósito de seguridad: $1,699\n3 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 348,
+        "height": 434,
+        "text": "17 Fotos\nOkolona\n4005 Smallboat Ct\n$1,525\n/ mes\nDepósito de seguridad: $1,525\n3 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 348,
+        "height": 434,
+        "text": "9 Fotos\nCherokee Triangle\n1106 Cherokee Rd · #8\n$950\n/ mes\nDepósito de seguridad: $950\n1 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 348,
+        "height": 442,
+        "text": "15 Fotos\nRussell\n1824 W Madison\n$1,100\n/ mes\nDepósito de seguridad: $1,100\n3 hab.   /   1 baño\nPróximamente\nConsultar disponibilidad"
+      }
+    ],
+    "overflow": false,
+    "failures": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ]
+  },
+  {
+    "version": "after",
+    "size": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "lang": "en",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 234,
+        "height": 349,
+        "text": "19 Photos\nSt. Matthews\n115 Colonial Drive\n$1,699/ month\nSecurity deposit: $1,699\n3 beds   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 234,
+        "height": 349,
+        "text": "17 Photos\nOkolona\n4005 Smallboat Ct\n$1,525/ month\nSecurity deposit: $1,525\n3 beds   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 234,
+        "height": 349,
+        "text": "9 Photos\nCherokee Triangle\n1106 Cherokee Rd · #8\n$950/ month\nSecurity deposit: $950\n1 bed   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 234,
+        "height": 356,
+        "text": "15 Photos\nRussell\n1824 W Madison\n$1,100/ month\nSecurity deposit: $1,100\n3 beds   /   1 bath\nComing soon\nCheck availability"
+      }
+    ],
+    "overflow": false,
+    "failures": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ]
+  },
+  {
+    "version": "after",
+    "size": "mobile",
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 350,
+        "height": 366,
+        "text": "19 Photos\nSt. Matthews\n115 Colonial Drive\n$1,699\n/ month\nSecurity deposit: $1,699\n3 beds   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 350,
+        "height": 366,
+        "text": "17 Photos\nOkolona\n4005 Smallboat Ct\n$1,525\n/ month\nSecurity deposit: $1,525\n3 beds   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 350,
+        "height": 366,
+        "text": "9 Photos\nCherokee Triangle\n1106 Cherokee Rd · #8\n$950\n/ month\nSecurity deposit: $950\n1 bed   /   1 bath\nCheck availability"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 350,
+        "height": 366,
+        "text": "15 Photos\nRussell\n1824 W Madison\n$1,100\n/ month\nSecurity deposit: $1,100\n3 beds   /   1 bath\nComing soon\nCheck availability"
+      }
+    ],
+    "overflow": false,
+    "failures": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ]
+  },
+  {
+    "version": "after",
+    "size": "mobile-es",
+    "width": 390,
+    "height": 844,
+    "lang": "es",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 350,
+        "height": 390,
+        "text": "19 Fotos\nSt. Matthews\n115 Colonial Drive\n$1,699\n/ mes\nDepósito de seguridad: $1,699\n3 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 350,
+        "height": 390,
+        "text": "17 Fotos\nOkolona\n4005 Smallboat Ct\n$1,525\n/ mes\nDepósito de seguridad: $1,525\n3 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 350,
+        "height": 390,
+        "text": "9 Fotos\nCherokee Triangle\n1106 Cherokee Rd · #8\n$950\n/ mes\nDepósito de seguridad: $950\n1 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 350,
+        "height": 393,
+        "text": "15 Fotos\nRussell\n1824 W Madison\n$1,100\n/ mes\nDepósito de seguridad: $1,100\n3 hab.   /   1 baño\nPróximamente\nConsultar disponibilidad"
+      }
+    ],
+    "overflow": false,
+    "failures": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ]
+  },
+  {
+    "version": "after",
+    "size": "tablet",
+    "width": 768,
+    "height": 1024,
+    "lang": "es",
+    "photos": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false,
+        "width": 0,
+        "height": 0
+      }
+    ],
+    "geometry": [
+      {
+        "slug": "115-colonial-drive",
+        "width": 348,
+        "height": 434,
+        "text": "19 Fotos\nSt. Matthews\n115 Colonial Drive\n$1,699\n/ mes\nDepósito de seguridad: $1,699\n3 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "4005-smallboat-ct",
+        "width": 348,
+        "height": 434,
+        "text": "17 Fotos\nOkolona\n4005 Smallboat Ct\n$1,525\n/ mes\nDepósito de seguridad: $1,525\n3 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "1106-cherokee-rd-unit-8",
+        "width": 348,
+        "height": 434,
+        "text": "9 Fotos\nCherokee Triangle\n1106 Cherokee Rd · #8\n$950\n/ mes\nDepósito de seguridad: $950\n1 hab.   /   1 baño\nConsultar disponibilidad"
+      },
+      {
+        "slug": "1824-w-madison",
+        "width": 348,
+        "height": 442,
+        "text": "15 Fotos\nRussell\n1824 W Madison\n$1,100\n/ mes\nDepósito de seguridad: $1,100\n3 hab.   /   1 baño\nPróximamente\nConsultar disponibilidad"
+      }
+    ],
+    "overflow": false,
+    "failures": [
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      },
+      {
+        "url": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "error": "net::ERR_TUNNEL_CONNECTION_FAILED"
+      }
+    ]
+  }
+]

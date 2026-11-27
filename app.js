@@ -97,10 +97,10 @@
     afterglowReview:'Vista previa de diseño de 8216 Afterglow Drive con asistencia de IA'
   });
   const t = (key) => words[language][key] || words.en[key] || key;
-  const money = (n) => new Intl.NumberFormat(language==='es'?'es-US':'en-US',{style:'currency',currency:'USD',minimumFractionDigits:n%1?2:0,maximumFractionDigits:2}).format(n);
+  const money = n => window.OaktownCards.formatMoney(n,language);
   const localized = (p,key) => language==='es' && p[key+'Es']?.length ? p[key+'Es'] : p[key];
-  const photo = (p, idx=0) => DATA.images[p.imageKey][idx] || DATA.images[p.imageKey][0];
-  const imageUrl = (src, width=1200) => src.includes('images.squarespace-cdn.com') ? src.split('?')[0]+'?format='+width+'w' : src;
+  const photo = (p, idx=0) => window.OaktownCards.gallery(DATA,p)[idx] || window.OaktownCards.gallery(DATA,p)[0];
+  const imageUrl = window.OaktownCards.imageUrl;
   const imageEl = (src, alt, className, extra='') => {
     if(!src)return '';
     if(alt && DATA.photoAlts?.[src])alt=DATA.photoAlts[src];
@@ -110,7 +110,7 @@
       ?'100vw'
       :className==='detail-cover-photo'?'(max-width: 850px) calc(100vw - 44px), (max-width: 1328px) calc((100vw - 96px) * .45), 554px'
       :className==='property-image'?'auto, (max-width: 600px) calc(100vw - 40px), (max-width: 1328px) calc((100vw - 80px) / 2), 624px':'auto, (max-width: 1328px) calc(100vw - 48px), 1280px';
-    const responsive=src.includes('images.squarespace-cdn.com')?`srcset="${widths.map(w=>imageUrl(src,w)+' '+w+'w').join(', ')}" sizes="${sizes}"`:'';
+    const responsive=window.OaktownCards.isSquarespacePhoto(src)?`srcset="${widths.map(w=>imageUrl(src,w)+' '+w+'w').join(', ')}" sizes="${sizes}"`:'';
     return `<img class="${className}" src="${imageUrl(src,thumbnail?300:1200)}" ${responsive} alt="${alt}" loading="${extra==='eager'?'eager':'lazy'}" decoding="async" ${extra==='eager'?'fetchpriority="high"':''}>`;
 
   };
@@ -118,27 +118,11 @@
   const showingUrl = p => 'sms:+15025001070?body='+encodeURIComponent((language==='es'?'Hola, quisiera programar una visita a ':'Hi, I’d like to request a showing at ')+p.name+'.');
   const sectionHeading = (label, title, desc='') => `<div class="section-heading reveal"><div><div class="eyebrow section-label">${label}</div><h2 class="display-title">${title}</h2></div>${desc?`<p class="heading-note">${desc}</p>`:''}</div>`;
   function availabilityLabel(p) {
-    return ({en:{available:'Available',coming_soon:'Coming soon',rented:'Rented'},es:{available:'Disponible',coming_soon:'Próximamente',rented:'Alquilado'}})[language][p.availability]||'';
+    return window.OaktownCards.availabilityLabel(p,language);
   }
   const availabilityBadge = p => availabilityLabel(p)?`<span class="availability-badge">${availabilityLabel(p)}</span>`:'';
-  function cardAmenities(p) {
-    const features=Array.isArray(p.features)?p.features:[];
-    const translated=localized(p,'features')||[];
-    const items=features.map((feature,index)=>({feature,index})).filter(({feature})=>!(/\b(bedrooms?|bathrooms?|location)\b/i.test(feature))).slice(0,3);
-    return items.length?`<ul class="card-amenities" aria-label="${t('cardFeatures')}">${items.map(({feature,index})=>`<li>${translated[index]||feature}</li>`).join('')}</ul>`:'';
-  }
-  function card(p, index) {
-    return `<article class="property-card reveal" data-neighborhood="${p.neighborhood}" data-property-slug="${p.slug}" data-selected-photo="0">
-        <div class="card-media"><a class="property-image-wrap" href="#home/${p.slug}" aria-label="${t('details')}: ${p.name}" data-image-error="${t('photoUnavailable')}">
-          <span class="card-index" aria-hidden="true">${String(index+1).padStart(2,'0')} / ${String(P.length).padStart(2,'0')}</span><span class="card-photo-count">${DATA.images[p.imageKey].length} ${t('photosLabel')}</span>
-          ${imageEl(photo(p), p.name+' — '+t('photoLabel'),'property-image')}
-          <span class="photo-pill">${t('photo')}</span><span class="card-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
-        </a></div>
-        <div class="property-data"><div><span class="property-neighborhood">${p.neighborhood}</span><h3 class="property-name"><a href="#home/${p.slug}">${p.name}</a></h3><p class="property-summary">${localized(p,'summary')}</p></div><div class="property-price">${money(p.rent)}<small>${t('perMonth')}</small><span class="property-deposit">${t('deposit')}: ${money(p.deposit)}</span></div></div>
-        ${cardAmenities(p)}
-        <div class="property-details-line"><span>${p.bedrooms} ${language==='en'&&p.bedrooms===1?'bed':t('beds')} &nbsp; / &nbsp; ${p.bathrooms} ${t('baths')}</span>${availabilityBadge(p)}<a href="${inquiryUrl(p)}" aria-label="${t('availability')}: ${p.name}">${t('availability')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div>
-      </article>`;
-  }
+  const cards = window.OaktownCards.create({data:DATA,getLanguage:()=>language,t,localized,imageEl,inquiryUrl});
+  const card = (p,index) => cards.render(p,index,P.length);
   function faqSection() {
     return `<section id="faq" class="section faq-section">${sectionHeading(t('faqLabel'),t('faqHeading'),t('faqDesc'))}<div class="faq-list">${[1,2,3,4,5].map(i=>`<details class="faq-item reveal"><summary>${t('faq'+i+'q')}</summary><div class="faq-answer">${t('faq'+i+'a')}</div></details>`).join('')}</div></section>`;
   }

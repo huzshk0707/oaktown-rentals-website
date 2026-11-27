@@ -4,13 +4,16 @@ Approved by the owner on 27 November 2026. Creative direction and visual accepta
 
 ## Current delivery
 
-Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) on `felix/oaktown-signature`. The existing homepage, search controls, cards and supporting sections are a first implementation, not visual acceptance. Preserve that work. Phase 1B engineering and regression verification are complete. Immediate priority is owner visual and enhanced-photo architectural review.
+Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) on `felix/oaktown-signature`. The existing homepage, search controls, cards and supporting sections are a first implementation, not visual acceptance. Preserve that work. Phase 1B engineering and regression verification are complete. Phase 1B visual and enhanced-photo architectural review remain pending. Ravi is explicitly authorized for Phase 2A engineering, including the subsequent single-row gallery update; final card styling remains gated.
 
 | Phase | Approved direction | Status / prerequisites |
 | --- | --- | --- |
 | 1 | Signature hero and navigation | **Superseded by approved Phase 1B motion.** Retain the full-screen Afterglow identity from the exact hero reference. Keep search below the opening viewport; verify desktop/mobile, EN/ES and motion preferences. |
 | 1B | Continuous three-scene cinematic hero | **Implemented, awaiting visual/architectural acceptance.** Same enhanced Afterglow image, native sticky scroll, mobile and static reduced-motion fallback. Evidence and exact tests are in [Phase 1B review](phase1b/README.md). Remaining sections retain current design. |
-| 2 | Premium property cards | Initial homepage cards exist. Further creative work awaits Phase 1 acceptance and specific direction. Preserve genuine pricing, addresses, unit photos and unknown availability. |
+| 1C | Visual and photo acceptance | Owner/ChatGPT review pending; preserve Phase 1B. |
+| 2A | Property collection engineering foundation | Ravi active: field/photo audits, reusable cards, single-row horizontal gallery and regression checks. Full-width introduction above gallery; remove redundant View All Homes. Fixed original generous gallery dimensions, arrows, desktop edge movement, keyboard/manual/touch navigation; no timer or loop. Hide controls when results fit, preserve widths and left alignment for one/two matches, reset on filtering, respect reduced motion. |
+| 2B | Editorial Collection creative design / approval | Owner and ChatGPT supply final premium mockup; no independent card restyling. This is the approval gate referred to as “Approved Visual Implementation” in the earlier prose brief. |
+| 2C | Approved visual implementation | Implement the approved Phase 2B mockup only after explicit direction. The latest gallery decision supersedes the earlier three-card/multi-row homepage assumption; retain all matching homes in one row. |
 | 3 | Dedicated property search page | Planned. Existing homepage filters remain operational; a dedicated page is not yet authorized. Use supported neighborhood, bedroom and bathroom fields, not invented property types. |
 | 4 | Individual property detail pages | Existing detail routes, gallery, rental facts and showing links remain functional. Redesign awaits direction. |
 | 5 | Before You Apply experience | Planned. Requires verified requirements, policies and approved copy. |

@@ -1,10 +1,12 @@
 # WEB-SIGNATURE — Phase 2A Engineering Foundation
 
-- Owner Ravi, explicitly reassigned by the owner. Heartbeat 2026-11-27T10:50:39+00:00; claim expires 2026-11-27T11:20:39+00:00.
+- Owner Ravi, explicitly reassigned by the owner. Heartbeat 2026-11-27T10:58:26+00:00; claim expires 2026-11-27T11:28:26+00:00.
 - Existing branch `felix/oaktown-signature`, draft PR #26, latest verified remote checkpoint `262f1537db20ee382178d26c2a73fec76f80612a`. Fast-forwarded existing clean tracked worktree; local dependency symlinks excluded. No unfinished implementation files recovered. Other worktrees/booking PR #25 preserved.
 - Scope: per-property field availability report, photography engineering audit and safe migration plan, reusable card preparation preserving current appearance, search/CMS/gallery/motion regressions. The Editorial Collection mockup is pending; do not implement a final visual redesign or reduce the collection to three cards yet.
 - Preserve Felix's Phase 1B hero motion, typography, composition and enhanced photograph. Owner visual/architectural acceptance remains pending, not part of this engineering approval.
-- NEXT STEP: audit data.js, cms/model.mjs, CMS adapters and current card() rendering; record field and photo evidence in docs/oaktown-signature/phase2a before bounded refactoring.
+- Completed: property-cards.js extraction, missing money/spec/photo fallback, exact-host responsive URL handling, public/private preview wiring. Five component tests pass; four before/after actual Chromium collection copy/geometry comparisons pass. Field and 60-URL photo manifest/reports in docs/oaktown-signature/phase2a. No schema/inventory/hero changes.
+- New explicit owner direction: single horizontal gallery, full-width introduction, remove redundant View All Homes; retain original generous gallery dimensions, arrows/edge/keyboard/touch/manual navigation with no timed scrolling/loop, fit-aware controls and filter reset. Final editorial styling stays pending.
+- NEXT STEP: implement the approved horizontal gallery in scoped collection.css/collection.js, reuse existing scroll controls and preserve Phase 1B; add interaction regressions. Existing geometry comparison represents the pre-gallery extraction milestone.
 - No merge, production deploy, live inventory/schema/auth changes, asset migration or payments. Keep PR #26 draft.
 
 ---

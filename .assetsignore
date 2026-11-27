@@ -5,6 +5,7 @@
 !robots.txt
 !data.js
 !app.js
+!property-cards.js
 !effects.js
 !cms-client.js
 !styles.css

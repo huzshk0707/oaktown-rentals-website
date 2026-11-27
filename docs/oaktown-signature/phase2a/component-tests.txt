@@ -1,0 +1,13 @@
+✔ money never invents a zero or emits NaN for missing/invalid data (19.716746ms)
+✔ only explicit supported availability yields a badge label (0.356576ms)
+✔ image resizing never rewrites private media or lookalike hosts (0.377587ms)
+✔ reusable renderer retains unit identity, CMS escaping, explicit total and language switches (0.753241ms)
+✔ only present structured specifications are displayed; empty gallery is safe (0.952074ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 113.960535

@@ -1,8 +1,9 @@
 # Phase 2A — Property Collection Engineering Foundation
 
-- [ ] Audit every current file-catalogue property and CMS-supported fields.
-- [ ] Audit exact photo/unit mapping, URL loading, responsive behavior and migration prerequisites.
-- [ ] Prepare reusable card rendering/formatting with missing-data handling; preserve appearance.
+- [x] Audit every current file-catalogue property and CMS-supported fields: [field report](docs/oaktown-signature/phase2a/FIELDS.md).
+- [x] Audit exact photo/unit mapping and migration prerequisites: [photo report](docs/oaktown-signature/phase2a/PHOTOGRAPHY.md). Hosted photo loading remains blocked/unverified.
+- [x] Extract reusable card rendering/formatting; five component tests and four actual before/after copy/geometry comparisons passed.
+- [ ] Implement approved single-row gallery: full-width introduction, no View All Homes or grid toggle, fixed generous gallery proportions, conditional arrows, edge movement, keyboard/touch/manual scroll, filter reset and reduced-motion behavior. Final card styling awaits approved mockup.
 - [ ] Verify search, bilingual, galleries, accessibility, Phase 1B motion and admin/CMS compatibility.
 - [ ] Publish reports, tests, checkpoints and bounded NEXT STEP. Phase 2 visual approval remains with owner/ChatGPT.
 
