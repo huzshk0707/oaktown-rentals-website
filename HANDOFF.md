@@ -1,3 +1,12 @@
+# Phase 2E — Seamless Sky Header
+
+- Ravi owns `ravi/seamless-sky-header`. Heartbeat 2026-11-28T01:52:56+00:00. Claim expires 2026-11-28T02:22:56+00:00.
+- Reviewed base `c4a789b773af79293fff9819909c9a98948fa851` on `integration/oaktown-signature`. Feature PR targets integration and stays draft. Release PR #29 stays separate.
+- Scope: original logo, transparent Afterglow header, catalogue disclosures, hero CTAs and light scroll state. Existing publication holds and staging boundaries apply.
+- NEXT STEP: capture the opening baseline and implement the approved header and catalogue-driven disclosures. Then verify all scenes, navigation, EN/ES and preservation.
+
+---
+
 # Oaktown Signature integration
 
 - Ravi completed the local integration and released the implementation claim at 2026-11-28T01:47:50+00:00. Ravi remains the integration lead.
