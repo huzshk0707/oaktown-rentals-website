@@ -1,3 +1,7 @@
+# Vacation feature ready for owner review
+
+FELIX released the feature claim at 2026-11-28 06:24 UTC. Draft PR #32 targets integration from verified shared base `bc163b2`. Runtime `ac5b24e` passed eight regression commands, responsive and motion checks, and hosted verification. [Captures and results](docs/oaktown-signature/vacation-feature/README.md). NEXT STEP: owner reviews the desktop and mobile comparisons in draft #32 before any integration.
+
 # Vacation feature implemented / FELIX
 
 Draft PR #32. Heartbeat 06:22 UTC, expires 06:52 UTC. Reviewed all 19 gallery originals and retained the high-resolution house and pool exterior. Desktop and mobile captures confirm the ivory layout and footer boundary. NEXT STEP: run browser regressions and verify hosted feature bytes.

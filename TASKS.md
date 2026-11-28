@@ -1,3 +1,8 @@
+# Homepage Lobster Nirvana refinement
+
+- [x] Refine the vacation promotion on an isolated branch and verify the [hosted screenshots and checks](docs/oaktown-signature/vacation-feature/README.md).
+- [ ] Owner reviews draft PR #32 before integration.
+
 # Phase 3 — Homepage Completion / FELIX
 
 - [x] Verify approved Phase 2E merge and the shared preview at `4f5c3ea`. Open isolated [draft PR #31](https://github.com/huzshk0707/oaktown-rentals-website/pull/31) targeting integration.
