@@ -1,3 +1,7 @@
+# Phase 4B step 1 — FELIX
+
+Claimed 2026-11-28T06:55:07Z, expires 2026-11-28T07:25:07Z. Base cde58a6. NEXT STEP: capture current opening and inspect the gallery timer.
+
 # Phase 4A ready for owner review / FELIX released
 
 FELIX released the feature claim at 2026-11-28 06:43 UTC. Draft PR #33 targets integration at shared base bc163b2. Audit 2f7f9fb, verified runtime a365581. [Hosted comparisons, recording and regression evidence](docs/oaktown-signature/phase4a/README.md). NEXT STEP: owner reviews Colonial Drive in the feature preview and provides Phase 4B direction separately. PR #32 remains a separate draft. Existing holds continue.
