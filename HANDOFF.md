@@ -1,3 +1,7 @@
+# Release blocker resolution · Ravi
+
+Ravi claimed PR #29 at 2026-11-28T08:03:33+00:00. Claim expires 2026-11-28T08:33:33+00:00. Verified shared base `6c6ff47`. Next: update inquiry wording and prepare the clearance fallbacks and exact Afterglow comparison.
+
 # Release candidate held for publication evidence
 
 Ravi released the consolidation claim at 2026-11-28T07:57:26+00:00. Draft PR #29 contains the approved stack, #32, #26 review evidence and Junior’s latest #28 gallery. Tested runtime `08d4412`. See [preflight, mobile results and photo/fact holds](docs/oaktown-signature/release/README.md). The final evidence commit follows that runtime. Main and production remain on `be37dba`. Booking recovery is in #37.
