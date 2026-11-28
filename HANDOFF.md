@@ -1,3 +1,11 @@
+# Phase 2E final refinements and Smallboat review
+
+- Ravi owns PR #30 on `ravi/seamless-sky-header`. Heartbeat 2026-11-28T02:43:23+00:00. Claim expires 2026-11-28T03:13:23+00:00.
+- Reviewed remote checkpoint `3b0667f` on integration `c4a789b`. The owner accepted the overall Phase 2E composition and requested final navigation, button and dropdown refinements. The later Smallboat instruction authorizes verified, byte-preserved imports from the approved Drive folder.
+- NEXT STEP: review Bethune hover, compare all 17 Smallboat files and the six previous holds, implement the scoped interaction refinements, and save draft evidence. PR #29 and #30 stay draft.
+
+---
+
 # Phase 2E — Seamless Sky Header
 
 - Ravi completed the feature and released the implementation claim at 2026-11-28T02:25:38+00:00. Feature branch `ravi/seamless-sky-header`, [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30) targeting `integration/oaktown-signature` at `c4a789b`. Combined PR #29 stays separate.
