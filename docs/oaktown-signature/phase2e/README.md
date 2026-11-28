@@ -1,5 +1,7 @@
 # Phase 2E — Seamless Sky Header
 
+The owner accepted the overall composition. See [the final refinement review](final/README.md) for the updated direct vacation link, buttons, menu animation and Smallboat audit. Captures below preserve the earlier accepted checkpoint.
+
 Ravi implemented the approved inline [layout reference](approved-layout.svg) on [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30) from integration `c4a789b`. [Feature preview](https://ravi-seamless-sky-header-oaktown.rentals10.workers.dev/). PR #29 is the combined release draft.
 
 The full-bleed Afterglow stage now extends behind a transparent header with a feathered ivory veil. The original wordmark sits at the upper left; the four desktop destinations sit toward the right. The existing left-aligned headline, photograph, three scroll-linked scenes, discovery guidance and Scroll to Explore remain. The opening pairs a sage Browse Our Homes button with an outlined Apply Now link using the existing canonical destination. On smaller screens, the same disclosures open by tap within a scrollable panel.

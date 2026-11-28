@@ -1,0 +1,488 @@
+{
+  "base": "http://127.0.0.1:8944",
+  "screenshots": [
+    {
+      "name": "opening-1440-en",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "homes-dropdown",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "resources-dropdown",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "story-underline",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "scene-2",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "sky",
+      "scene": "1",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "scene-3",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "sky",
+      "scene": "2",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "below-hero",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "ivory",
+      "scene": "2",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "property-detail",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "ivory",
+      "scene": null,
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "opening-1440-es",
+      "lang": "es",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "opening-1920-en",
+      "lang": "en",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "opening-1366-en",
+      "lang": "en",
+      "viewport": [
+        1366,
+        520
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "opening-768-en",
+      "lang": "en",
+      "viewport": [
+        768,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "mobile-menu-768-en",
+      "lang": "en",
+      "viewport": [
+        768,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "mobile-properties-768-en",
+      "lang": "en",
+      "viewport": [
+        768,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "opening-390-en",
+      "lang": "en",
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "mobile-menu-390-en",
+      "lang": "en",
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "mobile-properties-390-en",
+      "lang": "en",
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "opening-390-es",
+      "lang": "es",
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "mobile-menu-390-es",
+      "lang": "es",
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "mobile-properties-390-es",
+      "lang": "es",
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "opening-320-es",
+      "lang": "es",
+      "viewport": [
+        320,
+        640
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "mobile-menu-320-es",
+      "lang": "es",
+      "viewport": [
+        320,
+        640
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "mobile-properties-320-es",
+      "lang": "es",
+      "viewport": [
+        320,
+        640
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "reduced-1440-en",
+      "lang": "en",
+      "viewport": [
+        1440,
+        900
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    },
+    {
+      "name": "reduced-390-es",
+      "lang": "es",
+      "viewport": [
+        390,
+        844
+      ],
+      "surface": "sky",
+      "scene": "0",
+      "overflow": false,
+      "realPhoto": true
+    }
+  ],
+  "accessibility": [
+    {
+      "name": "opening-1440-en",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "homes-dropdown",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 17
+        }
+      ]
+    },
+    {
+      "name": "resources-dropdown",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 13
+        }
+      ]
+    },
+    {
+      "name": "scene-2",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "name": "scene-3",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "name": "opening-1440-es",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "opening-1920-en",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "name": "opening-1366-en",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "name": "opening-768-en",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "mobile-properties-768-en",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "name": "opening-390-en",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "mobile-properties-390-en",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "name": "opening-390-es",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "mobile-properties-390-es",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "name": "opening-320-es",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "mobile-properties-320-es",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 18
+        }
+      ]
+    },
+    {
+      "name": "reduced-1440-en",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "reduced-390-es",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -1,9 +1,11 @@
 # Phase 2E final refinements and Smallboat review
 
-- Ravi owns PR #30 on `ravi/seamless-sky-header`. Heartbeat 2026-11-28T02:49:10+00:00. Claim expires 2026-11-28T03:19:10+00:00.
-- Reviewed remote checkpoint `3b0667f` on integration `c4a789b`. The owner accepted the overall Phase 2E composition and requested final navigation, button and dropdown refinements. The later Smallboat instruction authorizes verified, byte-preserved imports from the approved Drive folder.
-- Direct Lobster Nirvana link, 12px buttons and staggered disclosures implemented. Drive audit verified 11 exact matches and six specific unresolved variants, so no new files were imported. All 17 gallery slots remain intact.
-- NEXT STEP: finish focused reruns, inspect and commit final browser evidence, confirm the Cloudflare draft build and release the claim. PR #29 and #30 stay draft.
+- Ravi completed the scoped refinement and released the claim at 2026-11-28T02:53:47+00:00. [Draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30), branch `ravi/seamless-sky-header`, integration base `c4a789b`. Owner accepted the previous Phase 2E composition at `3b0667f`.
+- Verified pushed runtime checkpoint `8d034a2`. This final evidence checkpoint follows it. Use the PR head for its exact SHA. `index.html`, `app.js`, `sky-header.css` and `sky-header.js` implement the direct Lobster Nirvana link, consistent rounded CTAs and staggered accessible disclosures.
+- [Final review evidence](docs/oaktown-signature/phase2e/final/README.md) includes button before/after, 25 real-photo screenshots, an 11.56-second recording with verified playback, exact test transcripts and 42 axe scans with zero confirmed violations. Dedicated header checks, 38 media hashes, six records, 68 real gallery selections and existing regressions passed locally.
+- [Smallboat reconciliation](docs/oaktown-signature/phase2e/final/SMALLBOAT-PHOTOGRAPHY.md) accounts for all 17 approved Drive files. Eleven match existing imports byte-for-byte. Zero new imports. Six retained sources have specific accuracy or attribution exceptions, with candidate/source links and correction requests. No media, data, CMS, admin, Cloudflare or booking changes. The roadmap and task list record the remaining holds.
+- Cloudflare confirmed the `8d034a2` preview build and deployment. [Feature preview](https://ravi-seamless-sky-header-oaktown.rentals10.workers.dev/). The workspace tunnel returned CONNECT 403 on a fresh hosted attempt, so direct hosted asset and isolation checks remain open. The PR records the final build status.
+- NEXT STEP: Review the revised buttons, dropdown video and six photo exceptions in PR #30, then record acceptance or revisions there. Keep PR #29 and #30 draft pending separate authorization to integrate. No production deploy, inventory update or payments.
 
 ---
 

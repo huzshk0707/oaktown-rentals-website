@@ -5,7 +5,26 @@
 - [x] Implement transparent original-mark header, dynamic catalogue disclosures, bilingual hero actions and an ivory post-hero state.
 - [x] Pass dedicated, existing and real-photo regressions and save the [rendered comparison and recording](docs/oaktown-signature/phase2e/README.md).
 - [ ] Direct hosted baseline and feature asset/isolation verification. Workspace grants did not complete.
-- [ ] Owner visual acceptance and separate integration authorization. PR #29 stays draft.
+- [x] Owner accepted the Phase 2E composition, wordmark, typography and cinematic hero.
+- [x] Make Lobster Nirvana a direct link and finish rounded hero actions and staggered menu entries.
+- [x] Reconcile Smallboat against all 17 approved Drive files. Eleven match the draft byte-for-byte. Six specific variants still need correction. See [the slot audit](docs/oaktown-signature/phase2e/final/SMALLBOAT-PHOTOGRAPHY.md).
+- [x] Pass the 27 dedicated checks and catalogue, browser, accessibility and admin checks. Save the [final captures and transcripts](docs/oaktown-signature/phase2e/final/README.md).
+- [ ] Review the final interaction evidence and authorize integration separately. PR #29 and #30 stay draft.
+
+## Photography and content backlog
+
+| Property or system | Next task |
+| --- | --- |
+| Colonial Drive | Final visual review of the 19 imported approved photos. |
+| Smallboat Court | Resolve 03 tile/grout, 12 floor/equipment, 14 exterior/attribution, 15 cabinets/fixtures/attribution, 16 cabinet wall/floor and 17 carpet/current condition. Keep the current slot mapping. |
+| Madison | Review the 15 current images for source quality, order and warranted enhancement. |
+| Cherokee #8 | Review all nine current photos, including the lead crop. |
+| Sloemer Avenue | Review presentation of eight original imports. Confirm rent, deposit and availability. |
+| Troutwood Court | Obtain a genuine exterior and confirm timing, renovated specifications and other unverified facts. |
+| Afterglow Drive | Obtain architectural accuracy acceptance before release. |
+| Listings and hosting | Verify property-specific Zillow URLs, rehearse any file/CMS migration on staging and finish direct hosted asset and isolation verification. |
+
+Use each property's latest owner-approved Google Drive folder to source updates. Check current property accuracy, reuse rights and attribution before copying the approved bytes. Leave review-only variants out of the catalogue.
 
 # Shared Signature integration — Ravi
 
