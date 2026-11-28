@@ -1,8 +1,32 @@
 # Shared Signature integration — Phase 2E / Ravi
 
-- Ravi owns the authorized PR #30 integration. UTC heartbeat 2026-11-28T03:04:28+00:00. Claim expires 2026-11-28T03:34:28+00:00.
-- Branch `integration/oaktown-signature`, draft PR #29 targeting `main`. Verified prior tip `c4a789b773af79293fff9819909c9a98948fa851`. Approved PR #30 tip `f5a2476ddbb4f5595b5d6d2964235353f590c18b`.
-- NEXT STEP: merge the approved PR #30 checkpoint into this branch, preserve the existing six catalogue records, 38 imported photos and publication holds, then run integration regressions and verify the combined preview before handing Phase 3 to Felix.
+- Owner Ravi. UTC heartbeat 2026-11-28T03:05:10+00:00. Claim expires 2026-11-28T03:35:10+00:00.
+- Branch `integration/oaktown-signature`, combined draft PR #29 targeting `main`. Owner approved integration of PR #30 at `f5a2476ddbb4f5595b5d6d2964235353f590c18b`. Previous shared baseline `c4a789b773af79293fff9819909c9a98948fa851`.
+- The integration includes the approved header, navigation, hero buttons and dropdown refinements. The only merge conflict was this handoff log. Historical entries are retained below. Six file catalogue records, 38 imported rental photos and all photo/publication holds are carried forward.
+- NEXT STEP: run the combined browser, catalogue, photo, CMS and admin regressions and verify the shared Workers preview. Release the checkpoint to Felix for Phase 3 — Homepage Completion after verification.
+
+---
+
+# Phase 2E final refinements and Smallboat review
+
+- Ravi completed the scoped refinement and released the claim at 2026-11-28T02:53:47+00:00. [Draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30), branch `ravi/seamless-sky-header`, integration base `c4a789b`. Owner accepted the previous Phase 2E composition at `3b0667f`.
+- Verified pushed runtime checkpoint `8d034a2`. This final evidence checkpoint follows it. Use the PR head for its exact SHA. `index.html`, `app.js`, `sky-header.css` and `sky-header.js` implement the direct Lobster Nirvana link, consistent rounded CTAs and staggered accessible disclosures.
+- [Final review evidence](docs/oaktown-signature/phase2e/final/README.md) includes button before/after, 25 real-photo screenshots, an 11.56-second recording with verified playback, exact test transcripts and 42 axe scans with zero confirmed violations. Dedicated header checks, 38 media hashes, six records, 68 real gallery selections and existing regressions passed locally.
+- [Smallboat reconciliation](docs/oaktown-signature/phase2e/final/SMALLBOAT-PHOTOGRAPHY.md) accounts for all 17 approved Drive files. Eleven match existing imports byte-for-byte. Zero new imports. Six retained sources have specific accuracy or attribution exceptions, with candidate/source links and correction requests. No media, data, CMS, admin, Cloudflare or booking changes. The roadmap and task list record the remaining holds.
+- Cloudflare confirmed the `8d034a2` preview build and deployment. [Feature preview](https://ravi-seamless-sky-header-oaktown.rentals10.workers.dev/). The workspace tunnel returned CONNECT 403 on a fresh hosted attempt, so direct hosted asset and isolation checks remain open. The PR records the final build status.
+- NEXT STEP: Review the revised buttons, dropdown video and six photo exceptions in PR #30, then record acceptance or revisions there. Keep PR #29 and #30 draft pending separate authorization to integrate. No production deploy, inventory update or payments.
+
+---
+
+# Phase 2E — Seamless Sky Header
+
+- Ravi completed the feature and released the implementation claim at 2026-11-28T02:25:38+00:00. Feature branch `ravi/seamless-sky-header`, [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30) targeting `integration/oaktown-signature` at `c4a789b`. Combined PR #29 stays separate.
+- Previous pushed checkpoint `3f08773`. This final review commit follows it. GitHub holds the exact head. Afterglow photo/camera and the six records, 38 imported photos, 68 selections, collection, CMS, private preview and booking holds preserved.
+- The opening has the transparent original-derived logo header, four desktop destinations, dynamic public catalogue disclosures and two hero CTAs. It becomes ivory below the hero. Direction behavior applies to desktop home with motion enabled and keeps open/focused menus reachable. Lofts & Nirvana currently links only to verified Lobster Nirvana.
+- Local Node 24/Chromium verification passed. 25 dedicated checks, existing browser/design/motion/gallery/history/CMS/admin/Mint regressions and all real galleries. 26 after and two before images, 12.04-second recording and 43 zero-violation axe scans. Verified video playback. [Exact evidence](docs/oaktown-signature/phase2e/README.md).
+- Cloudflare alias https://ravi-seamless-sky-header-oaktown.rentals10.workers.dev/. Shared baseline attempt failed at initial navigation with `net::ERR_TUNNEL_CONNECTION_FAILED`. New hostname grant timed out. See PR #30 for build status. Direct hosted hashes/isolation remain pending.
+- NEXT STEP: owner opens the feature preview at desktop size, checks Our Homes and all three hero scenes against the before/after evidence, and records acceptance or specific revisions on PR #30 before authorizing integration.
+
 
 ---
 

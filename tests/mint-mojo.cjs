@@ -8,7 +8,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
   page.on('pageerror',error=>errors.push(error.message));
   await page.route('**/*',route=>route.request().url().startsWith(base+'/')?route.continue():route.abort());
   await page.goto(base+'/');
-  await page.locator('.desktop-nav a[href="./mint-mojo/"]').click();
+  await page.locator('.desktop-nav a[href="/mint-mojo/"]').click();
   assert.equal(new URL(page.url()).pathname,'/mint-mojo/');
   await page.locator('.mint-hero h1').waitFor();
   assert.match(await page.title(), /Lobster Nirvana/);

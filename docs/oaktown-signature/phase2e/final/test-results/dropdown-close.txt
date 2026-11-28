@@ -1,0 +1,1 @@
+Chromium verified the dropdown paints its closing fade after disclosure closes and interaction becomes inert.

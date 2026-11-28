@@ -74,7 +74,7 @@ const base = (process.env.OAKTOWN_BASE_URL || 'http://127.0.0.1:8931').replace(/
       assert.equal(await page.locator('.cinematic-hero').evaluate(e => e.classList.contains('is-cinematic')), false);
       assert.equal(await page.locator('.cinematic-progress').isVisible(), false);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
-      assert.ok(await page.locator('[data-hero-scene="0"] a').isVisible());
+      assert.ok(await page.locator('[data-hero-scene="0"] a[href="#homes"]').isVisible());
       await page.setViewportSize({width:1440,height:1000});
       await page.locator('.is-cinematic').waitFor();
       await page.setViewportSize({width,height});

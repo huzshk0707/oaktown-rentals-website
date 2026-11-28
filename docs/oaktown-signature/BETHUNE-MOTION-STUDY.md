@@ -12,3 +12,17 @@ Ravi reviewed the live [Bethune Lofts homepage](https://bethuneloftsdetroit.com/
 | Desktop wheel input eased toward its final position through Lenis. Both reduced-motion and normal runs still showed smooth wheel movement and hero parallax. | Keep native scrolling. Apply easing to individual transforms and controls so users retain normal scroll response. |
 
 Start with one editorial panel prototype and a subtle Louisville image entrance. The [Phase 2D review](phase2d/README.md) already has an isolated panel and map proposal and [before/hover captures](phase2d/research/bethune-options-hover.png). Use one optional enhancement per section and retain the existing photo navigation, English/Spanish controls, visible focus and reduced-motion behavior. Existing Boutiques already provide photo crossfades and the selected-image transition into detail. The study is a creative reference for future review.
+
+## Phase 2E typography and navigation observation
+
+A fresh 1440×900 Chromium run inspected the live desktop header and hovered About Us. The menu holder measured 1344×67px, 48px from either edge and 12px from the top. The About Us label was 16px Raleway, weight 400, normal spacing and 19.2px line height. The document's primary Raleway faces loaded from the Framer asset host. The H1 declared Italiana, weight 400, normal spacing, 150px size and 150px line height. The Italiana and Lora requests to fonts.gstatic.com were blocked, so the displayed H1 used its available serif fallback during this inspection.
+
+The About Us underline measured 1px wide at opacity zero initially, about 55px wide at 100ms and 69px at full opacity after settling. The visible desktop links lead to pages. The burger opens a separate light panel with large destination links and a photo at desktop widths, and the narrow version stacks the links. This observation informs the scoped Oaktown disclosures, which are positioned directly below their triggers.
+
+Oaktown retains Georgia with Times New Roman and serif fallbacks for the hero, and its already self-hosted DM Sans for the header. The existing [DM Sans license](../../assets/fonts/) stays with the asset. The header uses a 14–17px navigation scale with roughly 1.4 line height and a 220ms left-origin underline. No additional font request or distribution of Bethune assets is needed.
+
+## Phase 2E final button interaction
+
+A fresh 1440×900 Chromium session hovered Bethune’s visible hero Apply Now link and sampled its real painted controls. The button stayed 151.75×49.59px at the same coordinates. The white fill shifted toward blue at 85ms and settled at RGB 101, 149, 168 by the last sample. The visible label shifted from near black to white. The sampled button kept its 50px radius and had no visible arrow or moving internal element. Color interpolated through Framer’s runtime. The sampled computed transition did not establish an exact authored duration or easing. See [the measurements](phase2e/final/bethune-hover.json).
+
+The Oaktown buttons adopt the color exchange using a 220ms transition, with no change to size or placement on hover. The accepted sage primary deepens to olive, and the outlined secondary fills with warm ivory. Both use a 12px radius rather than the reference's pill shape. The dropdown stagger is an Oaktown refinement.

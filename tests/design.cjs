@@ -3,7 +3,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8787').replace(/\/$/
 (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});let checks=0;
 for(const lang of ['en','es'])for(const width of [320,390,768,1024,1280,1920]){
 const p=await b.newPage({viewport:{width,height:800}});await p.addInitScript(l=>localStorage.setItem('oaktown-language',l),lang);await p.route('**/*',r=>r.request().url().startsWith(base+'/')?r.continue():r.abort());await p.goto(base+'/');await p.waitForSelector('.signature-copy h1');
-const box=await p.locator('[data-hero-scene="0"] .signature-button').boundingBox();assert.ok(box.y+box.height<800,`${lang} ${width} hero CTA above fold`);checks++;
+const box=await p.locator('[data-hero-scene="0"] a[href="#homes"]').boundingBox();assert.ok(box.y+box.height<800,`${lang} ${width} hero CTA above fold`);checks++;
 if(width<=960){const menu=await p.locator('#menu-button').boundingBox();assert.ok(menu.x+menu.width<=width,`${lang} ${width} menu visible`);await p.locator('#menu-button').click();assert.equal(await p.locator('#mobile-nav').isVisible(),true);checks++;}
 if(width>850){await p.locator('[data-hero-scene-button="1"]').focus();await p.keyboard.press('Enter');await p.waitForFunction(()=>document.querySelector('.cinematic-hero').dataset.scene==='1');}
 else assert.equal(await p.locator('.cinematic-progress').isVisible(),false);checks++;

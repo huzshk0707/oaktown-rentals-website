@@ -4,12 +4,13 @@ const base=process.env.OAKTOWN_BASE_URL||'http://127.0.0.1:8933';
 for(const lang of ['en','es']){
  const p=await b.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});await p.addInitScript(lang=>localStorage.setItem('oaktown-language',lang),lang);
  await p.goto(base);await p.locator('.cinematic-hero').waitFor();await p.waitForTimeout(150);assert.equal(await p.evaluate(()=>scrollY),0);
- await p.locator('.cinematic-scene[data-hero-scene="0"] .signature-button').click();await p.waitForURL('**/#homes');await p.waitForTimeout(150);assert.ok(await p.evaluate(()=>scrollY)>500);
+ await p.locator('.cinematic-scene[data-hero-scene="0"] a[href="#homes"]').click();await p.waitForURL('**/#homes');await p.waitForTimeout(150);assert.ok(await p.evaluate(()=>scrollY)>500);
  await p.reload();await p.locator('.property-card').first().waitFor({state:'attached'});await p.waitForTimeout(150);assert.ok(await p.evaluate(()=>scrollY)>500);
  await p.locator('.wordmark').click();await p.waitForTimeout(150);assert.equal(await p.evaluate(()=>scrollY),0);
  await p.goBack();await p.waitForTimeout(150);assert.equal(await p.evaluate(()=>location.hash),'#homes');assert.ok(await p.evaluate(()=>scrollY)>500);
  await p.goForward();await p.waitForTimeout(150);assert.equal(await p.evaluate(()=>scrollY),0);passed.push(lang+' fresh root, Browse Our Homes, deep-link refresh, logo and Back/Forward');
- await p.locator('.desktop-nav [href="#homes"]').click();await p.waitForTimeout(150);
+ await p.locator('.sky-disclosure summary').first().press('Enter');
+ await p.locator('.desktop-nav .sky-browse').click();await p.waitForTimeout(150);
  const size=await p.locator('.property-card').first().evaluate(c=>({w:c.offsetWidth,title:getComputedStyle(c.querySelector('.property-name')).fontSize,rent:getComputedStyle(c.querySelector('.property-price')).fontSize,deposit:parseFloat(getComputedStyle(c.querySelector('.property-deposit')).fontSize),location:parseFloat(getComputedStyle(c.querySelector('.property-location')).fontSize),specs:parseFloat(getComputedStyle(c.querySelector('.card-specs')).fontSize)}));
  assert.ok(Math.abs(size.w-1440*.38)<2);assert.equal(size.title,'26.64px');assert.equal(size.rent,'28.8px');assert.ok(size.deposit>=13&&size.location>=13&&size.specs>=14);assert.equal(await p.locator('.property-card').first().locator('.card-photo-dots button').count(),5);
  const targets=await p.locator('.property-details-line>a').evaluateAll(es=>es.map(a=>({text:a.textContent,href:a.getAttribute('href'),slug:a.closest('.property-card').dataset.propertySlug})));
@@ -31,6 +32,6 @@ for(const width of [320,390,768,1024,1920]){
  for(const mode of ['grid','gallery']){await p.locator('[data-layout-button="'+mode+'"]').click();assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.equal(await p.locator('.property-card').count(),6);}
  passed.push(width+'px grid/gallery no document overflow');await p.close();
 }
-const p=await b.newPage({reducedMotion:'reduce'});await p.goto(base);await p.locator('.cinematic-hero').waitFor();await p.evaluate(()=>scrollTo({top:600,behavior:'instant'}));await p.waitForTimeout(600);await p.reload();await p.locator('.cinematic-hero').waitFor();await p.waitForTimeout(150);assert.ok(Math.abs(await p.evaluate(()=>scrollY)-600)<4);passed.push('root refresh preserves an intentional reading position');await p.close();
+const p=await b.newPage({reducedMotion:'reduce'});await p.goto(base);await p.locator('.cinematic-hero').waitFor();await p.evaluate(()=>scrollTo({top:600,behavior:'instant'}));await p.waitForFunction(()=>history.state?.oaktownView?.y===600);await p.reload();await p.locator('.cinematic-hero').waitFor();await p.waitForFunction(()=>Math.abs(scrollY-600)<4);passed.push('root refresh preserves an intentional reading position');await p.close();
 console.log(JSON.stringify({passed,failures:[]},null,2));
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});

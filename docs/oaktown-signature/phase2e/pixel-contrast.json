@@ -1,0 +1,895 @@
+{
+  "method": "Actual photo under text boxes with foreground hidden. Worst background pixel across full text rectangles. Conservative and not a conformance claim.",
+  "sampledStates": 10,
+  "lowestRatio": {
+    "nav": 6.13,
+    "large": 2.9,
+    "copy": 5.6
+  },
+  "states": [
+    {
+      "width": 1440,
+      "height": 900,
+      "scene": 0,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.56,
+          "p05Contrast": 6.91
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.83,
+          "p05Contrast": 7.19
+        },
+        {
+          "text": "Viviendas",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.38,
+          "p05Contrast": 6.75
+        },
+        {
+          "text": "Lofts y Nirvana",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.64,
+          "p05Contrast": 6.94
+        },
+        {
+          "text": "Recursos",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.68,
+          "p05Contrast": 7.06
+        },
+        {
+          "text": "Nuestra historia",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.69,
+          "p05Contrast": 6.99
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 3.69,
+          "p05Contrast": 5.6
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.16,
+          "p05Contrast": 6.67
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.66,
+          "p05Contrast": 11.34
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 4.93,
+          "p05Contrast": 8.71
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 4.93,
+          "p05Contrast": 8.71
+        },
+        {
+          "text": "Desliza para explorar",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 7.77,
+          "p05Contrast": 9.81
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scene": 1,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.63,
+          "p05Contrast": 6.86
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.61,
+          "p05Contrast": 7.03
+        },
+        {
+          "text": "Viviendas",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.74,
+          "p05Contrast": 6.96
+        },
+        {
+          "text": "Lofts y Nirvana",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.75,
+          "p05Contrast": 7.29
+        },
+        {
+          "text": "Recursos",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.28,
+          "p05Contrast": 6.78
+        },
+        {
+          "text": "Nuestra historia",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.44,
+          "p05Contrast": 7.04
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 3.93,
+          "p05Contrast": 6.35
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 3.44,
+          "p05Contrast": 9.95
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.92,
+          "p05Contrast": 10.29
+        },
+        {
+          "text": "Desliza para explorar",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 6.37,
+          "p05Contrast": 6.91
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "scene": 2,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.84,
+          "p05Contrast": 7.24
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 7.01,
+          "p05Contrast": 7.28
+        },
+        {
+          "text": "Viviendas",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.42,
+          "p05Contrast": 6.63
+        },
+        {
+          "text": "Lofts y Nirvana",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.41,
+          "p05Contrast": 6.69
+        },
+        {
+          "text": "Recursos",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.13,
+          "p05Contrast": 6.38
+        },
+        {
+          "text": "Nuestra historia",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.8,
+          "p05Contrast": 7.33
+        },
+        {
+          "text": "Explora nuestras viviendas.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 3.51,
+          "p05Contrast": 8.99
+        },
+        {
+          "text": "Explora nuestras viviendas.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 4.65,
+          "p05Contrast": 10.6
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scene": 0,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.29,
+          "p05Contrast": 6.48
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.8,
+          "p05Contrast": 7.11
+        },
+        {
+          "text": "Viviendas",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.64,
+          "p05Contrast": 6.92
+        },
+        {
+          "text": "Lofts y Nirvana",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.61,
+          "p05Contrast": 6.91
+        },
+        {
+          "text": "Recursos",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.8,
+          "p05Contrast": 7.06
+        },
+        {
+          "text": "Nuestra historia",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.23,
+          "p05Contrast": 6.68
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 4.38,
+          "p05Contrast": 5.55
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.18,
+          "p05Contrast": 6.67
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 5.66,
+          "p05Contrast": 9.37
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.85,
+          "p05Contrast": 9.02
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.85,
+          "p05Contrast": 9.02
+        },
+        {
+          "text": "Desliza para explorar",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 8.34,
+          "p05Contrast": 10.22
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scene": 1,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.35,
+          "p05Contrast": 6.57
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.63,
+          "p05Contrast": 7.06
+        },
+        {
+          "text": "Viviendas",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.82,
+          "p05Contrast": 7.19
+        },
+        {
+          "text": "Lofts y Nirvana",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.41,
+          "p05Contrast": 6.96
+        },
+        {
+          "text": "Recursos",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.61,
+          "p05Contrast": 6.93
+        },
+        {
+          "text": "Nuestra historia",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.49,
+          "p05Contrast": 6.81
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 5.1,
+          "p05Contrast": 6.69
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.72,
+          "p05Contrast": 10.28
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 7.13,
+          "p05Contrast": 10.22
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 9.84,
+          "p05Contrast": 11.6
+        },
+        {
+          "text": "Desliza para explorar",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 5.6,
+          "p05Contrast": 6.39
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scene": 2,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 7.06,
+          "p05Contrast": 7.27
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.79,
+          "p05Contrast": 6.97
+        },
+        {
+          "text": "Viviendas",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.41,
+          "p05Contrast": 6.56
+        },
+        {
+          "text": "Lofts y Nirvana",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.23,
+          "p05Contrast": 6.43
+        },
+        {
+          "text": "Recursos",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.94,
+          "p05Contrast": 7.22
+        },
+        {
+          "text": "Nuestra historia",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.49,
+          "p05Contrast": 7.23
+        },
+        {
+          "text": "Explora nuestras viviendas.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.71,
+          "p05Contrast": 8.0
+        },
+        {
+          "text": "Explora nuestras viviendas.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 8.63,
+          "p05Contrast": 10.99
+        },
+        {
+          "text": "Explora nuestras viviendas.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 4.81,
+          "p05Contrast": 10.61
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 520,
+      "scene": 0,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.65,
+          "p05Contrast": 7.02
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 7.01,
+          "p05Contrast": 7.31
+        },
+        {
+          "text": "Viviendas",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.92,
+          "p05Contrast": 7.11
+        },
+        {
+          "text": "Lofts y Nirvana",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 7.17,
+          "p05Contrast": 7.69
+        },
+        {
+          "text": "Recursos",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 7.0,
+          "p05Contrast": 7.43
+        },
+        {
+          "text": "Nuestra historia",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 6.81,
+          "p05Contrast": 7.34
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 4.27,
+          "p05Contrast": 5.71
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.07,
+          "p05Contrast": 8.39
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 5.6,
+          "p05Contrast": 6.65
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 5.6,
+          "p05Contrast": 6.65
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 9.49,
+          "p05Contrast": 11.55
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 9.96,
+          "p05Contrast": 10.45
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "scene": 0,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 7.27,
+          "p05Contrast": 7.46
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 3.63,
+          "p05Contrast": 5.71
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 5.23,
+          "p05Contrast": 10.13
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.11,
+          "p05Contrast": 7.56
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.11,
+          "p05Contrast": 7.56
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 6.73,
+          "p05Contrast": 7.89
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 11.39,
+          "p05Contrast": 12.08
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scene": 0,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 7.57,
+          "p05Contrast": 7.65
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 5.11,
+          "p05Contrast": 6.52
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 6.22,
+          "p05Contrast": 8.21
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 8.46,
+          "p05Contrast": 10.92
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 8.46,
+          "p05Contrast": 10.92
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 6.97,
+          "p05Contrast": 8.66
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 7.83,
+          "p05Contrast": 8.8
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "scene": 0,
+      "rects": [
+        {
+          "text": "Animaci\u00f3n s\u00ed",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true
+        },
+        {
+          "text": "ES / EN",
+          "c": "rgb(48, 54, 44)",
+          "large": false,
+          "nav": true,
+          "minContrast": 7.63,
+          "p05Contrast": 7.92
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 2.9,
+          "p05Contrast": 5.61
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 5.99,
+          "p05Contrast": 6.8
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 4.97,
+          "p05Contrast": 6.14
+        },
+        {
+          "text": "Un lugar al quellamar hogar.",
+          "c": "rgb(250, 247, 239)",
+          "large": true,
+          "nav": false,
+          "minContrast": 4.97,
+          "p05Contrast": 6.14
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 6.44,
+          "p05Contrast": 7.5
+        },
+        {
+          "text": "Viviendas bien cuidadas en el \u00e1rea metropolitana de Louisville.",
+          "c": "rgb(250, 247, 239)",
+          "large": false,
+          "nav": false,
+          "minContrast": 7.17,
+          "p05Contrast": 8.53
+        }
+      ]
+    }
+  ]
+}
