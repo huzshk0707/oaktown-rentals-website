@@ -4,7 +4,72 @@
   const entities = {amp:'&', lt:'<', gt:'>', quot:'"', '#39':"'"};
   const labelText = value => value.replace(/&(amp|lt|gt|quot|#39);/g, (_, key) => entities[key]);
 
-  window.OaktownSkyHeader = {mount(header, app, properties, applicationUrl) {
+  const labels = {
+    en: {
+      navHomes: 'Our Homes', browseAllHomes: 'Browse All Homes', resources: 'Resources',
+      navFaq: 'FAQ', navCommunity: 'Community', contact: 'Contact', navStory: 'Our Story',
+      applyNow: 'Apply Now', primaryNav: 'Primary navigation', homeLink: 'Oaktown Rentals — home',
+      switchLanguage: 'Cambiar a español', openMenu: 'Open menu', closeMenu: 'Close menu',
+      motionOn: 'Motion on', motionOff: 'Motion off', motionLabel: 'Enable visual motion',
+      skipContent: 'Skip to content', missing: 'We couldn’t find that page.', returnHome: 'Return to Oaktown Rentals'
+    },
+    es: {
+      navHomes: 'Viviendas', browseAllHomes: 'Ver todas las viviendas', resources: 'Recursos',
+      navFaq: 'Preguntas', navCommunity: 'Comunidad', contact: 'Contacto', navStory: 'Nuestra historia',
+      applyNow: 'Solicitar ahora', primaryNav: 'Navegación principal', homeLink: 'Oaktown Rentals — inicio',
+      switchLanguage: 'Switch to English', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú',
+      motionOn: 'Animación sí', motionOff: 'Animación no', motionLabel: 'Activar animaciones',
+      skipContent: 'Saltar al contenido', missing: 'No encontramos esa página.', returnHome: 'Volver a Oaktown Rentals'
+    }
+  };
+
+  function readLanguage() {
+    try { return localStorage.getItem('oaktown-language') === 'es' ? 'es' : 'en'; }
+    catch { return 'en'; }
+  }
+
+  function translateLabels(root, language) {
+    const copy = labels[language];
+    root.querySelectorAll('[data-sky]').forEach(node => { node.textContent = copy[node.dataset.sky]; });
+    root.querySelectorAll('[data-sky-aria]').forEach(node => node.setAttribute('aria-label', copy[node.dataset.skyAria]));
+  }
+
+  function create(route = '') {
+    const slot = document.querySelector('[data-sky-header]');
+    slot.outerHTML = `<header class="site-header sky-header" id="site-header">
+      <a href="${route || '#'}" class="wordmark" aria-label="Oaktown Rentals — home" data-sky-aria="homeLink">
+        <img class="brand-logo" src="/assets/signature/oaktown-wordmark-transparent.png" width="480" height="243" alt="Oaktown Rentals" decoding="async">
+      </a>
+      <div class="header-actions">
+        <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false">Motion</button>
+        <button class="language-switch" id="language-switch" type="button" aria-label="Cambiar a español" data-sky-aria="switchLanguage">ES</button>
+        <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+      <nav class="desktop-nav sky-navigation" id="mobile-nav" aria-label="Primary navigation" data-sky-aria="primaryNav">
+        <details class="sky-disclosure">
+          <summary><span data-sky="navHomes">Our Homes</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="sky-dropdown">
+            <a class="sky-browse" href="${route}#homes" data-sky="browseAllHomes">Browse All Homes</a>
+            <div id="header-properties"></div>
+          </div>
+        </details>
+        <a class="sky-nav-link" href="/mint-mojo/">Lobster Nirvana</a>
+        <details class="sky-disclosure resources-menu">
+          <summary><span data-sky="resources">Resources</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="sky-dropdown">
+            <a href="${route}#faq" data-sky="navFaq">FAQ</a>
+            <a href="${route}#community" data-sky="navCommunity">Community</a>
+            <a href="${route}#contact" data-sky="contact">Contact</a>
+          </div>
+        </details>
+        <a class="sky-nav-link sky-story-link" href="${route}#about" data-sky="navStory">Our Story</a>
+        <a class="sky-mobile-apply" data-application-link target="_blank" rel="noopener noreferrer" data-sky="applyNow">Apply Now</a>
+      </nav>
+    </header>`;
+    return document.getElementById('site-header');
+  }
+
+  window.OaktownSkyHeader = {create, readLanguage, mount(header, app, properties, applicationUrl) {
     const navigation = header.querySelector('.sky-navigation');
     const menu = header.querySelector('#menu-button');
     const disclosures = [...navigation.querySelectorAll('.sky-disclosure')];
@@ -23,21 +88,22 @@
     let travel = 0;
     let hoveringHeader = false;
 
-    for (const property of properties) {
-      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(property.slug)) continue;
-      const link = document.createElement('a');
-      link.href = '#home/' + property.slug;
-      link.textContent = labelText(property.name);
-      titles.append(link);
-    }
+    const panels = new Map(disclosures.map(details => [details, details.querySelector('.sky-dropdown')]));
     header.querySelector('[data-application-link]').href = applicationUrl;
-    const panels = new Map(disclosures.map(details => {
-      const panel = details.querySelector('.sky-dropdown');
-      panel.querySelectorAll('a').forEach((link, index) => {
-        link.style.setProperty('--sky-item', Math.min(index, 6));
+
+    function setProperties(list) {
+      const links = list.filter(property => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(property.slug)).map(property => {
+        const link = document.createElement('a');
+        link.href = (app.id === 'app' ? '' : '/') + '#home/' + property.slug;
+        link.textContent = labelText(property.name);
+        return link;
       });
-      return [details, panel];
-    }));
+      titles.replaceChildren(...links);
+      for (const panel of panels.values()) {
+        panel.querySelectorAll('a').forEach((link, index) => link.style.setProperty('--sky-item', Math.min(index, 6)));
+      }
+    }
+    setProperties(properties);
 
     const openDisclosure = () => disclosures.find(details => details.open);
     const mobileOpen = () => navigation.hasAttribute('data-mobile-open');
@@ -164,12 +230,16 @@
     reduced.addEventListener('change', schedule);
     new MutationObserver(schedule).observe(document.documentElement, {attributes:true, attributeFilter:['class']});
 
-    return {update(t) {
-      translate = t;
+    return {setProperties, update(language) {
+      translate = key => labels[language][key];
+      header.querySelector('[data-application-link]').hidden = app.classList.contains('signature-property') &&
+        app.nextElementSibling?.hasAttribute('data-contact-only');
+      translateLabels(header, language);
+      header.querySelector('#language-switch').textContent = language === 'es' ? 'ES / EN' : 'EN / ES';
       opening = app.querySelector('.cinematic-hero, .signature-property > .page-intro');
       photographic = opening?.matches('.cinematic-hero, [data-photographic-header]');
       for (const link of navigation.querySelectorAll('a[href^="#"]')) {
-        if (link.hash === location.hash) link.setAttribute('aria-current', link.hash.startsWith('#home/') ? 'page' : 'location');
+        if (link.hash && link.hash === location.hash) link.setAttribute('aria-current', link.hash.startsWith('#home/') ? 'page' : 'location');
         else link.removeAttribute('aria-current');
       }
       showMobile(false);
@@ -180,5 +250,39 @@
         requestAnimationFrame(() => requestAnimationFrame(() => { header.dataset.motionReady = ""; }));
       }
     }};
+  }, standalone(root, onLanguage) {
+    const data = window.OAKTOWN_DATA;
+    const header = create('/');
+    const controller = this.mount(header, root, [], data.applicationUrl);
+    let language = readLanguage();
+
+    function update() {
+      document.documentElement.lang = language;
+      translateLabels(document, language);
+      controller.update(language);
+      onLanguage(language, key => labels[language][key]);
+    }
+
+    header.querySelector('#language-switch').addEventListener('click', () => {
+      language = language === 'en' ? 'es' : 'en';
+      try { localStorage.setItem('oaktown-language', language); } catch {}
+      update();
+    });
+    addEventListener('pageshow', event => {
+      if (!event.persisted) return;
+      const saved = readLanguage();
+      if (saved !== language) { language = saved; update(); }
+    });
+    window.OaktownContent.load(data).then(() => controller.setProperties(data.properties));
+    update();
   }};
+
+  const missing = document.querySelector('[data-sky-error]');
+  if (missing) {
+    let cleanup = () => {};
+    window.OaktownSkyHeader.standalone(missing, (_, t) => {
+      cleanup();
+      cleanup = window.OaktownEffects.mount(missing, {t});
+    });
+  }
 })();

@@ -6,7 +6,7 @@
   if(privatePreview){if(!await privatePreview.load(DATA))return;}
   else await window.OaktownContent.load(DATA);
   const app = document.getElementById('app');
-  const header = document.getElementById('site-header');
+  const header = privatePreview ? document.getElementById('site-header') : window.OaktownSkyHeader.create();
   const menu = document.getElementById('menu-button');
   const mobileNav = document.getElementById('mobile-nav');
   const langButton = document.getElementById('language-switch');
@@ -517,12 +517,12 @@
     document.documentElement.lang=language;
     document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n)});
     document.querySelectorAll('[data-i18n-aria]').forEach(el=>el.setAttribute('aria-label',t(el.dataset.i18nAria)));
-    langButton.textContent=language==='en'?'EN / ES':'ES / EN';
+    if(!skyHeader)langButton.textContent=language==='en'?'EN / ES':'ES / EN';
     const mobileInquiry=document.getElementById('mobile-inquiry');
     mobileInquiry.href=p?showingUrl(p):'sms:+15025001070';
     mobileInquiry.textContent=p?.contactOnly?(language==='es'?'Consultar novedades':'Ask for updates'):t(p?'availability':'textUs');
     mobileInquiry.parentElement.toggleAttribute('data-contact-only',!!p?.contactOnly);
-    if(skyHeader)skyHeader.update(t);
+    if(skyHeader)skyHeader.update(language);
     else closeMenu();
     onScroll();
     if(!restore)rememberView();
@@ -631,6 +631,11 @@
   window.addEventListener('pagehide',()=>{stopCardSlideshow();clearTimeout(viewSaveTimer);rememberView();});
   window.addEventListener('popstate',()=>{if(location.hash===renderedHash)routedDraw();});
   window.addEventListener('hashchange',routedDraw);
+  if (skyHeader) window.addEventListener('pageshow', event => {
+    if (!event.persisted) return;
+    const saved = window.OaktownSkyHeader.readLanguage();
+    if (saved !== language) { language = saved; draw(true); }
+  });
   window.addEventListener('scroll',onScroll,{passive:true});
   document.getElementById('year').textContent=new Date().getFullYear();
   privatePreview?.onUpdate(()=>{routeGeneration++;activeTransition?.skipTransition();clearTransitionNames();language=privatePreview.language;draw(true);});

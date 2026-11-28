@@ -1,5 +1,6 @@
 # Phase 4B step 2 — FELIX
 
+Shared navigation is implemented on rental, vacation and 404 documents. NEXT STEP: verify hosted links, cross-page preferences and all six openings. Heartbeat 2026-11-28T07:16:56Z, expires 2026-11-28T07:46:56Z.
 Claimed 2026-11-28T07:13:58Z, expires 2026-11-28T07:43:58Z. Base PR #34 at b483547. NEXT STEP: extract the approved header and verify route behavior.
 
 # Phase 4B step 1 ready for owner review / FELIX released

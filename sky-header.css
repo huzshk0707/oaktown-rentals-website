@@ -1,5 +1,5 @@
 /* Phase 2E. The header sits directly above the photographed hero stage. */
-body.rental-site .site-header.sky-header {
+body:is(.rental-site, .mint-page, .missing-page) .site-header.sky-header {
   --sky-ink: #30362c;
   --sky-accent: #475a37;
   --sky-paper: #f7f4ed;
@@ -16,10 +16,10 @@ body.rental-site .site-header.sky-header {
   box-shadow: none;
   transition: none;
 }
-body.rental-site .sky-header[data-motion-ready] {
+body:is(.rental-site, .mint-page, .missing-page) .sky-header[data-motion-ready] {
   transition: background-color var(--sky-time), transform var(--sky-time) ease;
 }
-body.rental-site .sky-header[data-surface="sky"] { background: transparent; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header[data-surface="sky"] { background: transparent; }
 .sky-header[data-surface="sky"]::before {
   content: '';
   position: absolute;
@@ -29,32 +29,32 @@ body.rental-site .sky-header[data-surface="sky"] { background: transparent; }
   pointer-events: none;
   background: linear-gradient(180deg, #f7f4eddf 0, #f7f4edb8 63px, #f7f4ed53 112px, transparent 194px);
 }
-body.rental-site .sky-header[data-surface="ivory"] { box-shadow: inset 0 -1px var(--sky-line); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header[data-surface="ivory"] { box-shadow: inset 0 -1px var(--sky-line); }
 .sky-header.sky-header-away:not(:focus-within) { transform: translateY(-101%); }
-body.rental-site .sky-header .wordmark { display: grid; place-items: center; background: none; }
-body.rental-site .sky-header .brand-logo { width: clamp(122px, 11vw, 180px); }
-body.rental-site .sky-header .header-actions {
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .wordmark { display: grid; place-items: center; background: none; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .brand-logo { width: clamp(122px, 11vw, 180px); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .header-actions {
   order: 2;
   gap: 9px;
   padding-inline-start: 12px;
   border-inline-start: 1px solid #30362c38;
 }
-body.rental-site .sky-header :is(.language-switch, .motion-toggle) { color: var(--sky-ink); }
-body.rental-site .sky-header .language-switch { font-size: 11px; min-width: 44px; }
-body.rental-site .sky-header .motion-toggle { font-size: 0; min-width: 44px; width: 44px; padding: 0; }
-body.rental-site .sky-header .motion-toggle::before { margin: 0; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header :is(.language-switch, .motion-toggle) { color: var(--sky-ink); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .language-switch { font-size: 11px; min-width: 44px; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .motion-toggle { font-size: 0; min-width: 44px; width: 44px; padding: 0; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .motion-toggle::before { margin: 0; }
 @media (min-width: 1280px) {
-  body.rental-site .sky-header .motion-toggle {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .motion-toggle {
     font-size: 11px;
     min-width: 72px;
     width: auto;
     padding-inline: 6px;
     white-space: nowrap;
   }
-  body.rental-site .sky-header .motion-toggle::before { margin-inline-end: 6px; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .motion-toggle::before { margin-inline-end: 6px; }
 }
-body.rental-site .sky-header .menu-button span { background: currentColor; }
-body.rental-site .sky-header .menu-button {
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .menu-button span { background: currentColor; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .menu-button {
   color: var(--sky-ink);
   width: 44px;
   height: 44px;
@@ -63,13 +63,13 @@ body.rental-site .sky-header .menu-button {
 .sky-header .menu-button span { transition: transform 200ms; }
 .sky-header .menu-button[aria-expanded="true"] span:first-child { transform: translateY(4.5px) rotate(45deg); }
 .sky-header .menu-button[aria-expanded="true"] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
-body.rental-site .sky-header .sky-navigation {
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation {
   flex: none;
   margin: 0 0 0 auto;
   gap: clamp(14px, 2.25vw, 44px);
   align-items: center;
 }
-body.rental-site .sky-header :is(.sky-disclosure summary, .sky-nav-link) {
+body:is(.rental-site, .mint-page, .missing-page) .sky-header :is(.sky-disclosure summary, .sky-nav-link) {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -78,6 +78,7 @@ body.rental-site .sky-header :is(.sky-disclosure summary, .sky-nav-link) {
   white-space: nowrap;
   font: 500 clamp(14px, 1.08vw, 17px)/1.4 'DM Sans', sans-serif;
   letter-spacing: .005em;
+  text-transform: none;
   color: var(--sky-ink);
   transition: color var(--sky-time);
 }
@@ -98,9 +99,9 @@ body.rental-site .sky-header :is(.sky-disclosure summary, .sky-nav-link) {
 }
 .sky-navigation :is(summary, .sky-nav-link):is(:hover, :focus-visible)::after,
 .sky-navigation .sky-disclosure[open] summary::after { transform: scaleX(1); }
-body.rental-site .sky-header :is(summary, .sky-nav-link):is(:hover, :focus-visible),
-body.rental-site .sky-header .sky-disclosure[open] summary { color: var(--sky-accent); }
-body.rental-site .sky-header .sky-disclosure > .sky-dropdown {
+body:is(.rental-site, .mint-page, .missing-page) .sky-header :is(summary, .sky-nav-link):is(:hover, :focus-visible),
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure[open] summary { color: var(--sky-accent); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure > .sky-dropdown {
   position: absolute;
   inset: 100% auto auto 0;
   width: max-content;
@@ -120,7 +121,7 @@ body.rental-site .sky-header .sky-disclosure > .sky-dropdown {
   transition: opacity 160ms ease-out, transform 180ms ease-out;
 }
 .sky-disclosure:not([open]) .sky-dropdown { pointer-events: none; }
-body.rental-site .sky-header .sky-disclosure[open] > .sky-dropdown {
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure[open] > .sky-dropdown {
   opacity: 1;
   transform: none;
 }
@@ -132,7 +133,7 @@ body.rental-site .sky-header .sky-disclosure[open] > .sky-dropdown {
   }
 }
 @starting-style {
-  body.rental-site .sky-header .sky-disclosure[open] > .sky-dropdown {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure[open] > .sky-dropdown {
     opacity: 0;
     transform: translateY(4px);
   }
@@ -146,12 +147,12 @@ body.rental-site .sky-header .sky-disclosure[open] > .sky-dropdown {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: none; }
 }
-body.rental-site .sky-header .resources-menu > .sky-dropdown { inset-inline: auto 0; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .resources-menu > .sky-dropdown { inset-inline: auto 0; }
 @keyframes sky-dropdown-in {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
-body.rental-site .sky-header .sky-dropdown a {
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-dropdown a {
   display: flex;
   align-items: center;
   min-height: 40px;
@@ -162,7 +163,7 @@ body.rental-site .sky-header .sky-dropdown a {
   letter-spacing: 0;
   overflow-wrap: anywhere;
 }
-body.rental-site .sky-header .sky-dropdown a:hover { background: #e7eadc; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-dropdown a:hover { background: #e7eadc; }
 .sky-dropdown a[aria-current] { font-weight: 700; background: #e7eadc; }
 .sky-dropdown .sky-browse { border-bottom: 1px solid var(--sky-line); }
 .sky-header :is(a, button, summary):focus-visible { outline: 2px solid #3d552d; outline-offset: 3px; }
@@ -204,10 +205,10 @@ body.rental-site:has(.sky-header) .cinematic-actions .cinematic-secondary { back
 }
 body.rental-site:has(.sky-header) .cinematic-actions :focus-visible { outline: 2px solid #fff8e8; outline-offset: 4px; }
 @media (max-width: 960px) {
-  body.rental-site .site-header.sky-header { justify-content: space-between; }
-  body.rental-site .sky-header .header-actions { border: 0; padding: 0; gap: 6px; }
-  body.rental-site .sky-header .sky-navigation { display: none; }
-  body.rental-site .sky-header .sky-navigation[data-mobile-open] {
+  body:is(.rental-site, .mint-page, .missing-page) .site-header.sky-header { justify-content: space-between; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .header-actions { border: 0; padding: 0; gap: 6px; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation { display: none; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation[data-mobile-open] {
     display: flex;
     position: absolute;
     inset: 100% 0 auto;
@@ -222,7 +223,7 @@ body.rental-site:has(.sky-header) .cinematic-actions :focus-visible { outline: 2
     border-block: 1px solid var(--sky-line);
     animation: sky-dropdown-in 200ms ease-out both;
   }
-  body.rental-site .sky-header .sky-disclosure > .sky-dropdown {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure > .sky-dropdown {
     position: static;
     width: auto;
     max-width: none;
@@ -232,12 +233,12 @@ body.rental-site:has(.sky-header) .cinematic-actions :focus-visible { outline: 2
     margin-inline-start: 3px;
     box-shadow: none;
   }
-  body.rental-site .sky-header :is(summary, .sky-nav-link) {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header :is(summary, .sky-nav-link) {
     justify-content: space-between;
     min-height: 46px;
     font-size: 16px;
   }
-  body.rental-site .sky-header .sky-mobile-apply {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-mobile-apply:not([hidden]) {
     display: flex;
     align-items: center;
     align-self: flex-start;
@@ -276,8 +277,8 @@ body.rental-site:has(.sky-header) .cinematic-actions :focus-visible { outline: 2
       linear-gradient(90deg, #112a2063 0%, #112a2040 52%, transparent 85%),
       linear-gradient(0deg, #112a20f3 0%, #112a20c0 39%, #112a2010 78%);
   }
-  body.rental-site .site-header.sky-header { padding-inline: 18px; }
-  body.rental-site .sky-header .brand-logo { width: 110px; }
+  body:is(.rental-site, .mint-page, .missing-page) .site-header.sky-header { padding-inline: 18px; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .brand-logo { width: 110px; }
   body.rental-site:has(.sky-header) .cinematic-actions .signature-button { padding-inline: 12px; font-size: 11px; gap: 5px; }
   body.rental-site:has(.sky-header) .cinematic-actions .signature-button .icon { width: 16px; height: 16px; }
 }
@@ -337,3 +338,41 @@ html.motion-off body.rental-site:has(.sky-header) :is(.signature-property .prope
 @media (prefers-reduced-motion: reduce) {
   body.rental-site:has(.sky-header) :is(.signature-property .property-action, .signature-property .listing-dock, :where(.signature-property + .mobile-actions) a) { transition: none; }
 }
+
+html:has(:is(.mint-page, .missing-page)) { color-scheme: only light; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation { display: flex; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .menu-button { display: none; }
+:is(.mint-page, .missing-page) .sky-header :is(.language-switch, .motion-toggle) { min-height: 44px; }
+:is(.mint-page, .missing-page) .sky-header .language-switch { letter-spacing: .04em; white-space: nowrap; }
+:is(.mint-page, .missing-page) .sky-header .icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (max-width: 960px) {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation:not([data-mobile-open]) { display: none; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .menu-button { display: block; }
+}
+@media (max-width: 850px) {
+  :is(.mint-page, .missing-page) .sky-header .motion-toggle::before {
+    width: 12px;
+    height: 14px;
+    border: solid currentColor;
+    border-width: 0 3px;
+    border-radius: 0;
+    background: none;
+  }
+  :is(.mint-page, .missing-page) .sky-header .motion-toggle[aria-pressed="false"]::before {
+    width: 0;
+    height: 0;
+    border-width: 7px 0 7px 12px;
+    border-color: transparent transparent transparent currentColor;
+    outline: 0;
+  }
+}
+.missing-page { background: #f6f3e9; color: #082e22; }
+.missing-page main { padding: calc(var(--listing-header-height) + 64px) 24px 64px; text-align: center; }
+.missing-page h1 { font: 400 70px/1.1 var(--serif); margin: 0; }
+.missing-page main a { text-decoration: underline; }
