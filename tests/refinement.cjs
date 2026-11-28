@@ -32,6 +32,6 @@ for(const width of [320,390,768,1024,1920]){
  for(const mode of ['grid','gallery']){await p.locator('[data-layout-button="'+mode+'"]').click();assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.equal(await p.locator('.property-card').count(),6);}
  passed.push(width+'px grid/gallery no document overflow');await p.close();
 }
-const p=await b.newPage({reducedMotion:'reduce'});await p.goto(base);await p.locator('.cinematic-hero').waitFor();await p.evaluate(()=>scrollTo({top:600,behavior:'instant'}));await p.waitForTimeout(600);await p.reload();await p.locator('.cinematic-hero').waitFor();await p.waitForTimeout(150);assert.ok(Math.abs(await p.evaluate(()=>scrollY)-600)<4);passed.push('root refresh preserves an intentional reading position');await p.close();
+const p=await b.newPage({reducedMotion:'reduce'});await p.goto(base);await p.locator('.cinematic-hero').waitFor();await p.evaluate(()=>scrollTo({top:600,behavior:'instant'}));await p.waitForFunction(()=>history.state?.oaktownView?.y===600);await p.reload();await p.locator('.cinematic-hero').waitFor();await p.waitForFunction(()=>Math.abs(scrollY-600)<4);passed.push('root refresh preserves an intentional reading position');await p.close();
 console.log(JSON.stringify({passed,failures:[]},null,2));
 }finally{await b.close()}})().catch(e=>{console.error(e);process.exitCode=1});

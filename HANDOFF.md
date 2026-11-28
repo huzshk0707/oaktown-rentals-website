@@ -1,11 +1,12 @@
 # Phase 2E — Seamless Sky Header
 
-- Ravi owns `ravi/seamless-sky-header` and draft PR #30. Heartbeat 2026-11-28T02:17:40+00:00. Claim expires 2026-11-28T02:47:40+00:00.
-- Reviewed base `c4a789b773af79293fff9819909c9a98948fa851` on `integration/oaktown-signature`. Feature PR targets integration and stays draft. Release PR #29 stays separate.
-- Scope: original logo, transparent Afterglow header, catalogue disclosures, hero CTAs and light scroll state. Existing publication holds and staging boundaries apply.
-- Opening baseline captured. The original-derived transparent mark, catalogue disclosures, hero CTAs and direction-sensitive light header are implemented. No separate Lofts route exists. Shared hosted baseline attempt returned `net::ERR_TUNNEL_CONNECTION_FAILED`.
-- Dedicated navigation suite added. Updated the old single-CTA and top-level navigation test assumptions for the new markup. First runs exposed expected contract changes and opening-paint timing. Hosted grant did not complete.
-- NEXT STEP: finish dedicated/existing reruns, capture and visually inspect review assets, then verify Cloudflare status and release the claim.
+- Ravi completed the feature and released the implementation claim at 2026-11-28T02:25:38+00:00. Feature branch `ravi/seamless-sky-header`, [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30) targeting `integration/oaktown-signature` at `c4a789b`. Combined PR #29 stays separate.
+- Previous pushed checkpoint `3f08773`. This final review commit follows it. GitHub holds the exact head. Afterglow photo/camera and the six records, 38 imported photos, 68 selections, collection, CMS, private preview and booking holds preserved.
+- The opening has the transparent original-derived logo header, four desktop destinations, dynamic public catalogue disclosures and two hero CTAs. It becomes ivory below the hero. Direction behavior applies to desktop home with motion enabled and keeps open/focused menus reachable. Lofts & Nirvana currently links only to verified Lobster Nirvana.
+- Local Node 24/Chromium verification passed. 25 dedicated checks, existing browser/design/motion/gallery/history/CMS/admin/Mint regressions and all real galleries. 26 after and two before images, 12.04-second recording and 43 zero-violation axe scans. Verified video playback. [Exact evidence](docs/oaktown-signature/phase2e/README.md).
+- Cloudflare alias https://ravi-seamless-sky-header-oaktown.rentals10.workers.dev/. Shared baseline attempt failed at initial navigation with `net::ERR_TUNNEL_CONNECTION_FAILED`. New hostname grant timed out. See PR #30 for build status. Direct hosted hashes/isolation remain pending.
+- NEXT STEP: owner opens the feature preview at desktop size, checks Our Homes and all three hero scenes against the before/after evidence, and records acceptance or specific revisions on PR #30 before authorizing integration.
+
 
 ---
 

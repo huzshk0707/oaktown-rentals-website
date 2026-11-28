@@ -129,6 +129,7 @@
         surface = nextSurface;
         header.dataset.surface = surface;
         reveal();
+        return;
       }
       if (!hero || bottom > -110 || !desktop.matches || !motionOn() || openDisclosure() ||
           mobileOpen() || hoveringHeader || header.contains(document.activeElement)) {

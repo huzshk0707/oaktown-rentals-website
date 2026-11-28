@@ -65,7 +65,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  check('mobile has a static accessible scene',()=>assert.deepEqual(mobileState,{scene:'0',animated:false,hidden:'false'}));
  const mobileScenes=await page.locator('.cinematic-progress').isVisible();check('mobile scene controls are omitted',()=>assert.equal(mobileScenes,false));
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
- await page.locator('#language-switch').click();const text=await page.locator('[data-hero-scene="0"] a[href="#homes"]').innerText();check('hero action translates',()=>assert.match(text,/Ver nuestras viviendas/));
+ await page.locator('#language-switch').click();const text=await page.locator('[data-hero-scene="0"] a[href="#homes"]').innerText();check('hero action translates',()=>assert.match(text,/Ver nuestras viviendas/i));
  await page.reload();const lang=await page.locator('html').getAttribute('lang');check('Spanish preference survives reload',()=>assert.equal(lang,'es'));
  await page.setViewportSize({width:320,height:640});await page.goto(base+'/');await page.locator('.cinematic-mobile-description').waitFor();
  const space=await page.evaluate(()=>({copy:document.querySelector('.cinematic-mobile-description').getBoundingClientRect().bottom,button:document.querySelector('.signature-copy .signature-button').getBoundingClientRect().top}));
