@@ -1,0 +1,1450 @@
+{
+  "method": "Computed text color vs every background pixel in the rendered text rectangles, with glyphs transparent and layout unchanged. Ratios rounded down.",
+  "caseCount": 32,
+  "summary": {
+    "label": {
+      "label": "label",
+      "selector": ".panorama-copy > .eyebrow",
+      "target": 4.5,
+      "color": "rgb(226, 210, 172)",
+      "minimumRatio": 6.06,
+      "width": 1920,
+      "height": 1080,
+      "language": "es",
+      "expanded": true
+    },
+    "headline": {
+      "label": "headline",
+      "selector": "#about-title",
+      "target": 3,
+      "color": "rgb(246, 243, 233)",
+      "minimumRatio": 5.76,
+      "width": 1024,
+      "height": 768,
+      "language": "es",
+      "expanded": true
+    },
+    "story": {
+      "label": "story",
+      "selector": ".panorama-copy > p",
+      "target": 4.5,
+      "color": "rgb(246, 243, 233)",
+      "minimumRatio": 7.53,
+      "width": 1024,
+      "height": 768,
+      "language": "en",
+      "expanded": true
+    },
+    "disclosure": {
+      "label": "disclosure",
+      "selector": ".story-more summary",
+      "target": 4.5,
+      "color": "rgb(246, 243, 233)",
+      "minimumRatio": 13.28,
+      "width": 320,
+      "height": 640,
+      "language": "en",
+      "expanded": false
+    },
+    "expanded story": {
+      "label": "expanded story",
+      "selector": ".story-more > p",
+      "target": 4.5,
+      "color": "rgb(246, 243, 233)",
+      "minimumRatio": 13.28,
+      "width": 320,
+      "height": 640,
+      "language": "en",
+      "expanded": true
+    },
+    "contact link": {
+      "label": "contact link",
+      "selector": ".story-more .text-link",
+      "target": 4.5,
+      "color": "rgb(246, 243, 233)",
+      "minimumRatio": 12.94,
+      "width": 761,
+      "height": 900,
+      "language": "en",
+      "expanded": true
+    }
+  },
+  "cases": [
+    {
+      "width": 320,
+      "height": 640,
+      "language": "en",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.59
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.24
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "language": "en",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.59
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.24
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "language": "es",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.43
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.1
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "language": "es",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.43
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.1
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "en",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.68
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 10.78
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "en",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.68
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 10.78
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "es",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.68
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.29
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "es",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.68
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.29
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 760,
+      "height": 900,
+      "language": "en",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.57
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.67
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 760,
+      "height": 900,
+      "language": "en",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.57
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.67
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 760,
+      "height": 900,
+      "language": "es",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.88
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.67
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 760,
+      "height": 900,
+      "language": "es",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.88
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.67
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 761,
+      "height": 900,
+      "language": "en",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.91
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.6
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 11.5
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 761,
+      "height": 900,
+      "language": "en",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.34
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 7.88
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.14
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.94
+        }
+      ]
+    },
+    {
+      "width": 761,
+      "height": 900,
+      "language": "es",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.28
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.17
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 11.52
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 761,
+      "height": 900,
+      "language": "es",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.15
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 7.6
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.48
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.94
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "language": "en",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.94
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 10.21
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 11.52
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "language": "en",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.29
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.1
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.35
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.95
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "language": "es",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.67
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.44
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 11.56
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "language": "es",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.81
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 7.99
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.7
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.95
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "language": "en",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.39
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.49
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 11.71
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "language": "en",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.36
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 6.54
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 7.53
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.94
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "language": "es",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 7.39
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.76
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 11.87
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "language": "es",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.16
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 5.76
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.06
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.94
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "language": "en",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.69
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.39
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 11.91
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "language": "en",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.4
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 7.67
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.27
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.1
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "language": "es",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.42
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 8.27
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 11.91
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "language": "es",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.2
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 7.53
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.35
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.1
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "language": "en",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 8.17
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.15
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.05
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "language": "en",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.08
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 7.65
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.27
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.08
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "language": "es",
+      "expanded": false,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.52
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.03
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 12.05
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "language": "es",
+      "expanded": true,
+      "sections": [
+        {
+          "label": "label",
+          "selector": ".panorama-copy > .eyebrow",
+          "target": 4.5,
+          "color": "rgb(226, 210, 172)",
+          "minimumRatio": 6.06
+        },
+        {
+          "label": "headline",
+          "selector": "#about-title",
+          "target": 3,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 7.52
+        },
+        {
+          "label": "story",
+          "selector": ".panorama-copy > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 9.15
+        },
+        {
+          "label": "disclosure",
+          "selector": ".story-more summary",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "expanded story",
+          "selector": ".story-more > p",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.28
+        },
+        {
+          "label": "contact link",
+          "selector": ".story-more .text-link",
+          "target": 4.5,
+          "color": "rgb(246, 243, 233)",
+          "minimumRatio": 13.08
+        }
+      ]
+    }
+  ]
+}

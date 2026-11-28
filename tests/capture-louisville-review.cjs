@@ -18,8 +18,8 @@ const out = resolve('docs/oaktown-signature/phase3');
           image.loading = 'eager';
           image.src = `/docs/oaktown-signature/phase3/review/${source.reviewFile}`;
           image.style.objectPosition = mobile ? source.mobileCrop : source.desktopCrop;
-          // The actual site credits its King of Hearts photo. Only this source swap uses the attribution-free license.
-          section.querySelector('.signature-credit').hidden=true;
+          // Older review checkpoints credit the previous image. Remove that credit only after the review swap.
+          section.querySelector('.signature-credit')?.remove();
         },{source,mobile:width<600});
         await page.locator('#about img').evaluate(img=>img.decode());
         const sectionHeight = await page.locator('#about').evaluate(section => {

@@ -1,9 +1,9 @@
-# Phase 3 final refinement / FELIX
+# Phase 3 final refinement / FELIX active
 
-- FELIX owns the approved final refinement. UTC heartbeat 2026-11-28T03:31:50+00:00. Claim expires 2026-11-28T04:01:50+00:00.
-- Continue draft PR #31 on `felix/homepage-completion` at `ac1a88acfab99840a55632831f5aefd95517ee05`, targeting `integration/oaktown-signature` at `4f5c3ea`.
-- Owner approved the section order, full-screen Louisville layout and photo Option A. Scope is the Louisville image and overlay, browser evidence, contrast and hosted verification. Ravi owns integration after owner authorization.
-- NEXT STEP: promote the documented Option A review file to the Louisville homepage, remove the superseded on-page credit, lighten the gradient and verify readability.
+- Owner FELIX. UTC heartbeat 2026-11-28T03:38:36+00:00. Claim expires 2026-11-28T04:08:36+00:00.
+- Draft PR #31 on `felix/homepage-completion`, based on `integration/oaktown-signature` at `4f5c3ea`. Owner assigned this refinement from `ac1a88a`. Ownership checkpoint `4f01f7a`.
+- Option A is the exact approved Pexels review file. The old photo and credit left the homepage in the same template change. The lighter base overlay and desktop shade retained under the copy passed contrast across eight widths, both languages and both disclosure states. Ten local regression commands passed.
+- NEXT STEP: finish the final evidence index, verify the updated Cloudflare feature branch preview and release to owner review. Ravi handles integration after separate authorization. Keep both PRs draft.
 
 ---
 

@@ -1,11 +1,12 @@
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const { join, resolve } = require('node:path');
-const { writeFileSync } = require('node:fs');
+const { mkdirSync, writeFileSync } = require('node:fs');
 
 const before = process.argv.includes('--before');
 const base = process.env.OAKTOWN_BASE_URL || 'http://127.0.0.1:8946';
-const out = resolve('docs/oaktown-signature/phase3');
+const out = resolve(process.env.OAKTOWN_EVIDENCE_DIR || 'docs/oaktown-signature/phase3/final');
+mkdirSync(out, {recursive:true});
 const phase = before ? 'before' : 'after';
 const axePath = process.env.OAKTOWN_AXE_PATH;
 const scans = [];
@@ -75,11 +76,11 @@ async function colors(browser) {
         assert.deepEqual(sections.slice(-3),['signature-story','signature-journey','signature-vacation']);
         await page.goto(`${base}/#about`);
         const section = page.locator('#about');
-        await section.locator('img').evaluate(img => {img.loading='eager'});
-        await page.waitForFunction(() => document.querySelector('#about img').naturalWidth>0);
+        await section.locator('img').evaluate(async img => {img.loading='eager';await img.decode()});
         await settle(page);
         if (width>=1000) assert.ok((await section.boundingBox()).height>=height);
-        assert.equal(await section.locator('.signature-credit a').count(),2);
+        assert.equal(await section.locator('img').getAttribute('src'),'/assets/louisville/louisville-bridge-skyline.webp');
+        assert.equal(await section.locator('.signature-credit').count(),0);
         await capture(page,`${name}-louisville`);
         await section.locator('summary').click();
         assert.equal(await section.locator('details').getAttribute('open'),'');
