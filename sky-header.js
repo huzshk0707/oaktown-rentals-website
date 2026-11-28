@@ -30,6 +30,13 @@
       titles.append(link);
     }
     header.querySelector('[data-application-link]').href = applicationUrl;
+    const panels = new Map(disclosures.map(details => {
+      const panel = details.querySelector('.sky-dropdown');
+      panel.querySelectorAll('a').forEach((link, index) => {
+        link.style.setProperty('--sky-item', Math.min(index, 6));
+      });
+      return [details, panel];
+    }));
 
     const openDisclosure = () => disclosures.find(details => details.open);
     const mobileOpen = () => navigation.hasAttribute('data-mobile-open');
@@ -43,11 +50,15 @@
     function showDisclosure(next, fromClick = false) {
       clearTimeout(leaveTimer);
       const previous = openDisclosure();
-      if (previous && previous !== next && previous.querySelector('.sky-dropdown').contains(document.activeElement)) {
+      if (previous && previous !== next && panels.get(previous).contains(document.activeElement)) {
         // Never strand keyboard focus in a disclosure closed by the pointer.
         previous.querySelector('summary').focus({preventScroll:true});
       }
-      for (const details of disclosures) details.open = details === next;
+      for (const details of disclosures) {
+        const open = details === next;
+        details.open = open;
+        panels.get(details).inert = !open;
+      }
       pinned = fromClick ? next : null;
       if (next) reveal();
     }
@@ -62,6 +73,7 @@
 
     for (const details of disclosures) {
       const summary = details.querySelector('summary');
+      panels.get(details).inert = !details.open;
       summary.addEventListener('click', event => {
         event.preventDefault();
         showDisclosure(details.open && pinned === details ? null : details, true);

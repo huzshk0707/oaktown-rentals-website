@@ -28,7 +28,7 @@ mkdirSync(out,{recursive:true});
     return p;
   }
   async function capture(p,name) {
-    await p.waitForTimeout(260);
+    await p.waitForTimeout(360);
     const state=await p.evaluate(()=>({
       lang:document.documentElement.lang, viewport:[innerWidth,innerHeight],
       surface:document.querySelector('.sky-header').dataset.surface,
@@ -74,7 +74,15 @@ mkdirSync(out,{recursive:true});
         await scan(p,'mobile-properties-'+w+'-'+lang);
       }
       if(w===1440&&lang==='en'&&!reduce) {
-        for(const [n,i] of [['homes-dropdown',0],['lofts-nirvana-dropdown',1],['resources-dropdown',2]]) {
+        const actions=p.locator('.hero-opening-actions');
+        await actions.locator('a').first().hover();
+        await p.waitForTimeout(360);
+        await actions.screenshot({path:resolve(out,'after-button-hover.png')});
+        await actions.locator('a').last().hover();
+        await p.waitForTimeout(360);
+        await actions.screenshot({path:resolve(out,'after-apply-hover.png')});
+        await p.mouse.move(580,230);
+        for(const [n,i] of [['homes-dropdown',0],['resources-dropdown',1]]) {
           await p.locator('.sky-disclosure').nth(i).locator('summary').hover();
           await capture(p,n);
           await scan(p,n);
@@ -100,7 +108,13 @@ mkdirSync(out,{recursive:true});
     const p=await context.newPage();
     await ready(p);
     await p.waitForTimeout(600);
-    for(const i of [0,1,2]){
+    for(const i of [0,1]){
+      await p.locator('.hero-opening-actions a').nth(i).hover();
+      await p.waitForTimeout(650);
+    }
+    await p.mouse.move(620,240);
+    await p.waitForTimeout(220);
+    for(const i of [0,1]){
       await p.locator('.sky-disclosure').nth(i).locator('summary').hover();
       await p.waitForTimeout(i===0?1300:660);
       await p.mouse.move(620,240);

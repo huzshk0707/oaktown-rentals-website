@@ -87,7 +87,7 @@
   Object.assign(words.en, {
     cinematicConnection:'Well-cared-for homes across Greater Louisville.',
     cinematicDiscovery:'Explore our homes.', browseHomes:'Browse Our Homes', howToApply:'How to Apply',
-    browseAllHomes:'Browse All Homes', loftsNirvana:'Lofts & Nirvana', applyNow:'Apply Now',
+    browseAllHomes:'Browse All Homes', applyNow:'Apply Now',
     scrollExplore:'Scroll to explore', heroScenes:'Explore the three scenes',
     sceneWelcome:'Welcome', sceneConnection:'Connection', sceneDiscovery:'Discovery',
     afterglowReview:'AI-assisted design preview of 8216 Afterglow Drive'
@@ -95,7 +95,7 @@
   Object.assign(words.es, {
     cinematicConnection:'Viviendas bien cuidadas en el área metropolitana de Louisville.',
     cinematicDiscovery:'Explora nuestras viviendas.', browseHomes:'Ver nuestras viviendas', howToApply:'Cómo solicitar',
-    browseAllHomes:'Ver todas las viviendas', loftsNirvana:'Lofts y Nirvana', applyNow:'Solicitar ahora',
+    browseAllHomes:'Ver todas las viviendas', applyNow:'Solicitar ahora',
     scrollExplore:'Desliza para explorar', heroScenes:'Explora las tres escenas',
     sceneWelcome:'Bienvenida', sceneConnection:'Conexión', sceneDiscovery:'Descubre',
     afterglowReview:'Vista previa de diseño de 8216 Afterglow Drive con asistencia de IA'

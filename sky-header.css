@@ -69,7 +69,7 @@ body.rental-site .sky-header .sky-navigation {
   gap: clamp(14px, 2.25vw, 44px);
   align-items: center;
 }
-body.rental-site .sky-header :is(.sky-disclosure summary, .sky-story-link) {
+body.rental-site .sky-header :is(.sky-disclosure summary, .sky-nav-link) {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -86,7 +86,7 @@ body.rental-site .sky-header :is(.sky-disclosure summary, .sky-story-link) {
 .sky-disclosure summary::-webkit-details-marker { display: none; }
 .sky-disclosure summary .icon { width: 13px; height: 13px; transition: transform var(--sky-time); }
 .sky-disclosure[open] summary .icon { transform: rotate(180deg); }
-.sky-navigation :is(summary, .sky-story-link)::after {
+.sky-navigation :is(summary, .sky-nav-link)::after {
   content: '';
   position: absolute;
   inset: auto 0 4px;
@@ -96,9 +96,9 @@ body.rental-site .sky-header :is(.sky-disclosure summary, .sky-story-link) {
   transform-origin: left;
   transition: transform var(--sky-time) ease;
 }
-.sky-navigation :is(summary, .sky-story-link):is(:hover, :focus-visible)::after,
+.sky-navigation :is(summary, .sky-nav-link):is(:hover, :focus-visible)::after,
 .sky-navigation .sky-disclosure[open] summary::after { transform: scaleX(1); }
-body.rental-site .sky-header :is(summary, .sky-story-link):is(:hover, :focus-visible),
+body.rental-site .sky-header :is(summary, .sky-nav-link):is(:hover, :focus-visible),
 body.rental-site .sky-header .sky-disclosure[open] summary { color: var(--sky-accent); }
 body.rental-site .sky-header .sky-disclosure > .sky-dropdown {
   position: absolute;
@@ -115,9 +115,38 @@ body.rental-site .sky-header .sky-disclosure > .sky-dropdown {
   color: var(--sky-ink);
   background: var(--sky-paper);
   box-shadow: 0 6px 18px #222c2014;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 160ms ease-out, transform 180ms ease-out;
+}
+.sky-disclosure:not([open]) .sky-dropdown { pointer-events: none; }
+body.rental-site .sky-header .sky-disclosure[open] > .sky-dropdown {
+  opacity: 1;
+  transform: none;
+}
+/* Keep the closed panel painted briefly where native details transitions are supported.
+   JS makes its links inert immediately, so focus follows disclosure state. */
+@supports selector(details::details-content) {
+  .sky-disclosure:not([open])::details-content {
+    transition: content-visibility 180ms allow-discrete;
+  }
+}
+@starting-style {
+  body.rental-site .sky-header .sky-disclosure[open] > .sky-dropdown {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+.sky-disclosure[open] .sky-dropdown a {
+  animation: sky-link-in 160ms cubic-bezier(.22,.61,.36,1) backwards;
+  animation-delay: calc(30ms * var(--sky-item, 0));
+}
+.sky-disclosure[open] .sky-dropdown a:focus-visible { animation: none; }
+@keyframes sky-link-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
 }
 body.rental-site .sky-header .resources-menu > .sky-dropdown { inset-inline: auto 0; }
-.sky-disclosure[open] .sky-dropdown { animation: sky-dropdown-in 200ms ease-out both; }
 @keyframes sky-dropdown-in {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
@@ -146,22 +175,34 @@ body.rental-site:has(.sky-header) .cinematic-hero .signature-shade {
     linear-gradient(0deg, #14271fa6, transparent 30%);
 }
 body.rental-site:has(.sky-header) .cinematic-photo { object-position: 34% 50%; }
-body.rental-site .hero-opening-actions { gap: 12px; }
-body.rental-site .hero-opening-actions .signature-button {
+body.rental-site:has(.sky-header) .cinematic-copy .cinematic-actions { gap: 12px; }
+body.rental-site:has(.sky-header) .cinematic-actions .signature-button {
   min-height: 48px;
   padding: 11px 16px;
-  border-radius: 3px;
+  border-radius: 12px;
   border: 1px solid #aab992;
   font: 600 13px/1.25 'DM Sans', sans-serif;
   letter-spacing: .045em;
   text-transform: uppercase;
   gap: 10px;
+  transition: background-color 220ms cubic-bezier(.22,.61,.36,1),
+    color 220ms ease, border-color 220ms ease;
 }
-body.rental-site .hero-opening-actions .ivory { background: #a8ba8b; color: #26321f; }
-body.rental-site .hero-opening-actions .ivory:hover { background: #c3cfae; }
-body.rental-site .hero-opening-actions .cinematic-secondary { background: #192d22ae; color: #f7f4ed; }
-body.rental-site .hero-opening-actions .cinematic-secondary:hover { background: #233829; }
-body.rental-site .hero-opening-actions :focus-visible { outline: 2px solid #fff8e8; outline-offset: 4px; }
+body.rental-site:has(.sky-header) .cinematic-actions .ivory { background: #a8ba8b; color: #26321f; }
+body.rental-site:has(.sky-header) .cinematic-actions .cinematic-secondary { background: #192d22ae; color: #f7f4ed; }
+@media (hover: hover) {
+  body.rental-site:has(.sky-header) .cinematic-actions .ivory:hover {
+    background: #465c30;
+    border-color: #a8ba8b;
+    color: #f7f4ed;
+  }
+  body.rental-site:has(.sky-header) .cinematic-actions .cinematic-secondary:hover {
+    background: #f7f4ed;
+    border-color: #f7f4ed;
+    color: #30362c;
+  }
+}
+body.rental-site:has(.sky-header) .cinematic-actions :focus-visible { outline: 2px solid #fff8e8; outline-offset: 4px; }
 @media (max-width: 960px) {
   body.rental-site .site-header.sky-header { justify-content: space-between; }
   body.rental-site .sky-header .header-actions { border: 0; padding: 0; gap: 6px; }
@@ -191,7 +232,7 @@ body.rental-site .hero-opening-actions :focus-visible { outline: 2px solid #fff8
     margin-inline-start: 3px;
     box-shadow: none;
   }
-  body.rental-site .sky-header :is(summary, .sky-story-link) {
+  body.rental-site .sky-header :is(summary, .sky-nav-link) {
     justify-content: space-between;
     min-height: 46px;
     font-size: 16px;
@@ -237,11 +278,18 @@ body.rental-site .hero-opening-actions :focus-visible { outline: 2px solid #fff8
   }
   body.rental-site .site-header.sky-header { padding-inline: 18px; }
   body.rental-site .sky-header .brand-logo { width: 110px; }
-  body.rental-site .hero-opening-actions .signature-button { padding-inline: 12px; font-size: 11px; gap: 5px; }
-  body.rental-site .hero-opening-actions .signature-button .icon { width: 16px; height: 16px; }
+  body.rental-site:has(.sky-header) .cinematic-actions .signature-button { padding-inline: 12px; font-size: 11px; gap: 5px; }
+  body.rental-site:has(.sky-header) .cinematic-actions .signature-button .icon { width: 16px; height: 16px; }
 }
 html.motion-off .sky-header, html.motion-off .sky-header *,
-html.motion-off .hero-opening-actions .signature-button { animation: none !important; transition: none !important; }
+html.motion-off .cinematic-actions .signature-button { animation: none !important; transition: none !important; }
 @media (prefers-reduced-motion: reduce) {
-  .sky-header, .sky-header *, .hero-opening-actions .signature-button { animation: none !important; transition: none !important; }
+  .sky-header, .sky-header *, .cinematic-actions .signature-button { animation: none !important; transition: none !important; }
+}
+
+@supports selector(details::details-content) {
+  html.motion-off .sky-disclosure::details-content { transition: none !important; }
+  @media (prefers-reduced-motion: reduce) {
+    .sky-disclosure::details-content { transition: none !important; }
+  }
 }

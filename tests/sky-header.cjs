@@ -49,7 +49,7 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
     assert.equal(photo.height, 900);
     assert.equal(await page.locator('#menu-button').isVisible(), false);
     assert.equal(await menu.locator('.sky-mobile-apply').isVisible(), false);
-    assert.equal(await menu.locator('summary,.sky-story-link').allInnerTexts().then(a => a.join('|')), 'Our Homes|Lofts & Nirvana|Resources|Our Story');
+    assert.equal(await menu.locator('summary,.sky-nav-link').allInnerTexts().then(a => a.join('|')), 'Our Homes|Lobster Nirvana|Resources|Our Story');
     ok('Full bleed, transparent opening, authentic mark, four desktop destinations and quiet utilities');
 
     const action = page.locator('.hero-opening-actions a');
@@ -59,6 +59,26 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
     assert.equal(await page.locator('[data-hero-scene="2"] a[href="#faq"]').count(),1);
     assert.equal(await page.locator('.cinematic-scroll').getAttribute('href'), '#home-search');
     ok('Opening actions, discovery guidance and scroll destination');
+
+    const buttonStyles = link => link.evaluate(el => {
+      const style = getComputedStyle(el);
+      const {x, y, width, height} = el.getBoundingClientRect();
+      return {fill:style.backgroundColor, text:style.color, radius:style.borderRadius, box:[x,y,width,height]};
+    });
+    const firstButton = await buttonStyles(action.first());
+    const secondButton = await buttonStyles(action.last());
+    assert.equal(firstButton.radius, '12px');
+    assert.equal(secondButton.radius, firstButton.radius);
+    assert.equal(secondButton.box[3], firstButton.box[3]);
+    for (const [i, initial, fill] of [[0, firstButton,'rgb(70, 92, 48)'],[1,secondButton,'rgb(247, 244, 237)']]) {
+      await action.nth(i).hover();
+      await page.waitForFunction(({i,fill}) => getComputedStyle(document.querySelectorAll('.hero-opening-actions a')[i]).backgroundColor === fill, {i,fill});
+      const hovered = await buttonStyles(action.nth(i));
+      assert.notEqual(hovered.text, initial.text);
+      assert.deepEqual(hovered.box, initial.box);
+    }
+    await page.mouse.move(500,250);
+    ok('Paired 12px hero actions change fill and text on hover with no movement');
 
     assert.deepEqual(await links(page).evaluateAll(anchors => anchors.map(a => a.hash.slice(6))), expected);
     await page.locator('[name=neighborhood]').selectOption('Cherokee Triangle');
@@ -82,6 +102,16 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
     await page.waitForFunction(() => !document.querySelector('.sky-disclosure').open);
     ok('Left-origin underline and gap-free hover transfer to menu');
 
+    await trigger.press('Enter');
+    const durations = await menu.locator('.sky-disclosure[open] .sky-dropdown a').evaluateAll(links =>
+      links.map(link => [getComputedStyle(link).animationName, getComputedStyle(link).animationDelay]));
+    assert.deepEqual(durations, ['0s','0.03s','0.06s','0.09s','0.12s','0.15s','0.18s'].map(delay=>['sky-link-in',delay]));
+    await page.keyboard.press('Tab');
+    assert.equal(await page.locator('.sky-browse').evaluate(link=>link===document.activeElement && getComputedStyle(link).opacity==='1'),true);
+    await page.keyboard.press('Escape');
+    assert.equal(await menu.locator('.sky-dropdown').first().evaluate(panel=>panel.inert),true);
+    ok('Stagger is 30ms per item, with immediate keyboard focus and inert closing links');
+
     await trigger.focus();
     await page.keyboard.press('Space');
     await page.keyboard.press('Tab');
@@ -100,9 +130,9 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
     assert.equal(await page.locator('.sky-disclosure[open]').count(), 0);
     ok('Native disclosure labels, Tab, Shift+Tab, Space, Enter, Escape and outside dismissal');
 
-    await page.locator('.sky-disclosure').nth(1).locator('summary').press('Enter');
-    assert.deepEqual(await page.locator('.sky-disclosure').nth(1).locator('.sky-dropdown a').evaluateAll(as => as.map(a=>a.getAttribute('href'))), ['/mint-mojo/']);
-    await page.keyboard.press('Escape');
+    const vacation = menu.getByRole('link', {name:'Lobster Nirvana', exact:true});
+    assert.equal(await vacation.getAttribute('href'), '/mint-mojo/');
+    assert.equal(await vacation.evaluate(link => link.closest('details') === null && !link.querySelector('svg')), true);
     await page.locator('.resources-menu summary').press('Enter');
     assert.deepEqual(await page.locator('.resources-menu a').evaluateAll(as => as.map(a=>a.hash)), ['#faq','#community','#contact']);
     await page.keyboard.press('Escape');
@@ -118,6 +148,7 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
       if (i===2) assert.ok(scale>lastScale);
       lastScale=scale;
       assert.equal(await header.getAttribute('data-surface'), 'sky');
+      if(i===2) assert.deepEqual(await page.locator('[data-hero-scene="2"] .signature-button').evaluateAll(links=>links.map(e=>getComputedStyle(e).borderRadius)), ['12px','12px']);
       assert.deepEqual(await hero.locator('[data-hero-scene]').evaluateAll(scenes => scenes.map(s => s.inert)), [0,1,2].map(index=>i!==index));
     }
     ok('Forward and reverse three-scene camera, transparent header and inert off-scene actions');
@@ -168,9 +199,10 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
         assert.ok(box.y+box.height<=height && box.y>88, `${width}×${height} ${language} opening actions in viewport`);
         assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
         if (mobile) {
+          assert.equal(await p.locator('#mobile-nav').getByRole('link',{name:'Lobster Nirvana',exact:true,includeHidden:true}).getAttribute('href'),'/mint-mojo/');
           await p.locator('#menu-button').tap();
           await homeTrigger(p).tap();
-          assert.equal(await links(p).last().isVisible(),true);
+          await links(p).last().waitFor();
           assert.equal(await p.locator('.sky-mobile-apply').getAttribute('href'),application);
           assert.equal(await p.locator('#mobile-nav').evaluate(el=>el.getBoundingClientRect().bottom<=innerHeight+1),true);
           await p.keyboard.press('Escape');
@@ -191,7 +223,7 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
     const reduced = await open(1440,900,'en',true);
     assert.equal(await reduced.locator('.is-cinematic').count(),0);
     await homeTrigger(reduced).press('Enter');
-    assert.equal(await reduced.locator('.sky-dropdown').first().evaluate(e=>getComputedStyle(e).animationName),'none');
+    assert.equal(await reduced.locator('.sky-browse').evaluate(e=>getComputedStyle(e).animationName),'none');
     await reduced.mouse.click(650,220);
     await scrollTo(reduced,1300);
     await reduced.waitForFunction(() => document.querySelector('#site-header').dataset.surface === 'ivory');

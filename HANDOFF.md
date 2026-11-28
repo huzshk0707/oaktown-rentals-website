@@ -1,8 +1,9 @@
 # Phase 2E final refinements and Smallboat review
 
-- Ravi owns PR #30 on `ravi/seamless-sky-header`. Heartbeat 2026-11-28T02:43:23+00:00. Claim expires 2026-11-28T03:13:23+00:00.
+- Ravi owns PR #30 on `ravi/seamless-sky-header`. Heartbeat 2026-11-28T02:49:10+00:00. Claim expires 2026-11-28T03:19:10+00:00.
 - Reviewed remote checkpoint `3b0667f` on integration `c4a789b`. The owner accepted the overall Phase 2E composition and requested final navigation, button and dropdown refinements. The later Smallboat instruction authorizes verified, byte-preserved imports from the approved Drive folder.
-- NEXT STEP: review Bethune hover, compare all 17 Smallboat files and the six previous holds, implement the scoped interaction refinements, and save draft evidence. PR #29 and #30 stay draft.
+- Direct Lobster Nirvana link, 12px buttons and staggered disclosures implemented. Drive audit verified 11 exact matches and six specific unresolved variants, so no new files were imported. All 17 gallery slots remain intact.
+- NEXT STEP: finish focused reruns, inspect and commit final browser evidence, confirm the Cloudflare draft build and release the claim. PR #29 and #30 stay draft.
 
 ---
 
