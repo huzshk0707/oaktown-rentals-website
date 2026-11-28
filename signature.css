@@ -257,3 +257,58 @@ body.rental-site .cinematic-copy h1 em{font-style:italic}
 body.rental-site .cinematic-copy .signature-button{font:400 18px/1.3 var(--serif);min-height:50px;padding:13px 22px;border-radius:5px;gap:18px}
 body.rental-site .cinematic-copy .signature-button .icon{width:21px;height:21px}
 @media(max-width:450px){body.rental-site .cinematic-copy .signature-button{font-size:17px;min-height:48px;padding:12px 18px}}
+
+/* Phase 3. Give the Louisville story one panoramic viewport of its own. */
+.signature-story {
+  min-height: 100svh;
+  padding: clamp(72px, 10svh, 116px) var(--side) clamp(120px, 15svh, 165px);
+  align-items: flex-end;
+  background: var(--signature-green);
+  color: var(--signature-ivory);
+}
+.signature-story .signature-panorama {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-position: 52% 48%;
+}
+.signature-story .panorama-shade {
+  background: linear-gradient(0deg, #082e22 0%, #082e22ed 17%, #082e2255 51%, transparent 76%),
+    linear-gradient(90deg, #082e225c, transparent 65%);
+}
+.signature-story .panorama-copy { max-width: 680px; }
+.signature-story .panorama-copy > .eyebrow { color: #e2d2ac; font-size: 11px; }
+body.rental-site .signature-story .panorama-copy h2 {
+  color: inherit;
+  font-size: clamp(48px, 6.5vw, 102px);
+  line-height: .98;
+  margin: 14px 0 22px;
+}
+.signature-story .panorama-copy > p { max-width: 460px; font-size: 18px; line-height: 1.55; }
+.signature-story .story-more summary {
+  min-height: 44px;
+  background: #082e22;
+  border: 1px solid #f6f3e97a;
+}
+.signature-story .story-more > p { background: #082e22; }
+.signature-story .story-more .text-link { color: inherit; }
+.signature-story :is(summary, a):focus-visible { outline: 2px solid #e2d2ac; outline-offset: 4px; }
+.signature-story .signature-credit { bottom: 18px; font-size: 10px; }
+
+.signature-journey { padding-block: clamp(40px, 5vw, 72px); }
+.signature-journey p { font-size: 13px; }
+
+@media (max-width: 760px) {
+  .signature-story {
+    min-height: 0;
+    padding: clamp(230px, 52vw, 370px) var(--side) 56px;
+  }
+  .signature-story .signature-panorama { height: clamp(290px, 68vw, 450px); object-position: 54% 49%; }
+  .signature-story .panorama-shade {
+    height: clamp(290px, 68vw, 450px);
+    background: linear-gradient(180deg, transparent 44%, #082e2210 55%, #082e22 100%);
+  }
+  body.rental-site .signature-story .panorama-copy h2 { font-size: clamp(42px, 10.8vw, 72px); }
+  .signature-story .panorama-copy > p { font-size: 16px; }
+  .signature-story .signature-credit { right: var(--side); bottom: 12px; }
+}
