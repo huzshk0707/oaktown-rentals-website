@@ -409,3 +409,6 @@ body.rental-site .lightbox[open] button, .lightbox[open] .gallery-count {
 .lightbox[open] [data-gallery-step="1"] { right: max(10px, env(safe-area-inset-right)); }
 .lightbox[open] .gallery-count { bottom: max(12px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); border-radius: 20px; padding: 6px 14px; font-variant-numeric: tabular-nums; }
 html:has(.lightbox[open]) { overflow: hidden; }
+@media (orientation: landscape) and (max-height: 540px) {
+  body.rental-site .signature-property .gallery-main { max-height: 68svh; }
+}

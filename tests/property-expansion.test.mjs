@@ -27,7 +27,7 @@ for(const language of ['en','es']){
   assert.ok(th.includes(status));assert.ok(!th.includes(price));
   assert.doesNotMatch(sh+th,/undefined|NaN|null beds|0 Photos/);
   const a=read('app.js'),detail=a.slice(a.indexOf('  function detailPage('),a.indexOf('  function syncCardPhotoControls('));
-  const renderDetail=new Function('DATA','P','language','t','localized','photo','money','window','availabilityLabel','availabilityBadge','showingUrl','inquiryUrl','imageEl','arrow','contactSection',detail+'\nreturn detailPage;')(DATA,P,language,t,localized,p=>C.gallery(DATA,p)[0],n=>C.formatMoney(n,language),scope.window,p=>C.availabilityLabel(p,language),p=>C.availabilityLabel(p,language),()=> 'sms:test',()=> 'sms:test',()=>'<img>','',()=> '');
+  const renderDetail=new Function('DATA','P','language','t','localized','photo','money','window','availabilityLabel','availabilityBadge','showingUrl','inquiryUrl','imageEl','arrow','contactSection','cards',detail+'\nreturn detailPage;')(DATA,P,language,t,localized,p=>C.gallery(DATA,p)[0],n=>C.formatMoney(n,language),scope.window,p=>C.availabilityLabel(p,language),p=>C.availabilityLabel(p,language),()=> 'sms:test',()=> 'sms:test',()=>'<img>','',()=> '',renderer);
   const sd=renderDetail(s),td=renderDetail(tr);
   assert.ok(sd.includes(price));assert.ok(td.includes(status));assert.doesNotMatch(td,/navApply|NaN|undefined|null beds/);
   if(!C.gallery(DATA,tr).length)assert.doesNotMatch(td,/id="gallery"|data-open-gallery/);
