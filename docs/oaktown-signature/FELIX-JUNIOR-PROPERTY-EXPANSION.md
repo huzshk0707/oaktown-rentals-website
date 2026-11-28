@@ -56,3 +56,9 @@ Publication hold on remaining enhanced photos (original existing URLs retained, 
 - 17 (7.webp): generated carpeted room altered texture and proportions; current carpet versus newer flooring needs confirmation. Use original-based grade if current condition confirmed.
 
 Owner approval of the visual edits is recorded but does not establish factual accuracy or third-party reuse permission. Keep draft. Preserve the existing source URLs pending faithful corrections, rights/current-condition review, and owner approval of corrected variants.
+
+## Smallboat owner approval and full draft integration
+
+Owner explicitly confirmed acceptance of the six revised images' property identity and requested website integration. The six AI-assisted revisions (03, 12, 14–17) are now staged in draft commit `5062850ff01e00f1b66b7ab32b747d34c33b03ce`; 03 and 12 are upright. Converted the approved PNGs to optimized JPEGs with longest side 1280 px, without further geometry changes. [Approved website exports](https://drive.google.com/drive/folders/14KOLmrjnmSAG7T6jfVFLJAWIupDH8See) are stored separately from prior versions. All 17 gallery slots are local assets, with the exterior first and original gallery sequence preserved. Total 3,470,270 bytes; six new blob hashes and all references verified, EN/ES card and detail template checks passed. Hero code and assets, other property data and galleries untouched.
+
+This supersedes the earlier six-image draft integration hold based on explicit owner acceptance, not an independent finding that generated detail is exact. The previously noted AI reconstruction differences and 2015 broker attribution/reuse and current-condition questions remain relevant for public publication; owner approval of identity does not independently establish third-party rights. Full browser/hosted verification and publication rights confirmation pending. No production deployment or merge performed.
