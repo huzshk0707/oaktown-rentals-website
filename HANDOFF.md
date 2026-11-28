@@ -1,3 +1,11 @@
+# Shared Signature integration — Phase 2E / Ravi
+
+- Ravi owns the authorized PR #30 integration. UTC heartbeat 2026-11-28T03:04:28+00:00. Claim expires 2026-11-28T03:34:28+00:00.
+- Branch `integration/oaktown-signature`, draft PR #29 targeting `main`. Verified prior tip `c4a789b773af79293fff9819909c9a98948fa851`. Approved PR #30 tip `f5a2476ddbb4f5595b5d6d2964235353f590c18b`.
+- NEXT STEP: merge the approved PR #30 checkpoint into this branch, preserve the existing six catalogue records, 38 imported photos and publication holds, then run integration regressions and verify the combined preview before handing Phase 3 to Felix.
+
+---
+
 # Oaktown Signature integration
 
 - Ravi completed the local integration and released the implementation claim at 2026-11-28T01:47:50+00:00. Ravi remains the integration lead.
