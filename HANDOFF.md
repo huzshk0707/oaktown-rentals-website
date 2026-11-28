@@ -1,3 +1,12 @@
+# Phase 3 final refinement / FELIX
+
+- FELIX owns the approved final refinement. UTC heartbeat 2026-11-28T03:31:50+00:00. Claim expires 2026-11-28T04:01:50+00:00.
+- Continue draft PR #31 on `felix/homepage-completion` at `ac1a88acfab99840a55632831f5aefd95517ee05`, targeting `integration/oaktown-signature` at `4f5c3ea`.
+- Owner approved the section order, full-screen Louisville layout and photo Option A. Scope is the Louisville image and overlay, browser evidence, contrast and hosted verification. Ravi owns integration after owner authorization.
+- NEXT STEP: promote the documented Option A review file to the Louisville homepage, remove the superseded on-page credit, lighten the gradient and verify readability.
+
+---
+
 # Phase 3 — Homepage Completion ready for review / FELIX
 
 - FELIX completed the implementation and released the claim at 2026-11-28T03:23:36+00:00. Branch `felix/homepage-completion`, draft PR #31 targeting `integration/oaktown-signature` at `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Approved Phase 2E `f5a2476` merged via `48a32cd`. #29 stays draft.
