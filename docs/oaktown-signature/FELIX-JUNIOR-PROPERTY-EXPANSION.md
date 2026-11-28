@@ -42,3 +42,17 @@ Owner authorized a separate draft PR. Based on PR #26 checkpoint dd40325f9f2c824
 - Owner approved the 19 numbered images in [Drive](https://drive.google.com/drive/folders/1gw823lsLxikaPsLcs6VwRYvhclW1LXSI). Imported the approved JPEG bytes unmodified in commit `404a433ec02e05d73c8a3068ce48fbf6ff0bbe66` to `assets/properties/115-colonial-drive/01.jpg` through `19.jpg` (3,351,928 bytes total).
 - Updated only the Colonial image array in `data.js`, using the approved numbered sequence with the front exterior first. All six property records, other galleries, hero code, hero assets and original Signature assets remain unchanged. Prior URLs are preserved in Git history.
 - Verification: all 19 JPEGs decoded locally and Git blob hashes matched the original Drive bytes and remote asset metadata; all 19 paths resolve to committed files. EN/ES card and detail template checks passed (19 photos and 19 thumbnails); syntax passed; `/assets/**` is already included by deployment allowlist. Full browser/hosted preview testing is still pending; no CMS or production changes. Original source resolution preserved, including 480x640 portrait interiors.
+
+## Smallboat Court photography — identity audit and partial integration
+
+All 17 owner-approved edits are retained in the [Drive collection](https://drive.google.com/drive/folders/1y8ir-fCCRPiGg8waGgd7_kyfUP4vzJRj). Compared each against its original (13 November 16 email attachments and four user-supplied legacy listing images). Eleven edits passed visual identity review: 01, 02, 04–11, 13. Their exact JPEG bytes were imported in commit `2f50041421a031c90df9cff85973a4098f11eb8a` under `assets/properties/4005-smallboat-ct/` (1,276,436 bytes). Local decode and Git hashes matched Drive transfer and remote metadata. Existing 17-slot catalogue order, original lead exterior, other property records/images, and homepage hero remain unchanged. English/Spanish card and detail template rendering passed, including 17 thumbnail references. Full browser and hosted verification pending; no live CMS or production changes.
+
+Publication hold on remaining enhanced photos (original existing URLs retained, no generated replacements committed):
+- 03 (IMG_4329.jpeg): generated cleanup reconstructed tile/grout and other surface details; use original-based localized removal of loose litter only.
+- 12 (IMG_4330.jpeg): generated cleanup reconstructed flooring and equipment details; use conservative localized removal of superficial dirt only, preserve actual fixtures and material condition.
+- 14 (1.webp): generated exterior changed architectural/landscape detail; original has a 2015 listing broker notice. Current condition and rights to reuse without attribution not established.
+- 15 (2.webp): generated kitchen changed cabinetry/fixtures and removed the broker notice. Preserve attribution unless permission established; verify current condition.
+- 16 (4.webp): generated cabinet wall changed proportions/framing and floor texture; use original-based tonal adjustment only if current condition confirmed.
+- 17 (7.webp): generated carpeted room altered texture and proportions; current carpet versus newer flooring needs confirmation. Use original-based grade if current condition confirmed.
+
+Owner approval of the visual edits is recorded but does not establish factual accuracy or third-party reuse permission. Keep draft. Preserve the existing source URLs pending faithful corrections, rights/current-condition review, and owner approval of corrected variants.
