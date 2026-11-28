@@ -74,6 +74,9 @@ try{
  for(const [width,lang] of [[1440,'en'],[768,'en'],[390,'en'],[320,'es']]){
   const p=await browser.newPage({viewport:{width,height:900}});await setup(p,{lang});await p.goto(base+'/#home/115-colonial-drive');await p.waitForSelector('.details-bar');assert.equal(await p.locator('.listing-dock').isHidden(),true);
   await p.evaluate(()=>{const bar=document.querySelector('.details-bar'),header=document.querySelector('#site-header');scrollTo({top:bar.getBoundingClientRect().bottom+scrollY-header.offsetHeight+30,behavior:'instant'})});await p.waitForFunction(()=>!document.querySelector('.listing-dock').hidden);
+  // Measure the resting dock after the directional header finishes sliding away.
+  await p.locator('#site-header, .listing-dock').evaluateAll(elements =>
+    Promise.all(elements.flatMap(el => el.getAnimations().map(animation => animation.finished.catch(() => {})))));
   const dock=await p.locator('.listing-dock').boundingBox();const header=await p.locator('#site-header').boundingBox();assert.ok(dock.y>=header.y+header.height-1);assert.ok(dock.height<=80);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.ok((await p.locator('.listing-dock').innerText()).includes('1,699'));
   await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await p.waitForFunction(()=>document.querySelector('.listing-dock').hidden);await p.close();passed.push(`rental dock is readable, clears the header and hides at the title: ${width}px ${lang}`);
  }

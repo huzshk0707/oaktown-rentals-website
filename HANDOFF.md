@@ -1,3 +1,7 @@
+# Phase 4B step 1 ready for owner review / FELIX released
+
+Claim released 2026-11-28 07:01 UTC. Draft PR #34 is stacked on #33 at cde58a6. Cloudflare built runtime e95d39f. [Hosted gallery, screenshots, photo verification and regressions](docs/oaktown-signature/phase4b-opening/README.md). NEXT STEP: owner reviews the Colonial opening and fullscreen viewer before further design or integration. All publication holds remain in force.
+
 # Phase 4A ready for owner review / FELIX released
 
 FELIX released the feature claim at 2026-11-28 06:43 UTC. Draft PR #33 targets integration at shared base bc163b2. Audit 2f7f9fb, verified runtime a365581. [Hosted comparisons, recording and regression evidence](docs/oaktown-signature/phase4a/README.md). NEXT STEP: owner reviews Colonial Drive in the feature preview and provides Phase 4B direction separately. PR #32 remains a separate draft. Existing holds continue.

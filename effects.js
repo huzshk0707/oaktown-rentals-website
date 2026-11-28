@@ -24,7 +24,7 @@
     // Use one animation as both the visible progress bar and the advance clock.
     mountSlideshow({strip, surface, dialog, currentImage, advance, language}) {
       const holder = strip.parentElement;
-      const inlineParent = holder.parentElement;
+      const playsInDialog = holder.parentElement === dialog;
       const toggle = holder.querySelector('[data-playback]');
       const events = new AbortController();
       const options = {signal: events.signal};
@@ -41,7 +41,7 @@
         if (!animation) return;
         const img = currentImage();
         const ready = img?.complete && img.naturalWidth > 0;
-        const visible = dialog.open || (inlineParent !== dialog && inView);
+        const visible = playsInDialog ? dialog.open : inView && !dialog.open;
         if (motion && ready && visible && !document.hidden && !userPaused) animation.play();
         else animation.pause();
       }
@@ -49,10 +49,6 @@
       function select(index) {
         animation?.cancel();
         animation = null;
-        if (inlineParent !== dialog) {
-          const parent = dialog.open ? dialog : inlineParent;
-          if (holder.parentElement !== parent) parent.insertBefore(holder, dialog.open ? dialog.lastElementChild : dialog);
-        }
         const active = strip.children[index];
         if (!active) return;
         for (const button of strip.children) {

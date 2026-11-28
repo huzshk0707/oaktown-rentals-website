@@ -324,3 +324,91 @@ body.rental-site .signature-story .panorama-copy h2 {
   body.rental-site .signature-story .panorama-copy h2 { font-size: clamp(42px, 10.8vw, 72px); }
   .signature-story .panorama-copy > p { font-size: 16px; }
 }
+
+/* Phase 4B: property opening and rental photo viewer. */
+body.rental-site .signature-property .detail-cover {
+  border: 3px solid #fffcf3;
+  border-radius: 16px;
+  box-shadow: 0 6px 22px #26342920, 0 0 0 1px #cfcfc1;
+  background: #e6e6dc;
+  aspect-ratio: 1.42;
+}
+body.rental-site .signature-property .detail-cover-photo { object-fit: contain; }
+body.rental-site .signature-property .detail-cover > span,
+body.rental-site .signature-property .gallery-open > span {
+  border-radius: 10px;
+  background: var(--signature-green);
+  color: var(--signature-ivory);
+}
+body.rental-site .signature-property .details-bar {
+  max-width: 1248px;
+  margin: 0 auto clamp(28px, 4vw, 54px);
+  width: calc(100% - clamp(40px, 8vw, 112px));
+  padding: clamp(20px, 2.4vw, 34px);
+  gap: 16px 28px;
+  background: #fbf9f2;
+  border: 1px solid #d8d5c5;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #2634290b;
+}
+body.rental-site .signature-property .detail-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+  gap: 14px 0;
+}
+.signature-property .detail-stat { padding-inline: clamp(10px, 1.6vw, 24px); border-inline-start: 1px solid #d8d5c5; }
+.signature-property .detail-stat:first-child { border: 0; padding-inline-start: 0; }
+body.rental-site .signature-property .detail-stat strong { font: 400 clamp(24px, 2.2vw, 34px)/1.15 var(--serif); }
+body.rental-site .signature-property .detail-stat span { display: flex; align-items: center; gap: 5px; margin-top: 6px; }
+.detail-stat svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+body.rental-site:has(.sky-header) .signature-property .details-bar .property-apply { background: var(--signature-green); color: var(--signature-ivory); border-color: var(--signature-green); }
+body.rental-site:has(.sky-header) .signature-property .details-bar .property-apply:hover { background: #465c30; }
+body.rental-site .signature-property .gallery-main { background: #e7e7df; border-radius: 14px; overflow: hidden; }
+.signature-property .gallery-active { object-fit: contain; }
+body.rental-site .signature-property + .mobile-actions[data-contact-only] { grid-template-columns: 1fr; }
+.signature-property + .mobile-actions[data-contact-only] a:last-child { display: none; }
+body.rental-site .signature-property:has(.listing-dock[hidden]) + .mobile-actions:not(:focus-within) { display: none; }
+@media (max-width: 620px) {
+  body.rental-site .signature-property .detail-stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .signature-property .detail-stat:nth-child(odd) { padding-inline-start: 0; border: 0; }
+  .signature-property .detail-actions a { width: 100%; }
+}
+body.rental-site dialog.lightbox[open] {
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+  background: #171917;
+  color: white;
+  overscroll-behavior: contain;
+}
+.lightbox[open] .lightbox-image { position: absolute; inset: 0; }
+.lightbox[open] .lightbox-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.lightbox[open] .lightbox-top > span { display: none; }
+body.rental-site .lightbox[open] button, .lightbox[open] .gallery-count {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #171917d9;
+  border: 1px solid #ffffff73;
+  border-radius: 50%;
+}
+.lightbox[open] button:focus-visible { outline: 3px solid white; outline-offset: 2px; }
+.lightbox[open] [data-close-gallery] { top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); }
+.lightbox[open] [data-gallery-step] { top: 50%; transform: translateY(-50%); }
+.lightbox[open] [data-gallery-step="-1"] { left: max(10px, env(safe-area-inset-left)); }
+.lightbox[open] [data-gallery-step="1"] { right: max(10px, env(safe-area-inset-right)); }
+.lightbox[open] .gallery-count { bottom: max(12px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); border-radius: 20px; padding: 6px 14px; font-variant-numeric: tabular-nums; }
+html:has(.lightbox[open]) { overflow: hidden; }
+@media (orientation: landscape) and (max-height: 540px) {
+  body.rental-site .signature-property .gallery-main { max-height: 68svh; }
+}

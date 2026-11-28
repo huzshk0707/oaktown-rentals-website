@@ -45,10 +45,10 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  check('listing summary meets body-text contrast',()=>assert.ok(introContrast[1]>=4.5,JSON.stringify(introContrast)));
  
  const inquiry=await page.locator('#mobile-inquiry').getAttribute('href');check('inquiry carries address',()=>assert.ok(decodeURIComponent(inquiry).includes('115 Colonial Drive')));
- const showing=await page.locator('.detail-actions .button-solid').getAttribute('href');check('showing request has property and purpose',()=>assert.ok(decodeURIComponent(showing).includes('request a showing at 115 Colonial Drive')));
+ const showing=await page.locator('.listing-availability a').getAttribute('href');check('showing request has property and purpose',()=>assert.ok(decodeURIComponent(showing).includes('request a showing at 115 Colonial Drive')));
  const order=await page.evaluate(()=>document.querySelector('.gallery').compareDocumentPosition(document.querySelector('.detail-body'))&Node.DOCUMENT_POSITION_FOLLOWING);check('gallery precedes description',()=>assert.ok(order));
  await page.locator('[data-open-gallery]').click();await page.keyboard.press('ArrowRight');
- const counts=await page.locator('.gallery-count').allTextContents();check('keyboard gallery advances both counters',()=>assert.ok(counts.every(x=>x==='2 / 19')));
+ const counts=await page.locator('.gallery-count').allTextContents();check('keyboard gallery advances both counters',()=>assert.deepEqual(counts,['2 / 19','02 / 19']));
  await page.keyboard.press('Escape');await page.waitForTimeout(50);
  
  const modal=await page.locator('.lightbox').evaluate(el=>({open:el.open,locked:document.body.classList.contains('gallery-is-open'),focus:document.activeElement.hasAttribute('data-open-gallery')}));check('Escape restores page and focus',()=>{assert.equal(modal.open,false);assert.equal(modal.locked,false);assert.equal(modal.focus,true)});
