@@ -15,7 +15,8 @@
     let translate = key => key === 'openMenu' ? 'Open menu' : 'Close menu';
     let pinned = null;
     let leaveTimer = 0;
-    let hero = null;
+    let opening = null;
+    let photographic = false;
     let surface = '';
     let frame = 0;
     let lastY = scrollY;
@@ -135,15 +136,15 @@
       const y = Math.max(0, scrollY);
       const delta = y - lastY;
       lastY = y;
-      const bottom = hero?.getBoundingClientRect().bottom ?? 0;
-      const nextSurface = bottom > header.offsetHeight ? 'sky' : 'ivory';
+      const bottom = opening?.getBoundingClientRect().bottom ?? 0;
+      const nextSurface = photographic && bottom > header.offsetHeight ? 'sky' : 'ivory';
       if (nextSurface !== surface) {
         surface = nextSurface;
         header.dataset.surface = surface;
         reveal();
         return;
       }
-      if (!hero || bottom > -110 || !desktop.matches || !motionOn() || openDisclosure() ||
+      if (!opening || bottom > -110 || !desktop.matches || !motionOn() || openDisclosure() ||
           mobileOpen() || hoveringHeader || header.contains(document.activeElement)) {
         reveal();
         return;
@@ -165,7 +166,8 @@
 
     return {update(t) {
       translate = t;
-      hero = app.querySelector('.cinematic-hero');
+      opening = app.querySelector('.cinematic-hero, .signature-property > .page-intro');
+      photographic = opening?.matches('.cinematic-hero, [data-photographic-header]');
       for (const link of navigation.querySelectorAll('a[href^="#"]')) {
         if (link.hash === location.hash) link.setAttribute('aria-current', link.hash.startsWith('#home/') ? 'page' : 'location');
         else link.removeAttribute('aria-current');
