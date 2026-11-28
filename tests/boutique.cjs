@@ -10,8 +10,8 @@ const fixture='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
  const test=async(name,fn)=>{await fn();passed.push(name)};
  await test('approved 38vw width, single row, champagne price rail, preserved facts and no favorites',async()=>{
   assert.ok(Math.abs(await card.evaluate(e=>e.offsetWidth)-1440*.38)<2);
-  assert.match(await card.locator('.property-price').innerText(),/1,699/);assert.equal(await p.locator('.property-card').count(),4);
-  assert.equal(await card.locator('.card-spec svg').count(),2);assert.equal(await p.locator('.property-card .availability-badge').count(),1);
+  assert.match(await card.locator('.property-price').innerText(),/1,699/);assert.equal(await p.locator('.property-card').count(),6);
+  assert.equal(await card.locator('.card-spec svg').count(),2);assert.equal(await p.locator('.property-card .availability-badge').count(),2);
   assert.equal(await p.locator('[data-view-all],[data-favorite]').count(),0);assert.equal(await p.locator('[data-layout-button]').count(),2);
   assert.match(await card.locator('.property-price').evaluate(e=>getComputedStyle(e).backgroundImage),/linear-gradient/);
  });
@@ -34,14 +34,14 @@ const fixture='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
   const source=await card.locator('.property-preview.is-current').getAttribute('src');
   await p.evaluate(()=>{window.boutiqueTransitions=0;const original=document.startViewTransition?.bind(document);if(original)document.startViewTransition=fn=>{window.boutiqueTransitions++;return original(fn);};});
   await card.locator('.card-detail-link').click();await p.locator('.detail-cover').waitFor();await p.waitForTimeout(650);
-  assert.equal(await p.evaluate(()=>window.boutiqueTransitions),1);assert.equal(await p.locator('.detail-cover-photo').getAttribute('src'),source);
+  assert.equal(await p.evaluate(()=>window.boutiqueTransitions),1);assert.equal(new URL(await p.locator('.detail-cover-photo').getAttribute('src'),base).href,new URL(source,base).href);
   assert.equal(await p.locator('.gallery-thumbs [aria-pressed=true]').getAttribute('data-gallery-index'),'6');
   await p.goBack();await p.locator('.property-card').first().waitFor();await p.waitForTimeout(150);
   assert.equal(await p.evaluate(()=>document.activeElement.classList.contains('card-detail-link')),true);
  });
  await test('failed manual photo keeps the genuine previous image and reports failure',async()=>{
   const c=p.locator('.property-card').first();const failed=await p.evaluate(()=>window.OAKTOWN_DATA.images.colonial[2].split('?')[0]);
-  await p.route('https://images.squarespace-cdn.com/**',r=>r.request().url().split('?')[0]===failed?r.abort():r.fulfill({contentType:'image/svg+xml',body:fixture}));
+  await p.route(new URL(failed,base).href,r=>r.abort());
   const previous=await c.getAttribute('data-selected-photo');await c.locator('[data-card-photo-index="2"]').click();await p.waitForFunction(()=>!document.querySelector('.card-media').hasAttribute('aria-busy'));
   assert.equal(await c.getAttribute('data-selected-photo'),previous);assert.match(await c.locator('[data-card-photo-status]').innerText(),/could not load/);
  });

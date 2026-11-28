@@ -20,7 +20,7 @@ const review = new URL('/docs/oaktown-signature/phase2d/prototypes/', base).href
         await page.locator('[data-mode="panels"]').click();
         const toggles = frame.locator('.review-panel-toggle');
         await toggles.first().waitFor();
-        assert.equal(await toggles.count(), 4);
+        assert.equal(await toggles.count(), 6);
         await toggles.nth(1).focus();
         await toggles.nth(1).press('ArrowRight');
         await frame.waitForFunction(() => document.querySelectorAll('.review-panel-toggle')[2]?.getAttribute('aria-expanded') === 'true');
@@ -30,9 +30,9 @@ const review = new URL('/docs/oaktown-signature/phase2d/prototypes/', base).href
           const image = panel.querySelector('.property-image-wrap');
           return { expanded: panel.querySelector('button.review-panel-toggle').getAttribute('aria-expanded'), active: panel.classList.contains('is-active'), inert: card.inert, width: panel.getBoundingClientRect().width, mediaHeight: media.getBoundingClientRect().height, imageHeight: image.getBoundingClientRect().height, flex: getComputedStyle(media).flexGrow, transition: getComputedStyle(panel).transitionDuration };
         }));
-        assert.deepEqual(panelState.map(p => p.expanded), ['false', 'false', 'true', 'false']);
-        assert.deepEqual(panelState.map(p => p.active), [false, false, true, false]);
-        assert.deepEqual(panelState.map(p => p.inert), [true, true, false, true]);
+        assert.deepEqual(panelState.map(p => p.expanded), ['false', 'false', 'true', 'false', 'false', 'false']);
+        assert.deepEqual(panelState.map(p => p.active), [false, false, true, false, false, false]);
+        assert.deepEqual(panelState.map(p => p.inert), [true, true, false, true, true, true]);
         assert.ok(panelState.every(p => p.transition.split(',').every(duration => parseFloat(duration) === 0)), 'Reduced motion removes panel transitions');
         if (width <= 700) {
           assert.ok(Math.abs(panelState[2].mediaHeight - 270) <= 1, 'Mobile media height is 270px');

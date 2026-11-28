@@ -86,7 +86,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
   await page.evaluate(()=>Promise.all([...document.querySelectorAll('main img[src]')].map(img=>{img.loading='eager';return img.decode()})));
   await page.screenshot({path:'/workspace/work/mint-phone.png',fullPage:true});
   await page.goto(base+'/#homes');
-  assert.equal(await page.locator('.property-card').count(),4);
+  assert.equal(await page.locator('.property-card').count(),6);
   assert.deepEqual(errors,[]);
   await browser.close();
   console.log('Mint Mojo: gallery photos, keyboard/focus, dates, inquiry links, EN/ES, phone navigation, motion and six layout widths passed.');

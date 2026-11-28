@@ -1,3 +1,15 @@
+# Shared Signature integration — Ravi
+
+- [x] Recover available checkpoints and preserve source branches and worktrees.
+- [x] Open combined [draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29) with #26, #27 and #28.
+- [x] Preserve six file records, 38 reviewed imports, media/fact holds and booking isolation.
+- [x] Save [Bethune motion study](docs/oaktown-signature/BETHUNE-MOTION-STUDY.md) and [inventory compatibility review](docs/oaktown-signature/integration/README.md).
+- [x] Verify six routes, 68 genuine photo selections, 38 local asset hashes and EN/ES browser accessibility.
+- [ ] Verify the hosted integration runtime and photos from an environment allowed to reach the preview.
+- [ ] Felix: review remaining Signature prototype and design decisions in isolated branches targeting integration.
+- [ ] Felix Junior: resolve confirmed pricing, availability, Troutwood exterior and held photo evidence in isolated branches targeting integration.
+- [ ] Owner: review combined draft, property/fact holds and Afterglow architectural accuracy before any launch decision.
+
 # Phase 2C — approved Option B Boutique Luxury
 
 - [x] Record exact approved Option B reference and design decisions; retain prior phase evidence.

@@ -1,10 +1,10 @@
 # Oaktown Signature integration
 
-- Owner Ravi. Heartbeat 2026-11-28T01:37:29+00:00. Claim expires 2026-11-28T02:07:29+00:00.
-- Branch `integration/oaktown-signature` draft PR #29 targeting `main` (`be37dba`), founded on PR #26 `dd40325`.
-- Integrated `e50f3c4` (#27) and `5b5c6ab` (#28) without Git conflicts. Bethune study is in `docs/oaktown-signature/BETHUNE-MOTION-STUDY.md`.
-- NEXT STEP: reconcile test fixtures with six listings and the imported asset paths, run full verification, and confirm the integration preview.
-- Source branches, worktrees and separate booking PR #25 are preserved. Keep combined PR draft.
+- Owner Ravi. Heartbeat 2026-11-28T01:46:06+00:00. Claim expires 2026-11-28T02:16:06+00:00.
+- Branch `integration/oaktown-signature`, combined draft PR #29 targeting `main`. Foundation #26 `dd40325`; reviewed #27 `e50f3c4` and #28 `5b5c6ab` merged cleanly. Last pushed checkpoint `7d27e91`.
+- Six file records and 38 imported photo blobs retained. Content holds, unchanged production systems and booking PR #25 remain in place. Local test fixture changes cover six catalogue records and keep the four-record CMS test baseline separate.
+- [Integration report](docs/oaktown-signature/integration/README.md) and [motion study](docs/oaktown-signature/BETHUNE-MOTION-STUDY.md). Local browser verification passed 68 genuine photo selections, 38 hash checks and 24 axe scans. Cloudflare created the stable branch preview, local egress confirmation timed out.
+- NEXT STEP: finish affected browser reruns, verify the latest Cloudflare build and run the hosted verifier if the hostname is reachable. Update PR #29 and release the claim with remaining review gates.
 
 ---
 

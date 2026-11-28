@@ -27,12 +27,12 @@ async function selected(card,index){
  await advanceUntil(card.page(),({slug,index})=>document.querySelector(`[data-property-slug="${slug}"]`)?.dataset.selectedPhoto===String(index),{slug:await card.getAttribute('data-property-slug'),index});
 }
 const mainPhoto=card=>card.locator('.property-image:not(.property-preview)').first();
-const bare=src=>src.split('?')[0];
+const bare=src=>new URL(src,base).href.split('?')[0];
 (async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});const passed=[],errors=[];
 try{
  const page=await browser.newPage({viewport:{width:1440,height:1000}});page.on('pageerror',e=>errors.push(e.message));await setup(page);await page.goto(base+'/#homes');const card=page.locator('.property-card').first();await card.scrollIntoViewIfNeeded();await page.evaluate(()=>document.fonts.ready);
  assert.equal(await page.locator('[data-card-preview]').count(),0);assert.equal(await page.locator('.property-preview').count(),0);passed.push('cards have no preview button and extra photographs are not requested eagerly');
- const photos=await page.evaluate(()=>{const d=window.OAKTOWN_DATA,p=d.properties[0];return d.images[p.imageKey].map(src=>src.split('?')[0])});const initialMain=await mainPhoto(card).getAttribute('src');await freeze(page);
+ const photos=await page.evaluate(()=>{const d=window.OAKTOWN_DATA,p=d.properties[0];return d.images[p.imageKey].map(src=>new URL(src,location.href).href.split('?')[0])});const initialMain=await mainPhoto(card).getAttribute('src');await freeze(page);
  await card.locator('.property-name a').focus();await page.clock.runFor(4000);assert.equal(await card.getAttribute('data-selected-photo'),'0');assert.equal(await card.locator('.property-preview').count(),0);passed.push('keyboard focus alone keeps the main photograph static');
  await card.locator('.property-name a').hover();
  const observed=[];
@@ -54,7 +54,7 @@ try{
  assert.equal(await page.evaluate(()=>window.transitionReady),true);assert.equal(await page.evaluate(()=>window.transitionCalls),1);assert.equal(bare(await page.locator('.detail-cover-photo').getAttribute('src')),expected);assert.equal(await page.locator('.gallery-heading .gallery-count').innerText(),'2 / 19');assert.equal(await page.locator('[style*="view-transition-name"]').count(),0);passed.push('shared-photo transition carries the currently displayed slideshow photograph into the listing');
  await page.locator('[data-gallery-index="2"]').click();const displayedCover=await page.locator('.detail-cover-photo').getAttribute('src');
  await page.locator('[data-cover-gallery]').click();assert.equal(await page.locator('.lightbox-image img').getAttribute('src'),displayedCover);assert.equal(await page.locator('.lightbox').evaluate(e=>e.open),true);await page.keyboard.press('Escape');assert.equal(await page.locator('[data-cover-gallery]').evaluate(e=>e===document.activeElement),true);passed.push('cover stays synchronized with gallery selection, enlarges that photo and restores focus');
- await page.goBack();await page.waitForSelector('.collection');assert.equal(await page.locator('.listing-dock').count(),0);assert.equal(await page.locator('.property-card').count(),4);assert.equal(await page.locator('.property-card').first().getAttribute('data-selected-photo'),'0');passed.push('browser Back restores the collection with main photographs and no stale listing UI');await page.close();
+ await page.goBack();await page.waitForSelector('.collection');assert.equal(await page.locator('.listing-dock').count(),0);assert.equal(await page.locator('.property-card').count(),6);assert.equal(await page.locator('.property-card').first().getAttribute('data-selected-photo'),'0');passed.push('browser Back restores the collection with main photographs and no stale listing UI');await page.close();
  for(const mode of ['unsupported','off','reduce']){
   const p=await browser.newPage({viewport:{width:1280,height:900}});p.on('pageerror',e=>errors.push(e.message));await setup(p,{unsupported:mode==='unsupported',motion:mode==='off'?'off':'on'});if(mode==='reduce')await p.emulateMedia({reducedMotion:'reduce'});await p.goto(base+'/#homes');
   if(mode!=='unsupported'){

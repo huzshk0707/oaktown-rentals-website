@@ -14,7 +14,7 @@ await page.goto(base+'/');await page.locator('.signature-hero').waitFor();
 await test('approved local photos load and Afterglow is not added to rental inventory',async()=>{
  const imgs=await page.locator('.cinematic-photo').evaluateAll(imgs=>imgs.map(i=>({ok:i.complete&&i.naturalWidth>0,src:i.currentSrc})));
  assert.ok(imgs[0].ok);assert.match(imgs[0].src,/afterglow/);
- assert.equal(await page.locator('.property-card').count(),4);assert.equal(await page.locator('.property-card').filter({hasText:'Afterglow'}).count(),0);
+ assert.equal(await page.locator('.property-card').count(),6);assert.equal(await page.locator('.property-card').filter({hasText:'Afterglow'}).count(),0);
  await page.locator('[data-hero-scene-button="1"]').click();
  await page.waitForFunction(()=>document.querySelector('.cinematic-hero').dataset.scene==='1');
  assert.equal(await page.locator('.cinematic-photo').count(),1);
@@ -24,7 +24,7 @@ await test('combined minimum bedroom/bathroom filters, empty result and reset',a
  await page.locator('#home-search [type=submit]').click();assert.equal(await page.locator('.property-card:visible').count(),0);assert.equal(await page.locator('.search-empty').isVisible(),true);
  await page.locator('[name=neighborhood]').selectOption('St. Matthews');await page.locator('#home-search [type=submit]').click();
  assert.deepEqual(await page.locator('.property-card:visible .property-name').allTextContents(),['115 Colonial Drive']);
- await page.locator('#home-search [type=reset]').click();assert.equal(await page.locator('.property-card:visible').count(),4);
+ await page.locator('#home-search [type=reset]').click();assert.equal(await page.locator('.property-card:visible').count(),6);
  assert.equal(await page.locator('[name=bedrooms]').inputValue(),'');
 });
 await test('search persists through language changes, listing details and back navigation',async()=>{
@@ -33,7 +33,7 @@ await test('search persists through language changes, listing details and back n
  await page.locator('.property-card:visible .property-name a').click();await page.locator('.page-intro h1').waitFor();assert.match(await page.locator('h1').innerText(),/Madison/);
  assert.equal(await page.locator('[data-gallery-index]').count(),15);
  await page.locator('.back-link').click();await page.locator('#home-search').waitFor();assert.equal(await page.locator('[name=neighborhood]').inputValue(),'Russell');assert.equal(await page.locator('[name=bedrooms]').inputValue(),'3');
- await page.locator('#home-search [type=reset]').click();assert.equal(await page.locator('.property-card:visible').count(),4);
+ await page.locator('#home-search [type=reset]').click();assert.equal(await page.locator('.property-card:visible').count(),6);
  await page.locator('#language-switch').click();
 });
 await test('Resources keyboard navigation, verified links and no portal',async()=>{

@@ -2,6 +2,15 @@
 
 Approved by the owner on 27 November 2026. Creative direction and visual acceptance belong to the owner and ChatGPT. FELIX continued Phase 1B engineering, implementation and verification under explicit reassignment. This roadmap records the direction; **it does not authorize implementation of every phase**.
 
+## Shared integration foundation
+
+[Draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29) on
+`integration/oaktown-signature` combines reviewed work from #26, #27 and #28 and
+is the base for future isolated Signature feature PRs. Ravi coordinates the
+[shared integration and preview](integration/README.md). Earlier PRs and
+checkpoints remain available as source history. The [Bethune motion study](BETHUNE-MOTION-STUDY.md)
+informs later creative review. Booking PR #25 stays on its separate staging path.
+
 ## Current delivery
 
 Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) on `felix/oaktown-signature`. The existing homepage, search controls, cards and supporting sections are a first implementation, not visual acceptance. Preserve that work. Phase 1B engineering and regression verification are complete. Phase 1B visual and enhanced-photo architectural review remain pending. Ravi completed Phase 2A engineering. FELIX verified all 60 hosted photos and prepared the separate [Phase 2B editorial proposal](phase2b/README.md). Owner approved Option B — Boutique Luxury (Drive `1V7gfl1owIOQzIOOUFNxc0E95iJHGyhH9`); Ravi completed Phase 2C implementation and regression/visual evidence on the existing draft; [Boutique review](phase2c/README.md) awaits owner/ChatGPT acceptance.

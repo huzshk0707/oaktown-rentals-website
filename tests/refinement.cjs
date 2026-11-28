@@ -13,7 +13,7 @@ for(const lang of ['en','es']){
  const size=await p.locator('.property-card').first().evaluate(c=>({w:c.offsetWidth,title:getComputedStyle(c.querySelector('.property-name')).fontSize,rent:getComputedStyle(c.querySelector('.property-price')).fontSize,deposit:parseFloat(getComputedStyle(c.querySelector('.property-deposit')).fontSize),location:parseFloat(getComputedStyle(c.querySelector('.property-location')).fontSize),specs:parseFloat(getComputedStyle(c.querySelector('.card-specs')).fontSize)}));
  assert.ok(Math.abs(size.w-1440*.38)<2);assert.equal(size.title,'26.64px');assert.equal(size.rent,'28.8px');assert.ok(size.deposit>=13&&size.location>=13&&size.specs>=14);assert.equal(await p.locator('.property-card').first().locator('.card-photo-dots button').count(),5);
  const targets=await p.locator('.property-details-line>a').evaluateAll(es=>es.map(a=>({text:a.textContent,href:a.getAttribute('href'),slug:a.closest('.property-card').dataset.propertySlug})));
- assert.equal(targets.length,4);for(const target of targets){assert.equal(target.text,lang==='es'?'Solicitar una visita':'Request a Tour');assert.ok(target.href.startsWith('sms:+15025001070?body='));}
+ assert.equal(targets.length,6);for(const target of targets){assert.equal(target.text,target.slug==='8008-troutwood-ct'?(lang==='es'?'Consultar novedades':'Ask for updates'):(lang==='es'?'Solicitar una visita':'Request a Tour'));assert.ok(target.href.startsWith('sms:+15025001070?body='));}
  assert.ok(decodeURIComponent(targets.find(t=>t.slug.includes('cherokee')).href).includes('#8'));
  passed.push(lang+' 38vw/title/rent preserved, readable secondary type, five dots and exact-unit showing fallback');
  await p.locator('[data-layout-button="grid"]').click();assert.equal(await p.locator('#homes').getAttribute('data-layout'),'grid');assert.equal(await p.locator('.collection-bottom').isVisible(),false);
@@ -21,14 +21,14 @@ for(const lang of ['en','es']){
  await p.locator('[name=neighborhood]').selectOption('Cherokee Triangle');await p.locator('#home-search [type=submit]').click();assert.equal(await p.locator('.property-card:not([hidden])').count(),1);
  await p.locator('.property-card:not([hidden]) .card-detail-link').click();await p.locator('.detail-cover').waitFor();await p.goBack();await p.locator('.property-card').first().waitFor({state:'attached'});assert.equal(await p.locator('#homes').getAttribute('data-layout'),'grid');assert.equal(await p.locator('[name=neighborhood]').inputValue(),'Cherokee Triangle');
  await p.reload();await p.locator('.property-card').first().waitFor({state:'attached'});assert.equal(await p.locator('#homes').getAttribute('data-layout'),'grid');
- await p.locator('#home-search [type=reset]').click();assert.equal(await p.locator('.property-card:not([hidden])').count(),4);
+ await p.locator('#home-search [type=reset]').click();assert.equal(await p.locator('.property-card:not([hidden])').count(),6);
  await p.locator('[data-layout-button="grid"]').focus();await p.keyboard.press('ArrowLeft');assert.equal(await p.locator('#homes').getAttribute('data-layout'),'gallery');assert.equal(await p.locator('[data-layout-button="gallery"]').getAttribute('aria-pressed'),'true');
  passed.push(lang+' grid responsive columns, shared filter, detail/history, reload and keyboard segmented control');
  await p.close();
 }
 for(const width of [320,390,768,1024,1920]){
  const p=await b.newPage({viewport:{width,height:900},reducedMotion:'reduce'});await p.goto(base+'/#homes');await p.locator('.property-card').first().waitFor({state:'attached'});
- for(const mode of ['grid','gallery']){await p.locator('[data-layout-button="'+mode+'"]').click();assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.equal(await p.locator('.property-card').count(),4);}
+ for(const mode of ['grid','gallery']){await p.locator('[data-layout-button="'+mode+'"]').click();assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.equal(await p.locator('.property-card').count(),6);}
  passed.push(width+'px grid/gallery no document overflow');await p.close();
 }
 const p=await b.newPage({reducedMotion:'reduce'});await p.goto(base);await p.locator('.cinematic-hero').waitFor();await p.evaluate(()=>scrollTo({top:600,behavior:'instant'}));await p.waitForTimeout(600);await p.reload();await p.locator('.cinematic-hero').waitFor();await p.waitForTimeout(150);assert.ok(Math.abs(await p.evaluate(()=>scrollY)-600)<4);passed.push('root refresh preserves an intentional reading position');await p.close();
