@@ -1,0 +1,12 @@
+{
+  "passed": [
+    "approved 38vw width, single row, champagne price rail, preserved facts and no favorites",
+    "manual photo controls update actual photo, dots/status, and stay on the collection",
+    "keyboard photo controls retain focus, and pointer leave does not discard manual selection",
+    "circular detail action expands the selected photo and Back restores link focus",
+    "failed manual photo keeps the genuine previous image and reports failure",
+    "reduced motion keeps manual controls functional without visual animations",
+    "approved second hero sentence and Spanish translation retain three scenes"
+  ],
+  "failures": []
+}

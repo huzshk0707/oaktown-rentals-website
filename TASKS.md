@@ -5,6 +5,8 @@
 - [x] Preserve six file records, 38 reviewed imports, media/fact holds and booking isolation.
 - [x] Save [Bethune motion study](docs/oaktown-signature/BETHUNE-MOTION-STUDY.md) and [inventory compatibility review](docs/oaktown-signature/integration/README.md).
 - [x] Verify six routes, 68 genuine photo selections, 38 local asset hashes and EN/ES browser accessibility.
+- [x] Run current browser, bilingual, accessibility, admin, CMS, gallery and Mint Mojo regressions.
+- [x] Confirm Cloudflare build and integration preview deployment in PR #29.
 - [ ] Verify the hosted integration runtime and photos from an environment allowed to reach the preview.
 - [ ] Felix: review remaining Signature prototype and design decisions in isolated branches targeting integration.
 - [ ] Felix Junior: resolve confirmed pricing, availability, Troutwood exterior and held photo evidence in isolated branches targeting integration.

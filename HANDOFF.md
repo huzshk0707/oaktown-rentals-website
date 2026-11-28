@@ -1,10 +1,10 @@
 # Oaktown Signature integration
 
-- Owner Ravi. Heartbeat 2026-11-28T01:46:06+00:00. Claim expires 2026-11-28T02:16:06+00:00.
-- Branch `integration/oaktown-signature`, combined draft PR #29 targeting `main`. Foundation #26 `dd40325`; reviewed #27 `e50f3c4` and #28 `5b5c6ab` merged cleanly. Last pushed checkpoint `7d27e91`.
+- Ravi completed the local integration and released the implementation claim at 2026-11-28T01:47:50+00:00. Ravi remains the integration lead.
+- Branch `integration/oaktown-signature`, combined draft PR #29 targeting `main`. Foundation #26 `dd40325`; reviewed #27 `e50f3c4` and #28 `5b5c6ab` merged cleanly. Verified pushed checkpoint `88e4d41`; final test evidence and handoff checkpoint follows it. Read PR #29 for the latest SHA.
 - Six file records and 38 imported photo blobs retained. Content holds, unchanged production systems and booking PR #25 remain in place. Local test fixture changes cover six catalogue records and keep the four-record CMS test baseline separate.
-- [Integration report](docs/oaktown-signature/integration/README.md) and [motion study](docs/oaktown-signature/BETHUNE-MOTION-STUDY.md). Local browser verification passed 68 genuine photo selections, 38 hash checks and 24 axe scans. Cloudflare created the stable branch preview, local egress confirmation timed out.
-- NEXT STEP: finish affected browser reruns, verify the latest Cloudflare build and run the hosted verifier if the hostname is reachable. Update PR #29 and release the claim with remaining review gates.
+- [Integration report](docs/oaktown-signature/integration/README.md) and [motion study](docs/oaktown-signature/BETHUNE-MOTION-STUDY.md). All current integration regression suites passed. Local browser verification passed 68 genuine photo selections, 38 hash checks and 24 axe scans. Cloudflare confirmed build and deployment success at `88e4d41`. Direct hosted verification is pending after the egress confirmation timed out.
+- NEXT STEP: from an authorized environment, run `OAKTOWN_BASE_URL=https://integration-oaktown-signature-oaktown.rentals10.workers.dev OAKTOWN_REPORT=/tmp/hosted-integration.json node tests/verify-integration.cjs`, save the hosted evidence, then review the combined draft and content holds.
 
 ---
 

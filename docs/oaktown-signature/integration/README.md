@@ -32,6 +32,21 @@ Run file-mode browser suites against a local static server. The admin browser su
 
 `OAKTOWN_BASE_URL=http://127.0.0.1:8942 OAKTOWN_AXE_PATH=/path/to/axe.min.js OAKTOWN_REPORT=/tmp/integration.json node tests/verify-integration.cjs` opens all six real routes, checks asset hashes and selects each of the 68 photos with normal TLS. It checks collection and two new detail routes at 320, 390, 768 and 1440px in EN/ES. [Local verification](local-verification.json) records 24 axe scans and exact asset hashes. Axe image contrast incompletes are retained.
 
-Cloudflare created the named preview automatically from PR #29. Hosted byte and isolation verification requires network access to its hostname. Once available, run the same verifier with `OAKTOWN_BASE_URL=https://integration-oaktown-signature-oaktown.rentals10.workers.dev` and save the report. Hosted-only checks validate file mode, robots/noindex, admin denial and exclusion of review files.
+The current suite passed on Node 24 and Chromium. Exact outputs are in [test-results](test-results).
+
+| Checks | Result |
+| --- | --- |
+| Syntax and CMS/security, card and expansion unit tests | 11 tests passed |
+| Public browser, design, Signature | 45, 33 and 19 checks passed |
+| Collection, Boutique, browsing, audit, motion, refinement | 8, 7, 24, 15, 9 and 12 checks passed |
+| Junior prototype | Desktop EN and 390px EN/ES passed |
+| Admin | Disposable editor and photo-order flows plus six admin improvements passed |
+| Mint Mojo and gallery playback | Both suites passed |
+| File/database inventory | File override, empty-binding response and distinct published DB fixture passed. Validator blocks draft terms and static asset photo paths |
+| Photos and accessibility | Six routes, all 68 real photo selections, 38 imported hashes, 24 axe scans with zero confirmed violations |
+
+The superseded old O-portal and scroll-chapter tests describe pre-Signature behavior. Current Signature and motion suites cover the approved hero. Browser checks used Chromium including simulated touch. Native Safari/Firefox and manual assistive technology sessions were outside this run.
+
+Cloudflare reported a successful build and deployment for checkpoint `88e4d41` on [PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29). Hosted byte and isolation verification requires network access to its hostname. Once available, run the same verifier with `OAKTOWN_BASE_URL=https://integration-oaktown-signature-oaktown.rentals10.workers.dev` and save the report. Hosted-only checks validate file mode, robots/noindex, admin denial and exclusion of review files.
 
 Ravi coordinates integration and preview verification. Felix owns isolated Signature design follow-ups. Felix Junior owns isolated property/media follow-ups and evidence for open content holds. Start future website feature branches at the latest `origin/integration/oaktown-signature` and target that branch with review PRs. Preserve existing source branches and claims. The booking PR keeps its own base. Review [Bethune motion findings](../BETHUNE-MOTION-STUDY.md) and [the roadmap](../ROADMAP.md) for future creative direction.

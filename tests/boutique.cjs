@@ -40,10 +40,15 @@ const fixture='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
   assert.equal(await p.evaluate(()=>document.activeElement.classList.contains('card-detail-link')),true);
  });
  await test('failed manual photo keeps the genuine previous image and reports failure',async()=>{
-  const c=p.locator('.property-card').first();const failed=await p.evaluate(()=>window.OAKTOWN_DATA.images.colonial[2].split('?')[0]);
-  await p.route(new URL(failed,base).href,r=>r.abort());
-  const previous=await c.getAttribute('data-selected-photo');await c.locator('[data-card-photo-index="2"]').click();await p.waitForFunction(()=>!document.querySelector('.card-media').hasAttribute('aria-busy'));
-  assert.equal(await c.getAttribute('data-selected-photo'),previous);assert.match(await c.locator('[data-card-photo-status]').innerText(),/could not load/);
+  // Fresh context prevents a detail thumbnail from serving a cached local JPEG.
+  const failurePage=await browser.newPage({viewport:{width:1440,height:1100}});
+  await failurePage.route('**/assets/properties/115-colonial-drive/03.jpg',route=>route.abort());
+  await failurePage.goto(base+'/#homes');
+  const c=failurePage.locator('.property-card').first();
+  await c.locator('[data-card-photo-index="2"]').press('Enter');
+  await failurePage.waitForFunction(()=>document.querySelector('[data-card-photo-status]')?.textContent.includes('could not load'));
+  assert.equal(await c.getAttribute('data-selected-photo'),'0');
+  await failurePage.close();
  });
  await test('reduced motion keeps manual controls functional without visual animations',async()=>{
   await p.emulateMedia({reducedMotion:'reduce'});await p.reload();await p.locator('.property-card').first().waitFor();
