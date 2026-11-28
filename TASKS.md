@@ -7,7 +7,9 @@
 - [x] Pass relevant regressions and verify the hosted feature preview. Save [before and after, walkthrough, licenses and exact test results](docs/oaktown-signature/phase3/README.md).
 - [x] Owner approved the Phase 3 layout and selected Option A. Promote the exact approved photo, remove the previous photo and credit together, and verify the lighter Louisville overlay.
 - [x] Save [final desktop/mobile captures, contrast measurements, regressions and hosted verification](docs/oaktown-signature/phase3/final/README.md).
-- [ ] Owner reviews final draft #31. Ravi integrates into draft #29 after separate authorization.
+- [x] Owner approved final `1b75145` and authorized FELIX to integrate PR #31 into draft #29.
+- [x] Lock the major homepage design after verifying the combined preview, six properties, 38 imported photo hashes and all 68 gallery selections. [Combined tests and verification](docs/oaktown-signature/integration/phase3/README.md).
+- [ ] Await owner design instructions for the individual property detail redesign. Start with [115 Colonial Drive](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/#home/115-colonial-drive) as the reference design for all six properties.
 
 # Phase 2E — Seamless Sky Header
 
@@ -34,7 +36,7 @@
 | Sloemer Avenue | Review presentation of eight original imports. Confirm rent, deposit and availability. |
 | Troutwood Court | Obtain a genuine exterior and confirm timing, renovated specifications and other unverified facts. |
 | Afterglow Drive | Obtain architectural accuracy acceptance before release. |
-| Listings and hosting | Verify property-specific Zillow URLs, rehearse any file/CMS migration on staging and finish direct hosted asset and isolation verification. |
+| Listings and hosting | Verify property-specific Zillow URLs and rehearse any separately authorized file/CMS migration on staging. |
 
 Use each property's latest owner-approved Google Drive folder to source updates. Check current property accuracy, reuse rights and attribution before copying the approved bytes. Leave review-only variants out of the catalogue.
 
@@ -48,7 +50,7 @@ Use each property's latest owner-approved Google Drive folder to source updates.
 - [x] Run current browser, bilingual, accessibility, admin, CMS, gallery and Mint Mojo regressions.
 - [x] Confirm Cloudflare build and integration preview deployment in PR #29.
 - [x] FELIX verified shared root HTML, 49 served hashes and preview isolation at `4f5c3ea`. [Hosted evidence](docs/oaktown-signature/phase3/shared-preview.json).
-- [ ] Felix: own Phase 3 — Homepage Completion from the verified Phase 2E handoff. Branch from the shared tip, review the current homepage and Phase 2D prototypes, and target the shared branch with a feature draft. See [the roadmap](docs/oaktown-signature/ROADMAP.md#phase-3--homepage-completion).
+- [x] Felix integrated the owner-approved Phase 3 design from #31. See [the locked design and next phase](docs/oaktown-signature/ROADMAP.md#phase-3--homepage-completion).
 - [ ] Felix Junior: resolve confirmed pricing, availability, Troutwood exterior and held photo evidence in isolated branches targeting integration.
 - [ ] Owner: review combined draft, property/fact holds and Afterglow architectural accuracy before any launch decision.
 

@@ -1,5 +1,7 @@
 # Phase 3 final refinement
 
+The owner approved this feature and it is now integrated in draft #29. See the [shared preview and design lock](../../integration/phase3/README.md) for current verification. This page retains the feature review evidence.
+
 The owner approved the section order, fullscreen Rooted in Louisville layout and Option A. The updated [feature preview](https://felix-homepage-completion-oaktown.rentals10.workers.dev/) uses the exact 2400 × 1348 review WebP of the Louisville skyline and Ohio River, by K (@kelly on Pexels). The asset SHA-256 is `69b2cfc78a06d84b702fddd86a5eddda91ec39b0fad8574b5b69d8ad598029b8`. The homepage replaces the original photograph and its credit together. The prior photo and license record remain available for historical review. [Source and license evidence](../PHOTOGRAPHY.md)
 
 The overall forest-green overlay is lighter, with desktop shade behind the copy that follows the disclosure as it expands. The story uses the approved crops. The accepted opening, homes collection, rental journey, vacation feature, footer and mobile automatic-darkening correction carry forward. Runtime changes are confined to the Louisville photo, its old credit and the section's CSS.

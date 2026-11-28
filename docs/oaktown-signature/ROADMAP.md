@@ -5,7 +5,7 @@ Approved by the owner on 27 November 2026. Creative direction and visual accepta
 ## Shared integration foundation
 
 [Draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29) on
-`integration/oaktown-signature` combines reviewed work from #26, #27, #28 and #30 and
+`integration/oaktown-signature` combines reviewed work from #26, #27, #28, #30 and #31 and
 is the base for future isolated Signature feature PRs. Ravi coordinates the
 [shared integration and preview](integration/README.md). Earlier PRs and
 checkpoints remain available as source history. The [Bethune motion study](BETHUNE-MOTION-STUDY.md)
@@ -13,7 +13,7 @@ informs later creative review. Booking PR #25 stays on its separate staging path
 
 ## Current delivery
 
-Felix owns Phase 3 — Homepage Completion from the shared Phase 2E checkpoint in [draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29). The owner approved the homepage opening and final Phase 2E interactions. The remaining sections follow the [Phase 3 scope](#phase-3--homepage-completion).
+**Major homepage design is complete and locked.** The owner approved Phase 3 at `1b75145`, now integrated in [draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29). The next design starts with the existing 115 Colonial Drive detail page as the reference for all six properties. Await the owner’s design instructions before editing detail pages.
 
 [Draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) retains the source history for the homepage, search controls and cards. Ravi completed Phase 2A engineering. Felix verified 60 hosted photos at the earlier checkpoint and prepared the [Phase 2B editorial proposal](phase2b/README.md). The owner approved Option B — Boutique Luxury (Drive `1V7gfl1owIOQzIOOUFNxc0E95iJHGyhH9`). Ravi completed the [Phase 2C implementation and review evidence](phase2c/README.md). Enhanced Afterglow photo accuracy remains a production approval.
 
@@ -26,8 +26,9 @@ Felix owns Phase 3 — Homepage Completion from the shared Phase 2E checkpoint i
 | 2B | Editorial Collection creative design / approval | **Approved: Option B — Boutique Luxury.** Exact owner-supplied reference retained in [Phase 2C](phase2c/approved-option-b.png). Generated photography/facts/logo are styling references only, never content. |
 | 2C | Approved visual implementation | **Implemented; awaiting visual acceptance.** Approved 38vw desktop cards, warm ivory/champagne pricing, serif titles, genuine photos/facts, functional photo controls, minimal specs and circular detail action. Hero only changes scene-two EN/ES copy; horizontal gallery and existing systems preserved. The latest gallery decision supersedes the earlier three-card/multi-row homepage assumption; retain all matching homes in one row. |
 | 2E | Seamless Sky Header | Owner-approved [PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30) merged at `48a32cd`. Direct vacation link, rounded buttons and staggered disclosures are in the [shared draft](https://github.com/huzshk0707/oaktown-rentals-website/pull/29). |
-| 3 | Dedicated property search page | Planned. Existing homepage filters remain operational; a dedicated page is not yet authorized. Use supported neighborhood, bedroom and bathroom fields, not invented property types. |
-| 4 | Individual property detail pages | Existing detail routes, gallery, rental facts and showing links remain functional. Redesign awaits direction. |
+| 3 | Homepage Completion and design lock | **Complete.** Owner-approved Phase 3 is integrated. Preserve the approved opening, section order, Louisville Option A and mobile color treatment. [Integration verification](integration/phase3/README.md). |
+| Later | Dedicated property search page | Planned. Existing homepage filters remain operational; a dedicated page is not yet authorized. Use supported neighborhood, bedroom and bathroom fields, not invented property types. |
+| 4 | Individual property detail pages | Next design reference is 115 Colonial Drive for all six properties. Existing details, galleries, facts and showing links carry forward. Begin after owner design instructions. |
 | 5 | Before You Apply experience | Planned. Requires verified requirements, policies and approved copy. |
 | 6 | Showing and application workflow | Existing SMS showing links and Fillout application remain intact. Future workflow changes require approval. |
 | 7 | Branded email and trust improvements | Planned. Requires approved sender/provider, verified company details and relevant legal copy. No invented guarantees or claims. |
@@ -42,17 +43,21 @@ Felix owns Phase 3 — Homepage Completion from the shared Phase 2E checkpoint i
 1. Homepage opening refinements approved and integrated from [PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30).
 2. Review property photography using the latest owner-approved Drive folders and verified property accuracy, reuse rights and attribution. Refer to the [per-property tasks](../../TASKS.md#photography-and-content-backlog).
 3. Phase 3 — Homepage Completion, owned by Felix. Review Our Homes, Louisville, Our Story, editorial panels and the vacation feature.
-4. Refine individual property pages, galleries, pricing, amenities and showing actions.
+4. Use 115 Colonial Drive as the reference for all six property detail pages once the owner provides the design instructions.
 5. Refine the dedicated Lobster Nirvana experience. Keep booking on its separate staging approval path.
 6. Complete Resources, FAQ, Community and application guidance.
 7. Polish interactions across the finished website.
 8. Prepare release after content approval, CMS readiness, accessibility, performance and production authorization.
 
-This order records planning priorities. The approved Phase 2E composition is locked. Future sections and release await their own reviews.
+This order records planning priorities. The approved Phase 2E opening and Phase 3 homepage are locked. Future sections and release await their own reviews.
 
 ## Phase 3 — Homepage Completion
 
-Felix implemented the approved sequence in [draft PR #31](https://github.com/huzshk0707/oaktown-rentals-website/pull/31) from the reviewed shared integration tip `4f5c3ea`. Cinematic hero → Our Homes with search, Gallery and Grid → standalone Rooted in Louisville → Your Rental Journey → compact Lobster Nirvana → existing footer. The accepted opening, shared six-property catalogue, bilingual navigation and all publication holds remain in place. The [review package](phase3/README.md) includes desktop/mobile EN/ES captures, a scroll recording, mobile color diagnosis and [three photo options](phase3/PHOTOGRAPHY.md). The owner selected Option A and approved the layout. The [final refinement](phase3/final/README.md) installs the selected photograph, lightens the overlay and replaces the prior image and on-page credit together. PR #31 awaits final review. Ravi owns integration after owner authorization. The dedicated search page remains a later deliverable.
+The approved homepage sequence is locked: cinematic hero → Our Homes with search, Gallery and Grid → standalone Rooted in Louisville → Your Rental Journey → compact Lobster Nirvana → existing footer. The Louisville panorama uses the exact Option A photograph with the lighter overlay and documented license. The existing mobile color correction remains in effect. [Final design reference](phase3/final/README.md) · [Combined verification](integration/phase3/README.md).
+
+## Phase 4 — Property detail design reference
+
+Start with [115 Colonial Drive on the shared preview](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/#home/115-colonial-drive). Its 19 ordered gallery images and current EN/ES rental facts and showing/application actions are the baseline. Once the owner provides instructions, use an isolated feature branch from the current shared tip. Review the Colonial design before adapting it to all six properties, including Cherokee #8’s distinct unit, Sloemer’s unconfirmed terms and Troutwood’s contact-only and no-photo state. This checkpoint records preparation only. The dedicated search page is a later deliverable.
 
 ## Phase 1 source of truth
 

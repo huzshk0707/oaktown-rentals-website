@@ -1,9 +1,10 @@
-# Phase 3 integrated and homepage design locked / FELIX active
+# Phase 3 integrated, homepage design locked / FELIX released
 
-- Owner FELIX. UTC heartbeat 2026-11-28T06:06:01+00:00. Claim expires 2026-11-28T06:36:01+00:00.
-- Draft PR #29 on `integration/oaktown-signature`, targeting `main`. Owner-approved PR #31 head `1b751450e86ae1759647fc2c862acdb71d73f7e0` is merged from shared baseline `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Ownership checkpoint `b8cf56c`. The only conflict was this handoff. Source history follows below.
-- The approved Phase 2E opening, Option A photo and lighter overlay, homepage order and mobile color correction are integrated. Catalogue, rental photos and all outstanding publication holds carry forward.
-- NEXT STEP: verify the combined branch with full regressions, six property routes, 38 imported photo hashes and all 68 ordered gallery selections. Verify deployed assets and isolation on the shared Cloudflare preview, then release the claim. Property detail redesign waits for owner direction and starts with 115 Colonial Drive.
+- FELIX released the integration claim at 2026-11-28T06:10:21+00:00. `integration/oaktown-signature` remains draft PR #29 targeting `main`. Owner-approved #31 `1b751450e86ae1759647fc2c862acdb71d73f7e0` merged at `495e284f089135ee42be16dd468648b45c970ca5` from verified shared tip `4f5c3ea`. This evidence checkpoint follows the merge. Read PR #29 for the exact latest head.
+- Major homepage design is complete and locked. Preserve the Phase 2E opening, approved order, exact Louisville Option A photograph and license, lighter overlay, mobile color treatment, rental journey, vacation feature and footer.
+- [Shared root preview](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/) and [verification report](docs/oaktown-signature/integration/phase3/README.md). Cloudflare deployed the merge. Local and hosted catalogue checks passed for six routes, 38 imported byte matches and 68 ordered photo selections. Seventeen regression commands and 36 axe scans with no confirmed violations passed. Hosted browser, 55 served asset hashes and preview isolation passed.
+- Photography, fact, Zillow and CMS holds carry forward in TASKS.md and the report. Booking PR #25 stays separate. No production, payment or live inventory action.
+- NEXT STEP: await the owner’s property-detail design instructions. On an isolated branch from the then-current shared tip, open `/#home/115-colonial-drive` as the reference for the six detail pages. No detail redesign implementation in this checkpoint.
 
 ---
 

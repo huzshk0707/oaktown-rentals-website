@@ -1,6 +1,6 @@
 # Oaktown Signature integration
 
-[Draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29) combines the Signature site and catalogue work on `integration/oaktown-signature` against `main`. Use the [integration preview](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/#homes) for shared review.
+[Draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29) combines the Signature site and catalogue work on `integration/oaktown-signature` against `main`. Use the [shared root preview](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/) for review. The owner-approved homepage is locked following [Phase 3 integration and verification](phase3/README.md).
 
 | Source | Integrated checkpoint | Result |
 | --- | --- | --- |
@@ -8,6 +8,7 @@
 | PR #27, Felix Junior | `e50f3c4` | Review harness palette and mobile media fixes, panel keyboard/reduced-motion/Spanish and map-free filtering checks |
 | PR #28, Felix Junior | `5b5c6ab` | Sloemer and Troutwood, missing-photo and unknown-term handling, 38 reviewed imports |
 | PR #30, Ravi | `f5a2476` → `48a32cd` | Owner-approved Phase 2E header, navigation, hero buttons and disclosures |
+| PR #31, Felix | `1b75145` → `495e284` | Owner-approved Phase 3 homepage, Louisville Option A and lighter overlay, section order and mobile color correction |
 | PR #25 | `9391a17` | Separate booking staging acceptance in its existing branch |
 
 The original source merges applied cleanly. The Phase 2E merge resolved only the shared handoff log and retained both branches’ history. Initial integration reconciled stale four-listing assertions, absolute vs. relative photo URLs and empty-gallery expectations. The database test harness now seeds a separate snapshot of the four existing CMS-compatible records. The published database and the file catalogue are distinct test cases.
