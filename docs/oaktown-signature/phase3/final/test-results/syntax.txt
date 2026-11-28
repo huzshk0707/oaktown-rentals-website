@@ -1,0 +1,9 @@
+
+> check
+> node --check cms/worker.mjs && node --check admin/admin.js && node --check admin/preview.js && node --check cms-client.js && node --check app.js && node --check property-cards.js && node --check collection.js && node --check signature.js && node --check sky-header.js && node --check mint-mojo/mint-mojo.js
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice

@@ -24,7 +24,7 @@
     // Use one animation as both the visible progress bar and the advance clock.
     mountSlideshow({strip, surface, dialog, currentImage, advance, language}) {
       const holder = strip.parentElement;
-      const inlineParent = holder.parentElement;
+      const playsInDialog = holder.parentElement === dialog;
       const toggle = holder.querySelector('[data-playback]');
       const events = new AbortController();
       const options = {signal: events.signal};
@@ -41,7 +41,7 @@
         if (!animation) return;
         const img = currentImage();
         const ready = img?.complete && img.naturalWidth > 0;
-        const visible = dialog.open || (inlineParent !== dialog && inView);
+        const visible = playsInDialog ? dialog.open : inView && !dialog.open;
         if (motion && ready && visible && !document.hidden && !userPaused) animation.play();
         else animation.pause();
       }
@@ -49,10 +49,6 @@
       function select(index) {
         animation?.cancel();
         animation = null;
-        if (inlineParent !== dialog) {
-          const parent = dialog.open ? dialog : inlineParent;
-          if (holder.parentElement !== parent) parent.insertBefore(holder, dialog.open ? dialog.lastElementChild : dialog);
-        }
         const active = strip.children[index];
         if (!active) return;
         for (const button of strip.children) {
@@ -87,6 +83,8 @@
       }};
     },
     mount(root, {t}) {
+      // A language redraw can remount this page during back-forward cache restoration.
+      try { paused = localStorage.getItem('oaktown-motion') === 'off'; } catch {}
       const events = new AbortController();
       const on = (target, name, fn, options={}) => target?.addEventListener(name, fn, {...options, signal:events.signal});
       const story = root.querySelector('.story');
@@ -231,7 +229,7 @@
         style(meter,'transform','scaleX('+(geometry.max ? .15+.85*clamp(left/geometry.max) : 1)+')');
         steps.forEach(button=>{button.disabled=Number(button.dataset.collectionStep)<0?left<=2:left>=geometry.max-2;});
         geometry.cards.forEach(({card,image,center})=>{
-          if(!gallery || !enabled() || card.hidden){style(image,'transform','');return;}
+          if(!gallery || geometry.max<=2 || !enabled() || card.hidden){style(image,'transform','');return;}
           const distance=Math.max(-1,Math.min(1,(center-left-geometry.width/2)/geometry.width));
           style(image,'transform',`perspective(1600px) rotateY(${(distance*(desktop.matches?-4:-2.5)).toFixed(3)}deg) translateY(${(Math.abs(distance)*(desktop.matches?5:3)).toFixed(2)}px)`);
         });
@@ -251,6 +249,15 @@
         measure();
       }
       on(motionButton,'click',()=>{paused=!paused;try{localStorage.setItem('oaktown-motion',paused?'off':'on');}catch{}motionChanged();});
+      on(window,'pageshow',event => {
+        if (!event.persisted) return;
+        try {
+          const saved = localStorage.getItem('oaktown-motion') === 'off';
+          if (saved !== paused) paused = saved;
+          // The document root can be restored with the previous preference.
+          if (document.documentElement.classList.contains('motion-enabled') !== enabled()) motionChanged();
+        } catch {}
+      });
       on(reduce,'change',motionChanged);on(desktop,'change',motionChanged);on(cinematic,'change',motionChanged);
       on(window,'scroll',()=>{if(scrollY>8)stopOpening();schedule();},{passive:true});
       on(window,'resize',()=>{stopOpening();measure();},{passive:true});
@@ -277,7 +284,7 @@
         }
       });
       on(viewport,'keydown',e=>{
-        if(e.target!==viewport)return;
+        if(e.target!==viewport||collection.dataset.layout!=='gallery')return;
         if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)) {
           e.preventDefault();
           if(e.key==='Home'||e.key==='End')viewport.scrollTo({left:e.key==='Home'?0:viewport.scrollWidth,behavior:'instant'});

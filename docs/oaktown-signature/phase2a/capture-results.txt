@@ -1,0 +1,1 @@
+PASS: four before/after collection geometry and copy comparisons; actual photo outcomes recorded.

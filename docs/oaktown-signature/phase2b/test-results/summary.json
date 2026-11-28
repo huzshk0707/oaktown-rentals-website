@@ -1,0 +1,110 @@
+[
+  {
+    "name": "syntax",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "cms-components",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "collection",
+    "command": [
+      "node",
+      "tests/collection.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "signature",
+    "command": [
+      "node",
+      "tests/signature.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "browser",
+    "command": [
+      "node",
+      "tests/browser.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "design",
+    "command": [
+      "node",
+      "tests/design.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "browsing",
+    "command": [
+      "node",
+      "tests/browsing.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "audit",
+    "command": [
+      "node",
+      "tests/audit.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "motion",
+    "command": [
+      "node",
+      "tests/motion.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "mint-mojo",
+    "command": [
+      "node",
+      "tests/mint-mojo.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "admin-browser",
+    "command": [
+      "npm",
+      "run",
+      "test:admin-browser"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "photo-order",
+    "command": [
+      "npm",
+      "run",
+      "test:photo-order"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "admin-improvements",
+    "command": [
+      "npm",
+      "run",
+      "test:admin-improvements"
+    ],
+    "exitCode": 0
+  }
+]

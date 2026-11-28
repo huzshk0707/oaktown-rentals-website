@@ -12,30 +12,27 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  const check=(name,fn)=>{try{fn();passed.push(name)}catch(e){failures.push(name+': '+e.message)}};
  await page.goto(base+'/');await page.waitForTimeout(250);
  
- const stage=await page.locator('.story-stage').boundingBox();check('desktop cinematic stage fills one screen',()=>assert.equal(stage.height,1000));
+ const stage=await page.locator('.cinematic-stage').boundingBox();check('desktop cinematic stage fills one screen',()=>assert.equal(stage.height,1000));
  for(const scene of [0,1,2]){
-   await page.locator('[data-scene-button="'+scene+'"]').click();
-   const active=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');check('explicit photo selection '+scene,()=>assert.equal(active,String(scene)));
+   await page.locator('[data-hero-scene-button="'+scene+'"]').click();
+   await page.waitForFunction(index=>document.querySelector('.cinematic-hero').dataset.scene===String(index),scene);
+   const currentScene=await page.locator('.cinematic-hero').getAttribute('data-scene');
+   check('scene navigation '+scene,()=>assert.equal(currentScene,String(scene)));
  }
- for(const [progress,scene] of [[.1,0],[.5,1],[.9,2]]){
-   await page.evaluate(p=>{const story=document.querySelector('.story');scrollTo({top:(story.offsetHeight-innerHeight)*p,behavior:'instant'});},progress);
-   await page.waitForFunction(expected=>document.querySelector('[data-scene-image].is-active')?.dataset.sceneImage===String(expected),scene,{timeout:1500});
-   const selectedPhoto=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');
-   check('native scroll advances chapter '+scene,()=>assert.equal(selectedPhoto,String(scene)));
- }
- const homesTop=await page.locator('#homes').evaluate(el=>el.getBoundingClientRect().top+scrollY);check('homes start within two desktop screens',()=>assert.ok(homesTop<=2000));
- const grid=await page.locator('.property-grid').evaluate(el=>({display:getComputedStyle(el).display,columns:getComputedStyle(el).gridTemplateColumns.split(' ').length}));check('default property view has two comparison columns',()=>{assert.equal(grid.display,'grid');assert.equal(grid.columns,2)});
+ await page.evaluate(()=>scrollTo({top:200,behavior:'instant'}));await page.waitForTimeout(100);
+ const movement=await page.locator('.signature-images').evaluate(el=>getComputedStyle(el).transform);check('native scroll subtly moves the hero photography',()=>assert.notEqual(movement,'none'));
+ const homesTop=await page.locator('#homes').evaluate(el=>el.getBoundingClientRect().top+scrollY);check('homes start within three desktop screens',()=>assert.ok(homesTop<=3000));
+ const grid=await page.locator('.property-grid').evaluate(el=>({display:getComputedStyle(el).display,wrap:getComputedStyle(el).flexWrap}));check('default property view is a single horizontal row',()=>{assert.equal(grid.display,'flex');assert.equal(grid.wrap,'nowrap')});
  await page.locator('#homes').scrollIntoViewIfNeeded();await page.waitForTimeout(300);
- await page.locator('[data-layout-button="gallery"]').click();
  await page.locator('[data-collection-step="1"]').click();await page.waitForTimeout(700);
  const scroll=await page.locator('.collection-viewport').evaluate(el=>el.scrollLeft);check('carousel next advances',()=>assert.ok(scroll>100));
- await page.locator('[data-filter="The Highlands|Cherokee Triangle"]').click();
+ await page.locator('[name=neighborhood]').selectOption('Cherokee Triangle');await page.locator('#home-search [type=submit]').click();
  
  const names=await page.locator('.property-card:not([hidden]) .property-name').allTextContents();check('Highlands filter contents',()=>{assert.equal(names.length,1);assert.ok(names.every(n=>n.includes('Cherokee')))});
- const pressed=await page.locator('[data-filter="The Highlands|Cherokee Triangle"]').getAttribute('aria-pressed');check('filter exposes selected state',()=>assert.equal(pressed,'true'));
- await page.locator('[data-layout-button="grid"]').click();await page.waitForTimeout(100);
- const layout=await page.locator('.collection-viewport').evaluate(el=>({scroll:el.scrollLeft,tabIndex:el.getAttribute('tabindex'),overflow:el.scrollWidth>el.clientWidth}));check('grid restores all columns after filtering gallery',()=>{assert.equal(layout.scroll,0);assert.equal(layout.tabIndex,null);assert.equal(layout.overflow,false)});
- await page.locator('[data-filter="All"]').click();
+ const selected=await page.locator('[name=neighborhood]').inputValue();check('filter exposes selected state',()=>assert.equal(selected,'Cherokee Triangle'));
+ await page.waitForTimeout(100);
+ const layout=await page.locator('.collection-viewport').evaluate(el=>({scroll:el.scrollLeft,tabIndex:el.getAttribute('tabindex'),overflow:el.scrollWidth>el.clientWidth}));check('single filtered home resets the strip and retains keyboard access',()=>{assert.equal(layout.scroll,0);assert.equal(layout.tabIndex,'0');assert.equal(layout.overflow,false)});
+ await page.locator('#home-search [type=reset]').click();
  await page.locator('.property-card').first().locator('.property-image-wrap').click();await page.waitForTimeout(200);
  const count=await page.locator('[data-gallery-index]').count();check('Colonial full gallery',()=>assert.equal(count,19));
  const introContrast=await page.locator('.page-intro').evaluate(section=>{
@@ -48,10 +45,10 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  check('listing summary meets body-text contrast',()=>assert.ok(introContrast[1]>=4.5,JSON.stringify(introContrast)));
  
  const inquiry=await page.locator('#mobile-inquiry').getAttribute('href');check('inquiry carries address',()=>assert.ok(decodeURIComponent(inquiry).includes('115 Colonial Drive')));
- const showing=await page.locator('.detail-actions .button-solid').getAttribute('href');check('showing request has property and purpose',()=>assert.ok(decodeURIComponent(showing).includes('request a showing at 115 Colonial Drive')));
+ const showing=await page.locator('.listing-availability a').getAttribute('href');check('showing request has property and purpose',()=>assert.ok(decodeURIComponent(showing).includes('request a showing at 115 Colonial Drive')));
  const order=await page.evaluate(()=>document.querySelector('.gallery').compareDocumentPosition(document.querySelector('.detail-body'))&Node.DOCUMENT_POSITION_FOLLOWING);check('gallery precedes description',()=>assert.ok(order));
  await page.locator('[data-open-gallery]').click();await page.keyboard.press('ArrowRight');
- const counts=await page.locator('.gallery-count').allTextContents();check('keyboard gallery advances both counters',()=>assert.ok(counts.every(x=>x==='2 / 19')));
+ const counts=await page.locator('.gallery-count').allTextContents();check('keyboard gallery advances both counters',()=>assert.deepEqual(counts,['2 / 19','02 / 19']));
  await page.keyboard.press('Escape');await page.waitForTimeout(50);
  
  const modal=await page.locator('.lightbox').evaluate(el=>({open:el.open,locked:document.body.classList.contains('gallery-is-open'),focus:document.activeElement.hasAttribute('data-open-gallery')}));check('Escape restores page and focus',()=>{assert.equal(modal.open,false);assert.equal(modal.locked,false);assert.equal(modal.focus,true)});
@@ -62,19 +59,17 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);check('no horizontal document overflow at '+width,()=>assert.equal(overflow,false));
  }
  await page.setViewportSize({width:390,height:844});await page.goto(base+'/');await page.waitForTimeout(200);
- const cta=await page.locator('.story-explore').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "View homes"')));
- const ctaLabel=await page.locator('.story-explore>span').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
- await page.locator('[data-scene-button="1"]').click();
- const active=await page.locator('[data-scene-image].is-active').getAttribute('data-scene-image');check('mobile second scene active',()=>assert.equal(active,'1'));
+ const cta=await page.locator('[data-hero-scene="0"] a[href="#homes"]').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "Browse Our Homes"')));
+ const ctaLabel=await page.locator('[data-hero-scene="0"] a[href="#homes"]').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
+ const mobileState=await page.locator('.cinematic-hero').evaluate(el=>({scene:el.dataset.scene,animated:el.classList.contains('is-cinematic'),hidden:el.querySelector('[data-hero-scene="0"]').getAttribute('aria-hidden')}));
+ check('mobile has a static accessible scene',()=>assert.deepEqual(mobileState,{scene:'0',animated:false,hidden:'false'}));
+ const mobileScenes=await page.locator('.cinematic-progress').isVisible();check('mobile scene controls are omitted',()=>assert.equal(mobileScenes,false));
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
- await page.locator('#language-switch').click();const text=await page.locator('[data-scene-button="1"]').getAttribute('aria-label');check('photo controls translate',()=>assert.match(text,/^Foto 2:/));
+ await page.locator('#language-switch').click();const text=await page.locator('[data-hero-scene="0"] a[href="#homes"]').innerText();check('hero action translates',()=>assert.match(text,/Ver nuestras viviendas/i));
  await page.reload();const lang=await page.locator('html').getAttribute('lang');check('Spanish preference survives reload',()=>assert.equal(lang,'es'));
- await page.setViewportSize({width:320,height:640});await page.goto(base+'/');
- for(const scene of [0,1,2]){
-   await page.locator('[data-scene-button="'+scene+'"]').click();await page.waitForTimeout(950);
-   const space=await page.evaluate(()=>({copy:document.querySelector('.story-scene.is-active .story-description').getBoundingClientRect().bottom,button:document.querySelector('.story-explore').getBoundingClientRect().top}));
-   check('Spanish hero copy clears its CTA at 320px, scene '+scene,()=>assert.ok(space.copy<space.button));
- }
+ await page.setViewportSize({width:320,height:640});await page.goto(base+'/');await page.locator('.cinematic-mobile-description').waitFor();
+ const space=await page.evaluate(()=>({copy:document.querySelector('.cinematic-mobile-description').getBoundingClientRect().bottom,button:document.querySelector('.signature-copy .signature-button').getBoundingClientRect().top}));
+ check('Spanish static hero copy clears CTA at 320px',()=>assert.ok(space.copy<space.button));
  for(const [slug,heading,term] of [
    ['115-colonial-drive','Un lugar para sentirte en casa','Los inquilinos pagan los servicios públicos'],
    ['1824-w-madison','Una casa con espacio en el sótano','Contrato de un año'],
@@ -99,7 +94,7 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
  check('language change retains gallery photo and reading position',()=>{assert.equal(retained,'3 / 9');assert.ok(Math.abs(before-after)<3);});
 
  await page.setViewportSize({width:1440,height:1000});await page.emulateMedia({reducedMotion:'reduce'});await page.goto(base+'/');await page.waitForTimeout(150);
- const sizes=await page.evaluate(()=>({position:getComputedStyle(document.querySelector('.story-stage')).position,transition:getComputedStyle(document.querySelector('.story-image')).transitionDuration,disabled:document.querySelector('#motion-toggle').disabled}));check('reduced motion keeps a static hero and disables transitions',()=>{assert.notEqual(sizes.position,'sticky');assert.ok(['0s','1e-05s'].includes(sizes.transition));assert.equal(sizes.disabled,true)});
+ const sizes=await page.evaluate(()=>({position:getComputedStyle(document.querySelector('.signature-hero')).position,transition:getComputedStyle(document.querySelector('.cinematic-photo')).transitionDuration,disabled:document.querySelector('#motion-toggle').disabled}));check('reduced motion keeps a static hero and disables transitions',()=>{assert.notEqual(sizes.position,'sticky');assert.ok(['0s','1e-05s'].includes(sizes.transition));assert.equal(sizes.disabled,true)});
  await page.emulateMedia({reducedMotion:'no-preference'});await page.goto(base+'/');await page.locator('#motion-toggle').click();await page.reload();const motion=await page.locator('#motion-toggle').getAttribute('aria-pressed');check('motion remains disabled after reload',()=>assert.equal(motion,'false'));
  await page.locator('#motion-toggle').click();await page.waitForTimeout(250);
 console.log(JSON.stringify({passed,failures},null,2));await browser.close();if(failures.length)process.exitCode=1;

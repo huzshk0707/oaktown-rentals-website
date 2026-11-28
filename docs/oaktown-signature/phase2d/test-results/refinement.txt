@@ -1,0 +1,17 @@
+{
+  "passed": [
+    "en fresh root, Browse Our Homes, deep-link refresh, logo and Back/Forward",
+    "en 38vw/title/rent preserved, readable secondary type, five dots and exact-unit showing fallback",
+    "en grid responsive columns, shared filter, detail/history, reload and keyboard segmented control",
+    "es fresh root, Browse Our Homes, deep-link refresh, logo and Back/Forward",
+    "es 38vw/title/rent preserved, readable secondary type, five dots and exact-unit showing fallback",
+    "es grid responsive columns, shared filter, detail/history, reload and keyboard segmented control",
+    "320px grid/gallery no document overflow",
+    "390px grid/gallery no document overflow",
+    "768px grid/gallery no document overflow",
+    "1024px grid/gallery no document overflow",
+    "1920px grid/gallery no document overflow",
+    "root refresh preserves an intentional reading position"
+  ],
+  "failures": []
+}

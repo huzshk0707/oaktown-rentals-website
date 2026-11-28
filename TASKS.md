@@ -1,3 +1,156 @@
+# Phase 4B step 2 — Universal public navigation
+
+[Current consolidation and publication decision](docs/oaktown-signature/release/README.md). The six Smallboat draft replacements are now included. Their public rights and condition checks supersede the older draft hold below.
+
+## Remaining release and design work
+
+| Owner | Work |
+| --- | --- |
+| Felix Junior with the owner | Complete property photography, source-rights records and current-condition review. |
+| Felix | Finish lower property detail sections. Redesign the dedicated Lobster Nirvana experience. |
+| Felix | Add the premium bilingual homepage FAQ in [issue #36](https://github.com/huzshk0707/oaktown-rentals-website/issues/36). Review existing FAQ, Community and Contact pages. |
+| Felix | Complete website-wide micro-interaction polish after the page work. |
+| Ravi | Rehearse CMS migration on isolated staging. Production currently serves the file catalogue. |
+| Booking team and owner | Complete isolated booking staging acceptance under [issue #37](https://github.com/huzshk0707/oaktown-rentals-website/issues/37). |
+| Ravi and owner | Complete final content, accessibility and performance review and resolve the publication holds. |
+
+
+- [x] Resume Felix’s published Step 2 runtime at `4fd38e9` on [draft PR #35](https://github.com/huzshk0707/oaktown-rentals-website/pull/35), stacked on #34.
+- [x] Verify shared navigation, all six property openings, Back/Forward preferences and 68 ordered photo selections in local and hosted Chromium.
+- [x] Record all 14 desktop and mobile routes, before/after vacation navigation, the journey video, regression results and hosted isolation. [Step 2 review](docs/oaktown-signature/phase4b-navigation/README.md).
+- [x] Smoke-test the independent #32 feature alongside the property stack in a disposable tree.
+- [ ] Review Step 2 evidence and obtain explicit authorization before integrating drafts #33, #34, #35 and #32. Existing photo holds stay active.
+
+# Phase 4B step 1 — Opening and gallery
+
+- [x] Refine the opening and manual fullscreen viewer from approved Phase 4A. [Photo evidence and checks](docs/oaktown-signature/phase4b-opening/README.md).
+- [ ] Owner reviews draft #34 before directing further work.
+
+# Phase 4A — Property consistency
+
+- [x] Audit homepage versus Colonial, align shared property styling and directional header, and verify all six routes. [Draft review evidence](docs/oaktown-signature/phase4a/README.md).
+- [ ] Owner reviews draft #33 and directs Phase 4B.
+
+# Homepage Lobster Nirvana refinement
+
+- [x] Refine the vacation promotion on an isolated branch and verify the [hosted screenshots and checks](docs/oaktown-signature/vacation-feature/README.md).
+- [ ] Owner reviews draft PR #32 before integration.
+
+# Phase 3 — Homepage Completion / FELIX
+
+- [x] Verify approved Phase 2E merge and the shared preview at `4f5c3ea`. Open isolated [draft PR #31](https://github.com/huzshk0707/oaktown-rentals-website/pull/31) targeting integration.
+- [x] Make Louisville a standalone desktop viewport with approved copy and existing credited photography. Place the three-step journey and compact Lobster Nirvana below it.
+- [x] Reproduce Chromium automatic darkening and preserve the light palette. Record the actual phone and Safari limitations.
+- [x] Prepare three original Louisville photo options with commercial-use, no mandatory attribution, source records and desktop/mobile captures.
+- [x] Pass relevant regressions and verify the hosted feature preview. Save [before and after, walkthrough, licenses and exact test results](docs/oaktown-signature/phase3/README.md).
+- [x] Owner approved the Phase 3 layout and selected Option A. Promote the exact approved photo, remove the previous photo and credit together, and verify the lighter Louisville overlay.
+- [x] Save [final desktop/mobile captures, contrast measurements, regressions and hosted verification](docs/oaktown-signature/phase3/final/README.md).
+- [x] Owner approved final `1b75145` and authorized FELIX to integrate PR #31 into draft #29.
+- [x] Lock the major homepage design after verifying the combined preview, six properties, 38 imported photo hashes and all 68 gallery selections. [Combined tests and verification](docs/oaktown-signature/integration/phase3/README.md).
+- [ ] Await owner design instructions for the individual property detail redesign. Start with [115 Colonial Drive](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/#home/115-colonial-drive) as the reference design for all six properties.
+
+# Phase 2E — Seamless Sky Header
+
+- [x] Ravi claimed `ravi/seamless-sky-header` on integration `c4a789b` and opened [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30).
+- [x] Attempt direct shared preview verification and capture exact local baseline.
+- [x] Implement transparent original-mark header, dynamic catalogue disclosures, bilingual hero actions and an ivory post-hero state.
+- [x] Pass dedicated, existing and real-photo regressions and save the [rendered comparison and recording](docs/oaktown-signature/phase2e/README.md).
+- [ ] Direct hosted baseline and feature asset/isolation verification. Workspace grants did not complete.
+- [x] Owner accepted the Phase 2E composition, wordmark, typography and cinematic hero.
+- [x] Make Lobster Nirvana a direct link and finish rounded hero actions and staggered menu entries.
+- [x] Reconcile Smallboat against all 17 approved Drive files. Eleven match the draft byte-for-byte. Six specific variants still need correction. See [the slot audit](docs/oaktown-signature/phase2e/final/SMALLBOAT-PHOTOGRAPHY.md).
+- [x] Pass the 27 dedicated checks and catalogue, browser, accessibility and admin checks. Save the [final captures and transcripts](docs/oaktown-signature/phase2e/final/README.md).
+- [x] Owner approved the final Phase 2E design and authorized integration at `f5a2476`. PR #30 was merged into the shared branch at `48a32cd`. PR #29 remains draft.
+- [x] Pass the combined Phase 2E regressions, confirm the merge preview deployed, and [record evidence](docs/oaktown-signature/integration/README.md#phase-2e-integration-and-phase-3-handoff) for Felix. Direct hosted verification stays open below.
+
+## Photography and content backlog
+
+| Property or system | Next task |
+| --- | --- |
+| Colonial Drive | Final visual review of the 19 imported approved photos. |
+| Smallboat Court | Resolve 03 tile/grout, 12 floor/equipment, 14 exterior/attribution, 15 cabinets/fixtures/attribution, 16 cabinet wall/floor and 17 carpet/current condition. Keep the current slot mapping. |
+| Madison | Review the 15 current images for source quality, order and warranted enhancement. |
+| Cherokee #8 | Review all nine current photos, including the lead crop. |
+| Sloemer Avenue | Review presentation of eight original imports. Confirm rent, deposit and availability. |
+| Troutwood Court | Obtain a genuine exterior and confirm timing, renovated specifications and other unverified facts. |
+| Afterglow Drive | Obtain architectural accuracy acceptance before release. |
+| Listings and hosting | Verify property-specific Zillow URLs and rehearse any separately authorized file/CMS migration on staging. |
+
+Use each property's latest owner-approved Google Drive folder to source updates. Check current property accuracy, reuse rights and attribution before copying the approved bytes. Leave review-only variants out of the catalogue.
+
+# Shared Signature integration — Ravi
+
+- [x] Recover available checkpoints and preserve source branches and worktrees.
+- [x] Open combined [draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29) with #26, #27 and #28.
+- [x] Preserve six file records, 38 reviewed imports, media/fact holds and booking isolation.
+- [x] Save [Bethune motion study](docs/oaktown-signature/BETHUNE-MOTION-STUDY.md) and [inventory compatibility review](docs/oaktown-signature/integration/README.md).
+- [x] Verify six routes, 68 genuine photo selections, 38 local asset hashes and EN/ES browser accessibility.
+- [x] Run current browser, bilingual, accessibility, admin, CMS, gallery and Mint Mojo regressions.
+- [x] Confirm Cloudflare build and integration preview deployment in PR #29.
+- [x] FELIX verified shared root HTML, 49 served hashes and preview isolation at `4f5c3ea`. [Hosted evidence](docs/oaktown-signature/phase3/shared-preview.json).
+- [x] Felix integrated the owner-approved Phase 3 design from #31. See [the locked design and next phase](docs/oaktown-signature/ROADMAP.md#phase-3--homepage-completion).
+- [ ] Felix Junior: resolve confirmed pricing, availability, Troutwood exterior and held photo evidence in isolated branches targeting integration.
+- [ ] Owner: review combined draft, property/fact holds and Afterglow architectural accuracy before any launch decision.
+
+# Phase 2C — approved Option B Boutique Luxury
+
+- [x] Record exact approved Option B reference and design decisions; retain prior phase evidence.
+- [x] Implement 38vw Boutique cards and scene-two bilingual copy; preserve gallery and hero behavior.
+- [x] Refine scoped feedback/photo controls/shared-image transitions with accessible reduced-motion fallbacks.
+- [x] Capture desktop/tablet/mobile EN/ES, all/one/two results, scene two and short interaction recording.
+- [x] Run regressions and save [actual Boutique screenshots/recording/comparison](docs/oaktown-signature/phase2c/README.md).
+- [x] Complete final hosted crossfade verification (60 photos/ordered detail selections, 4 catalogue mappings, 7 asset hashes); release review handoff.
+- [ ] Owner/ChatGPT visual acceptance of Phase 2C; keep PR #26 draft.
+
+# Phase 2B preparation — photography verified / editorial review pending
+
+- [x] Recover Ravi 877d196 and claim continuation as FELIX.
+- [x] Resolve environment/browser access and verify hosted deployment/runtime hashes.
+- [x] Verify 60 original photos, source-page assignments/order, natural dimensions, gallery selections and visual quality.
+- [x] Capture desktop/mobile/EN/ES boundaries, one/two-result states, four detail galleries and interaction recording.
+- [x] Prepare [reversible editorial proposal](docs/oaktown-signature/phase2b/EDITORIAL-PROPOSAL.md) without changing deployed card styling or cinematic hero.
+- [x] Run gallery/filter/browsing/language/motion/accessibility/CMS/admin regressions and publish durable handoff.
+- [x] Owner approved Option B — Boutique Luxury for Phase 2C. Source-resolution/crop acceptance remains a visual follow-up.
+
+# Phase 2A — Property Collection Engineering Foundation
+
+- [x] Audit every current file-catalogue property and CMS-supported fields: [field report](docs/oaktown-signature/phase2a/FIELDS.md).
+- [x] Audit exact photo/unit mapping and migration prerequisites: [photo report](docs/oaktown-signature/phase2a/PHOTOGRAPHY.md). Hosted photo loading remains blocked/unverified.
+- [x] Extract reusable card rendering/formatting; five component tests and four actual before/after copy/geometry comparisons passed.
+- [x] Implement approved single-row gallery: full-width introduction, no View All Homes or grid toggle, fixed generous gallery proportions, conditional arrows, edge movement, keyboard/touch/manual scroll, filter reset and reduced-motion behavior. Final card styling awaits approved mockup.
+- [x] Verify search, bilingual, galleries, accessibility, Phase 1B motion and admin/CMS compatibility. [Phase 2A evidence](docs/oaktown-signature/phase2a/README.md). Twelve axe scans have no confirmed violations; CDN photo acceptance remains open.
+- [x] Publish reports, tests, checkpoints and bounded NEXT STEP. Ravi released Phase 2A ownership; [evidence and blockers](docs/oaktown-signature/phase2a/README.md).
+- [x] FELIX verified the hosted preview, all 60 originals, source mapping/order and loaded-photo evidence. See [Phase 2B review](docs/oaktown-signature/phase2b/README.md).
+- [x] Owner/ChatGPT approved Option B; Phase 2C implementation explicitly authorized.
+
+# Phase 1B — approved continuous scroll hero
+
+- [x] Verify remote checkpoint, preserve older local work and claim as FELIX.
+- [x] Inspect enhanced Afterglow, genuine original and approved three-scene reference.
+- [x] Implement one-image camera movement, three text scenes and immediate navigation shortcuts.
+- [x] Verify desktop/mobile/Spanish/reduced motion and existing regression suites.
+- [x] Capture each scene, search transition and forward/reverse recording.
+- [x] Publish review checkpoint, preview evidence and release claim for approval.
+
+# Previous checkpoint — Ravi / Phase 1 visual acceptance
+
+See the [approved 12-phase Oaktown Signature roadmap](docs/oaktown-signature/ROADMAP.md). Phase 1B supersedes the static hero behavior. Engineering and evidence are complete; visual and enhanced-photo architectural acceptance remain pending. Future phases await specific approval.
+
+Owner explicitly reassigned continuation to Ravi. Preserve the existing implementation below; the exact hero reference supersedes prior opening mockups. Document the 12-phase master roadmap, refine only navigation/full-screen hero, then complete affected regressions and durable screenshot review. PR #26 stays draft; future phases require separate authorization.
+
+# WEB-SIGNATURE — approved homepage redesign
+
+- [x] 1. Audit, inspect approved assets, capture baseline and define design system.
+- [x] 2. Build navigation and authentic Afterglow hero with Colonial secondary image.
+- [x] 3. Implement combined neighborhood, bedroom and bathroom search and property collection.
+- [x] 4. Build Louisville story and Lobster Nirvana features.
+- [x] 5. Build rental journey and footer with verified links.
+- [x] 6. Refine mobile, tablet, EN/ES and reduced-motion interactions. Ravi Phase 1 regression checks passed.
+- [ ] 7. Visual acceptance: local regressions and exact-reference browser comparisons completed in [review evidence](docs/oaktown-signature/README.md). Owner acceptance and real CDN collection/gallery verification remain pending; keep PR #26 draft.
+- [ ] Follow-up after separate approval is migration from file catalogue to verified published CMS inventory.
+- [x] Owner confirmed Afterglow ownership/management and original photograph reuse authorization.
+- [ ] Approve enhanced-photo architectural accuracy and Phase 1B visual acceptance before separate production authorization.
+
 # Tasks — Oaktown Rentals Website
 
 Prioritized from main code, README launch checklist and current PRs on 2026-11-16.

@@ -1,0 +1,103 @@
+[
+  {
+    "neighborhood": "St. Matthews",
+    "query": "St. Matthews Kentucky",
+    "source": "https://nominatim.openstreetmap.org/search?q=St.+Matthews+Kentucky&format=jsonv2&limit=1",
+    "result": [
+      {
+        "place_id": 339179482,
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 130683,
+        "lat": "38.2498800",
+        "lon": "-85.6357424",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.5039397104254869,
+        "addresstype": "city",
+        "name": "St. Matthews",
+        "display_name": "St. Matthews, Jefferson County, Kentucky, 40207, United States",
+        "boundingbox": [
+          "38.2275470",
+          "38.2722100",
+          "-85.6685120",
+          "-85.6064810"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "neighborhood": "Okolona",
+    "query": "Okolona Kentucky",
+    "source": "https://nominatim.openstreetmap.org/search?q=Okolona+Kentucky&format=jsonv2&limit=1",
+    "result": [
+      {
+        "place_id": 339114615,
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 153578210,
+        "lat": "38.1411796",
+        "lon": "-85.6877379",
+        "category": "place",
+        "type": "hamlet",
+        "place_rank": 20,
+        "importance": 0.3575511715318858,
+        "addresstype": "hamlet",
+        "name": "Okolona",
+        "display_name": "Okolona, Louisville, Jefferson County, Kentucky, 40219, United States",
+        "boundingbox": [
+          "38.1211796",
+          "38.1611796",
+          "-85.7077379",
+          "-85.6677379"
+        ]
+      }
+    ],
+    "error": ""
+  },
+  {
+    "neighborhood": "Cherokee Triangle",
+    "query": "Cherokee Triangle Louisville Kentucky",
+    "source": "https://nominatim.openstreetmap.org/search?q=Cherokee+Triangle+Louisville+Kentucky&format=jsonv2&limit=1",
+    "result": [],
+    "error": "",
+    "verifiedAlternate": {
+      "source": "https://en.wikipedia.org/wiki/Cherokee_Triangle,_Louisville",
+      "label": "Cherokee Triangle, Louisville",
+      "lat": 38.23526857,
+      "lon": -85.71244061,
+      "scope": "Neighborhood reference point, not property address"
+    }
+  },
+  {
+    "neighborhood": "Russell",
+    "query": "Russell Louisville Kentucky",
+    "source": "https://nominatim.openstreetmap.org/search?q=Russell+Louisville+Kentucky&format=jsonv2&limit=1",
+    "result": [
+      {
+        "place_id": 339674132,
+        "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 1070814306,
+        "lat": "38.2535489",
+        "lon": "-85.7863582",
+        "category": "place",
+        "type": "neighbourhood",
+        "place_rank": 24,
+        "importance": 0.3586565232418998,
+        "addresstype": "neighbourhood",
+        "name": "Russell",
+        "display_name": "Russell, Louisville, Jefferson County, Kentucky, United States",
+        "boundingbox": [
+          "38.2470067",
+          "38.2605824",
+          "-85.8058940",
+          "-85.7658720"
+        ]
+      }
+    ],
+    "error": ""
+  }
+]

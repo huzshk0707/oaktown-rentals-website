@@ -1,0 +1,29 @@
+{
+  "passed": [
+    "cards have no preview button and extra photographs are not requested eagerly",
+    "keyboard focus alone keeps the main photograph static",
+    "desktop hover over the property text cycles every photograph in order and loops to the main image",
+    "every slideshow image belongs to the hovered property and leaves the main source intact",
+    "pointer leave immediately restores the main photograph even while its link retains keyboard focus",
+    "modified links are not intercepted by the app",
+    "shared-photo transition carries the currently displayed slideshow photograph into the listing",
+    "cover stays synchronized with gallery selection, enlarges that photo and restores focus",
+    "browser Back restores the collection with main photographs and no stale listing UI",
+    "unsupported navigation fallback preserves full property details",
+    "off preference keeps hovered cards static",
+    "off navigation fallback preserves full property details",
+    "reduce preference keeps hovered cards static",
+    "reduce navigation fallback preserves full property details",
+    "canceled delayed transition cannot overwrite the newer property with another home’s photo",
+    "a failed slideshow photo is skipped while a usable main photograph remains available",
+    "an image that decodes after pointer leave cannot resurrect the slideshow",
+    "filtering out a hovered property cancels its slideshow and restores the main image",
+    "turning Motion off cancels an already running slideshow",
+    "rental dock is readable, clears the header and hides at the title: 1440px en",
+    "rental dock is readable, clears the header and hides at the title: 768px en",
+    "rental dock is readable, clears the header and hides at the title: 390px en",
+    "rental dock is readable, clears the header and hides at the title: 320px es",
+    "touch cards stay on the main photograph and tapping opens the complete gallery normally"
+  ],
+  "failures": []
+}

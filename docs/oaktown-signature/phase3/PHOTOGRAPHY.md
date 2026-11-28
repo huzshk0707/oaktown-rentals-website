@@ -1,0 +1,15 @@
+# Three Louisville photographs for approval
+
+All three candidates are genuine Louisville photographs. Each Pexels photo page lists the photographer, the source location and the Pexels License. The license page permits website and promotional use and expressly says attribution is not required. The review images are 2400px-wide WebP copies. The preview uses CSS crops and gradients with the real architecture intact. [Pexels License](https://www.pexels.com/license/)
+
+| Option | Actual photo and previews | Original source and resolution | Suggested crop |
+| --- | --- | --- | --- |
+| **A. Aerial bridge and skyline** | [Photo](review/a-louisville.webp), [desktop](proposal-a-desktop.jpg), [mobile](proposal-a-mobile.jpg) | K (Pexels @kelly), 5464 × 3070. [Source page](https://www.pexels.com/photo/bridge-over-river-behind-multistage-buildings-in-city-4372152/) · [Original image](https://images.pexels.com/photos/4372152/pexels-photo-4372152.jpeg) | Desktop 50% 52% keeps the skyline and the diagonal bridge. Mobile 53% 44% favors downtown and the near end of the bridge. |
+| **B. Skyline across the river** | [Photo](review/b-louisville.webp), [desktop](proposal-b-desktop.jpg), [mobile](proposal-b-mobile.jpg) | Matt Ashworth, 4608 × 3456. [Source page](https://www.pexels.com/photo/skyscrapers-of-louisville-in-usa-19148164/) · [Original image](https://images.pexels.com/photos/19148164/pexels-photo-19148164.jpeg) | Desktop 52% 51% features the recognizable towers. Mobile 55% 59% retains the towers and waterfront. |
+| **C. Ohio River bridges** | [Photo](review/c-louisville.webp), [desktop](proposal-c-desktop.jpg), [mobile](proposal-c-mobile.jpg) | Karen F, 4715 × 3300. [Source page](https://www.pexels.com/photo/cable-stayed-bridge-over-river-in-louisville-34411478/) · [Original image](https://images.pexels.com/photos/34411478/pexels-photo-34411478.jpeg) | Desktop 50% 48% keeps the span and the Louisville skyline beyond it. Mobile 56% 51% follows the bridge cables. The skyline is more distant than in A or B. |
+
+**Owner-approved choice: A.** The frame makes room for both the skyline and the Ohio River while leaving the headline clear. B gives the towers the most prominence at phone width. C is an option if the river crossing should lead the composition.
+
+Pexels restricts resale of unaltered copies, redistribution on stock or wallpaper platforms, implied endorsements, use in a trademark and offensive portrayals of identifiable people. The proposals use these photos as editorial imagery with the existing Oaktown copy. Exact photo metadata is in [sources.json](review/sources.json). [Pexels License](https://www.pexels.com/license/)
+
+The final draft homepage serves Option A from `assets/louisville/louisville-bridge-skyline.webp`. It uses the exact bytes of the reviewed file and the crops above. The previous King of Hearts panorama and its visible credit left the homepage together. Its CC BY-SA 4.0 provenance remains available. The comparison images and candidates B and C stay under `docs/`, outside the Worker asset allowlist. [Photo provenance](../../../assets/louisville/README.md)

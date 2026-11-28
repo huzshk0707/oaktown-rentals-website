@@ -1,0 +1,5 @@
+115-colonial-drive: originals 19/19
+4005-smallboat-ct: originals 17/17
+1106-cherokee-rd-unit-8: originals 9/9
+1824-w-madison: originals 15/15
+PASS: 60 original bytes/dimensions/hashes and ordered detail selections, 4 exact catalogue mappings, 7 deployed asset hashes.

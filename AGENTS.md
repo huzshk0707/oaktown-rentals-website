@@ -62,6 +62,22 @@ scope, approval, draft-only work, merging and deployment.
     task or blocker. This setup's main push is authorized for handoff documents
     only; it does not authorize merging existing feature PRs.
 
+### Shared Signature integration
+
+The consolidated release candidate is draft PR #29. Use the shared branch for Signature follow-ups until publication approval and the main merge. After that merge and production verification, branch new work from main.
+
+Ravi coordinates `integration/oaktown-signature` and its combined draft PR #29.
+Ravi, Felix and Felix Junior fetch that branch and start isolated feature
+branches from its latest reviewed tip. Target feature PRs back to integration.
+Ravi verifies each reviewed integration and updates the shared handoff. Preserve
+the existing source branches and local worktrees. Booking PR #25 keeps its
+separate base and staging acceptance. See [the integration report](docs/oaktown-signature/integration/README.md).
+
+Felix owns Phase 3 — Homepage Completion. Start that work on an isolated
+feature branch from the Phase 2E handoff at the verified shared tip. Target
+`integration/oaktown-signature` for review and carry forward the accepted Phase
+2E opening and existing publication holds. See [the current handoff](HANDOFF.md).
+
 ### Where to resume
 
 - `main`'s `HANDOFF.md` is the repository landing snapshot and `TASKS.md` is the

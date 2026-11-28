@@ -1,0 +1,98 @@
+{
+  "before": {
+    "rect": [
+      550.234375,
+      556.203125,
+      151.75,
+      49.59375
+    ],
+    "styles": [
+      {
+        "label": "Apply Now!",
+        "background": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 238)",
+        "border": "rgb(0, 0, 238)",
+        "radius": "50px",
+        "transform": "none",
+        "opacity": "1",
+        "transition": "all",
+        "height": 49.59375
+      },
+      {
+        "label": "Apply Now!",
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgba(0, 0, 0, 0.9)",
+        "border": "rgba(0, 0, 0, 0.9)",
+        "radius": "0px",
+        "transform": "none",
+        "opacity": "1",
+        "transition": "all",
+        "height": 17.59375
+      }
+    ]
+  },
+  "mid": {
+    "rect": [
+      550.234375,
+      556.203125,
+      151.75,
+      49.59375
+    ],
+    "styles": [
+      {
+        "label": "Apply Now!",
+        "background": "rgb(191, 207, 214)",
+        "color": "rgb(0, 0, 238)",
+        "border": "rgb(0, 0, 238)",
+        "radius": "50px",
+        "transform": "none",
+        "opacity": "1",
+        "transition": "all",
+        "height": 49.59375
+      },
+      {
+        "label": "Apply Now!",
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgba(184, 184, 184, 0.953)",
+        "border": "rgba(184, 184, 184, 0.953)",
+        "radius": "0px",
+        "transform": "none",
+        "opacity": "1",
+        "transition": "all",
+        "height": 17.59375
+      }
+    ]
+  },
+  "after": {
+    "rect": [
+      550.234375,
+      556.203125,
+      151.75,
+      49.59375
+    ],
+    "styles": [
+      {
+        "label": "Apply Now!",
+        "background": "rgb(101, 149, 168)",
+        "color": "rgb(0, 0, 238)",
+        "border": "rgb(0, 0, 238)",
+        "radius": "50px",
+        "transform": "none",
+        "opacity": "1",
+        "transition": "all",
+        "height": 49.59375
+      },
+      {
+        "label": "Apply Now!",
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "border": "rgb(255, 255, 255)",
+        "radius": "0px",
+        "transform": "none",
+        "opacity": "1",
+        "transition": "all",
+        "height": 17.59375
+      }
+    ]
+  }
+}

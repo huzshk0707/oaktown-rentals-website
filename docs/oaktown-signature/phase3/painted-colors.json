@@ -1,0 +1,38 @@
+{
+  "sampleXY": [
+    2,
+    350
+  ],
+  "rgbFromJpeg": {
+    "before-mobile-light": [
+      246,
+      244,
+      232
+    ],
+    "before-mobile-dark": [
+      246,
+      244,
+      232
+    ],
+    "before-mobile-forced-dark": [
+      39,
+      36,
+      29
+    ],
+    "after-mobile-light": [
+      246,
+      244,
+      232
+    ],
+    "after-mobile-dark": [
+      246,
+      244,
+      232
+    ],
+    "after-mobile-forced-dark": [
+      246,
+      244,
+      232
+    ]
+  }
+}

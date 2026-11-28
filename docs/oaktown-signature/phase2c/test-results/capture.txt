@@ -1,0 +1,1 @@
+{"captures":30,"axeScans":16,"violations":0,"recording":"boutique-interactions.webm","normalTLS":true,"substitutedPhotos":false}

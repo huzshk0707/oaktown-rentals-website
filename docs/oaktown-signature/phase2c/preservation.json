@@ -1,0 +1,78 @@
+{
+  "baseline": "7ff126e0e8685764d6da49e173551f74ae55fd0d",
+  "protectedFiles": [
+    {
+      "path": "data.js",
+      "unchanged": true,
+      "sha256": "c2edc5cafda5cee6cc15938daf65c574789bee5f78ec07f15dee22b26715e9ff"
+    },
+    {
+      "path": "signature.js",
+      "unchanged": true,
+      "sha256": "530ce5f31bc308c615375ecf1829d54bab6e3ad83b72123b63fe1c89e4585c85"
+    },
+    {
+      "path": "signature.css",
+      "unchanged": true,
+      "sha256": "2e0a870df973eb660f873769688557d23b8fd78e4dd24a8fb5be84e54c4aafbf"
+    },
+    {
+      "path": "index.html",
+      "unchanged": true,
+      "sha256": "a6a865f0d3f3f6fa690211ffd9dd67ef281f5251267b9c214cd739633930ec4e"
+    },
+    {
+      "path": "brand.css",
+      "unchanged": true,
+      "sha256": "bc5f19bba1bdb33d87d949af6791e025208e82ca184f3ed24c122cedb63e8574"
+    },
+    {
+      "path": "effects.js",
+      "unchanged": true,
+      "sha256": "4218554446d4d338c21f059a5d13f22cc3baea73d1cdde58fbdc256b6f43c9ce"
+    },
+    {
+      "path": "cms/worker.mjs",
+      "unchanged": true,
+      "sha256": "30aa512471181fec340802dc72189c669cad26a0a96abdf5346eeb6bc75a1493"
+    },
+    {
+      "path": "cms/auth.mjs",
+      "unchanged": true,
+      "sha256": "bdf1ebd4cedcbca077ce21bc87ec47824b7c7034edb9071fc77b089758b7304f"
+    },
+    {
+      "path": "admin/admin.js",
+      "unchanged": true,
+      "sha256": "2a50e29eb554295ed2577134508991caab96b9b28284b8a92231585252eba223"
+    },
+    {
+      "path": "cms-client.js",
+      "unchanged": true,
+      "sha256": "f540d3bfe36fa72d7781884751c09ebcbf9687e1c8a09a360218cbcdf20e62e7"
+    },
+    {
+      "path": "wrangler.jsonc",
+      "unchanged": true,
+      "sha256": "f49d457218202ce60f08c64e1c0bec2b49baaae4f8c7f6f297ad8df79f7300f9"
+    },
+    {
+      "path": ".assetsignore",
+      "unchanged": true,
+      "sha256": "eb90d533b7b64d7f69fd4f6d340c8dd4a5029664ba2a7170cfcab292cc759123"
+    }
+  ],
+  "noAssetCMSAdminMintMigrationChanges": true,
+  "unchangedRenderingFunctions": [
+    {
+      "function": "homePage",
+      "unchanged": true,
+      "sha256": "35449eae4b5e480ff819d0d042cef912ed864e39ad6daf900191576cc2b061d4"
+    },
+    {
+      "function": "detailPage",
+      "unchanged": true,
+      "sha256": "42c6983b9e15ca1c4d5dadca44b41e4723f71d3704eef8d5b72b4a57b39de7b0"
+    }
+  ]
+}

@@ -32,7 +32,7 @@ async function publish(page){
     await page.frameLocator('#preview-frame').locator('.detail-cover-photo').waitFor();await page.getByRole('button',{name:'Close',exact:true}).click();
     await publish(page);
     const published=await (await fetch(server.base+'/api/properties')).json();const property=published.properties.find(p=>p.slug==='502-oak-street');assert.ok(property);assert.equal((await fetch(server.base+property.photos[0].url)).status,200);
-    await page.goto(server.base+'/#homes');await page.locator('.property-card').first().waitFor();assert.equal(await page.locator('[data-filter="Old Louisville"]').count(),1);
+    await page.goto(server.base+'/#homes');await page.locator('.property-card').first().waitFor();assert.equal(await page.locator('#home-search [name=neighborhood] option[value="Old Louisville"]').count(),1);
     await page.goto(server.base+'/#home/502-oak-street');await page.locator('#language-switch').click();assert.match(await page.locator('.detail-text').innerText(),/A welcoming home/,'blank translations fall back to English');
     await page.goto(server.base+'/admin/');await page.locator('.listing').filter({hasText:'502 Oak Street'}).getByRole('button',{name:'Edit listing'}).click();
     const more=page.locator('.more-actions');if(await more.count()&&!await more.evaluate(el=>el.open))await more.locator('summary').click();

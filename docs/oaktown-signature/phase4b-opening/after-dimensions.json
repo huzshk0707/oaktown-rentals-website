@@ -1,0 +1,194 @@
+[
+  {
+    "name": "desktop",
+    "photo": 1,
+    "inline": {
+      "source": [
+        960,
+        677
+      ],
+      "image": [
+        955,
+        674
+      ],
+      "frame": [
+        1280,
+        674
+      ]
+    },
+    "enlarged": {
+      "source": [
+        960,
+        677
+      ],
+      "image": [
+        1276,
+        900
+      ],
+      "frame": [
+        1440,
+        900
+      ]
+    }
+  },
+  {
+    "name": "desktop",
+    "photo": 2,
+    "inline": {
+      "source": [
+        480,
+        640
+      ],
+      "image": [
+        505,
+        674
+      ],
+      "frame": [
+        1280,
+        674
+      ]
+    },
+    "enlarged": {
+      "source": [
+        480,
+        640
+      ],
+      "image": [
+        675,
+        900
+      ],
+      "frame": [
+        1440,
+        900
+      ]
+    }
+  },
+  {
+    "name": "mobile",
+    "photo": 1,
+    "inline": {
+      "source": [
+        960,
+        677
+      ],
+      "image": [
+        350,
+        247
+      ],
+      "frame": [
+        350,
+        318
+      ]
+    },
+    "enlarged": {
+      "source": [
+        960,
+        677
+      ],
+      "image": [
+        390,
+        275
+      ],
+      "frame": [
+        390,
+        844
+      ]
+    }
+  },
+  {
+    "name": "mobile",
+    "photo": 2,
+    "inline": {
+      "source": [
+        480,
+        640
+      ],
+      "image": [
+        239,
+        318
+      ],
+      "frame": [
+        350,
+        318
+      ]
+    },
+    "enlarged": {
+      "source": [
+        480,
+        640
+      ],
+      "image": [
+        390,
+        520
+      ],
+      "frame": [
+        390,
+        844
+      ]
+    }
+  },
+  {
+    "name": "mobile-landscape",
+    "photo": 1,
+    "inline": {
+      "source": [
+        960,
+        677
+      ],
+      "image": [
+        376,
+        265
+      ],
+      "frame": [
+        788,
+        265
+      ]
+    },
+    "enlarged": {
+      "source": [
+        960,
+        677
+      ],
+      "image": [
+        553,
+        390
+      ],
+      "frame": [
+        844,
+        390
+      ]
+    }
+  },
+  {
+    "name": "mobile-landscape",
+    "photo": 2,
+    "inline": {
+      "source": [
+        480,
+        640
+      ],
+      "image": [
+        199,
+        265
+      ],
+      "frame": [
+        788,
+        265
+      ]
+    },
+    "enlarged": {
+      "source": [
+        480,
+        640
+      ],
+      "image": [
+        293,
+        390
+      ],
+      "frame": [
+        844,
+        390
+      ]
+    }
+  }
+]

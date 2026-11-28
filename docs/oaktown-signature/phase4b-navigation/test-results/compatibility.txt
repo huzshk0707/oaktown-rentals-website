@@ -1,0 +1,1 @@
+PASS: desktop and mobile before captures, plus isolated PR #32 combination with homepage feature, Colonial gallery and vacation global/local navigation.

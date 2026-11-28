@@ -1,0 +1,48 @@
+{
+  "base": "https://integration-oaktown-signature-oaktown.rentals10.workers.dev",
+  "passed": true,
+  "results": [
+    {
+      "width": 1440,
+      "height": 900,
+      "language": "en",
+      "sectionHeight": 900,
+      "image": [
+        2400,
+        1348
+      ],
+      "source": "/assets/louisville/louisville-bridge-skyline.webp",
+      "previousPhotoRequested": false,
+      "previousCreditPresent": false,
+      "order": [
+        "signature-story",
+        "signature-journey",
+        "signature-vacation"
+      ],
+      "opening": "sky at root",
+      "disclosure": "keyboard verified",
+      "colorScheme": "light only"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "es",
+      "sectionHeight": 569,
+      "image": [
+        2400,
+        1348
+      ],
+      "source": "/assets/louisville/louisville-bridge-skyline.webp",
+      "previousPhotoRequested": false,
+      "previousCreditPresent": false,
+      "order": [
+        "signature-story",
+        "signature-journey",
+        "signature-vacation"
+      ],
+      "opening": "sky at root",
+      "disclosure": "keyboard verified",
+      "colorScheme": "light only"
+    }
+  ]
+}

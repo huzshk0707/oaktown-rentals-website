@@ -1,0 +1,458 @@
+[
+  {
+    "label": "before-desktop",
+    "width": 1672,
+    "height": 941,
+    "lang": "en",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8931/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/signature/afterglow-1000.webp",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/signature/colonial-960.webp",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/louisville/louisville-ohio-river.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/mint-mojo/house-pool.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/signature/louisville-skyline.svg",
+        "loaded": true
+      }
+    ],
+    "geometry": {
+      "heroHeight": 667,
+      "searchTop": 624.75,
+      "overflow": false
+    }
+  },
+  {
+    "label": "before-mobile",
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8931/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/signature/afterglow-480.webp",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/signature/colonial-480.webp",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8931/assets/signature/louisville-skyline.svg",
+        "loaded": true
+      }
+    ],
+    "geometry": {
+      "heroHeight": 610,
+      "searchTop": 575,
+      "overflow": false
+    }
+  },
+  {
+    "label": "after-desktop",
+    "width": 1672,
+    "height": 941,
+    "lang": "en",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/afterglow-1000.webp",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/colonial-960.webp",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/louisville/louisville-ohio-river.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/mint-mojo/house-pool.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/louisville-skyline.svg",
+        "loaded": true
+      }
+    ],
+    "geometry": {
+      "heroHeight": 941,
+      "searchTop": 975,
+      "overflow": false
+    }
+  },
+  {
+    "label": "after-desktop-es",
+    "width": 1440,
+    "height": 1000,
+    "lang": "es",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/afterglow-1000.webp",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/colonial-960.webp",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/louisville/louisville-ohio-river.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/mint-mojo/house-pool.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/louisville-skyline.svg",
+        "loaded": true
+      }
+    ],
+    "geometry": {
+      "heroHeight": 1000,
+      "searchTop": 1034,
+      "overflow": false
+    }
+  },
+  {
+    "label": "after-tablet",
+    "width": 768,
+    "height": 1024,
+    "lang": "en",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/afterglow-768.webp",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/colonial-768.webp",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/louisville/louisville-ohio-river.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/mint-mojo/house-pool.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/louisville-skyline.svg",
+        "loaded": true
+      }
+    ],
+    "geometry": {
+      "heroHeight": 1024,
+      "searchTop": 1052,
+      "overflow": false
+    }
+  },
+  {
+    "label": "after-mobile",
+    "width": 390,
+    "height": 844,
+    "lang": "en",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/afterglow-480.webp",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/colonial-480.webp",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/louisville/louisville-ohio-river.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/mint-mojo/house-pool.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/louisville-skyline.svg",
+        "loaded": true
+      }
+    ],
+    "geometry": {
+      "heroHeight": 844,
+      "searchTop": 864,
+      "overflow": false
+    }
+  },
+  {
+    "label": "after-mobile-es",
+    "width": 390,
+    "height": 844,
+    "lang": "es",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/afterglow-480.webp",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/colonial-480.webp",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/louisville/louisville-ohio-river.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/mint-mojo/house-pool.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/louisville-skyline.svg",
+        "loaded": true
+      }
+    ],
+    "geometry": {
+      "heroHeight": 844,
+      "searchTop": 864,
+      "overflow": false
+    }
+  },
+  {
+    "label": "after-narrow-es",
+    "width": 320,
+    "height": 640,
+    "lang": "es",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/afterglow-480.webp",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/colonial-480.webp",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794342151477-WP8LMR7UXAFSDG8G8N2S/01_Main_Living_Area.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1795190286061-JJ84HN2GK2RD414MEHV1/01-%2BSuburban%2Bhomes%2Bframed%2Bby%2Btrees%2Band%2Bsky.png?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/louisville/louisville-ohio-river.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/mint-mojo/house-pool.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/signature/louisville-skyline.svg",
+        "loaded": true
+      }
+    ],
+    "geometry": {
+      "heroHeight": 640,
+      "searchTop": 660,
+      "overflow": false
+    }
+  }
+]

@@ -1,0 +1,5 @@
+
+> test:admin-browser
+> node tests/admin-browser.cjs
+
+Admin browser workflow passed: draft isolation, reviewed publishing, public updates, photo upload/real preview, Spanish fallback, archiving, empty collection and responsive layouts.

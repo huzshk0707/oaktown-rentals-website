@@ -1,0 +1,78 @@
+[
+  {
+    "name": "desktop",
+    "selector": "#about",
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ]
+  },
+  {
+    "name": "desktop",
+    "selector": ".signature-journey",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "desktop",
+    "selector": "#cudejoe",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "desktop-es",
+    "selector": "#about",
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ]
+  },
+  {
+    "name": "desktop-es",
+    "selector": ".signature-journey",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "desktop-es",
+    "selector": "#cudejoe",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "mobile",
+    "selector": "#about",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "mobile",
+    "selector": ".signature-journey",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "mobile",
+    "selector": "#cudejoe",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "mobile-es",
+    "selector": "#about",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "mobile-es",
+    "selector": ".signature-journey",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "name": "mobile-es",
+    "selector": "#cudejoe",
+    "violations": [],
+    "incomplete": []
+  }
+]

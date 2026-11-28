@@ -2,7 +2,9 @@
   "name": "oaktown-rentals-website-tests",
   "private": true,
   "scripts": {
-    "check": "node --check ../app.js && node --check ../data.js && node --check ../effects.js && node --check ../mint-mojo/mint-mojo.js",
+    "check": "node --check ../app.js && node --check ../property-cards.js && node --check ../collection.js && node --check ../data.js && node --check ../effects.js && node --check ../signature.js && node --check ../mint-mojo/mint-mojo.js",
+    "test:collection": "node collection.cjs",
+    "test:signature": "node signature.cjs",
     "test:browser": "node browser.cjs",
     "test:mint": "node mint-mojo.cjs",
     "test:design": "node design.cjs",

@@ -1,0 +1,149 @@
+[
+  {
+    "name": "desktop",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341986617-OX95NWU220305IOO0VV0/04_Kitchen_Alternate_View.jpeg?format=1500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341989685-GD4TOAOCI8MXW67RV35M/07_Bedroom_Two.jpeg?format=1500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1000w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=1000w",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "name": "tablet",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=1000w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341986617-OX95NWU220305IOO0VV0/04_Kitchen_Alternate_View.jpeg?format=1000w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341989685-GD4TOAOCI8MXW67RV35M/07_Bedroom_Two.jpeg?format=1000w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "name": "mobile",
+    "images": [
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341986617-OX95NWU220305IOO0VV0/04_Kitchen_Alternate_View.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794341989685-GD4TOAOCI8MXW67RV35M/07_Bedroom_Two.jpeg?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1788445509845-3IYPG6M4T5H6LTRBXCCP/1.webp?format=500w",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "",
+        "loaded": false
+      },
+      {
+        "src": "http://127.0.0.1:8930/assets/oaktown-rentals-logo.jpg",
+        "loaded": true
+      }
+    ]
+  }
+]

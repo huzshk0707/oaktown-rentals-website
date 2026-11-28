@@ -1,0 +1,63 @@
+{
+  "url": "https://felix-oaktown-signature-oaktown.rentals10.workers.dev/",
+  "time": "2026-11-27T21:40:13.252676+00:00",
+  "runtimeCommit": "dd40325f9f2c8248efac6be32a87050587920543",
+  "assets": [
+    {
+      "file": "app.js",
+      "status": 200,
+      "localSha256": "dc60ee00c6355fb56ebd3d6aa4f081dc1587ccbd1c08c67fe57a0709aadbc639",
+      "remoteSha256": "dc60ee00c6355fb56ebd3d6aa4f081dc1587ccbd1c08c67fe57a0709aadbc639",
+      "match": true
+    },
+    {
+      "file": "collection.css",
+      "status": 200,
+      "localSha256": "f1b3ae92b8cf68f2134cd27df5388adbb7a9bd38fcfe53b49e959d322485dddf",
+      "remoteSha256": "f1b3ae92b8cf68f2134cd27df5388adbb7a9bd38fcfe53b49e959d322485dddf",
+      "match": true
+    },
+    {
+      "file": "collection.js",
+      "status": 200,
+      "localSha256": "d587f3281cb9f47f2bcbeed364b4411c9c8369f283bfb5d9961fa2eda99d786c",
+      "remoteSha256": "d587f3281cb9f47f2bcbeed364b4411c9c8369f283bfb5d9961fa2eda99d786c",
+      "match": true
+    },
+    {
+      "file": "effects.js",
+      "status": 200,
+      "localSha256": "d606cb4ef8e4a944162b53a057e222eaa06e714d064ef389616f05eb17ad1884",
+      "remoteSha256": "d606cb4ef8e4a944162b53a057e222eaa06e714d064ef389616f05eb17ad1884",
+      "match": true
+    },
+    {
+      "file": "property-cards.js",
+      "status": 200,
+      "localSha256": "f04c872f105877664e82d1a718510de46425211fb061369ffdbf388d3c00ce1a",
+      "remoteSha256": "f04c872f105877664e82d1a718510de46425211fb061369ffdbf388d3c00ce1a",
+      "match": true
+    },
+    {
+      "file": "cinematic.css",
+      "status": 200,
+      "localSha256": "ac0c801f9107d8d4c9afd0ae81488c5b4590464358f513740118ffa93ed5adcf",
+      "remoteSha256": "ac0c801f9107d8d4c9afd0ae81488c5b4590464358f513740118ffa93ed5adcf",
+      "match": true
+    },
+    {
+      "file": "signature.css",
+      "status": 200,
+      "localSha256": "2e0a870df973eb660f873769688557d23b8fd78e4dd24a8fb5be84e54c4aafbf",
+      "remoteSha256": "2e0a870df973eb660f873769688557d23b8fd78e4dd24a8fb5be84e54c4aafbf",
+      "match": true
+    },
+    {
+      "file": "data.js",
+      "status": 200,
+      "localSha256": "c2edc5cafda5cee6cc15938daf65c574789bee5f78ec07f15dee22b26715e9ff",
+      "remoteSha256": "c2edc5cafda5cee6cc15938daf65c574789bee5f78ec07f15dee22b26715e9ff",
+      "match": true
+    }
+  ]
+}

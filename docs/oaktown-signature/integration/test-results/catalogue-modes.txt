@@ -1,0 +1,7 @@
+PASS: bound file override, unbound preview file response, and separate published database feed.
+115-colonial-drive: current CMS rejects static asset photo paths.
+4005-smallboat-ct: current CMS rejects static asset photo paths.
+1106-cherokee-rd-unit-8: format accepted by validator (no publication).
+1824-w-madison: format accepted by validator (no publication).
+208-sloemer-ave: current CMS rejects unconfirmed numeric rent.
+8008-troutwood-ct: current CMS rejects unconfirmed numeric rent.

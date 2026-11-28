@@ -1,0 +1,8 @@
+{
+  "passed": [
+    "desktop: panel click/keyboard, motion preference, no-map list/filter, credits and vacation transition passed",
+    "mobile-es: panel click/keyboard, motion preference, no-map list/filter, credits and vacation transition passed",
+    "Motion-enabled fresh root and logo return; selected real photo preserved across Grid/Gallery"
+  ],
+  "failures": []
+}

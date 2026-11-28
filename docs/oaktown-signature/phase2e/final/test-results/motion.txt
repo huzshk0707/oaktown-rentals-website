@@ -1,0 +1,14 @@
+{
+  "passed": [
+    "en forward/reverse continuous camera, fixed stage and no idle advance",
+    "en keyboard scenes, hidden-scene focus safety, shortcuts and stable motion toggle",
+    "en reduced-motion static fallback without empty scroll space",
+    "es forward/reverse continuous camera, fixed stage and no idle advance",
+    "es keyboard scenes, hidden-scene focus safety, shortcuts and stable motion toggle",
+    "es reduced-motion static fallback without empty scroll space",
+    "320px static mobile and responsive mode changes",
+    "390px static mobile and responsive mode changes",
+    "768px static mobile and responsive mode changes"
+  ],
+  "failures": []
+}

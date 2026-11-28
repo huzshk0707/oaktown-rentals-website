@@ -1,0 +1,129 @@
+/* Option B Boutique Luxury — approved Phase 2C.
+   Desktop width is 38vw; generous tablet/mobile gallery sizing is preserved.
+   All rules are collection-scoped; the Phase 1B hero is untouched. */
+body.rental-site .signature-collection{display:block}
+body.rental-site .signature-collection .collection-intro{display:block;width:100%;margin-bottom:28px}
+body.rental-site .signature-collection .collection-intro>p{max-width:650px}
+body.rental-site .signature-collection .collection-intro p.collection-availability{max-width:650px;margin-top:12px}
+body.rental-site .signature-collection .collection-results{min-width:0}
+body.rental-site .signature-collection[data-layout=gallery] .collection-viewport{overflow-x:auto;overflow-y:hidden;scroll-snap-type:none;scroll-behavior:smooth;padding:10px 0 14px;scrollbar-width:thin;scrollbar-color:#8f9f8c transparent}
+body.rental-site .signature-collection .collection-viewport::-webkit-scrollbar{display:block;height:5px}
+body.rental-site .signature-collection .collection-viewport::-webkit-scrollbar-thumb{background:#8f9f8c;border-radius:5px}
+body.rental-site .signature-collection .collection-viewport:focus-visible{outline:2px solid var(--signature-green);outline-offset:3px}
+body.rental-site .signature-collection[data-layout=gallery] .property-grid{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:28px}
+body.rental-site .signature-collection[data-layout=gallery] .property-card{flex:0 0 38vw;width:38vw;min-width:0;scroll-margin-left:0}
+body.rental-site .signature-collection .property-image-wrap{aspect-ratio:1.5}
+body.rental-site .signature-collection .collection-bottom[hidden]{display:none!important}
+body.rental-site .signature-collection .collection-controls button{min-width:44px;min-height:44px}
+@media(max-width:850px){body.rental-site .signature-collection[data-layout=gallery] .property-card{flex-basis:70vw;width:70vw}}
+@media(max-width:600px){
+ body.rental-site .signature-collection[data-layout=gallery] .property-card{flex-basis:calc(100vw - 44px);width:calc(100vw - 44px)}
+ body.rental-site .signature-collection[data-layout=gallery] .property-grid{gap:20px}
+ body.rental-site .signature-collection .property-image-wrap{aspect-ratio:1.3}
+}
+@media(prefers-reduced-motion:reduce){body.rental-site .signature-collection .collection-viewport{scroll-behavior:auto}}
+html.motion-off body.rental-site .signature-collection .collection-viewport{scroll-behavior:auto}
+
+/* Boutique composition: genuine photograph, editorial facts, champagne price rail. */
+body.rental-site{--ux-fast:160ms;--ux-component:280ms;--ux-cinematic:500ms;--ux-ease:cubic-bezier(.2,.7,.2,1)}
+body.rental-site .signature-collection .property-card{border:1px solid #d4d0c3;border-radius:14px;background:#faf7ed;box-shadow:0 4px 7px #1935230a,0 12px 28px #1935230a;transition:box-shadow var(--ux-component),border-color var(--ux-fast)}
+body.rental-site .signature-collection .card-media{position:relative;isolation:isolate}
+body.rental-site .signature-collection .property-image-wrap{border-radius:0;transform:none!important;background:#dfe5d8}
+body.rental-site .signature-collection .property-image{transition:transform var(--ux-cinematic) var(--ux-ease),opacity var(--ux-component)}
+body.rental-site .signature-collection .card-media>.availability-badge{position:absolute;top:16px;left:16px;margin:0;background:#f2e1ae;color:#15392a;border:1px solid #dbc58d;border-radius:20px;padding:7px 12px;font-size:11px;line-height:1.2;pointer-events:none;z-index:3}
+body.rental-site .signature-collection .card-photo-count{top:16px;right:16px;font-size:10px;line-height:1.3;padding:6px 9px;border-radius:16px;background:#f9f5e9ed;color:#183c2c;pointer-events:none;z-index:3}
+body.rental-site .signature-collection .boutique-card-body{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(132px,34%);grid-template-rows:auto 1fr;min-height:190px}
+body.rental-site .signature-collection .boutique-card-body::before{display:none;content:"";position:absolute;inset:0 0 0 66%;background:linear-gradient(120deg,#f8f1de,#f5e8c8);border-left:1px solid #e7dec7;z-index:0;pointer-events:none}
+body.rental-site .signature-collection .property-data{display:contents}
+body.rental-site .signature-collection .property-data>div:first-child{position:relative;grid-column:1;grid-row:1;padding:20px 18px 0 24px;display:block}
+body.rental-site .signature-collection .property-name{font:600 clamp(22px,1.85vw,30px)/1.12 var(--serif);letter-spacing:-.035em;margin:0 0 9px;text-wrap:balance}
+body.rental-site .signature-collection .property-neighborhood{display:block;font:400 12px/1.45 'DM Sans',sans-serif;color:#3f5144;letter-spacing:0;margin-bottom:3px}
+body.rental-site .signature-collection .property-location{display:flex;align-items:center;gap:5px;font:400 11px/1.5 'DM Sans',sans-serif;color:#435347}
+.property-location svg{width:13px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5}
+body.rental-site .signature-collection .property-price{position:relative;grid-column:2;grid-row:1/3;padding:21px 22px 72px 12px;text-align:right;font:600 clamp(24px,2vw,32px)/1.1 var(--serif);letter-spacing:-.04em;overflow-wrap:anywhere;align-self:stretch;background:linear-gradient(120deg,#f8f1de,#f5e8c8);border-left:1px solid #e7dec7}
+body.rental-site .signature-collection .property-price small{display:block;font:400 10px/1.5 'DM Sans',sans-serif;letter-spacing:0;margin:4px 0 0;color:#3d4d3e}
+body.rental-site .signature-collection .property-deposit{font-size:10px;line-height:1.5;letter-spacing:0;color:#4d5949;max-width:150px;margin:10px 0 0 auto}
+body.rental-site .signature-collection .property-details-line{position:relative;grid-row:2;grid-column:1;align-self:end;display:block;margin:18px 18px 0 24px;padding:14px 0 18px;border-top:1px solid #dedaca;font-size:12px}
+body.rental-site .signature-collection .card-specs{display:flex;flex-wrap:wrap;gap:9px 16px;font:400 12px/1.4 'DM Sans',sans-serif}
+.card-spec{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.card-spec svg{height:18px;width:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+body.rental-site .signature-collection .property-details-line>a{display:inline-flex;align-items:center;min-height:24px;width:auto;font-size:10px;margin:8px 0 0;padding:0;color:#365542;text-underline-offset:3px}
+body.rental-site .signature-collection .card-detail-link{position:absolute;bottom:19px;right:21px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#082e22;color:#fff7df;border:1px solid #294c3c;box-shadow:0 3px 8px #0b302220;transition:background var(--ux-fast),transform var(--ux-fast)}
+.card-detail-link svg,.card-photo-controls svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+body.rental-site .signature-collection .card-detail-link:hover{background:#214d38;transform:translateX(2px)}
+.card-photo-controls{position:absolute;inset:0;pointer-events:none;z-index:4}
+.card-photo-controls button{pointer-events:auto;display:grid;place-items:center;border:0;cursor:pointer;color:#fff9e8;background:#082e22db;transition:background var(--ux-fast),opacity var(--ux-fast)}
+.card-photo-previous,.card-photo-next{position:absolute;top:50%;width:36px;height:44px;transform:translateY(-50%);border-radius:22px}
+.card-photo-previous{left:12px}.card-photo-next{right:12px}.card-photo-previous svg{transform:rotate(180deg)}
+.card-photo-controls button:hover{background:#214d38}
+.card-photo-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;padding:2px 5px;border-radius:30px;background:#06291cbf;pointer-events:auto}
+.card-photo-dots button{width:28px;height:28px;background:transparent;border-radius:50%}
+.card-photo-dots button span{width:6px;height:6px;border:1px solid #fff7df;border-radius:50%;background:transparent;transition:background var(--ux-fast),transform var(--ux-fast)}
+.card-photo-dots button[aria-pressed=true] span{background:#fff7df;transform:scale(1.18)}
+.card-photo-controls button:focus-visible{outline:2px solid #fff9e8;outline-offset:2px}
+.card-media[aria-busy=true] .card-photo-dots{box-shadow:0 0 0 2px #f4ddb0}
+@media(hover:hover) and (pointer:fine){
+ .card-photo-previous,.card-photo-next{opacity:0}
+ .property-card:hover .card-photo-previous,.property-card:hover .card-photo-next,.property-card:focus-within .card-photo-previous,.property-card:focus-within .card-photo-next{opacity:1}
+ html.motion-enabled body.rental-site .signature-collection .property-card:hover{box-shadow:0 7px 12px #19352310,0 18px 32px #19352314;border-color:#b9b6a4}
+ html.motion-enabled body.rental-site .signature-collection .property-card:hover .property-image{transform:scale(1.025)}
+}
+@media(max-width:600px){
+ body.rental-site .signature-collection .boutique-card-body{grid-template-columns:minmax(0,1fr) 118px;min-height:190px}
+ body.rental-site .signature-collection .boutique-card-body::before{left:calc(100% - 118px)}
+ body.rental-site .signature-collection .property-data>div:first-child{padding:17px 12px 0 16px}
+ body.rental-site .signature-collection .property-name{font-size:22px;line-height:1.12;text-wrap:initial}
+ body.rental-site .signature-collection .property-price{padding:18px 14px 70px 8px;font-size:26px;text-align:right}
+ body.rental-site .signature-collection .property-price small{display:block;margin:4px 0 0}
+ body.rental-site .signature-collection .property-details-line{margin:14px 12px 0 16px;padding:12px 0 16px}
+ body.rental-site .signature-collection .property-details-line>a{font-size:10px;margin:7px 0 0;min-height:28px}
+ body.rental-site .signature-collection .card-specs{gap:8px 12px;font-size:11px}
+ body.rental-site .signature-collection .card-detail-link{right:14px;bottom:17px}
+ body.rental-site .signature-collection .card-media>.availability-badge{top:12px;left:12px;font-size:10px;padding:6px 9px}
+ body.rental-site .signature-collection .card-photo-count{right:12px;top:12px}
+}
+@media(max-width:350px){body.rental-site .signature-collection .boutique-card-body{grid-template-columns:minmax(0,1fr) 106px}body.rental-site .signature-collection .boutique-card-body::before{left:calc(100% - 106px)}body.rental-site .signature-collection .property-name{font-size:20px}body.rental-site .signature-collection .property-price{font-size:24px}}
+/* Reusable restrained feedback. The cinematic hero retains its existing timing. */
+@keyframes ux-confirm{50%{box-shadow:0 0 0 4px #c9b67c50}}
+@keyframes ux-reveal{from{clip-path:inset(8% 0 0);opacity:.75}to{clip-path:inset(0);opacity:1}}
+@keyframes ux-boundary{50%{opacity:.45}}
+html.motion-enabled .ux-confirm{animation:ux-confirm 180ms ease-out}
+html.motion-enabled .signature-collection .property-card.in-view .card-media{animation:ux-reveal 320ms var(--ux-ease) both}
+html.motion-enabled .signature-collection .collection-intro.in-view h2{animation:ux-reveal 280ms var(--ux-ease) both}
+html.motion-enabled .collection-meter.is-boundary{animation:ux-boundary 180ms ease-out}
+html.motion-enabled .rental-site .lightbox[open]{animation:ux-reveal 200ms ease-out}
+html.motion-off .rental-site .signature-collection *,html.motion-off .rental-site .lightbox{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){body.rental-site .signature-collection *,body.rental-site .lightbox{animation:none!important;transition:none!important}}
+
+body.rental-site .signature-collection .card-detail-link:focus-visible{outline:2px solid #082e22;outline-offset:4px}
+.card-photo-controls button:focus-visible{box-shadow:0 0 0 4px #082e22}
+
+/* Phase 2D readability and optional grid. Gallery geometry/title/rent stay approved. */
+body.rental-site .signature-collection .property-deposit{font-size:13px;line-height:1.5}
+body.rental-site .signature-collection .property-neighborhood{font-size:14px}
+body.rental-site .signature-collection .property-location{font-size:13px}
+body.rental-site .signature-collection .card-specs{font-size:15px;line-height:1.5}
+body.rental-site .signature-collection .property-details-line>a{font-size:13px;min-height:36px;line-height:1.5}
+body.rental-site .signature-collection .listing-tools{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.collection-view-switch{display:inline-flex;padding:4px;border:1px solid #d4c4a4;background:#faf7ef;border-radius:30px;gap:2px}
+.collection-view-switch button{border:0;border-radius:24px;background:transparent;color:#102f23;padding:8px 17px;min-height:40px;font:500 13px/1.4 'DM Sans',sans-serif;cursor:pointer}
+.collection-view-switch button[aria-pressed=true]{background:#102f23;color:#faf7ef}
+.collection-view-switch button:focus-visible{outline:2px solid #102f23;outline-offset:3px}
+body.rental-site .signature-collection[data-layout=grid] .collection-viewport{overflow:visible;padding:10px 0 14px;scroll-behavior:auto}
+body.rental-site .signature-collection[data-layout=grid] .property-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+body.rental-site .signature-collection[data-layout=grid] .property-card{width:100%;min-width:0;max-width:none}
+body.rental-site .signature-collection[data-layout=grid] .collection-bottom{display:none}
+@media(min-width:1800px){body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:850px){
+ body.rental-site .signature-collection .property-deposit{font-size:12px}
+ body.rental-site .signature-collection .property-neighborhood{font-size:13px}
+ body.rental-site .signature-collection .property-location{font-size:12px}
+ body.rental-site .signature-collection .card-specs{font-size:14px}
+}
+@media(max-width:700px){body.rental-site .signature-collection[data-layout=grid] .property-grid{grid-template-columns:1fr;gap:24px}}
+@media(max-width:600px){
+ body.rental-site .signature-collection .property-neighborhood{font-size:12px}
+ body.rental-site .signature-collection .card-specs{font-size:13px}
+ body.rental-site .signature-collection .property-details-line>a{font-size:12px}
+ .collection-view-switch button{padding:8px 13px}
+}

@@ -95,7 +95,8 @@ async function confirmPublish(page){
     await page.locator('#new-property').click();
     await page.locator('#preview').click();
     await preview.locator('body[data-preview-ready="true"]').waitFor();
-    assert.equal(await preview.locator('.gallery-count').first().innerText(),'0 / 0');
+    await preview.locator('.listing-photo-pending').waitFor();
+    assert.equal(await preview.locator('#gallery,[data-cover-gallery]').count(),0,'empty preview has no gallery controls');
     await page.locator('#close-preview').click();
     await page.locator('[name=name]').fill('Admin improvements test');await page.locator('[name=neighborhood]').fill('Test neighborhood');
     await page.locator('[name=rent]').fill('1450');await page.locator('[name=deposit]').fill('1450');

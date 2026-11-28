@@ -1,0 +1,345 @@
+{
+  "base": "https://integration-oaktown-signature-oaktown.rentals10.workers.dev",
+  "verifiedCommit": "495e284f089135ee42be16dd468648b45c970ca5",
+  "checks": {
+    "root": 200,
+    "rootMatchesIndex": true,
+    "fileMode": true,
+    "noindex": true,
+    "robotsExcludesAll": true,
+    "adminStatus": 503,
+    "reviewImageStatus": 404
+  },
+  "assets": [
+    {
+      "path": "app.js",
+      "status": 200,
+      "match": true,
+      "sha256": "fd8fbd7eb925520bc728ea631da2bb67b6ec6ed9acc34634c425fb04ef26d482"
+    },
+    {
+      "path": "brand.css",
+      "status": 200,
+      "match": true,
+      "sha256": "8068c02212e445d58805f8bf117e5463f6e01db9b3fbe64e8ee7983eddef591c"
+    },
+    {
+      "path": "signature.css",
+      "status": 200,
+      "match": true,
+      "sha256": "ea0636503ff369eebba4857e7c30a091ba907285f7629ac6f05487cb6add723c"
+    },
+    {
+      "path": "signature.js",
+      "status": 200,
+      "match": true,
+      "sha256": "530ce5f31bc308c615375ecf1829d54bab6e3ad83b72123b63fe1c89e4585c85"
+    },
+    {
+      "path": "sky-header.css",
+      "status": 200,
+      "match": true,
+      "sha256": "de02037ee4ab57d15de59050494c0813e7258f332fbd288cf85f27f2d13001b1"
+    },
+    {
+      "path": "sky-header.js",
+      "status": 200,
+      "match": true,
+      "sha256": "2130d3e1db001745b04d83df0a6450a3f0cd2a9642439d4ab9b8191a32164b75"
+    },
+    {
+      "path": "collection.css",
+      "status": 200,
+      "match": true,
+      "sha256": "f1b3ae92b8cf68f2134cd27df5388adbb7a9bd38fcfe53b49e959d322485dddf"
+    },
+    {
+      "path": "collection.js",
+      "status": 200,
+      "match": true,
+      "sha256": "d587f3281cb9f47f2bcbeed364b4411c9c8369f283bfb5d9961fa2eda99d786c"
+    },
+    {
+      "path": "data.js",
+      "status": 200,
+      "match": true,
+      "sha256": "a814aa8ef36605e0715e1081c868e11a2a4a3ca7fb9c1cd0eecb2844ae23bf21"
+    },
+    {
+      "path": "assets/louisville/louisville-ohio-river.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "98b11ebb96b53f5b3ec68aa4bcada3fb926361a413a08bf3763e77f081af3411"
+    },
+    {
+      "path": "assets/louisville/louisville-bridge-skyline.webp",
+      "status": 200,
+      "match": true,
+      "sha256": "69b2cfc78a06d84b702fddd86a5eddda91ec39b0fad8574b5b69d8ad598029b8"
+    },
+    {
+      "path": "assets/mint-mojo/house-pool.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "12d711e722f9cb3e5cfc4733b918dd12246f5df59b0d61e0d5ca9709147233c1"
+    },
+    {
+      "path": "assets/signature/oaktown-wordmark-transparent.png",
+      "status": 200,
+      "match": true,
+      "sha256": "d4e63fc2a652ee3027a54594c28e376a7d267d93981878c4e89e47a2626f980b"
+    },
+    {
+      "path": "assets/signature/afterglow-review-480.webp",
+      "status": 200,
+      "match": true,
+      "sha256": "7782cbf304eb0eb97555a0e3745539e14e12583db9afb42b1181065796f9f0fe"
+    },
+    {
+      "path": "assets/signature/afterglow-review-768.webp",
+      "status": 200,
+      "match": true,
+      "sha256": "ac11dcb010e28da0990c77a4f7f5b980ee654157b5c396db3ff205fbde30210c"
+    },
+    {
+      "path": "assets/signature/afterglow-review-1200.webp",
+      "status": 200,
+      "match": true,
+      "sha256": "c19e79b7d997f38bf4d93367f0cf2fbc594140b4eb1a95c951893f83341b7ada"
+    },
+    {
+      "path": "assets/signature/afterglow-review-1672.webp",
+      "status": 200,
+      "match": true,
+      "sha256": "890a28269713f7a61f8a77953be0c60984d7342fead6d544a623b57c8e1e9e16"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/01.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "cc11e8fab8be444f143aca3c26e2162a1bcaf21c6b6db68026315df053685cd4"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/02.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "5cd4982f296ea8e90f26fa2684893692e833d7018b943e97a3bdbfb1732aa411"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/03.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "8842b5e5e7a967461ca6e021d60975d1bbee4edddc085664830fdab129f188cc"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/04.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "33831e37d14130e525d8b2ee01fa3b164c4b142670add990c5de9b099229e9f7"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/05.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "d31b20374454172f921c6c1fbd811f35610c3a7ba73dea3068f625e6fda267bc"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/06.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "95601f3a41710a59abfc131b0f66915ac8c68b04f426bdc4098c2f63aab42214"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/07.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "31c7de3b583e82abb3d694ecb893c025333f3237fa6c2f65af040a740be85fe0"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/08.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "8c3731a6076da7c92a258537b4130c87a5287db166408fa0ef0842e3807e71c6"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/09.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "2c7d1feb03469a222736fcf89a6e6ffc80a106ab062e5c1765819eed5658d5bc"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/10.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "850682e42a74ea82e69f01c86238cf9d54d5eea83844535bdad65af76f157fc2"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/11.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "e26db6871d2ad1d1fbaf6b273bc91e621d4f0107957644b35bc865903c0b2776"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/12.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "8d863cdfb6ae5fb7376fccdbef8ba50196afca577d431a3afa5f07c3bfac9081"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/13.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "050a1fac8dce7fb3c84f55a37182963f9200f79db31dde33df68932842d9cf1e"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/14.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "4cd07b5ac354bbc0cee5cff667e66b1af10ebde14df9bc3330c9dd33ab9eb4e1"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/15.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "b746b4b4bb69c54ac78558bb09e93cf4b6aaf15a345f4d15f99e69a5d18c9635"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/16.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "646f7cb9e3917f85c61961d80aa26d035ec0ffa48d526bffaf4685fed87bf740"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/17.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "030c3fa6e4aa1ee8e38bf8d65f65f085967d4f0dd693dd92587a7ee3fb0ce3a3"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/18.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "66251d6f6a5660a6143e7e48523dc3de6fbc6767b50e4258973200f8c0a88a87"
+    },
+    {
+      "path": "assets/properties/115-colonial-drive/19.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "f0bc76d57d8ea1039fa04f01b0c6d7d48f1b54e62c4473881464d386473ef11f"
+    },
+    {
+      "path": "assets/properties/208-sloemer-ave/01.jpeg",
+      "status": 200,
+      "match": true,
+      "sha256": "f321f2eee58ab524ad9fe52866d1527ab35f2d5017305f52aab499a7334a1826"
+    },
+    {
+      "path": "assets/properties/208-sloemer-ave/02.jpeg",
+      "status": 200,
+      "match": true,
+      "sha256": "cc1d762af9446dd4aaf3aa13d7b3937e744088e81b946db1e570beae75aa729d"
+    },
+    {
+      "path": "assets/properties/208-sloemer-ave/03.jpeg",
+      "status": 200,
+      "match": true,
+      "sha256": "9cf51bcdd38979e6fb34455fd7b04fb385ebf629a9490c7649516b961bc8c56f"
+    },
+    {
+      "path": "assets/properties/208-sloemer-ave/04.jpeg",
+      "status": 200,
+      "match": true,
+      "sha256": "41bbc5566c69ad1c4d59629f6cecbda7ba809414684721d2e9d5a5f5776a232a"
+    },
+    {
+      "path": "assets/properties/208-sloemer-ave/05.jpeg",
+      "status": 200,
+      "match": true,
+      "sha256": "b70a7894924dffc51c656de2f669787a69cf9f9fc98320f682b83d274691fc41"
+    },
+    {
+      "path": "assets/properties/208-sloemer-ave/06.jpeg",
+      "status": 200,
+      "match": true,
+      "sha256": "625a0e7af1fd33b93f1ea5c758f847557c48655e1afc72505e968a8da9d77de1"
+    },
+    {
+      "path": "assets/properties/208-sloemer-ave/07.jpeg",
+      "status": 200,
+      "match": true,
+      "sha256": "e1bc52fae1cdf866bf376ac30d089a0fb03ce3acdef3f06a130b5d35f48bfc31"
+    },
+    {
+      "path": "assets/properties/208-sloemer-ave/08.jpeg",
+      "status": 200,
+      "match": true,
+      "sha256": "789ffe06056b1e4bc4e66b64fc822803a6298167668a0c64c75ad73e66825131"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/01.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "9930a72b99370f643d3dbf03cedb2c1982448c14dcdb8ea3b1311ff77ef101a5"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/02.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "97293971eca4ae74f1e2a733d932534c7dc8ef597ca21bcdfa59fa0fb8053b4f"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/04.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "4faf623a8c64f925c18c2f89f1aed77c49d1292a9238c42951ca2813dd73807f"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/05.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "1c366e480c2d74642292d372ed4d650eb39f6a5dca2643929fecdc38e90202e2"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/06.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "907a0a7eb4130a45804dd28ffe1dd2a90cc16664480fc072c00c2b5b0a12ace1"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/07.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "46ad808d619f45519befbc95a7b184547aec3c773d0f547abbede9f46dffe793"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/08.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "53c41a397fe1634b495ceba174e6c79dfc5eea9c60dd221c317b67db76c346d9"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/09.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "27bc860f0100533994fbb085ce3fe8790eb245a465a7ffc63094cfc7bfffe692"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/10.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "d615ea0a765bd0385af4c343d0dff17eedba41610f883a38b850e43e2ed1479b"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/11.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "db55d555f07b9ee4d728ea222738536821bb5a0a139b97a7f2717f8355880713"
+    },
+    {
+      "path": "assets/properties/4005-smallboat-ct/13.jpg",
+      "status": 200,
+      "match": true,
+      "sha256": "e75117b8f54545cb37e020fc7053b1d3221594f553dc1d9483c962103cdf1875"
+    }
+  ]
+}

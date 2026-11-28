@@ -1,0 +1,35 @@
+[
+  {
+    "name": "light",
+    "autoDark": false,
+    "darkPreference": false,
+    "root": "light",
+    "body": "light",
+    "collection": "rgb(246, 243, 233)",
+    "bodyBackground": "rgb(8, 46, 34)",
+    "price": "linear-gradient(120deg, rgb(248, 241, 222), rgb(245, 232, 200))",
+    "theme": "#F7F4ED"
+  },
+  {
+    "name": "dark",
+    "autoDark": false,
+    "darkPreference": true,
+    "root": "light",
+    "body": "light",
+    "collection": "rgb(246, 243, 233)",
+    "bodyBackground": "rgb(8, 46, 34)",
+    "price": "linear-gradient(120deg, rgb(248, 241, 222), rgb(245, 232, 200))",
+    "theme": "#F7F4ED"
+  },
+  {
+    "name": "forced-dark",
+    "autoDark": true,
+    "darkPreference": true,
+    "root": "light",
+    "body": "light",
+    "collection": "rgb(246, 243, 233)",
+    "bodyBackground": "rgb(8, 46, 34)",
+    "price": "linear-gradient(120deg, rgb(248, 241, 222), rgb(245, 232, 200))",
+    "theme": "#F7F4ED"
+  }
+]

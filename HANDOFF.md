@@ -1,3 +1,218 @@
+# Release blocker resolution · Ravi
+
+Ravi claimed PR #29 at 2026-11-28T08:03:33+00:00. Claim expires 2026-11-28T08:33:33+00:00. Verified shared base `6c6ff47`. Next: update inquiry wording and prepare the clearance fallbacks and exact Afterglow comparison.
+
+# Release candidate held for publication evidence
+
+Ravi released the consolidation claim at 2026-11-28T07:57:26+00:00. Draft PR #29 contains the approved stack, #32, #26 review evidence and Junior’s latest #28 gallery. Tested runtime `08d4412`. See [preflight, mobile results and photo/fact holds](docs/oaktown-signature/release/README.md). The final evidence commit follows that runtime. Main and production remain on `be37dba`. Booking recovery is in #37.
+
+**Next step:** Owner and Felix Junior record the outstanding publication evidence on PR #29. Ravi verifies it before merging and checking production. Source branches and worktrees remain available.
+
+# Release consolidation · Ravi
+
+Claim 2026-11-28T07:51:18.952486+00:00, expires 2026-11-28T08:21:18.952486+00:00. Base b145c82. Next step: integrate #32, #26 evidence and Junior’s draft photography, then verify release gates.
+
+# Phase 4B step 2 ready for review / Ravi released
+
+- Ravi released the claim at 2026-11-28T07:40:05+00:00. [Draft PR #35](https://github.com/huzshk0707/oaktown-rentals-website/pull/35), `felix/universal-navigation`, stays stacked on #34 at `b483547`. Recovered Felix’s published runtime at `4fd38e9` and claimed continuation at `ffcfc49`. This evidence and test checkpoint follows. The open PR records its exact head.
+- [Feature preview](https://felix-universal-navigation-oaktown.rentals10.workers.dev/) verified with normal TLS. The shared header, vacation local bar and six inherited openings are in Felix’s runtime. Ravi updated only test synchronization and evidence. Public property data, photos and publication holds carry forward.
+- [Route-by-route evidence](docs/oaktown-signature/phase4b-navigation/README.md) includes 28 hosted screenshots, two before captures, a 13.72-second journey, 68 ordered gallery selections, 51 exact asset hashes, three exact served HTML documents, preview isolation and 52 axe scans with zero confirmed violations. Full relevant regressions passed after the test corrections.
+- The independent #32 runtime combined cleanly with the stack in a disposable checkout and passed desktop and mobile smoke tests. HANDOFF and TASKS conflicts would need both entries retained. No drafts were merged. Booking PR #25 stays separate.
+- NEXT STEP: review the [hosted journey and route evidence](docs/oaktown-signature/phase4b-navigation/README.md) on PR #35, then record owner approval or revisions. After separate authorization, integrate #33 → #34 → #35, then #32, and verify the combined preview. Production, live CMS and payments stay separate.
+
+---
+
+# Phase 4B step 2 — FELIX
+
+Cached-page preference sync corrected and property stylesheet ordered for a clean runtime combination with the vacation feature. NEXT STEP: verify the hosted navigation and record screenshots. Heartbeat 2026-11-28T07:19:19Z, expires 2026-11-28T07:49:19Z.
+Shared navigation is implemented on rental, vacation and 404 documents. NEXT STEP: verify hosted links, cross-page preferences and all six openings. Heartbeat 2026-11-28T07:16:56Z, expires 2026-11-28T07:46:56Z.
+Claimed 2026-11-28T07:13:58Z, expires 2026-11-28T07:43:58Z. Base PR #34 at b483547. NEXT STEP: extract the approved header and verify route behavior.
+
+# Phase 4B step 1 ready for owner review / FELIX released
+
+Claim released 2026-11-28 07:01 UTC. Draft PR #34 is stacked on #33 at cde58a6. Cloudflare built runtime e95d39f. [Hosted gallery, screenshots, photo verification and regressions](docs/oaktown-signature/phase4b-opening/README.md). NEXT STEP: owner reviews the Colonial opening and fullscreen viewer before further design or integration. All publication holds remain in force.
+
+# Phase 4A ready for owner review / FELIX released
+
+FELIX released the feature claim at 2026-11-28 06:43 UTC. Draft PR #33 targets integration at shared base bc163b2. Audit 2f7f9fb, verified runtime a365581. [Hosted comparisons, recording and regression evidence](docs/oaktown-signature/phase4a/README.md). NEXT STEP: owner reviews Colonial Drive in the feature preview and provides Phase 4B direction separately. PR #32 remains a separate draft. Existing holds continue.
+
+# Vacation feature ready for owner review
+
+FELIX released the feature claim at 2026-11-28 06:24 UTC. Draft PR #32 targets integration from verified shared base `bc163b2`. Runtime `ac5b24e` passed eight regression commands, responsive and motion checks, and hosted verification. [Captures and results](docs/oaktown-signature/vacation-feature/README.md). NEXT STEP: owner reviews the desktop and mobile comparisons in draft #32 before any integration.
+
+# Vacation feature implemented / FELIX
+
+Draft PR #32. Heartbeat 06:22 UTC, expires 06:52 UTC. Reviewed all 19 gallery originals and retained the high-resolution house and pool exterior. Desktop and mobile captures confirm the ivory layout and footer boundary. NEXT STEP: run browser regressions and verify hosted feature bytes.
+
+# Homepage Lobster Nirvana refinement
+
+FELIX owns `felix/vacation-feature` from shared `bc163b2`. Heartbeat 2026-11-28 06:20 UTC, expires 06:50 UTC. Scope is the homepage vacation promotion. NEXT STEP: review genuine property photography and capture the baseline before editing the section.
+
+# Phase 3 integrated, homepage design locked / FELIX released
+
+- FELIX released the integration claim at 2026-11-28T06:10:21+00:00. `integration/oaktown-signature` remains draft PR #29 targeting `main`. Owner-approved #31 `1b751450e86ae1759647fc2c862acdb71d73f7e0` merged at `495e284f089135ee42be16dd468648b45c970ca5` from verified shared tip `4f5c3ea`. This evidence checkpoint follows the merge. Read PR #29 for the exact latest head.
+- Major homepage design is complete and locked. Preserve the Phase 2E opening, approved order, exact Louisville Option A photograph and license, lighter overlay, mobile color treatment, rental journey, vacation feature and footer.
+- [Shared root preview](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/) and [verification report](docs/oaktown-signature/integration/phase3/README.md). Cloudflare deployed the merge. Local and hosted catalogue checks passed for six routes, 38 imported byte matches and 68 ordered photo selections. Seventeen regression commands and 36 axe scans with no confirmed violations passed. Hosted browser, 55 served asset hashes and preview isolation passed.
+- Photography, fact, Zillow and CMS holds carry forward in TASKS.md and the report. Booking PR #25 stays separate. No production, payment or live inventory action.
+- NEXT STEP: await the owner’s property-detail design instructions. On an isolated branch from the then-current shared tip, open `/#home/115-colonial-drive` as the reference for the six detail pages. No detail redesign implementation in this checkpoint.
+
+---
+
+# Phase 3 final refinement ready for review / FELIX
+
+- FELIX released the claim at 2026-11-28T03:40:52+00:00. Draft PR #31 on `felix/homepage-completion` targets `integration/oaktown-signature` at `4f5c3ea`. Owner assigned the refinement from `ac1a88a`. Both PRs stay draft.
+- Runtime `433c47d937e616571e94f9a0712d295461953c54` is deployed on the [feature preview](https://felix-homepage-completion-oaktown.rentals10.workers.dev/). This evidence and handoff checkpoint follows it. Use the PR head for the exact final SHA.
+- Homepage uses owner-approved Option A with the exact review bytes and source license documented. The prior on-page photo and credit were replaced together. The overall overlay is lighter and the desktop copy has local shade for both disclosure states. Opening, collection, color-scheme correction, journey, Lobster Nirvana and footer are preserved.
+- [Final captures and verification](docs/oaktown-signature/phase3/final/README.md): ten regression commands, 12 axe scans with zero confirmed violations and 32 contrast cases passed. Phone light/default dark/automatic darkening samples remained ivory. Hosted desktop EN and mobile ES passed, with 50 served hashes and preview isolation confirmed.
+- NEXT STEP: owner reviews the final feature preview and the final desktop/mobile captures in `docs/oaktown-signature/phase3/final/README.md`. Ravi handles integration into draft #29 only after owner authorization. All production, CMS and booking holds remain in place.
+
+---
+
+# Phase 3 — Homepage Completion ready for review / FELIX
+
+- FELIX completed the implementation and released the claim at 2026-11-28T03:23:36+00:00. Branch `felix/homepage-completion`, draft PR #31 targeting `integration/oaktown-signature` at `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Approved Phase 2E `f5a2476` merged via `48a32cd`. #29 stays draft.
+- Pushed and deployed runtime `d3216c94d6e02342ee252e592ad5bcc9186ea165`. The final evidence checkpoint follows it. Use PR #31 for its exact head. [Feature preview](https://felix-homepage-completion-oaktown.rentals10.workers.dev/).
+- Implemented the approved order. Louisville has a full desktop panorama and natural mobile layout with the approved story copy, disclosure and credited King of Hearts photo. Rental Journey separates it from the compact Lobster Nirvana feature. The opening, cards, footer and six-property catalogue are preserved.
+- Chromium auto-darkening reproduced brown webpage pixels. Rental-only `color-scheme: only light` restored the accepted palette with champagne price panels. Native Safari and the owner's specific phone remain unverified.
+- [Phase 3 evidence](docs/oaktown-signature/phase3/README.md) includes actual full before/after EN/ES, mobile and reduced-motion captures, two section transitions, a 7.48-second decoded video and three licensed Louisville photo proposals. Candidates are excluded from served assets.
+- 17 regression commands passed, including 11 unit/CMS tests and 27 header checks. Six routes and 68 real selections passed, with 38 imported hashes and 36 axe scans across catalogue and sections. Shared/feature HTTP 200, root HTML and 49 served hashes matched, and preview isolation passed. No unfinished runtime files.
+- NEXT STEP: owner opens the preview and compares A, B and C in `docs/oaktown-signature/phase3/PHOTOGRAPHY.md`, then approves the layout and photo or specifies revisions. The current image retains its attribution until an approved replacement is implemented. Keep both PRs draft and preserve all property, media, Afterglow, CMS and booking holds.
+
+---
+
+# Phase 2E integrated · Felix Phase 3 handoff
+
+- Ravi released the Phase 2E integration claim at 2026-11-28T03:10:50+00:00. Felix owns Phase 3 — Homepage Completion, beginning on an isolated feature branch. Ravi remains shared integration coordinator.
+- [Combined draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29), branch `integration/oaktown-signature` targeting `main`. Owner-approved PR #30 head `f5a2476ddbb4f5595b5d6d2964235353f590c18b` merged at `48a32cdc81b4a9cafb505912a539fdce6b86ada2`. This documentation checkpoint follows that tested merge. The open PR head is the exact Phase 3 starting commit.
+- The only merge conflict was the shared handoff log. The final header, navigation, buttons and disclosures match the approved feature tree. Six file records, 38 imported rental assets, 68 ordered gallery selections, all six held Smallboat replacements and the property, Afterglow and migration holds are preserved.
+- [Combined regressions and evidence](docs/oaktown-signature/integration/README.md#phase-2e-integration-and-phase-3-handoff): Node 24 syntax and 11 unit/CMS tests, 27 dedicated header checks, existing design/browser/motion/gallery/EN/ES/Mint Mojo and disposable admin suites passed. Catalogue browser verification returned 24 axe scans with zero confirmed violations. The local preview Worker validated file mode, exact header assets, noindex, admin denial and review asset exclusions.
+- Cloudflare confirmed the merge deployment. [Shared preview](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/). Direct hosted checks remain open because the workspace proxy returns CONNECT 403 for the preview hostname. The PR records the final documentation checkpoint build.
+- NEXT STEP: Felix fetches `origin/integration/oaktown-signature`, creates an isolated Phase 3 branch from the current PR #29 head, and reviews the homepage against the [Phase 3 scope](docs/oaktown-signature/ROADMAP.md#phase-3--homepage-completion) and Phase 2D prototypes before editing. Keep the approved opening and publication holds. PR #29 stays draft. Production, live CMS and booking PR #25 stay separate.
+
+---
+
+# Phase 2E final refinements and Smallboat review
+
+- Ravi completed the scoped refinement and released the claim at 2026-11-28T02:53:47+00:00. [Draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30), branch `ravi/seamless-sky-header`, integration base `c4a789b`. Owner accepted the previous Phase 2E composition at `3b0667f`.
+- Verified pushed runtime checkpoint `8d034a2`. This final evidence checkpoint follows it. Use the PR head for its exact SHA. `index.html`, `app.js`, `sky-header.css` and `sky-header.js` implement the direct Lobster Nirvana link, consistent rounded CTAs and staggered accessible disclosures.
+- [Final review evidence](docs/oaktown-signature/phase2e/final/README.md) includes button before/after, 25 real-photo screenshots, an 11.56-second recording with verified playback, exact test transcripts and 42 axe scans with zero confirmed violations. Dedicated header checks, 38 media hashes, six records, 68 real gallery selections and existing regressions passed locally.
+- [Smallboat reconciliation](docs/oaktown-signature/phase2e/final/SMALLBOAT-PHOTOGRAPHY.md) accounts for all 17 approved Drive files. Eleven match existing imports byte-for-byte. Zero new imports. Six retained sources have specific accuracy or attribution exceptions, with candidate/source links and correction requests. No media, data, CMS, admin, Cloudflare or booking changes. The roadmap and task list record the remaining holds.
+- Cloudflare confirmed the `8d034a2` preview build and deployment. [Feature preview](https://ravi-seamless-sky-header-oaktown.rentals10.workers.dev/). The workspace tunnel returned CONNECT 403 on a fresh hosted attempt, so direct hosted asset and isolation checks remain open. The PR records the final build status.
+- NEXT STEP: Review the revised buttons, dropdown video and six photo exceptions in PR #30, then record acceptance or revisions there. Keep PR #29 and #30 draft pending separate authorization to integrate. No production deploy, inventory update or payments.
+
+---
+
+# Phase 2E — Seamless Sky Header
+
+- Ravi completed the feature and released the implementation claim at 2026-11-28T02:25:38+00:00. Feature branch `ravi/seamless-sky-header`, [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30) targeting `integration/oaktown-signature` at `c4a789b`. Combined PR #29 stays separate.
+- Previous pushed checkpoint `3f08773`. This final review commit follows it. GitHub holds the exact head. Afterglow photo/camera and the six records, 38 imported photos, 68 selections, collection, CMS, private preview and booking holds preserved.
+- The opening has the transparent original-derived logo header, four desktop destinations, dynamic public catalogue disclosures and two hero CTAs. It becomes ivory below the hero. Direction behavior applies to desktop home with motion enabled and keeps open/focused menus reachable. Lofts & Nirvana currently links only to verified Lobster Nirvana.
+- Local Node 24/Chromium verification passed. 25 dedicated checks, existing browser/design/motion/gallery/history/CMS/admin/Mint regressions and all real galleries. 26 after and two before images, 12.04-second recording and 43 zero-violation axe scans. Verified video playback. [Exact evidence](docs/oaktown-signature/phase2e/README.md).
+- Cloudflare alias https://ravi-seamless-sky-header-oaktown.rentals10.workers.dev/. Shared baseline attempt failed at initial navigation with `net::ERR_TUNNEL_CONNECTION_FAILED`. New hostname grant timed out. See PR #30 for build status. Direct hosted hashes/isolation remain pending.
+- NEXT STEP: owner opens the feature preview at desktop size, checks Our Homes and all three hero scenes against the before/after evidence, and records acceptance or specific revisions on PR #30 before authorizing integration.
+
+
+---
+
+# Oaktown Signature integration
+
+- Ravi completed the local integration and released the implementation claim at 2026-11-28T01:47:50+00:00. Ravi remains the integration lead.
+- Branch `integration/oaktown-signature`, combined draft PR #29 targeting `main`. Foundation #26 `dd40325`; reviewed #27 `e50f3c4` and #28 `5b5c6ab` merged cleanly. Verified pushed checkpoint `88e4d41`; final test evidence and handoff checkpoint follows it. Read PR #29 for the latest SHA.
+- Six file records and 38 imported photo blobs retained. Content holds, unchanged production systems and booking PR #25 remain in place. Local test fixture changes cover six catalogue records and keep the four-record CMS test baseline separate.
+- [Integration report](docs/oaktown-signature/integration/README.md) and [motion study](docs/oaktown-signature/BETHUNE-MOTION-STUDY.md). All current integration regression suites passed. Local browser verification passed 68 genuine photo selections, 38 hash checks and 24 axe scans. Cloudflare confirmed build and deployment success at `88e4d41`. Direct hosted verification is pending after the egress confirmation timed out.
+- NEXT STEP: from an authorized environment, run `OAKTOWN_BASE_URL=https://integration-oaktown-signature-oaktown.rentals10.workers.dev OAKTOWN_REPORT=/tmp/hosted-integration.json node tests/verify-integration.cjs`, save the hosted evidence, then review the combined draft and content holds.
+
+---
+
+# WEB-SIGNATURE — Phase 2D / FELIX checkpoint
+
+- Owner FELIX; heartbeat 2026-11-27T21:37:50+00:00; claim expires 2026-11-27T22:07:50+00:00.
+- Branch `felix/oaktown-signature`, draft PR #26, base `be37dba`; prior pushed ownership `97eb09a`. Explicit takeover from Ravi `149217e`; other worktrees and PR #25 preserved.
+- Tasks 1–4 complete: root/history verified without unnecessary positioning changes; supporting type increased; Request a Tour / Solicitar una visita uses verified exact-property SMS showing fallback; Gallery-default persisted Grid/Gallery uses identical cards/filters/photos/history.
+- All regression suites passed; new refinement suite 12 groups. Actual desktop/mobile EN/ES captures, two recordings and 12 zero-violation axe scans saved in `docs/oaktown-signature/phase2d/`.
+- Rendered Bethune research and isolated expanding-panel/Louisville map prototypes are checkpointed under excluded docs. Louisville transition capture and final proposal checks remain in progress. No public section replacement.
+- Zillow public destinations could not be verified; owner will share them later. No guessed links, fact changes or inquiries. Exact Cherokee #8 SMS retained.
+- NEXT STEP: verify Louisville-to-vacation prototype transition and reduced-motion/Spanish interactions, write Phase 2D review reports, verify hosted preview hashes, update roadmap/tasks and release review handoff.
+- No expected broken runtime checks; prototype last transition addition awaits capture. Keep draft; no merge, production deploy, live inventory/schema/auth/payments.
+
+---
+
+# WEB-SIGNATURE — Phase 2C Boutique Luxury / Ravi
+
+- Owner Ravi; implementation and review evidence complete. Claim released at 2026-11-27T20:42:24+00:00. Latest verified pushed runtime checkpoint `9e387896233eb26d240801fb70bce1cf628e0172`; final documentation checkpoint follows it (read live PR head for SHA). Previous evidence `5b90d1b`, implementation `30d128f`, ownership `f45f158`, recovered Felix `7ff126e`.
+- Existing draft PR #26 / `felix/oaktown-signature`; all other branches/worktrees and booking PR #25 preserved. No recovered unfinished edits were discarded.
+- Approved Option B is implemented: fixed 38vw desktop cards, original generous tablet/mobile dimensions, ivory/champagne/serif styling, exact genuine facts/photos, functional photo dots/arrows, accessible circular detail action. Single-row gallery, intro, filters, fit controls, intentional edges and touch/history remain. Only hero scene-two EN/ES copy changed; hero code/style/assets unchanged.
+- Final review refined focus outlines and manual photo crossfades so the prior photo remains underneath until the selected image appears. Rapid selections retain exactly one selected image and discard stale requests. Reduced-motion and error fallback preserved.
+- All relevant regressions pass: CMS/component 8, Boutique 7, collection 8, browsing 24, Signature 19, browser 45, design 33, audit 15, motion 9, admin workflow/photo-order/improvements 6 and Mint. See `docs/oaktown-signature/phase2c/README.md` and test-results for exact commands.
+- 35 actual screenshots cover desktop/tablet/mobile EN/ES/full pages/one/two/boundaries/scene two; real-photo interaction video saved. Sixteen axe scans have zero confirmed violations. The two-result combined-neighborhood option is explicitly a browser-only review fixture, not a catalogue or shipped UI change.
+- Preview at https://felix-oaktown-signature-oaktown.rentals10.workers.dev/#homes: Cloudflare passed for 9e38789; final hosted verification passed all 60 originals and ordered detail selections, 4 exact mappings and 7 deployed asset hashes with normal TLS. Saved photo-verification.json and preview-build.json. Initial CSS mismatch was the previous build still serving while the new build ran; resolved after successful completion.
+- No remaining CDN blocker after approved narrow environment grant. Remaining visual limitations: 43/60 originals only 480–640px wide, Cherokee #8 portrait crop; separate enhanced Afterglow architectural approval. Native Safari/Firefox, physical devices, screen readers and real production sign-in remain untested. No photo enhancement or substitution.
+- NEXT STEP: owner/ChatGPT reviews `docs/oaktown-signature/phase2c/README.md`, its approved-reference comparison, desktop/mobile Boutique cards, scene-two EN/ES copy and 8.84-second interaction recording, then provides visual acceptance or specific revisions on PR #26. No unfinished runtime files. Read current ownership before any follow-up edit.
+- Keep PR #26 draft. No merge, production deployment, live inventory/schema/CMS migration, authentication/storage or payment change. Dependency symlinks are intentionally untracked.
+
+---
+
+# WEB-SIGNATURE — FELIX photo verification and editorial proposal complete
+
+- Owner FELIX under explicit reassignment. Work complete and claim released at 2026-11-27T11:29:39+00:00. Keep PR #26 DRAFT.
+- Branch `felix/oaktown-signature`, base `be37dba`. Recovered Ravi `877d196`, ownership checkpoint `8e11623d167459f20e642ffca44ef4f7c5194909`. This final evidence checkpoint follows it; read live PR head for its SHA.
+- Hosted preview https://felix-oaktown-signature-oaktown.rentals10.workers.dev/#homes returned 200. Ravi's latest Cloudflare build passed. Seven served runtime hashes match the branch.
+- Photography blocker resolved: all 60 original images loaded with normal TLS and no interception/substitution. Exact catalogue mapping, 60 ordered detail selections, source-page URL/order matches, dimensions/bytes/hashes and four visually reviewed contact sheets are in `docs/oaktown-signature/phase2b/PHOTOGRAPHY.md` and adjacent JSON. Cherokee #8 and Madison assignments confirmed against their respective source pages.
+- Prior network tunnel failures were environment-specific. Initial browser certificate error was resolved using the existing environment CA and approved browser trust-store access. No TLS-check bypass, network-policy or website infrastructure change.
+- 32 actual hosted screenshots include full gallery, both boundaries, one result, explicitly labelled browser-only two-result fixture, EN/ES/mobile, all four detail galleries and the separate editorial prototype. A 12.88-second recording demonstrates edge movement, bounded arrows, filter and reset. Evidence is in `docs/oaktown-signature/phase2b/README.md`.
+- Editorial proposal is reversible capture-only CSS/DOM, excluded from deployment. It improves serif titles, readable monthly pricing, spacing, icons and detail action while preserving fixed gallery widths, ratios and photo identities. Public styling and all Phase 1B hero code remain byte-identical to Ravi. No unfinished runtime files.
+- Checks passed: syntax; CMS/component 8; collection 8; Signature 19; browser 45; design 33; browsing 24; audit 15; motion 9; Mint; admin workflow/photo order/improvement 6. Sixteen axe scans have zero confirmed violations, photo contrast incompletes retained. Exact commands/outputs are in the review README and test-results directory.
+- Limits: 43/60 originals are only 480–640px wide; Cherokee portrait lead crops vertically in wide cards. These are source-quality/creative acceptance items, not loading failures. Original property rights are confirmed; enhanced Afterglow architectural approval remains separate. Native Safari/Firefox, assistive technologies and real admin sign-in not tested.
+- NEXT STEP is owner/ChatGPT review of `docs/oaktown-signature/phase2b/EDITORIAL-PROPOSAL.md`, `editorial-comparison.jpg` and mobile proposal captures, then explicit approval/revision before implementing public card styling. Do not restart completed engineering/audits.
+- No merge, production deployment, inventory/schema/media migration, authentication or payment change. Other branches/worktrees and booking PR #25 preserved.
+
+---
+
+# WEB-SIGNATURE — Phase 2A Engineering Foundation
+
+- Owner Ravi. Phase 2A implementation/evidence complete; claim released at 2026-11-27T11:10:30+00:00 for bounded photo verification and creative review. PR #26 remains DRAFT.
+- Branch `felix/oaktown-signature`, draft PR #26. Latest verified pushed engineering checkpoint `b788bb4de2b53c97bd804cd55956b07f3377aef1`, following audit/card extraction `1ba68e8`, recovered Felix `262f153` and Ravi claim `69d20fd`. This final handoff commit follows it; use the live PR head for the exact latest SHA. Other branches/worktrees/booking PR #25 remain untouched.
+- Done: per-property field report, exact 60-photo manifest and network/migration audit; reusable card module; approved full-width intro/single-row gallery. Removed redundant View All Homes/grid toggle. Original generous fixed gallery widths, bounded arrows/keyboard/native swipe, desktop intent-only edge movement, no timer/loop, fit-aware controls, filter reset and exact Back-position restoration. One/two results never edge-drift. Final editorial card styling remains pending.
+- Files: property-cards.js, collection.js/.css, narrow app/effects integration, public/private-preview asset wiring, tests and docs/oaktown-signature/phase2a. Phase 1B JS/CSS/hero markup, inventory, CMS/auth/schema/admin implementation and Mint Mojo unchanged. Four opening screenshots pixel-identical to Felix's checkpoint.
+- Verification: component 5 + CMS/security 3; gallery 8; Signature 19; public 45; design 33; browsing 24; audit 15; motion 9; Mint; admin browser/photo-order/improvement 6 all passed. Twelve axe scans have zero confirmed violations; contrast incompletes retained. Actual desktop/mobile/Spanish/tablet full/collection/detail/filter screenshots saved. See phase2a/README.md for exact commands/outputs.
+- Photo blocker: proxy CONNECT 403; Chromium net::ERR_TUNNEL_CONNECTION_FAILED. All 60 original URLs failed locally. No substitute photographs; captures labeled CDN-unavailable. Hosted loading, original dimensions/quality and real-photo acceptance remain unverified. Enhanced Afterglow architectural acceptance remains with owner.
+- Unfinished runtime files: none. PR running log and reports updated. Remote branch/PR head matched b788bb4; GitHub combined status remains pending with no reported status/check runs at this inspection. Latest preview deployment and hosted photos cannot be independently confirmed from this network. Dependency symlinks remain intentionally untracked.
+- NEXT STEP: after checking live PR #26 ownership/head and preview build status, open its preview from a CDN-enabled browser, verify all 60 exact photos against docs/oaktown-signature/phase2a/catalogue-audit.json, and save loaded-photo desktop/mobile gallery evidence there. Await owner/ChatGPT Phase 2B mockup before Phase 2C styling. Keep draft; no merge/production deploy/inventory/schema/media migration/payments.
+
+---
+
+# WEB-SIGNATURE — Phase 1B ready for visual review
+
+- Owner FELIX under explicit user reassignment. Implementation complete, claim released at 2026-11-27T05:27:48+00:00. PR #26 remains DRAFT.
+- Branch `felix/oaktown-signature`, base `be37dba`. Latest verified pushed implementation checkpoint `d14efce3c3753944d54c1436bf7b6571e99881ee`. This evidence checkpoint follows it. Read the live PR head for its final SHA.
+- Done is the approved continuous three-scene hero with one enhanced Afterglow image, native sticky/reversible camera, keyboard scene controls, immediate homes/apply shortcuts and static mobile/reduced-motion fallbacks. Subsequent homepage sections retain their design.
+- All affected public, motion, bilingual, gallery and disposable admin tests passed. Exact commands/counts and limitations are in `docs/oaktown-signature/phase1b/README.md`. Seven hero axe scans have zero confirmed violations, with image contrast incompletes retained.
+- Actual screenshots of all three scenes/search, mobile/Spanish/tablet/reduced motion, 15.56-second forward/reverse recording and reference/before/after comparison are in `docs/oaktown-signature/phase1b/`. No unfinished implementation files remain.
+- Public preview https://felix-oaktown-signature-oaktown.rentals10.workers.dev/ returned 200 and its four key runtime/image assets matched local SHA-256. Cloudflare passed for `d14efce`. Actual remote browser screenshot required a test-context TLS exception for environment certificate trust. No site TLS settings changed.
+- Original property ownership/management and photo reuse were confirmed in the user thread. Public enhanced-photo review is explicitly authorized. Retained original/enhancement/reference and SHA-256 provenance document apparent architectural differences. Enhanced-photo architectural approval remains required before production.
+- Unresolved acceptance items are owner visual review, enhanced-photo architectural accuracy and real external catalogue/gallery photo loading. Native Safari/Firefox, screen readers and real production sign-in remain untested.
+- Earlier local work is safely preserved on `felix/signature-local-recovery` at `4084a29`. Do not replay it over Ravi's newer work.
+- NEXT STEP is review `docs/oaktown-signature/phase1b/comparison.jpg` and `forward-reverse.webm` with the owner, then compare `enhanced-afterglow.png` against `genuine-afterglow.png` for explicit architectural approval. Read live ownership/PR state before any follow-up edit.
+- No merge, production deployment, live inventory/schema change, Access change or payment activation. Keep PR #26 draft and await specific direction before another phase.
+
+---
+
+# WEB-SIGNATURE — Ravi Phase 1 review checkpoint
+
+- Owner: Ravi. Implementation and local verification complete; claim released at 2026-11-27T04:36:34+00:00 for owner/ChatGPT visual acceptance. PR #26 remains DRAFT.
+- Branch / PR / base: `felix/oaktown-signature` / https://github.com/huzshk0707/oaktown-rentals-website/pull/26 / `be37dba`. Previous verified pushed checkpoint `48943ec`; this final review checkpoint follows it. Use live PR head for the exact latest SHA. Recovery `b8af217` preserved unfinished CSS/tests before Ravi claimed ownership.
+- Done: durable 12-phase `docs/oaktown-signature/ROADMAP.md` linked from TASKS.md; exact-reference full-screen hero, editorial serif hierarchy, left alignment, forest gradient and ivory CTA. Search is below the first viewport. Original genuine photos/logo and existing implementation preserved. No Resident Portal.
+- Files: Phase 1 changes in signature.css/app.js; new-script syntax check in package.json; search/hero selectors updated in existing browser/design/audit/browsing/admin tests; motion suite reflects new approved opening; CMS test harness serves new public CSS/JS. New screenshot/accessibility capture scripts, source manifest, comparison and evidence in docs/oaktown-signature.
+- Fixed regressions: sticky detail dock now clears the new 88px/76px header; detail light surfaces preserved; decorative journey-number contrast corrected. No future section redesign.
+- Tests passed: syntax; CMS/security 3 groups; Signature 19 groups; public browser 44 checks; design 32; browsing 24; audit 15; motion 4 viewport groups; admin browser; mouse/touch/keyboard photo ordering; admin improvements 6 groups; Mint Mojo regression. Eight axe scans have zero confirmed violations; image/gradient contrast incompletes remain documented.
+- Evidence: `docs/oaktown-signature/README.md`, `comparison.png`, exact reference and actual 1672×941/1440×1000/768×1024/390×844/320×640 EN/ES captures. The 1000×753 genuine Afterglow source is softer than the reference rendering; do not substitute altered architecture.
+- Blocker: Squarespace CDN still fails at workspace proxy CONNECT 403; approved local photos load. Full-page collection/detail images are clearly labeled CDN-unavailable fallbacks, not final photo acceptance. No production/network changes or bypass. Cloudflare preview alias from PR integration: https://felix-oaktown-signature-oaktown.rentals10.workers.dev ; latest build status is on the PR. Local/web tools cannot independently open that host.
+- Unfinished implementation files: none after this checkpoint. Local node_modules symlinks are environment tooling, deliberately untracked. All other branches/worktrees and separate booking PR #25 preserved.
+- NEXT STEP: open `docs/oaktown-signature/comparison.png` and the linked desktop/mobile captures with the owner for Phase 1 visual acceptance. Before advancing phases, verify real catalogue/gallery photos from a CDN-enabled browser; obtain explicit next-phase direction. Do not restart completed work.
+- Boundaries: no merge/production deploy, live inventory/schema/auth changes or payments. Keep PR #26 draft. Afterglow ownership/management and photo reuse confirmation remain production gates.
+
+---
+
 # Listing and vacation-home refresh
 
 Codex releases the completed implementation claim on `content/refresh-rentals-lobster-nirvana`. Source: current Squarespace property pages and the owner-supplied Airbnb listing. Public browsing, rental and vacation galleries, mobile navigation and admin checks passed. The 60 image URLs match the current property pages in order. The production CMS update was rehearsed against the prior records in disposable SQLite. Next: review PR #24, then apply the scoped CMS refresh through an authorized operator session when approved.

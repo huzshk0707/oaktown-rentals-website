@@ -1,0 +1,378 @@
+/* Phase 2E. The header sits directly above the photographed hero stage. */
+body:is(.rental-site, .mint-page, .missing-page) .site-header.sky-header {
+  --sky-ink: #30362c;
+  --sky-accent: #475a37;
+  --sky-paper: #f7f4ed;
+  --sky-line: #dcded1;
+  --sky-time: 220ms;
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--listing-header-height);
+  padding-inline: clamp(24px, 3.6vw, 76px);
+  gap: clamp(16px, 2.3vw, 44px);
+  color: var(--sky-ink);
+  background: var(--sky-paper);
+  border: 0;
+  box-shadow: none;
+  transition: none;
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header[data-motion-ready] {
+  transition: background-color var(--sky-time), transform var(--sky-time) ease;
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header[data-surface="sky"] { background: transparent; }
+.sky-header[data-surface="sky"]::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 194px;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, #f7f4eddf 0, #f7f4edb8 63px, #f7f4ed53 112px, transparent 194px);
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header[data-surface="ivory"] { box-shadow: inset 0 -1px var(--sky-line); }
+.sky-header.sky-header-away:not(:focus-within) { transform: translateY(-101%); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .wordmark { display: grid; place-items: center; background: none; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .brand-logo { width: clamp(122px, 11vw, 180px); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .header-actions {
+  order: 2;
+  gap: 9px;
+  padding-inline-start: 12px;
+  border-inline-start: 1px solid #30362c38;
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header :is(.language-switch, .motion-toggle) { color: var(--sky-ink); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .language-switch { font-size: 11px; min-width: 44px; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .motion-toggle { font-size: 0; min-width: 44px; width: 44px; padding: 0; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .motion-toggle::before { margin: 0; }
+@media (min-width: 1280px) {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .motion-toggle {
+    font-size: 11px;
+    min-width: 72px;
+    width: auto;
+    padding-inline: 6px;
+    white-space: nowrap;
+  }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .motion-toggle::before { margin-inline-end: 6px; }
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .menu-button span { background: currentColor; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .menu-button {
+  color: var(--sky-ink);
+  width: 44px;
+  height: 44px;
+  padding-inline: 10px;
+}
+.sky-header .menu-button span { transition: transform 200ms; }
+.sky-header .menu-button[aria-expanded="true"] span:first-child { transform: translateY(4.5px) rotate(45deg); }
+.sky-header .menu-button[aria-expanded="true"] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation {
+  flex: none;
+  margin: 0 0 0 auto;
+  gap: clamp(14px, 2.25vw, 44px);
+  align-items: center;
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header :is(.sky-disclosure summary, .sky-nav-link) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  min-height: 44px;
+  white-space: nowrap;
+  font: 500 clamp(14px, 1.08vw, 17px)/1.4 'DM Sans', sans-serif;
+  letter-spacing: .005em;
+  text-transform: none;
+  color: var(--sky-ink);
+  transition: color var(--sky-time);
+}
+.sky-disclosure { position: relative; }
+.sky-disclosure summary { cursor: pointer; list-style: none; }
+.sky-disclosure summary::-webkit-details-marker { display: none; }
+.sky-disclosure summary .icon { width: 13px; height: 13px; transition: transform var(--sky-time); }
+.sky-disclosure[open] summary .icon { transform: rotate(180deg); }
+.sky-navigation :is(summary, .sky-nav-link)::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 4px;
+  height: 1px;
+  background: var(--sky-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--sky-time) ease;
+}
+.sky-navigation :is(summary, .sky-nav-link):is(:hover, :focus-visible)::after,
+.sky-navigation .sky-disclosure[open] summary::after { transform: scaleX(1); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header :is(summary, .sky-nav-link):is(:hover, :focus-visible),
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure[open] summary { color: var(--sky-accent); }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure > .sky-dropdown {
+  position: absolute;
+  inset: 100% auto auto 0;
+  width: max-content;
+  min-width: 205px;
+  max-width: 300px;
+  max-height: calc(100dvh - var(--listing-header-height) - 8px);
+  overflow: auto;
+  padding: 7px 10px;
+  border: 1px solid var(--sky-line);
+  border-top: 2px solid #8c9f65;
+  border-radius: 2px;
+  color: var(--sky-ink);
+  background: var(--sky-paper);
+  box-shadow: 0 6px 18px #222c2014;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 160ms ease-out, transform 180ms ease-out;
+}
+.sky-disclosure:not([open]) .sky-dropdown { pointer-events: none; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure[open] > .sky-dropdown {
+  opacity: 1;
+  transform: none;
+}
+/* Keep the closed panel painted briefly where native details transitions are supported.
+   JS makes its links inert immediately, so focus follows disclosure state. */
+@supports selector(details::details-content) {
+  .sky-disclosure:not([open])::details-content {
+    transition: content-visibility 180ms allow-discrete;
+  }
+}
+@starting-style {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure[open] > .sky-dropdown {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+.sky-disclosure[open] .sky-dropdown a {
+  animation: sky-link-in 160ms cubic-bezier(.22,.61,.36,1) backwards;
+  animation-delay: calc(30ms * var(--sky-item, 0));
+}
+.sky-disclosure[open] .sky-dropdown a:focus-visible { animation: none; }
+@keyframes sky-link-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .resources-menu > .sky-dropdown { inset-inline: auto 0; }
+@keyframes sky-dropdown-in {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-dropdown a {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 7px 12px;
+  font: 500 14px/1.35 'DM Sans', sans-serif;
+  color: var(--sky-ink);
+  text-transform: none;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-dropdown a:hover { background: #e7eadc; }
+.sky-dropdown a[aria-current] { font-weight: 700; background: #e7eadc; }
+.sky-dropdown .sky-browse { border-bottom: 1px solid var(--sky-line); }
+.sky-header :is(a, button, summary):focus-visible { outline: 2px solid #3d552d; outline-offset: 3px; }
+.sky-mobile-apply { display: none; }
+
+/* Separate the feathered header veil from the left-side headline shade. */
+body.rental-site:has(.sky-header) .cinematic-hero .signature-shade {
+  background:
+    linear-gradient(90deg, #112a20d4 0%, #112a209c 29%, #112a2040 49%, transparent 72%),
+    linear-gradient(0deg, #14271fa6, transparent 30%);
+}
+body.rental-site:has(.sky-header) .cinematic-photo { object-position: 34% 50%; }
+body.rental-site:has(.sky-header) .cinematic-copy .cinematic-actions { gap: 12px; }
+body.rental-site:has(.sky-header) :is(.cinematic-actions .signature-button, .signature-property .property-action, :where(.signature-property + .mobile-actions) a) {
+  min-height: 48px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  border: 1px solid #aab992;
+  font: 600 13px/1.25 'DM Sans', sans-serif;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  gap: 10px;
+  transition: background-color 220ms cubic-bezier(.22,.61,.36,1),
+    color 220ms ease, border-color 220ms ease;
+}
+body.rental-site:has(.sky-header) :is(.cinematic-actions .ivory, .signature-property .property-action, :where(.signature-property + .mobile-actions) a:first-child) { background: #a8ba8b; color: #26321f; }
+body.rental-site:has(.sky-header) .cinematic-actions .cinematic-secondary { background: #192d22ae; color: #f7f4ed; }
+@media (hover: hover) {
+  body.rental-site:has(.sky-header) :is(.cinematic-actions .ivory, .signature-property .property-action, :where(.signature-property + .mobile-actions) a:first-child):hover {
+    background: #465c30;
+    border-color: #a8ba8b;
+    color: #f7f4ed;
+  }
+  body.rental-site:has(.sky-header) .cinematic-actions .cinematic-secondary:hover {
+    background: #f7f4ed;
+    border-color: #f7f4ed;
+    color: #30362c;
+  }
+}
+body.rental-site:has(.sky-header) .cinematic-actions :focus-visible { outline: 2px solid #fff8e8; outline-offset: 4px; }
+@media (max-width: 960px) {
+  body:is(.rental-site, .mint-page, .missing-page) .site-header.sky-header { justify-content: space-between; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .header-actions { border: 0; padding: 0; gap: 6px; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation { display: none; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation[data-mobile-open] {
+    display: flex;
+    position: absolute;
+    inset: 100% 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px max(22px, 4vw) 18px;
+    max-height: calc(100dvh - var(--listing-header-height));
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: var(--sky-paper);
+    border-block: 1px solid var(--sky-line);
+    animation: sky-dropdown-in 200ms ease-out both;
+  }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-disclosure > .sky-dropdown {
+    position: static;
+    width: auto;
+    max-width: none;
+    max-height: none;
+    border: 0;
+    border-inline-start: 1px solid var(--sky-line);
+    margin-inline-start: 3px;
+    box-shadow: none;
+  }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header :is(summary, .sky-nav-link) {
+    justify-content: space-between;
+    min-height: 46px;
+    font-size: 16px;
+  }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-mobile-apply:not([hidden]) {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    min-height: 44px;
+    padding: 0 14px;
+    margin-top: 8px;
+    border: 1px solid #83926f;
+    color: var(--sky-ink);
+    font: 600 14px/1.2 'DM Sans', sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  body.rental-site:has(.sky-header) .cinematic-photo { object-position: 60% 50%; }
+}
+@media (max-width: 850px), (max-height: 559px) {
+  .sky-header[data-surface="sky"]::before {
+    height: 160px;
+    background: linear-gradient(180deg, #f7f4ede8 0, #f7f4edc0 58px, #f7f4ed55 98px, transparent 160px);
+  }
+  body.rental-site:has(.sky-header) .cinematic-hero .signature-shade {
+    background:
+      linear-gradient(90deg, #112a2052 0%, #112a2030 52%, transparent 85%),
+      linear-gradient(0deg, #112a20f3 0%, #112a20bb 39%, #112a2010 78%);
+  }
+}
+@media (min-width: 851px) and (max-height: 559px) {
+  body.rental-site:has(.sky-header) .cinematic-hero .signature-shade {
+    background:
+      linear-gradient(90deg, #112a20c7 0%, #112a2090 40%, transparent 72%),
+      linear-gradient(0deg, #112a20bb, transparent 70%);
+  }
+}
+@media (max-width: 480px) {
+  body.rental-site:has(.sky-header) .cinematic-hero .signature-shade {
+    background:
+      linear-gradient(90deg, #112a2063 0%, #112a2040 52%, transparent 85%),
+      linear-gradient(0deg, #112a20f3 0%, #112a20c0 39%, #112a2010 78%);
+  }
+  body:is(.rental-site, .mint-page, .missing-page) .site-header.sky-header { padding-inline: 18px; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .brand-logo { width: 110px; }
+  body.rental-site:has(.sky-header) .cinematic-actions .signature-button { padding-inline: 12px; font-size: 11px; gap: 5px; }
+  body.rental-site:has(.sky-header) .cinematic-actions .signature-button .icon { width: 16px; height: 16px; }
+}
+html.motion-off .sky-header, html.motion-off .sky-header *,
+html.motion-off .cinematic-actions .signature-button { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sky-header, .sky-header *, .cinematic-actions .signature-button { animation: none !important; transition: none !important; }
+}
+
+@supports selector(details::details-content) {
+  html.motion-off .sky-disclosure::details-content { transition: none !important; }
+  @media (prefers-reduced-motion: reduce) {
+    .sky-disclosure::details-content { transition: none !important; }
+  }
+}
+
+/* Property routes retain their split opening and share the homepage action treatment. */
+.signature-property {
+  --paper: var(--signature-ivory);
+  --ink: var(--signature-green);
+  --display: var(--serif);
+  background: var(--paper);
+  color: var(--ink);
+}
+body.rental-site .signature-property :is(.listing-intro-copy h1, .detail-body h2, .display-title, .contact-panel h2) {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+body.rental-site .signature-property .intro-sub { color: var(--signature-text); }
+body.rental-site .signature-property .property-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+body.rental-site:has(.sky-header) :is(.signature-property .property-apply, :where(.signature-property + .mobile-actions) a:last-child) {
+  background: var(--signature-ivory);
+  border-color: #89967c;
+  color: var(--signature-green);
+}
+@media (hover: hover) {
+  body.rental-site:has(.sky-header) :is(.signature-property .property-apply, :where(.signature-property + .mobile-actions) a:last-child):hover {
+    background: var(--signature-green);
+    color: var(--signature-ivory);
+  }
+}
+.signature-property .property-action:focus-visible { outline: 2px solid var(--signature-green); outline-offset: 3px; }
+@media (min-width: 961px) {
+  .signature-property .listing-dock { transition: transform 220ms ease; }
+  body:has(.sky-header-away:not(:focus-within)) .signature-property .listing-dock {
+    transform: translateY(calc(-1 * var(--listing-header-height)));
+  }
+}
+html.motion-off body.rental-site:has(.sky-header) :is(.signature-property .property-action, .signature-property .listing-dock, :where(.signature-property + .mobile-actions) a) { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  body.rental-site:has(.sky-header) :is(.signature-property .property-action, .signature-property .listing-dock, :where(.signature-property + .mobile-actions) a) { transition: none; }
+}
+
+html:has(:is(.mint-page, .missing-page)) { color-scheme: only light; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation { display: flex; }
+body:is(.rental-site, .mint-page, .missing-page) .sky-header .menu-button { display: none; }
+:is(.mint-page, .missing-page) .sky-header :is(.language-switch, .motion-toggle) { min-height: 44px; }
+:is(.mint-page, .missing-page) .sky-header .language-switch { letter-spacing: .04em; white-space: nowrap; }
+:is(.mint-page, .missing-page) .sky-header .icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (max-width: 960px) {
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .sky-navigation:not([data-mobile-open]) { display: none; }
+  body:is(.rental-site, .mint-page, .missing-page) .sky-header .menu-button { display: block; }
+}
+@media (max-width: 850px) {
+  :is(.mint-page, .missing-page) .sky-header .motion-toggle::before {
+    width: 12px;
+    height: 14px;
+    border: solid currentColor;
+    border-width: 0 3px;
+    border-radius: 0;
+    background: none;
+  }
+  :is(.mint-page, .missing-page) .sky-header .motion-toggle[aria-pressed="false"]::before {
+    width: 0;
+    height: 0;
+    border-width: 7px 0 7px 12px;
+    border-color: transparent transparent transparent currentColor;
+    outline: 0;
+  }
+}
+.missing-page { background: #f6f3e9; color: #082e22; }
+.missing-page main { padding: calc(var(--listing-header-height) + 64px) 24px 64px; text-align: center; }
+.missing-page h1 { font: 400 70px/1.1 var(--serif); margin: 0; }
+.missing-page main a { text-decoration: underline; }

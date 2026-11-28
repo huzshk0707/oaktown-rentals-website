@@ -1,0 +1,22 @@
+> test
+> node --test tests/cms.test.mjs tests/property-cards.test.mjs tests/property-expansion.test.mjs
+
+✔ Access requires a signed, unexpired app token for the right issuer, audience and approved account (104.021341ms)
+✔ draft/save/publish/archive lifecycle, stale writes, duplicate URLs, CSRF, audit trail and private photos (28.696927ms)
+✔ empty database is authoritative and file fallback is explicit only when unconfigured (4.005146ms)
+✔ money never invents a zero or emits NaN for missing/invalid data (13.837465ms)
+✔ only explicit supported availability yields a badge label (0.241145ms)
+✔ image resizing never rewrites private media or lookalike hosts (0.250489ms)
+✔ reusable renderer retains unit identity, CMS escaping, explicit total and language switches (0.719431ms)
+✔ only present structured specifications are displayed; empty gallery is safe (0.723127ms)
+✔ six unique catalogue records and verified new facts (1.535795ms)
+✔ en card and detail output handles unconfirmed terms and photo absence (1.663333ms)
+✔ es card and detail output handles unconfirmed terms and photo absence (0.89558ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 464.195629

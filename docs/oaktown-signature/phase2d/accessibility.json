@@ -1,0 +1,130 @@
+[
+  {
+    "name": "desktop-gallery",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "desktop-grid",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 17
+      }
+    ]
+  },
+  {
+    "name": "desktop-es-gallery",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "desktop-es-grid",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 17
+      }
+    ]
+  },
+  {
+    "name": "mobile-gallery",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "mobile-grid",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 17
+      }
+    ]
+  },
+  {
+    "name": "mobile-es-gallery",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "mobile-es-grid",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 17
+      }
+    ]
+  },
+  {
+    "name": "desktop-expanding",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "desktop-louisville",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "count": 1
+      },
+      {
+        "id": "color-contrast",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "mobile-expanding",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "mobile-louisville",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "count": 1
+      },
+      {
+        "id": "color-contrast",
+        "count": 1
+      }
+    ]
+  }
+]
