@@ -1,3 +1,12 @@
+# Oaktown Signature integration
+
+- Owner Ravi. Claimed 2026-11-28T01:36:14+00:00; expires 2026-11-28T02:06:14+00:00.
+- Branch `integration/oaktown-signature` targeting `main` (`be37dba`), founded on PR #26 `dd40325`.
+- NEXT STEP: save Bethune study, integrate reviewed PRs #27 and #28, audit six records and 38 photographs, then verify the isolated preview.
+- Source branches, worktrees and separate booking PR #25 are preserved. Keep combined PR draft.
+
+---
+
 # WEB-SIGNATURE — Phase 2D / FELIX checkpoint
 
 - Owner FELIX; heartbeat 2026-11-27T21:37:50+00:00; claim expires 2026-11-27T22:07:50+00:00.
