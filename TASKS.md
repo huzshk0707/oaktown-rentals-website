@@ -1,3 +1,14 @@
+# Phase 2D — visual and UX refinement / FELIX
+
+- [x] Verify root opening, refresh, logo, #homes, Browse and Back/Forward; retain valid history restoration.
+- [x] Increase secondary card type; preserve 38vw gallery/title/rent/five-dot controls.
+- [x] Request a Tour / Solicitar una visita; audit all four exact-property SMS fallbacks. Zillow links pending from owner.
+- [x] Restore accessible persisted Gallery/Grid with shared cards, filters, photos and history.
+- [x] Inspect rendered Bethune interactions and deliver separate expanding-panel and full-screen Louisville proposals.
+- [x] Regressions, 12 zero-violation axe scans, real screenshots/three recordings and hosted preview checks. [Phase 2D review](docs/oaktown-signature/phase2d/README.md).
+- [ ] Owner/Leslie accepts Tasks 1–4 and separately approves/revises each proposal; keep draft PR #26.
+- [ ] Verify owner-supplied public Zillow links when received; do not guess destinations.
+
 # Phase 2C — approved Option B Boutique Luxury
 
 - [x] Record exact approved Option B reference and design decisions; retain prior phase evidence.
@@ -6,7 +17,7 @@
 - [x] Capture desktop/tablet/mobile EN/ES, all/one/two results, scene two and short interaction recording.
 - [x] Run regressions and save [actual Boutique screenshots/recording/comparison](docs/oaktown-signature/phase2c/README.md).
 - [x] Complete final hosted crossfade verification (60 photos/ordered detail selections, 4 catalogue mappings, 7 asset hashes); release review handoff.
-- [ ] Owner/ChatGPT visual acceptance of Phase 2C; keep PR #26 draft.
+- [x] Owner accepted cinematic hero, Boutique cards and Our Homes identity for Phase 2D continuation; preserve those designs.
 
 # Phase 2B preparation — photography verified / editorial review pending
 

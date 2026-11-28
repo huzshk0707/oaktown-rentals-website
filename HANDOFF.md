@@ -1,3 +1,12 @@
+# WEB-SIGNATURE — Phase 2D evidence recovery / FELIX
+
+- Claim released at 2026-11-28T03:04:16+00:00. Branch `felix/oaktown-signature`, draft PR #26. Runtime checkpoint `dd40325` is already included in shared integration PR #29.
+- Recovered the local evidence, map research, review reports and prototype-only refinements here. This checkpoint is separate from Phase 2E integration. Hosted Phase 2D runtime verification passed 12 groups and eight file hashes, and the latest primary capture script passed 12 axe scans.
+- The separate transition recapture command `node tests/proposal-review.cjs` passed before the final prototype color adjustment but a rerun hit a panel selection assertion before reaching the transition. Existing transition screenshots predate that color adjustment. See the evidence limitations in `docs/oaktown-signature/phase2d/README.md`.
+- NEXT STEP: if Phase 2D prototype evidence is needed, stabilize that panel interaction check and recapture `desktop-louisville-transition.png` and `mobile-es-louisville-transition.png`. Phase 3 starts from the shared integration checkpoint, not from this evidence recovery branch.
+
+---
+
 # WEB-SIGNATURE — Phase 2D / FELIX checkpoint
 
 - Owner FELIX; heartbeat 2026-11-27T21:37:50+00:00; claim expires 2026-11-27T22:07:50+00:00.
