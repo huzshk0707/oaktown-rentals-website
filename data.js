@@ -35,22 +35,22 @@ window.OAKTOWN_DATA = {
       "/assets/properties/115-colonial-drive/19.jpg"
     ],
     smallboat: [
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565023-RA7WCQBC3UKM7CEPL34V/1.webp",
+      "/assets/properties/4005-smallboat-ct/14.jpg",
       "/assets/properties/4005-smallboat-ct/01.jpg",
       "/assets/properties/4005-smallboat-ct/02.jpg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854705538-MAKBVEN98DRUQVD98WUW/IMG_4329.jpeg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289565117-3H2COCLMXG783O3YIX7C/2.webp",
+      "/assets/properties/4005-smallboat-ct/03.jpg",
+      "/assets/properties/4005-smallboat-ct/15.jpg",
       "/assets/properties/4005-smallboat-ct/04.jpg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289566505-2UED0P9YI9M1QBLPKIA1/4.webp",
+      "/assets/properties/4005-smallboat-ct/16.jpg",
       "/assets/properties/4005-smallboat-ct/05.jpg",
       "/assets/properties/4005-smallboat-ct/06.jpg",
       "/assets/properties/4005-smallboat-ct/07.jpg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1791289563526-7OHF598AUE6ZCS0JWAKA/7.webp",
+      "/assets/properties/4005-smallboat-ct/17.jpg",
       "/assets/properties/4005-smallboat-ct/08.jpg",
       "/assets/properties/4005-smallboat-ct/09.jpg",
       "/assets/properties/4005-smallboat-ct/10.jpg",
       "/assets/properties/4005-smallboat-ct/11.jpg",
-      "https://images.squarespace-cdn.com/content/v1/63e14d1decec832bd1971c00/1794854705644-OWVO0O5XT0RBT8I8RY3X/IMG_4330.jpeg",
+      "/assets/properties/4005-smallboat-ct/12.jpg",
       "/assets/properties/4005-smallboat-ct/13.jpg"
     ],
     madison: [
