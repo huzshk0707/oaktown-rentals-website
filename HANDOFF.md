@@ -1,3 +1,7 @@
+# Release consolidation · Ravi
+
+Claim 2026-11-28T07:51:18.952486+00:00, expires 2026-11-28T08:21:18.952486+00:00. Base b145c82. Next step: integrate #32, #26 evidence and Junior’s draft photography, then verify release gates.
+
 # Phase 4B step 2 ready for review / Ravi released
 
 - Ravi released the claim at 2026-11-28T07:40:05+00:00. [Draft PR #35](https://github.com/huzshk0707/oaktown-rentals-website/pull/35), `felix/universal-navigation`, stays stacked on #34 at `b483547`. Recovered Felix’s published runtime at `4fd38e9` and claimed continuation at `ffcfc49`. This evidence and test checkpoint follows. The open PR records its exact head.
