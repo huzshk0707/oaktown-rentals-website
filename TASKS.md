@@ -9,7 +9,8 @@
 - [x] Make Lobster Nirvana a direct link and finish rounded hero actions and staggered menu entries.
 - [x] Reconcile Smallboat against all 17 approved Drive files. Eleven match the draft byte-for-byte. Six specific variants still need correction. See [the slot audit](docs/oaktown-signature/phase2e/final/SMALLBOAT-PHOTOGRAPHY.md).
 - [x] Pass the 27 dedicated checks and catalogue, browser, accessibility and admin checks. Save the [final captures and transcripts](docs/oaktown-signature/phase2e/final/README.md).
-- [ ] Review the final interaction evidence and authorize integration separately. PR #29 and #30 stay draft.
+- [x] Owner approved the final Phase 2E design and authorized integration at `f5a2476`. PR #30 was merged into the shared branch at `48a32cd`. PR #29 remains draft.
+- [x] Pass the combined Phase 2E regressions, confirm the merge preview deployed, and [record evidence](docs/oaktown-signature/integration/README.md#phase-2e-integration-and-phase-3-handoff) for Felix. Direct hosted verification stays open below.
 
 ## Photography and content backlog
 
@@ -36,7 +37,7 @@ Use each property's latest owner-approved Google Drive folder to source updates.
 - [x] Run current browser, bilingual, accessibility, admin, CMS, gallery and Mint Mojo regressions.
 - [x] Confirm Cloudflare build and integration preview deployment in PR #29.
 - [ ] Verify the hosted integration runtime and photos from an environment allowed to reach the preview.
-- [ ] Felix: review remaining Signature prototype and design decisions in isolated branches targeting integration.
+- [ ] Felix: own Phase 3 — Homepage Completion from the verified Phase 2E handoff. Branch from the shared tip, review the current homepage and Phase 2D prototypes, and target the shared branch with a feature draft. See [the roadmap](docs/oaktown-signature/ROADMAP.md#phase-3--homepage-completion).
 - [ ] Felix Junior: resolve confirmed pricing, availability, Troutwood exterior and held photo evidence in isolated branches targeting integration.
 - [ ] Owner: review combined draft, property/fact holds and Afterglow architectural accuracy before any launch decision.
 

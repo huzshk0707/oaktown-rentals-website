@@ -1,9 +1,11 @@
-# Shared Signature integration — Phase 2E / Ravi
+# Phase 2E integrated · Felix Phase 3 handoff
 
-- Owner Ravi. UTC heartbeat 2026-11-28T03:05:10+00:00. Claim expires 2026-11-28T03:35:10+00:00.
-- Branch `integration/oaktown-signature`, combined draft PR #29 targeting `main`. Owner approved integration of PR #30 at `f5a2476ddbb4f5595b5d6d2964235353f590c18b`. Previous shared baseline `c4a789b773af79293fff9819909c9a98948fa851`.
-- The integration includes the approved header, navigation, hero buttons and dropdown refinements. The only merge conflict was this handoff log. Historical entries are retained below. Six file catalogue records, 38 imported rental photos and all photo/publication holds are carried forward.
-- NEXT STEP: run the combined browser, catalogue, photo, CMS and admin regressions and verify the shared Workers preview. Release the checkpoint to Felix for Phase 3 — Homepage Completion after verification.
+- Ravi released the Phase 2E integration claim at 2026-11-28T03:10:50+00:00. Felix owns Phase 3 — Homepage Completion, beginning on an isolated feature branch. Ravi remains shared integration coordinator.
+- [Combined draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29), branch `integration/oaktown-signature` targeting `main`. Owner-approved PR #30 head `f5a2476ddbb4f5595b5d6d2964235353f590c18b` merged at `48a32cdc81b4a9cafb505912a539fdce6b86ada2`. This documentation checkpoint follows that tested merge. The open PR head is the exact Phase 3 starting commit.
+- The only merge conflict was the shared handoff log. The final header, navigation, buttons and disclosures match the approved feature tree. Six file records, 38 imported rental assets, 68 ordered gallery selections, all six held Smallboat replacements and the property, Afterglow and migration holds are preserved.
+- [Combined regressions and evidence](docs/oaktown-signature/integration/README.md#phase-2e-integration-and-phase-3-handoff): Node 24 syntax and 11 unit/CMS tests, 27 dedicated header checks, existing design/browser/motion/gallery/EN/ES/Mint Mojo and disposable admin suites passed. Catalogue browser verification returned 24 axe scans with zero confirmed violations. The local preview Worker validated file mode, exact header assets, noindex, admin denial and review asset exclusions.
+- Cloudflare confirmed the merge deployment. [Shared preview](https://integration-oaktown-signature-oaktown.rentals10.workers.dev/). Direct hosted checks remain open because the workspace proxy returns CONNECT 403 for the preview hostname. The PR records the final documentation checkpoint build.
+- NEXT STEP: Felix fetches `origin/integration/oaktown-signature`, creates an isolated Phase 3 branch from the current PR #29 head, and reviews the homepage against the [Phase 3 scope](docs/oaktown-signature/ROADMAP.md#phase-3--homepage-completion) and Phase 2D prototypes before editing. Keep the approved opening and publication holds. PR #29 stays draft. Production, live CMS and booking PR #25 stay separate.
 
 ---
 

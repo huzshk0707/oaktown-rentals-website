@@ -1,0 +1,513 @@
+{
+  "base": "http://127.0.0.1:8946",
+  "hosted": false,
+  "assets": [
+    {
+      "path": "/data.js",
+      "sha256": "a814aa8ef36605e0715e1081c868e11a2a4a3ca7fb9c1cd0eecb2844ae23bf21"
+    },
+    {
+      "path": "/app.js",
+      "sha256": "0037accc7340949e9d4736a6348980d3b71f85d9281a70ade014452f5c2b86f7"
+    },
+    {
+      "path": "/property-cards.js",
+      "sha256": "e30d1bf79e1ec526c992b8e026678dd889ce8d729cb87616723b52647a88375a"
+    },
+    {
+      "path": "/collection.js",
+      "sha256": "d587f3281cb9f47f2bcbeed364b4411c9c8369f283bfb5d9961fa2eda99d786c"
+    },
+    {
+      "path": "/collection.css",
+      "sha256": "f1b3ae92b8cf68f2134cd27df5388adbb7a9bd38fcfe53b49e959d322485dddf"
+    },
+    {
+      "path": "/signature.js",
+      "sha256": "530ce5f31bc308c615375ecf1829d54bab6e3ad83b72123b63fe1c89e4585c85"
+    },
+    {
+      "path": "/signature.css",
+      "sha256": "2e0a870df973eb660f873769688557d23b8fd78e4dd24a8fb5be84e54c4aafbf"
+    },
+    {
+      "path": "/cms-client.js",
+      "sha256": "f540d3bfe36fa72d7781884751c09ebcbf9687e1c8a09a360218cbcdf20e62e7"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/01.jpg",
+      "sha256": "cc11e8fab8be444f143aca3c26e2162a1bcaf21c6b6db68026315df053685cd4"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/02.jpg",
+      "sha256": "5cd4982f296ea8e90f26fa2684893692e833d7018b943e97a3bdbfb1732aa411"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/03.jpg",
+      "sha256": "8842b5e5e7a967461ca6e021d60975d1bbee4edddc085664830fdab129f188cc"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/04.jpg",
+      "sha256": "33831e37d14130e525d8b2ee01fa3b164c4b142670add990c5de9b099229e9f7"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/05.jpg",
+      "sha256": "d31b20374454172f921c6c1fbd811f35610c3a7ba73dea3068f625e6fda267bc"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/06.jpg",
+      "sha256": "95601f3a41710a59abfc131b0f66915ac8c68b04f426bdc4098c2f63aab42214"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/07.jpg",
+      "sha256": "31c7de3b583e82abb3d694ecb893c025333f3237fa6c2f65af040a740be85fe0"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/08.jpg",
+      "sha256": "8c3731a6076da7c92a258537b4130c87a5287db166408fa0ef0842e3807e71c6"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/09.jpg",
+      "sha256": "2c7d1feb03469a222736fcf89a6e6ffc80a106ab062e5c1765819eed5658d5bc"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/10.jpg",
+      "sha256": "850682e42a74ea82e69f01c86238cf9d54d5eea83844535bdad65af76f157fc2"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/11.jpg",
+      "sha256": "e26db6871d2ad1d1fbaf6b273bc91e621d4f0107957644b35bc865903c0b2776"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/12.jpg",
+      "sha256": "8d863cdfb6ae5fb7376fccdbef8ba50196afca577d431a3afa5f07c3bfac9081"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/13.jpg",
+      "sha256": "050a1fac8dce7fb3c84f55a37182963f9200f79db31dde33df68932842d9cf1e"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/14.jpg",
+      "sha256": "4cd07b5ac354bbc0cee5cff667e66b1af10ebde14df9bc3330c9dd33ab9eb4e1"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/15.jpg",
+      "sha256": "b746b4b4bb69c54ac78558bb09e93cf4b6aaf15a345f4d15f99e69a5d18c9635"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/16.jpg",
+      "sha256": "646f7cb9e3917f85c61961d80aa26d035ec0ffa48d526bffaf4685fed87bf740"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/17.jpg",
+      "sha256": "030c3fa6e4aa1ee8e38bf8d65f65f085967d4f0dd693dd92587a7ee3fb0ce3a3"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/18.jpg",
+      "sha256": "66251d6f6a5660a6143e7e48523dc3de6fbc6767b50e4258973200f8c0a88a87"
+    },
+    {
+      "path": "/assets/properties/115-colonial-drive/19.jpg",
+      "sha256": "f0bc76d57d8ea1039fa04f01b0c6d7d48f1b54e62c4473881464d386473ef11f"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/01.jpg",
+      "sha256": "9930a72b99370f643d3dbf03cedb2c1982448c14dcdb8ea3b1311ff77ef101a5"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/02.jpg",
+      "sha256": "97293971eca4ae74f1e2a733d932534c7dc8ef597ca21bcdfa59fa0fb8053b4f"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/04.jpg",
+      "sha256": "4faf623a8c64f925c18c2f89f1aed77c49d1292a9238c42951ca2813dd73807f"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/05.jpg",
+      "sha256": "1c366e480c2d74642292d372ed4d650eb39f6a5dca2643929fecdc38e90202e2"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/06.jpg",
+      "sha256": "907a0a7eb4130a45804dd28ffe1dd2a90cc16664480fc072c00c2b5b0a12ace1"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/07.jpg",
+      "sha256": "46ad808d619f45519befbc95a7b184547aec3c773d0f547abbede9f46dffe793"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/08.jpg",
+      "sha256": "53c41a397fe1634b495ceba174e6c79dfc5eea9c60dd221c317b67db76c346d9"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/09.jpg",
+      "sha256": "27bc860f0100533994fbb085ce3fe8790eb245a465a7ffc63094cfc7bfffe692"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/10.jpg",
+      "sha256": "d615ea0a765bd0385af4c343d0dff17eedba41610f883a38b850e43e2ed1479b"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/11.jpg",
+      "sha256": "db55d555f07b9ee4d728ea222738536821bb5a0a139b97a7f2717f8355880713"
+    },
+    {
+      "path": "/assets/properties/4005-smallboat-ct/13.jpg",
+      "sha256": "e75117b8f54545cb37e020fc7053b1d3221594f553dc1d9483c962103cdf1875"
+    },
+    {
+      "path": "/assets/properties/208-sloemer-ave/01.jpeg",
+      "sha256": "f321f2eee58ab524ad9fe52866d1527ab35f2d5017305f52aab499a7334a1826"
+    },
+    {
+      "path": "/assets/properties/208-sloemer-ave/02.jpeg",
+      "sha256": "cc1d762af9446dd4aaf3aa13d7b3937e744088e81b946db1e570beae75aa729d"
+    },
+    {
+      "path": "/assets/properties/208-sloemer-ave/03.jpeg",
+      "sha256": "9cf51bcdd38979e6fb34455fd7b04fb385ebf629a9490c7649516b961bc8c56f"
+    },
+    {
+      "path": "/assets/properties/208-sloemer-ave/04.jpeg",
+      "sha256": "41bbc5566c69ad1c4d59629f6cecbda7ba809414684721d2e9d5a5f5776a232a"
+    },
+    {
+      "path": "/assets/properties/208-sloemer-ave/05.jpeg",
+      "sha256": "b70a7894924dffc51c656de2f669787a69cf9f9fc98320f682b83d274691fc41"
+    },
+    {
+      "path": "/assets/properties/208-sloemer-ave/06.jpeg",
+      "sha256": "625a0e7af1fd33b93f1ea5c758f847557c48655e1afc72505e968a8da9d77de1"
+    },
+    {
+      "path": "/assets/properties/208-sloemer-ave/07.jpeg",
+      "sha256": "e1bc52fae1cdf866bf376ac30d089a0fb03ce3acdef3f06a130b5d35f48bfc31"
+    },
+    {
+      "path": "/assets/properties/208-sloemer-ave/08.jpeg",
+      "sha256": "789ffe06056b1e4bc4e66b64fc822803a6298167668a0c64c75ad73e66825131"
+    }
+  ],
+  "properties": [
+    {
+      "slug": "115-colonial-drive",
+      "local": 19,
+      "gallerySelections": 19
+    },
+    {
+      "slug": "4005-smallboat-ct",
+      "local": 11,
+      "gallerySelections": 17
+    },
+    {
+      "slug": "1106-cherokee-rd-unit-8",
+      "local": 0,
+      "gallerySelections": 9
+    },
+    {
+      "slug": "1824-w-madison",
+      "local": 0,
+      "gallerySelections": 15
+    },
+    {
+      "slug": "208-sloemer-ave",
+      "local": 8,
+      "gallerySelections": 8
+    },
+    {
+      "slug": "8008-troutwood-ct",
+      "local": 0,
+      "gallerySelections": 0
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 320,
+      "language": "en",
+      "route": "homes",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "language": "en",
+      "route": "home/208-sloemer-ave",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "language": "en",
+      "route": "home/8008-troutwood-ct",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "language": "es",
+      "route": "homes",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "language": "es",
+      "route": "home/208-sloemer-ave",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "language": "es",
+      "route": "home/8008-troutwood-ct",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "route": "homes",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "route": "home/208-sloemer-ave",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "route": "home/8008-troutwood-ct",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "language": "es",
+      "route": "homes",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "language": "es",
+      "route": "home/208-sloemer-ave",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "language": "es",
+      "route": "home/8008-troutwood-ct",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "route": "homes",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "route": "home/208-sloemer-ave",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "language": "en",
+      "route": "home/8008-troutwood-ct",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "language": "es",
+      "route": "homes",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "language": "es",
+      "route": "home/208-sloemer-ave",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "language": "es",
+      "route": "home/8008-troutwood-ct",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "route": "homes",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "route": "home/208-sloemer-ave",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "language": "en",
+      "route": "home/8008-troutwood-ct",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "language": "es",
+      "route": "homes",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "language": "es",
+      "route": "home/208-sloemer-ave",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "language": "es",
+      "route": "home/8008-troutwood-ct",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

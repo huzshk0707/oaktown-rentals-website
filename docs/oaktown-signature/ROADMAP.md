@@ -5,7 +5,7 @@ Approved by the owner on 27 November 2026. Creative direction and visual accepta
 ## Shared integration foundation
 
 [Draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29) on
-`integration/oaktown-signature` combines reviewed work from #26, #27 and #28 and
+`integration/oaktown-signature` combines reviewed work from #26, #27, #28 and #30 and
 is the base for future isolated Signature feature PRs. Ravi coordinates the
 [shared integration and preview](integration/README.md). Earlier PRs and
 checkpoints remain available as source history. The [Bethune motion study](BETHUNE-MOTION-STUDY.md)
@@ -13,17 +13,19 @@ informs later creative review. Booking PR #25 stays on its separate staging path
 
 ## Current delivery
 
-Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) on `felix/oaktown-signature`. The existing homepage, search controls, cards and supporting sections are a first implementation, not visual acceptance. Preserve that work. Phase 1B engineering and regression verification are complete. Phase 1B visual and enhanced-photo architectural review remain pending. Ravi completed Phase 2A engineering. FELIX verified all 60 hosted photos and prepared the separate [Phase 2B editorial proposal](phase2b/README.md). Owner approved Option B — Boutique Luxury (Drive `1V7gfl1owIOQzIOOUFNxc0E95iJHGyhH9`); Ravi completed Phase 2C implementation and regression/visual evidence on the existing draft; [Boutique review](phase2c/README.md) awaits owner/ChatGPT acceptance.
+Felix owns Phase 3 — Homepage Completion from the shared Phase 2E checkpoint in [draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29). The owner approved the homepage opening and final Phase 2E interactions. The remaining sections follow the [Phase 3 scope](#phase-3--homepage-completion).
+
+[Draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) retains the source history for the homepage, search controls and cards. Ravi completed Phase 2A engineering. Felix verified 60 hosted photos at the earlier checkpoint and prepared the [Phase 2B editorial proposal](phase2b/README.md). The owner approved Option B — Boutique Luxury (Drive `1V7gfl1owIOQzIOOUFNxc0E95iJHGyhH9`). Ravi completed the [Phase 2C implementation and review evidence](phase2c/README.md). Enhanced Afterglow photo accuracy remains a production approval.
 
 | Phase | Approved direction | Status / prerequisites |
 | --- | --- | --- |
 | 1 | Signature hero and navigation | **Superseded by approved Phase 1B motion.** Retain the full-screen Afterglow identity from the exact hero reference. Keep search below the opening viewport; verify desktop/mobile, EN/ES and motion preferences. |
-| 1B | Continuous three-scene cinematic hero | **Implemented, awaiting visual/architectural acceptance.** Same enhanced Afterglow image, native sticky scroll, mobile and static reduced-motion fallback. Evidence and exact tests are in [Phase 1B review](phase1b/README.md). Remaining sections retain current design. |
+| 1B | Continuous three-scene cinematic hero | **Opening composition accepted in Phase 2E.** Enhanced Afterglow accuracy remains a production approval. Same enhanced image, native sticky scroll, mobile and static reduced-motion fallback. Evidence and exact tests are in [Phase 1B review](phase1b/README.md). Remaining sections retain current design. |
 | 1C | Visual and photo acceptance | Owner/ChatGPT review pending; preserve Phase 1B. |
 | 2A | Property collection engineering foundation | Engineering implemented: [field/photo audits, reusable cards, single-row horizontal gallery and regression evidence](phase2a/README.md). Hosted photo verification completed by Felix. Full-width introduction above gallery; remove redundant View All Homes. Fixed original generous gallery dimensions, arrows, desktop edge movement, keyboard/manual/touch navigation; no timer or loop. Hide controls when results fit, preserve widths and left alignment for one/two matches, reset on filtering, respect reduced motion. |
 | 2B | Editorial Collection creative design / approval | **Approved: Option B — Boutique Luxury.** Exact owner-supplied reference retained in [Phase 2C](phase2c/approved-option-b.png). Generated photography/facts/logo are styling references only, never content. |
 | 2C | Approved visual implementation | **Implemented; awaiting visual acceptance.** Approved 38vw desktop cards, warm ivory/champagne pricing, serif titles, genuine photos/facts, functional photo controls, minimal specs and circular detail action. Hero only changes scene-two EN/ES copy; horizontal gallery and existing systems preserved. The latest gallery decision supersedes the earlier three-card/multi-row homepage assumption; retain all matching homes in one row. |
-| 2E | Seamless Sky Header | Ravi, [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30) targeting the shared integration branch. Composition accepted. Final direct vacation link, rounded buttons and staggered disclosures are in draft for separate integration approval. |
+| 2E | Seamless Sky Header | Owner-approved [PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30) merged at `48a32cd`. Direct vacation link, rounded buttons and staggered disclosures are in the [shared draft](https://github.com/huzshk0707/oaktown-rentals-website/pull/29). |
 | 3 | Dedicated property search page | Planned. Existing homepage filters remain operational; a dedicated page is not yet authorized. Use supported neighborhood, bedroom and bathroom fields, not invented property types. |
 | 4 | Individual property detail pages | Existing detail routes, gallery, rental facts and showing links remain functional. Redesign awaits direction. |
 | 5 | Before You Apply experience | Planned. Requires verified requirements, policies and approved copy. |
@@ -37,9 +39,9 @@ Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pu
 
 ## Proposed delivery order after Phase 2E
 
-1. Finish the approved homepage opening refinements and review [PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30).
+1. Homepage opening refinements approved and integrated from [PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30).
 2. Review property photography using the latest owner-approved Drive folders and verified property accuracy, reuse rights and attribution. Refer to the [per-property tasks](../../TASKS.md#photography-and-content-backlog).
-3. Complete the homepage sections: Our Homes, Louisville, Our Story, editorial panels and vacation.
+3. Phase 3 — Homepage Completion, owned by Felix. Review Our Homes, Louisville, Our Story, editorial panels and the vacation feature.
 4. Refine individual property pages, galleries, pricing, amenities and showing actions.
 5. Refine the dedicated Lobster Nirvana experience. Keep booking on its separate staging approval path.
 6. Complete Resources, FAQ, Community and application guidance.
@@ -47,6 +49,10 @@ Continue [draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pu
 8. Prepare release after content approval, CMS readiness, accessibility, performance and production authorization.
 
 This order records planning priorities. The approved Phase 2E composition is locked. Future sections and release await their own reviews.
+
+## Phase 3 — Homepage Completion
+
+Felix starts from the shared checkpoint in [HANDOFF.md](../../HANDOFF.md). Review the remaining homepage sections and the [Phase 2D prototypes](phase2d/README.md) before proposing changes. Preserve the accepted opening, shared catalogue, bilingual navigation and all photography and fact holds. The dedicated search page stays in the original master roadmap as a later planned deliverable.
 
 ## Phase 1 source of truth
 
@@ -68,7 +74,7 @@ Use “Our Homes” where availability is unverified. Do not copy sample pricing
 
 ## Delivery and recovery protocol
 
-Follow [AGENTS.md](../../AGENTS.md). Continue the existing branch/PR, preserve all other worktrees, normal-push small checkpoints at least every 15–20 minutes and after meaningful milestones. Refresh owner heartbeat/claim, update [HANDOFF.md](../../HANDOFF.md), [TASKS.md](../../TASKS.md) and the PR running log. Verify the pushed SHA. Keep one precise NEXT STEP and all browser evidence in the repository. Keep PR #26 draft for visual acceptance.
+Follow [AGENTS.md](../../AGENTS.md). Continue the existing branch/PR, preserve all other worktrees, normal-push small checkpoints at least every 15–20 minutes and after meaningful milestones. Refresh owner heartbeat/claim, update [HANDOFF.md](../../HANDOFF.md), [TASKS.md](../../TASKS.md) and the PR running log. Verify the pushed SHA. Keep one precise NEXT STEP and all browser evidence in the repository. Keep the combined PR #29 draft. Historical source PR #26 stays available for review.
 
 ## Phase 1B approval
 

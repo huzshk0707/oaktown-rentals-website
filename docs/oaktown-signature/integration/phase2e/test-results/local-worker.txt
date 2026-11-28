@@ -1,0 +1,1 @@
+PASS: local Worker with checked-in preview bindings uses file mode, serves the exact approved header assets, preserves noindex, denies admin, and excludes review-only files.
