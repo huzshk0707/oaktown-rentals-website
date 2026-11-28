@@ -1,5 +1,6 @@
 # Phase 4B step 2 — FELIX
 
+Cached-page preference sync corrected and property stylesheet ordered for a clean runtime combination with the vacation feature. NEXT STEP: verify the hosted navigation and record screenshots. Heartbeat 2026-11-28T07:19:19Z, expires 2026-11-28T07:49:19Z.
 Shared navigation is implemented on rental, vacation and 404 documents. NEXT STEP: verify hosted links, cross-page preferences and all six openings. Heartbeat 2026-11-28T07:16:56Z, expires 2026-11-28T07:46:56Z.
 Claimed 2026-11-28T07:13:58Z, expires 2026-11-28T07:43:58Z. Base PR #34 at b483547. NEXT STEP: extract the approved header and verify route behavior.
 

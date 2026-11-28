@@ -83,6 +83,8 @@
       }};
     },
     mount(root, {t}) {
+      // A language redraw can remount this page during back-forward cache restoration.
+      try { paused = localStorage.getItem('oaktown-motion') === 'off'; } catch {}
       const events = new AbortController();
       const on = (target, name, fn, options={}) => target?.addEventListener(name, fn, {...options, signal:events.signal});
       const story = root.querySelector('.story');
