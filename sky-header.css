@@ -1,0 +1,213 @@
+/* Phase 2E. The header sits directly above the photographed hero stage. */
+body.rental-site .site-header.sky-header {
+  --sky-ink: #30362c;
+  --sky-accent: #576a40;
+  --sky-paper: #f7f4ed;
+  --sky-line: #dcded1;
+  --sky-time: 220ms;
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--listing-header-height);
+  padding-inline: clamp(24px, 3.6vw, 76px);
+  gap: clamp(16px, 2.3vw, 44px);
+  color: var(--sky-ink);
+  background: var(--sky-paper);
+  border: 0;
+  box-shadow: none;
+}
+body.rental-site .sky-header[data-motion-ready] {
+  transition: background-color var(--sky-time), transform var(--sky-time) ease;
+}
+body.rental-site .sky-header[data-surface="sky"] { background: transparent; }
+body.rental-site .sky-header[data-surface="ivory"] { box-shadow: inset 0 -1px var(--sky-line); }
+.sky-header.sky-header-away:not(:focus-within) { transform: translateY(-101%); }
+body.rental-site .sky-header .wordmark { display: grid; place-items: center; background: none; }
+body.rental-site .sky-header .brand-logo { width: clamp(122px, 11vw, 180px); }
+body.rental-site .sky-header .header-actions {
+  order: 2;
+  gap: 9px;
+  padding-inline-start: 12px;
+  border-inline-start: 1px solid #30362c38;
+}
+body.rental-site .sky-header :is(.language-switch, .motion-toggle) { color: var(--sky-ink); }
+body.rental-site .sky-header .language-switch { font-size: 11px; min-width: 44px; }
+body.rental-site .sky-header .motion-toggle { font-size: 0; min-width: 44px; width: 44px; padding: 0; }
+body.rental-site .sky-header .motion-toggle::before { margin: 0; }
+body.rental-site .sky-header .menu-button span { background: currentColor; }
+body.rental-site .sky-header .menu-button {
+  color: var(--sky-ink);
+  width: 44px;
+  height: 44px;
+  padding-inline: 10px;
+}
+.sky-header .menu-button span { transition: transform 200ms; }
+.sky-header .menu-button[aria-expanded="true"] span:first-child { transform: translateY(4.5px) rotate(45deg); }
+.sky-header .menu-button[aria-expanded="true"] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+body.rental-site .sky-header .sky-navigation {
+  flex: none;
+  margin: 0 0 0 auto;
+  gap: clamp(14px, 2.25vw, 44px);
+  align-items: center;
+}
+body.rental-site .sky-header :is(.sky-disclosure summary, .sky-story-link) {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  min-height: 44px;
+  white-space: nowrap;
+  font: 500 clamp(14px, 1.08vw, 17px)/1.4 'DM Sans', sans-serif;
+  letter-spacing: .005em;
+  color: var(--sky-ink);
+  transition: color var(--sky-time);
+}
+.sky-disclosure { position: relative; }
+.sky-disclosure summary { cursor: pointer; list-style: none; }
+.sky-disclosure summary::-webkit-details-marker { display: none; }
+.sky-disclosure summary .icon { width: 13px; height: 13px; transition: transform var(--sky-time); }
+.sky-disclosure[open] summary .icon { transform: rotate(180deg); }
+.sky-navigation :is(summary, .sky-story-link)::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 4px;
+  height: 1px;
+  background: var(--sky-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--sky-time) ease;
+}
+.sky-navigation :is(summary, .sky-story-link):is(:hover, :focus-visible)::after,
+.sky-navigation .sky-disclosure[open] summary::after { transform: scaleX(1); }
+body.rental-site .sky-header :is(summary, .sky-story-link):is(:hover, :focus-visible),
+body.rental-site .sky-header .sky-disclosure[open] summary { color: var(--sky-accent); }
+body.rental-site .sky-header .sky-disclosure > .sky-dropdown {
+  position: absolute;
+  inset: 100% auto auto 0;
+  width: max-content;
+  min-width: 205px;
+  max-width: 300px;
+  max-height: calc(100dvh - var(--listing-header-height) - 8px);
+  overflow: auto;
+  padding: 7px 10px;
+  border: 1px solid var(--sky-line);
+  border-top: 2px solid #8c9f65;
+  border-radius: 2px;
+  color: var(--sky-ink);
+  background: var(--sky-paper);
+  box-shadow: 0 6px 18px #222c2014;
+}
+body.rental-site .sky-header .resources-menu > .sky-dropdown { inset-inline: auto 0; }
+.sky-disclosure[open] .sky-dropdown { animation: sky-dropdown-in 200ms ease-out both; }
+@keyframes sky-dropdown-in {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body.rental-site .sky-header .sky-dropdown a {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 7px 12px;
+  font: 500 14px/1.35 'DM Sans', sans-serif;
+  color: var(--sky-ink);
+  text-transform: none;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+body.rental-site .sky-header .sky-dropdown a:hover { background: #e7eadc; }
+.sky-dropdown a[aria-current] { font-weight: 700; background: #e7eadc; }
+.sky-dropdown .sky-browse { border-bottom: 1px solid var(--sky-line); }
+.sky-header :is(a, button, summary):focus-visible { outline: 2px solid #3d552d; outline-offset: 3px; }
+.sky-mobile-apply { display: none; }
+
+/* A feathered light veil keeps the photograph continuous behind dark navigation.
+   Preserve the left-side text contrast with a separate graduated photo shade. */
+body.rental-site:has(.sky-header) .cinematic-hero .signature-shade {
+  background:
+    linear-gradient(180deg, #f7f4eddf 0, #f7f4edb8 63px, #f7f4ed53 112px, #f7f4ed00 194px),
+    linear-gradient(90deg, #112a20d4 0%, #112a2087 29%, #112a2030 49%, transparent 72%),
+    linear-gradient(0deg, #14271fa6, transparent 30%);
+}
+body.rental-site:has(.sky-header) .cinematic-photo { object-position: 34% 50%; }
+body.rental-site .hero-opening-actions { gap: 12px; }
+body.rental-site .hero-opening-actions .signature-button {
+  min-height: 48px;
+  padding: 11px 16px;
+  border-radius: 3px;
+  border: 1px solid #aab992;
+  font: 600 13px/1.25 'DM Sans', sans-serif;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+  gap: 10px;
+}
+body.rental-site .hero-opening-actions .ivory { background: #a8ba8b; color: #26321f; }
+body.rental-site .hero-opening-actions .ivory:hover { background: #c3cfae; }
+body.rental-site .hero-opening-actions .cinematic-secondary { background: #192d22ae; color: #f7f4ed; }
+body.rental-site .hero-opening-actions .cinematic-secondary:hover { background: #233829; }
+body.rental-site .hero-opening-actions :focus-visible { outline: 2px solid #fff8e8; outline-offset: 4px; }
+@media (max-width: 960px) {
+  body.rental-site .site-header.sky-header { justify-content: space-between; }
+  body.rental-site .sky-header .header-actions { border: 0; padding: 0; gap: 6px; }
+  body.rental-site .sky-header .sky-navigation { display: none; }
+  body.rental-site .sky-header .sky-navigation[data-mobile-open] {
+    display: flex;
+    position: absolute;
+    inset: 100% 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px max(22px, 4vw) 18px;
+    max-height: calc(100dvh - var(--listing-header-height));
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: var(--sky-paper);
+    border-block: 1px solid var(--sky-line);
+    animation: sky-dropdown-in 200ms ease-out both;
+  }
+  body.rental-site .sky-header .sky-disclosure > .sky-dropdown {
+    position: static;
+    width: auto;
+    max-width: none;
+    max-height: none;
+    border: 0;
+    border-inline-start: 1px solid var(--sky-line);
+    margin-inline-start: 3px;
+    box-shadow: none;
+  }
+  body.rental-site .sky-header :is(summary, .sky-story-link) {
+    justify-content: space-between;
+    min-height: 46px;
+    font-size: 16px;
+  }
+  body.rental-site .sky-header .sky-mobile-apply {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    min-height: 44px;
+    padding: 0 14px;
+    margin-top: 8px;
+    border: 1px solid #83926f;
+    color: var(--sky-ink);
+    font: 600 14px/1.2 'DM Sans', sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  body.rental-site:has(.sky-header) .cinematic-photo { object-position: 60% 50%; }
+}
+@media (max-width: 850px), (max-height: 559px) {
+  body.rental-site:has(.sky-header) .cinematic-hero .signature-shade {
+    background:
+      linear-gradient(180deg, #f7f4ede8 0, #f7f4edc0 58px, #f7f4ed55 98px, #f7f4ed00 160px),
+      linear-gradient(0deg, #112a20f3 0%, #112a20bb 39%, #112a2010 78%);
+  }
+}
+@media (max-width: 480px) {
+  body.rental-site .site-header.sky-header { padding-inline: 18px; }
+  body.rental-site .sky-header .brand-logo { width: 110px; }
+  body.rental-site .hero-opening-actions .signature-button { padding-inline: 12px; font-size: 11px; gap: 5px; }
+  body.rental-site .hero-opening-actions .signature-button .icon { width: 16px; height: 16px; }
+}
+html.motion-off .sky-header, html.motion-off .sky-header *,
+html.motion-off .hero-opening-actions .signature-button { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sky-header, .sky-header *, .hero-opening-actions .signature-button { animation: none !important; transition: none !important; }
+}

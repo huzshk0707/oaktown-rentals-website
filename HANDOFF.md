@@ -1,9 +1,10 @@
 # Phase 2E — Seamless Sky Header
 
-- Ravi owns `ravi/seamless-sky-header`. Heartbeat 2026-11-28T01:52:56+00:00. Claim expires 2026-11-28T02:22:56+00:00.
+- Ravi owns `ravi/seamless-sky-header` and draft PR #30. Heartbeat 2026-11-28T01:58:14+00:00. Claim expires 2026-11-28T02:28:14+00:00.
 - Reviewed base `c4a789b773af79293fff9819909c9a98948fa851` on `integration/oaktown-signature`. Feature PR targets integration and stays draft. Release PR #29 stays separate.
 - Scope: original logo, transparent Afterglow header, catalogue disclosures, hero CTAs and light scroll state. Existing publication holds and staging boundaries apply.
-- NEXT STEP: capture the opening baseline and implement the approved header and catalogue-driven disclosures. Then verify all scenes, navigation, EN/ES and preservation.
+- Opening baseline captured. The original-derived transparent mark, catalogue disclosures, hero CTAs and direction-sensitive light header are implemented. No separate Lofts route exists. Shared hosted baseline attempt returned `net::ERR_TUNNEL_CONNECTION_FAILED`.
+- NEXT STEP: add Phase 2E regression and capture scripts, then verify scenes, navigation, EN/ES, unchanged inventory and preview build.
 
 ---
 

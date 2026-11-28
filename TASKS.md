@@ -1,3 +1,11 @@
+# Phase 2E — Seamless Sky Header
+
+- [x] Ravi claimed `ravi/seamless-sky-header` on integration `c4a789b` and opened [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30).
+- [x] Attempt direct shared preview verification and capture exact local baseline.
+- [x] Implement transparent original-mark header, dynamic catalogue disclosures, bilingual hero actions and an ivory post-hero state.
+- [ ] Run dedicated, existing and real-photo browser regressions, inspect the rendered comparison and commit review evidence.
+- [ ] Owner visual acceptance and separate integration authorization. PR #29 stays draft.
+
 # Shared Signature integration — Ravi
 
 - [x] Recover available checkpoints and preserve source branches and worktrees.

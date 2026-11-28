@@ -13,6 +13,7 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const navigationMotion = () => reducedMotion.matches || document.documentElement.classList.contains('motion-off') ? 'instant' : 'smooth';
   const P = DATA.properties;
+  const skyHeader = window.OaktownSkyHeader?.mount(header, app, P, DATA.applicationUrl);
   let language = privatePreview?.language==='es'?'es':'en';
   if(!privatePreview)try { if(localStorage.getItem('oaktown-language')==='es')language='es'; } catch {}
   let selectedFilter = 'All';
@@ -44,7 +45,7 @@
       resources:'Resources',neighborhood:'Neighborhood',anyNeighborhood:'All neighborhoods',any:'Any',searchHomes:'Search homes',resetFilters:'Reset filters',noMatches:'No homes match these filters. Try another combination or reset your search.',signatureTitle:'A place to<br>call <em>home.</em>',signatureCopy:'Rental homes in Louisville and the surrounding communities.',viewAllHomes:'View all homes',ourHomesTitle:'Our Homes',ourHomesCopy:'Explore our rental homes across Louisville. Find the space and neighborhood that fit your life.',brandPhoto:'Louisville, Kentucky',heroPhotos:'Featured home photography',afterglowPhoto:'8216 Afterglow Drive — brick home beneath mature trees',colonialPhoto:'115 Colonial Drive — white home and front lawn',storyCopy:'Local roots. A personal approach. Oaktown Rentals provides rental homes in Louisville and the surrounding counties.',vacationKicker:'A change of scenery',vacationCopy:'A waterfront escape in the Florida Keys. Discover the home, the pool and life by the water.',journeyLabel:'Renting, made simple',journeyTitle:'Your rental journey',journey1:'Find your home',journey1Copy:'Explore the collection. Ask our team about availability and arrange a showing.',journey2:'Apply online',journey2Copy:'Review the home’s requirements, then complete our online application.',journey3:'Make your move',journey3Copy:'Once approved, work with our team on your lease and next steps.',quickLinks:'Explore',connect:'Get in touch',storyMore:'More about Oaktown',backHome:'Back to home',minimum:'or more',
       cardFeatures:'Home features',beforeApplying:'Ask our team about availability and any application, pet or other charges before applying.',rentalDetails:'Rental details',homeCount:'homes',gridView:'Grid',galleryView:'Gallery',layoutLabel:'Property view',requestShowing:'Request a showing',availabilityNote:'Find a place you like? Text us with the address to ask about availability or a showing.',photoUnavailable:'Photos temporarily unavailable',skipContent:'Skip to content',primaryNav:'Primary navigation',mobileNav:'Mobile navigation',openMenu:'Open menu',closeMenu:'Close menu',switchLanguage:'Cambiar a español',homeLink:'Oaktown Rentals — home',applicationLabel:'Open rental application',footerNote:'Rental homes in Louisville, Kentucky',colonialInterior:'Interior at 115 Colonial Drive',cherokeeInterior:'Interior at 1106 Cherokee Road, unit 8',floridaAlt:'Lobster Nirvana in the Florida Keys',floridaShort:'A waterfront escape in the Florida Keys.',
       textUs:'Text us',motionOn:'Motion on',motionOff:'Motion off',motionLabel:'Enable visual motion',sceneOne:'The beginning',sceneTwo:'The everyday',sceneThree:'The next chapter',sceneTwoTitle:'Room for <em>your life.</em>',sceneThreeTitle:'Make yourself <em>at home.</em>',sceneTwoCopy:'A little more space. A rhythm of your own.',sceneThreeCopy:'Find your place in Louisville. We’ll help with the next step.',heroCaption:'A closer look at 115 Colonial Drive',browseHint:'Explore the collection',previousHome:'Previous home',nextHome:'Next home',filterLabel:'Filter homes by neighborhood',openPhoto:'Enlarge photo',closePhoto:'Close gallery',previousPhoto:'Previous photo',nextPhoto:'Next photo',photoLabel:'Photo',photosLabel:'Photos',insideLabel:'A LOOK INSIDE',highlightsLabel:'THE HIGHLIGHTS',moreLabel:'EXPLORE MORE',sourceLabel:'Full listing details',galleryError:'This photo could not load. Try another photo or contact us for the full gallery.',
-      navHomes:'Our homes',navStory:'Our story',navFaq:'FAQ',navCommunity:'Community',navApply:'Apply online',contact:'Contact',textBest:'Text us for availability and showings.',footerTitle:'Your next chapter starts here.',
+      navHomes:'Our Homes',navStory:'Our Story',navFaq:'FAQ',navCommunity:'Community',navApply:'Apply online',contact:'Contact',textBest:'Text us for availability and showings.',footerTitle:'Your next chapter starts here.',
       heroKicker:'Quality rental homes in Louisville, KY',heroOne:'Find your',heroTwo:'place.',heroTagline:'Homes with character. A local team to help you find yours.',explore:'Explore homes',scroll:'Scroll to explore',
       homesLabel:'01 / FIND A HOME',homesHeading:'Find a home that fits.',homesDesc:'Compare homes, neighborhoods and rental details.',
       all:'All',stMatthews:'St. Matthews',highlands:'Highlands & Cherokee Triangle',okolona:'Okolona',listings:'Homes in our collection',perMonth:'/ month',beds:'beds',baths:'bath',availability:'Request a Tour',
@@ -86,6 +87,7 @@
   Object.assign(words.en, {
     cinematicConnection:'Well-cared-for homes across Greater Louisville.',
     cinematicDiscovery:'Explore our homes.', browseHomes:'Browse Our Homes', howToApply:'How to Apply',
+    browseAllHomes:'Browse All Homes', loftsNirvana:'Lofts & Nirvana', applyNow:'Apply Now',
     scrollExplore:'Scroll to explore', heroScenes:'Explore the three scenes',
     sceneWelcome:'Welcome', sceneConnection:'Connection', sceneDiscovery:'Discovery',
     afterglowReview:'AI-assisted design preview of 8216 Afterglow Drive'
@@ -93,6 +95,7 @@
   Object.assign(words.es, {
     cinematicConnection:'Viviendas bien cuidadas en el área metropolitana de Louisville.',
     cinematicDiscovery:'Explora nuestras viviendas.', browseHomes:'Ver nuestras viviendas', howToApply:'Cómo solicitar',
+    browseAllHomes:'Ver todas las viviendas', loftsNirvana:'Lofts y Nirvana', applyNow:'Solicitar ahora',
     scrollExplore:'Desliza para explorar', heroScenes:'Explora las tres escenas',
     sceneWelcome:'Bienvenida', sceneConnection:'Conexión', sceneDiscovery:'Descubre',
     afterglowReview:'Vista previa de diseño de 8216 Afterglow Drive con asistencia de IA'
@@ -141,7 +144,10 @@
           <div class="signature-copy cinematic-scene is-active" data-hero-scene="0">
             <h1 id="signature-title">${t('signatureTitle')}</h1><span class="cinematic-underline" aria-hidden="true"></span>
             <p class="cinematic-mobile-description">${t('cinematicConnection')}</p>
-            <a class="signature-button ivory" href="#homes">${t('browseHomes')}${arrow}</a>
+            <div class="cinematic-actions hero-opening-actions">
+              <a class="signature-button ivory" href="#homes">${t('browseHomes')}${arrow}</a>
+              <a class="signature-button cinematic-secondary" href="${DATA.applicationUrl}" target="_blank" rel="noopener noreferrer">${t('applyNow')}</a>
+            </div>
           </div>
           <div class="signature-copy cinematic-scene" data-hero-scene="1" aria-hidden="true" inert>
             <h2>${t('cinematicConnection')}</h2><span class="cinematic-underline" aria-hidden="true"></span>
@@ -514,7 +520,8 @@
     const mobileInquiry=document.getElementById('mobile-inquiry');
     mobileInquiry.href=p?showingUrl(p):'sms:+15025001070';
     mobileInquiry.textContent=t(p?'requestShowing':'textUs');
-    closeMenu();
+    if(skyHeader)skyHeader.update(t);
+    else closeMenu();
     onScroll();
     if(!restore)rememberView();
     privatePreview?.rendered();
@@ -523,11 +530,11 @@
     const scroll=document.documentElement.scrollTop;
     const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
     document.getElementById('progress').style.width=(Math.min(1,scroll/max)*100)+'%';
-    header.classList.toggle('is-fixed',scroll>50);
+    if(!skyHeader)header.classList.toggle('is-fixed',scroll>50);
     scheduleViewSave();
   }
-  menu.addEventListener('click',()=>{const isOpening=mobileNav.hidden;mobileNav.hidden=!isOpening;menu.setAttribute('aria-expanded',String(isOpening));menu.setAttribute('aria-label',t(isOpening?'closeMenu':'openMenu'));});
-  mobileNav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
+  if(!skyHeader)menu.addEventListener('click',()=>{const isOpening=mobileNav.hidden;mobileNav.hidden=!isOpening;menu.setAttribute('aria-expanded',String(isOpening));menu.setAttribute('aria-label',t(isOpening?'closeMenu':'openMenu'));});
+  if(!skyHeader)mobileNav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
   langButton.addEventListener('click',()=>{routeGeneration++;activeTransition?.skipTransition();clearTransitionNames();language=language==='en'?'es':'en';if(privatePreview)privatePreview.language=language;else try{localStorage.setItem('oaktown-language',language);}catch{}draw(true)});
   app.addEventListener('submit',e=>{
     if(e.target.id!=='home-search')return;
@@ -540,7 +547,7 @@
     if(e.target.id!=='home-search')return;
     e.preventDefault();selectedBedrooms='';selectedBathrooms='';activateFilter('All');confirmAction(e.target.querySelector('[type=reset]'));
   });
-  document.querySelectorAll('.resources-menu').forEach(details=>{
+  if(!skyHeader)document.querySelectorAll('.resources-menu').forEach(details=>{
     details.addEventListener('keydown',e=>{if(e.key==='Escape'){details.open=false;details.querySelector('summary').focus();}});
     document.addEventListener('click',e=>{if(!details.contains(e.target)||e.target.closest('a'))details.open=false;});
   });
@@ -576,7 +583,7 @@
       e.preventDefault();const next=e.key==='Home'?'gallery':e.key==='End'?'grid':layout.dataset.layoutButton==='gallery'?'grid':'gallery';
       selectCollectionLayout(next);app.querySelector('[data-layout-button="'+next+'"]').focus();
     }
-    if(e.key==='Escape'&&!mobileNav.hidden){closeMenu();menu.focus();}
+    if(!skyHeader&&e.key==='Escape'&&!mobileNav.hidden){closeMenu();menu.focus();}
     if(app.querySelector('.lightbox[open]')&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();galleryStep(e.key==='ArrowLeft'?-1:1);}
   });
   app.addEventListener('close',e=>{if(e.target.matches('.lightbox'))document.body.classList.remove('gallery-is-open');},true);

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#082e22" />
+  <meta name="theme-color" content="#F7F4ED" />
   <meta name="robots" content="noindex,nofollow" />
   <meta name="description" content="Oaktown Rentals — quality rental homes in Louisville, Kentucky and surrounding counties. Explore the homes, learn our story, and apply online." />
   <title>Oaktown Rentals — Find your place.</title>
@@ -13,37 +13,52 @@
   <link rel="stylesheet" href="./brand.css" />
   <link rel="stylesheet" href="./signature.css" />
   <link rel="stylesheet" href="./collection.css" />
+  <link rel="stylesheet" href="./sky-header.css" />
   <script src="./data.js" defer></script>
   <script src="./effects.js" defer></script>
   <script src="./cms-client.js" defer></script>
   <script src="./signature.js" defer></script>
   <script src="./collection.js" defer></script>
   <script src="./property-cards.js" defer></script>
+  <script src="./sky-header.js" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body class="rental-site">
   <a class="skip-link" data-i18n="skipContent" href="#app">Skip to content</a>
   <div class="progress" id="progress" aria-hidden="true"></div>
-  <header class="site-header" id="site-header">
+  <header class="site-header sky-header" id="site-header">
     <a href="#" class="wordmark" aria-label="Oaktown Rentals — home" data-i18n-aria="homeLink">
-      <img class="brand-logo" src="./assets/oaktown-rentals-logo.jpg" width="1200" height="608" alt="Oaktown Rentals" decoding="async">
+      <img class="brand-logo" src="/assets/signature/oaktown-wordmark-transparent.png" width="480" height="243" alt="Oaktown Rentals" decoding="async">
     </a>
-    <nav class="desktop-nav" aria-label="Primary navigation" data-i18n-aria="primaryNav">
-      <a href="#homes" data-i18n="navHomes">Our homes</a>
-      <a href="./mint-mojo/">Lobster Nirvana</a>
-      <a href="#about" data-i18n="navStory">Our story</a>
-      <details class="resources-menu"><summary><span data-i18n="resources">Resources</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div><a href="#faq" data-i18n="navFaq">FAQ</a><a href="#community" data-i18n="navCommunity">Community</a></div></details>
-    </nav>
     <div class="header-actions">
       <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false">Motion</button>
       <button class="language-switch" id="language-switch" type="button" aria-label="Cambiar a español" data-i18n-aria="switchLanguage">ES</button>
-      <a class="nav-apply" href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer"><span data-i18n="navApply">Apply online</span><span aria-hidden="true"> <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
-      <button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+      <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
     </div>
+    <nav class="desktop-nav sky-navigation" id="mobile-nav" aria-label="Primary navigation" data-i18n-aria="primaryNav">
+      <details class="sky-disclosure">
+        <summary><span data-i18n="navHomes">Our Homes</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="sky-dropdown">
+          <a class="sky-browse" href="#homes" data-i18n="browseAllHomes">Browse All Homes</a>
+          <div id="header-properties"></div>
+        </div>
+      </details>
+      <details class="sky-disclosure">
+        <summary><span data-i18n="loftsNirvana">Lofts &amp; Nirvana</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="sky-dropdown"><a href="/mint-mojo/">Lobster Nirvana</a></div>
+      </details>
+      <details class="sky-disclosure resources-menu">
+        <summary><span data-i18n="resources">Resources</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="sky-dropdown">
+          <a href="#faq" data-i18n="navFaq">FAQ</a>
+          <a href="#community" data-i18n="navCommunity">Community</a>
+          <a href="#contact" data-i18n="contact">Contact</a>
+        </div>
+      </details>
+      <a class="sky-story-link" href="#about" data-i18n="navStory">Our Story</a>
+      <a class="sky-mobile-apply" data-application-link target="_blank" rel="noopener noreferrer" data-i18n="applyNow">Apply Now</a>
+    </nav>
   </header>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" data-i18n-aria="mobileNav" hidden>
-    <a href="#homes" data-i18n="navHomes">Our homes</a><a href="#about" data-i18n="navStory">Our story</a><a href="#faq" data-i18n="navFaq">FAQ</a><a href="#community" data-i18n="navCommunity">Community</a><a href="./mint-mojo/">Lobster Nirvana</a><a href="#contact" data-i18n="contact">Contact</a><a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" data-i18n="navApply">Apply online</a>
-  </nav>
   <main id="app" tabindex="-1"><noscript><section class="section"><h1>Oaktown Rentals</h1><p>Rental homes in Louisville, Kentucky. Enable JavaScript to browse our homes, or text <a href="sms:+15025001070">(502) 500-1070</a> for property information.</p><p>Viviendas en Louisville, Kentucky. Activa JavaScript para ver las viviendas o escríbenos al <a href="sms:+15025001070">(502) 500-1070</a>.</p></section></noscript></main>
   <div class="mobile-actions"><a id="mobile-inquiry" href="sms:+15025001070" data-i18n="textUs">Text us</a><a href="https://oaktownrentalsapplication.fillout.com/95" target="_blank" rel="noopener noreferrer" data-i18n="navApply">Apply online</a></div>
   <footer class="footer signature-footer" id="footer">
