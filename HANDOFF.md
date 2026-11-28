@@ -1,8 +1,9 @@
 # Oaktown Signature integration
 
-- Owner Ravi. Claimed 2026-11-28T01:36:14+00:00; expires 2026-11-28T02:06:14+00:00.
-- Branch `integration/oaktown-signature` targeting `main` (`be37dba`), founded on PR #26 `dd40325`.
-- NEXT STEP: save Bethune study, integrate reviewed PRs #27 and #28, audit six records and 38 photographs, then verify the isolated preview.
+- Owner Ravi. Heartbeat 2026-11-28T01:37:29+00:00. Claim expires 2026-11-28T02:07:29+00:00.
+- Branch `integration/oaktown-signature` draft PR #29 targeting `main` (`be37dba`), founded on PR #26 `dd40325`.
+- Integrated `e50f3c4` (#27) and `5b5c6ab` (#28) without Git conflicts. Bethune study is in `docs/oaktown-signature/BETHUNE-MOTION-STUDY.md`.
+- NEXT STEP: reconcile test fixtures with six listings and the imported asset paths, run full verification, and confirm the integration preview.
 - Source branches, worktrees and separate booking PR #25 are preserved. Keep combined PR draft.
 
 ---
