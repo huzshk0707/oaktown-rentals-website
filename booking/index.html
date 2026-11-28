@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#123b25">
+  <title>Book Lobster Nirvana — Oaktown Rentals</title>
+  <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/booking/booking.css">
+  <script src="/booking/booking.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#booking-main">Skip to booking</a>
+  <header class="booking-header"><a href="/mint-mojo/" class="home-link">LOBSTER NIRVANA<span>OAKTOWN RENTALS</span></a><div><a href="/mint-mojo/" data-t="back">Explore the house</a><button type="button" id="language" aria-label="Cambiar a español">ES</button></div></header>
+  <main id="booking-main" class="booking-layout">
+    <section class="booking-story"><img src="/assets/mint-mojo/house-pool.jpg" alt="Lobster Nirvana house and pool" width="1440" height="959"><div><p class="eyebrow" data-t="location">The Florida Keys</p><h1 data-t="title">Make time<br>for the island.</h1><p data-t="intro">Your waterfront escape, a few details away.</p><a href="/mint-mojo/#photos" data-t="photos">See the house and photos</a></div></section>
+    <section class="booking-panel" aria-labelledby="booking-title">
+      <p class="eyebrow" data-t="eyebrow">YOUR STAY AT LOBSTER NIRVANA</p><h2 id="booking-title" data-t="heading">A little island time.</h2>
+      <p id="test-mode" class="test-note" hidden data-t="test">Test checkout · No real reservation or charge.</p>
+      <p id="status" role="status" aria-live="polite" data-t="loading">Checking direct booking availability…</p>
+      <div id="closed" hidden><p data-t="closed">Online booking is not open yet. Contact Oaktown Rentals to confirm dates and rates.</p><a class="booking-button" href="mailto:joejrandles@yahoo.com" data-t="contact">Contact Oaktown Rentals</a><a class="text-link" href="https://www.airbnb.co.in/rooms/679772407380305795" data-t="airbnb">View on Airbnb</a></div>
+      <form id="dates" hidden>
+        <div class="date-fields"><label><span data-t="arrival">Check-in</span><input type="date" name="arrival" required></label><label><span data-t="departure">Checkout</span><input type="date" name="departure" required></label></div>
+        <label><span data-t="guests">Guests</span><select name="guests"></select></label>
+        <p id="stay-rule" class="small"></p><button class="booking-button" type="submit" data-t="check">Check dates and price</button>
+      </form>
+      <section id="quote" hidden aria-labelledby="quote-title" tabindex="-1"><h3 id="quote-title" data-t="summary">Your stay</h3><p id="stay-summary"></p><dl id="price"></dl><p class="small" data-t="paymentNote">The full total is due at checkout. Dates are held when you continue to payment.</p>
+        <details><summary data-t="terms">Stay terms</summary><p id="terms-copy" class="policy"></p></details><details><summary data-t="cancellation">Cancellation policy</summary><p id="cancellation-copy" class="policy"></p></details>
+        <label class="consent"><input id="accept" type="checkbox"><span data-t="accept">I agree to the stay terms and cancellation policy.</span></label>
+        <div id="verification"></div><button id="pay" class="booking-button" type="button" data-t="pay">Continue to secure payment</button><p class="small" data-t="stripe">Payment is securely processed by Stripe. Your booking is confirmed after successful payment.</p>
+      </section>
+      <section id="reservation" hidden tabindex="-1"><h3 id="reservation-title"></h3><p id="reservation-copy"></p><p id="reference" class="small"></p><a id="resume" class="booking-button" hidden data-t="resume">Return to payment</a><button id="retry-checkout" class="booking-button" type="button" hidden data-t="retry">Recover checkout</button><button id="refresh-status" class="text-link" type="button" data-t="refresh">Check payment status</button><a class="text-link" href="mailto:joejrandles@yahoo.com" data-t="contact">Contact Oaktown Rentals</a></section>
+      <noscript>Please enable JavaScript to book online, or email <a href="mailto:joejrandles@yahoo.com">Oaktown Rentals</a> for help.</noscript>
+    </section>
+  </main>
+  <footer class="booking-footer"><a href="/">Oaktown Rentals</a><a href="tel:+15025001070">(502) 500-1070</a></footer>
+</body>
+</html>

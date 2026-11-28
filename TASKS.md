@@ -1,3 +1,11 @@
+## WEB-LOBSTER-BOOKING — instant reservations and payments
+
+- [x] Confirm the direct Stripe and no booking-platform subscription scope. Allocate exclusive direct inventory manually across Airbnb and other channels.
+- [x] Implement the public and admin flows, server pricing and inventory, signed Stripe reconciliation, recovery and booking email.
+- [x] Verify disposable D1 and EN/ES desktop and mobile fixtures, payment and refund edge cases, and the existing public and admin regressions. Publish a review checkpoint on draft [PR #25](https://github.com/huzshk0707/oaktown-rentals-website/pull/25).
+- [ ] With authorized provider access, run the real Stripe sandbox, Turnstile, Cloudflare Access and email acceptance cases on isolated staging using the [setup and recovery guide](docs/lobster-booking.md).
+- [ ] Owner approves rates, fees, taxes, bilingual terms, channel blocks and production rollout. Production activation needs separate approval.
+
 # Tasks — Oaktown Rentals Website
 
 Prioritized from main code, README launch checklist and current PRs on 2026-11-16.

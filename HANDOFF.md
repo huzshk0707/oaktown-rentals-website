@@ -1,3 +1,14 @@
+# WEB-LOBSTER-BOOKING — review checkpoint
+
+- Owner: FELIX released the implementation claim at 2026-11-26T21:31:35+00:00. Hosted staging acceptance remains pending.
+- Branch/base/PR: `codex/lobster-booking` / `be37dba` / draft PR #25. Prior verified implementation checkpoint: `4b815a4`. The PR head identifies this final review commit.
+- Implemented: Stripe hold recovery, same-stay retries, scheduled expiry and payment reconciliation, refund ordering and inventory version guards, guest/operator emails, gated vacation-page CTA, responsive Turnstile, mobile admin navigation, provider runbook and isolated staging example. Cross-channel inventory is manually exclusive.
+- Passed: `npm run check`, `npm test` 3/3, `npm run test:booking` 14/14, `npm run test:booking-browser` with 8 bilingual layouts and recovery, `test:admin-browser`, `test:admin-improvements` 6/6, `test:photo-order`, and public `test:mint`, `test:browser` 48/48 and `test:browsing` 24/24. Local Wrangler migrations 0001–0003 and staging dry-run passed. A separate local D1 binding verified 90-night management, atomic competition, rejection cleanup, payment, email queue and refund closure. See [screenshots](docs/booking-review/README.md).
+- Provider boundary: Git-connected branch preview shows closed booking and keeps admin and server internals gated. Wrangler has no authenticated Cloudflare session here. Stripe, Turnstile, Access and Resend acceptance still requires the respective staging accounts. Production launch, migration and activation require separate approval.
+- NEXT STEP: with authorized staging account access, follow the **Isolated staging setup** in [the runbook](docs/lobster-booking.md). Use `wrangler.booking-staging.local.jsonc` with separate resources, run the listed real-provider cases and record outcomes in PR #25.
+
+---
+
 # Listing and vacation-home refresh
 
 Codex releases the completed implementation claim on `content/refresh-rentals-lobster-nirvana`. Source: current Squarespace property pages and the owner-supplied Airbnb listing. Public browsing, rental and vacation galleries, mobile navigation and admin checks passed. The 60 image URLs match the current property pages in order. The production CMS update was rehearsed against the prior records in disposable SQLite. Next: review PR #24, then apply the scoped CMS refresh through an authorized operator session when approved.

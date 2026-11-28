@@ -1,3 +1,5 @@
+import { bookingAPI, bookingAdmin } from './bookings.mjs';
+import { recoverBookings } from './booking-payments.mjs';
 import { authenticate } from './auth.mjs';
 import { validateProperty, imageType, fail, MAX_JSON_BYTES, MAX_PHOTO_BYTES } from './model.mjs';
 
@@ -118,8 +120,9 @@ function adminHeaders(response) {
   result.headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' https://images.squarespace-cdn.com blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
   return result;
 }
-export function createApp({ authorize = authenticate } = {}) {
+export function createApp({ authorize = authenticate, bookingTransport = fetch } = {}) {
   return {
+    async scheduled(_controller, env) { await recoverBookings(env,bookingTransport); },
     async fetch(request, env) {
       const url = new URL(request.url), path = url.pathname;
       // All current asset/API paths use plain ASCII names. Reject encoded aliases
@@ -131,11 +134,13 @@ export function createApp({ authorize = authenticate } = {}) {
           const actor = await authorize(request,env);
           if (!env.DB) fail('The property database has not been connected.',503);
           if (!['GET','HEAD'].includes(request.method) && request.headers.get('Origin')!==url.origin) fail('Open the admin on this website before saving.',403);
+          if (path==='/api/admin/bookings' || path.startsWith('/api/admin/bookings/')) return adminHeaders(await bookingAdmin(request,env,actor,{readJSON,transport:bookingTransport}));
           if (path.startsWith('/api/')) return adminHeaders(await adminAPI(request,env,actor,path));
           if (!['GET','HEAD'].includes(request.method)) return adminHeaders(json({error:'Method not allowed.'},405));
           if (path==='/admin') return adminHeaders(Response.redirect(url.origin+'/admin/',302));
           return adminHeaders(await env.ASSETS.fetch(request));
         }
+        if (path.startsWith('/api/booking/')) return await bookingAPI(request,env,{readJSON,readLimited,transport:bookingTransport});
         if (path==='/api/properties' && request.method==='GET') {
           if (!env.DB || env.PUBLIC_CATALOGUE_SOURCE === 'file') return json({mode:'file'});
           const rows = await env.DB.prepare("SELECT published_json FROM properties WHERE state='published' ORDER BY created_at,id").all();

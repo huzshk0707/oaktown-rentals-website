@@ -5,13 +5,19 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "check": "node --check cms/worker.mjs && node --check admin/admin.js && node --check admin/preview.js && node --check cms-client.js && node --check app.js && node --check mint-mojo/mint-mojo.js",
+    "check": "node --check cms/worker.mjs && node --check admin/admin.js && node --check admin/preview.js && node --check cms-client.js && node --check app.js && node --check mint-mojo/mint-mojo.js && node --check cms/bookings.mjs && node --check cms/booking-payments.mjs && node --check cms/booking-email.mjs && node --check cms/booking-model.mjs && node --check cms/stripe.mjs && node --check booking/booking.js && node --check admin/bookings.js",
     "test": "node --test tests/cms.test.mjs",
     "test:admin-browser": "node tests/admin-browser.cjs",
     "test:photo-order": "node tests/admin-photo-order.cjs",
     "test:admin-improvements": "node tests/admin-improvements.cjs",
-    "seed": "node scripts/seed-cms.mjs"
+    "seed": "node scripts/seed-cms.mjs",
+    "test:booking": "node --test tests/booking.test.mjs",
+    "test:booking-browser": "node tests/booking-browser.cjs"
   },
-  "dependencies": { "jose": "6.2.15" },
-  "devDependencies": { "wrangler": "4.158.0" }
+  "dependencies": {
+    "jose": "6.2.15"
+  },
+  "devDependencies": {
+    "wrangler": "4.158.0"
+  }
 }

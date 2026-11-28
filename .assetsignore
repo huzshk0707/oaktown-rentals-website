@@ -18,3 +18,8 @@
 !admin/**
 !assets/
 !assets/**
+
+!booking/
+!booking/index.html
+!booking/booking.js
+!booking/booking.css
