@@ -1,10 +1,6 @@
-# Phase 4A shared property presentation / FELIX
+# Phase 4A ready for owner review / FELIX released
 
-Preserved original homepage selector precedence on small screens. NEXT STEP: verify final hosted bytes and captures. Heartbeat 2026-11-28T06:42:15Z, expires 2026-11-28T07:12:15Z.
-Mobile fixed action bar now uses the same CTA rules. NEXT STEP: recapture hosted mobile and verify latest runtime. Heartbeat 2026-11-28T06:40:26Z, expires 2026-11-28T07:10:26Z.
-Runtime ready. Heartbeat 2026-11-28T06:39:05Z, expires 2026-11-28T07:09:05Z. NEXT STEP: run six-route checks and record navigation.
-Claimed 2026-11-28T06:34:56Z, expires 2026-11-28T07:04:56Z. Base bc163b2. NEXT STEP: compare homepage and Colonial in Chromium before editing.
-Baseline desktop/mobile comparison recorded before changes. NEXT STEP: implement shared property header scroll behavior and CTA styling. Heartbeat 2026-11-28T06:38:11Z, expiry 2026-11-28T07:08:11Z.
+FELIX released the feature claim at 2026-11-28 06:43 UTC. Draft PR #33 targets integration at shared base bc163b2. Audit 2f7f9fb, verified runtime a365581. [Hosted comparisons, recording and regression evidence](docs/oaktown-signature/phase4a/README.md). NEXT STEP: owner reviews Colonial Drive in the feature preview and provides Phase 4B direction separately. PR #32 remains a separate draft. Existing holds continue.
 
 # Phase 3 integrated, homepage design locked / FELIX released
 

@@ -13,7 +13,7 @@ informs later creative review. Booking PR #25 stays on its separate staging path
 
 ## Current delivery
 
-**Major homepage design is complete and locked.** The owner approved Phase 3 at `1b75145`, now integrated in [draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29). The next design starts with the existing 115 Colonial Drive detail page as the reference for all six properties. Await the owner’s design instructions before editing detail pages.
+**Major homepage design is complete and locked.** The owner approved Phase 3 at `1b75145`, now integrated in [draft PR #29](https://github.com/huzshk0707/oaktown-rentals-website/pull/29). Phase 4A uses Colonial Drive as the reference for shared property styling and interactions. The scoped feature is ready for owner review in draft #33. [Comparison and verification](phase4a/README.md). Phase 4B covers individual layout decisions after owner instructions.
 
 [Draft PR #26](https://github.com/huzshk0707/oaktown-rentals-website/pull/26) retains the source history for the homepage, search controls and cards. Ravi completed Phase 2A engineering. Felix verified 60 hosted photos at the earlier checkpoint and prepared the [Phase 2B editorial proposal](phase2b/README.md). The owner approved Option B — Boutique Luxury (Drive `1V7gfl1owIOQzIOOUFNxc0E95iJHGyhH9`). Ravi completed the [Phase 2C implementation and review evidence](phase2c/README.md). Enhanced Afterglow photo accuracy remains a production approval.
 
