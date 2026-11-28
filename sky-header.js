@@ -161,7 +161,9 @@
       lastY = Math.max(0, scrollY);
       reveal();
       renderScroll();
-      requestAnimationFrame(() => { header.dataset.motionReady = ""; });
+      if (!header.hasAttribute("data-motion-ready")) {
+        requestAnimationFrame(() => requestAnimationFrame(() => { header.dataset.motionReady = ""; }));
+      }
     }};
   }};
 })();

@@ -59,13 +59,13 @@ const base=(process.env.OAKTOWN_BASE_URL||'http://localhost:8787').replace(/\/$/
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);check('no horizontal document overflow at '+width,()=>assert.equal(overflow,false));
  }
  await page.setViewportSize({width:390,height:844});await page.goto(base+'/');await page.waitForTimeout(200);
- const cta=await page.locator('[data-hero-scene="0"] .signature-button').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "Browse Our Homes"')));
- const ctaLabel=await page.locator('[data-hero-scene="0"] .signature-button').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
+ const cta=await page.locator('[data-hero-scene="0"] a[href="#homes"]').ariaSnapshot();check('mobile hero has a named homes link',()=>assert.ok(cta.includes('link "Browse Our Homes"')));
+ const ctaLabel=await page.locator('[data-hero-scene="0"] a[href="#homes"]').first().isVisible();check('mobile homes CTA retains its text',()=>assert.equal(ctaLabel,true));
  const mobileState=await page.locator('.cinematic-hero').evaluate(el=>({scene:el.dataset.scene,animated:el.classList.contains('is-cinematic'),hidden:el.querySelector('[data-hero-scene="0"]').getAttribute('aria-hidden')}));
  check('mobile has a static accessible scene',()=>assert.deepEqual(mobileState,{scene:'0',animated:false,hidden:'false'}));
  const mobileScenes=await page.locator('.cinematic-progress').isVisible();check('mobile scene controls are omitted',()=>assert.equal(mobileScenes,false));
  await page.locator('#menu-button').click();await page.keyboard.press('Escape');const hidden=await page.locator('#mobile-nav').isHidden();check('mobile menu closes with Escape',()=>assert.equal(hidden,true));
- await page.locator('#language-switch').click();const text=await page.locator('[data-hero-scene="0"] .signature-button').innerText();check('hero action translates',()=>assert.match(text,/Ver nuestras viviendas/));
+ await page.locator('#language-switch').click();const text=await page.locator('[data-hero-scene="0"] a[href="#homes"]').innerText();check('hero action translates',()=>assert.match(text,/Ver nuestras viviendas/));
  await page.reload();const lang=await page.locator('html').getAttribute('lang');check('Spanish preference survives reload',()=>assert.equal(lang,'es'));
  await page.setViewportSize({width:320,height:640});await page.goto(base+'/');await page.locator('.cinematic-mobile-description').waitFor();
  const space=await page.evaluate(()=>({copy:document.querySelector('.cinematic-mobile-description').getBoundingClientRect().bottom,button:document.querySelector('.signature-copy .signature-button').getBoundingClientRect().top}));
