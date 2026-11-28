@@ -176,7 +176,7 @@ body.rental-site:has(.sky-header) .cinematic-hero .signature-shade {
 }
 body.rental-site:has(.sky-header) .cinematic-photo { object-position: 34% 50%; }
 body.rental-site:has(.sky-header) .cinematic-copy .cinematic-actions { gap: 12px; }
-body.rental-site:has(.sky-header) :is(.cinematic-actions .signature-button, .signature-property .property-action, .signature-property + .mobile-actions a) {
+body.rental-site:has(.sky-header) :is(.cinematic-actions .signature-button, .signature-property .property-action, :where(.signature-property + .mobile-actions) a) {
   min-height: 48px;
   padding: 11px 16px;
   border-radius: 12px;
@@ -188,10 +188,10 @@ body.rental-site:has(.sky-header) :is(.cinematic-actions .signature-button, .sig
   transition: background-color 220ms cubic-bezier(.22,.61,.36,1),
     color 220ms ease, border-color 220ms ease;
 }
-body.rental-site:has(.sky-header) :is(.cinematic-actions .ivory, .signature-property .property-action, .signature-property + .mobile-actions a:first-child) { background: #a8ba8b; color: #26321f; }
+body.rental-site:has(.sky-header) :is(.cinematic-actions .ivory, .signature-property .property-action, :where(.signature-property + .mobile-actions) a:first-child) { background: #a8ba8b; color: #26321f; }
 body.rental-site:has(.sky-header) .cinematic-actions .cinematic-secondary { background: #192d22ae; color: #f7f4ed; }
 @media (hover: hover) {
-  body.rental-site:has(.sky-header) :is(.cinematic-actions .ivory, .signature-property .property-action, .signature-property + .mobile-actions a:first-child):hover {
+  body.rental-site:has(.sky-header) :is(.cinematic-actions .ivory, .signature-property .property-action, :where(.signature-property + .mobile-actions) a:first-child):hover {
     background: #465c30;
     border-color: #a8ba8b;
     color: #f7f4ed;
@@ -315,13 +315,13 @@ body.rental-site .signature-property .property-action {
   text-align: center;
   text-decoration: none;
 }
-body.rental-site:has(.sky-header) :is(.signature-property .property-apply, .signature-property + .mobile-actions a:last-child) {
+body.rental-site:has(.sky-header) :is(.signature-property .property-apply, :where(.signature-property + .mobile-actions) a:last-child) {
   background: var(--signature-ivory);
   border-color: #89967c;
   color: var(--signature-green);
 }
 @media (hover: hover) {
-  body.rental-site:has(.sky-header) :is(.signature-property .property-apply, .signature-property + .mobile-actions a:last-child):hover {
+  body.rental-site:has(.sky-header) :is(.signature-property .property-apply, :where(.signature-property + .mobile-actions) a:last-child):hover {
     background: var(--signature-green);
     color: var(--signature-ivory);
   }
@@ -333,7 +333,7 @@ body.rental-site:has(.sky-header) :is(.signature-property .property-apply, .sign
     transform: translateY(calc(-1 * var(--listing-header-height)));
   }
 }
-html.motion-off body.rental-site:has(.sky-header) :is(.signature-property .property-action, .signature-property .listing-dock, .signature-property + .mobile-actions a) { transition: none; }
+html.motion-off body.rental-site:has(.sky-header) :is(.signature-property .property-action, .signature-property .listing-dock, :where(.signature-property + .mobile-actions) a) { transition: none; }
 @media (prefers-reduced-motion: reduce) {
-  body.rental-site:has(.sky-header) :is(.signature-property .property-action, .signature-property .listing-dock, .signature-property + .mobile-actions a) { transition: none; }
+  body.rental-site:has(.sky-header) :is(.signature-property .property-action, .signature-property .listing-dock, :where(.signature-property + .mobile-actions) a) { transition: none; }
 }

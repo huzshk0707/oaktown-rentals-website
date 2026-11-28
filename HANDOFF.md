@@ -1,5 +1,6 @@
 # Phase 4A shared property presentation / FELIX
 
+Preserved original homepage selector precedence on small screens. NEXT STEP: verify final hosted bytes and captures. Heartbeat 2026-11-28T06:42:15Z, expires 2026-11-28T07:12:15Z.
 Mobile fixed action bar now uses the same CTA rules. NEXT STEP: recapture hosted mobile and verify latest runtime. Heartbeat 2026-11-28T06:40:26Z, expires 2026-11-28T07:10:26Z.
 Runtime ready. Heartbeat 2026-11-28T06:39:05Z, expires 2026-11-28T07:09:05Z. NEXT STEP: run six-route checks and record navigation.
 Claimed 2026-11-28T06:34:56Z, expires 2026-11-28T07:04:56Z. Base bc163b2. NEXT STEP: compare homepage and Colonial in Chromium before editing.
