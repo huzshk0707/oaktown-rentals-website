@@ -1,3 +1,8 @@
+# Phase 4B step 1 — Opening and gallery
+
+- [x] Refine the opening and manual fullscreen viewer from approved Phase 4A. [Photo evidence and checks](docs/oaktown-signature/phase4b-opening/README.md).
+- [ ] Owner reviews draft #34 before directing further work.
+
 # Phase 4A — Property consistency
 
 - [x] Audit homepage versus Colonial, align shared property styling and directional header, and verify all six routes. [Draft review evidence](docs/oaktown-signature/phase4a/README.md).

@@ -1,8 +1,6 @@
-# Phase 4B step 1 — FELIX
+# Phase 4B step 1 ready for owner review / FELIX released
 
-Landscape phone capture revealed an inline frame taller than the viewport. Capped its height so enlargement gains usable image area. NEXT STEP: refresh hosted evidence. Heartbeat 2026-11-28T06:59:30Z, expires 2026-11-28T07:29:30Z.
-Runtime and baseline captures ready. Heartbeat 2026-11-28T06:57:08Z, expires 2026-11-28T07:27:08Z. NEXT STEP: verify all six routes and record the hosted viewer.
-Claimed 2026-11-28T06:55:07Z, expires 2026-11-28T07:25:07Z. Base cde58a6. NEXT STEP: capture current opening and inspect the gallery timer.
+Claim released 2026-11-28 07:01 UTC. Draft PR #34 is stacked on #33 at cde58a6. Cloudflare built runtime e95d39f. [Hosted gallery, screenshots, photo verification and regressions](docs/oaktown-signature/phase4b-opening/README.md). NEXT STEP: owner reviews the Colonial opening and fullscreen viewer before further design or integration. All publication holds remain in force.
 
 # Phase 4A ready for owner review / FELIX released
 
