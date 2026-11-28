@@ -1,0 +1,1 @@
+PASS: actual desktop and mobile Lobster Nirvana baseline from PR #34 with all referenced CSS and JS.

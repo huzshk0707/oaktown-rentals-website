@@ -1,3 +1,19 @@
+# Phase 4B step 2 ready for review / Ravi released
+
+- Ravi released the claim at 2026-11-28T07:40:05+00:00. [Draft PR #35](https://github.com/huzshk0707/oaktown-rentals-website/pull/35), `felix/universal-navigation`, stays stacked on #34 at `b483547`. Recovered Felix’s published runtime at `4fd38e9` and claimed continuation at `ffcfc49`. This evidence and test checkpoint follows. The open PR records its exact head.
+- [Feature preview](https://felix-universal-navigation-oaktown.rentals10.workers.dev/) verified with normal TLS. The shared header, vacation local bar and six inherited openings are in Felix’s runtime. Ravi updated only test synchronization and evidence. Public property data, photos and publication holds carry forward.
+- [Route-by-route evidence](docs/oaktown-signature/phase4b-navigation/README.md) includes 28 hosted screenshots, two before captures, a 13.72-second journey, 68 ordered gallery selections, 51 exact asset hashes, three exact served HTML documents, preview isolation and 52 axe scans with zero confirmed violations. Full relevant regressions passed after the test corrections.
+- The independent #32 runtime combined cleanly with the stack in a disposable checkout and passed desktop and mobile smoke tests. HANDOFF and TASKS conflicts would need both entries retained. No drafts were merged. Booking PR #25 stays separate.
+- NEXT STEP: review the [hosted journey and route evidence](docs/oaktown-signature/phase4b-navigation/README.md) on PR #35, then record owner approval or revisions. After separate authorization, integrate #33 → #34 → #35, then #32, and verify the combined preview. Production, live CMS and payments stay separate.
+
+---
+
+# Phase 4B step 2 — FELIX
+
+Cached-page preference sync corrected and property stylesheet ordered for a clean runtime combination with the vacation feature. NEXT STEP: verify the hosted navigation and record screenshots. Heartbeat 2026-11-28T07:19:19Z, expires 2026-11-28T07:49:19Z.
+Shared navigation is implemented on rental, vacation and 404 documents. NEXT STEP: verify hosted links, cross-page preferences and all six openings. Heartbeat 2026-11-28T07:16:56Z, expires 2026-11-28T07:46:56Z.
+Claimed 2026-11-28T07:13:58Z, expires 2026-11-28T07:43:58Z. Base PR #34 at b483547. NEXT STEP: extract the approved header and verify route behavior.
+
 # Phase 4B step 1 ready for owner review / FELIX released
 
 Claim released 2026-11-28 07:01 UTC. Draft PR #34 is stacked on #33 at cde58a6. Cloudflare built runtime e95d39f. [Hosted gallery, screenshots, photo verification and regressions](docs/oaktown-signature/phase4b-opening/README.md). NEXT STEP: owner reviews the Colonial opening and fullscreen viewer before further design or integration. All publication holds remain in force.

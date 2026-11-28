@@ -83,6 +83,8 @@
       }};
     },
     mount(root, {t}) {
+      // A language redraw can remount this page during back-forward cache restoration.
+      try { paused = localStorage.getItem('oaktown-motion') === 'off'; } catch {}
       const events = new AbortController();
       const on = (target, name, fn, options={}) => target?.addEventListener(name, fn, {...options, signal:events.signal});
       const story = root.querySelector('.story');
@@ -247,6 +249,15 @@
         measure();
       }
       on(motionButton,'click',()=>{paused=!paused;try{localStorage.setItem('oaktown-motion',paused?'off':'on');}catch{}motionChanged();});
+      on(window,'pageshow',event => {
+        if (!event.persisted) return;
+        try {
+          const saved = localStorage.getItem('oaktown-motion') === 'off';
+          if (saved !== paused) paused = saved;
+          // The document root can be restored with the previous preference.
+          if (document.documentElement.classList.contains('motion-enabled') !== enabled()) motionChanged();
+        } catch {}
+      });
       on(reduce,'change',motionChanged);on(desktop,'change',motionChanged);on(cinematic,'change',motionChanged);
       on(window,'scroll',()=>{if(scrollY>8)stopOpening();schedule();},{passive:true});
       on(window,'resize',()=>{stopOpening();measure();},{passive:true});

@@ -1,0 +1,12 @@
+{
+  "passed": [
+    "single row, full-width introduction, generous fixed widths and no redundant controls",
+    "edge movement requires pointer intent, stops on leave, and has no timer",
+    "arrows and keyboard navigation stop at collection bounds without looping",
+    "filter resets offset; single result retains width, stays left and hides navigation",
+    "two fitting results keep widths and left alignment; zero results remain usable",
+    "motion toggle and reduced motion stop active edge movement but preserve controls",
+    "manual scroll is preserved and resized fitting results reset safely",
+    "mobile touch swipe, Spanish labels, overflow containment and detail navigation"
+  ]
+}

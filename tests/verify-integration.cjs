@@ -33,21 +33,31 @@ const result = { base, hosted, assets: [], properties: [], accessibility: [], er
       return properties.map(p => ({ slug: p.slug, photos: images[p.imageKey] }));
     });
     assert.deepEqual(Object.fromEntries(records.map(p => [p.slug, p.photos.length])), expected);
+    // Use Chromium's network session for the served-byte checks as well as images.
+    const request = (path, type) => page.evaluate(async ({ path, type }) => {
+      const response = await fetch(path);
+      const result = { status: response.status };
+      if (type === 'json') result.value = await response.json();
+      if (type === 'text') result.value = await response.text();
+      if (type === 'sha256' && response.ok) {
+        const digest = await crypto.subtle.digest('SHA-256', await response.arrayBuffer());
+        result.value = [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('');
+      }
+      return result;
+    }, { path, type });
     const verifyAsset = async path => {
-      const response = await page.request.get(base + path);
-      assert.equal(response.status(), 200, path);
-      const hash = sha256(await response.body());
-      assert.equal(hash, sha256(readFileSync(resolve(__dirname, '..', path.slice(1)))), path);
-      result.assets.push({ path, sha256: hash });
+      const { status, value } = await request(path, 'sha256');
+      assert.equal(status, 200, path);
+      assert.equal(value, sha256(readFileSync(resolve(__dirname, '..', path.slice(1)))), path);
+      result.assets.push({ path, sha256: value });
     };
-    for (const path of ['/data.js', '/app.js', '/property-cards.js', '/collection.js', '/collection.css', '/signature.js', '/signature.css', '/cms-client.js']) await verifyAsset(path);
+    for (const path of ['/data.js', '/app.js', '/property-cards.js', '/collection.js', '/collection.css', '/signature.js', '/signature.css', '/cms-client.js', '/sky-header.js', '/sky-header.css', '/mint-mojo/mint-mojo.js', '/mint-mojo/mint-mojo.css', '/assets/signature/oaktown-wordmark-transparent.png']) await verifyAsset(path);
     if (hosted) {
-      assert.deepEqual(await (await page.request.get(base + '/api/properties')).json(), { mode: 'file' });
-      const robots = await (await page.request.get(base + '/robots.txt')).text();
-      assert.match(robots, /Disallow:\s*\//);
+      assert.deepEqual(await request('/api/properties', 'json'), { status: 200, value: { mode: 'file' } });
+      assert.match((await request('/robots.txt', 'text')).value, /Disallow:\s*\//);
       assert.match(await page.locator('meta[name=robots]').getAttribute('content'), /noindex/);
-      assert.ok([401, 403, 503].includes((await page.request.get(base + '/api/admin/properties')).status()));
-      assert.equal((await page.request.get(base + '/docs/oaktown-signature/phase2d/prototypes/index.html')).status(), 404);
+      assert.ok([401, 403, 503].includes((await request('/api/admin/properties')).status));
+      assert.equal((await request('/docs/oaktown-signature/phase2d/prototypes/index.html')).status, 404);
     }
     for (const { slug, photos } of records) {
       const local = photos.filter(path => path.startsWith('/assets/properties/'));

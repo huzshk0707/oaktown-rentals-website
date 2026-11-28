@@ -2,14 +2,11 @@
 (() => {
   'use strict';
   const main = document.getElementById('mint-main');
-  const languageButton = document.getElementById('mint-language');
-  const menuButton = document.getElementById('mint-menu');
-  const navigation = document.getElementById('mint-nav');
   const asset = name => '../assets/mint-mojo/' + name + '.jpg';
   const arrow = '<svg class="mint-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg>';
   const copy = {
     en: {
-      skip:'Skip to content',navStay:'The stay',navPhotos:'Photos',navIsland:'Island life',askDates:'Ask about dates',allHomes:'Oaktown homes',openMenu:'Open menu',closeMenu:'Close menu',footerLine:'Louisville roots. A little island soul.',preview:'Website preview · Confirm dates and details with Oaktown Rentals.',
+      localNav:'Lobster Nirvana sections',skip:'Skip to content',navStay:'The stay',navPhotos:'Photos',navIsland:'Island life',askDates:'Ask about dates',allHomes:'Oaktown homes',openMenu:'Open menu',closeMenu:'Close menu',footerLine:'Louisville roots. A little island soul.',preview:'Website preview · Confirm dates and details with Oaktown Rentals.',
       motionOn:'Motion on',motionOff:'Motion off',motionLabel:'Enable animations',location:'Florida Keys',heroTitle:'A little more<br><em>island time.</em>',heroCopy:'Your own waterfront hideaway. A pool, a palm-shaded tiki hut, and nowhere you need to rush.',exploreHouse:'Explore the house',sceneHouse:'The house',scenePool:'The pool',sceneWater:'The waterfront',photoScene:'Opening photo',
       beds:'bedrooms',baths:'full bathrooms',dock:'feet of dock',privatePool:'pool to unwind in',introLabel:'WELCOME TO LOBSTER NIRVANA',introTitle:'Slow mornings.<br><em>Saltwater afternoons.</em>',introCopy:'Leave a little room in your plans. For coffee on the screened porch. A swim before lunch. One more evening under the tiki hut.',introDetails:'Set on a double fenced lot along a Florida Keys canal, this three-bedroom, two-bath home brings everyone together, with plenty of space to find a quiet corner.',viewPhotos:'Take a look around',roundNote:'A slower<br>kind of day',aerialCaption:'Your corner of the Florida Keys',galleryLabel:'MAKE YOURSELF AT HOME',galleryTitle:'A closer <em>look.</em>',allPhotos:'View all photos',openPhoto:'Open photo',
       experienceLabel:'THE GOOD KIND OF EVERYDAY',experienceTitle:'Make room for<br><em>the little things.</em>',experienceCopy:'The best part of a Keys stay might be the time you spend right here.',poolTitle:'A dip. Then another.',poolCopy:'An easy afternoon by the pool, with palms overhead and your next swim a few steps away.',tikiTitle:'Stay for one more story.',tikiCopy:'Pull up a chair under the tiki hut. Let lunch turn into a long, unhurried evening.',dockTitle:'Life at the water’s edge.',dockCopy:'A 150-foot canal-side dock, with a step-down and ladder for time spent close to the water.',amenities:['Screened porch','Grill','Kayaks','Bicycles','Pickleball court','Fish-cleaning station','Freezer & ice maker','Boat tie-up'],
@@ -19,7 +16,7 @@
       closeGallery:'Close gallery',previousPhoto:'Previous photo',nextPhoto:'Next photo',photoError:'This photo could not load. Try the next photo or contact Oaktown Rentals.',photosOf:'of',galleryName:'Lobster Nirvana photo gallery'
     },
     es: {
-      skip:'Saltar al contenido',navStay:'La estancia',navPhotos:'Fotos',navIsland:'Vida isleña',askDates:'Consultar fechas',allHomes:'Viviendas de Oaktown',openMenu:'Abrir menú',closeMenu:'Cerrar menú',footerLine:'Raíces en Louisville. Espíritu isleño.',preview:'Vista previa del sitio · Confirma fechas y detalles con Oaktown Rentals.',
+      localNav:'Secciones de Lobster Nirvana',skip:'Saltar al contenido',navStay:'La estancia',navPhotos:'Fotos',navIsland:'Vida isleña',askDates:'Consultar fechas',allHomes:'Viviendas de Oaktown',openMenu:'Abrir menú',closeMenu:'Cerrar menú',footerLine:'Raíces en Louisville. Espíritu isleño.',preview:'Vista previa del sitio · Confirma fechas y detalles con Oaktown Rentals.',
       motionOn:'Animación sí',motionOff:'Animación no',motionLabel:'Activar animaciones',location:'Cayos de Florida',heroTitle:'Un poco más de<br><em>tiempo isleño.</em>',heroCopy:'Tu refugio junto al agua. Una piscina, una palapa entre palmeras y tiempo para disfrutar sin prisas.',exploreHouse:'Descubrir la casa',sceneHouse:'La casa',scenePool:'La piscina',sceneWater:'El canal',photoScene:'Foto de portada',
       beds:'habitaciones',baths:'baños completos',dock:'pies de muelle',privatePool:'piscina para relajarte',introLabel:'BIENVENIDOS A LOBSTER NIRVANA',introTitle:'Mañanas tranquilas.<br><em>Tardes junto al mar.</em>',introCopy:'Deja espacio en tus planes. Para un café en el porche con mosquiteros. Un baño antes de comer. Una tarde más bajo la palapa.',introDetails:'En un terreno doble cercado junto a un canal de los Cayos de Florida, esta casa de tres habitaciones y dos baños ofrece espacios para reunirse y rincones para descansar.',viewPhotos:'Echa un vistazo',roundNote:'Un día<br>sin prisas',aerialCaption:'Tu rincón de los Cayos de Florida',galleryLabel:'SIÉNTETE COMO EN CASA',galleryTitle:'Mira <em>de cerca.</em>',allPhotos:'Ver todas las fotos',openPhoto:'Ampliar foto',
       experienceLabel:'PLACERES DE CADA DÍA',experienceTitle:'Disfruta de<br><em>las pequeñas cosas.</em>',experienceCopy:'Puede que lo mejor de tu viaje a los Cayos sea el tiempo que pases aquí.',poolTitle:'Un baño. Y luego otro.',poolCopy:'Una tarde tranquila junto a la piscina, con palmeras a tu alrededor y el agua a pocos pasos.',tikiTitle:'Quédate un rato más.',tikiCopy:'Siéntate bajo la palapa. Deja que la comida se convierta en una larga tarde de conversación.',dockTitle:'La vida junto al agua.',dockCopy:'Un muelle de 150 pies junto al canal, con una plataforma más baja y escalera para disfrutar del agua.',amenities:['Porche con mosquiteros','Parrilla','Kayaks','Bicicletas','Cancha de pickleball','Estación de limpieza de pescado','Congelador y máquina de hielo','Amarre para barco'],
@@ -51,19 +48,12 @@
     ['pool-at-night','The pool after dark','La piscina de noche',1440,1080]
   ];
   let language = 'en';
-  try { if (localStorage.getItem('oaktown-language') === 'es') language = 'es'; } catch {}
   let galleryPlayback;
   let photoIndex = 0, sceneIndex = 0, cleanupEffects = () => {}, inquiryObserver;
   const c = key => copy[language][key];
   const caption = p => p[language === 'es' ? 2 : 1];
   const escape = str => String(str).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const image = (name, alt, width, height, extra = '') => `<img src="${asset(name)}" alt="${escape(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async" ${extra}>`;
-  function closeMenu(returnFocus = false) {
-    navigation.hidden = true;
-    menuButton.setAttribute('aria-expanded','false');
-    menuButton.setAttribute('aria-label',c('openMenu'));
-    if (returnFocus) menuButton.focus();
-  }
   function render() {
     const arrival = main.querySelector('[name=arrival]')?.value || '';
     const departure = main.querySelector('[name=departure]')?.value || '';
@@ -77,8 +67,6 @@
     document.documentElement.lang = language;
     document.querySelectorAll('[data-copy]').forEach(el => el.textContent = c(el.dataset.copy));
     document.querySelectorAll('[data-copy-aria]').forEach(el => el.setAttribute('aria-label',c(el.dataset.copyAria)));
-    languageButton.textContent = language === 'en' ? 'ES' : 'EN';
-    languageButton.setAttribute('aria-label',language === 'en' ? 'Cambiar a español' : 'Switch to English');
     document.title = 'Lobster Nirvana — Florida Keys · Oaktown Rentals';
     main.innerHTML = `
       <section class="mint-hero" id="stay" aria-labelledby="mint-title">
@@ -109,7 +97,6 @@
     },{threshold:.05});
     inquiryObserver.observe(document.getElementById('inquire'));
     inquiryObserver.observe(document.getElementById('stay'));
-    closeMenu();
     if (oldId) {
       const nextSection = document.getElementById(oldId);
       scrollTo({top:nextSection ? scrollY + nextSection.getBoundingClientRect().top - oldTop : oldScroll,behavior:'instant'});
@@ -188,25 +175,15 @@
     touchStart=null;
     if (Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5) showPhoto(photoIndex+(dx>0?-1:1));
   },{passive:true});
-  languageButton.addEventListener('click',() => {
-    language = language==='en'?'es':'en';
-    try { localStorage.setItem('oaktown-language',language); } catch {}
-    render();
-  });
-  menuButton.addEventListener('click',() => {
-    const opening = navigation.hidden;
-    navigation.hidden = !opening;
-    menuButton.setAttribute('aria-expanded',String(opening));
-    menuButton.setAttribute('aria-label',c(opening?'closeMenu':'openMenu'));
-  });
-  navigation.addEventListener('click',event => {if(event.target.closest('a'))closeMenu();});
   document.addEventListener('keydown',event => {
-    if (event.key==='Escape'&&!navigation.hidden) closeMenu(true);
     if (main.querySelector('dialog[open]')&&['ArrowLeft','ArrowRight'].includes(event.key)) {
       event.preventDefault(); showPhoto(photoIndex+(event.key==='ArrowLeft'?-1:1));
     }
   });
-  render();
+  window.OaktownSkyHeader.standalone(main, saved => {
+    language = saved;
+    render();
+  });
   // Content is rendered before following a deep link to a section.
   if (location.hash) requestAnimationFrame(() => {
     const id = location.hash.slice(1);
