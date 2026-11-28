@@ -183,7 +183,18 @@
     </section>
     <section class="signature-story" id="about" aria-labelledby="about-title"><img class="signature-panorama" src="/assets/louisville/louisville-bridge-skyline.webp" width="2400" height="1348" alt="${t('cityPhotoAlt')}" loading="lazy" decoding="async"><div class="panorama-shade" aria-hidden="true"></div><div class="panorama-copy reveal"><span class="eyebrow">${t('navStory')}</span><h2 id="about-title">${t('aboutHeading')}</h2><p>${t('storyCopy')}</p><details class="story-more"><summary>${t('storyMore')} <span aria-hidden="true">+</span></summary><p>${t('aboutText')}</p><a class="text-link" href="#contact">${t('aboutLink')} ${arrow}</a></details></div></section>
     <section class="signature-journey" aria-labelledby="journey-title"><div class="reveal"><span class="eyebrow">${t('journeyLabel')}</span><h2 id="journey-title">${t('journeyTitle')}</h2></div><ol>${[1,2,3].map(i=>`<li class="reveal"><span class="journey-number" aria-hidden="true">0${i}</span><div><h3>${t('journey'+i)}</h3><p>${t('journey'+i+'Copy')}</p></div></li>`).join('')}</ol></section>
-    <aside class="signature-vacation" id="cudejoe" aria-labelledby="vacation-title"><img class="signature-panorama" src="/assets/mint-mojo/house-pool.jpg" width="1440" height="960" alt="${t('floridaAlt')}" loading="lazy" decoding="async"><div class="panorama-shade" aria-hidden="true"></div><div class="panorama-copy reveal"><span class="eyebrow">${t('vacationKicker')}</span><h2 id="vacation-title">Lobster Nirvana</h2><span class="vacation-place">${language==='es'?'Cayos de Florida':'Florida Keys'}</span><p>${t('vacationCopy')}</p><a class="signature-button ivory" href="/mint-mojo/">${t('floridaLink')}${arrow}</a></div></aside>`;
+    <aside class="signature-vacation" id="cudejoe" aria-labelledby="vacation-title">
+      <div class="vacation-layout">
+        <div class="vacation-copy">
+          <span class="eyebrow">${t('vacationKicker')}</span>
+          <h2 id="vacation-title">Lobster Nirvana</h2>
+          <span class="vacation-place">${language==='es'?'Cayos de Florida':'Florida Keys'}</span>
+          <p>${t('vacationCopy')}</p>
+          <a class="signature-button" href="/mint-mojo/">${t('floridaLink')}${arrow}</a>
+        </div>
+        <div class="vacation-frame"><img src="/assets/mint-mojo/house-pool.jpg" width="1440" height="959" alt="${t('floridaAlt')}" loading="lazy" decoding="async"></div>
+      </div>
+    </aside>`;
   }
   function detailPage(p, startPhoto=0) {
     const image = photo(p,startPhoto);

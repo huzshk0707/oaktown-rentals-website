@@ -26,6 +26,18 @@ Claim released 2026-11-28 07:01 UTC. Draft PR #34 is stacked on #33 at cde58a6. 
 
 FELIX released the feature claim at 2026-11-28 06:43 UTC. Draft PR #33 targets integration at shared base bc163b2. Audit 2f7f9fb, verified runtime a365581. [Hosted comparisons, recording and regression evidence](docs/oaktown-signature/phase4a/README.md). NEXT STEP: owner reviews Colonial Drive in the feature preview and provides Phase 4B direction separately. PR #32 remains a separate draft. Existing holds continue.
 
+# Vacation feature ready for owner review
+
+FELIX released the feature claim at 2026-11-28 06:24 UTC. Draft PR #32 targets integration from verified shared base `bc163b2`. Runtime `ac5b24e` passed eight regression commands, responsive and motion checks, and hosted verification. [Captures and results](docs/oaktown-signature/vacation-feature/README.md). NEXT STEP: owner reviews the desktop and mobile comparisons in draft #32 before any integration.
+
+# Vacation feature implemented / FELIX
+
+Draft PR #32. Heartbeat 06:22 UTC, expires 06:52 UTC. Reviewed all 19 gallery originals and retained the high-resolution house and pool exterior. Desktop and mobile captures confirm the ivory layout and footer boundary. NEXT STEP: run browser regressions and verify hosted feature bytes.
+
+# Homepage Lobster Nirvana refinement
+
+FELIX owns `felix/vacation-feature` from shared `bc163b2`. Heartbeat 2026-11-28 06:20 UTC, expires 06:50 UTC. Scope is the homepage vacation promotion. NEXT STEP: review genuine property photography and capture the baseline before editing the section.
+
 # Phase 3 integrated, homepage design locked / FELIX released
 
 - FELIX released the integration claim at 2026-11-28T06:10:21+00:00. `integration/oaktown-signature` remains draft PR #29 targeting `main`. Owner-approved #31 `1b751450e86ae1759647fc2c862acdb71d73f7e0` merged at `495e284f089135ee42be16dd468648b45c970ca5` from verified shared tip `4f5c3ea`. This evidence checkpoint follows the merge. Read PR #29 for the exact latest head.
