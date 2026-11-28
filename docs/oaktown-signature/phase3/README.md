@@ -1,5 +1,7 @@
 # Phase 3 — Homepage Completion
 
+This records the layout review before the owner selected Option A. See the [final refinement](final/README.md) for current captures, verification and the deployed photo.
+
 Review prepared 28 November 2026. [Draft PR #31](https://github.com/huzshk0707/oaktown-rentals-website/pull/31) · [Feature preview](https://felix-homepage-completion-oaktown.rentals10.workers.dev/)
 
 Felix started from verified shared checkpoint `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Approved Phase 2E PR #30 checkpoint `f5a2476` is an ancestor via merge `48a32cd`. Shared PR #29 remains draft. Phase 3 runtime checkpoint `d3216c94d6e02342ee252e592ad5bcc9186ea165` is deployed on the feature preview.

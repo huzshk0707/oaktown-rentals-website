@@ -1,0 +1,83 @@
+[
+  {
+    "name": "syntax",
+    "command": [
+      "npm",
+      "run",
+      "check"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "unit",
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "sky-header",
+    "command": [
+      "node",
+      "tests/sky-header.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "browser",
+    "command": [
+      "node",
+      "tests/browser.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "design",
+    "command": [
+      "node",
+      "tests/design.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "signature",
+    "command": [
+      "node",
+      "tests/signature.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "motion",
+    "command": [
+      "node",
+      "tests/motion.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "audit",
+    "command": [
+      "node",
+      "tests/audit.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "collection",
+    "command": [
+      "node",
+      "tests/collection.cjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "name": "refinement",
+    "command": [
+      "node",
+      "tests/refinement.cjs"
+    ],
+    "exitCode": 0
+  }
+]

@@ -1,9 +1,10 @@
-# Phase 3 final refinement / FELIX active
+# Phase 3 final refinement ready for review / FELIX
 
-- Owner FELIX. UTC heartbeat 2026-11-28T03:38:36+00:00. Claim expires 2026-11-28T04:08:36+00:00.
-- Draft PR #31 on `felix/homepage-completion`, based on `integration/oaktown-signature` at `4f5c3ea`. Owner assigned this refinement from `ac1a88a`. Ownership checkpoint `4f01f7a`.
-- Option A is the exact approved Pexels review file. The old photo and credit left the homepage in the same template change. The lighter base overlay and desktop shade retained under the copy passed contrast across eight widths, both languages and both disclosure states. Ten local regression commands passed.
-- NEXT STEP: finish the final evidence index, verify the updated Cloudflare feature branch preview and release to owner review. Ravi handles integration after separate authorization. Keep both PRs draft.
+- FELIX released the claim at 2026-11-28T03:40:52+00:00. Draft PR #31 on `felix/homepage-completion` targets `integration/oaktown-signature` at `4f5c3ea`. Owner assigned the refinement from `ac1a88a`. Both PRs stay draft.
+- Runtime `433c47d937e616571e94f9a0712d295461953c54` is deployed on the [feature preview](https://felix-homepage-completion-oaktown.rentals10.workers.dev/). This evidence and handoff checkpoint follows it. Use the PR head for the exact final SHA.
+- Homepage uses owner-approved Option A with the exact review bytes and source license documented. The prior on-page photo and credit were replaced together. The overall overlay is lighter and the desktop copy has local shade for both disclosure states. Opening, collection, color-scheme correction, journey, Lobster Nirvana and footer are preserved.
+- [Final captures and verification](docs/oaktown-signature/phase3/final/README.md): ten regression commands, 12 axe scans with zero confirmed violations and 32 contrast cases passed. Phone light/default dark/automatic darkening samples remained ivory. Hosted desktop EN and mobile ES passed, with 50 served hashes and preview isolation confirmed.
+- NEXT STEP: owner reviews the final feature preview and the final desktop/mobile captures in `docs/oaktown-signature/phase3/final/README.md`. Ravi handles integration into draft #29 only after owner authorization. All production, CMS and booking holds remain in place.
 
 ---
 

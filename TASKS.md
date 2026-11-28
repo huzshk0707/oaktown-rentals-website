@@ -5,7 +5,9 @@
 - [x] Reproduce Chromium automatic darkening and preserve the light palette. Record the actual phone and Safari limitations.
 - [x] Prepare three original Louisville photo options with commercial-use, no mandatory attribution, source records and desktop/mobile captures.
 - [x] Pass relevant regressions and verify the hosted feature preview. Save [before and after, walkthrough, licenses and exact test results](docs/oaktown-signature/phase3/README.md).
-- [ ] Owner reviews the Phase 3 layout and chooses A, B or C in the [photo comparison](docs/oaktown-signature/phase3/PHOTOGRAPHY.md). Current credited photograph stays until selection is approved. Keep #31 and #29 draft.
+- [x] Owner approved the Phase 3 layout and selected Option A. Promote the exact approved photo, remove the previous photo and credit together, and verify the lighter Louisville overlay.
+- [x] Save [final desktop/mobile captures, contrast measurements, regressions and hosted verification](docs/oaktown-signature/phase3/final/README.md).
+- [ ] Owner reviews final draft #31. Ravi integrates into draft #29 after separate authorization.
 
 # Phase 2E — Seamless Sky Header
 
