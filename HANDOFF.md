@@ -1,3 +1,12 @@
+# Phase 3 — Homepage Completion / FELIX
+
+- Owner FELIX. UTC heartbeat 2026-11-28T03:12:02+00:00. Claim expires 2026-11-28T03:42:02+00:00.
+- Branch `felix/homepage-completion`, target `integration/oaktown-signature` at `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Approved Phase 2E PR #30 tip `f5a2476` is an ancestor via `48a32cd`. Combined PR #29 remains draft.
+- Scope: standalone full-viewport Louisville story with the existing credited image, rental journey, compact vacation feature, mobile color investigation and three separate historic or contemporary real-photo options with verified usage rights. Preserve accepted opening, inventory, galleries, footer and publication holds.
+- NEXT STEP: capture exact integration baseline, verify candidate Louisville source licenses, then implement only the approved section layout and investigate mobile colors.
+
+---
+
 # Phase 2E integrated · Felix Phase 3 handoff
 
 - Ravi released the Phase 2E integration claim at 2026-11-28T03:10:50+00:00. Felix owns Phase 3 — Homepage Completion, beginning on an isolated feature branch. Ravi remains shared integration coordinator.
