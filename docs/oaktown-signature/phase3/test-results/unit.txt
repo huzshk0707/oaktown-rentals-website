@@ -1,0 +1,28 @@
+
+> test
+> node --test tests/cms.test.mjs tests/property-cards.test.mjs tests/property-expansion.test.mjs
+
+✔ Access requires a signed, unexpired app token for the right issuer, audience and approved account (77.692228ms)
+✔ draft/save/publish/archive lifecycle, stale writes, duplicate URLs, CSRF, audit trail and private photos (26.168395ms)
+✔ empty database is authoritative and file fallback is explicit only when unconfigured (3.592294ms)
+✔ money never invents a zero or emits NaN for missing/invalid data (29.246309ms)
+✔ only explicit supported availability yields a badge label (0.411705ms)
+✔ image resizing never rewrites private media or lookalike hosts (0.469814ms)
+✔ reusable renderer retains unit identity, CMS escaping, explicit total and language switches (1.183002ms)
+✔ only present structured specifications are displayed; empty gallery is safe (1.914468ms)
+✔ six unique catalogue records and verified new facts (2.710631ms)
+✔ en card and detail output handles unconfirmed terms and photo absence (3.845825ms)
+✔ es card and detail output handles unconfirmed terms and photo absence (2.026553ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 282.250835
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice

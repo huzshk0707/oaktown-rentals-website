@@ -1,10 +1,12 @@
-# Phase 3 — Homepage Completion / FELIX active
+# Phase 3 — Homepage Completion ready for review / FELIX
 
-- Owner FELIX. UTC heartbeat 2026-11-28T03:19:06+00:00. Claim expires 2026-11-28T03:49:06+00:00.
-- Branch `felix/homepage-completion`, draft PR #31, base `integration/oaktown-signature` at `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Phase 2E approval `f5a2476` is integrated via `48a32cd`. Ownership checkpoint `269aaf4`.
-- The Louisville story fills the desktop viewport and retains the credited King of Hearts photograph. Rental Journey follows Louisville and separates the compact vacation feature. Automatic darkening reproduced the brown render in Chromium, and `color-scheme: only light` restores the intended colors. Header, hero, cards, footer, inventory and publication holds carry forward.
-- Three authentic Pexels review candidates have provenance under `docs/oaktown-signature/phase3/review/`. Review images remain outside the public allowlist and the owner still chooses the replacement.
-- NEXT STEP: finish final browser captures and scroll video, rerun affected regressions, confirm the feature preview, then update roadmap/tasks and release to owner review. Local syntax and 11 unit/CMS checks passed. The capture script's initial video attempt used an incomplete wheel argument and is being rerun with both axes.
+- FELIX completed the implementation and released the claim at 2026-11-28T03:23:36+00:00. Branch `felix/homepage-completion`, draft PR #31 targeting `integration/oaktown-signature` at `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Approved Phase 2E `f5a2476` merged via `48a32cd`. #29 stays draft.
+- Pushed and deployed runtime `d3216c94d6e02342ee252e592ad5bcc9186ea165`. The final evidence checkpoint follows it. Use PR #31 for its exact head. [Feature preview](https://felix-homepage-completion-oaktown.rentals10.workers.dev/).
+- Implemented the approved order. Louisville has a full desktop panorama and natural mobile layout with the approved story copy, disclosure and credited King of Hearts photo. Rental Journey separates it from the compact Lobster Nirvana feature. The opening, cards, footer and six-property catalogue are preserved.
+- Chromium auto-darkening reproduced brown webpage pixels. Rental-only `color-scheme: only light` restored the accepted palette with champagne price panels. Native Safari and the owner's specific phone remain unverified.
+- [Phase 3 evidence](docs/oaktown-signature/phase3/README.md) includes actual full before/after EN/ES, mobile and reduced-motion captures, two section transitions, a 7.48-second decoded video and three licensed Louisville photo proposals. Candidates are excluded from served assets.
+- 17 regression commands passed, including 11 unit/CMS tests and 27 header checks. Six routes and 68 real selections passed, with 38 imported hashes and 36 axe scans across catalogue and sections. Shared/feature HTTP 200, root HTML and 49 served hashes matched, and preview isolation passed. No unfinished runtime files.
+- NEXT STEP: owner opens the preview and compares A, B and C in `docs/oaktown-signature/phase3/PHOTOGRAPHY.md`, then approves the layout and photo or specifies revisions. The current image retains its attribution until an approved replacement is implemented. Keep both PRs draft and preserve all property, media, Afterglow, CMS and booking holds.
 
 ---
 
