@@ -1,3 +1,11 @@
+# Phase 3 integration and homepage design lock / FELIX
+
+- FELIX owns this integration under the current owner authorization. UTC heartbeat 2026-11-28T06:05:34+00:00. Claim expires 2026-11-28T06:35:34+00:00.
+- Shared branch `integration/oaktown-signature`, draft PR #29 targeting `main`. Verified prior shared tip `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Owner-approved PR #31 tip `1b751450e86ae1759647fc2c862acdb71d73f7e0`.
+- NEXT STEP: merge the approved PR #31 checkpoint, keep the Phase 2E opening and the six-property file catalogue intact, then run the integration and hosted preview checks. Major homepage design is approved. Colonial Drive detail redesign awaits the owner's design instructions.
+
+---
+
 # Phase 2E integrated · Felix Phase 3 handoff
 
 - Ravi released the Phase 2E integration claim at 2026-11-28T03:10:50+00:00. Felix owns Phase 3 — Homepage Completion, beginning on an isolated feature branch. Ravi remains shared integration coordinator.
