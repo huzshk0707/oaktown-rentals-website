@@ -1,0 +1,3 @@
+PASS: 1440 en reduced-motion panel, palette, map-free filter, original restore
+PASS: 390 en reduced-motion panel, palette, map-free filter, original restore
+PASS: 390 es reduced-motion panel, palette, map-free filter, original restore

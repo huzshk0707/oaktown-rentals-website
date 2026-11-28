@@ -1,0 +1,1 @@
+PASS: 14 routes × 2 viewports, shared header metrics, six property openings, cross-document history and preferences, navigation journey, mobile menu.

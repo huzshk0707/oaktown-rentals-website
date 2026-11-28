@@ -1,7 +1,10 @@
-# Phase 4B step 2 — Ravi takeover
+# Phase 4B step 2 ready for review / Ravi released
 
-- Ravi took over at 2026-11-28T07:32:36+00:00 at the owner's request. Claim expires 2026-11-28T08:02:36+00:00. Existing draft PR #35, branch `felix/universal-navigation`, stacked on PR #34 at `b483547`. Preserved Felix's published runtime and testing work at `4fd38e9`. No unpushed Step 2 checkout was available here.
-- NEXT STEP: rerun the cross-page journey and all six property openings, verify and capture the hosted build where reachable, and check PR #32 compatibility without merging other drafts.
+- Ravi released the claim at 2026-11-28T07:40:05+00:00. [Draft PR #35](https://github.com/huzshk0707/oaktown-rentals-website/pull/35), `felix/universal-navigation`, stays stacked on #34 at `b483547`. Recovered Felix’s published runtime at `4fd38e9` and claimed continuation at `ffcfc49`. This evidence and test checkpoint follows. The open PR records its exact head.
+- [Feature preview](https://felix-universal-navigation-oaktown.rentals10.workers.dev/) verified with normal TLS. The shared header, vacation local bar and six inherited openings are in Felix’s runtime. Ravi updated only test synchronization and evidence. Public property data, photos and publication holds carry forward.
+- [Route-by-route evidence](docs/oaktown-signature/phase4b-navigation/README.md) includes 28 hosted screenshots, two before captures, a 13.72-second journey, 68 ordered gallery selections, 51 exact asset hashes, three exact served HTML documents, preview isolation and 52 axe scans with zero confirmed violations. Full relevant regressions passed after the test corrections.
+- The independent #32 runtime combined cleanly with the stack in a disposable checkout and passed desktop and mobile smoke tests. HANDOFF and TASKS conflicts would need both entries retained. No drafts were merged. Booking PR #25 stays separate.
+- NEXT STEP: review the [hosted journey and route evidence](docs/oaktown-signature/phase4b-navigation/README.md) on PR #35, then record owner approval or revisions. After separate authorization, integrate #33 → #34 → #35, then #32, and verify the combined preview. Production, live CMS and payments stay separate.
 
 ---
 

@@ -61,6 +61,24 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
             assert.equal(await page.locator('.details-bar a').getAttribute('href'), application);
             assert.equal(await page.locator('.detail-cover').evaluate(el => getComputedStyle(el).borderRadius), '16px');
             await page.locator(target).evaluate(el => el.decode());
+            if (name === '115-colonial-drive') {
+              await page.locator('[data-cover-gallery]').click();
+              const viewer = page.locator('dialog.lightbox[open]');
+              const image = viewer.locator('img');
+              await viewer.waitFor();
+              await image.evaluate(el => el.decode());
+              assert.ok(await image.evaluate(el => el.naturalWidth > el.naturalHeight));
+              assert.equal(await image.evaluate(el => getComputedStyle(el).objectFit), 'contain');
+              assert.equal(await viewer.locator('.gallery-count').innerText(), '01 / 19');
+              assert.equal(await viewer.locator('[data-playback], .gallery-thumbs, .photo-track').count(), 0);
+              await viewer.locator('[data-gallery-step="1"]').click();
+              await image.evaluate(el => el.decode());
+              assert.ok(await image.evaluate(el => el.naturalWidth < el.naturalHeight));
+              assert.equal(await viewer.locator('.gallery-count').innerText(), '02 / 19');
+              await viewer.locator('[data-gallery-step="-1"]').click();
+              await viewer.locator('[data-close-gallery]').click();
+              assert.equal(await page.locator('[data-gallery-index="0"]').getAttribute('aria-pressed'), 'true');
+            }
           } else {
             assert.equal(await page.locator('.details-bar a, #gallery').count(), 0);
             assert.equal(await header.locator('[data-application-link]').isVisible(), false);
@@ -115,7 +133,7 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
     await vacation.focus();
     const previousY = await page.evaluate(() => scrollY);
     await vacation.press('Enter');
-    await page.waitForURL('**/mint-mojo/');
+    await page.waitForURL('**/mint-mojo/', { waitUntil: 'commit' });
     await page.locator('.mint-section-nav').waitFor();
     await settle();
 
@@ -128,15 +146,16 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
     await page.locator('#language-switch').click();
     await page.locator('#motion-toggle').click();
     await page.waitForFunction(() => document.querySelector('#motion-toggle').getAttribute('aria-pressed') === 'false');
-    await page.goBack();
-    await page.waitForURL('**/#home/4005-smallboat-ct');
+    await page.goBack({ waitUntil: 'commit' });
+    await page.waitForURL('**/#home/4005-smallboat-ct', { waitUntil: 'commit' });
     await selected.waitFor();
     assert.equal(await selected.getAttribute('aria-pressed'), 'true');
     await page.waitForFunction(expected => Math.abs(scrollY - expected) <= 64, previousY);
     assert.equal(await page.locator('html').getAttribute('lang'), 'es');
     assert.equal(await page.locator('#motion-toggle').getAttribute('aria-pressed'), 'false');
-    await page.goForward();
-    await page.waitForURL('**/mint-mojo/');
+    // A restored document may already have completed its original load event.
+    await page.goForward({ waitUntil: 'commit' });
+    await page.waitForURL('**/mint-mojo/', { waitUntil: 'commit' });
     await page.locator('.mint-section-nav').waitFor();
     assert.equal(await page.locator('html').getAttribute('lang'), 'es');
     assert.equal(await page.locator('#motion-toggle').getAttribute('aria-pressed'), 'false');
@@ -149,17 +168,17 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
       await summary.focus();
       await summary.press('Enter');
       await group.locator('a[href$="#' + hash + '"]').click();
-      await page.waitForURL('**/#' + hash);
+      await page.waitForURL('**/#' + hash, { waitUntil: 'commit' });
       await page.locator(target).waitFor();
       await settle();
     }
     for (const hash of ['community', 'faq']) {
-      await page.goBack();
-      await page.waitForURL('**/#' + hash);
+      await page.goBack({ waitUntil: 'commit' });
+      await page.waitForURL('**/#' + hash, { waitUntil: 'commit' });
       await page.locator('#' + hash).waitFor();
     }
-    await page.goBack();
-    await page.waitForURL('**/mint-mojo/');
+    await page.goBack({ waitUntil: 'commit' });
+    await page.waitForURL('**/mint-mojo/', { waitUntil: 'commit' });
     await page.locator('.mint-section-nav').waitFor();
     await settle();
     const video = page.video();

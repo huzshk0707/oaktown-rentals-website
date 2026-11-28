@@ -1,0 +1,3 @@
+index.html matches served /
+mint-mojo/index.html matches served /mint-mojo/
+404.html matches served /404.html

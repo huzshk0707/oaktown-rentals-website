@@ -1,0 +1,146 @@
+{
+  "404": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "home": {
+    "desktop": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    }
+  },
+  "homes": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "story": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "faq": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "community": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "contact": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "lobster-nirvana": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "115-colonial-drive": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "4005-smallboat-ct": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "1106-cherokee-rd-unit-8": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "1824-w-madison": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "208-sloemer-ave": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  },
+  "8008-troutwood-ct": {
+    "desktop": {
+      "violations": [],
+      "incomplete": []
+    },
+    "mobile": {
+      "violations": [],
+      "incomplete": []
+    }
+  }
+}

@@ -1,3 +1,11 @@
+# Phase 4B step 2 — Universal public navigation
+
+- [x] Resume Felix’s published Step 2 runtime at `4fd38e9` on [draft PR #35](https://github.com/huzshk0707/oaktown-rentals-website/pull/35), stacked on #34.
+- [x] Verify shared navigation, all six property openings, Back/Forward preferences and 68 ordered photo selections in local and hosted Chromium.
+- [x] Record all 14 desktop and mobile routes, before/after vacation navigation, the journey video, regression results and hosted isolation. [Step 2 review](docs/oaktown-signature/phase4b-navigation/README.md).
+- [x] Smoke-test the independent #32 feature alongside the property stack in a disposable tree.
+- [ ] Review Step 2 evidence and obtain explicit authorization before integrating drafts #33, #34, #35 and #32. Existing photo holds stay active.
+
 # Phase 4B step 1 — Opening and gallery
 
 - [x] Refine the opening and manual fullscreen viewer from approved Phase 4A. [Photo evidence and checks](docs/oaktown-signature/phase4b-opening/README.md).

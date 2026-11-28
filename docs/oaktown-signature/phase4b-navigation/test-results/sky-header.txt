@@ -1,0 +1,32 @@
+{
+  "passed": [
+    "Full bleed, transparent opening, authentic mark, four desktop destinations and quiet utilities",
+    "Opening actions, discovery guidance and scroll destination",
+    "Paired 12px hero actions change fill and text on hover with no movement",
+    "Full six-property list independent of filters",
+    "Left-origin underline and gap-free hover transfer to menu",
+    "Stagger is 30ms per item, with immediate keyboard focus and inert closing links",
+    "Native disclosure labels, Tab, Shift+Tab, Space, Enter, Escape and outside dismissal",
+    "Verified vacation, story and resource destinations",
+    "Forward and reverse three-scene camera, transparent header and inert off-scene actions",
+    "Exact contact-only route, ivory detail header, current property and Back",
+    "Ivory post-hero state, down/up threshold and protection for open/focused navigation",
+    "1920×1080 en header, fit, actions and navigation",
+    "1920×1080 es header, fit, actions and navigation",
+    "1440×900 en header, fit, actions and navigation",
+    "1440×900 es header, fit, actions and navigation",
+    "1366×520 en header, fit, actions and navigation",
+    "1366×520 es header, fit, actions and navigation",
+    "768×900 en header, fit, actions and navigation",
+    "768×900 es header, fit, actions and navigation",
+    "390×844 en header, fit, actions and navigation",
+    "390×844 es header, fit, actions and navigation",
+    "320×640 en header, fit, actions and navigation",
+    "320×640 es header, fit, actions and navigation",
+    "Reduced-motion opening and persistent ivory header",
+    "published subset stays authoritative in the property disclosure",
+    "empty database stays authoritative in the property disclosure",
+    "database unavailable stays authoritative in the property disclosure"
+  ],
+  "failures": []
+}
