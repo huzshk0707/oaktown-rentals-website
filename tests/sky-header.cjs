@@ -158,7 +158,7 @@ const application = 'https://oaktownrentalsapplication.fillout.com/95';
     await page.waitForURL('**/#home/8008-troutwood-ct');
     await page.waitForFunction(() => document.querySelector('h1')?.textContent === '8008 Troutwood Ct');
     assert.equal(await header.getAttribute('data-surface'),'ivory');
-    assert.equal(await page.locator('.detail-actions a[href^="sms:"]').count(), 1);
+    assert.equal(await page.locator('.listing-availability a[href^="sms:"]').count(), 1);
     assert.equal(await page.locator('.detail-actions a[href^="https:"]').count(), 0);
     assert.equal(await links(page).last().getAttribute('aria-current'), 'page');
     await page.goBack();

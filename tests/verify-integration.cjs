@@ -78,7 +78,7 @@ const result = { base, hosted, assets: [], properties: [], accessibility: [], er
         assert.equal(await view.locator('html').getAttribute('lang'), language);
         assert.equal(await view.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, width + ' ' + route);
         if (route.endsWith('troutwood-ct')) {
-          const updates = view.locator('.detail-actions .button-solid');
+          const updates = view.locator('.listing-availability a');
           assert.equal((await updates.textContent()).trim(), language === 'en' ? 'Ask for updates' : 'Consultar novedades');
           assert.equal(await updates.evaluate(el => getComputedStyle(el).borderRadius), '12px');
           assert.equal(await view.locator('#gallery,.detail-actions a[target=_blank]').count(), 0);

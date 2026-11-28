@@ -1,5 +1,6 @@
 # Phase 4B step 1 — FELIX
 
+Runtime and baseline captures ready. Heartbeat 2026-11-28T06:57:08Z, expires 2026-11-28T07:27:08Z. NEXT STEP: verify all six routes and record the hosted viewer.
 Claimed 2026-11-28T06:55:07Z, expires 2026-11-28T07:25:07Z. Base cde58a6. NEXT STEP: capture current opening and inspect the gallery timer.
 
 # Phase 4A ready for owner review / FELIX released

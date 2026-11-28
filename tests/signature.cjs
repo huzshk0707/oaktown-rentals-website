@@ -72,9 +72,9 @@ await test('motion toggle and reduced-motion provide a static opening and workin
 await test('all real rental detail routes, galleries, showing/application links and Escape focus',async()=>{
  for(const [slug,count] of [['115-colonial-drive',19],['4005-smallboat-ct',17],['1106-cherokee-rd-unit-8',9],['1824-w-madison',15]]){
   await page.goto(base+'/#home/'+slug);await page.locator('.page-intro h1').waitFor();assert.equal(await page.locator('[data-gallery-index]').count(),count);
-  const showing=await page.locator('.detail-actions .button-solid').getAttribute('href');assert.match(showing,/^sms:/);assert.ok(decodeURIComponent(showing).includes('showing'));
+  const showing=await page.locator('.listing-availability a').getAttribute('href');assert.match(showing,/^sms:/);assert.ok(decodeURIComponent(showing).includes('showing'));
   assert.equal(await page.locator('.detail-actions .text-link').getAttribute('href'),'https://oaktownrentalsapplication.fillout.com/95');
-  await page.locator('[data-open-gallery]').click();await page.keyboard.press('ArrowRight');assert.equal(await page.locator('.lightbox .gallery-count').innerText(),`2 / ${count}`);
+  await page.locator('[data-open-gallery]').click();await page.keyboard.press('ArrowRight');assert.equal(await page.locator('.lightbox .gallery-count').innerText(),`02 / ${count}`);
   await page.keyboard.press('Escape');assert.equal(await page.locator('.lightbox').evaluate(e=>e.open),false);
   assert.equal(await page.locator('[data-open-gallery]').evaluate(e=>document.activeElement===e),true);
  }

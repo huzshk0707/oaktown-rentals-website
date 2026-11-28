@@ -193,12 +193,12 @@
     const price=p.hideRent?'':money(p.rent);
     const period=!p.hideRent&&known(p.rent)?t('perMonth'):'';
     const applyLink=(className,icon='')=>p.contactOnly?'':`<a class="${className} property-action property-apply" href="${DATA.applicationUrl}" target="_blank" rel="noopener noreferrer">${t('navApply')}${icon}</a>`;
-    const stat=(value,label)=>`<div class="detail-stat"><strong>${value}</strong><span>${label}</span></div>`;
+    const stat=(value,label,icon='')=>`<div class="detail-stat"><strong>${value}</strong><span>${icon}${label}</span></div>`;
     const more = P.filter(x=>x.slug!==p.slug).slice(0,2);
     return `<section class="page-intro has-image"><div class="listing-intro-copy">
       <a class="back-link" href="#homes"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg> ${t('detailBack')}</a><span class="eyebrow section-label">${p.neighborhood} / ${p.city}</span><h1>${p.name.replace(' · ', '<br>')}</h1><p class="intro-sub">${localized(p,'summary')}</p><p class="listing-availability">${availabilityBadge(p)}<a class="property-action" href="${inquiryUrl(p)}" aria-label="${cardAction}: ${p.name}">${cardAction}</a></p></div>${image?`<button type="button" class="detail-cover" data-cover-gallery ${image?'':'disabled'} data-photo-error="${t('photoUnavailable')}" aria-label="${image?t('openPhoto'):t('photoUnavailable')}: ${p.name}">${imageEl(image,p.name+' — '+t('photoLabel')+' '+(startPhoto+1),'detail-cover-photo','eager')}<span>${DATA.images[p.imageKey].length} ${t('photosLabel')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5m6 0h5v5M4 15v5h5m6 0h5v-5"/></svg></span></button>`:`<div class="detail-cover listing-photo-pending" role="img" aria-label="${t('photoUnavailable')}"><span>${t('photoUnavailable')}</span></div>`}</section>
     <div class="listing-dock" hidden role="region" aria-label="${t('rentalDetails')}: ${p.name}"><div class="dock-property"><span class="dock-address" title="${p.name}">${p.name}</span><span><strong>${price||availabilityLabel(p)}</strong> ${period} <span class="dock-specs">${window.OaktownCards.specifications(p,language,t).map(s=>' / '+s).join('')}</span></span></div><div class="dock-actions"><a class="button-solid property-action" href="${showingUrl(p)}">${action}</a>${applyLink('text-link')}</div></div>
-    <div class="details-bar"><div class="detail-stats">${p.hideRent?stat(availabilityLabel(p),language==='es'?'Disponibilidad':'Availability'):stat(price,t('rent'))+stat(money(p.deposit),t('deposit'))}${known(p.bedrooms)?stat(p.bedrooms,t('bedrooms')):''}${known(p.bathrooms)?stat(p.bathrooms,t('bathrooms')):''}</div>${p.contactOnly?'':`<p class="application-guidance">${t('beforeApplying')}</p>`}<div class="detail-actions"><a class="button-solid property-action" href="${showingUrl(p)}">${action} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a>${applyLink('text-link',' '+arrow)}</div></div>
+    <div class="details-bar"><div class="detail-stats">${p.hideRent?stat(availabilityLabel(p),language==='es'?'Disponibilidad':'Availability'):stat(price,t('rent'))+stat(money(p.deposit),t('deposit'))}${known(p.bedrooms)?stat(p.bedrooms,t('bedrooms'),cards.bedIcon):''}${known(p.bathrooms)?stat(p.bathrooms,t('bathrooms'),cards.bathIcon):''}</div>${p.contactOnly?'':`<p class="application-guidance">${t('beforeApplying')}</p>`}${p.contactOnly?'':`<div class="detail-actions">${applyLink('text-link',' '+arrow)}</div>`}</div>
     ${image?`<section class="gallery" id="gallery"><div class="gallery-heading"><span class="eyebrow section-label">${t('insideLabel')} / ${p.name.toUpperCase()}</span><span class="gallery-count" aria-live="polite">${DATA.images[p.imageKey].length?1:0} / ${DATA.images[p.imageKey].length}</span></div>
       <div class="gallery-main"><button class="gallery-open" aria-label="${t('openPhoto')}" data-open-gallery>${imageEl(image,p.name+' — '+t('photoLabel')+' 1','gallery-active')}<span>${t('openPhoto')} <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button><div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="${t('previousPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button type="button" data-gallery-step="1" aria-label="${t('nextPhoto')}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></div>
       <p class="gallery-error" role="status" hidden>${t('galleryError')}</p>
@@ -436,7 +436,7 @@
     const src=imageUrl(imgs[currentGalleryIndex],1500), alt=DATA.photoAlts?.[imgs[currentGalleryIndex]]||p.name+' — '+t('photoLabel')+' '+(currentGalleryIndex+1);
     app.querySelectorAll('.gallery-active, .detail-cover-photo, .lightbox[open] .lightbox-image img').forEach(img=>{img.classList.remove('image-unavailable');img.removeAttribute('srcset');img.src=src;img.alt=alt;});
     app.querySelectorAll('.gallery-error').forEach(el=>el.hidden=true);
-    app.querySelectorAll('.gallery-count').forEach(el=>el.textContent=(currentGalleryIndex+1)+' / '+imgs.length);
+    app.querySelectorAll('.gallery-count').forEach(el=>el.textContent=String(currentGalleryIndex+1).padStart(el.closest('dialog')?2:1,'0')+' / '+imgs.length);
     galleryPlayback?.select(currentGalleryIndex);
     rememberView();
   }
@@ -488,7 +488,7 @@
         const dialog = app.querySelector('.lightbox');
         galleryPlayback = window.OaktownEffects.mountSlideshow({
           strip: app.querySelector('.gallery-thumbs'), surface: app.querySelector('.gallery-main'), dialog, language,
-          currentImage: () => dialog.open ? dialog.querySelector('.lightbox-image img') : app.querySelector('.gallery-active'),
+          currentImage: () => app.querySelector('.gallery-active'),
           advance: () => galleryStep(1)
         });
         galleryPlayback.select(currentGalleryIndex);
@@ -520,7 +520,8 @@
     langButton.textContent=language==='en'?'EN / ES':'ES / EN';
     const mobileInquiry=document.getElementById('mobile-inquiry');
     mobileInquiry.href=p?showingUrl(p):'sms:+15025001070';
-    mobileInquiry.textContent=t(p?'requestShowing':'textUs');
+    mobileInquiry.textContent=p?.contactOnly?(language==='es'?'Consultar novedades':'Ask for updates'):t(p?'availability':'textUs');
+    mobileInquiry.parentElement.toggleAttribute('data-contact-only',!!p?.contactOnly);
     if(skyHeader)skyHeader.update(t);
     else closeMenu();
     onScroll();
@@ -585,7 +586,14 @@
       selectCollectionLayout(next);app.querySelector('[data-layout-button="'+next+'"]').focus();
     }
     if(!skyHeader&&e.key==='Escape'&&!mobileNav.hidden){closeMenu();menu.focus();}
-    if(app.querySelector('.lightbox[open]')&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();galleryStep(e.key==='ArrowLeft'?-1:1);}
+    const viewer=app.querySelector('.lightbox[open]');
+    if(viewer && e.key==='Tab'){
+      const controls=viewer.querySelectorAll('button');
+      const first=controls[0],last=controls[controls.length-1];
+      if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+    }
+    if(viewer&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();galleryStep(e.key==='ArrowLeft'?-1:1);}
   });
   app.addEventListener('close',e=>{if(e.target.matches('.lightbox'))document.body.classList.remove('gallery-is-open');},true);
   app.addEventListener('error',e=>{

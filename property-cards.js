@@ -60,7 +60,7 @@
           <a class="card-detail-link" href="#home/${p.slug}" aria-label="${t('details')}: ${p.name}">${arrow}</a>
         </div></article>`;
     }
-    return {render};
+    return {render, bedIcon:bed, bathIcon:bath};
   }
   window.OaktownCards = Object.freeze({create,formatMoney,gallery,availabilityLabel,specifications,isSquarespacePhoto,imageUrl});
 })();
