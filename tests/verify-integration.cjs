@@ -16,7 +16,7 @@ const expected = {
   '208-sloemer-ave': 8,
   '8008-troutwood-ct': 0
 };
-const fileCounts = { '115-colonial-drive': 19, '4005-smallboat-ct': 11, '208-sloemer-ave': 8 };
+const fileCounts = { '115-colonial-drive': 19, '4005-smallboat-ct': 17, '1106-cherokee-rd-unit-8': 6, '208-sloemer-ave': 8 };
 const axePath = process.env.OAKTOWN_AXE_PATH;
 const result = { base, hosted, assets: [], properties: [], accessibility: [], errors: [] };
 
@@ -109,7 +109,7 @@ const result = { base, hosted, assets: [], properties: [], accessibility: [], er
     }
     assert.deepEqual(result.errors, []);
     assert.ok(result.accessibility.every(scan => !scan.violations.length), 'See recorded axe violations');
-    console.log('PASS: six records, 38 byte-identical imports, 68 ordered image selections, eight responsive language/width pairs.');
+    console.log('PASS: six records, 50 byte-identical imports, 68 ordered image selections, eight responsive language/width pairs.');
   } finally {
     if (process.env.OAKTOWN_REPORT) writeFileSync(process.env.OAKTOWN_REPORT, JSON.stringify(result, null, 2) + '\n');
     await browser.close();
