@@ -1,3 +1,7 @@
+# Homepage Lobster Nirvana refinement
+
+FELIX owns `felix/vacation-feature` from shared `bc163b2`. Heartbeat 2026-11-28 06:20 UTC, expires 06:50 UTC. Scope is the homepage vacation promotion. NEXT STEP: review genuine property photography and capture the baseline before editing the section.
+
 # Phase 3 integrated, homepage design locked / FELIX released
 
 - FELIX released the integration claim at 2026-11-28T06:10:21+00:00. `integration/oaktown-signature` remains draft PR #29 targeting `main`. Owner-approved #31 `1b751450e86ae1759647fc2c862acdb71d73f7e0` merged at `495e284f089135ee42be16dd468648b45c970ca5` from verified shared tip `4f5c3ea`. This evidence checkpoint follows the merge. Read PR #29 for the exact latest head.
