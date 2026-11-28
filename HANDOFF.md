@@ -1,8 +1,31 @@
-# Phase 3 integration and homepage design lock / FELIX
+# Phase 3 integrated and homepage design locked / FELIX active
 
-- FELIX owns this integration under the current owner authorization. UTC heartbeat 2026-11-28T06:05:34+00:00. Claim expires 2026-11-28T06:35:34+00:00.
-- Shared branch `integration/oaktown-signature`, draft PR #29 targeting `main`. Verified prior shared tip `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Owner-approved PR #31 tip `1b751450e86ae1759647fc2c862acdb71d73f7e0`.
-- NEXT STEP: merge the approved PR #31 checkpoint, keep the Phase 2E opening and the six-property file catalogue intact, then run the integration and hosted preview checks. Major homepage design is approved. Colonial Drive detail redesign awaits the owner's design instructions.
+- Owner FELIX. UTC heartbeat 2026-11-28T06:06:01+00:00. Claim expires 2026-11-28T06:36:01+00:00.
+- Draft PR #29 on `integration/oaktown-signature`, targeting `main`. Owner-approved PR #31 head `1b751450e86ae1759647fc2c862acdb71d73f7e0` is merged from shared baseline `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Ownership checkpoint `b8cf56c`. The only conflict was this handoff. Source history follows below.
+- The approved Phase 2E opening, Option A photo and lighter overlay, homepage order and mobile color correction are integrated. Catalogue, rental photos and all outstanding publication holds carry forward.
+- NEXT STEP: verify the combined branch with full regressions, six property routes, 38 imported photo hashes and all 68 ordered gallery selections. Verify deployed assets and isolation on the shared Cloudflare preview, then release the claim. Property detail redesign waits for owner direction and starts with 115 Colonial Drive.
+
+---
+
+# Phase 3 final refinement ready for review / FELIX
+
+- FELIX released the claim at 2026-11-28T03:40:52+00:00. Draft PR #31 on `felix/homepage-completion` targets `integration/oaktown-signature` at `4f5c3ea`. Owner assigned the refinement from `ac1a88a`. Both PRs stay draft.
+- Runtime `433c47d937e616571e94f9a0712d295461953c54` is deployed on the [feature preview](https://felix-homepage-completion-oaktown.rentals10.workers.dev/). This evidence and handoff checkpoint follows it. Use the PR head for the exact final SHA.
+- Homepage uses owner-approved Option A with the exact review bytes and source license documented. The prior on-page photo and credit were replaced together. The overall overlay is lighter and the desktop copy has local shade for both disclosure states. Opening, collection, color-scheme correction, journey, Lobster Nirvana and footer are preserved.
+- [Final captures and verification](docs/oaktown-signature/phase3/final/README.md): ten regression commands, 12 axe scans with zero confirmed violations and 32 contrast cases passed. Phone light/default dark/automatic darkening samples remained ivory. Hosted desktop EN and mobile ES passed, with 50 served hashes and preview isolation confirmed.
+- NEXT STEP: owner reviews the final feature preview and the final desktop/mobile captures in `docs/oaktown-signature/phase3/final/README.md`. Ravi handles integration into draft #29 only after owner authorization. All production, CMS and booking holds remain in place.
+
+---
+
+# Phase 3 — Homepage Completion ready for review / FELIX
+
+- FELIX completed the implementation and released the claim at 2026-11-28T03:23:36+00:00. Branch `felix/homepage-completion`, draft PR #31 targeting `integration/oaktown-signature` at `4f5c3ea5ccb35f0589a566f26489b20d562827c7`. Approved Phase 2E `f5a2476` merged via `48a32cd`. #29 stays draft.
+- Pushed and deployed runtime `d3216c94d6e02342ee252e592ad5bcc9186ea165`. The final evidence checkpoint follows it. Use PR #31 for its exact head. [Feature preview](https://felix-homepage-completion-oaktown.rentals10.workers.dev/).
+- Implemented the approved order. Louisville has a full desktop panorama and natural mobile layout with the approved story copy, disclosure and credited King of Hearts photo. Rental Journey separates it from the compact Lobster Nirvana feature. The opening, cards, footer and six-property catalogue are preserved.
+- Chromium auto-darkening reproduced brown webpage pixels. Rental-only `color-scheme: only light` restored the accepted palette with champagne price panels. Native Safari and the owner's specific phone remain unverified.
+- [Phase 3 evidence](docs/oaktown-signature/phase3/README.md) includes actual full before/after EN/ES, mobile and reduced-motion captures, two section transitions, a 7.48-second decoded video and three licensed Louisville photo proposals. Candidates are excluded from served assets.
+- 17 regression commands passed, including 11 unit/CMS tests and 27 header checks. Six routes and 68 real selections passed, with 38 imported hashes and 36 axe scans across catalogue and sections. Shared/feature HTTP 200, root HTML and 49 served hashes matched, and preview isolation passed. No unfinished runtime files.
+- NEXT STEP: owner opens the preview and compares A, B and C in `docs/oaktown-signature/phase3/PHOTOGRAPHY.md`, then approves the layout and photo or specifies revisions. The current image retains its attribution until an approved replacement is implemented. Keep both PRs draft and preserve all property, media, Afterglow, CMS and booking holds.
 
 ---
 

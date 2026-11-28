@@ -52,7 +52,7 @@ This order records planning priorities. The approved Phase 2E composition is loc
 
 ## Phase 3 — Homepage Completion
 
-Felix starts from the shared checkpoint in [HANDOFF.md](../../HANDOFF.md). Review the remaining homepage sections and the [Phase 2D prototypes](phase2d/README.md) before proposing changes. Preserve the accepted opening, shared catalogue, bilingual navigation and all photography and fact holds. The dedicated search page stays in the original master roadmap as a later planned deliverable.
+Felix implemented the approved sequence in [draft PR #31](https://github.com/huzshk0707/oaktown-rentals-website/pull/31) from the reviewed shared integration tip `4f5c3ea`. Cinematic hero → Our Homes with search, Gallery and Grid → standalone Rooted in Louisville → Your Rental Journey → compact Lobster Nirvana → existing footer. The accepted opening, shared six-property catalogue, bilingual navigation and all publication holds remain in place. The [review package](phase3/README.md) includes desktop/mobile EN/ES captures, a scroll recording, mobile color diagnosis and [three photo options](phase3/PHOTOGRAPHY.md). The owner selected Option A and approved the layout. The [final refinement](phase3/final/README.md) installs the selected photograph, lightens the overlay and replaces the prior image and on-page credit together. PR #31 awaits final review. Ravi owns integration after owner authorization. The dedicated search page remains a later deliverable.
 
 ## Phase 1 source of truth
 

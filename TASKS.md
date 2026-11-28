@@ -1,3 +1,14 @@
+# Phase 3 — Homepage Completion / FELIX
+
+- [x] Verify approved Phase 2E merge and the shared preview at `4f5c3ea`. Open isolated [draft PR #31](https://github.com/huzshk0707/oaktown-rentals-website/pull/31) targeting integration.
+- [x] Make Louisville a standalone desktop viewport with approved copy and existing credited photography. Place the three-step journey and compact Lobster Nirvana below it.
+- [x] Reproduce Chromium automatic darkening and preserve the light palette. Record the actual phone and Safari limitations.
+- [x] Prepare three original Louisville photo options with commercial-use, no mandatory attribution, source records and desktop/mobile captures.
+- [x] Pass relevant regressions and verify the hosted feature preview. Save [before and after, walkthrough, licenses and exact test results](docs/oaktown-signature/phase3/README.md).
+- [x] Owner approved the Phase 3 layout and selected Option A. Promote the exact approved photo, remove the previous photo and credit together, and verify the lighter Louisville overlay.
+- [x] Save [final desktop/mobile captures, contrast measurements, regressions and hosted verification](docs/oaktown-signature/phase3/final/README.md).
+- [ ] Owner reviews final draft #31. Ravi integrates into draft #29 after separate authorization.
+
 # Phase 2E — Seamless Sky Header
 
 - [x] Ravi claimed `ravi/seamless-sky-header` on integration `c4a789b` and opened [draft PR #30](https://github.com/huzshk0707/oaktown-rentals-website/pull/30).
@@ -36,7 +47,7 @@ Use each property's latest owner-approved Google Drive folder to source updates.
 - [x] Verify six routes, 68 genuine photo selections, 38 local asset hashes and EN/ES browser accessibility.
 - [x] Run current browser, bilingual, accessibility, admin, CMS, gallery and Mint Mojo regressions.
 - [x] Confirm Cloudflare build and integration preview deployment in PR #29.
-- [ ] Verify the hosted integration runtime and photos from an environment allowed to reach the preview.
+- [x] FELIX verified shared root HTML, 49 served hashes and preview isolation at `4f5c3ea`. [Hosted evidence](docs/oaktown-signature/phase3/shared-preview.json).
 - [ ] Felix: own Phase 3 — Homepage Completion from the verified Phase 2E handoff. Branch from the shared tip, review the current homepage and Phase 2D prototypes, and target the shared branch with a feature draft. See [the roadmap](docs/oaktown-signature/ROADMAP.md#phase-3--homepage-completion).
 - [ ] Felix Junior: resolve confirmed pricing, availability, Troutwood exterior and held photo evidence in isolated branches targeting integration.
 - [ ] Owner: review combined draft, property/fact holds and Afterglow architectural accuracy before any launch decision.

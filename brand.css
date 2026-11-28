@@ -528,7 +528,8 @@ body.rental-site .details-bar .detail-actions { grid-column:2;grid-row:1 / span 
 
 /* Light Oaktown palette, inspired by Mint Mojo. Keep photographic motion and
    layout intact; reserve solid forest green for actions rather than sections. */
-html:has(body.rental-site) { color-scheme:light;background:#fffefb; }
+/* Keep the approved palette when Chromium automatic darkening is enabled. */
+html:has(body.rental-site) { color-scheme:only light;background:#fffefb; }
 body.rental-site {
   --paper:#fffefb;
   --surface:#f3f3e8;
@@ -538,7 +539,7 @@ body.rental-site {
   --muted:#4b6255;
   --accent:#10783d;
   --line:#163b2d26;
-  color-scheme:light;
+  color-scheme:only light;
   background:var(--paper);
   color:var(--ink);
 

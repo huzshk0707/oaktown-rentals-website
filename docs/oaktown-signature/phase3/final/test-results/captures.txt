@@ -1,0 +1,1 @@
+PASS after homepage capture and mobile color measurement (12 axe scans)
