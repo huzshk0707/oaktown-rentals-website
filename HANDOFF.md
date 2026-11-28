@@ -1,3 +1,9 @@
+# Release candidate held for publication evidence
+
+Ravi released the consolidation claim at 2026-11-28T07:57:26+00:00. Draft PR #29 contains the approved stack, #32, #26 review evidence and Junior’s latest #28 gallery. Tested runtime `08d4412`. See [preflight, mobile results and photo/fact holds](docs/oaktown-signature/release/README.md). The final evidence commit follows that runtime. Main and production remain on `be37dba`. Booking recovery is in #37.
+
+**Next step:** Owner and Felix Junior record the outstanding publication evidence on PR #29. Ravi verifies it before merging and checking production. Source branches and worktrees remain available.
+
 # Release consolidation · Ravi
 
 Claim 2026-11-28T07:51:18.952486+00:00, expires 2026-11-28T08:21:18.952486+00:00. Base b145c82. Next step: integrate #32, #26 evidence and Junior’s draft photography, then verify release gates.

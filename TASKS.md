@@ -1,5 +1,20 @@
 # Phase 4B step 2 — Universal public navigation
 
+[Current consolidation and publication decision](docs/oaktown-signature/release/README.md). The six Smallboat draft replacements are now included. Their public rights and condition checks supersede the older draft hold below.
+
+## Remaining release and design work
+
+| Owner | Work |
+| --- | --- |
+| Felix Junior with the owner | Complete property photography, source-rights records and current-condition review. |
+| Felix | Finish lower property detail sections. Redesign the dedicated Lobster Nirvana experience. |
+| Felix | Add the premium bilingual homepage FAQ in [issue #36](https://github.com/huzshk0707/oaktown-rentals-website/issues/36). Review existing FAQ, Community and Contact pages. |
+| Felix | Complete website-wide micro-interaction polish after the page work. |
+| Ravi | Rehearse CMS migration on isolated staging. Production currently serves the file catalogue. |
+| Booking team and owner | Complete isolated booking staging acceptance under [issue #37](https://github.com/huzshk0707/oaktown-rentals-website/issues/37). |
+| Ravi and owner | Complete final content, accessibility and performance review and resolve the publication holds. |
+
+
 - [x] Resume Felix’s published Step 2 runtime at `4fd38e9` on [draft PR #35](https://github.com/huzshk0707/oaktown-rentals-website/pull/35), stacked on #34.
 - [x] Verify shared navigation, all six property openings, Back/Forward preferences and 68 ordered photo selections in local and hosted Chromium.
 - [x] Record all 14 desktop and mobile routes, before/after vacation navigation, the journey video, regression results and hosted isolation. [Step 2 review](docs/oaktown-signature/phase4b-navigation/README.md).

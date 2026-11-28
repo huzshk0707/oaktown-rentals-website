@@ -64,6 +64,8 @@ scope, approval, draft-only work, merging and deployment.
 
 ### Shared Signature integration
 
+The consolidated release candidate is draft PR #29. Use the shared branch for Signature follow-ups until publication approval and the main merge. After that merge and production verification, branch new work from main.
+
 Ravi coordinates `integration/oaktown-signature` and its combined draft PR #29.
 Ravi, Felix and Felix Junior fetch that branch and start isolated feature
 branches from its latest reviewed tip. Target feature PRs back to integration.

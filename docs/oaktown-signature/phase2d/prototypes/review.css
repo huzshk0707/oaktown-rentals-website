@@ -32,6 +32,6 @@ body.rental-site .review-panels .property-image-wrap{height:100%;aspect-ratio:au
 html.motion-off .review-panel{transition:none!important}
 
 /* FELIX JUNIOR: preserve the original vacation palette in the cloned review section. */
-.review-surface.signature-vacation{background:var(--signature-green);color:var(--signature-ivory)}
+.review-surface.signature-vacation{background:var(--signature-ivory);color:var(--signature-green)}
 /* Match desktop-rule specificity so the mobile active card cannot stretch its photo. */
 @media(max-width:700px){body.rental-site .review-panels .review-panel.is-active .card-media{height:270px;min-height:270px;flex:none}body.rental-site .review-panels .review-panel.is-active .property-image-wrap{height:270px;aspect-ratio:auto}}

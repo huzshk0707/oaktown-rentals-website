@@ -1,5 +1,18 @@
 # Oaktown Signature — approved master roadmap
 
+## Remaining release and design work
+
+| Owner | Work |
+| --- | --- |
+| Felix Junior with the owner | Complete property photography, source-rights records and current-condition review. |
+| Felix | Finish lower property detail sections. Redesign the dedicated Lobster Nirvana experience. |
+| Felix | Add the premium bilingual homepage FAQ in [issue #36](https://github.com/huzshk0707/oaktown-rentals-website/issues/36). Review existing FAQ, Community and Contact pages. |
+| Felix | Complete website-wide micro-interaction polish after the page work. |
+| Ravi | Rehearse CMS migration on isolated staging. Production currently serves the file catalogue. |
+| Booking team and owner | Complete isolated booking staging acceptance under [issue #37](https://github.com/huzshk0707/oaktown-rentals-website/issues/37). |
+| Ravi and owner | Complete final content, accessibility and performance review and resolve the publication holds. |
+
+
 Approved by the owner on 27 November 2026. Creative direction and visual acceptance belong to the owner and ChatGPT. FELIX continued Phase 1B engineering, implementation and verification under explicit reassignment. This roadmap records the direction; **it does not authorize implementation of every phase**.
 
 ## Shared integration foundation

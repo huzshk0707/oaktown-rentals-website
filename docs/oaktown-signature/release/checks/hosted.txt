@@ -1,0 +1,1 @@
+PASS: six records, 50 byte-identical imports, 68 ordered image selections, eight responsive language/width pairs.
